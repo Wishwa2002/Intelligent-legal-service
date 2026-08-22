@@ -27,12 +27,27 @@ public class ApplicationDbContext : DbContext
         ModelBuilder modelBuilder)
     {
 
+        // Composite Primary Key
         modelBuilder.Entity<UserRole>()
             .HasKey(x => new
             {
                 x.UserId,
                 x.RoleId
             });
+
+
+        // User -> UserRole relationship
+        modelBuilder.Entity<UserRole>()
+            .HasOne(x => x.User)
+            .WithMany(x => x.UserRoles)
+            .HasForeignKey(x => x.UserId);
+
+
+        // Role -> UserRole relationship
+        modelBuilder.Entity<UserRole>()
+            .HasOne(x => x.Role)
+            .WithMany(x => x.UserRoles)
+            .HasForeignKey(x => x.RoleId);
 
 
         base.OnModelCreating(modelBuilder);
