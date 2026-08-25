@@ -20,4 +20,15 @@ public class User
     
     public ICollection<UserRole> UserRoles { get; set; }
         = new List<UserRole>();
+
+    // Extended profile relationships
+    public Lawyer? Lawyer { get; set; }
+    public Clerk? Clerk { get; set; }
+
+    // Relationship navigation collections
+    public ICollection<Appointment> Appointments { get; set; } = new List<Appointment>();
+    public ICollection<DocumentationRequest> DocumentationRequests { get; set; } = new List<DocumentationRequest>();
+    public ICollection<ServiceRequest> ServiceRequests { get; set; } = new List<ServiceRequest>();
+    public ICollection<ApprovalDecision> ApprovalDecisions { get; set; } = new List<ApprovalDecision>();
+    public ICollection<AuditLog> AuditLogs { get; set; } = new List<AuditLog>();
 }
