@@ -1,0 +1,1741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Legal AI Service — Documentation & Clerk Agent</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: rgba(17, 24, 39, 0.85);
+      --bg-card-hover: rgba(31, 41, 55, 0.7);
+      --border-color: rgba(255, 255, 255, 0.08);
+      --border-focus: #3b82f6;
+      --primary: #3b82f6;
+      --primary-hover: #2563eb;
+      --primary-glow: rgba(59, 130, 246, 0.35);
+      --success: #10b981;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --text-subtle: #6b7280;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: radial-gradient(circle at 15% 15%, #131b2e 0%, #0b0f19 70%);
+      color: var(--text-main);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      overflow-x: hidden;
+    }
+
+    /* Top Navigation Header */
+    header {
+      background: rgba(17, 24, 39, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 14px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px var(--primary-glow);
+    }
+    .brand-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .brand-subtitle {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .header-badges {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 9999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+    }
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--success);
+      box-shadow: 0 0 8px var(--success);
+    }
+    .badge-phase {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.4);
+      color: #93c5fd;
+    }
+
+    .btn-header {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid var(--border-color);
+      color: var(--text-main);
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-header:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    /* Main Container Layout */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      flex: 1;
+      height: calc(100vh - 65px);
+      max-width: 1600px;
+      margin: 0 auto;
+      width: 100%;
+    }
+
+    /* Chat Section */
+    .chat-section {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      border-right: 1px solid var(--border-color);
+    }
+
+    .chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      scroll-behavior: smooth;
+    }
+
+    .msg-row {
+      display: flex;
+      gap: 12px;
+      max-width: 84%;
+      animation: fadeIn 0.25s ease forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(8px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .msg-row.client {
+      align-self: flex-end;
+      flex-direction: row-reverse;
+    }
+    .msg-row.agent {
+      align-self: flex-start;
+    }
+
+    .avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.95rem;
+      flex-shrink: 0;
+    }
+    .agent .avatar {
+      background: linear-gradient(135deg, #2563eb, #1e40af);
+      box-shadow: 0 0 10px rgba(37, 99, 235, 0.4);
+    }
+    .client .avatar {
+      background: linear-gradient(135deg, #10b981, #059669);
+    }
+
+    .msg-bubble {
+      padding: 13px 18px;
+      border-radius: 16px;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      position: relative;
+    }
+    .client .msg-bubble {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff;
+      border-bottom-right-radius: 4px;
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+    }
+    .agent .msg-bubble {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      color: #e5e7eb;
+      border-bottom-left-radius: 4px;
+    }
+    .msg-bubble strong {
+      color: #fff;
+      font-weight: 600;
+    }
+    .msg-time {
+      font-size: 0.7rem;
+      color: var(--text-subtle);
+      margin-top: 5px;
+      text-align: right;
+    }
+
+    /* Uploaded Document Card in Chat */
+    .chat-doc-card {
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      border-radius: 12px;
+      padding: 10px 14px;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 220px;
+      max-width: 320px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+    .client .chat-doc-card {
+      background: rgba(30, 58, 138, 0.5);
+      border-color: rgba(147, 197, 253, 0.4);
+    }
+    .doc-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(59, 130, 246, 0.25);
+      color: #93c5fd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .doc-card-details {
+      flex: 1;
+      min-width: 0;
+    }
+    .doc-card-title {
+      font-weight: 600;
+      font-size: 0.85rem;
+      color: #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .doc-card-meta {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      margin-top: 2px;
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+    .doc-preview-img {
+      max-width: 260px;
+      max-height: 180px;
+      border-radius: 10px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      margin-top: 8px;
+      display: block;
+      object-fit: cover;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.35);
+      transition: transform 0.2s;
+    }
+    .doc-preview-img:hover {
+      transform: scale(1.02);
+    }
+
+    /* Typing Indicator */
+    .typing-indicator {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 12px 18px;
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: fit-content;
+      margin-left: 48px;
+    }
+    .typing-dot {
+      width: 7px;
+      height: 7px;
+      background: #93c5fd;
+      border-radius: 50%;
+      animation: pulse 1.4s infinite ease-in-out both;
+    }
+    .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+    .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes pulse {
+      0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+      40% { transform: scale(1.1); opacity: 1; }
+    }
+
+    /* Quick Suggestion Chips */
+    .quick-chips {
+      padding: 10px 24px;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      border-top: 1px solid var(--border-color);
+      background: rgba(17, 24, 39, 0.5);
+    }
+    .chip {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      color: var(--text-muted);
+      padding: 6px 12px;
+      border-radius: 20px;
+      font-size: 0.78rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+    .chip:hover {
+      background: rgba(59, 130, 246, 0.18);
+      border-color: var(--primary);
+      color: #fff;
+    }
+    .chip-action {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: rgba(59, 130, 246, 0.4);
+      color: #93c5fd;
+      font-weight: 500;
+    }
+
+    /* Input Bar */
+    .chat-input-container {
+      padding: 16px 24px;
+      background: rgba(17, 24, 39, 0.9);
+      border-top: 1px solid var(--border-color);
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .btn-attach {
+      background: rgba(59, 130, 246, 0.15);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #93c5fd;
+      height: 44px;
+      padding: 0 14px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .btn-attach:hover {
+      background: rgba(59, 130, 246, 0.3);
+      border-color: #60a5fa;
+      color: #fff;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+    }
+    .chat-input {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 12px 16px;
+      color: #fff;
+      font-size: 0.92rem;
+      font-family: inherit;
+      outline: none;
+      transition: all 0.2s;
+    }
+    .chat-input:focus {
+      border-color: var(--border-focus);
+      background: rgba(255, 255, 255, 0.09);
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+    .btn-send {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      color: #fff;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .btn-send:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px var(--primary-glow);
+    }
+
+    /* Sidebar / Workflow Inspector */
+    .inspector {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(12px);
+      overflow-y: auto;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .meta-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      padding: 3px 0;
+    }
+    .meta-label { color: var(--text-muted); }
+    .meta-value { font-weight: 500; font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; color: #93c5fd; }
+
+    /* Required Documents Tracker */
+    .doc-list {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .doc-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 12px;
+      border-radius: 10px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-color);
+    }
+    .doc-info {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .doc-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #fff;
+    }
+    .doc-status-badge {
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-weight: 600;
+      width: fit-content;
+    }
+    .status-pending { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
+    .status-analyzing { background: rgba(59, 130, 246, 0.15); color: #93c5fd; }
+    .status-accepted { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+    .status-accepted_with_flag { background: rgba(245, 158, 11, 0.2); color: #fde047; }
+    .status-rejected { background: rgba(239, 68, 68, 0.15); color: #f87171; }
+
+    .btn-doc-upload {
+      background: rgba(59, 130, 246, 0.2);
+      border: 1px solid var(--primary);
+      color: #93c5fd;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .btn-doc-upload:hover {
+      background: var(--primary);
+      color: #fff;
+      box-shadow: 0 0 10px var(--primary-glow);
+    }
+
+    .sample-link {
+      color: #93c5fd;
+      text-decoration: none;
+      background: rgba(59, 130, 246, 0.15);
+      padding: 2px 7px;
+      border-radius: 4px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      border: 1px solid rgba(59, 130, 246, 0.3);
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+    }
+    .sample-link:hover {
+      background: rgba(59, 130, 246, 0.35);
+      color: #fff;
+      border-color: #60a5fa;
+    }
+
+    /* Structured Points & Numbered Lists */
+    .chat-list-row {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin: 6px 0;
+      padding: 6px 10px;
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      transition: all 0.2s ease;
+    }
+    .chat-list-row:hover {
+      background: rgba(59, 130, 246, 0.08);
+      border-color: rgba(96, 165, 250, 0.25);
+    }
+    .chat-list-num {
+      color: #60a5fa;
+      font-weight: 700;
+      font-size: 0.9rem;
+      min-width: 22px;
+      display: inline-block;
+    }
+    .chat-list-bullet {
+      color: #38bdf8;
+      font-size: 1.15rem;
+      line-height: 1;
+      min-width: 16px;
+      display: inline-block;
+    }
+    .chat-list-text {
+      flex: 1;
+      color: #f1f5f9;
+      line-height: 1.5;
+      font-size: 0.92rem;
+    }
+    .chat-divider {
+      border: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      margin: 12px 0;
+    }
+    .chat-p-gap {
+      height: 10px;
+    }
+
+    /* Chat Message Upload Actions Box */
+    .chat-upload-action-box {
+      margin-top: 12px;
+      padding: 12px 14px;
+      background: rgba(15, 23, 42, 0.75);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    }
+    .chat-upload-action-title {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: #93c5fd;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .chat-action-btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chat-btn-upload-item {
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.85), rgba(29, 78, 216, 0.95));
+      color: #ffffff;
+      border: 1px solid rgba(147, 197, 253, 0.4);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+    .chat-btn-upload-item:hover {
+      background: linear-gradient(135deg, #3b82f6, #2563eb);
+      border-color: #bfdbfe;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+    }
+    .chat-btn-upload-item.warn {
+      background: linear-gradient(135deg, rgba(220, 38, 38, 0.85), rgba(185, 28, 28, 0.95));
+      border-color: rgba(252, 165, 165, 0.4);
+    }
+    .chat-btn-upload-item.warn:hover {
+      background: linear-gradient(135deg, #ef4444, #dc2626);
+      box-shadow: 0 4px 12px rgba(239, 68, 68, 0.4);
+    }
+
+    /* Modal Styling */
+    .modal-overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(6px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+    }
+    .modal {
+      background: #111827;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      width: 480px;
+      max-width: 90vw;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+      animation: fadeIn 0.2s ease;
+    }
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .modal-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .btn-close {
+      background: none;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+    .upload-zone {
+      border: 2px dashed rgba(255, 255, 255, 0.15);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .upload-zone:hover {
+      border-color: var(--primary);
+      background: rgba(59, 130, 246, 0.05);
+    }
+    .scenario-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 10px 14px;
+      color: var(--text-main);
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 8px;
+    }
+    .scenario-btn:hover {
+      background: rgba(59, 130, 246, 0.15);
+      border-color: var(--primary);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar { width: 6px; height: 6px; }
+    ::-webkit-scrollbar-track { background: transparent; }
+    ::-webkit-scrollbar-thumb { background: rgba(255, 255, 255, 0.12); border-radius: 4px; }
+  </style>
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <header>
+    <div class="brand">
+      <div class="brand-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+          <polyline points="14 2 14 8 20 8"></polyline>
+          <line x1="16" y1="13" x2="8" y2="13"></line>
+          <line x1="16" y1="17" x2="8" y2="17"></line>
+        </svg>
+      </div>
+      <div>
+        <div class="brand-title">Legal AI — Documentation & Clerk Agent</div>
+        <div class="brand-subtitle">SE3090 Agentic AI Workflow Engine</div>
+      </div>
+    </div>
+
+    <div class="header-badges">
+      <div class="badge" title="Live connection to backend on :5000">
+        <span class="badge-dot" id="backend-dot"></span>
+        <span id="backend-status-text">Backend :5000</span>
+      </div>
+      <div class="badge badge-phase" id="phase-badge">
+        UNDERSTAND_REQUEST
+      </div>
+      <button class="btn-header" onclick="openAllSamplesModal()" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: #fbbf24;">📁 Sample Documents (9)</button>
+      <button class="btn-header" onclick="startNewSession()">+ New Session</button>
+      <a class="btn-header" href="/docs" target="_blank" style="text-decoration:none;">Swagger Docs ↗</a>
+    </div>
+  </header>
+
+  <!-- Main Chat & Inspector Grid -->
+  <div class="container">
+    
+    <!-- Chat Section -->
+    <div class="chat-section">
+      <div class="chat-messages" id="messages-container">
+        <!-- Messages will be rendered dynamically -->
+      </div>
+
+      <!-- Typing indicator -->
+      <div class="typing-indicator" id="typing-indicator">
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <div class="typing-dot"></div>
+        <span style="font-size:0.75rem; color:var(--text-muted); margin-left:4px;">Agent is analyzing...</span>
+      </div>
+
+      <!-- Quick Suggestion Chips -->
+      <div class="quick-chips">
+        <button class="chip chip-action" onclick="openAllSamplesModal()" style="background: rgba(245, 158, 11, 0.15); border-color: rgba(245, 158, 11, 0.4); color: #fbbf24; font-weight:600;">📁 View All Sample Docs (9)</button>
+        <button class="chip" onclick="sendQuickPrompt('Hi, my name is Vithusan')">👋 Hi, my name is Vithusan</button>
+        <button class="chip" onclick="sendQuickPrompt('Hello, I am Sarah Jenkins')">👋 I am Sarah Jenkins</button>
+        <button class="chip chip-action" onclick="selectService('Corporate Registration')">🏢 Corporate Registration</button>
+        <button class="chip chip-action" onclick="selectService('Property Transfer')">🏠 Property Transfer</button>
+        <button class="chip chip-action" onclick="selectService('Power of Attorney')">📜 Power of Attorney</button>
+        <button class="chip chip-action" onclick="selectService('Last Will and Testament')">📝 Last Will &amp; Testament</button>
+        <button class="chip chip-action" onclick="selectService('Commercial Lease Agreement')">📑 Commercial Lease</button>
+        <button class="chip" onclick="sendQuickPrompt('What documents do I need to submit?')">📋 What documents?</button>
+        <button class="chip" onclick="sendQuickPrompt('Do you know my name?')">🤔 Do you know my name?</button>
+      </div>
+
+      <!-- Input Bar -->
+      <div class="chat-input-container">
+        <button class="btn-attach" onclick="openUploadModal()" title="Upload a document">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          <span>Upload File</span>
+        </button>
+        <input 
+          type="text" 
+          id="chat-input" 
+          class="chat-input" 
+          placeholder="Type your message or ask the legal agent... (Press Enter to send)"
+          autocomplete="off"
+          onkeydown="if(event.key==='Enter') sendMessage()"
+        />
+        <button class="btn-send" onclick="sendMessage()">
+          <span>Send</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="22" y1="2" x2="11" y2="13"></line>
+            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Right Column: Live Workflow Inspector -->
+    <div class="inspector">
+      <!-- Session Details -->
+      <div class="card">
+        <div class="card-header">
+          <span>Active Session</span>
+          <button onclick="copySessionId()" style="background:none;border:none;color:#93c5fd;cursor:pointer;font-size:0.75rem;">Copy ID</button>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Session ID:</span>
+          <span class="meta-value" id="disp-session-id" style="max-width:180px;overflow:hidden;text-overflow:ellipsis;">...</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Client Name:</span>
+          <span class="meta-value" id="disp-client-name" style="font-weight:600;color:#93c5fd;">—</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Service:</span>
+          <span class="meta-value" id="disp-service-name">None</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Backend Request:</span>
+          <span class="meta-value" id="disp-request-id">—</span>
+        </div>
+      </div>
+
+      <!-- Required Documents Checklist -->
+      <div class="card">
+        <div class="card-header">
+          <span>Required Documents Checklist</span>
+          <span id="doc-progress-count" style="font-size:0.75rem;color:var(--text-muted);">0 / 0</span>
+        </div>
+        <div class="doc-list" id="doc-list-container">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+
+      <!-- Clerk & Admin Approval Status -->
+      <div class="card">
+        <div class="card-header">
+          <span>Clerk & Admin Approval</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Clerk Recommendation:</span>
+          <span class="meta-value" id="disp-clerk">None</span>
+        </div>
+        <div class="meta-row">
+          <span class="meta-label">Admin Approval:</span>
+          <span class="meta-value" id="disp-approval">—</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Document Upload Modal -->
+  <div class="modal-overlay" id="upload-modal">
+    <div class="modal">
+      <div class="modal-header">
+        <div>
+          <div class="modal-title">Upload Document</div>
+          <div style="font-size:0.75rem; color:var(--text-muted);">Target Document: <strong id="modal-target-doc" style="color:#93c5fd;">NIC</strong></div>
+        </div>
+        <button class="btn-close" onclick="closeUploadModal()">&times;</button>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <label style="font-size:0.75rem; color:var(--text-muted);">Select Document Type:</label>
+        <select id="modal-doc-select" class="chat-input" style="padding:8px 12px;" onchange="selectedModalDoc = this.value; document.getElementById('modal-target-doc').innerText = this.value; updateModalDownloadLinks(this.value);">
+          <!-- Options populated dynamically -->
+        </select>
+        <div id="modal-service-tip" style="font-size:0.75rem; color:#93c5fd; display:none;">
+          💡 Tip: Click a service button (like <strong>🏢 Corporate Registration</strong>) to see your exact required document checklist.
+        </div>
+      </div>
+
+      <!-- Real File Upload Zone -->
+      <div class="upload-zone" onclick="document.getElementById('real-file-input').click()">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#93c5fd" stroke-width="2" style="margin:0 auto 8px;">
+          <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+          <polyline points="17 8 12 3 7 8"></polyline>
+          <line x1="12" y1="3" x2="12" y2="15"></line>
+        </svg>
+        <div style="font-size:0.85rem; font-weight:600; color:#fff;" id="file-label-text">Choose real file (.pdf, .png, .jpg)</div>
+        <div style="font-size:0.72rem; color:var(--text-subtle); margin-top:2px;">or click below for instant test scenarios</div>
+        <input type="file" id="real-file-input" style="display:none;" onchange="handleRealFileChosen(this)" accept=".pdf,.png,.jpg,.jpeg,.txt" />
+      </div>
+
+      <!-- Quick Test Scenarios -->
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <div style="font-size:0.72rem; font-weight:600; text-transform:uppercase; color:var(--text-muted); margin-bottom:4px;">
+          Or Instant Verification:
+        </div>
+
+        <button class="scenario-btn" style="background:rgba(16, 185, 129, 0.15); border-color:rgba(16, 185, 129, 0.45);" onclick="uploadSampleDocument()">
+          <span>✨ <strong>Auto-Upload Authentic Valid File</strong> (Guaranteed Accepted)</span>
+          <span style="font-size:0.75rem; color:#34d399;">Upload &rarr;</span>
+        </button>
+
+        <button class="scenario-btn" onclick="executeUpload('blurry')">
+          <span>⚠️ <strong>Blurry / Illegible Scan</strong> (Triggers polite re-upload)</span>
+          <span style="font-size:0.75rem; color:#fbbf24;">Re-upload &rarr;</span>
+        </button>
+
+        <button class="scenario-btn" onclick="executeUpload('wrong_type')">
+          <span>❌ <strong>Wrong Document Type</strong> (Utility bill instead &rarr; Reject)</span>
+          <span style="font-size:0.75rem; color:#f87171;">Reject &rarr;</span>
+        </button>
+
+        <div style="font-size:0.75rem; color:var(--text-muted); margin-top:6px; padding:8px 12px; background:rgba(255,255,255,0.03); border-radius:6px; border:1px solid rgba(255,255,255,0.08); display:flex; align-items:center; justify-content:space-between;">
+          <span>📥 <strong>Download Sample to Device:</strong></span>
+          <div style="display:flex; gap:6px;">
+            <a id="modal-download-pdf" href="#" download class="sample-link" target="_blank">📄 PDF</a>
+            <a id="modal-download-png" href="#" download class="sample-link" target="_blank">🖼️ PNG</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Dedicated Document Viewer Modal -->
+  <div class="modal-overlay" id="doc-viewer-modal" style="display:none; z-index:2000;">
+    <div class="modal" style="width: 820px; max-width: 95vw; max-height: 92vh; display:flex; flex-direction:column; padding:20px;">
+      <div class="modal-header" style="margin-bottom:12px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:1.3rem;">⚖️</span>
+          <div>
+            <div class="modal-title" id="viewer-title">Document Preview</div>
+            <div style="font-size:0.75rem; color:#93c5fd;" id="viewer-subtitle">Verified Sri Lankan Legal Document Template</div>
+          </div>
+        </div>
+        <button class="btn-close" onclick="closeDocViewerModal()">&times;</button>
+      </div>
+      <div style="flex:1; overflow:auto; background:#0b0f19; border-radius:10px; border:1px solid rgba(255,255,255,0.1); padding:16px; display:flex; justify-content:center; align-items:flex-start;">
+        <img id="viewer-img" src="" alt="Document Preview" style="max-width:100%; border-radius:6px; box-shadow:0 6px 24px rgba(0,0,0,0.8);" />
+      </div>
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-top:14px; flex-wrap:wrap; gap:10px;">
+        <div style="display:flex; gap:8px;">
+          <a id="viewer-download-pdf" href="#" download class="btn-header" style="text-decoration:none;">📥 Download PDF</a>
+          <a id="viewer-download-png" href="#" download class="btn-header" style="text-decoration:none;">🖼️ Download PNG</a>
+        </div>
+        <button id="viewer-upload-btn" class="btn-send" style="padding:8px 18px; font-size:0.85rem;" onclick="uploadCurrentViewedDoc()">
+          🚀 Attach &amp; Upload to Chat
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- All Sample Documents Gallery Modal -->
+  <div class="modal-overlay" id="all-samples-modal" style="display:none; z-index:1500;">
+    <div class="modal" style="width: 960px; max-width: 95vw; max-height: 90vh; display:flex; flex-direction:column; padding:22px;">
+      <div class="modal-header" style="margin-bottom:12px;">
+        <div style="display:flex; align-items:center; gap:10px;">
+          <span style="font-size:1.4rem;">📁</span>
+          <div>
+            <div class="modal-title">Sample Legal Documents Library (All 9 Templates)</div>
+            <div style="font-size:0.75rem; color:var(--text-muted);">Click <strong>View</strong> to inspect full document or <strong>Upload</strong> to submit to AI Agent</div>
+          </div>
+        </div>
+        <button class="btn-close" onclick="closeAllSamplesModal()">&times;</button>
+      </div>
+
+      <div style="flex:1; overflow-y:auto; padding-right:4px;">
+        <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap:14px;" id="all-samples-grid">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let currentSessionId = null;
+    let currentPhase = "UNDERSTAND_REQUEST";
+    let requiredDocs = [];
+    let selectedModalDoc = "NIC";
+
+    // Initialize on page load
+    window.addEventListener("DOMContentLoaded", async () => {
+      checkBackendHealth();
+      const savedSession = localStorage.getItem("legal_agent_session_id");
+      if (savedSession) {
+        await resumeSession(savedSession);
+      } else {
+        await startNewSession(true);
+      }
+    });
+
+    async function checkBackendHealth() {
+      try {
+        const res = await fetch("http://localhost:5000/api/documentation-services");
+        if (res.ok) {
+          document.getElementById("backend-dot").style.background = "#10b981";
+          document.getElementById("backend-status-text").innerText = "Backend Online";
+        } else {
+          setBackendOffline();
+        }
+      } catch (e) {
+        setBackendOffline();
+      }
+    }
+
+    function setBackendOffline() {
+      document.getElementById("backend-dot").style.background = "#f59e0b";
+      document.getElementById("backend-status-text").innerText = "Backend Offline";
+    }
+
+    async function resumeSession(sessionId) {
+      showTyping(true);
+      try {
+        const res = await fetch(`/api/agent/chat/${sessionId}/status`);
+        if (!res.ok) {
+          await startNewSession(true);
+          return;
+        }
+        const data = await res.json();
+        currentSessionId = sessionId;
+        document.getElementById("disp-session-id").innerText = currentSessionId;
+
+        const container = document.getElementById("messages-container");
+        container.innerHTML = "";
+
+        if (data.messages && data.messages.length > 0) {
+          data.messages.forEach(m => {
+            appendMessage(m.role, m.content);
+          });
+        }
+        updateStatus();
+      } catch (e) {
+        console.error("Error resuming session:", e);
+        await startNewSession(true);
+      } finally {
+        showTyping(false);
+      }
+    }
+
+    async function startNewSession(force = false) {
+      showTyping(true);
+      try {
+        const res = await fetch("/api/agent/chat/session", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ customer_id: "customer-" + Math.floor(Math.random() * 1000) })
+        });
+        const data = await res.json();
+        currentSessionId = data.session_id;
+        localStorage.setItem("legal_agent_session_id", currentSessionId);
+        document.getElementById("disp-session-id").innerText = currentSessionId;
+        
+        // Clear message log
+        const container = document.getElementById("messages-container");
+        container.innerHTML = "";
+
+        if (data.message) {
+          appendMessage("agent", data.message);
+        }
+        updateStatus();
+      } catch (e) {
+        console.error("Error creating session:", e);
+      } finally {
+        showTyping(false);
+      }
+    }
+
+    let isBusy = false;
+
+    async function selectService(serviceName) {
+      if (isBusy) return;
+      document.getElementById("chat-input").value = `I need help with ${serviceName}`;
+      await sendMessage();
+    }
+
+    async function sendMessage() {
+      if (isBusy) return;
+      const input = document.getElementById("chat-input");
+      const text = input.value.trim();
+      if (!text || !currentSessionId) return;
+
+      isBusy = true;
+      input.disabled = true;
+      appendMessage("client", text);
+      input.value = "";
+      showTyping(true);
+
+      try {
+        const res = await fetch(`/api/agent/chat/${currentSessionId}/message`, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ message: text })
+        });
+        const data = await res.json();
+        if (data.message) {
+          appendMessage("agent", data.message);
+        }
+        updateStatus();
+      } catch (e) {
+        appendMessage("agent", "❌ Connection error: Could not contact AI service.");
+      } finally {
+        showTyping(false);
+        input.disabled = false;
+        input.focus();
+        isBusy = false;
+      }
+    }
+
+    function sendQuickPrompt(text) {
+      document.getElementById("chat-input").value = text;
+      sendMessage();
+    }
+
+    async function updateStatus() {
+      if (!currentSessionId) return;
+      try {
+        const res = await fetch(`/api/agent/chat/${currentSessionId}/status`);
+        if (!res.ok) return;
+        const data = await res.json();
+
+        currentPhase = data.phase || "UNDERSTAND_REQUEST";
+        document.getElementById("phase-badge").innerText = currentPhase;
+        
+        const clientEl = document.getElementById("disp-client-name");
+        if (clientEl) clientEl.innerText = data.client_name || "—";
+        
+        document.getElementById("disp-service-name").innerText = data.service_name || "None";
+        document.getElementById("disp-request-id").innerText = data.request_id ? `#${data.request_id}` : "—";
+        document.getElementById("disp-approval").innerText = data.approval_status || "—";
+        
+        const clerkName = data.recommended_clerk_name || (data.recommended_clerk_id ? `Clerk #${data.recommended_clerk_id}` : "None");
+        const clerkEl = document.getElementById("disp-clerk");
+        if (clerkEl) clerkEl.innerText = clerkName;
+
+        requiredDocs = data.required_documents || [];
+        const provided = data.provided_documents || [];
+        const missing = data.missing_documents || [];
+
+        renderDocuments(requiredDocs, provided, missing);
+      } catch (e) {
+        console.error("Status update error:", e);
+      }
+    }
+
+    function renderDocuments(required, provided, missing) {
+      const container = document.getElementById("doc-list-container");
+
+      if (!required || required.length === 0) {
+        container.innerHTML = `
+          <div style="background:rgba(59,130,246,0.08);border:1px dashed var(--primary);border-radius:10px;padding:14px;text-align:center;">
+            <div style="font-weight:600;font-size:0.85rem;color:#93c5fd;margin-bottom:4px;">Step 1: Choose Legal Service</div>
+            <div style="font-size:0.75rem;color:var(--text-muted);margin-bottom:10px;">
+              To unlock document requirements, select a service:
+            </div>
+            <div style="display:flex;gap:6px;justify-content:center;flex-wrap:wrap;">
+              <button class="chip chip-action" onclick="selectService('Corporate Registration')">🏢 Corporate Registration</button>
+              <button class="chip chip-action" onclick="selectService('Property Transfer')">🏠 Property Transfer</button>
+              <button class="chip chip-action" onclick="selectService('Power of Attorney')">📜 Power of Attorney</button>
+              <button class="chip chip-action" onclick="selectService('Last Will and Testament')">📝 Last Will &amp; Testament</button>
+              <button class="chip chip-action" onclick="selectService('Commercial Lease Agreement')">📑 Commercial Lease</button>
+            </div>
+          </div>
+        `;
+        document.getElementById("doc-progress-count").innerText = "0 / 0";
+        return;
+      }
+
+      document.getElementById("doc-progress-count").innerText = `${provided.length} / ${required.length}`;
+      container.innerHTML = "";
+
+      required.forEach(doc => {
+        const isProvided = provided.includes(doc);
+        const statusClass = isProvided ? "status-accepted" : "status-pending";
+        const statusText = isProvided ? "✅ Accepted" : "⏳ Pending";
+        const sampleBase = sampleFileMap[doc] || "Original_Contract";
+
+        const row = document.createElement("div");
+        row.className = "doc-item";
+        row.innerHTML = `
+          <div class="doc-info">
+            <span class="doc-name">${escapeHtml(doc)}</span>
+            <div style="display:flex; align-items:center; gap:6px; margin-top:2px;">
+              <span class="doc-status-badge ${statusClass}">${statusText}</span>
+              <a href="/sample-documents/${sampleBase}.pdf" download class="sample-link" title="Download authentic sample PDF">📄 PDF</a>
+              <a href="/sample-documents/${sampleBase}.png" download class="sample-link" title="Download sample PNG image">🖼️ PNG</a>
+            </div>
+          </div>
+          <button class="btn-doc-upload" onclick="openUploadModal('${escapeHtml(doc)}')">
+            ${isProvided ? '🔄 Re-upload' : '📤 Upload'}
+          </button>
+        `;
+        container.appendChild(row);
+      });
+    }
+
+    const allSampleDocs = [
+      {
+        base: "NIC_Copy",
+        title: "National Identity Card (NIC)",
+        docType: "NIC",
+        desc: "Authentic Sri Lankan National Identity Card (Alexander Vance • 198512345678)",
+        category: "Identity Verification"
+      },
+      {
+        base: "Tenancy_Agreement",
+        title: "Commercial Lease & Tenancy Agreement",
+        docType: "Tenancy Agreement",
+        desc: "Complete 24-month commercial lease contract with covenants, rent, and notarial seal",
+        category: "Lease & Tenancy"
+      },
+      {
+        base: "Asset_Ownership_Proof",
+        title: "Certificate of Asset Ownership Proof",
+        docType: "Property Deed Copy",
+        desc: "Land Registry Title Certificate LRD/WP/Asset-9901 certifying absolute title",
+        category: "Title & Property"
+      },
+      {
+        base: "Power_of_Attorney_Draft",
+        title: "General Power of Attorney Deed",
+        docType: "Power of Attorney Draft",
+        desc: "Notarized power of attorney appointing legal agent with full representation powers",
+        category: "Authorization"
+      },
+      {
+        base: "Draft_Will_Agreement",
+        title: "Last Will & Testament Declaration",
+        docType: "Draft Will Agreement",
+        desc: "Last will agreement appointing executor, asset distribution, and 2 witness attestations",
+        category: "Estate & Testament"
+      },
+      {
+        base: "Completed_Affidavit_Draft",
+        title: "Sworn Legal Affidavit Draft",
+        docType: "Completed Affidavit Draft",
+        desc: "Official statutory declaration attested before Justice of the Peace & Commissioner of Oaths",
+        category: "Sworn Statements"
+      },
+      {
+        base: "Witness_Details",
+        title: "Witness Identification & Attestation",
+        docType: "Witness Details",
+        desc: "Identity declarations and signatures of independent legal attesting witnesses",
+        category: "Witness Proof"
+      },
+      {
+        base: "Original_Contract",
+        title: "Original Contract of Sale & Transfer",
+        docType: "Original Contract",
+        desc: "Deed of transfer and land conveyance contract with notary attestation",
+        category: "Contracts & Conveyance"
+      },
+      {
+        base: "Amendment_Request_Letter",
+        title: "Contract Amendment Request Letter",
+        docType: "Amendment Request Letter",
+        desc: "Formal request specifying clause amendments and mutual consideration",
+        category: "Contract Amendments"
+      }
+    ];
+
+    const sampleFileMap = {
+      "Original Contract": "Original_Contract",
+      "Amendment Request Letter": "Amendment_Request_Letter",
+      "NIC Copy": "NIC_Copy",
+      "NIC": "NIC_Copy",
+      "Completed Affidavit Draft": "Completed_Affidavit_Draft",
+      "Witness Details": "Witness_Details",
+      "Principal NIC": "NIC_Copy",
+      "Attorney NIC": "NIC_Copy",
+      "Power of Attorney Draft": "Power_of_Attorney_Draft",
+      "Testator NIC": "NIC_Copy",
+      "Draft Will Agreement": "Draft_Will_Agreement",
+      "Asset Ownership Proof": "Asset_Ownership_Proof",
+      "Landlord NIC": "NIC_Copy",
+      "Tenancy Agreement": "Tenancy_Agreement",
+      "Property Deed Copy": "Asset_Ownership_Proof"
+    };
+
+    let currentlyViewedDoc = null;
+
+    function openAllSamplesModal() {
+      const grid = document.getElementById("all-samples-grid");
+      if (!grid) return;
+      grid.innerHTML = "";
+
+      allSampleDocs.forEach(doc => {
+        const card = document.createElement("div");
+        card.style.cssText = "background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.09); border-radius:12px; padding:12px; display:flex; flex-direction:column; gap:10px; transition:all 0.2s;";
+        card.innerHTML = `
+          <div style="display:flex; gap:10px; cursor:pointer;" onclick="viewDocumentPreview('${doc.base}', '${escapeHtml(doc.title)}', '${escapeHtml(doc.docType)}')">
+            <img src="/sample-documents/${doc.base}.png" alt="${escapeHtml(doc.title)}" style="width:52px; height:68px; object-fit:cover; border-radius:6px; border:1px solid rgba(255,255,255,0.15);" />
+            <div style="flex:1; min-width:0;">
+              <span style="font-size:0.68rem; font-weight:700; color:#fbbf24; text-transform:uppercase; background:rgba(245,158,11,0.12); padding:2px 6px; border-radius:4px;">${escapeHtml(doc.category)}</span>
+              <div style="font-size:0.85rem; font-weight:700; color:#fff; margin-top:3px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHtml(doc.title)}</div>
+              <div style="font-size:0.72rem; color:var(--text-muted); line-height:1.3; margin-top:2px; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden;">${escapeHtml(doc.desc)}</div>
+            </div>
+          </div>
+          <div style="display:flex; justify-content:space-between; align-items:center; gap:6px; margin-top:auto; padding-top:6px; border-top:1px solid rgba(255,255,255,0.06);">
+            <button class="btn-header" style="padding:4px 8px; font-size:0.72rem;" onclick="viewDocumentPreview('${doc.base}', '${escapeHtml(doc.title)}', '${escapeHtml(doc.docType)}')">👁️ View</button>
+            <a href="/sample-documents/${doc.base}.pdf" download class="sample-link" style="padding:4px 8px; font-size:0.72rem;">📥 PDF</a>
+            <button class="btn-send" style="padding:4px 10px; font-size:0.72rem; border-radius:6px;" onclick="uploadSpecificSampleDoc('${doc.base}', '${escapeHtml(doc.docType)}')">🚀 Upload</button>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+
+      document.getElementById("all-samples-modal").style.display = "flex";
+    }
+
+    function closeAllSamplesModal() {
+      document.getElementById("all-samples-modal").style.display = "none";
+    }
+
+    function viewDocumentPreview(baseName, title, docType) {
+      currentlyViewedDoc = { base: baseName, title: title || baseName, docType: docType || title || "Document" };
+      document.getElementById("viewer-title").innerText = title || baseName;
+      document.getElementById("viewer-subtitle").innerText = docType ? `Verified Document Template: ${docType}` : "Verified Sri Lankan Legal Document Template";
+      document.getElementById("viewer-img").src = `/sample-documents/${baseName}.png`;
+      document.getElementById("viewer-download-pdf").href = `/sample-documents/${baseName}.pdf`;
+      document.getElementById("viewer-download-png").href = `/sample-documents/${baseName}.png`;
+      document.getElementById("doc-viewer-modal").style.display = "flex";
+    }
+
+    function closeDocViewerModal() {
+      document.getElementById("doc-viewer-modal").style.display = "none";
+    }
+
+    async function uploadCurrentViewedDoc() {
+      if (!currentlyViewedDoc) return;
+      closeDocViewerModal();
+      closeAllSamplesModal();
+      await uploadSpecificSampleDoc(currentlyViewedDoc.base, currentlyViewedDoc.docType);
+    }
+
+    async function uploadSpecificSampleDoc(baseName, docType) {
+      const url = `/sample-documents/${baseName}.pdf`;
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Could not fetch sample document");
+        const blob = await res.blob();
+        const file = new File([blob], `${baseName}.pdf`, { type: "application/pdf" });
+
+        selectedModalDoc = docType || "Document";
+        const docSelect = document.getElementById("modal-doc-select");
+        if (docSelect) docSelect.value = selectedModalDoc;
+
+        await executeRealFileUpload(file);
+      } catch (err) {
+        console.error("Failed to load sample:", err);
+        executeUpload("valid");
+      }
+    }
+
+    function updateModalDownloadLinks(docType) {
+      const base = sampleFileMap[docType] || "Original_Contract";
+      const pdfLink = document.getElementById("modal-download-pdf");
+      const pngLink = document.getElementById("modal-download-png");
+      if (pdfLink) pdfLink.href = `/sample-documents/${base}.pdf`;
+      if (pngLink) pngLink.href = `/sample-documents/${base}.png`;
+    }
+
+    function openUploadModal(docType) {
+      const modal = document.getElementById("upload-modal");
+      const select = document.getElementById("modal-doc-select");
+      select.innerHTML = "";
+
+      const availableDocs = requiredDocs.length > 0 ? requiredDocs : ["NIC", "Proof of Address", "Completed Affidavit Draft"];
+
+      availableDocs.forEach(d => {
+        const opt = document.createElement("option");
+        opt.value = d;
+        opt.innerText = d;
+        if (d === docType) opt.selected = true;
+        select.appendChild(opt);
+      });
+
+      selectedModalDoc = docType || select.value || "NIC";
+      document.getElementById("modal-target-doc").innerText = selectedModalDoc;
+      document.getElementById("file-label-text").innerText = "Choose real file (.pdf, .png, .jpg)";
+      document.getElementById("real-file-input").value = "";
+
+      updateModalDownloadLinks(selectedModalDoc);
+
+      const tip = document.getElementById("modal-service-tip");
+      if (tip) {
+        tip.style.display = requiredDocs.length === 0 ? "block" : "none";
+      }
+
+      modal.style.display = "flex";
+    }
+
+    async function uploadSampleDocument() {
+      const docType = document.getElementById("modal-doc-select").value || selectedModalDoc;
+      const base = sampleFileMap[docType] || "Original_Contract";
+      const url = `/sample-documents/${base}.pdf`;
+
+      try {
+        const res = await fetch(url);
+        if (!res.ok) throw new Error("Could not fetch sample document");
+        const blob = await res.blob();
+        const file = new File([blob], `${base}.pdf`, { type: "application/pdf" });
+        await executeRealFileUpload(file);
+      } catch (err) {
+        console.error("Failed to load sample:", err);
+        executeUpload("valid");
+      }
+    }
+
+    function closeUploadModal() {
+      document.getElementById("upload-modal").style.display = "none";
+    }
+
+    function handleRealFileChosen(input) {
+      if (input.files && input.files[0]) {
+        const file = input.files[0];
+        document.getElementById("file-label-text").innerText = `Selected: ${file.name}`;
+        // Automatically execute upload with this real file
+        executeRealFileUpload(file);
+      }
+    }
+
+    function formatFileSize(bytes) {
+      if (!bytes || bytes <= 0) return "";
+      if (bytes < 1024) return bytes + " B";
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + " KB";
+      return (bytes / (1024 * 1024)).toFixed(1) + " MB";
+    }
+
+    function appendDocumentMessage(role, docType, fileName, fileSize, previewUrl, badge) {
+      const container = document.getElementById("messages-container");
+      const row = document.createElement("div");
+      row.className = `msg-row ${role}`;
+
+      const avatar = document.createElement("div");
+      avatar.className = "avatar";
+      avatar.innerText = role === "agent" ? "⚖️" : "👤";
+
+      const bubble = document.createElement("div");
+      bubble.className = "msg-bubble";
+
+      const isImage = previewUrl || (fileName && /\.(png|jpg|jpeg|webp)$/i.test(fileName));
+      const isPdf = fileName && /\.pdf$/i.test(fileName);
+      let icon = isImage ? "🖼️" : (isPdf ? "📑" : "📄");
+
+      const matchedSample = sampleFileMap[docType] || sampleFileMap[fileName] || (allSampleDocs.find(s => (fileName && fileName.includes(s.base)) || (docType && docType.toLowerCase().includes(s.docType.toLowerCase()))))?.base;
+      let viewBtnHtml = "";
+      if (matchedSample) {
+        viewBtnHtml = `<button onclick="viewDocumentPreview('${matchedSample}', '${escapeHtml(fileName || docType)}', '${escapeHtml(docType)}')" class="sample-link" style="margin-top:6px; cursor:pointer; display:inline-flex; align-items:center; gap:4px; font-size:0.75rem; padding:3px 8px;">👁️ View Document Preview</button>`;
+      }
+
+      let html = `
+        <div style="font-size:0.75rem; color: #93c5fd; margin-bottom:4px; font-weight:500;">
+          📎 Uploaded Document
+        </div>
+        <div class="chat-doc-card">
+          <div class="doc-card-icon">${icon}</div>
+          <div class="doc-card-details">
+            <div class="doc-card-title">${escapeHtml(fileName || docType)}</div>
+            <div class="doc-card-meta">
+              <span style="font-weight:600; color:#e2e8f0;">${escapeHtml(docType)}</span>
+              ${fileSize ? `<span>•</span><span>${escapeHtml(fileSize)}</span>` : ''}
+              ${badge ? `<span>•</span><span style="color:#6ee7b7;">${escapeHtml(badge)}</span>` : ''}
+            </div>
+            ${viewBtnHtml}
+          </div>
+        </div>
+      `;
+
+      if (previewUrl) {
+        html += `<img src="${previewUrl}" class="doc-preview-img" alt="Document preview" onclick="window.open('${previewUrl}')" title="Click to view full image" style="cursor:zoom-in;" />`;
+      }
+
+      bubble.innerHTML = html;
+
+      const time = document.createElement("div");
+      time.className = "msg-time";
+      time.innerText = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      bubble.appendChild(time);
+
+      row.appendChild(avatar);
+      row.appendChild(bubble);
+      container.appendChild(row);
+
+      container.scrollTop = container.scrollHeight;
+    }
+
+    async function executeRealFileUpload(file) {
+      const docType = document.getElementById("modal-doc-select").value || selectedModalDoc;
+      closeUploadModal();
+
+      const sizeStr = formatFileSize(file.size);
+      const isImg = file.type && file.type.startsWith("image/");
+
+      if (isImg) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          appendDocumentMessage("client", docType, file.name, sizeStr, e.target.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        appendDocumentMessage("client", docType, file.name, sizeStr, null);
+      }
+
+      showTyping(true);
+
+      const formData = new FormData();
+      formData.append("file", file);
+      formData.append("doc_type", docType);
+
+      try {
+        const res = await fetch(`/api/agent/chat/${currentSessionId}/upload`, {
+          method: "POST",
+          body: formData
+        });
+        const data = await res.json();
+        if (data.message) {
+          appendMessage("agent", data.message);
+        }
+        updateStatus();
+      } catch (e) {
+        appendMessage("agent", "❌ Upload processing failed.");
+      } finally {
+        showTyping(false);
+      }
+    }
+
+    async function executeUpload(scenario) {
+      const docType = document.getElementById("modal-doc-select").value || selectedModalDoc;
+      closeUploadModal();
+
+      let scenarioLabel = `Simulated ${docType} (Valid Certified Copy)`;
+      let badge = "✅ Valid";
+      let size = "128 KB";
+
+      if (scenario === "blurry") {
+        scenarioLabel = `Simulated ${docType} (Blurry / Low Resolution Scan)`;
+        badge = "⚠️ Blurry";
+        size = "45 KB";
+      } else if (scenario === "wrong_type") {
+        scenarioLabel = `Simulated Utility Bill (Unrelated Document)`;
+        badge = "❌ Wrong Doc";
+        size = "62 KB";
+      }
+
+      appendDocumentMessage("client", docType, scenarioLabel, size, null, badge);
+      showTyping(true);
+
+      const formData = new FormData();
+      formData.append("doc_type", docType);
+      formData.append("scenario", scenario);
+
+      try {
+        const res = await fetch(`/api/agent/chat/${currentSessionId}/upload`, {
+          method: "POST",
+          body: formData
+        });
+        const data = await res.json();
+        if (data.message) {
+          appendMessage("agent", data.message);
+        }
+        updateStatus();
+      } catch (e) {
+        appendMessage("agent", "❌ Upload processing failed.");
+      } finally {
+        showTyping(false);
+      }
+    }
+
+    function appendMessage(role, content) {
+      if (typeof content === "string" && content.includes("📎 Uploaded document:")) {
+        const match = content.match(/📎 Uploaded document:\s*\*\*(.*?)\*\*\s*\((.*?)\)/);
+        if (match) {
+          appendDocumentMessage(role, match[1], match[2], "Ready", null);
+          return;
+        }
+      }
+
+      const container = document.getElementById("messages-container");
+      const row = document.createElement("div");
+      row.className = `msg-row ${role}`;
+
+      const avatar = document.createElement("div");
+      avatar.className = "avatar";
+      avatar.innerText = role === "agent" ? "⚖️" : "👤";
+
+      const bubble = document.createElement("div");
+      bubble.className = "msg-bubble";
+
+      bubble.innerHTML = renderFormattedChat(content);
+
+      // When the agent asks to upload documents, render interactive upload buttons directly in the chat bubble
+      if (role === "agent" && typeof content === "string") {
+        const isAskingUpload = /upload the following|please upload|still waiting for|was not accepted|re-upload/i.test(content);
+        
+        if (isAskingUpload) {
+          const allKnownDocs = [
+            "Original Contract",
+            "Amendment Request Letter",
+            "NIC Copy",
+            "NIC",
+            "Completed Affidavit Draft",
+            "Witness Details",
+            "Principal NIC",
+            "Attorney NIC",
+            "Power of Attorney Draft",
+            "Testator NIC",
+            "Draft Will Agreement",
+            "Asset Ownership Proof",
+            "Landlord NIC",
+            "Tenancy Agreement",
+            "Property Deed Copy"
+          ];
+          
+          let docsToOffer = [];
+          
+          // 1. Check for numbered list items like "1. **NIC**"
+          const listMatches = [...content.matchAll(/\d+\.\s+\*\*?([^*\n]+)\*\*?/g)];
+          if (listMatches.length > 0) {
+            docsToOffer = listMatches.map(m => m[1].trim());
+          } else {
+            // 2. Or check which known docs appear in the text
+            docsToOffer = allKnownDocs.filter(d => content.toLowerCase().includes(d.toLowerCase()));
+          }
+
+          const actionBox = document.createElement("div");
+          actionBox.className = "chat-upload-action-box";
+
+          const isRejection = content.includes("was not accepted");
+          const titleText = isRejection ? "Action Required — Re-upload Document:" : "Action Required — Upload Documents:";
+
+          let buttonsHtml = "";
+          if (docsToOffer.length > 0) {
+            docsToOffer.forEach(doc => {
+              const btnClass = isRejection ? "chat-btn-upload-item warn" : "chat-btn-upload-item";
+              const actionLabel = isRejection ? `🔄 Re-upload ${escapeHtml(doc)}` : `📤 Upload ${escapeHtml(doc)}`;
+              const sampleKey = sampleFileMap[doc] || (allSampleDocs.find(s => doc.toLowerCase().includes(s.docType.toLowerCase())) || {}).base || "Original_Contract";
+              buttonsHtml += `
+                <div style="display:inline-flex; align-items:center; gap:4px; margin-bottom:4px;">
+                  <button class="${btnClass}" onclick="openUploadModal('${escapeHtml(doc)}')">
+                    <span>${actionLabel}</span>
+                  </button>
+                  <button class="chat-btn-upload-item" style="background:rgba(59,130,246,0.15); border-color:rgba(59,130,246,0.35); color:#93c5fd;" onclick="viewDocumentPreview('${sampleKey}', '${escapeHtml(doc)}', '${escapeHtml(doc)}')">
+                    <span>👁️ View</span>
+                  </button>
+                </div>
+              `;
+            });
+            buttonsHtml += `
+              <div style="margin-top:4px;">
+                <button class="chat-btn-upload-item" style="background:rgba(245,158,11,0.12); border-color:rgba(245,158,11,0.35); color:#fbbf24;" onclick="openAllSamplesModal()">
+                  <span>📁 Browse All Sample Documents (9)</span>
+                </button>
+              </div>
+            `;
+          } else {
+            buttonsHtml = `
+              <button class="chat-btn-upload-item" onclick="openUploadModal()">
+                <span>📤 Open Document Uploader</span>
+              </button>
+              <button class="chat-btn-upload-item" style="background:rgba(245,158,11,0.12); border-color:rgba(245,158,11,0.35); color:#fbbf24;" onclick="openAllSamplesModal()">
+                <span>📁 Browse All Sample Documents (9)</span>
+              </button>
+            `;
+          }
+
+          actionBox.innerHTML = `
+            <div class="chat-upload-action-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2.5">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="17 8 12 3 7 8"></polyline>
+                <line x1="12" y1="3" x2="12" y2="15"></line>
+              </svg>
+              <span>${titleText}</span>
+            </div>
+            <div class="chat-action-btn-group">
+              ${buttonsHtml}
+            </div>
+          `;
+
+          bubble.appendChild(actionBox);
+        }
+      }
+
+      const time = document.createElement("div");
+      time.className = "msg-time";
+      time.innerText = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+      bubble.appendChild(time);
+
+      row.appendChild(avatar);
+      row.appendChild(bubble);
+      container.appendChild(row);
+
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function showTyping(show) {
+      document.getElementById("typing-indicator").style.display = show ? "flex" : "none";
+      if (show) {
+        const container = document.getElementById("messages-container");
+        container.scrollTop = container.scrollHeight;
+      }
+    }
+
+    function copySessionId() {
+      if (!currentSessionId) return;
+      navigator.clipboard.writeText(currentSessionId);
+      alert("Session ID copied: " + currentSessionId);
+    }
+
+    function renderFormattedChat(content) {
+      if (!content) return "";
+      let html = escapeHtml(content);
+
+      // Horizontal dividers (---)
+      html = html.replace(/(?:^|\n)\s*---\s*(?:\n|$)/g, '<hr class="chat-divider">');
+
+      // Headings
+      html = html.replace(/(?:^|\n)###\s+([^\n]+)/g, '<div style="font-weight:700; color:#93c5fd; font-size:0.95rem; margin:10px 0 4px 0;">$1</div>');
+      html = html.replace(/(?:^|\n)##\s+([^\n]+)/g, '<div style="font-weight:700; color:#fff; font-size:1.05rem; margin:12px 0 6px 0;">$1</div>');
+
+      // Bold & Italic
+      html = html.replace(/\*\*\*(.*?)\*\*\*/g, '<strong><em>$1</em></strong>');
+      html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+      html = html.replace(/\*([^\*\n]+)\*/g, '<em>$1</em>');
+      html = html.replace(/_([^_\n]+)_/g, '<em>$1</em>');
+
+      // Numbered list items: e.g. "1. Item" or " 1. Item"
+      html = html.replace(/(?:^|\n)\s*(\d+)\.\s+([^\n]+)/g, '<div class="chat-list-row"><span class="chat-list-num">$1.</span><span class="chat-list-text">$2</span></div>');
+
+      // Bullet items: e.g. "• Item", "  • Item", "- Item", "* Item"
+      html = html.replace(/(?:^|\n)\s*[•\-\*]\s+([^\n]+)/g, '<div class="chat-list-row"><span class="chat-list-bullet">•</span><span class="chat-list-text">$1</span></div>');
+
+      // Multiple newlines to paragraph spacing
+      html = html.replace(/\n\n+/g, '<div class="chat-p-gap"></div>');
+
+      // Remaining newlines to <br>
+      html = html.replace(/\n/g, '<br>');
+
+      return html;
+    }
+
+    function escapeHtml(str) {
+      return (str || "").replace(/[&<>"']/g, m => ({
+        "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#039;"
+      })[m]);
+    }
+  </script>
+</body>
+</html>

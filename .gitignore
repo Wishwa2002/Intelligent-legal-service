@@ -482,3 +482,41 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+.venv/
+.pytest_cache/
+ai-service/data/sessions/*.json
+ai-service/scratch/
+*.env
+!*.env.example
+
+# Node / Frontend
+node_modules/
+frontend/dist/
+frontend/build/
+.npm
+*.log
+
+# Flutter / Dart
+.dart_tool/
+mobile/build/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/.pub-cache/
+mobile/.pub/
+
+# Credentials & Database dumps
+*.txt
+!requirements.txt
+!README*.txt
+!license*.txt

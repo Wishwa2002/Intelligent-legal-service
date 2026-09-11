@@ -66,6 +66,13 @@ public class ApplicationDbContext : DbContext
             .HasIndex(u => u.Email)
             .IsUnique();
 
+        // Prevent EF Core from creating shadow 'UserId' foreign key on DocumentationRequests and Clerks
+        modelBuilder.Entity<User>()
+            .Ignore(u => u.DocumentationRequests);
+
+        modelBuilder.Entity<User>()
+            .Ignore(u => u.Clerk);
+
         modelBuilder.Entity<Role>()
             .HasIndex(r => r.Name)
             .IsUnique();
@@ -213,15 +220,9 @@ public class ApplicationDbContext : DbContext
         // 5. CLERK AND DOCUMENTATION CONFIG
         // ==========================================
 
-        // 1:0..1 relationship between User and Clerk
+        // 1:0..1 relationship between User and Clerk — REMOVED (DB uses int PK, no FK to Users)
         modelBuilder.Entity<Clerk>()
             .HasKey(c => c.ClerkId);
-
-        modelBuilder.Entity<Clerk>()
-            .HasOne(c => c.User)
-            .WithOne(u => u.Clerk)
-            .HasForeignKey<Clerk>(c => c.ClerkId)
-            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<DocumentationService>()
             .HasKey(ds => ds.ServiceId);
@@ -230,14 +231,24 @@ public class ApplicationDbContext : DbContext
             .HasIndex(ds => ds.Name)
             .IsUnique();
 
+        modelBuilder.Entity<DocumentationService>()
+            .Property(ds => ds.IsActive)
+            .HasDefaultValue(true);
+
+        modelBuilder.Entity<DocumentationService>()
+            .HasIndex(ds => ds.IsActive);
+
         modelBuilder.Entity<DocumentationRequest>()
             .HasKey(dr => dr.RequestId);
 
         modelBuilder.Entity<DocumentationRequest>()
-            .HasOne(dr => dr.Customer)
-            .WithMany(u => u.DocumentationRequests)
-            .HasForeignKey(dr => dr.CustomerId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .Property(dr => dr.RequestId)
+            .ValueGeneratedOnAdd();
+
+        // Map ClerkId FK column name to match DB column "ClerkId" (not "AssignedClerkId")
+        modelBuilder.Entity<DocumentationRequest>()
+            .Property(dr => dr.AssignedClerkId)
+            .HasColumnName("ClerkId");
 
         modelBuilder.Entity<DocumentationRequest>()
             .HasOne(dr => dr.DocumentationService)
@@ -266,6 +277,15 @@ public class ApplicationDbContext : DbContext
             .HasForeignKey(df => df.RequestId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        modelBuilder.Entity<DocumentFile>()
+            .HasIndex(df => df.RequestId);
+
+        modelBuilder.Entity<DocumentFile>()
+            .Property(df => df.DocumentStatus)
+            .HasDefaultValue("Received");
+
+        modelBuilder.Entity<DocumentFile>()
+            .HasIndex(df => df.DocumentStatus);
 
         // ==========================================
         // 6. CAREER MANAGEMENT CONFIG
@@ -455,9 +475,30 @@ public class ApplicationDbContext : DbContext
         );
 
         modelBuilder.Entity<DocumentationService>().HasData(
-            new DocumentationService { ServiceId = 1, Name = "Contract Review & Amendment", Description = "Reviewing lease/sales agreements and drafting amendments." },
-            new DocumentationService { ServiceId = 2, Name = "Affidavit & Notary Services", Description = "Drafting affidavits and arranging official notarization." },
-            new DocumentationService { ServiceId = 3, Name = "Power of Attorney Drafting", Description = "Drafting General or Special Power of Attorney documents." }
+            new DocumentationService
+            {
+                ServiceId = 1,
+                Name = "Contract Review & Amendment",
+                Description = "Reviewing lease/sales agreements and drafting amendments.",
+                IsActive = true,
+                RequiredDocuments = "[\"Original Contract\",\"Amendment Request Letter\",\"NIC Copy\"]"
+            },
+            new DocumentationService
+            {
+                ServiceId = 2,
+                Name = "Affidavit & Notary Services",
+                Description = "Drafting affidavits and arranging official notarization.",
+                IsActive = true,
+                RequiredDocuments = "[\"NIC\",\"Completed Affidavit Draft\",\"Witness Details\"]"
+            },
+            new DocumentationService
+            {
+                ServiceId = 3,
+                Name = "Power of Attorney Drafting",
+                Description = "Drafting General or Special Power of Attorney documents.",
+                IsActive = true,
+                RequiredDocuments = "[\"NIC of Grantor\",\"NIC of Grantee\",\"Scope of Authority Document\"]"
+            }
         );
     }
 }
