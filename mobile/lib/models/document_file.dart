@@ -30,7 +30,7 @@ class DocumentFile {
       fileSize: json['fileSize'] is int ? json['fileSize'] : int.tryParse(json['fileSize']?.toString() ?? '0') ?? 0,
       documentStatus: json['documentStatus']?.toString() ?? 'PENDING',
       verificationScore: json['verificationScore'] != null ? double.tryParse(json['verificationScore'].toString()) : null,
-      rejectionReason: json['rejectionReason']?.toString(),
+      rejectionReason: json['rejectionReason']?.toString() ?? json['rejectReason']?.toString(),
       uploadDate: json['uploadDate'] != null ? DateTime.tryParse(json['uploadDate'].toString()) : null,
     );
   }

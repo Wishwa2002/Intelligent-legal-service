@@ -16,6 +16,7 @@ class DocumentationRequest {
   final List<String> requiredDocuments;
   final List<String> missingDocuments;
   final List<DocumentFile> documentFiles;
+  final String? reuploadNote;
 
   DocumentationRequest({
     required this.requestId,
@@ -33,6 +34,7 @@ class DocumentationRequest {
     this.requiredDocuments = const [],
     this.missingDocuments = const [],
     this.documentFiles = const [],
+    this.reuploadNote,
   });
 
   factory DocumentationRequest.fromJson(Map<String, dynamic> json) {
@@ -59,6 +61,7 @@ class DocumentationRequest {
       requiredDocuments: (json['requiredDocuments'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? [],
       missingDocuments: (json['missingDocuments'] as List<dynamic>?)?.map((e) => e.toString()).toList() ?? [],
       documentFiles: filesList,
+      reuploadNote: json['reuploadNote']?.toString(),
     );
   }
 }

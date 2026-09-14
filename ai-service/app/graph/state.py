@@ -82,6 +82,25 @@ class AgentState(TypedDict):
     client_name: str | None
     pending_agent_question: str | None
 
+    # ---- Hybrid Retrieval & Self-Correction ----
+    search_query: str | None
+    retrieved_documents: list[dict]
+    retrieved_context: str | None
+    retrieval_grade: dict | None
+    retrieval_retry_count: int
+
+    # ---- Document Router & Completeness ----
+    document_intent: dict | None
+    missing_documents: list[str]
+    completeness_result: dict | None
+
+    # ---- Recommendation & Human Gate ----
+    clerk_recommendation_report: dict | None
+    assignment_source: str | None
+    workflow_status: str | None
+    case_id: str | None
+    human_gate_payload: dict | None
+
 
 def initial_state(session_id: str, customer_id: str, workflow_id: str) -> AgentState:
     """Returns a blank initial AgentState for a new session."""
@@ -108,4 +127,18 @@ def initial_state(session_id: str, customer_id: str, workflow_id: str) -> AgentS
         audit_log=[],
         client_name=None,
         pending_agent_question=None,
+        search_query=None,
+        retrieved_documents=[],
+        retrieved_context=None,
+        retrieval_grade=None,
+        retrieval_retry_count=0,
+        document_intent=None,
+        missing_documents=[],
+        completeness_result=None,
+        clerk_recommendation_report=None,
+        assignment_source=None,
+        workflow_status="ACTIVE",
+        case_id=None,
+        human_gate_payload=None,
     )
+

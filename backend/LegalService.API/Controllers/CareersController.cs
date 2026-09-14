@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LegalService.API.DTOs.Requests;
@@ -30,8 +29,8 @@ public class CareersController : ControllerBase
     /// <summary>
     /// Get career posting by ID.
     /// </summary>
-    [HttpGet("{id:guid}")]
-    public async Task<IActionResult> GetById(Guid id)
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetById(int id)
     {
         var career = await _careerService.GetCareerByIdAsync(id);
         if (career == null)
@@ -56,8 +55,8 @@ public class CareersController : ControllerBase
     /// <summary>
     /// Update an existing career opening.
     /// </summary>
-    [HttpPut("{id:guid}")]
-    public async Task<IActionResult> Update(Guid id, [FromBody] UpdateCareerRequest request)
+    [HttpPut("{id:int}")]
+    public async Task<IActionResult> Update(int id, [FromBody] UpdateCareerRequest request)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
@@ -72,13 +71,13 @@ public class CareersController : ControllerBase
     /// <summary>
     /// Delete a career opening.
     /// </summary>
-    [HttpDelete("{id:guid}")]
-    public async Task<IActionResult> Delete(Guid id)
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
     {
         var success = await _careerService.DeleteCareerAsync(id);
         if (!success)
             return NotFound(new { message = $"Career with ID '{id}' was not found." });
 
-        return Ok(new { message = "Career opening deleted successfully." });
+        return NoContent();
     }
 }

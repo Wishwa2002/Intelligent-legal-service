@@ -82,7 +82,12 @@ if (app.Environment.IsDevelopment())
 
 app.UseCors("AllowAll");
 
-app.UseHttpsRedirection();
+// Only redirect to HTTPS in production – in dev the HTTPS port is not configured,
+// causing mobile HTTP requests to hang on the 307 redirect.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 app.UseAuthorization();
 

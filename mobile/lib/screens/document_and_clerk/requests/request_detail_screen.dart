@@ -4,6 +4,8 @@ import '../../../config/app_theme.dart';
 import '../../../models/documentation_request.dart';
 import '../../../services/documentation_service.dart';
 import '../../../services/document_file_service.dart';
+import '../../../services/document_and_clerk/sample_document_service.dart';
+import '../../../widgets/sample_document_picker_dialog.dart';
 import '../../../widgets/status_badge.dart';
 import '../../../widgets/document_upload_card.dart';
 
@@ -52,7 +54,156 @@ class _RequestDetailScreenState extends State<RequestDetailScreen> {
     }
   }
 
-  Future<void> _handleUploadFile() async {
+  Future<void> _handleUploadFile([String? targetDocType]) async {
+    final matchingSample = SampleDocumentService.getMatchingSample(
+      targetDocType ??
+          (_request?.missingDocuments.isNotEmpty == true
+              ? _request!.missingDocuments.first
+              : _request?.documentType),
+    );
+
+    final choice = await showModalBottomSheet<String>(
+      context: context,
+      backgroundColor: Colors.white,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (ctx) => SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Center(
+                child: Container(
+                  width: 36,
+                  height: 4,
+                  decoration: BoxDecoration(
+                    color: Colors.grey.shade300,
+                    borderRadius: BorderRadius.circular(2),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 14),
+              const Text(
+                'Upload Document',
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16, color: AppTheme.primaryNavy),
+              ),
+              const SizedBox(height: 4),
+              const Text(
+                'Select a verified sample legal document or upload from your device.',
+                style: TextStyle(fontSize: 12, color: AppTheme.textMuted),
+              ),
+              const SizedBox(height: 16),
+
+              if (matchingSample != null) ...[
+                ListTile(
+                  leading: Container(
+                    padding: const EdgeInsets.all(10),
+                    decoration: BoxDecoration(
+                      color: AppTheme.secondaryAmber.withAlpha(40),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: const Icon(Icons.verified, color: Color(0xFFD97706)),
+                  ),
+                  title: Text('Use Sample: ${matchingSample.title}',
+                      style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                  subtitle: Text('Fast verified document (${matchingSample.fileName})',
+                      style: const TextStyle(fontSize: 11, color: AppTheme.textMuted)),
+                  trailing: const Icon(Icons.arrow_forward_ios, size: 14, color: AppTheme.textMuted),
+                  onTap: () => Navigator.pop(ctx, 'direct_sample'),
+                ),
+                const Divider(height: 1),
+              ],
+
+              ListTile(
+                leading: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.blue.withAlpha(30),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(Icons.library_books_rounded, color: Colors.blue),
+                ),
+                title: const Text('Browse All Sample Documents',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                subtitle: const Text('Choose from 9 pre-verified legal templates',
+                    style: TextStyle(fontSize: 11, color: AppTheme.textMuted)),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 14, color: AppTheme.textMuted),
+                onTap: () => Navigator.pop(ctx, 'browse_sample'),
+              ),
+              const Divider(height: 1),
+
+              ListTile(
+                leading: Container(
+                  padding: const EdgeInsets.all(10),
+                  decoration: BoxDecoration(
+                    color: Colors.purple.withAlpha(30),
+                    borderRadius: BorderRadius.circular(10),
+                  ),
+                  child: const Icon(Icons.folder_open_rounded, color: Colors.purple),
+                ),
+                title: const Text('Choose from Device (PDF or Photo)',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 13)),
+                subtitle: const Text('Select a file or take a picture from your device',
+                    style: TextStyle(fontSize: 11, color: AppTheme.textMuted)),
+                trailing: const Icon(Icons.arrow_forward_ios, size: 14, color: AppTheme.textMuted),
+                onTap: () => Navigator.pop(ctx, 'device'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+
+    if (choice == null) return;
+
+    if (choice == 'direct_sample' && matchingSample != null) {
+      await _uploadSample(matchingSample);
+    } else if (choice == 'browse_sample') {
+      if (!mounted) return;
+      final sample = await showSampleDocumentPickerSheet(context, targetDocType: targetDocType);
+      if (sample != null) {
+        await _uploadSample(sample);
+      }
+    } else if (choice == 'device') {
+      await _pickAndUploadDeviceFile();
+    }
+  }
+
+  Future<void> _uploadSample(SampleDocument sample) async {
+    setState(() => _uploading = true);
+    try {
+      await SampleDocumentService.uploadSampleDocument(
+        requestId: widget.requestId,
+        sample: sample,
+      );
+
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Sample "${sample.title}" uploaded successfully!'),
+            backgroundColor: AppTheme.statusCompleted,
+          ),
+        );
+      }
+      await _loadDetails();
+    } catch (e) {
+      if (mounted) {
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            content: Text('Failed to upload sample: $e'),
+            backgroundColor: AppTheme.statusRequiresDocs,
+          ),
+        );
+      }
+    } finally {
+      if (mounted) setState(() => _uploading = false);
+    }
+  }
+
+  Future<void> _pickAndUploadDeviceFile() async {
     final file = await DocumentFileService.pickDocument();
     if (file == null) return;
 
@@ -267,8 +418,90 @@ class _RequestDetailScreenState extends State<RequestDetailScreen> {
                             const SizedBox(height: 16),
                           ],
 
+                          // Action Required: Re-upload / Upload Document Requested by Clerk or Admin
+                          if (_request!.reuploadNote != null && _request!.reuploadNote!.isNotEmpty) ...[
+                            Container(
+                              padding: const EdgeInsets.all(16),
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFFFFBEB),
+                                borderRadius: BorderRadius.circular(14),
+                                border: Border.all(color: const Color(0xFFFDE68A), width: 1.5),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: Colors.amber.withAlpha(20),
+                                    blurRadius: 8,
+                                    offset: const Offset(0, 3),
+                                  ),
+                                ],
+                              ),
+                              child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Row(
+                                    children: [
+                                      Container(
+                                        padding: const EdgeInsets.all(6),
+                                        decoration: BoxDecoration(
+                                          color: const Color(0xFFD97706),
+                                          borderRadius: BorderRadius.circular(8),
+                                        ),
+                                        child: const Icon(Icons.notification_important_rounded, color: Colors.white, size: 20),
+                                      ),
+                                      const SizedBox(width: 10),
+                                      const Expanded(
+                                        child: Text(
+                                          'Action Required: Document Requested',
+                                          style: TextStyle(
+                                            fontWeight: FontWeight.bold,
+                                            fontSize: 14,
+                                            color: Color(0xFF92400E),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  const SizedBox(height: 10),
+                                  Text(
+                                    _request!.reuploadNote!,
+                                    style: const TextStyle(
+                                      fontSize: 13,
+                                      color: Color(0xFF78350F),
+                                      fontWeight: FontWeight.w600,
+                                      height: 1.4,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 12),
+                                  SizedBox(
+                                    width: double.infinity,
+                                    child: ElevatedButton.icon(
+                                      style: ElevatedButton.styleFrom(
+                                        backgroundColor: AppTheme.primaryNavy,
+                                        foregroundColor: AppTheme.secondaryAmber,
+                                        padding: const EdgeInsets.symmetric(vertical: 12),
+                                        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                                      ),
+                                      icon: _uploading
+                                          ? const SizedBox(
+                                              width: 16,
+                                              height: 16,
+                                              child: CircularProgressIndicator(strokeWidth: 2, color: AppTheme.secondaryAmber),
+                                            )
+                                          : const Icon(Icons.cloud_upload, size: 18),
+                                      label: Text(
+                                        _uploading ? 'Uploading Document...' : 'Upload / Replace Document',
+                                        style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 13),
+                                      ),
+                                      onPressed: _uploading ? null : _handleUploadFile,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            const SizedBox(height: 16),
+                          ],
+
                           // Missing documents alert
-                          if (_request!.missingDocuments.isNotEmpty) ...[
+                          if (_request!.missingDocuments.isNotEmpty && (_request!.reuploadNote == null || _request!.reuploadNote!.isEmpty)) ...[
                             Container(
                               padding: const EdgeInsets.all(14),
                               decoration: BoxDecoration(

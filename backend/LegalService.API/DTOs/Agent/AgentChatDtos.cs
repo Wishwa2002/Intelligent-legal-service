@@ -7,7 +7,7 @@ namespace LegalService.API.DTOs.Agent;
 public class CreateAgentChatSessionRequest
 {
     [JsonPropertyName("customerId")]
-    public Guid CustomerId { get; set; }
+    public string? CustomerId { get; set; }
 }
 
 public class CreateAgentChatSessionResponse

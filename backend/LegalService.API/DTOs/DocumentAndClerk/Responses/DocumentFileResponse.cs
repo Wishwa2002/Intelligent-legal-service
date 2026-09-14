@@ -10,5 +10,6 @@ public class DocumentFileResponse
     public string ContentType { get; set; } = string.Empty;
     public long FileSize { get; set; }
     public string DocumentStatus { get; set; } = string.Empty;
+    public string? RejectReason { get; set; }
     public DateTime UploadDate { get; set; }
 }

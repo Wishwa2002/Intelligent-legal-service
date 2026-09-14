@@ -30,7 +30,7 @@ public class CareerService : ICareerService
         return careers.Select(MapToResponse);
     }
 
-    public async Task<CareerResponse?> GetCareerByIdAsync(Guid careerId)
+    public async Task<CareerResponse?> GetCareerByIdAsync(int careerId)
     {
         var career = await _context.Careers
             .Include(c => c.JobApplications)
@@ -43,9 +43,10 @@ public class CareerService : ICareerService
     {
         var career = new Career
         {
-            CareerId = Guid.NewGuid(),
             JobTitle = request.JobTitle.Trim(),
-            Description = request.Description.Trim()
+            Description = request.Description.Trim(),
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
         };
 
         await _context.Careers.AddAsync(career);
@@ -54,7 +55,7 @@ public class CareerService : ICareerService
         return MapToResponse(career);
     }
 
-    public async Task<CareerResponse?> UpdateCareerAsync(Guid careerId, UpdateCareerRequest request)
+    public async Task<CareerResponse?> UpdateCareerAsync(int careerId, UpdateCareerRequest request)
     {
         var career = await _context.Careers
             .Include(c => c.JobApplications)
@@ -65,12 +66,13 @@ public class CareerService : ICareerService
 
         career.JobTitle = request.JobTitle.Trim();
         career.Description = request.Description.Trim();
+        career.UpdatedAt = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
         return MapToResponse(career);
     }
 
-    public async Task<bool> DeleteCareerAsync(Guid careerId)
+    public async Task<bool> DeleteCareerAsync(int careerId)
     {
         var career = await _context.Careers
             .Include(c => c.JobApplications)
@@ -84,7 +86,7 @@ public class CareerService : ICareerService
         return true;
     }
 
-    public async Task<IEnumerable<JobApplicationResponse>> GetAllApplicationsAsync(Guid? careerId = null)
+    public async Task<IEnumerable<JobApplicationResponse>> GetAllApplicationsAsync(int? careerId = null)
     {
         var query = _context.JobApplications
             .Include(ja => ja.Career)
@@ -95,11 +97,11 @@ public class CareerService : ICareerService
             query = query.Where(ja => ja.CareerId == careerId.Value);
         }
 
-        var apps = await query.OrderByDescending(ja => ja.AppliedAt).ToListAsync();
+        var apps = await query.OrderByDescending(ja => ja.CreatedAt).ToListAsync();
         return apps.Select(MapToResponse);
     }
 
-    public async Task<JobApplicationResponse?> GetApplicationByIdAsync(Guid applicationId)
+    public async Task<JobApplicationResponse?> GetApplicationByIdAsync(int applicationId)
     {
         var app = await _context.JobApplications
             .Include(ja => ja.Career)
@@ -118,11 +120,11 @@ public class CareerService : ICareerService
 
         var app = new JobApplication
         {
-            ApplicationId = Guid.NewGuid(),
             CareerId = request.CareerId,
             ApplicantName = request.ApplicantName.Trim(),
             Status = "Submitted",
-            AppliedAt = DateTime.UtcNow
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
         };
 
         await _context.JobApplications.AddAsync(app);
@@ -131,7 +133,7 @@ public class CareerService : ICareerService
         return (await GetApplicationByIdAsync(app.ApplicationId))!;
     }
 
-    public async Task<JobApplicationResponse?> UpdateApplicationStatusAsync(Guid applicationId, string status)
+    public async Task<JobApplicationResponse?> UpdateApplicationStatusAsync(int applicationId, string status)
     {
         var app = await _context.JobApplications
             .Include(ja => ja.Career)
@@ -141,6 +143,7 @@ public class CareerService : ICareerService
             return null;
 
         app.Status = status.Trim();
+        app.UpdatedAt = DateTime.UtcNow;
         await _context.SaveChangesAsync();
         return MapToResponse(app);
     }
@@ -152,7 +155,8 @@ public class CareerService : ICareerService
             CareerId = career.CareerId,
             JobTitle = career.JobTitle,
             Description = career.Description,
-            ApplicationsCount = career.JobApplications?.Count ?? 0
+            ApplicationsCount = career.JobApplications?.Count ?? 0,
+            CreatedAt = career.CreatedAt
         };
     }
 
@@ -165,7 +169,7 @@ public class CareerService : ICareerService
             JobTitle = app.Career?.JobTitle ?? string.Empty,
             ApplicantName = app.ApplicantName,
             Status = app.Status,
-            AppliedAt = app.AppliedAt
+            AppliedAt = app.CreatedAt
         };
     }
 }

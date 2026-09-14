@@ -96,4 +96,22 @@ public class DocumentationRequestsController : ControllerBase
 
         return Ok(updated);
     }
+
+    /// <summary>
+    /// Ask client to upload or re-upload a missing or incorrect document.
+    /// </summary>
+    [HttpPost("{id:int}/request-document")]
+    public async Task<IActionResult> RequestDocument(
+        int id,
+        [FromBody] RequestDocumentReuploadRequest request)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+
+        var updated = await _requestService.RequestDocumentReuploadAsync(id, request.DocumentName, request.Note, request.FileId);
+        if (updated == null)
+            return NotFound(new { message = $"Documentation request with ID '{id}' was not found." });
+
+        return Ok(updated);
+    }
 }

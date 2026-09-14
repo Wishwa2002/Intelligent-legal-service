@@ -29,12 +29,21 @@ from typing import Any
 from langgraph.graph import StateGraph, END
 
 from app.agents.clerk_recommendation import clerk_recommendation_node, replan_node
+from app.agents.completeness import missing_document_check_node
 from app.agents.document_analysis import document_analysis_node
 from app.agents.document_validation import (
     document_validation_node,
     check_document_completeness,
     generate_document_summary,
 )
+from app.agents.human_gate import human_gate_node, process_human_decision
+from app.agents.retrieval_agent import (
+    retrieve_requirements_node,
+    grade_requirements_node,
+    rewrite_query_node,
+    route_after_grading,
+)
+from app.agents.router import document_router_node
 from app.agents.supervisor import (
     understand_request_node,
     complete_node,
@@ -42,6 +51,7 @@ from app.agents.supervisor import (
 )
 from app.graph.routing import route_after_validation, route_after_admin_decision
 from app.graph.state import AgentState, initial_state
+
 
 logger = logging.getLogger(__name__)
 
@@ -118,12 +128,18 @@ def _build_graph() -> Any:
     graph = StateGraph(AgentState)
 
     # ---- Nodes ----
+    graph.add_node("document_router", document_router_node)
     graph.add_node("understand_request", understand_request_node)
+    graph.add_node("retrieve_requirements", retrieve_requirements_node)
+    graph.add_node("grade_requirements", grade_requirements_node)
+    graph.add_node("rewrite_query", rewrite_query_node)
+    graph.add_node("missing_document_check", missing_document_check_node)
     graph.add_node("check_document_completeness", check_document_completeness)
     graph.add_node("document_analysis", document_analysis_node)
     graph.add_node("document_validation", document_validation_node)
     graph.add_node("generate_document_summary", generate_document_summary)
     graph.add_node("clerk_recommendation", clerk_recommendation_node)
+    graph.add_node("human_gate", human_gate_node)
     graph.add_node("replan", replan_node)
     graph.add_node("complete", complete_node)
     graph.add_node("human_review", human_review_node)
@@ -137,6 +153,8 @@ def _build_graph() -> Any:
             return "generate_document_summary"
         elif phase == "AWAITING_ADMIN_APPROVAL" and state.get("last_admin_decision"):
             return "replan"
+        elif phase == "RETRIEVAL":
+            return "retrieve_requirements"
         return "understand_request"
 
     graph.set_conditional_entry_point(
@@ -145,12 +163,26 @@ def _build_graph() -> Any:
             "document_analysis": "document_analysis",
             "generate_document_summary": "generate_document_summary",
             "replan": "replan",
+            "retrieve_requirements": "retrieve_requirements",
             "understand_request": "understand_request",
         },
     )
 
     # ---- Edges ----
     graph.add_edge("understand_request", "check_document_completeness")
+
+    # Self-correction retrieval loop
+    graph.add_edge("retrieve_requirements", "grade_requirements")
+    graph.add_conditional_edges(
+        "grade_requirements",
+        route_after_grading,
+        {
+            "check_document_completeness": "check_document_completeness",
+            "rewrite_query": "rewrite_query",
+            "human_review": "human_review",
+        },
+    )
+    graph.add_edge("rewrite_query", "retrieve_requirements")
 
     # After completeness check: if missing → END (pause). If complete → summary
     graph.add_conditional_edges(
@@ -176,8 +208,9 @@ def _build_graph() -> Any:
     # After summary → clerk recommendation
     graph.add_edge("generate_document_summary", "clerk_recommendation")
 
-    # After clerk recommendation → END (pause for admin)
-    graph.add_edge("clerk_recommendation", END)
+    # After clerk recommendation → human gate → END (pause for admin decision)
+    graph.add_edge("clerk_recommendation", "human_gate")
+    graph.add_edge("human_gate", END)
 
     # After admin decision
     graph.add_conditional_edges(
@@ -194,6 +227,7 @@ def _build_graph() -> Any:
     graph.add_edge("human_review", END)
 
     return graph.compile()
+
 
 
 _compiled_graph = _build_graph()

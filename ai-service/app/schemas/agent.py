@@ -16,7 +16,8 @@ from pydantic import BaseModel, Field
 # ============================================================
 
 class CreateChatSessionRequest(BaseModel):
-    customer_id: str = Field(description="Customer GUID from the backend.")
+    customer_id: str = Field(description="Customer ID from the backend.")
+    client_name: str | None = Field(default=None, description="Optional full name of the client.")
 
 
 class CreateChatSessionResponse(BaseModel):

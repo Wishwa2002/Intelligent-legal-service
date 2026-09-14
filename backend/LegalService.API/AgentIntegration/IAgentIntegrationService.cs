@@ -12,8 +12,9 @@ public interface IAgentIntegrationService
     Task<object?> GetWorkflowSummaryAsync(string workflowId);
 
     // Conversational Agent Sessions
-    Task<CreateAgentChatSessionResponse?> CreateChatSessionAsync(Guid customerId);
+    Task<CreateAgentChatSessionResponse?> CreateChatSessionAsync(string customerId);
     Task<SendAgentChatMessageResponse?> SendChatMessageAsync(string sessionId, string message, string? uploadedFileId, string? expectedType);
     Task<AgentChatSessionStatusResponse?> GetChatSessionStatusAsync(string sessionId);
+    Task<Dictionary<int, string>> GetChatClientNamesAsync();
 }
 

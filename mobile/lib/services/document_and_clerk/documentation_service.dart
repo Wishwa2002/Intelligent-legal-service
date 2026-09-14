@@ -11,10 +11,13 @@ class DocumentationApiService {
     return [];
   }
 
-  static Future<List<DocumentationRequest>> getRequests({int? customerId}) async {
+  static Future<List<DocumentationRequest>> getRequests({int? customerId, int? clerkId}) async {
     final queryParams = <String, String>{};
     if (customerId != null) {
       queryParams['customerId'] = customerId.toString();
+    }
+    if (clerkId != null) {
+      queryParams['clerkId'] = clerkId.toString();
     }
     final data = await ApiClient.get('/api/documentation-requests', queryParams: queryParams);
     if (data is List) {

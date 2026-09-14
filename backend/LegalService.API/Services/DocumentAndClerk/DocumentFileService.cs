@@ -186,6 +186,78 @@ public class DocumentFileService : IDocumentFileService
         return MapToResponse(file);
     }
 
+    public async Task<List<string>> GetAvailableSampleFilesAsync()
+    {
+        var sampleFolder = Path.Combine(_environment.ContentRootPath, "Storage", "SampleDocuments");
+        if (!Directory.Exists(sampleFolder))
+            return new List<string>();
+
+        return await Task.FromResult(
+            Directory.GetFiles(sampleFolder, "*.pdf")
+                .Select(Path.GetFileName)
+                .Where(f => !string.IsNullOrEmpty(f))
+                .Select(f => f!)
+                .OrderBy(f => f)
+                .ToList()
+        );
+    }
+
+    public async Task<DocumentFileResponse> UploadSampleFileAsync(int requestId, string sampleFileName)
+    {
+        var request = await _context.DocumentationRequests.FindAsync(requestId);
+        if (request == null)
+        {
+            throw new ArgumentException($"Documentation request with ID '{requestId}' was not found.");
+        }
+
+        var sampleFolder = Path.Combine(_environment.ContentRootPath, "Storage", "SampleDocuments");
+        var cleanSampleName = Path.GetFileName(sampleFileName);
+        var sourcePath = Path.Combine(sampleFolder, cleanSampleName);
+
+        if (!File.Exists(sourcePath))
+        {
+            var anyFile = Directory.Exists(sampleFolder) ? Directory.GetFiles(sampleFolder, "*.pdf").FirstOrDefault() : null;
+            if (anyFile != null)
+            {
+                sourcePath = anyFile;
+                cleanSampleName = Path.GetFileName(anyFile);
+            }
+            else
+            {
+                throw new FileNotFoundException($"Sample document '{sampleFileName}' was not found on server.");
+            }
+        }
+
+        var fileBytes = await File.ReadAllBytesAsync(sourcePath);
+        var uploadsFolder = Path.Combine(_environment.ContentRootPath, "Storage", "Uploads", "Documentation", requestId.ToString());
+        Directory.CreateDirectory(uploadsFolder);
+
+        var extension = Path.GetExtension(cleanSampleName);
+        var tempFileId = Guid.NewGuid();
+        var storedFileName = $"{tempFileId}{extension}";
+        var physicalPath = Path.Combine(uploadsFolder, storedFileName);
+
+        await File.WriteAllBytesAsync(physicalPath, fileBytes);
+
+        var documentFile = new DocumentFile
+        {
+            RequestId = requestId,
+            FileName = cleanSampleName,
+            FilePath = physicalPath,
+            ContentType = "application/pdf",
+            FileSize = fileBytes.Length,
+            DocumentStatus = "Received",
+            UploadDate = DateTime.UtcNow,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
+        };
+
+        await _context.DocumentFiles.AddAsync(documentFile);
+        await _context.SaveChangesAsync();
+
+        return MapToResponse(documentFile);
+    }
+
     public static DocumentFileResponse MapToResponse(DocumentFile file)
     {
         return new DocumentFileResponse
@@ -196,6 +268,7 @@ public class DocumentFileService : IDocumentFileService
             ContentType = file.ContentType,
             FileSize = file.FileSize,
             DocumentStatus = file.DocumentStatus,
+            RejectReason = file.RejectReason,
             UploadDate = file.UploadDate
         };
     }

@@ -13,6 +13,7 @@ public class DocumentationRequest
     public int? AssignedClerkId { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
+    public string? ReuploadNote { get; set; }
 
     // Navigation properties
     public DocumentationService DocumentationService { get; set; } = null!;

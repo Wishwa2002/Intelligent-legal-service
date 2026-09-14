@@ -20,4 +20,5 @@ public class DocumentationRequestResponse
     public List<DocumentFileResponse> DocumentFiles { get; set; } = new();
     public List<string> RequiredDocuments { get; set; } = new();
     public List<string> MissingDocuments { get; set; } = new();
+    public string? ReuploadNote { get; set; }
 }

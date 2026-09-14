@@ -13,5 +13,6 @@ public interface IDocumentationRequestService
     Task<DocumentationRequestResponse> CreateRequestAsync(int customerId, CreateDocumentationRequestRequest request);
     Task<DocumentationRequestResponse?> UpdateRequestStatusAsync(int requestId, string status);
     Task<DocumentationRequestResponse?> AssignClerkAsync(int requestId, int clerkId);
+    Task<DocumentationRequestResponse?> RequestDocumentReuploadAsync(int requestId, string documentName, string? note, int? fileId);
     Task<bool> CanCustomerAccessRequestAsync(int customerId, int requestId);
 }

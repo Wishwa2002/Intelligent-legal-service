@@ -16,11 +16,78 @@ import logging
 from datetime import datetime, timezone
 
 from app.graph.state import AgentState
+from app.schemas.clerk import ClerkCandidate, ClerkRecommendationItem, ClerkRecommendationReport
 from app.services.gemini_service import get_gemini_service
 from app.tools.clerk_tools import get_eligible_clerks, create_assignment_proposal
 from app.tools.approval_tools import submit_for_admin_approval
 
 logger = logging.getLogger(__name__)
+
+
+def rank_clerks_transparently(
+    candidates: list[ClerkCandidate],
+    service_name: str,
+) -> list[ClerkRecommendationItem]:
+    """
+    Computes transparent multi-factor match score:
+      Score = 0.40 * Specialization + 0.25 * Skills + 0.25 * Workload + 0.10 * Experience
+    """
+    clean_srv = service_name.lower().replace("_", " ")
+    scored_items: list[tuple[float, ClerkRecommendationItem]] = []
+
+    for c in candidates:
+        dept = c.department.lower()
+        specs = [s.lower() for s in getattr(c, "specializations", [])]
+        skills = [s.lower() for s in getattr(c, "skills", [])]
+        workload = c.active_request_count
+        exp = getattr(c, "experience_years", 3.0)
+
+        # 1. Specialization match (0.40)
+        spec_match = 0.40 if not (specs or dept) else 0.50
+        if any(w in dept for w in clean_srv.split()) or any(clean_srv in s or s in clean_srv for s in specs):
+            spec_match = 1.0
+        elif "property" in clean_srv and ("land" in dept or "property" in dept):
+            spec_match = 0.95
+        elif "corporate" in clean_srv and ("business" in dept or "corporate" in dept):
+            spec_match = 0.95
+
+        # 2. Skills match (0.25)
+        skill_score = 0.60
+        if skills:
+            matched_skills = [sk for sk in skills if any(w in sk for w in clean_srv.split())]
+            skill_score = min(1.0, 0.50 + 0.25 * len(matched_skills))
+
+        # 3. Workload factor (0.25): lower workload = higher score
+        workload_score = max(0.10, 1.0 - (workload / 10.0))
+
+        # 4. Experience factor (0.10)
+        exp_score = min(1.0, exp / 5.0)
+
+        total_score = (0.40 * spec_match) + (0.25 * skill_score) + (0.25 * workload_score) + (0.10 * exp_score)
+        total_score = round(min(0.99, max(0.10, total_score)), 2)
+
+        reasons = []
+        if spec_match >= 0.8:
+            reasons.append(f"Matches {c.department} specialization")
+        if workload <= 3:
+            reasons.append(f"Low active workload ({workload} requests)")
+        else:
+            reasons.append(f"Acceptable workload ({workload} active requests)")
+        if exp >= 3:
+            reasons.append(f"Experienced in legal documentation ({exp:.0f} yrs)")
+
+        item = ClerkRecommendationItem(
+            clerk_id=f"CLK-{c.clerk_id:03d}" if isinstance(c.clerk_id, int) else str(c.clerk_id),
+            name=c.name,
+            match_score=total_score,
+            reasons=reasons,
+        )
+        scored_items.append((total_score, item))
+
+    # Sort descending by match_score
+    scored_items.sort(key=lambda x: x[0], reverse=True)
+    return [item for _, item in scored_items]
+
 
 
 async def clerk_recommendation_node(state: AgentState) -> AgentState:
@@ -57,6 +124,16 @@ async def clerk_recommendation_node(state: AgentState) -> AgentState:
         service_name=state["service_name"],
         request_context=f"Request #{state.get('request_id')} — {state['service_name']}",
     )
+
+    # Rank candidates using transparent scoring formula
+    ranked_items = rank_clerks_transparently(candidates, state.get("service_name", ""))
+    report = ClerkRecommendationReport(
+        recommendations=ranked_items,
+        requires_human_approval=True,
+        service_type=state.get("service_name"),
+        case_id=str(state.get("request_id") or state.get("workflow_id")),
+    )
+    state["clerk_recommendation_report"] = report.model_dump()
 
     # Look up the actual clerk name and department from candidates
     matched_clerk = next(

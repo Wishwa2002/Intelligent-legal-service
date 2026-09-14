@@ -24,7 +24,7 @@ public class UpdateCareerRequest
 public class CreateJobApplicationRequest
 {
     [Required]
-    public Guid CareerId { get; set; }
+    public int CareerId { get; set; }
 
     [Required]
     public string ApplicantName { get; set; } = string.Empty;

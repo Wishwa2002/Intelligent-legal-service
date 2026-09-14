@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import '../../config/app_theme.dart';
 import '../../models/chat_message.dart';
-import '../../services/agent_chat_service.dart';
+import '../../services/document_and_clerk/agent_chat_service.dart';
 import '../../services/auth_service.dart';
+
 import '../../services/document_file_service.dart';
 import '../../services/sample_document_service.dart';
 import '../../widgets/chat_bubble.dart';
@@ -154,7 +155,10 @@ class _AiChatScreenState extends State<AiChatScreen> {
       final user = AuthService.currentUser.value;
       final isGuest = (user == null || user.userId.isEmpty);
       final customerId = isGuest ? 'guest' : user.userId;
-      final session = await AgentChatService.createSession(customerId);
+      final session = await AgentChatService.createSession(
+        customerId,
+        clientName: user?.fullName,
+      );
 
       _sessionId = session['sessionId']?.toString() ?? session['session_id']?.toString();
 
@@ -185,10 +189,17 @@ class _AiChatScreenState extends State<AiChatScreen> {
       );
       await _saveChatToStorage();
     } catch (e) {
+      _sessionId = 'session-local-${DateTime.now().millisecondsSinceEpoch}';
       _messages.add(
         ChatMessage.agent(
-          'Welcome to Legal Intelligence Assistant. (Offline Mode: please ensure backend/AI service is running). How can I assist you?',
-          isError: true,
+          'Welcome to Legal Intelligence Assistant. How can I assist you today?',
+          options: [
+            'Rental & Lease Agreement',
+            'Business Registration',
+            'Power of Attorney',
+            'Property Transfer',
+            '📁 View All Services',
+          ],
         ),
       );
     } finally {
@@ -214,13 +225,15 @@ class _AiChatScreenState extends State<AiChatScreen> {
         await _initSession();
       }
 
-      if (_sessionId != null) {
-        final res = await AgentChatService.sendMessage(
-          sessionId: _sessionId!,
-          message: trimmed,
-          uploadedFileId: fileId,
-          uploadedFileExpectedType: fileType,
-        );
+      final activeSessionId = _sessionId ?? 'session-local-${DateTime.now().millisecondsSinceEpoch}';
+      _sessionId = activeSessionId;
+
+      final res = await AgentChatService.sendMessage(
+        sessionId: activeSessionId,
+        message: trimmed,
+        uploadedFileId: fileId,
+        uploadedFileExpectedType: fileType,
+      );
 
         final reply = res['reply']?.toString() ??
             res['response']?.toString() ??
@@ -297,7 +310,6 @@ class _AiChatScreenState extends State<AiChatScreen> {
           _messages.add(ChatMessage.agent(reply, options: dynamicOptions));
         });
         await _saveChatToStorage();
-      }
     } catch (e) {
       setState(() {
         _messages.add(ChatMessage.agent(

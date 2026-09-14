@@ -23,3 +23,14 @@ public class AssignClerkRequest
     [Required]
     public int ClerkId { get; set; }
 }
+
+public class RequestDocumentReuploadRequest
+{
+    [Required]
+    public string DocumentName { get; set; } = string.Empty;
+
+    public string? Note { get; set; }
+
+    public int? FileId { get; set; }
+}
+

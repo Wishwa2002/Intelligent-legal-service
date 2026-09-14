@@ -58,6 +58,8 @@ async def create_chat_session(request: CreateChatSessionRequest):
     """
     customer_id = str(request.customer_id)
     session_id, state = create_session(customer_id=customer_id)
+    if request.client_name and request.client_name.strip():
+        state["client_name"] = request.client_name.strip()
 
     # Run the initial understand_request node to greet the client
     updated = await understand_request_node(state)
@@ -237,7 +239,14 @@ async def send_chat_message(session_id: str, request: SendChatMessageRequest):
 
     # Relevant message — run workflow from current phase
     try:
-        if updated_state["phase"] == "UNDERSTAND_REQUEST":
+        if updated_state["phase"] in (
+            "UNDERSTAND_REQUEST",
+            "ADMIN_APPROVAL_PENDING",
+            "DOCUMENTS_COMPLETE",
+            "WAITING_FOR_DOCUMENTS",
+            "COMPLETED",
+            "HUMAN_REVIEW",
+        ):
             final = await understand_request_node(updated_state)
             save_state(session_id, final)
         else:
@@ -809,8 +818,30 @@ async def get_request_status(request_id: int):
                 "phase": state["phase"],
                 "workflow_id": state.get("workflow_id"),
                 "missing_documents": _missing_documents(state),
+                "client_name": state.get("client_name"),
             }
     raise HTTPException(status_code=404, detail=f"No workflow found for request_id={request_id}.")
+
+
+@router.get("/requests/client-names")
+async def get_requests_client_names():
+    """
+    Returns a mapping of { request_id: client_name } extracted from chat sessions.
+    Used by backend to display client name from chat in Admin requests columns.
+    """
+    from app.graph.workflow import _extract_name_from_messages
+    result: dict[int, str] = {}
+    for sid, state in _all_states():
+        rid = state.get("request_id")
+        name = state.get("client_name")
+        if not name:
+            name = _extract_name_from_messages(state.get("messages", []))
+        if rid and name and str(name).strip():
+            try:
+                result[int(rid)] = str(name).strip().title()
+            except (ValueError, TypeError):
+                pass
+    return result
 
 
 # ============================================================

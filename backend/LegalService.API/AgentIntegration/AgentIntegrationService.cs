@@ -188,12 +188,23 @@ public class AgentIntegrationService : IAgentIntegrationService
         }
     }
 
-    public async Task<CreateAgentChatSessionResponse?> CreateChatSessionAsync(Guid customerId)
+    public async Task<CreateAgentChatSessionResponse?> CreateChatSessionAsync(string customerId)
     {
-        var payload = new { customer_id = customerId.ToString() };
+        var safeId = string.IsNullOrWhiteSpace(customerId) ? "guest" : customerId;
+        string? clientName = null;
+        if (int.TryParse(safeId, out int cid) && cid > 0)
+        {
+            var user = await _context.Users.FindAsync(cid);
+            if (user != null && !string.IsNullOrWhiteSpace(user.Name))
+            {
+                clientName = user.Name;
+            }
+        }
+
+        var payload = new { customer_id = safeId, client_name = clientName };
         try
         {
-            _logger.LogInformation("Creating AI Chat Session for CustomerId={CustomerId}", customerId);
+            _logger.LogInformation("Creating AI Chat Session for CustomerId={CustomerId}, ClientName={ClientName}", safeId, clientName);
             var response = await _httpClient.PostAsJsonAsync($"{_aiServiceBaseUrl}/api/agent/chat/session", payload);
             if (!response.IsSuccessStatusCode)
             {
@@ -268,5 +279,35 @@ public class AgentIntegrationService : IAgentIntegrationService
             _logger.LogError(ex, "Error getting chat session status {SessionId}", sessionId);
             return null;
         }
+    }
+
+    public async Task<Dictionary<int, string>> GetChatClientNamesAsync()
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync($"{_aiServiceBaseUrl}/api/agent/requests/client-names");
+            if (response.IsSuccessStatusCode)
+            {
+                var options = new JsonSerializerOptions { PropertyNameCaseInsensitive = true };
+                var dict = await response.Content.ReadFromJsonAsync<Dictionary<string, string>>(options);
+                if (dict != null)
+                {
+                    var result = new Dictionary<int, string>();
+                    foreach (var kvp in dict)
+                    {
+                        if (int.TryParse(kvp.Key, out int reqId) && !string.IsNullOrWhiteSpace(kvp.Value))
+                        {
+                            result[reqId] = kvp.Value.Trim();
+                        }
+                    }
+                    return result;
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            _logger.LogWarning("Failed to fetch chat client names from AI service: {Message}", ex.Message);
+        }
+        return new Dictionary<int, string>();
     }
 }

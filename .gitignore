@@ -520,3 +520,7 @@ mobile/.pub/
 !requirements.txt
 !README*.txt
 !license*.txt
+
+# Local Uploads & Scratch Scripts
+backend/LegalService.API/Storage/Uploads/
+scratch_*.py

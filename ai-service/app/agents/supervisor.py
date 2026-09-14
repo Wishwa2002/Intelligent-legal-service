@@ -167,6 +167,19 @@ async def understand_request_node(state: AgentState) -> AgentState:
                     state["pending_agent_question"] = None
                     break
 
+        # If still not found, check registered user profile on backend via customer_id
+        if not state.get("client_name") and state.get("customer_id"):
+            raw_cid = str(state.get("customer_id")).strip()
+            if raw_cid.isdigit() and int(raw_cid) > 0:
+                try:
+                    from app.services.backend_client import get_backend_client
+                    backend = get_backend_client()
+                    u_info = await backend.get_user(int(raw_cid))
+                    if u_info and u_info.get("name"):
+                        state["client_name"] = u_info["name"]
+                except Exception:
+                    pass
+
     # STEP 2.5: ONLY if client explicitly asked to display all services
     if _is_client_asking_for_all_services(last_message):
         top_services = [s.get("name") for s in services[:6] if s.get("name")]
@@ -181,23 +194,178 @@ async def understand_request_node(state: AgentState) -> AgentState:
     if state.get("phase") in ("ADMIN_APPROVAL_PENDING", "DOCUMENTS_COMPLETE") and state.get("service_name"):
         req_id = state.get("request_id")
         req_str = f"#{req_id}" if req_id else ""
-        clerk_name = state.get("recommended_clerk_name") or "our designated legal clerk"
+        clerk_name = state.get("recommended_clerk_name")
+        if not clerk_name and state.get("recommended_clerk_id"):
+            clerk_name = f"Clerk #{state['recommended_clerk_id']}"
+        if not clerk_name:
+            clerk_name = "our designated legal clerk"
+
         client_name = state.get("client_name")
         greeting = f"Hello, **{client_name}**! 👋" if client_name else "Hello! 👋"
+        lower_msg = last_message.lower().strip()
 
-        status_msg = (
-            f"{greeting}\n\n"
-            f"All required documents for your **{state['service_name']}** request {req_str} have been received and verified. 📄✨\n\n"
-            f"📋 **Current Status & Real-Time Tracking:**\n"
-            f"• **Check Your Requests Page:** You can view and track the real-time progress and assigned clerk on your **Requests** page at any time.\n"
-            f"• **Administrative Approval & Notification:** Your application is currently awaiting Admin Approval. "
-            f"**After the Admin Approval, you will be notified** immediately regarding the next legal steps and execution.\n"
-            f"• **Assigned Clerk:** **{clerk_name}**\n\n"
-            f"If you need help with another legal matter, feel free to tap an option below."
-        )
-        opts = ["📋 Go to My Requests", "📁 View All Services"]
-        _add_message(state, "agent", status_msg, action_options=opts)
-        return state
+        # 1. Check if user is asking about their name / identity
+        is_asking_name = any(k in lower_msg for k in (
+            "do you know my name", "what is my name", "what's my name",
+            "who am i", "my name?", "know my name", "remember my name",
+            "tell me my name", "do you remember me", "who am i talking to"
+        ))
+
+        # 2. Check if user is asking for a document summary
+        is_asking_summary = any(k in lower_msg for k in (
+            "summarize my document", "summarize my documents", "summarise my documents",
+            "summarize documents", "summarise documents", "summary of my documents",
+            "summary of documents", "what documents did i submit", "what documents have i submitted",
+            "what documents were submitted", "show my documents", "list my documents",
+            "view my documents", "documents summary", "can you summarize", "could you summarize",
+            "summarize my request", "document summary", "summarize", "summarise"
+        ))
+
+        # 3. Check if user is asking about missing documents
+        is_asking_missing = any(k in lower_msg for k in (
+            "missing document", "missing documents", "any missing", "anything missing",
+            "is anything missing", "did i miss", "are there missing", "what is missing",
+            "what's missing", "any document missing", "missing items", "are all documents submitted"
+        ))
+
+        # 4. Check if user is asking how to track/check their request
+        how_to_check = any(w in lower_msg for w in (
+            "how to check", "how can i check", "where to check", "how do i check",
+            "track my request", "view my request", "where is my request", "check my request",
+            "check status", "track request", "check request"
+        ))
+
+        if is_asking_name:
+            if client_name:
+                answer_msg = (
+                    f"Yes, of course! Your name is **{client_name}**. 😊\n\n"
+                    f"All required documents for your **{state['service_name']}** request {req_str} have been verified "
+                    f"and are currently awaiting Administrative Approval.\n\n"
+                    f"• **Assigned Clerk:** **{clerk_name}**\n\n"
+                    "Feel free to ask if you would like me to summarize your documents, check for missing items, or track your request status!"
+                )
+            else:
+                answer_msg = (
+                    f"I don't have your name recorded in our current chat session yet. Could you please tell me your name? 😊\n\n"
+                    f"(Your **{state['service_name']}** request {req_str} is currently awaiting Administrative Approval.)"
+                )
+                state["pending_agent_question"] = "ASKING_NAME"
+            opts = ["📄 Summarize Documents", "❓ Any Missing Docs?", "📋 Go to My Requests"]
+            _add_message(state, "agent", answer_msg, action_options=opts)
+            return state
+
+        elif is_asking_summary:
+            req_docs = state.get("required_documents") or []
+            doc_statuses = state.get("document_statuses") or {}
+
+            lines = []
+            for i, doc in enumerate(req_docs, start=1):
+                st = doc_statuses.get(doc, {}).get("status", "accepted")
+                badge = "Verified & Complete ✅" if st in ("accepted", "accepted_with_flag") else "Submitted 📄"
+                lines.append(f"{i}. **{doc}** — {badge}")
+            if not lines and doc_statuses:
+                for i, (doc, info) in enumerate(doc_statuses.items(), start=1):
+                    lines.append(f"{i}. **{doc}** — Verified & Complete ✅")
+
+            doc_list_text = "\n".join(lines) if lines else "• All required documents have been received and verified."
+            total_cnt = len(lines) if lines else len(req_docs)
+
+            answer_msg = (
+                f"{greeting}\n\n"
+                f"Here is the document summary for your **{state['service_name']}** request {req_str}: 📄📋\n\n"
+                f"{doc_list_text}\n\n"
+                f"📊 **Completeness:** 100% Complete ({total_cnt}/{total_cnt} documents verified)\n"
+                f"👤 **Assigned Legal Clerk:** **{clerk_name}**\n"
+                f"⚖️ **Application Status:** **Awaiting Admin Approval**\n\n"
+                f"All required documentation has passed automated legal completeness checks. "
+                f"After Administrative Approval, you will be notified immediately regarding execution and next legal steps."
+            )
+            opts = ["📋 Go to My Requests", "❓ Any Missing Docs?", "📁 View All Services"]
+            _add_message(state, "agent", answer_msg, action_options=opts)
+            return state
+
+        elif is_asking_missing:
+            req_docs = state.get("required_documents") or []
+            doc_statuses = state.get("document_statuses") or {}
+            missing = [
+                d for d in req_docs
+                if doc_statuses.get(d, {}).get("status") not in ("accepted", "accepted_with_flag")
+            ]
+
+            if missing:
+                missing_lines = "\n".join(f"{i}. **{d}**" for i, d in enumerate(missing, start=1))
+                answer_msg = (
+                    f"{greeting}\n\n"
+                    f"You still have {len(missing)} missing document(s) for your **{state['service_name']}** request {req_str}:\n\n"
+                    f"{missing_lines}\n\n"
+                    "Please upload them to complete your application."
+                )
+                opts = [f"📄 Upload {d}" for d in missing]
+            else:
+                total_cnt = len(req_docs) if req_docs else "all"
+                answer_msg = (
+                    f"{greeting}\n\n"
+                    f"✅ **No missing documents!**\n\n"
+                    f"All {total_cnt} required documents for your **{state['service_name']}** request {req_str} have been successfully received and verified. 📄✨\n\n"
+                    f"• **Completeness:** 100% verified\n"
+                    f"• **Current Status:** Awaiting Admin Approval\n"
+                    f"• **Designated Clerk:** **{clerk_name}**\n\n"
+                    f"Your file is complete. You do not need to submit any additional documents."
+                )
+                opts = ["📋 Go to My Requests", "📄 Summarize Documents", "📁 View All Services"]
+            _add_message(state, "agent", answer_msg, action_options=opts)
+            return state
+
+        elif how_to_check:
+            answer_msg = (
+                f"{greeting}\n\n"
+                f"You can easily track and check your **{state['service_name']}** request {req_str} at any time! 📱🔍\n\n"
+                f"📋 **How to Check Your Request:**\n"
+                f"1. Tap the **📋 Go to My Requests** button below (or navigate to the **Requests** tab in your app).\n"
+                f"2. You will see your request {req_str} with its real-time status: **Awaiting Admin Approval**.\n"
+                f"3. You can review all uploaded documents and see your designated legal clerk: **{clerk_name}**.\n\n"
+                f"⚖️ **Next Steps & Real-Time Tracking:**\n"
+                f"• **Administrative Approval & Notification:** Your application is currently awaiting Admin Approval. "
+                f"**After the Admin Approval, you will be notified** immediately regarding the next legal steps and execution.\n"
+                f"• **Assigned Clerk:** **{clerk_name}**\n\n"
+                f"If you need help with anything else, please let me know!"
+            )
+            opts = ["📋 Go to My Requests", "📄 Summarize Documents", "📁 View All Services"]
+            _add_message(state, "agent", answer_msg, action_options=opts)
+            return state
+
+        elif any(q in lower_msg for q in ("?", "what", "how", "why", "where", "when", "can", "could", "will", "explain", "tell me")):
+            # General legal or procedure question
+            gemini = get_gemini_service()
+            answer = await gemini.answer_general_inquiry(
+                user_message=last_message,
+                active_services_catalog=bullet_list,
+                client_name=state.get("client_name"),
+            )
+            reply_text = answer.get("reply", "").strip()
+            status_note = (
+                f"\n\n📋 *Status Note: Your **{state['service_name']}** request {req_str} is complete and awaiting Admin Approval. "
+                f"Assigned Clerk: **{clerk_name}**.*"
+            )
+            answer_msg = f"{reply_text}{status_note}"
+            opts = ["📋 Go to My Requests", "📄 Summarize Documents", "📁 View All Services"]
+            _add_message(state, "agent", answer_msg, action_options=opts)
+            return state
+
+        else:
+            answer_msg = (
+                f"{greeting}\n\n"
+                f"All required documents for your **{state['service_name']}** request {req_str} have been received and verified. 📄✨\n\n"
+                f"📋 **Current Status & Real-Time Tracking:**\n"
+                f"• **Check Your Requests Page:** You can view and track real-time progress and your assigned clerk on your **Requests** page at any time.\n"
+                f"• **Administrative Approval & Notification:** Your application is currently awaiting Admin Approval. "
+                f"**After the Admin Approval, you will be notified** immediately regarding the next legal steps and execution.\n"
+                f"• **Assigned Clerk:** **{clerk_name}**\n\n"
+                f"Feel free to tap an option below to summarize your documents, check for missing items, or track your request."
+            )
+            opts = ["📋 Go to My Requests", "📄 Summarize Documents", "❓ Any Missing Docs?"]
+            _add_message(state, "agent", answer_msg, action_options=opts)
+            return state
 
     # STEP 2.8: If actively waiting for required documents
     if state.get("phase") == "WAITING_FOR_DOCUMENTS" and state.get("required_documents"):
@@ -205,9 +373,61 @@ async def understand_request_node(state: AgentState) -> AgentState:
             d for d in state["required_documents"]
             if state.get("document_statuses", {}).get(d, {}).get("status") not in ("accepted", "accepted_with_flag")
         ]
+        lower_msg = last_message.lower().strip()
+        client_name = state.get("client_name")
+        greeting = f"Hello, **{client_name}**! 👋" if client_name else "Hello! 👋"
+
+        is_asking_name = any(k in lower_msg for k in ("do you know my name", "what is my name", "what's my name", "who am i", "my name?"))
+        is_asking_missing = any(k in lower_msg for k in ("missing document", "missing documents", "any missing", "anything missing", "what is missing", "what's missing"))
+        is_asking_summary = any(k in lower_msg for k in ("summarize", "summarise", "summary", "what documents did i submit", "show my documents", "list my documents"))
+
+        if is_asking_name:
+            if client_name:
+                missing_str = ", ".join(f"**{d}**" for d in missing)
+                reply = (
+                    f"Yes! Your name is **{client_name}**. 😊\n\n"
+                    f"For your **{state.get('service_name', 'legal')}** request, we are currently waiting for {len(missing)} remaining document(s):\n"
+                    + "\n".join(f"• **{d}**" for d in missing) + "\n\n"
+                    "Tap an upload button below to continue."
+                )
+            else:
+                reply = "I don't have your name recorded yet. May I ask what your name is? 😊"
+                state["pending_agent_question"] = "ASKING_NAME"
+            opts = [f"📄 Upload {d}" for d in missing]
+            _add_message(state, "agent", reply, action_options=opts)
+            return state
+
+        if is_asking_missing:
+            reply = (
+                f"{greeting}\n\n"
+                f"Here are the remaining missing document(s) for your **{state.get('service_name', 'legal')}** request:\n\n"
+                + "\n".join(f"{i}. **{d}** (Missing)" for i, d in enumerate(missing, start=1)) + "\n\n"
+                "Please tap a button below to upload each missing document."
+            )
+            opts = [f"📄 Upload {d}" for d in missing]
+            _add_message(state, "agent", reply, action_options=opts)
+            return state
+
+        if is_asking_summary:
+            doc_statuses = state.get("document_statuses") or {}
+            all_reqs = state.get("required_documents") or []
+            summary_lines = []
+            for i, d in enumerate(all_reqs, start=1):
+                st = doc_statuses.get(d, {}).get("status")
+                badge = "Verified ✅" if st in ("accepted", "accepted_with_flag") else "Missing ⏳"
+                summary_lines.append(f"{i}. **{d}** — {badge}")
+            reply = (
+                f"{greeting}\n\n"
+                f"Document status summary for your **{state.get('service_name', 'legal')}** request:\n\n"
+                + "\n".join(summary_lines) + "\n\n"
+                f"📌 *Remaining missing document(s):* " + ", ".join(f"**{d}**" for d in missing)
+            )
+            opts = [f"📄 Upload {d}" for d in missing]
+            _add_message(state, "agent", reply, action_options=opts)
+            return state
+
         if missing:
             # Check if this is a general inquiry about the documents/process
-            lower_msg = last_message.lower()
             if any(q in lower_msg for q in ("?", "what", "how", "why", "where", "can i", "could i", "explain")):
                 gemini = get_gemini_service()
                 answer = await gemini.answer_general_inquiry(
@@ -225,8 +445,6 @@ async def understand_request_node(state: AgentState) -> AgentState:
                 return state
             elif not any(k in lower_msg for k in ("start", "create", "new service")):
                 # Client sent a greeting or update
-                client_name = state.get("client_name")
-                greeting = f"Hello, **{client_name}**! 👋" if client_name else "Hello! 👋"
                 missing_numbered = "\n".join(f"{i}. **{d}**" for i, d in enumerate(missing, start=1))
                 reply = (
                     f"{greeting}\n\n"
@@ -483,29 +701,49 @@ async def handle_off_topic_or_route(
     incoming_message: str,
 ) -> tuple[AgentState, bool]:
     """
-    Checks if the incoming message is relevant.
+    Checks if the incoming message is relevant to the legal documentation workflow.
     Returns (updated_state, should_continue_routing).
-    If off-topic: adds redirect to messages, returns False (stop routing).
+    If off-topic: adds polite redirect to messages, returns False (stop routing).
     If relevant: returns True (continue with normal routing).
     """
-    # In UNDERSTAND_REQUEST, the client is greeting or selecting a service.
-    # understand_request_node itself validates against the service catalog.
-    if state["phase"] == "UNDERSTAND_REQUEST":
-        msg_lower = incoming_message.lower()
-        off_topic_words = ("poem", "pizza", "weather", "recipe", "song", "joke", "football", "cricket")
-        if any(w in msg_lower for w in off_topic_words):
-            services = await get_all_services()
-            buttons = _get_service_suggestion_buttons(services)
-            state = dict(state)
-            _add_message(state, "agent",
-                "I am a legal documentation assistant and can only help with our official legal services and document verification.\n\n"
-                "What legal service do you need help with today? You can select a suggestion below or ask to view all services.",
-                action_options=buttons)
-            return state, False
+    msg_lower = incoming_message.lower().strip()
+
+    # 1. Obvious off-topic queries (trivia, cooking, games, entertainment)
+    off_topic_words = ("poem", "pizza", "weather", "recipe", "song", "joke", "football", "cricket", "movie", "game")
+    if any(w in msg_lower for w in off_topic_words):
+        service_text = f" regarding your **{state.get('service_name')}** request" if state.get("service_name") else ""
+        state = dict(state)
+        _add_message(state, "agent",
+            f"I am a legal documentation assistant and can only help with official legal services, document completeness checks, and application processing{service_text}.\n\n"
+            "How can I assist you with your legal documents or request today?")
+        return state, False
+
+    # 2. Key relevant inquiries that must ALWAYS pass through
+    relevant_indicators = (
+        "name", "who am i", "who are you", "do you know", "my name",
+        "summarize", "summarise", "summary", "what documents", "show documents", "list documents",
+        "missing", "anything missing", "is anything missing", "did i miss", "all documents",
+        "how to check", "where to check", "track", "status", "clerk", "approval", "request",
+        "service", "agreement", "contract", "deed", "affidavit", "nic", "upload", "file"
+    )
+    if any(k in msg_lower for k in relevant_indicators):
         return state, True
 
-    gemini = get_gemini_service()
+    # 3. Question words or general legal inquiry
+    if any(q in msg_lower for q in ("?", "what", "how", "why", "where", "when", "can", "could", "will", "is", "are", "explain", "tell me")):
+        return state, True
 
+    # 4. Greetings, acknowledgements, or thanks
+    greetings = ("hi", "hello", "hey", "good morning", "good afternoon", "good evening", "thanks", "thank you", "ok", "okay", "yes", "sure")
+    if any(msg_lower == g or msg_lower.startswith(g + " ") or msg_lower.endswith(" " + g) for g in greetings):
+        return state, True
+
+    # 5. In active workflow phases, allow routing to handle contextual responses
+    if state.get("phase") in ("UNDERSTAND_REQUEST", "ADMIN_APPROVAL_PENDING", "DOCUMENTS_COMPLETE", "WAITING_FOR_DOCUMENTS"):
+        return state, True
+
+    # 6. Fallback to Gemini classifier only for unhandled edge cases
+    gemini = get_gemini_service()
     is_relevant, redirect_message = await gemini.classify_message_relevance(
         message=incoming_message,
         current_phase=state["phase"],

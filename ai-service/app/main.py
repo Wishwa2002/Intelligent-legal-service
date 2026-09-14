@@ -67,7 +67,10 @@ def create_app() -> FastAPI:
     # ---- Routes ----
     # Import here (after app creation) to avoid circular imports
     from app.api.routes.agent import router as agent_router
+    from app.api.routes.component_routes import router as component_router
     app.include_router(agent_router)
+    app.include_router(component_router)
+
 
     # ---- Health ----
     @app.get("/health", tags=["Health"])

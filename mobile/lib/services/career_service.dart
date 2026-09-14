@@ -15,7 +15,7 @@ class CareerService {
     required String applicantName,
   }) async {
     final res = await ApiClient.post('/api/job-applications', {
-      'careerId': careerId,
+      'careerId': int.tryParse(careerId) ?? 0,
       'applicantName': applicantName,
     });
     return res;

@@ -46,8 +46,11 @@ class _MyRequestsScreenState extends State<MyRequestsScreen> {
     });
 
     try {
-      final customerId = int.tryParse(user.userId);
-      final list = await DocumentationApiService.getRequests(customerId: customerId);
+      final isClerk = user.userType.toLowerCase() == 'clerk';
+      final idInt = int.tryParse(user.userId);
+      final list = isClerk
+          ? await DocumentationApiService.getRequests(clerkId: idInt)
+          : await DocumentationApiService.getRequests(customerId: idInt);
       if (mounted) {
         setState(() {
           _requests = list;
@@ -238,7 +241,11 @@ class _MyRequestsScreenState extends State<MyRequestsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Legal Requests'),
+        title: Text(
+          AuthService.currentUser.value?.userType.toLowerCase() == 'clerk'
+              ? 'My Assigned Cases'
+              : 'My Legal Requests',
+        ),
         actions: [
           IconButton(
             icon: const Icon(Icons.search),
@@ -386,7 +393,31 @@ class _MyRequestsScreenState extends State<MyRequestsScreen> {
                                                   ],
                                                 ),
                                               ],
-                                              if (req.missingDocuments.isNotEmpty) ...[
+                                              if (req.reuploadNote != null && req.reuploadNote!.isNotEmpty) ...[
+                                                const SizedBox(height: 8),
+                                                Container(
+                                                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
+                                                  decoration: BoxDecoration(
+                                                    color: const Color(0xFFFFFBEB),
+                                                    borderRadius: BorderRadius.circular(8),
+                                                    border: Border.all(color: const Color(0xFFFDE68A)),
+                                                  ),
+                                                  child: Row(
+                                                    children: [
+                                                      const Icon(Icons.mark_email_unread_rounded, size: 16, color: Color(0xFFD97706)),
+                                                      const SizedBox(width: 6),
+                                                      Expanded(
+                                                        child: Text(
+                                                          'Action Required: ${req.reuploadNote!}',
+                                                          maxLines: 1,
+                                                          overflow: TextOverflow.ellipsis,
+                                                          style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: Color(0xFF92400E)),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ] else if (req.missingDocuments.isNotEmpty) ...[
                                                 const SizedBox(height: 8),
                                                 Container(
                                                   padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),

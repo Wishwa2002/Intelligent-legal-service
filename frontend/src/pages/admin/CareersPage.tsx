@@ -2,10 +2,19 @@ import React, { useEffect, useState } from "react";
 import { AdminLayout } from "../../components/layout/AdminLayout";
 import { careersApi, type Career, type JobApplication } from "../../api/careersApi";
 
+const getRoleImage = (title: string): string => {
+  const lower = title.toLowerCase();
+  if (lower.includes("corporate") || lower.includes("commercial")) return "/careers/corporate_counsel.jpg";
+  if (lower.includes("clerk") || lower.includes("documentation") || lower.includes("operation")) return "/careers/legal_clerk.jpg";
+  if (lower.includes("litigation") || lower.includes("dispute") || lower.includes("associate")) return "/careers/litigation_associate.jpg";
+  if (lower.includes("ai") || lower.includes("intelligence") || lower.includes("engineer") || lower.includes("tech")) return "/careers/ai_legal_tech.jpg";
+  return "/careers/corporate_counsel.jpg";
+};
+
 export const CareersPage: React.FC = () => {
   const [careers, setCareers] = useState<Career[]>([]);
   const [applications, setApplications] = useState<JobApplication[]>([]);
-  const [selectedCareerId, setSelectedCareerId] = useState<string | "ALL">("ALL");
+  const [selectedCareerId, setSelectedCareerId] = useState<string | number | "ALL">("ALL");
   const [statusFilter, setStatusFilter] = useState<string>("ALL");
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
@@ -81,7 +90,7 @@ export const CareersPage: React.FC = () => {
     }
   };
 
-  const handleDeleteCareer = async (careerId: string, title: string) => {
+  const handleDeleteCareer = async (careerId: string | number, title: string) => {
     if (!window.confirm(`Are you sure you want to delete "${title}"?`)) return;
 
     try {
@@ -92,11 +101,11 @@ export const CareersPage: React.FC = () => {
     }
   };
 
-  const handleStatusChange = async (appId: string, newStatus: string) => {
+  const handleStatusChange = async (appId: string | number, newStatus: string) => {
     try {
       await careersApi.updateApplicationStatus(appId, newStatus);
       setApplications((prev) =>
-        prev.map((app) => (app.applicationId === appId ? { ...app, status: newStatus } : app))
+        prev.map((app) => (String(app.applicationId) === String(appId) ? { ...app, status: newStatus } : app))
       );
     } catch (err: any) {
       alert(err.response?.data?.message || "Failed to update status.");
@@ -104,7 +113,7 @@ export const CareersPage: React.FC = () => {
   };
 
   const filteredApplications = applications.filter((app) => {
-    const matchCareer = selectedCareerId === "ALL" || app.careerId === selectedCareerId;
+    const matchCareer = selectedCareerId === "ALL" || String(app.careerId) === String(selectedCareerId);
     const matchStatus = statusFilter === "ALL" || app.status.toLowerCase() === statusFilter.toLowerCase();
     return matchCareer && matchStatus;
   });
@@ -186,45 +195,62 @@ export const CareersPage: React.FC = () => {
             careers.map((career) => (
               <div
                 key={career.careerId}
-                className="bg-white rounded-xl border border-slate-200 shadow-sm p-6 flex flex-col justify-between hover:shadow-md transition-shadow"
+                className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden flex flex-col justify-between hover:shadow-md transition-shadow"
               >
-                <div>
-                  <div className="flex items-start justify-between">
-                    <h3 className="text-lg font-serif font-semibold text-slate-900">
-                      {career.jobTitle}
-                    </h3>
-                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-slate-100 text-slate-700">
+                {/* Image Header */}
+                <div className="relative h-44 w-full overflow-hidden bg-slate-900">
+                  <img
+                    src={getRoleImage(career.jobTitle)}
+                    alt={career.jobTitle}
+                    className="w-full h-full object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent" />
+                  <div className="absolute top-3 right-3">
+                    <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-white/90 text-slate-800 shadow-sm">
                       {career.applicationsCount} applicants
                     </span>
                   </div>
-                  <p className="mt-3 text-sm text-slate-600 line-clamp-4 whitespace-pre-line">
-                    {career.description}
-                  </p>
+                  <div className="absolute bottom-2 left-3">
+                    <span className="text-[10px] font-mono font-medium text-amber-300 bg-slate-950/80 px-2 py-0.5 rounded">
+                      ID #{career.careerId}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="mt-6 pt-4 border-t border-slate-100 flex items-center justify-between text-sm">
-                  <button
-                    onClick={() => {
-                      setSelectedCareerId(career.careerId);
-                      setActiveTab("applications");
-                    }}
-                    className="text-amber-600 hover:text-amber-700 font-medium"
-                  >
-                    View Applicants →
-                  </button>
-                  <div className="flex space-x-3">
+                <div className="p-5 flex-1 flex flex-col justify-between">
+                  <div>
+                    <h3 className="text-base font-serif font-bold text-slate-900">
+                      {career.jobTitle}
+                    </h3>
+                    <p className="mt-2 text-xs text-slate-600 line-clamp-3 whitespace-pre-line leading-relaxed">
+                      {career.description}
+                    </p>
+                  </div>
+
+                  <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs">
                     <button
-                      onClick={() => openEditModal(career)}
-                      className="text-slate-500 hover:text-slate-800"
+                      onClick={() => {
+                        setSelectedCareerId(career.careerId);
+                        setActiveTab("applications");
+                      }}
+                      className="text-amber-600 hover:text-amber-700 font-semibold"
                     >
-                      Edit
+                      View Applicants →
                     </button>
-                    <button
-                      onClick={() => handleDeleteCareer(career.careerId, career.jobTitle)}
-                      className="text-rose-500 hover:text-rose-700"
-                    >
-                      Delete
-                    </button>
+                    <div className="flex space-x-3">
+                      <button
+                        onClick={() => openEditModal(career)}
+                        className="text-slate-500 hover:text-slate-800 font-medium"
+                      >
+                        Edit
+                      </button>
+                      <button
+                        onClick={() => handleDeleteCareer(career.careerId, career.jobTitle)}
+                        className="text-rose-500 hover:text-rose-700 font-medium"
+                      >
+                        Delete
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

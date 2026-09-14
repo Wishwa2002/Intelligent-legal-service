@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using LegalService.API.DTOs.Requests;
@@ -21,7 +20,7 @@ public class JobApplicationsController : ControllerBase
     /// Get all submitted job applications (optionally filtered by career ID).
     /// </summary>
     [HttpGet]
-    public async Task<IActionResult> GetAll([FromQuery] Guid? careerId = null)
+    public async Task<IActionResult> GetAll([FromQuery] int? careerId = null)
     {
         var applications = await _careerService.GetAllApplicationsAsync(careerId);
         return Ok(applications);
@@ -30,8 +29,8 @@ public class JobApplicationsController : ControllerBase
     /// <summary>
     /// Get a job application by ID.
     /// </summary>
-    [HttpGet("{id:guid}")]
-    public async Task<IActionResult> GetById(Guid id)
+    [HttpGet("{id:int}")]
+    public async Task<IActionResult> GetById(int id)
     {
         var app = await _careerService.GetApplicationByIdAsync(id);
         if (app == null)
@@ -56,8 +55,8 @@ public class JobApplicationsController : ControllerBase
     /// <summary>
     /// Update the status of a job application (e.g. UnderReview, Shortlisted, Rejected, Hired).
     /// </summary>
-    [HttpPut("{id:guid}/status")]
-    public async Task<IActionResult> UpdateStatus(Guid id, [FromBody] UpdateJobApplicationStatusRequest request)
+    [HttpPut("{id:int}/status")]
+    public async Task<IActionResult> UpdateStatus(int id, [FromBody] UpdateJobApplicationStatusRequest request)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);

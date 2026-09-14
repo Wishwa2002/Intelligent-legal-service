@@ -1,7 +1,7 @@
 """
 app/schemas/clerk.py
 
-Pydantic models for clerk recommendation output.
+Pydantic models for clerk candidate data and transparent clerk recommendation output.
 """
 
 from __future__ import annotations
@@ -18,24 +18,38 @@ class ClerkCandidate(BaseModel):
     active_request_count: int = Field(
         description="Number of currently IN_PROGRESS requests assigned to this clerk."
     )
+    specializations: list[str] = Field(default_factory=list)
+    skills: list[str] = Field(default_factory=list)
+    experience_years: float = Field(default=3.0)
+    availability: bool = Field(default=True)
+
+
+class ClerkRecommendationItem(BaseModel):
+    """Individual ranked clerk recommendation item."""
+    clerk_id: str
+    name: str = ""
+    match_score: float = Field(..., ge=0.0, le=1.0, description="Recommendation match score (0.0 to 1.0)")
+    reasons: list[str] = Field(default_factory=list, description="Specific reasons for recommendation")
+
+
+class ClerkRecommendationReport(BaseModel):
+    """Structured report containing ranked clerk recommendations for human approval."""
+    recommendations: list[ClerkRecommendationItem] = Field(default_factory=list)
+    requires_human_approval: bool = True
+    service_type: str | None = None
+    case_id: str | None = None
 
 
 class ClerkRecommendation(BaseModel):
     """
-    Gemini's structured recommendation output.
-
-    IMPORTANT: Gemini EXPLAINS which clerk looks best and WHY.
-    It does NOT make the final decision — that belongs to the admin.
-    The AI service never calls assign-clerk directly.
+    Gemini's structured recommendation output (backward-compatible).
     """
 
     recommended_clerk_id: str = Field(
         description="The clerk_id (as string) of the recommended clerk."
     )
     reason: str = Field(
-        description="Clear explanation of why this clerk is recommended. "
-                    "Must reference objective data (workload, department). "
-                    "Must NOT claim to 'assign' or 'decide' — only to 'recommend'."
+        description="Clear explanation of why this clerk is recommended."
     )
     confidence: float = Field(
         ge=0.0, le=1.0,

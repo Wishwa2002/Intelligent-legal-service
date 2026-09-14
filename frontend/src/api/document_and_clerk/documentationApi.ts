@@ -15,6 +15,7 @@ export interface DocumentFile {
   contentType: string;
   fileSize: number;
   documentStatus: string;
+  rejectReason?: string;
   uploadDate: string;
 }
 
@@ -34,6 +35,7 @@ export interface DocumentationRequest {
   documentFiles: DocumentFile[];
   requiredDocuments: string[];
   missingDocuments: string[];
+  reuploadNote?: string;
 }
 
 export const documentationApi = {
@@ -95,6 +97,23 @@ export const documentationApi = {
     return res.data;
   },
 
+  requestDocumentReupload: async (
+    requestId: string | number,
+    documentName: string,
+    note?: string,
+    fileId?: string | number
+  ): Promise<DocumentationRequest> => {
+    const res = await apiClient.post<DocumentationRequest>(
+      `/api/documentation-requests/${requestId}/request-document`,
+      {
+        documentName,
+        note: note || undefined,
+        fileId: fileId ? Number(fileId) : undefined,
+      }
+    );
+    return res.data;
+  },
+
   // Files
   uploadFile: async (requestId: string, file: File): Promise<DocumentFile> => {
     const formData = new FormData();
@@ -123,6 +142,20 @@ export const documentationApi = {
 
   deleteFile: async (fileId: string) => {
     const res = await apiClient.delete(`/api/document-files/${fileId}`);
+    return res.data;
+  },
+
+  uploadSampleFile: async (requestId: string | number, sampleName: string): Promise<DocumentFile> => {
+    const res = await apiClient.post<DocumentFile>(
+      `/api/documentation-requests/${requestId}/sample-file`,
+      null,
+      { params: { sampleName } }
+    );
+    return res.data;
+  },
+
+  getSampleTemplates: async (): Promise<string[]> => {
+    const res = await apiClient.get<string[]>("/api/document-files/sample-templates");
     return res.data;
   },
 };

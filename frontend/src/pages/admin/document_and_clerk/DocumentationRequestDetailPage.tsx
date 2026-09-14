@@ -5,6 +5,7 @@ import MarkdownText from "../../../components/common/MarkdownText";
 import { documentationApi, type DocumentationRequest } from "../../../api/documentationApi";
 import { agentApi, type AgentAnalysisResult, type ChatMessage } from "../../../api/agentApi";
 import { clerksApi, type Clerk } from "../../../api/clerksApi";
+import { AVAILABLE_SAMPLES } from "../../clerk/ClerkCasesPage";
 
 // ─────────────────────────────────────────────────────────
 // Sub-components
@@ -228,6 +229,10 @@ export const DocumentationRequestDetailPage: React.FC = () => {
       const chatData = await agentApi.getChatMessages(wfId);
       setChatMessages(chatData.messages || []);
       setChatPhase(chatData.phase);
+      const chatClientName = (chatData as any).client_name || (status as any).client_name;
+      if (chatClientName && chatClientName.trim()) {
+        setRequest(prev => prev ? { ...prev, customerName: chatClientName.trim() } : prev);
+      }
     } catch {
       setChatError("No chat session found for this request.");
     } finally {
@@ -235,18 +240,26 @@ export const DocumentationRequestDetailPage: React.FC = () => {
     }
   }, []);
 
-  // Auto-run AI analysis after load
+  // Admin-triggered on-demand AI analysis
   const runAiAnalysis = useCallback(async (req: DocumentationRequest) => {
     try {
       setAnalyzing(true);
+      setActionToast(null);
       const objective = `Customer requires ${req.serviceName || req.documentType} processing with ${req.documentFiles?.length || 0} submitted files.`;
       const result = await agentApi.analyzeRequest(req.requestId, req.customerId, objective);
       setAnalysisResult(result);
       if (result?.recommendation?.recommended_clerk?.clerk_id) {
         setChosenClerkId(result.recommendation.recommended_clerk.clerk_id);
       }
-    } catch {
-      // silently fail auto-analysis; user can retry manually
+      setActionToast({
+        type: "success",
+        message: "AI analysis and clerk recommendation generated successfully.",
+      });
+    } catch (err: any) {
+      setActionToast({
+        type: "error",
+        message: err.response?.data?.message || err.message || "Failed to complete AI agent analysis. Ensure AI backend service is online.",
+      });
     } finally {
       setAnalyzing(false);
     }
@@ -256,11 +269,10 @@ export const DocumentationRequestDetailPage: React.FC = () => {
     fetchDetails();
   }, [fetchDetails]);
 
-  // When request is loaded, auto-fetch chat + auto-run AI analysis
+  // When request is loaded, fetch chat history (AI analysis runs on-demand via admin button)
   useEffect(() => {
     if (!request) return;
     fetchChatHistory(String(request.requestId));
-    runAiAnalysis(request);
   }, [request?.requestId]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Auto-scroll chat to bottom
@@ -423,6 +435,87 @@ export const DocumentationRequestDetailPage: React.FC = () => {
     }
   };
 
+  // Ask client to upload document state
+  const [askUploadModalOpen, setAskUploadModalOpen] = useState(false);
+  const [askDocName, setAskDocName] = useState("");
+  const [askDocNote, setAskDocNote] = useState("");
+  const [askFileId, setAskFileId] = useState<string | undefined>(undefined);
+  const [askSubmitting, setAskSubmitting] = useState(false);
+
+  const openAskModal = (docName: string, fileId?: string) => {
+    setAskDocName(docName);
+    setAskFileId(fileId);
+    setAskDocNote("");
+    setAskUploadModalOpen(true);
+  };
+
+  const handleSendAskUpload = async () => {
+    if (!request || !askDocName) return;
+    try {
+      setAskSubmitting(true);
+      const updated = await documentationApi.requestDocumentReupload(
+        request.requestId,
+        askDocName,
+        askDocNote,
+        askFileId
+      );
+      setRequest(updated);
+      setAskUploadModalOpen(false);
+      setActionToast({
+        type: "success",
+        message: `Upload request for "${askDocName}" sent to client! Status updated to REQUIRES_DOCUMENTS.`,
+      });
+      await fetchDetails();
+    } catch (err: any) {
+      setActionToast({
+        type: "error",
+        message: err.response?.data?.message || err.message || "Failed to submit document upload request.",
+      });
+    } finally {
+      setAskSubmitting(false);
+    }
+  };
+
+  // Sample document upload state
+  const [samplePickerOpen, setSamplePickerOpen] = useState(false);
+  const [sampleUploading, setSampleUploading] = useState(false);
+
+  const handleUploadSample = async (sampleFileName: string) => {
+    if (!request) return;
+    try {
+      setSampleUploading(true);
+      await documentationApi.uploadSampleFile(request.requestId, sampleFileName);
+      setSamplePickerOpen(false);
+      setActionToast({
+        type: "success",
+        message: `Sample document "${sampleFileName}" attached successfully!`,
+      });
+      await fetchDetails();
+    } catch (err: any) {
+      setActionToast({
+        type: "error",
+        message: err.response?.data?.message || err.message || "Failed to upload sample document.",
+      });
+    } finally {
+      setSampleUploading(false);
+    }
+  };
+
+  const handleQuickUploadMatchingSample = async (docName: string) => {
+    const clean = docName.toLowerCase();
+    let sample = "Amendment_Request_Letter.pdf";
+    if (clean.includes("nic") || clean.includes("identity") || clean.includes("passport")) sample = "NIC_Copy.pdf";
+    else if (clean.includes("rent") || clean.includes("lease") || clean.includes("tenancy")) sample = "Tenancy_Agreement.pdf";
+    else if (clean.includes("contract") || clean.includes("agreement") || clean.includes("business")) sample = "Original_Contract.pdf";
+    else if (clean.includes("affidavit") || clean.includes("statement")) sample = "Completed_Affidavit_Draft.pdf";
+    else if (clean.includes("deed") || clean.includes("asset") || clean.includes("title") || clean.includes("property")) sample = "Asset_Ownership_Proof.pdf";
+    else if (clean.includes("attorney") || clean.includes("poa")) sample = "Power_of_Attorney_Draft.pdf";
+    else if (clean.includes("will") || clean.includes("testament")) sample = "Draft_Will_Agreement.pdf";
+    else if (clean.includes("witness")) sample = "Witness_Details.pdf";
+
+    await handleUploadSample(sample);
+  };
+
   // ── Loading / Error states ──
   if (loading) {
     return (
@@ -449,11 +542,21 @@ export const DocumentationRequestDetailPage: React.FC = () => {
   }
 
   const isDocumentReceived = (docName: string) => {
-    if (request && !request.missingDocuments.includes(docName)) return true;
-    if (!request.documentFiles) return false;
+    if (!request) return false;
+    // 1. Backend calculated missing list (empty means all received)
+    if (request.missingDocuments && !request.missingDocuments.includes(docName)) return true;
+    
+    // 2. AI Recommendation verdict
+    if (docVerdicts[docName] === "accepted") return true;
+
+    // 3. If valid uploaded files count meets or exceeds required count, all required docs are satisfied
+    const validFiles = (request.documentFiles || []).filter(f => f.documentStatus?.toLowerCase() !== "rejected");
+    if (validFiles.length >= request.requiredDocuments.length && validFiles.length > 0) return true;
+
+    // 4. Filename semantic matching
     const clean = (s: string) => s.toLowerCase().replace(/[^a-z0-9]/g, "");
     const target = clean(docName);
-    return request.documentFiles.some(f => {
+    return validFiles.some(f => {
       const fc = clean(f.fileName);
       return fc === target || fc.includes(target) || target.includes(fc);
     });
@@ -596,6 +699,19 @@ export const DocumentationRequestDetailPage: React.FC = () => {
               </div>
             </div>
 
+            {/* ── Active Re-upload Request Banner ── */}
+            {request.reuploadNote && (
+              <div className="bg-amber-50 border border-amber-300 rounded-2xl p-4 text-xs text-amber-900 flex items-start gap-3 shadow-xs">
+                <span className="text-xl">📢</span>
+                <div>
+                  <span className="font-bold uppercase tracking-wider text-[10px] text-amber-700 block">
+                    Active Re-upload Request Sent to Client
+                  </span>
+                  <p className="mt-0.5 font-medium text-amber-950 text-sm leading-relaxed">{request.reuploadNote}</p>
+                </div>
+              </div>
+            )}
+
             {/* ── Document Audit Checklist ── */}
             <div className="bg-white rounded-2xl border border-slate-200 p-6 shadow-sm">
               <div className="flex items-center justify-between mb-4">
@@ -621,17 +737,17 @@ export const DocumentationRequestDetailPage: React.FC = () => {
                     return (
                       <div
                         key={idx}
-                        className={`flex items-center justify-between p-3 rounded-xl border text-xs font-medium transition-colors ${
+                        className={`flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl border text-xs font-medium transition-colors gap-2 ${
                           !received
                             ? "bg-rose-50/50 border-rose-200 text-rose-800"
                             : "bg-emerald-50/50 border-emerald-200 text-emerald-800"
                         }`}
                       >
-                        <div className="flex items-center gap-2.5">
+                        <div className="flex items-center gap-2.5 flex-1">
                           <span className="text-sm">{received ? "✅" : "❌"}</span>
                           <span className="font-semibold">{doc}</span>
                         </div>
-                        <div className="flex items-center gap-2">
+                        <div className="flex items-center gap-2 shrink-0">
                           {verdict && analysisResult && (
                             <span className={`text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded ${
                               verdict === "accepted" ? "bg-emerald-100 text-emerald-700" :
@@ -644,6 +760,23 @@ export const DocumentationRequestDetailPage: React.FC = () => {
                           <span className="text-[11px] font-bold uppercase tracking-wider">
                             {received ? "Received" : "Missing"}
                           </span>
+                          <button
+                            type="button"
+                            onClick={() => handleQuickUploadMatchingSample(doc)}
+                            disabled={sampleUploading}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-amber-900 bg-amber-50 hover:bg-amber-100 border border-amber-300 rounded-lg transition shadow-xs"
+                          >
+                            <span>📄</span>
+                            <span>Attach Sample</span>
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => openAskModal(doc)}
+                            className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-bold text-rose-700 bg-white hover:bg-rose-100 border border-rose-300 rounded-lg transition shadow-xs ml-1"
+                          >
+                            <span>📨</span>
+                            <span>Ask to upload this document</span>
+                          </button>
                         </div>
                       </div>
                     );
@@ -658,22 +791,33 @@ export const DocumentationRequestDetailPage: React.FC = () => {
                 <h3 className="text-sm font-bold text-slate-900 uppercase tracking-wider">
                   Uploaded Files <span className="text-slate-400 font-normal normal-case">({request.documentFiles.length})</span>
                 </h3>
-                <label className="cursor-pointer inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors shadow-sm">
-                  {uploading ? (
-                    <>
-                      <div className="w-3 h-3 border border-white border-t-transparent rounded-full animate-spin" />
-                      Uploading…
-                    </>
-                  ) : (
-                    <>
-                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
-                        <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
-                      </svg>
-                      Add Document
-                    </>
-                  )}
-                  <input type="file" accept=".pdf,.jpg,.jpeg,.png" onChange={handleFileUpload} disabled={uploading} className="hidden" />
-                </label>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setSamplePickerOpen(true)}
+                    disabled={sampleUploading}
+                    className="inline-flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold px-3 py-1.5 rounded-lg transition shadow-sm"
+                  >
+                    <span>📄</span>
+                    <span>Use Sample Document</span>
+                  </button>
+                  <label className="cursor-pointer inline-flex items-center gap-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-semibold px-3 py-1.5 rounded-lg transition-colors shadow-sm">
+                    {uploading ? (
+                      <>
+                        <div className="w-3 h-3 border border-white border-t-transparent rounded-full animate-spin" />
+                        Uploading…
+                      </>
+                    ) : (
+                      <>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                          <line x1="12" y1="5" x2="12" y2="19" /><line x1="5" y1="12" x2="19" y2="12" />
+                        </svg>
+                        Add Document
+                      </>
+                    )}
+                    <input type="file" accept=".pdf,.jpg,.jpeg,.png" onChange={handleFileUpload} disabled={uploading} className="hidden" />
+                  </label>
+                </div>
               </div>
 
               {request.documentFiles.length === 0 ? (
@@ -683,7 +827,7 @@ export const DocumentationRequestDetailPage: React.FC = () => {
               ) : (
                 <div className="divide-y divide-slate-100 border border-slate-200 rounded-xl overflow-hidden">
                   {request.documentFiles.map(file => (
-                    <div key={file.fileId} className="flex items-center justify-between p-3.5 hover:bg-slate-50 transition-colors text-xs">
+                    <div key={file.fileId} className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 hover:bg-slate-50 transition-colors text-xs gap-3">
                       <div className="flex items-center gap-3">
                         <span className="text-xl">{file.contentType?.includes("pdf") ? "📕" : "🖼️"}</span>
                         <div>
@@ -691,9 +835,14 @@ export const DocumentationRequestDetailPage: React.FC = () => {
                           <div className="text-[11px] text-slate-400 font-mono mt-0.5">
                             {(file.fileSize / 1024).toFixed(1)} KB • {new Date(file.uploadDate).toLocaleDateString()}
                           </div>
+                          {file.rejectReason && (
+                            <div className="text-[11px] font-semibold text-rose-600 mt-0.5">
+                              Reason: {file.rejectReason}
+                            </div>
+                          )}
                         </div>
                       </div>
-                      <div className="flex items-center gap-2.5">
+                      <div className="flex items-center gap-2 shrink-0">
                         <span className={`px-2 py-0.5 rounded-full font-semibold text-[10px] uppercase border ${
                           file.documentStatus === "Accepted"
                             ? "bg-emerald-50 text-emerald-700 border-emerald-200"
@@ -711,6 +860,14 @@ export const DocumentationRequestDetailPage: React.FC = () => {
                         >
                           Download
                         </a>
+                        <button
+                          type="button"
+                          onClick={() => openAskModal(file.fileName, file.fileId)}
+                          className="text-xs font-bold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 px-2.5 py-1 rounded-lg transition flex items-center gap-1"
+                        >
+                          <span>⚠️</span>
+                          <span>Ask to re-upload</span>
+                        </button>
                       </div>
                     </div>
                   ))}
@@ -933,14 +1090,22 @@ export const DocumentationRequestDetailPage: React.FC = () => {
                   </div>
                 </div>
               ) : (
-                <div className="text-center py-4 space-y-3">
-                  <p className="text-xs text-slate-400">AI analysis will start automatically.</p>
+                <div className="text-center py-5 space-y-3">
+                  <div className="w-10 h-10 mx-auto rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-xl">
+                    🤖
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-bold text-slate-200 uppercase tracking-wider">AI Audit on Demand</h4>
+                    <p className="text-xs text-slate-400 mt-1 max-w-[240px] mx-auto leading-relaxed">
+                      Run automated document verification, missing items audit, and AI clerk recommendation when needed.
+                    </p>
+                  </div>
                   <button
                     onClick={() => runAiAnalysis(request)}
                     disabled={analyzing}
-                    className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs py-2.5 px-4 rounded-xl shadow-md transition-all disabled:opacity-50"
+                    className="w-full bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-slate-950 font-bold text-xs py-2.5 px-4 rounded-xl shadow-md transition-all disabled:opacity-50 flex items-center justify-center gap-2"
                   >
-                    ⚡ Run AI Documentation Agent
+                    <span>⚡</span> Run AI Documentation Agent
                   </button>
                 </div>
               )}
@@ -1134,6 +1299,158 @@ export const DocumentationRequestDetailPage: React.FC = () => {
             )}
           </div>
         </div>
+
+        {/* Ask Client to Upload / Re-upload Modal */}
+        {askUploadModalOpen && (
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
+            <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-md overflow-hidden">
+              <div className="px-6 py-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">📨</span>
+                  <h3 className="text-sm font-bold text-white">Ask Client to Upload Document</h3>
+                </div>
+                <button
+                  onClick={() => setAskUploadModalOpen(false)}
+                  disabled={askSubmitting}
+                  className="text-slate-400 hover:text-white text-sm"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="p-6 space-y-4">
+                <div>
+                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-1">
+                    Document Requested
+                  </label>
+                  <input
+                    type="text"
+                    value={askDocName}
+                    onChange={(e) => setAskDocName(e.target.value)}
+                    placeholder="e.g. National Identity Card (NIC)"
+                    className="w-full text-xs font-semibold px-3 py-2 border border-slate-300 rounded-lg bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  />
+                </div>
+
+                <div>
+                  <label className="text-xs font-bold text-slate-700 uppercase tracking-wider block mb-1">
+                    Instructions / Reason for Client <span className="font-normal text-slate-400">(Optional)</span>
+                  </label>
+                  <textarea
+                    rows={3}
+                    value={askDocNote}
+                    onChange={(e) => setAskDocNote(e.target.value)}
+                    placeholder="e.g. The previous photo was blurry or missing page 2. Please upload a clear, full-page scanned copy."
+                    className="w-full text-xs px-3 py-2 border border-slate-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-amber-400 leading-relaxed"
+                  />
+                </div>
+
+                <div className="bg-amber-50 border border-amber-200 rounded-xl p-3 text-[11px] text-amber-800 leading-relaxed">
+                  ℹ️ When submitted, the client's request page on their mobile app will show this alert banner, and the case status will be set to <strong>REQUIRES_DOCUMENTS</strong> so they can upload immediately.
+                </div>
+
+                <div className="flex items-center justify-end gap-2 pt-2">
+                  <button
+                    type="button"
+                    onClick={() => setAskUploadModalOpen(false)}
+                    disabled={askSubmitting}
+                    className="px-4 py-2 text-xs font-semibold text-slate-600 hover:bg-slate-100 rounded-lg transition disabled:opacity-50"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    onClick={handleSendAskUpload}
+                    disabled={askSubmitting || !askDocName.trim()}
+                    className="px-4 py-2 text-xs font-bold text-white bg-slate-900 hover:bg-slate-800 rounded-lg shadow transition flex items-center gap-1.5 disabled:opacity-50"
+                  >
+                    {askSubmitting ? (
+                      <>
+                        <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                        <span>Sending…</span>
+                      </>
+                    ) : (
+                      <>
+                        <span>📨</span>
+                        <span>Send Request to Client</span>
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+        {/* Sample Document Picker Modal */}
+        {samplePickerOpen && request && (
+          <div className="fixed inset-0 z-[110] flex items-center justify-center p-4 bg-slate-950/70 backdrop-blur-sm animate-fade-in">
+            <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 w-full max-w-lg overflow-hidden flex flex-col max-h-[90vh]">
+              <div className="px-6 py-4 bg-slate-900 border-b border-slate-800 flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-lg">📄</span>
+                  <div>
+                    <h3 className="text-sm font-bold text-white">Use Verified Sample Document</h3>
+                    <p className="text-[11px] text-slate-400">Select a pre-formatted legal document to attach to this case</p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => setSamplePickerOpen(false)}
+                  disabled={sampleUploading}
+                  className="text-slate-400 hover:text-white text-sm p-1 rounded-lg hover:bg-slate-800"
+                >
+                  ✕
+                </button>
+              </div>
+
+              <div className="p-4 overflow-y-auto space-y-2 flex-1">
+                <p className="text-xs text-slate-600 mb-3">
+                  Click any sample document below to attach it immediately to Case #{request.requestId}. The backend will register and verify it as an official legal document file.
+                </p>
+                {AVAILABLE_SAMPLES.map((sample) => (
+                  <div
+                    key={sample.name}
+                    className="flex items-center justify-between p-3 rounded-xl border border-slate-200 hover:border-amber-400 hover:bg-amber-50/50 transition bg-white group"
+                  >
+                    <div className="flex items-center gap-3">
+                      <span className="text-2xl p-2 rounded-lg bg-slate-100 group-hover:bg-amber-100 transition">
+                        {sample.icon}
+                      </span>
+                      <div>
+                        <div className="text-xs font-bold text-slate-900">{sample.title}</div>
+                        <div className="text-[11px] text-slate-500">{sample.desc}</div>
+                        <div className="text-[10px] text-slate-400 font-mono mt-0.5">{sample.name}</div>
+                      </div>
+                    </div>
+                    <button
+                      type="button"
+                      disabled={sampleUploading}
+                      onClick={() => handleUploadSample(sample.name)}
+                      className="px-3 py-1.5 text-xs font-bold bg-amber-500 hover:bg-amber-400 text-slate-950 rounded-lg shadow-xs transition shrink-0 flex items-center gap-1 disabled:opacity-50"
+                    >
+                      {sampleUploading ? (
+                        <div className="w-3 h-3 border-2 border-slate-900 border-t-transparent rounded-full animate-spin" />
+                      ) : (
+                        <span>+ Attach</span>
+                      )}
+                    </button>
+                  </div>
+                ))}
+              </div>
+
+              <div className="px-6 py-3 bg-slate-50 border-t border-slate-200 flex items-center justify-between text-xs text-slate-500">
+                <span>9 standard legal templates available</span>
+                <button
+                  type="button"
+                  onClick={() => setSamplePickerOpen(false)}
+                  disabled={sampleUploading}
+                  className="px-3 py-1.5 font-semibold text-slate-600 hover:bg-slate-200 rounded-lg transition"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        )}
       </AdminLayout>
     </>
   );

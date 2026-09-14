@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { AdminLayout } from "../../../components/layout/AdminLayout";
 import { clerksApi, type Clerk, type CreateClerkData } from "../../../api/clerksApi";
 
@@ -193,6 +194,12 @@ export const ClerksPage: React.FC = () => {
                       )}
                     </td>
                     <td className="px-6 py-4 text-right space-x-2">
+                      <Link
+                        to={`/admin/documentation-requests?clerkId=${clerk.clerkId}`}
+                        className="inline-flex items-center gap-1 text-xs font-semibold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1 rounded-lg transition-colors"
+                      >
+                        📋 View Cases ({clerk.activeAssignmentsCount})
+                      </Link>
                       <button
                         onClick={() => handleDeactivate(clerk.clerkId)}
                         className={`text-xs font-medium px-2 py-1 rounded transition-colors ${

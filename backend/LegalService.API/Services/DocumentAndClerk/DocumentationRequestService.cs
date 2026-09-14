@@ -9,12 +9,14 @@ using LegalService.API.DTOs.Requests;
 using LegalService.API.DTOs.Responses;
 using LegalService.API.Interfaces;
 using LegalService.API.Models.Entities;
+using LegalService.API.AgentIntegration;
 
 namespace LegalService.API.Services;
 
 public class DocumentationRequestService : IDocumentationRequestService
 {
     private readonly ApplicationDbContext _context;
+    private readonly IAgentIntegrationService? _agentService;
 
     // Allowed status transitions
     private static readonly HashSet<string> ValidStatuses = new(StringComparer.OrdinalIgnoreCase)
@@ -29,9 +31,10 @@ public class DocumentationRequestService : IDocumentationRequestService
         "CANCELLED"
     };
 
-    public DocumentationRequestService(ApplicationDbContext context)
+    public DocumentationRequestService(ApplicationDbContext context, IAgentIntegrationService? agentService = null)
     {
         _context = context;
+        _agentService = agentService;
     }
 
     public async Task<IEnumerable<DocumentationRequestResponse>> GetAllRequestsAsync(
@@ -61,7 +64,30 @@ public class DocumentationRequestService : IDocumentationRequestService
         }
 
         var requests = await query.OrderByDescending(r => r.CreatedAt).ToListAsync();
-        return requests.Select(MapToResponse);
+
+        // 1. Fetch chat client names mapping from AI service sessions
+        Dictionary<int, string> chatClientNames = new();
+        if (_agentService != null)
+        {
+            try
+            {
+                chatClientNames = await _agentService.GetChatClientNamesAsync();
+            }
+            catch { }
+        }
+
+        // 2. Fetch Users from database for fallback and customer email
+        var customerIds = requests.Select(r => r.CustomerId).Distinct().ToList();
+        var users = await _context.Users
+            .Where(u => customerIds.Contains(u.UserId))
+            .ToDictionaryAsync(u => u.UserId);
+
+        return requests.Select(r =>
+        {
+            users.TryGetValue(r.CustomerId, out var u);
+            chatClientNames.TryGetValue(r.RequestId, out var chatName);
+            return MapToResponse(r, chatName, u);
+        });
     }
 
     public async Task<DocumentationRequestResponse?> GetRequestByIdAsync(int requestId)
@@ -72,7 +98,21 @@ public class DocumentationRequestService : IDocumentationRequestService
             .Include(r => r.DocumentFiles)
             .FirstOrDefaultAsync(r => r.RequestId == requestId);
 
-        return request == null ? null : MapToResponse(request);
+        if (request == null) return null;
+
+        string? chatName = null;
+        if (_agentService != null)
+        {
+            try
+            {
+                var names = await _agentService.GetChatClientNamesAsync();
+                names.TryGetValue(request.RequestId, out chatName);
+            }
+            catch { }
+        }
+
+        var user = await _context.Users.FindAsync(request.CustomerId);
+        return MapToResponse(request, chatName, user);
     }
 
     public async Task<DocumentationRequestResponse> CreateRequestAsync(int customerId, CreateDocumentationRequestRequest request)
@@ -130,7 +170,7 @@ public class DocumentationRequestService : IDocumentationRequestService
         request.UpdatedAt = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
-        return MapToResponse(request);
+        return (await GetRequestByIdAsync(requestId))!;
     }
 
     public async Task<DocumentationRequestResponse?> AssignClerkAsync(int requestId, int clerkId)
@@ -158,13 +198,51 @@ public class DocumentationRequestService : IDocumentationRequestService
         return (await GetRequestByIdAsync(requestId))!;
     }
 
+    public async Task<DocumentationRequestResponse?> RequestDocumentReuploadAsync(int requestId, string documentName, string? note, int? fileId)
+    {
+        var request = await _context.DocumentationRequests
+            .Include(r => r.DocumentationService)
+            .Include(r => r.AssignedClerk)
+            .Include(r => r.DocumentFiles)
+            .FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+        if (request == null)
+            return null;
+
+        request.Status = "REQUIRES_DOCUMENTS";
+
+        string formattedNote = string.IsNullOrWhiteSpace(note)
+            ? $"Please upload required document: {documentName.Trim()}"
+            : $"{documentName.Trim()}: {note.Trim()}";
+
+        request.ReuploadNote = formattedNote;
+        request.UpdatedAt = DateTime.UtcNow;
+
+        if (fileId.HasValue && fileId.Value > 0)
+        {
+            var targetFile = request.DocumentFiles.FirstOrDefault(f => f.FileId == fileId.Value);
+            if (targetFile != null)
+            {
+                targetFile.DocumentStatus = "Rejected";
+                targetFile.RejectReason = note?.Trim() ?? "Document marked as incorrect by legal team. Re-upload requested.";
+                targetFile.UpdatedAt = DateTime.UtcNow;
+            }
+        }
+
+        await _context.SaveChangesAsync();
+        return (await GetRequestByIdAsync(requestId))!;
+    }
+
     public async Task<bool> CanCustomerAccessRequestAsync(int customerId, int requestId)
     {
         return await _context.DocumentationRequests
             .AnyAsync(r => r.RequestId == requestId && r.CustomerId == customerId);
     }
 
-    public static DocumentationRequestResponse MapToResponse(DocumentationRequest request)
+    public static DocumentationRequestResponse MapToResponse(
+        DocumentationRequest request,
+        string? chatClientName = null,
+        User? user = null)
     {
         List<string> requiredDocs = new();
         try
@@ -179,22 +257,74 @@ public class DocumentationRequestService : IDocumentationRequestService
             requiredDocs = new();
         }
 
-        var uploadedFileNames = request.DocumentFiles?
-            .Select(f => f.FileName)
-            .Where(name => !string.IsNullOrWhiteSpace(name))
-            .ToList() ?? new List<string>();
+        var validFiles = request.DocumentFiles?
+            .Where(f => !string.Equals(f.DocumentStatus, "Rejected", StringComparison.OrdinalIgnoreCase))
+            .ToList() ?? new List<DocumentFile>();
 
-        // Missing documents detection with resilient filename normalization (handles underscores, hyphens, extensions)
-        var missingDocs = requiredDocs
-            .Where(req => !uploadedFileNames.Any(up => DocumentMatches(up, req)))
-            .ToList();
+        // Missing documents computation:
+        List<string> missingDocs;
+        if (validFiles.Count >= requiredDocs.Count && validFiles.Count > 0)
+        {
+            // All required documents are satisfied by the uploaded valid files
+            missingDocs = new List<string>();
+        }
+        else
+        {
+            // 1-to-1 matching: each uploaded file can satisfy at most one required document
+            var unmatchedRequired = new List<string>(requiredDocs);
+            var availableFiles = new List<DocumentFile>(validFiles);
+
+            // Pass 1: Match files that semantically match a required document name
+            for (int i = unmatchedRequired.Count - 1; i >= 0; i--)
+            {
+                var req = unmatchedRequired[i];
+                var matched = availableFiles.FirstOrDefault(f => DocumentMatches(f.FileName, req));
+                if (matched != null)
+                {
+                    unmatchedRequired.RemoveAt(i);
+                    availableFiles.Remove(matched);
+                }
+            }
+
+            // Pass 2: Remaining uploaded files (photos, camera captures, generic names) satisfy remaining requirements
+            while (availableFiles.Count > 0 && unmatchedRequired.Count > 0)
+            {
+                availableFiles.RemoveAt(0);
+                unmatchedRequired.RemoveAt(unmatchedRequired.Count - 1);
+            }
+
+            missingDocs = unmatchedRequired;
+        }
+
+        // Determine customer name: prioritize name from chat session, then Users record, fallback to Online Client
+        string customerName = string.Empty;
+        if (!string.IsNullOrWhiteSpace(chatClientName))
+        {
+            customerName = chatClientName.Trim();
+        }
+        else if (user != null && !string.IsNullOrWhiteSpace(user.Name))
+        {
+            customerName = user.Name.Trim();
+        }
+        else
+        {
+            customerName = "Online Client";
+        }
+
+        // Capitalize nicely if all lowercase
+        if (!string.IsNullOrWhiteSpace(customerName) && customerName.All(c => !char.IsLetter(c) || char.IsLower(c)))
+        {
+            customerName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(customerName);
+        }
+
+        string customerEmail = user?.Email ?? string.Empty;
 
         return new DocumentationRequestResponse
         {
             RequestId = request.RequestId,
             CustomerId = request.CustomerId,
-            CustomerName = string.Empty,  // Not joining Users table (schema mismatch)
-            CustomerEmail = string.Empty,
+            CustomerName = customerName,
+            CustomerEmail = customerEmail,
             ServiceId = request.ServiceId,
             ServiceName = request.DocumentationService?.Name ?? string.Empty,
             DocumentType = request.DocumentType,
@@ -205,7 +335,8 @@ public class DocumentationRequestService : IDocumentationRequestService
             UpdatedAt = request.UpdatedAt,
             DocumentFiles = request.DocumentFiles?.Select(DocumentFileService.MapToResponse).ToList() ?? new(),
             RequiredDocuments = requiredDocs,
-            MissingDocuments = missingDocs
+            MissingDocuments = missingDocs,
+            ReuploadNote = request.ReuploadNote
         };
     }
 

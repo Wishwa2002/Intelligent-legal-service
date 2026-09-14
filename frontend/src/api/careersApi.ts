@@ -1,15 +1,15 @@
 import { apiClient } from "./apiClient";
 
 export interface Career {
-  careerId: string;
+  careerId: number | string;
   jobTitle: string;
   description: string;
   applicationsCount: number;
 }
 
 export interface JobApplication {
-  applicationId: string;
-  careerId: string;
+  applicationId: number | string;
+  careerId: number | string;
   jobTitle: string;
   applicantName: string;
   status: string;
@@ -22,7 +22,7 @@ export const careersApi = {
     return res.data;
   },
 
-  getCareerById: async (id: string): Promise<Career> => {
+  getCareerById: async (id: number | string): Promise<Career> => {
     const res = await apiClient.get<Career>(`/api/careers/${id}`);
     return res.data;
   },
@@ -32,29 +32,29 @@ export const careersApi = {
     return res.data;
   },
 
-  updateCareer: async (id: string, data: { jobTitle: string; description: string }) => {
+  updateCareer: async (id: number | string, data: { jobTitle: string; description: string }) => {
     const res = await apiClient.put<Career>(`/api/careers/${id}`, data);
     return res.data;
   },
 
-  deleteCareer: async (id: string) => {
+  deleteCareer: async (id: number | string) => {
     const res = await apiClient.delete(`/api/careers/${id}`);
     return res.data;
   },
 
-  getApplications: async (careerId?: string): Promise<JobApplication[]> => {
+  getApplications: async (careerId?: number | string): Promise<JobApplication[]> => {
     const res = await apiClient.get<JobApplication[]>("/api/job-applications", {
-      params: { careerId },
+      params: { careerId: careerId === "ALL" ? undefined : careerId },
     });
     return res.data;
   },
 
-  createApplication: async (data: { careerId: string; applicantName: string }) => {
+  createApplication: async (data: { careerId: number; applicantName: string }) => {
     const res = await apiClient.post<JobApplication>("/api/job-applications", data);
     return res.data;
   },
 
-  updateApplicationStatus: async (id: string, status: string) => {
+  updateApplicationStatus: async (id: number | string, status: string) => {
     const res = await apiClient.put<JobApplication>(`/api/job-applications/${id}/status`, { status });
     return res.data;
   },

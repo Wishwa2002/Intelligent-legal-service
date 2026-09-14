@@ -97,4 +97,29 @@ public class DocumentFilesController : ControllerBase
 
         return Ok(updated);
     }
+
+    /// <summary>
+    /// Upload a verified sample document (e.g. NIC_Copy.pdf, Tenancy_Agreement.pdf) to a request.
+    /// </summary>
+    [HttpPost("documentation-requests/{requestId:int}/sample-file")]
+    public async Task<IActionResult> UploadSample(int requestId, [FromQuery] string sampleName)
+    {
+        if (string.IsNullOrWhiteSpace(sampleName))
+        {
+            return BadRequest(new { message = "sampleName query parameter is required (e.g. NIC_Copy.pdf)." });
+        }
+
+        var uploaded = await _fileService.UploadSampleFileAsync(requestId, sampleName);
+        return CreatedAtAction(nameof(GetById), new { id = uploaded.FileId }, uploaded);
+    }
+
+    /// <summary>
+    /// Get list of available verified sample document templates.
+    /// </summary>
+    [HttpGet("document-files/sample-templates")]
+    public async Task<IActionResult> GetSampleTemplates()
+    {
+        var samples = await _fileService.GetAvailableSampleFilesAsync();
+        return Ok(samples);
+    }
 }

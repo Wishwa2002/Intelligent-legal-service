@@ -1,133 +1,179 @@
-# AI Service — Documentation & Clerk Agentic Workflow
+# AI Service — Document & Clerk Agent (Agentic AI)
 
-A **stateful, resumable, multi-step agentic AI service** built with **FastAPI + LangGraph + Gemini**.
+A **stateful, resumable, multi-agent workflow** built with **FastAPI + LangGraph + Google Gemini + Chroma + BM25**.
 
 Part of the **Intelligent Legal Service Platform** (SE3090 Group Project).
 
 ---
 
-## What This Service Does
+## 1. System Architecture
 
-This AI service drives the full documentation submission and clerk assignment workflow:
-
-1. **Identifies** the legal service the client needs (rental agreement, business registration, etc.)
-2. **Checks** what documents are required (always fetched from the backend — never invented)
-3. **Analyzes** each uploaded document using OCR + Gemini
-4. **Validates** documents against confidence thresholds (enforced in Python, not by Gemini)
-5. **Re-asks** the client with specific reasons when a document fails (up to 3 attempts)
-6. **Presents a summary** of all verified documents before proceeding
-7. **Recommends** a clerk (Gemini explains, admin decides — AI never assigns)
-8. **Re-plans** if an admin rejects the recommendation
-9. **Completes** the workflow once admin approves
-10. **Handles off-topic messages** with polite redirects (workflow state never changes)
-
----
-
-## Quick Start
-
-```bash
-# 1. Install dependencies
-pip install -r requirements.txt
-
-# 2. Copy env template and fill in your values
-cp .env.example .env
-# Edit .env: add GEMINI_API_KEY, GEMINI_MODEL, BACKEND_API_URL
-
-# 3. Install Tesseract OCR (for image documents)
-# Windows: https://github.com/UB-Mannheim/tesseract/wiki
-# Linux: sudo apt install tesseract-ocr
-
-# 4. Run the service
-uvicorn app.main:app --reload --port 8001
-
-# 5. Health check
-curl http://localhost:8001/health
+```text
+                    Customer
+                       │
+                       │ Upload documents
+                       ▼
+                React / Flutter
+                       │
+                       ▼
+              ASP.NET Core Backend
+                       │
+                       │ REST API (HTTPX)
+                       ▼
+              Python AI Service
+                       │
+                       ▼
+             Document & Clerk Agent
+                       │
+          ┌────────────┴─────────────┐
+          ▼                          ▼
+  Document Processing          Backend Tools
+          │                          │
+          ▼                          ▼
+   OCR / Extraction          Services / Clerks
+          │
+          ▼
+  Document Classification
+          │
+          ▼
+  Requirement Retrieval
+          │
+          ▼
+     Hybrid RAG
+     ┌────┴────┐
+    BM25     Chroma
+     └────┬────┘
+          ▼
+         RRF
+          │
+          ▼
+   Retrieval Grader
+          │
+      ┌───┴───┐
+   Relevant  Not Relevant
+      │          │
+      │          ▼
+      │     Query Rewrite
+      │          │
+      │          ▼
+      │       Retrieve (max 2 retries)
+      │          │
+      └───┬──────┘
+          │
+          ▼
+Missing Document Detection
+          │
+          ▼
+Clerk Recommendation (Transparent Multi-Factor Scoring)
+          │
+          ▼
+Human Approval Gate (LangGraph Interrupt)
+          │
+   ┌──────┼──────┐
+Approve Modify Reject
+   └──────┬──────┘
+          │
+          ▼
+    Backend Update
+          │
+          ▼
+     Audit Trail
+          │
+          ▼
+         END
 ```
 
 ---
 
-## Key Endpoints
+## 2. Lab 06 Concept Mapping
 
+This component demonstrates the following **Lab 06** agentic design patterns and concepts:
+
+| Lab 06 Concept | My Component Implementation |
+| :--- | :--- |
+| **Router** | `app/agents/router.py` (`DocumentIntent` structured routing) |
+| **Tool** | `app/tools/*` (`service_tools`, `clerk_tools`, `request_tools`, `approval_tools`, `document_tools`) |
+| **Chroma** | `app/retrieval/chroma.py` (semantic vector retrieval using ChromaDB collections) |
+| **BM25** | `app/retrieval/bm25.py` (lexical keyword retrieval via `rank_bm25.BM25Okapi`) |
+| **RRF** | `app/retrieval/rrf.py` (Reciprocal Rank Fusion combination: $RRF = \sum \frac{1}{60 + \text{rank}}$) |
+| **Grade** | `app/agents/retrieval_agent.py` (`RetrievalGrade` evaluation of requirement checklists) |
+| **Rewrite** | `app/agents/retrieval_agent.py` (`rewrite_query_node` query optimization) |
+| **Retrieve $\rightarrow$ Grade $\rightarrow$ Rewrite $\rightarrow$ Retrieve** | Self-correction loop with retry cap ($\le 2$) preventing infinite loops |
+| **Typed State** | `app/graph/state.py` (`AgentState` TypedDict single source of truth) |
+| **`add_messages`** | `messages` list with role, content, action options, and timestamps |
+| **`thread_id`** | Durable session/case thread ID tracked in persistence store and HTTP routes |
+| **Checkpointer** | Disk/memory state persistence (`data/sessions/{sessionId}.json`) |
+| **`interrupt()`** | `app/agents/human_gate.py` (`human_gate_node` pauses execution before clerk assignment) |
+| **`Command(resume)`** | `process_human_decision` (`APPROVE`, `MODIFY`, `REJECT` resumption) |
+| **FastAPI** | Async REST API with OpenAPI/Swagger docs (`app/main.py`) |
+
+---
+
+## 3. Endpoints Overview
+
+### Agent & Workflow Endpoints
 | Method | Path | Description |
-|--------|------|-------------|
-| `GET` | `/health` | Liveness probe — returns model name |
-| `POST` | `/api/agent/chat/session` | Start a new client session |
-| `POST` | `/api/agent/chat/{id}/message` | Send message or notify of file upload |
-| `GET` | `/api/agent/chat/{id}/status` | Get current workflow status |
-| `POST` | `/api/agent/documentation/analyze` | Programmatic workflow trigger |
-| `POST` | `/api/agent/workflows/{id}/approve` | Admin approve/reject clerk |
-| `GET` | `/api/agent/workflows/{id}` | Get workflow state |
-| `GET` | `/api/agent/workflows/{id}/summary` | Get execution summary + audit log |
+| :--- | :--- | :--- |
+| `GET` | `/health` | Health & model liveness probe |
+| `POST` | `/documents/analyze` | Standalone document extraction, OCR, & classification |
+| `POST` | `/documents/check-completeness` | Authoritative required vs provided document check |
+| `POST` | `/clerk/recommend` | Transparent multi-factor clerk recommendation |
+| `POST` | `/agent/ask` | Hybrid retrieval + grading + legal assistance |
+| `POST` | `/agent/resume` | Resume paused workflow with Approve, Modify, or Reject |
+| `GET` | `/threads/{thread_id}` | Retrieve case state & audit trail from checkpoint |
+| `GET` | `/search` | Direct Hybrid Search (BM25 + Chroma + RRF) |
+
+### Existing Client Chat Endpoints (Preserved)
+| Method | Path | Description |
+| :--- | :--- | :--- |
+| `POST` | `/api/agent/chat/session` | Start new client chat session |
+| `POST` | `/api/agent/chat/{id}/message` | Send message or file upload notification |
+| `GET` | `/api/agent/chat/{id}/status` | Get current workflow phase & missing documents |
+| `POST` | `/api/agent/workflows/{id}/approve` | Admin approval/rejection endpoint |
+| `GET` | `/api/agent/workflows/{id}/summary` | Execution summary & audit log |
 
 ---
 
-## Folder Structure
-
-```
-app/
-├── config/settings.py          ← All thresholds and config (single source of truth)
-├── api/routes/agent.py         ← All FastAPI endpoints
-├── agents/
-│   ├── supervisor.py           ← Orchestrator, off-topic detection
-│   ├── document_analysis.py    ← Analyze node
-│   ├── document_validation.py  ← Validate/accept/reject + summary nodes
-│   └── clerk_recommendation.py ← Recommend + replan nodes
-├── graph/
-│   ├── state.py                ← AgentState TypedDict
-│   ├── workflow.py             ← LangGraph StateGraph + session store
-│   └── routing.py              ← Deterministic Python routing (not LLM)
-├── tools/                      ← Backend API wrappers (tools called by agents)
-├── services/
-│   ├── backend_client.py       ← Single HTTPX client for ASP.NET backend
-│   ├── gemini_service.py       ← Gemini structured output calls
-│   ├── document_service.py     ← PDF/OCR extraction pipeline
-│   └── ocr_service.py          ← Tesseract wrapper
-├── schemas/                    ← Pydantic models
-├── prompts/                    ← System prompts for each agent
-├── security/
-│   ├── injection_defense.py    ← Sanitizes document text before Gemini
-│   └── tool_permissions.py     ← Per-node tool allowlists
-└── logging/audit.py            ← Structured audit log writer
-tests/
-├── test_documents.py           ← Document analysis/validation loop tests
-└── test_security.py            ← Injection defense + allowlist tests
-```
-
----
-
-## Confidence Thresholds
+## 4. Confidence Thresholds & Guardrails
 
 | Threshold | Value | Outcome |
-|-----------|-------|---------|
+| :--- | :--- | :--- |
 | `HIGH_CONFIDENCE_THRESHOLD` | 0.90 | Auto-accept, continue workflow |
 | `MEDIUM_CONFIDENCE_THRESHOLD` | 0.70 | Accept but flag for clerk review |
-| Below medium | < 0.70 | Reject, ask client to re-upload |
-| `MAX_REUPLOAD_ATTEMPTS_PER_DOCUMENT` | 3 | Exceed → escalate to human review |
-
-All thresholds live in `.env` and are loaded via `settings.py`.
-**Gemini cannot override these** — all threshold comparisons are Python `>=` operators.
+| Below medium | < 0.70 | Reject, ask client to re-upload with specific reasons |
+| `MAX_REUPLOAD_ATTEMPTS` | 3 | Exceeded $\rightarrow$ Escalate to Human Review |
+| `MAX_RETRIEVAL_RETRIES` | 2 | Exceeded $\rightarrow$ `INSUFFICIENT_INFORMATION` |
 
 ---
 
-## Security Rules
-
-- Document content is **always sanitized** before reaching Gemini (injection defense)
-- Each agent node has a **fixed tool allowlist** — out-of-scope calls raise `PermissionError`
-- The AI **never assigns a clerk** — only recommends. Backend performs assignment after admin approval.
-- The AI **never invents required documents** — always fetched from the backend service config.
-- Secrets are **never logged or included in Gemini prompts**.
-
----
-
-## Running Tests
+## 5. Running the AI Service & Tests
 
 ```bash
+# 1. Navigate to AI service
 cd ai-service
+
+# 2. Run full test suite (44 tests covering all 20 scenarios)
 pytest tests/ -v
+
+# 3. Start the service
+uvicorn app.main:app --reload --port 8001
 ```
 
 ---
 
-## Environment Variables
+## 6. Demonstration Scenario for Presentation
 
-See [`.env.example`](.env.example) for all required variables.
+1. **Customer Submits Request**: Client asks for "Property Transfer".
+2. **Hybrid Retrieval**: BM25 and Chroma retrieve the official document checklist using RRF.
+3. **Retrieval Grader**: Evaluates if the checklist is sufficient (demonstrating query rewrite if vague).
+4. **Customer Uploads Initial Documents**: Client uploads `01_nic.jpg` (OCR), `02_property_deed.pdf` (PyMuPDF), and `03_application_form.pdf`.
+5. **Missing Document Check**: Compares required documents vs. uploaded documents $\rightarrow$ identifies `SALE_AGREEMENT` as missing.
+6. **Stateful Pause**: Agent sets phase to `WAITING_FOR_DOCUMENTS` and provides an upload button.
+7. **Customer Uploads Missing Document**: `SALE_AGREEMENT` received and verified $\rightarrow$ case completeness becomes `READY_FOR_ASSIGNMENT`.
+8. **Transparent Clerk Recommendation**: Calculates match scores for candidate clerks based on Specialization (40%), Skills (25%), Workload (25%), and Experience (10%).
+9. **Human Approval Gate**: Workflow pauses before assignment (`ADMIN_APPROVAL_PENDING`).
+10. **Manager Decision**: Manager can:
+    - **`APPROVE`**: Assigns recommended clerk.
+    - **`MODIFY`**: Overrides and selects alternative clerk (recorded as `HUMAN_MODIFIED_AI_RECOMMENDATION`).
+    - **`REJECT`**: Rejects recommendation and triggers replanning.
+11. **Backend Synchronization & Audit**: Updates ASP.NET backend database and logs structured audit events.

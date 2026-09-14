@@ -15,4 +15,6 @@ public interface IDocumentFileService
     Task<(Stream fileStream, string contentType, string fileName)?> DownloadFileAsync(int fileId);
     Task<bool> DeleteFileAsync(int fileId);
     Task<DocumentFileResponse?> UpdateFileStatusAsync(int fileId, string status);
+    Task<DocumentFileResponse> UploadSampleFileAsync(int requestId, string sampleFileName);
+    Task<List<string>> GetAvailableSampleFilesAsync();
 }

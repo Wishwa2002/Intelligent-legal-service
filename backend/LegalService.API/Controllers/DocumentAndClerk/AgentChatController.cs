@@ -23,12 +23,8 @@ public class AgentChatController : ControllerBase
     [HttpPost("session")]
     public async Task<IActionResult> CreateSession([FromBody] CreateAgentChatSessionRequest request)
     {
-        if (request.CustomerId == Guid.Empty)
-        {
-            return BadRequest(new { message = "CustomerId is required." });
-        }
-
-        var session = await _agentService.CreateChatSessionAsync(request.CustomerId);
+        var customerId = string.IsNullOrWhiteSpace(request?.CustomerId) ? "guest" : request.CustomerId;
+        var session = await _agentService.CreateChatSessionAsync(customerId);
         if (session == null)
         {
             return StatusCode(503, new { message = "Failed to initialize AI Chat session. Ensure the AI service is online." });

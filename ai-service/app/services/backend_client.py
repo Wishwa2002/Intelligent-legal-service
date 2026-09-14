@@ -236,6 +236,17 @@ class BackendClient:
         return await self._get(f"/api/clerks/{clerk_id}/requests")
 
     # ================================================================
+    # Users / Auth
+    # ================================================================
+
+    async def get_user(self, user_id: int) -> dict | None:
+        """GET /api/auth/user/{id} — fetches registered user profile."""
+        try:
+            return await self._get(f"/api/auth/user/{user_id}")
+        except Exception:
+            return None
+
+    # ================================================================
     # Lifecycle
     # ================================================================
 

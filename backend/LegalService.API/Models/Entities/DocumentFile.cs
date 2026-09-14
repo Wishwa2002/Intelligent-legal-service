@@ -21,6 +21,7 @@ public class DocumentFile
 
     // Per-document processing status: Received | UnderReview | Accepted | Rejected
     public string DocumentStatus { get; set; } = "Received";
+    public string? RejectReason { get; set; }
 
     public DateTime UploadDate { get; set; } = DateTime.UtcNow;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;

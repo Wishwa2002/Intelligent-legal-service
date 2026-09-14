@@ -482,6 +482,86 @@ class GeminiService:
                 )
             raise
 
+    async def grade_retrieval(
+        self,
+        query: str,
+        retrieved_context: str,
+        service_type: str,
+    ) -> "RetrievalGrade":
+        """
+        Evaluates whether the retrieved context contains the official required documents checklist.
+        Returns a structured RetrievalGrade.
+        """
+        from app.prompts.retrieval import RETRIEVAL_GRADER_SYSTEM_PROMPT
+        from app.schemas.retrieval import RetrievalGrade
+
+        prompt = (
+            f"Client Query: {query}\n"
+            f"Service Type: {service_type}\n\n"
+            f"Retrieved Context:\n{retrieved_context}\n\n"
+            "Evaluate if the retrieved context contains the official required documents checklist."
+        )
+
+        try:
+            structured_llm = self._llm.with_structured_output(RetrievalGrade)
+            system_msg = SystemMessage(content=RETRIEVAL_GRADER_SYSTEM_PROMPT)
+            human_msg = HumanMessage(content=prompt)
+            result: RetrievalGrade = await structured_llm.ainvoke([system_msg, human_msg])
+            logger.info("Retrieval grade: relevant=%s confidence=%.2f", result.relevant, result.confidence)
+            return result
+        except Exception as e:
+            logger.warning("Gemini retrieval grading failed, using heuristic fallback: %s", e)
+            # Heuristic fallback
+            lower_ctx = (retrieved_context or "").lower()
+            clean_srv = service_type.lower().replace("_", " ")
+            is_rel = bool(
+                lower_ctx
+                and ("checklist" in lower_ctx or "required" in lower_ctx or "1." in lower_ctx)
+                and (clean_srv in lower_ctx or any(w in lower_ctx for w in clean_srv.split()))
+            )
+            return RetrievalGrade(
+                relevant=is_rel,
+                confidence=0.85 if is_rel else 0.40,
+                reason="Context contains official checklist and required documents." if is_rel else "Context does not contain specific required document checklist.",
+            )
+
+    async def rewrite_query(
+        self,
+        query: str,
+        service_type: str,
+        feedback: str = "",
+    ) -> "QueryRewriteResult":
+        """
+        Rewrites a vague search query to improve retrieval of the required document checklist.
+        """
+        from app.prompts.retrieval import QUERY_REWRITE_SYSTEM_PROMPT
+        from app.schemas.retrieval import QueryRewriteResult
+
+        prompt = (
+            f"Original Query: {query}\n"
+            f"Service Type: {service_type}\n"
+            f"Grader Feedback: {feedback or 'Checklist not found.'}\n\n"
+            "Rewrite this query into a precise query for retrieving the official required document checklist."
+        )
+
+        try:
+            structured_llm = self._llm.with_structured_output(QueryRewriteResult)
+            system_msg = SystemMessage(content=QUERY_REWRITE_SYSTEM_PROMPT)
+            human_msg = HumanMessage(content=prompt)
+            result: QueryRewriteResult = await structured_llm.ainvoke([system_msg, human_msg])
+            logger.info("Rewritten query: '%s' -> '%s'", query, result.rewritten_query)
+            return result
+        except Exception as e:
+            logger.warning("Gemini query rewriting failed, using rule-based fallback: %s", e)
+            clean_srv = service_type.replace("_", " ").title()
+            rewritten = f"official required documents checklist for {clean_srv} service"
+            return QueryRewriteResult(
+                original_query=query,
+                rewritten_query=rewritten,
+                rationale="Fallback rule: transformed query into explicit checklist search.",
+            )
+
+
 
 # Module-level singleton
 @lru_cache(maxsize=1)
