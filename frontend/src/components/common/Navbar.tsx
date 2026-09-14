@@ -114,19 +114,23 @@ const Navbar = () => {
               </a>
             </li>
           ))}
-          <li className="mt-2 flex gap-3 border-t border-navy-100 pt-4">
-            <Link
-              to="/login"
-              className="flex-1 rounded-md border border-navy-200 px-4 py-2.5 text-center text-sm font-medium text-navy-900"
-            >
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              className="flex-1 rounded-md bg-navy-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
-            >
-              Sign Up
-            </Link>
+          <li className="mt-2 flex flex-col gap-2 border-t border-navy-100 pt-4">
+            <div className="flex gap-3">
+              <Link
+                to="/login"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex-1 rounded-md border border-navy-200 px-4 py-2.5 text-center text-sm font-medium text-navy-700 hover:bg-navy-50"
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex-1 rounded-md bg-navy-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
+              >
+                Sign Up
+              </Link>
+            </div>
           </li>
         </ul>
       </div>
