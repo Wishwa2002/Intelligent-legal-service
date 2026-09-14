@@ -6,18 +6,14 @@ using LegalService.API.DTOs.Requests;
 using LegalService.API.Authentication.Services;
 using LegalService.API.Models.Entities;
 
-
 namespace LegalService.API.Controllers;
-
 
 [ApiController]
 [Route("api/auth")]
 public class AuthController : ControllerBase
 {
-
     private readonly ApplicationDbContext _context;
     private readonly IPasswordService _passwordService;
-
 
     public AuthController(
         ApplicationDbContext context,
@@ -27,108 +23,100 @@ public class AuthController : ControllerBase
         _passwordService = passwordService;
     }
 
-
-
     [HttpPost("register")]
-    public async Task<IActionResult> Register(
-        RegisterRequest request)
+    public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
-
         // Check existing email
         var existingUser = await _context.Users
-            .FirstOrDefaultAsync(
-                x => x.Email == request.Email
-            );
+            .FirstOrDefaultAsync(x => x.Email == request.Email);
 
-
-        if(existingUser != null)
+        if (existingUser != null)
         {
-            return BadRequest(
-                "Email already exists"
-            );
+            return BadRequest("Email already exists");
         }
 
-
-
         // Hash password
-        var passwordHash =
-            _passwordService.HashPassword(
-                request.Password
-            );
-
-
+        var passwordHash = _passwordService.HashPassword(request.Password);
 
         // Create user
         var user = new User
         {
             Id = Guid.NewGuid(),
-
             FullName = request.FullName,
-
             Email = request.Email,
-
             PasswordHash = passwordHash,
-
             IsActive = true,
-
             CreatedAt = DateTime.UtcNow
         };
 
-
         await _context.Users.AddAsync(user);
-
-
 
         // Find role
         var role = await _context.Roles
-            .FirstOrDefaultAsync(
-                x => x.Name == request.Role
-            );
-
-
+            .FirstOrDefaultAsync(x => x.Name == request.Role);
 
         // Create role if not exists
-        if(role == null)
+        if (role == null)
         {
             role = new Role
             {
                 Id = Guid.NewGuid(),
-
                 Name = request.Role
             };
-
-
             await _context.Roles.AddAsync(role);
         }
-
-
 
         // Assign role
         var userRole = new UserRole
         {
             UserId = user.Id,
-
             RoleId = role.Id
         };
 
-
         await _context.UserRoles.AddAsync(userRole);
-
-
-
         await _context.SaveChangesAsync();
-
-
 
         return Ok(new
         {
             message = "User registered successfully",
-
             userId = user.Id,
-
             role = role.Name
         });
-
     }
 
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody] LoginRequest request)
+    {
+        if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
+        {
+            return BadRequest(new { message = "Email and password are required." });
+        }
+
+        var user = await _context.Users
+            .Include(u => u.UserRoles)
+            .ThenInclude(ur => ur.Role)
+            .FirstOrDefaultAsync(x => x.Email.ToLower() == request.Email.ToLower());
+
+        if (user == null)
+        {
+            return Unauthorized(new { message = "Invalid email or password." });
+        }
+
+        var isPasswordValid = _passwordService.VerifyPassword(request.Password, user.PasswordHash);
+        if (!isPasswordValid)
+        {
+            return Unauthorized(new { message = "Invalid email or password." });
+        }
+
+        var roleName = user.UserRoles.FirstOrDefault()?.Role?.Name ?? "Client";
+
+        return Ok(new
+        {
+            userId = user.Id,
+            name = user.FullName,
+            email = user.Email,
+            role = roleName,
+            token = "jwt-session-" + user.Id
+        });
+    }
 }
