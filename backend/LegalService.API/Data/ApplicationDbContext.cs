@@ -46,32 +46,33 @@ public class ApplicationDbContext : DbContext
         // 1. IDENTITY AND AUTHORIZATION CONFIG
         // ==========================================
 
+        // User entity mapped directly to Neon DB table "Users"
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.ToTable("Users");
+            entity.HasKey(u => u.UserId);
+            entity.Property(u => u.UserId).HasColumnName("UserId").ValueGeneratedOnAdd();
+            entity.Property(u => u.Name).HasColumnName("Name").IsRequired();
+            entity.Property(u => u.Email).HasColumnName("Email").IsRequired();
+            entity.Property(u => u.Role).HasColumnName("Role").IsRequired();
+            entity.Property(u => u.PasswordHash).HasColumnName("PasswordHash");
+            entity.Property(u => u.CreatedAt).HasColumnName("CreatedAt").IsRequired();
+            entity.Property(u => u.UpdatedAt).HasColumnName("UpdatedAt").IsRequired();
+            entity.HasIndex(u => u.Email).IsUnique();
+        });
+
         // UserRole Composite PK
         modelBuilder.Entity<UserRole>()
             .HasKey(ur => new { ur.UserId, ur.RoleId });
 
         modelBuilder.Entity<UserRole>()
-            .HasOne(ur => ur.User)
-            .WithMany(u => u.UserRoles)
-            .HasForeignKey(ur => ur.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .Ignore(ur => ur.User);
 
         modelBuilder.Entity<UserRole>()
             .HasOne(ur => ur.Role)
             .WithMany(r => r.UserRoles)
             .HasForeignKey(ur => ur.RoleId)
             .OnDelete(DeleteBehavior.Cascade);
-
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.Email)
-            .IsUnique();
-
-        // Prevent EF Core from creating shadow 'UserId' foreign key on DocumentationRequests and Clerks
-        modelBuilder.Entity<User>()
-            .Ignore(u => u.DocumentationRequests);
-
-        modelBuilder.Entity<User>()
-            .Ignore(u => u.Clerk);
 
         modelBuilder.Entity<Role>()
             .HasIndex(r => r.Name)
@@ -82,15 +83,11 @@ public class ApplicationDbContext : DbContext
         // 2. LAWYER MANAGEMENT CONFIG
         // ==========================================
 
-        // 1:0..1 relationship between User and Lawyer
         modelBuilder.Entity<Lawyer>()
             .HasKey(l => l.LawyerId);
 
         modelBuilder.Entity<Lawyer>()
-            .HasOne(l => l.User)
-            .WithOne(u => u.Lawyer)
-            .HasForeignKey<Lawyer>(l => l.LawyerId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .Ignore(l => l.User);
 
         modelBuilder.Entity<Lawyer>()
             .HasIndex(l => l.LicenseNumber)
@@ -179,10 +176,7 @@ public class ApplicationDbContext : DbContext
             .HasKey(a => a.AppointmentId);
 
         modelBuilder.Entity<Appointment>()
-            .HasOne(a => a.Customer)
-            .WithMany(u => u.Appointments)
-            .HasForeignKey(a => a.CustomerId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .Ignore(a => a.Customer);
 
         modelBuilder.Entity<Appointment>()
             .HasOne(a => a.Lawyer)
@@ -312,10 +306,7 @@ public class ApplicationDbContext : DbContext
             .HasKey(sr => sr.ServiceRequestId);
 
         modelBuilder.Entity<ServiceRequest>()
-            .HasOne(sr => sr.Customer)
-            .WithMany(u => u.ServiceRequests)
-            .HasForeignKey(sr => sr.CustomerId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .Ignore(sr => sr.Customer);
 
         modelBuilder.Entity<ServiceRequest>()
             .HasIndex(sr => sr.CustomerId);
@@ -405,10 +396,7 @@ public class ApplicationDbContext : DbContext
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<ApprovalDecision>()
-            .HasOne(ad => ad.Approver)
-            .WithMany(u => u.ApprovalDecisions)
-            .HasForeignKey(ad => ad.ApproverId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .Ignore(ad => ad.Approver);
 
         modelBuilder.Entity<ExecutionSummary>()
             .HasKey(es => es.SummaryId);
@@ -432,10 +420,7 @@ public class ApplicationDbContext : DbContext
             .HasKey(al => al.AuditLogId);
 
         modelBuilder.Entity<AuditLog>()
-            .HasOne(al => al.User)
-            .WithMany(u => u.AuditLogs)
-            .HasForeignKey(al => al.UserId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .Ignore(al => al.User);
 
         modelBuilder.Entity<AuditLog>()
             .HasIndex(al => al.UserId);

@@ -30,97 +30,54 @@ public class AuthController : ControllerBase
 
 
     [HttpPost("register")]
-    public async Task<IActionResult> Register(
-        RegisterRequest request)
+    public async Task<IActionResult> Register([FromBody] RegisterRequest request)
     {
+        if (string.IsNullOrWhiteSpace(request.Email) || string.IsNullOrWhiteSpace(request.Password))
+            return BadRequest(new { message = "Email and password are required." });
+
+        var normalizedEmail = request.Email.Trim().ToLowerInvariant();
 
         // Check existing email
         var existingUser = await _context.Users
-            .FirstOrDefaultAsync(
-                x => x.Email == request.Email
-            );
+            .FirstOrDefaultAsync(x => x.Email.ToLower() == normalizedEmail);
 
-
-        if(existingUser != null)
+        if (existingUser != null)
         {
-            return BadRequest(
-                "Email already exists"
-            );
+            return BadRequest(new { message = "Email already exists." });
         }
 
-
-
         // Hash password
-        var passwordHash =
-            _passwordService.HashPassword(
-                request.Password
-            );
+        var passwordHash = _passwordService.HashPassword(request.Password);
 
+        var roleName = string.IsNullOrWhiteSpace(request.Role) || request.Role.Equals("User", StringComparison.OrdinalIgnoreCase)
+            ? "Customer"
+            : request.Role.Trim();
 
+        var fullName = string.IsNullOrWhiteSpace(request.FullName)
+            ? normalizedEmail.Split('@')[0]
+            : request.FullName.Trim();
 
         // Create user
         var user = new User
         {
-            Id = Guid.NewGuid(),
-
-            FullName = request.FullName,
-
-            Email = request.Email,
-
+            Name = fullName,
+            Email = normalizedEmail,
             PasswordHash = passwordHash,
-
-            IsActive = true,
-
-            CreatedAt = DateTime.UtcNow
+            Role = roleName,
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
         };
-
 
         await _context.Users.AddAsync(user);
-
-
-
-        // Find role
-        var role = await _context.Roles
-            .FirstOrDefaultAsync(
-                x => x.Name == request.Role
-            );
-
-
-
-        // Create role if not exists
-        if(role == null)
-        {
-            role = new Role
-            {
-                Id = Guid.NewGuid(),
-
-                Name = request.Role
-            };
-
-
-            await _context.Roles.AddAsync(role);
-        }
-
-
-
-        // Assign role
-        var userRole = new UserRole
-        {
-            UserId = user.Id,
-
-            RoleId = role.Id
-        };
-
-
-        await _context.UserRoles.AddAsync(userRole);
-
         await _context.SaveChangesAsync();
 
         return Ok(new
         {
             message = "User registered successfully",
-            userId = user.Id,
-            role = role.Name
+            userId = user.UserId,
+            name = user.Name,
+            email = user.Email,
+            role = user.Role
         });
     }
 
@@ -172,14 +129,33 @@ public class AuthController : ControllerBase
 
             return Ok(new
             {
-                userId = user.Id,
-                name = user.FullName,
+                userId = user.UserId,
+                name = user.Name,
                 email = user.Email,
-                role = "User",
+                role = user.Role ?? "Customer",
                 message = "Login successful"
             });
         }
 
         return Unauthorized(new { message = "No account found with this email/username." });
+    }
+
+    /// <summary>
+    /// Retrieve user profile by user ID.
+    /// </summary>
+    [HttpGet("user/{id}")]
+    public async Task<IActionResult> GetUserById(int id)
+    {
+        var user = await _context.Users.FindAsync(id);
+        if (user == null)
+            return NotFound(new { message = $"User with ID {id} not found." });
+
+        return Ok(new
+        {
+            userId = user.UserId,
+            name = user.Name,
+            email = user.Email,
+            role = user.Role ?? "Customer"
+        });
     }
 }
