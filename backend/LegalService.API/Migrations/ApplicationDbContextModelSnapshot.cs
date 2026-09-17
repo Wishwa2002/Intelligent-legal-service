@@ -294,9 +294,26 @@ namespace LegalService.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("DocumentStatus")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("text")
+                        .HasDefaultValue("Received");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<string>("FilePath")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<long>("FileSize")
+                        .HasColumnType("bigint");
 
                     b.Property<Guid>("RequestId")
                         .HasColumnType("uuid");
@@ -305,6 +322,8 @@ namespace LegalService.API.Migrations
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("FileId");
+
+                    b.HasIndex("DocumentStatus");
 
                     b.HasIndex("RequestId");
 
@@ -363,11 +382,22 @@ namespace LegalService.API.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(true);
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("RequiredDocuments")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.HasKey("ServiceId");
+
+                    b.HasIndex("IsActive");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -379,19 +409,25 @@ namespace LegalService.API.Migrations
                         {
                             ServiceId = 1,
                             Description = "Reviewing lease/sales agreements and drafting amendments.",
-                            Name = "Contract Review & Amendment"
+                            IsActive = true,
+                            Name = "Contract Review & Amendment",
+                            RequiredDocuments = "[\"Original Contract\",\"Amendment Request Letter\",\"NIC Copy\"]"
                         },
                         new
                         {
                             ServiceId = 2,
                             Description = "Drafting affidavits and arranging official notarization.",
-                            Name = "Affidavit & Notary Services"
+                            IsActive = true,
+                            Name = "Affidavit & Notary Services",
+                            RequiredDocuments = "[\"NIC\",\"Completed Affidavit Draft\",\"Witness Details\"]"
                         },
                         new
                         {
                             ServiceId = 3,
                             Description = "Drafting General or Special Power of Attorney documents.",
-                            Name = "Power of Attorney Drafting"
+                            IsActive = true,
+                            Name = "Power of Attorney Drafting",
+                            RequiredDocuments = "[\"NIC of Grantor\",\"NIC of Grantee\",\"Scope of Authority Document\"]"
                         });
                 });
 
@@ -580,7 +616,7 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 1,
                             Category = "Criminal Law",
-                            CreatedAt = new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1144),
+                            CreatedAt = new DateTime(2026, 9, 2, 12, 0, 30, 347, DateTimeKind.Utc).AddTicks(4129),
                             Description = "Representation and case review for criminal defense cases.",
                             ServiceName = "Criminal Defense Consulting"
                         },
@@ -588,7 +624,7 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 2,
                             Category = "Family Law",
-                            CreatedAt = new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1153),
+                            CreatedAt = new DateTime(2026, 9, 2, 12, 0, 30, 347, DateTimeKind.Utc).AddTicks(4142),
                             Description = "Preparation and filing for divorce and child custody.",
                             ServiceName = "Divorce & Custody Filing"
                         },
@@ -596,7 +632,7 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 3,
                             Category = "Corporate Law",
-                            CreatedAt = new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1155),
+                            CreatedAt = new DateTime(2026, 9, 2, 12, 0, 30, 347, DateTimeKind.Utc).AddTicks(4144),
                             Description = "Incorporation filings and compliance setup.",
                             ServiceName = "Corporate Registration & Compliance"
                         });
