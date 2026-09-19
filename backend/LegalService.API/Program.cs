@@ -32,6 +32,12 @@ builder.Services.AddScoped<IDocumentationRequestService, DocumentationRequestSer
 builder.Services.AddScoped<IDocumentFileService, DocumentFileService>();
 builder.Services.AddScoped<ICareerService, CareerService>();
 
+// ================================================================
+// Customer Service Request Management
+// ================================================================
+builder.Services.AddScoped<IServiceRequestService, ServiceRequestService>();
+
+
 // Agentic AI Integration
 builder.Services.AddHttpClient<IAgentIntegrationService, AgentIntegrationService>();
 
@@ -89,6 +95,7 @@ if (!app.Environment.IsDevelopment())
     app.UseHttpsRedirection();
 }
 
+app.UseAuthentication();   // Must be before UseAuthorization()
 app.UseAuthorization();
 
 app.MapControllers();

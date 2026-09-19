@@ -306,10 +306,51 @@ public class ApplicationDbContext : DbContext
             .HasKey(sr => sr.ServiceRequestId);
 
         modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.ServiceRequestId)
+            .ValueGeneratedOnAdd();
+
+        // Store Status as its string name (e.g. "Submitted") for readability in DB
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.Status)
+            .HasConversion<string>()
+            .HasMaxLength(30)
+            .IsRequired();
+
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.Title)
+            .HasMaxLength(200)
+            .IsRequired();
+
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.Description)
+            .HasMaxLength(2000)
+            .IsRequired();
+
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.RequestType)
+            .HasMaxLength(100)
+            .IsRequired();
+
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.Priority)
+            .HasMaxLength(20);
+
+        // Customer relationship: ServiceRequest.CustomerId → User.UserId
+        // Ignore navigation to avoid FK conflict with User table (int PK)
+        modelBuilder.Entity<ServiceRequest>()
             .Ignore(sr => sr.Customer);
 
         modelBuilder.Entity<ServiceRequest>()
             .HasIndex(sr => sr.CustomerId);
+
+        modelBuilder.Entity<ServiceRequest>()
+            .HasIndex(sr => sr.Status);
+
+        modelBuilder.Entity<ServiceRequest>()
+            .HasIndex(sr => sr.RequestType);
+
+        modelBuilder.Entity<ServiceRequest>()
+            .HasIndex(sr => sr.CreatedAt);
 
 
         // ==========================================

@@ -9,6 +9,13 @@ import { CareersPage } from "./pages/admin/CareersPage";
 import { ClerkCasesPage } from "./pages/clerk/ClerkCasesPage";
 import { CareersPublicPage } from "./pages/public/CareersPublicPage";
 import { AdminRoute, ClerkRoute } from "./routes/ProtectedRoutes";
+// ── Customer Service Requests (Member 4) ──
+import { CustomerLoginPage } from "./pages/customer/CustomerLoginPage";
+import { MyServiceRequestsPage } from "./pages/customer/MyServiceRequestsPage";
+import { CreateServiceRequestPage } from "./pages/customer/CreateServiceRequestPage";
+import { ServiceRequestDetailPage } from "./pages/customer/ServiceRequestDetailPage";
+import { AdminServiceRequestsPage } from "./pages/admin/ServiceRequestsAdminPage";
+
 
 function App() {
   return (
@@ -80,6 +87,21 @@ function App() {
             </AdminRoute>
           }
         />
+        {/* ── Admin: Customer Service Requests (Member 4) ──────────── */}
+        <Route
+          path="/admin/service-requests"
+          element={
+            <AdminRoute>
+              <AdminServiceRequestsPage />
+            </AdminRoute>
+          }
+        />
+
+        {/* ── Customer Portal (Member 4) ───────────────────────────── */}
+        <Route path="/customer/login" element={<CustomerLoginPage />} />
+        <Route path="/my-requests" element={<MyServiceRequestsPage />} />
+        <Route path="/my-requests/new" element={<CreateServiceRequestPage />} />
+        <Route path="/my-requests/:id" element={<ServiceRequestDetailPage />} />
 
         {/* Catch-all */}
         <Route path="*" element={<Navigate to="/" replace />} />
