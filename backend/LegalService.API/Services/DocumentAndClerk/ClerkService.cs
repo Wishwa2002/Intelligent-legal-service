@@ -18,15 +18,18 @@ public class ClerkService : IClerkService
     private readonly ApplicationDbContext _context;
     private readonly IDocumentationRequestService _documentationRequestService;
     private readonly IPasswordService _passwordService;
+    private readonly IEmailNotificationService? _emailService;
 
     public ClerkService(
         ApplicationDbContext context, 
         IDocumentationRequestService documentationRequestService,
-        IPasswordService passwordService)
+        IPasswordService passwordService,
+        IEmailNotificationService? emailService = null)
     {
         _context = context;
         _documentationRequestService = documentationRequestService;
         _passwordService = passwordService;
+        _emailService = emailService;
     }
 
     public async Task<IEnumerable<ClerkResponse>> GetAllClerksAsync()
@@ -78,7 +81,48 @@ public class ClerkService : IClerkService
         await _context.Clerks.AddAsync(clerk);
         await _context.SaveChangesAsync();
 
+        NotifyClerkAccountCreated(clerk, request.Password);
+
         return MapToResponse(clerk);
+    }
+
+    private void NotifyClerkAccountCreated(Clerk clerk, string rawPassword)
+    {
+        if (_emailService == null) return;
+
+        try
+        {
+            var recipientEmail = clerk.Email;
+            var clerkName = clerk.Name;
+            var username = clerk.Email ?? string.Empty;
+            var department = clerk.Department;
+            var contact = clerk.Contact;
+            var createdAt = clerk.CreatedAt;
+
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await _emailService.SendClerkWelcomeEmailAsync(
+                        recipientEmail: recipientEmail,
+                        clerkName: clerkName,
+                        username: username,
+                        password: rawPassword,
+                        department: department,
+                        contact: contact,
+                        createdAt: createdAt
+                    );
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[EmailNotification] Failed sending clerk welcome email: {ex.Message}");
+                }
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[EmailNotification] Failed to prepare clerk welcome email: {ex.Message}");
+        }
     }
 
     public async Task<ClerkResponse?> UpdateClerkAsync(int clerkId, UpdateClerkRequest request)
