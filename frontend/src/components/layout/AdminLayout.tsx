@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { documentationApi } from "../../api/documentationApi";
+import { authApi } from "../../api/authApi";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
@@ -66,10 +67,17 @@ const navItems = [
 
 export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subtitle }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const currentAdmin = authApi.getCurrentAdmin();
   const [stats, setStats] = useState<DashboardStats>({ total: 0, pending: 0, assigned: 0, missingDocs: 0 });
   const [statsLoading, setStatsLoading] = useState(true);
   const [lastRefreshed, setLastRefreshed] = useState<Date>(new Date());
   const [sidebarOpen, setSidebarOpen] = useState(true);
+
+  const handleLogout = () => {
+    authApi.logoutAdmin();
+    navigate("/login");
+  };
 
   const loadStats = async () => {
     try {
@@ -197,6 +205,32 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
               <span className="hidden sm:inline">Clerk Portal</span>
             </Link>
 
+            {currentAdmin && (
+              <div className="hidden lg:flex items-center gap-2 bg-slate-900/90 border border-slate-800 px-3 py-1.5 rounded-xl">
+                <div className="w-6 h-6 rounded-lg bg-gradient-to-tr from-amber-500 to-amber-400 text-slate-950 font-extrabold flex items-center justify-center text-[11px] shadow-xs">
+                  {currentAdmin.name ? currentAdmin.name[0].toUpperCase() : "A"}
+                </div>
+                <div className="text-left">
+                  <div className="text-xs font-bold text-white leading-tight">
+                    {currentAdmin.name || "Administrator"}
+                  </div>
+                </div>
+              </div>
+            )}
+
+            <button
+              onClick={handleLogout}
+              className="text-xs font-semibold text-rose-300 hover:text-white bg-slate-900 hover:bg-rose-950/60 px-3 py-1.5 rounded-xl border border-slate-800 hover:border-rose-900/60 transition-all flex items-center gap-1.5 shadow-xs cursor-pointer"
+              title="Sign out of Admin Console"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" y1="12" x2="9" y2="12" />
+              </svg>
+              <span>Sign Out</span>
+            </button>
+
             <Link
               to="/"
               className="text-slate-400 hover:text-white transition-colors flex items-center gap-1 text-xs"
@@ -253,7 +287,7 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
             <div className="text-[10px] font-bold text-slate-500 uppercase tracking-wider mb-2">
               System Overview
             </div>
-            <div className="space-y-1.5">
+            <div className="space-y-1.5 mb-3">
               {statCards.map(s => (
                 <div key={s.label} className="flex items-center justify-between text-[11px] py-0.5">
                   <span className="text-slate-400">{s.label}</span>
@@ -263,6 +297,18 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
                 </div>
               ))}
             </div>
+
+            <button
+              onClick={handleLogout}
+              className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-rose-300 hover:text-white bg-rose-950/30 hover:bg-rose-900/50 border border-rose-900/40 hover:border-rose-800 transition cursor-pointer"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" y1="12" x2="9" y2="12" />
+              </svg>
+              <span>Sign Out</span>
+            </button>
           </div>
         </aside>
 
