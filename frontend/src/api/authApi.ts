@@ -11,6 +11,7 @@ export interface ClerkUser {
 }
 
 export interface LoginResponse {
+  token?: string;
   userId: number;
   name: string;
   email: string;
@@ -26,6 +27,9 @@ const ADMIN_STORAGE_KEY = "legalease_admin_user";
 export const authApi = {
   login: async (email: string, password: string): Promise<LoginResponse> => {
     const res = await apiClient.post<LoginResponse>("/api/auth/login", { email, password });
+    if (res.data?.token) {
+      localStorage.setItem("token", res.data.token);
+    }
     return res.data;
   },
 
@@ -43,6 +47,7 @@ export const authApi = {
   },
   logoutClerk: (): void => {
     localStorage.removeItem(CLERK_STORAGE_KEY);
+    localStorage.removeItem("token");
   },
   isClerkAuthenticated: (): boolean => {
     const user = authApi.getCurrentClerk();
@@ -63,6 +68,7 @@ export const authApi = {
   },
   logoutAdmin: (): void => {
     localStorage.removeItem(ADMIN_STORAGE_KEY);
+    localStorage.removeItem("token");
   },
   isAdminAuthenticated: (): boolean => {
     const user = authApi.getCurrentAdmin();
