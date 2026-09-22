@@ -24,7 +24,7 @@ public class ServiceRequestServiceTests
     private static ServiceRequestService CreateService(ApplicationDbContext ctx) =>
         new(ctx, NullLogger<ServiceRequestService>.Instance);
 
-    private static readonly Guid TestCustomerId = Guid.NewGuid();
+    private static readonly int TestCustomerId = 1;
 
     // ─── CREATE ─────────────────────────────────────────────────────────────────
 
@@ -78,7 +78,7 @@ public class ServiceRequestServiceTests
         using var ctx = CreateInMemoryDb();
         ctx.ServiceRequests.AddRange(
             new ServiceRequest { ServiceRequestId = Guid.NewGuid(), CustomerId = TestCustomerId, Title = "R1", Description = "D", RequestType = "Legal Advice", Status = ServiceRequestStatus.Submitted, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow },
-            new ServiceRequest { ServiceRequestId = Guid.NewGuid(), CustomerId = Guid.NewGuid(), Title = "R2", Description = "D", RequestType = "Contract Review", Status = ServiceRequestStatus.InProgress, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow }
+            new ServiceRequest { ServiceRequestId = Guid.NewGuid(), CustomerId = 2, Title = "R2", Description = "D", RequestType = "Contract Review", Status = ServiceRequestStatus.InProgress, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow }
         );
         await ctx.SaveChangesAsync();
 
@@ -92,7 +92,7 @@ public class ServiceRequestServiceTests
     public async Task GetAllAsync_FilterByCustomerId_ReturnsOnlyCustomerRequests()
     {
         using var ctx = CreateInMemoryDb();
-        var otherId = Guid.NewGuid();
+        var otherId = 2;
         ctx.ServiceRequests.AddRange(
             new ServiceRequest { ServiceRequestId = Guid.NewGuid(), CustomerId = TestCustomerId, Title = "Mine", Description = "D", RequestType = "Legal Advice", Status = ServiceRequestStatus.Submitted, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow },
             new ServiceRequest { ServiceRequestId = Guid.NewGuid(), CustomerId = otherId, Title = "Other", Description = "D", RequestType = "Legal Advice", Status = ServiceRequestStatus.Submitted, CreatedAt = DateTime.UtcNow, UpdatedAt = DateTime.UtcNow }
@@ -177,7 +177,7 @@ public class ServiceRequestServiceTests
 
         var svc = CreateService(ctx);
         await Assert.ThrowsAsync<UnauthorizedAccessException>(
-            () => svc.UpdateAsync(id, Guid.NewGuid(), new UpdateServiceRequestRequest { Title = "X", Description = "X", RequestType = "X" }));
+            () => svc.UpdateAsync(id, 999, new UpdateServiceRequestRequest { Title = "X", Description = "X", RequestType = "X" }));
     }
 
     [Fact]
@@ -233,7 +233,7 @@ public class ServiceRequestServiceTests
         await ctx.SaveChangesAsync();
 
         var svc = CreateService(ctx);
-        var result = await svc.ChangeStatusAsync(id, ServiceRequestStatus.InProgress, "Assigned to team", Guid.NewGuid());
+        var result = await svc.ChangeStatusAsync(id, ServiceRequestStatus.InProgress, "Assigned to team", 100);
 
         Assert.NotNull(result);
         Assert.Equal("InProgress", result!.Status);
@@ -261,7 +261,7 @@ public class ServiceRequestServiceTests
         await ctx.SaveChangesAsync();
 
         var svc = CreateService(ctx);
-        await svc.ChangeStatusAsync(id, ServiceRequestStatus.InProgress, "Processing", Guid.NewGuid());
+        await svc.ChangeStatusAsync(id, ServiceRequestStatus.InProgress, "Processing", 100);
 
         Assert.Equal(1, await ctx.AuditLogs.CountAsync());
     }
