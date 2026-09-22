@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { documentationApi } from "../../api/documentationApi";
+import { authApi } from "../../api/authApi";
 
 interface AdminLayoutProps {
   children: React.ReactNode;
@@ -219,6 +220,22 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
               </svg>
               <span className="hidden md:inline">Public Site</span>
             </Link>
+
+            <button
+              onClick={() => {
+                authApi.logoutAdmin();
+                window.location.href = "/login";
+              }}
+              className="text-xs font-semibold text-rose-300 hover:text-white bg-rose-950/60 hover:bg-rose-900/80 px-3 py-1.5 rounded-xl border border-rose-800/60 transition flex items-center gap-1.5 shadow-2xs cursor-pointer ml-1"
+              title="Sign Out of Admin Console"
+            >
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4" />
+                <polyline points="16 17 21 12 16 7" />
+                <line x1="21" y1="12" x2="9" y2="12" />
+              </svg>
+              <span>Logout</span>
+            </button>
           </div>
         </div>
       </header>
