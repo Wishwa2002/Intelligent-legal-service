@@ -201,6 +201,7 @@ export const DocumentationRequestDetailPage: React.FC = () => {
   const [chatLoading, setChatLoading] = useState(false);
   const [chatError, setChatError] = useState<string | null>(null);
   const [chatSessionId, setChatSessionId] = useState<string | null>(null);
+  const [conversationOpen, setConversationOpen] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Status update
@@ -1245,113 +1246,149 @@ export const DocumentationRequestDetailPage: React.FC = () => {
           </div>
         </div>
 
-        {/* ── Full-Width Chat History ── */}
-        <div className="mt-8 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          {/* Header */}
+        {/* ── Full-Width Chat History (Collapsible Dropdown Accordion) ── */}
+        <div className="mt-8 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all">
+          {/* Collapsible Dropdown Header */}
           <div
-            className="flex items-center justify-between px-6 py-4 border-b border-slate-100"
+            onClick={() => setConversationOpen(prev => !prev)}
+            className="flex items-center justify-between px-6 py-4 border-b border-slate-800/80 cursor-pointer select-none group transition-colors"
             style={{ background: "linear-gradient(90deg, #0f172a 0%, #1e293b 100%)" }}
           >
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-xl">
+              <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
                 💬
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white tracking-wide">Client Conversation History</h3>
+                <div className="flex items-center gap-2.5">
+                  <h3 className="text-sm font-bold text-white tracking-wide group-hover:text-amber-300 transition-colors">
+                    Client Conversation History
+                  </h3>
+                  <span className="text-[10px] font-semibold bg-slate-800 text-slate-300 border border-slate-700 px-2 py-0.5 rounded-full">
+                    {conversationOpen ? "Collapse ▲" : "Drop-down ▼"}
+                  </span>
+                </div>
                 <div className="flex items-center gap-2 mt-0.5">
+                  <span className="text-[11px] text-slate-400">
+                    {chatMessages.length > 0 ? `${chatMessages.length} messages logged` : "Client & AI chat session"}
+                  </span>
                   {chatSessionId && (
-                    <span className="text-[10px] font-mono text-slate-500">
-                      Session: {chatSessionId.substring(0, 8)}…
-                    </span>
+                    <>
+                      <span className="text-slate-600">•</span>
+                      <span className="text-[10px] font-mono text-slate-400">
+                        Session: {chatSessionId.substring(0, 8)}…
+                      </span>
+                    </>
                   )}
                   {chatPhase && <PhaseBadge phase={chatPhase} />}
                 </div>
               </div>
             </div>
+
             <div className="flex items-center gap-3">
               {chatMessages.length > 0 && (
-                <span className="text-[10px] font-semibold bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full">
+                <span className="text-[11px] font-semibold bg-slate-800 text-amber-300 border border-amber-500/30 px-2.5 py-1 rounded-full">
                   {chatMessages.length} messages
                 </span>
               )}
               <button
-                onClick={() => request?.requestId && fetchChatHistory(String(request.requestId))}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  request?.requestId && fetchChatHistory(String(request.requestId));
+                }}
                 disabled={chatLoading}
-                className="text-xs font-semibold text-amber-400 hover:text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 px-3 py-1.5 rounded-lg transition-all disabled:opacity-50 flex items-center gap-1.5"
+                className="text-xs font-semibold text-amber-400 hover:text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 px-3 py-1.5 rounded-lg transition-all disabled:opacity-50 flex items-center gap-1.5 cursor-pointer"
+                title="Refresh conversation transcript"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-3 h-3 ${chatLoading ? "animate-spin" : ""}`}>
                   <polyline points="23 4 23 10 17 10" />
                   <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
                 </svg>
-                {chatLoading ? "Refreshing…" : "Refresh"}
+                <span className="hidden sm:inline">{chatLoading ? "Refreshing…" : "Refresh"}</span>
               </button>
+
+              {/* Chevron icon button */}
+              <div className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 group-hover:text-amber-300 transition-colors">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`w-4 h-4 transition-transform duration-200 ${conversationOpen ? "rotate-180 text-amber-400" : ""}`}
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
             </div>
           </div>
 
-          {/* Body */}
-          <div className="p-6">
-            {chatLoading && (
-              <div className="flex items-center justify-center py-10 gap-3">
-                <div className="w-5 h-5 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
-                <span className="text-sm text-slate-400">Loading conversation…</span>
-              </div>
-            )}
+          {/* Collapsible Dropdown Body */}
+          {conversationOpen && (
+            <div className="p-6 animate-in fade-in duration-150">
+              {chatLoading && (
+                <div className="flex items-center justify-center py-10 gap-3">
+                  <div className="w-5 h-5 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
+                  <span className="text-sm text-slate-400">Loading conversation…</span>
+                </div>
+              )}
 
-            {!chatLoading && chatError && (
-              <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
-                <span className="text-4xl">🔍</span>
-                <p className="text-sm font-semibold text-slate-600">No Chat Session Found</p>
-                <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-                  {chatError} This request may have been created manually without an AI chat session.
-                </p>
-              </div>
-            )}
+              {!chatLoading && chatError && (
+                <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
+                  <span className="text-4xl">🔍</span>
+                  <p className="text-sm font-semibold text-slate-600">No Chat Session Found</p>
+                  <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+                    {chatError} This request may have been created manually without an AI chat session.
+                  </p>
+                </div>
+              )}
 
-            {!chatLoading && !chatError && chatMessages.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
-                <span className="text-4xl">💭</span>
-                <p className="text-sm font-semibold text-slate-600">No Messages Yet</p>
-                <p className="text-xs text-slate-400">The client has not started a chat conversation for this request.</p>
-              </div>
-            )}
+              {!chatLoading && !chatError && chatMessages.length === 0 && (
+                <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
+                  <span className="text-4xl">💭</span>
+                  <p className="text-sm font-semibold text-slate-600">No Messages Yet</p>
+                  <p className="text-xs text-slate-400">The client has not started a chat conversation for this request.</p>
+                </div>
+              )}
 
-            {!chatLoading && !chatError && chatMessages.length > 0 && (
-              <div className="space-y-5 max-h-[560px] overflow-y-auto pr-2 scrollbar-thin">
-                {chatMessages.map((msg, idx) => {
-                  const isAgent = msg.role === "agent";
-                  const time = new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true });
-                  const date = new Date(msg.timestamp).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+              {!chatLoading && !chatError && chatMessages.length > 0 && (
+                <div className="space-y-5 max-h-[560px] overflow-y-auto pr-2 scrollbar-thin">
+                  {chatMessages.map((msg, idx) => {
+                    const isAgent = msg.role === "agent";
+                    const time = new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true });
+                    const date = new Date(msg.timestamp).toLocaleDateString("en-US", { month: "short", day: "numeric" });
 
-                  return (
-                    <div key={idx} className={`flex items-end gap-3 ${isAgent ? "flex-row" : "flex-row-reverse"}`}>
-                      {/* Avatar */}
-                      <div className={`flex-shrink-0 w-8 h-8 rounded-xl flex items-center justify-center text-sm shadow ${
-                        isAgent
-                          ? "bg-gradient-to-br from-amber-400 to-amber-600 text-slate-900"
-                          : "bg-gradient-to-br from-slate-700 to-slate-900 text-white"
-                      }`}>
-                        {isAgent ? "🤖" : "👤"}
-                      </div>
-
-                      {/* Bubble */}
-                      <div className={`max-w-[75%] ${isAgent ? "" : ""}`}>
-                        <div className={`px-4 py-3 rounded-2xl shadow-sm ${
+                    return (
+                      <div key={idx} className={`flex items-end gap-3 ${isAgent ? "flex-row" : "flex-row-reverse"}`}>
+                        {/* Avatar */}
+                        <div className={`flex-shrink-0 w-8 h-8 rounded-xl flex items-center justify-center text-sm shadow ${
                           isAgent
-                            ? "bg-slate-50 text-slate-800 rounded-bl-sm border border-slate-200"
-                            : "bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-br-sm"
+                            ? "bg-gradient-to-br from-amber-400 to-amber-600 text-slate-900"
+                            : "bg-gradient-to-br from-slate-700 to-slate-900 text-white"
                         }`}>
-                          {isAgent ? (
-                            <MarkdownText content={msg.content} className={isAgent ? "text-slate-800" : "text-white"} />
-                          ) : (
-                            <p className="text-xs leading-relaxed">{msg.content}</p>
-                          )}
+                          {isAgent ? "🤖" : "👤"}
                         </div>
-                        <div className={`text-[10px] text-slate-400 mt-1 px-1 ${isAgent ? "text-left" : "text-right"}`}>
-                          <span className="font-semibold">{isAgent ? "AI Agent" : "Client"}</span>
-                          {" · "}{date} {time}
+
+                        {/* Bubble */}
+                        <div className="max-w-[75%]">
+                          <div className={`px-4 py-3 rounded-2xl shadow-sm ${
+                            isAgent
+                              ? "bg-slate-50 text-slate-800 rounded-bl-sm border border-slate-200"
+                              : "bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-br-sm"
+                          }`}>
+                            {isAgent ? (
+                              <MarkdownText content={msg.content} className={isAgent ? "text-slate-800" : "text-white"} />
+                            ) : (
+                              <p className="text-xs leading-relaxed">{msg.content}</p>
+                            )}
+                          </div>
+                          <div className={`text-[10px] text-slate-400 mt-1 px-1 ${isAgent ? "text-left" : "text-right"}`}>
+                            <span className="font-semibold">{isAgent ? "AI Agent" : "Client"}</span>
+                            {" · "}{date} {time}
+                          </div>
                         </div>
                       </div>
-                    </div>
                   );
                 })}
                 {/* Auto-scroll anchor */}
@@ -1359,7 +1396,8 @@ export const DocumentationRequestDetailPage: React.FC = () => {
               </div>
             )}
           </div>
-        </div>
+        )}
+      </div>
 
         {/* Ask Client to Upload / Re-upload Modal */}
         {askUploadModalOpen && (
