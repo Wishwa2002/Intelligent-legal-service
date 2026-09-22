@@ -114,6 +114,11 @@ export const documentationApi = {
     return res.data;
   },
 
+  deleteRequest: async (id: string | number): Promise<{ message: string }> => {
+    const res = await apiClient.delete<{ message: string }>(`/api/documentation-requests/${id}`);
+    return res.data;
+  },
+
   // Files
   uploadFile: async (requestId: string, file: File): Promise<DocumentFile> => {
     const formData = new FormData();

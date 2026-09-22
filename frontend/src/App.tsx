@@ -6,6 +6,7 @@ import { DocumentationRequestDetailPage } from "./pages/admin/document_and_clerk
 import { ClerksPage } from "./pages/admin/document_and_clerk/ClerksPage";
 import { DocumentationServicesPage } from "./pages/admin/document_and_clerk/DocumentationServicesPage";
 import { CareersPage } from "./pages/admin/CareersPage";
+import { ClientsPage } from "./pages/admin/ClientsPage";
 import { ClerkCasesPage } from "./pages/clerk/ClerkCasesPage";
 import { CareersPublicPage } from "./pages/public/CareersPublicPage";
 import { AdminRoute, ClerkRoute } from "./routes/ProtectedRoutes";
@@ -61,6 +62,14 @@ function App() {
           element={
             <AdminRoute>
               <ClerksPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/clients"
+          element={
+            <AdminRoute>
+              <ClientsPage />
             </AdminRoute>
           }
         />

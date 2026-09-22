@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { documentationApi, type DocumentationRequest, type DocumentFile } from "../../../api/documentationApi";
 import { AdminLayout } from "../../../components/layout/AdminLayout";
 import MarkdownText from "../../../components/common/MarkdownText";
-import { documentationApi, type DocumentationRequest } from "../../../api/documentationApi";
 import { agentApi, type AgentAnalysisResult, type ChatMessage } from "../../../api/agentApi";
 import { clerksApi, type Clerk } from "../../../api/clerksApi";
 import { AVAILABLE_SAMPLES } from "../../clerk/ClerkCasesPage";
@@ -163,11 +163,18 @@ const AnalysisLoader: React.FC = () => {
 // ─────────────────────────────────────────────────────────
 export const DocumentationRequestDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
 
   const [request, setRequest] = useState<DocumentationRequest | null>(null);
   const [clerks, setClerks] = useState<Clerk[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Deletion states
+  const [deleteRequestConfirm, setDeleteRequestConfirm] = useState(false);
+  const [deletingRequest, setDeletingRequest] = useState(false);
+  const [deleteFileConfirm, setDeleteFileConfirm] = useState<DocumentFile | null>(null);
+  const [deletingFile, setDeletingFile] = useState(false);
 
   // AI analysis
   const [analyzing, setAnalyzing] = useState(false);
@@ -217,6 +224,35 @@ export const DocumentationRequestDetailPage: React.FC = () => {
       setLoading(false);
     }
   }, [id]);
+
+  const handleDeleteRequest = async () => {
+    if (!id) return;
+    try {
+      setDeletingRequest(true);
+      await documentationApi.deleteRequest(id);
+      navigate("/admin/documentation-requests");
+    } catch (err: any) {
+      setActionToast({ type: "error", message: err.response?.data?.message || err.message || "Failed to delete request" });
+      setDeleteRequestConfirm(false);
+    } finally {
+      setDeletingRequest(false);
+    }
+  };
+
+  const handleDeleteFile = async () => {
+    if (!deleteFileConfirm) return;
+    try {
+      setDeletingFile(true);
+      await documentationApi.deleteFile(deleteFileConfirm.fileId);
+      setActionToast({ type: "success", message: `Document '${deleteFileConfirm.fileName}' deleted successfully.` });
+      setDeleteFileConfirm(null);
+      await fetchDetails();
+    } catch (err: any) {
+      setActionToast({ type: "error", message: err.response?.data?.message || err.message || "Failed to delete file" });
+    } finally {
+      setDeletingFile(false);
+    }
+  };
 
   const fetchChatHistory = useCallback(async (requestId: string) => {
     setChatLoading(true);
@@ -632,8 +668,8 @@ export const DocumentationRequestDetailPage: React.FC = () => {
           </div>
         )}
 
-        {/* Back link */}
-        <div className="mb-5">
+        {/* Back link & Top Actions */}
+        <div className="mb-5 flex items-center justify-between">
           <Link
             to="/admin/documentation-requests"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors"
@@ -643,6 +679,19 @@ export const DocumentationRequestDetailPage: React.FC = () => {
             </svg>
             All Requests
           </Link>
+
+          <button
+            type="button"
+            onClick={() => setDeleteRequestConfirm(true)}
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-rose-600 hover:text-white bg-rose-50 hover:bg-rose-600 px-3 py-1.5 rounded-xl border border-rose-200 hover:border-rose-600 transition-all shadow-2xs cursor-pointer"
+            title="Delete this documentation request"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            </svg>
+            <span>Delete Request</span>
+          </button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -863,10 +912,22 @@ export const DocumentationRequestDetailPage: React.FC = () => {
                         <button
                           type="button"
                           onClick={() => openAskModal(file.fileName, file.fileId)}
-                          className="text-xs font-bold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 px-2.5 py-1 rounded-lg transition flex items-center gap-1"
+                          className="text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1 rounded-lg transition flex items-center gap-1 cursor-pointer"
                         >
                           <span>⚠️</span>
-                          <span>Ask to re-upload</span>
+                          <span>Ask re-upload</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setDeleteFileConfirm(file)}
+                          className="text-xs font-bold text-rose-600 hover:text-white bg-rose-50 hover:bg-rose-600 border border-rose-200 px-2 py-1 rounded-lg transition flex items-center gap-1 cursor-pointer"
+                          title="Delete this document file"
+                        >
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
+                            <polyline points="3 6 5 6 21 6" />
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                          </svg>
+                          <span>Delete</span>
                         </button>
                       </div>
                     </div>
@@ -1451,6 +1512,30 @@ export const DocumentationRequestDetailPage: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* Delete Request Confirm Modal */}
+        <ConfirmModal
+          open={deleteRequestConfirm}
+          title="Delete Documentation Request?"
+          message={`Are you sure you want to permanently delete Request #${request?.requestId}? All uploaded documents, AI verification audits, and case logs will be permanently deleted.`}
+          confirmLabel="Yes, Delete Request"
+          variant="rose"
+          loading={deletingRequest}
+          onConfirm={handleDeleteRequest}
+          onCancel={() => setDeleteRequestConfirm(false)}
+        />
+
+        {/* Delete File Confirm Modal */}
+        <ConfirmModal
+          open={!!deleteFileConfirm}
+          title="Delete Document File?"
+          message={`Are you sure you want to delete '${deleteFileConfirm?.fileName}'? This file will be permanently removed from this request and disk storage.`}
+          confirmLabel="Yes, Delete File"
+          variant="rose"
+          loading={deletingFile}
+          onConfirm={handleDeleteFile}
+          onCancel={() => setDeleteFileConfirm(null)}
+        />
       </AdminLayout>
     </>
   );

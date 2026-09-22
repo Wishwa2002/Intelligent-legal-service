@@ -114,4 +114,17 @@ public class DocumentationRequestsController : ControllerBase
 
         return Ok(updated);
     }
+
+    /// <summary>
+    /// Delete a documentation request and all associated document files.
+    /// </summary>
+    [HttpDelete("{id:int}")]
+    public async Task<IActionResult> Delete(int id)
+    {
+        var success = await _requestService.DeleteRequestAsync(id);
+        if (!success)
+            return NotFound(new { message = $"Documentation request with ID '{id}' was not found." });
+
+        return Ok(new { message = $"Documentation request with ID '{id}' was deleted successfully." });
+    }
 }

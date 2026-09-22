@@ -459,4 +459,35 @@ public class DocumentationRequestService : IDocumentationRequestService
 
         return false;
     }
+
+    public async Task<bool> DeleteRequestAsync(int requestId)
+    {
+        var request = await _context.DocumentationRequests
+            .Include(r => r.DocumentFiles)
+            .FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+        if (request == null)
+            return false;
+
+        // Clean up physical files on disk
+        foreach (var file in request.DocumentFiles)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(file.FilePath) && System.IO.File.Exists(file.FilePath))
+                {
+                    System.IO.File.Delete(file.FilePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[WARNING] Failed to delete file {file.FilePath}: {ex.Message}");
+            }
+        }
+
+        _context.DocumentFiles.RemoveRange(request.DocumentFiles);
+        _context.DocumentationRequests.Remove(request);
+        await _context.SaveChangesAsync();
+        return true;
+    }
 }
