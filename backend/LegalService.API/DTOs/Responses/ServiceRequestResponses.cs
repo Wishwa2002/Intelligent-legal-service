@@ -9,7 +9,7 @@ namespace LegalService.API.DTOs.Responses;
 public class ServiceRequestResponse
 {
     public Guid ServiceRequestId { get; set; }
-    public Guid CustomerId { get; set; }
+    public int CustomerId { get; set; }
     public string CustomerName { get; set; } = string.Empty;
     public string Title { get; set; } = string.Empty;
     public string RequestType { get; set; } = string.Empty;
@@ -25,7 +25,7 @@ public class ServiceRequestResponse
 public class ServiceRequestDetailsResponse
 {
     public Guid ServiceRequestId { get; set; }
-    public Guid CustomerId { get; set; }
+    public int CustomerId { get; set; }
     public string CustomerName { get; set; } = string.Empty;
     public string CustomerEmail { get; set; } = string.Empty;
     public string Title { get; set; } = string.Empty;

@@ -25,14 +25,14 @@ public class ServiceRequestsController : ControllerBase
     // POST /api/service-requests?customerId={guid}
     [HttpPost]
     public async Task<IActionResult> Create(
-        [FromQuery] Guid customerId,
+        [FromQuery] int customerId,
         [FromBody] CreateServiceRequestRequest dto)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
-        if (customerId == Guid.Empty)
-            return BadRequest(new { message = "A valid customerId (Guid) is required." });
+        if (customerId <= 0)
+            return BadRequest(new { message = "A valid customerId  is required." });
 
         var result = await _service.CreateAsync(customerId, dto);
         return CreatedAtAction(nameof(GetById), new { id = result.ServiceRequestId }, result);
@@ -41,7 +41,7 @@ public class ServiceRequestsController : ControllerBase
     // GET /api/service-requests[?customerId=&status=&requestType=]
     [HttpGet]
     public async Task<IActionResult> GetAll(
-        [FromQuery] Guid? customerId,
+        [FromQuery] int? customerId,
         [FromQuery] string? status,
         [FromQuery] string? requestType)
     {
@@ -63,13 +63,13 @@ public class ServiceRequestsController : ControllerBase
     [HttpPut("{id:guid}")]
     public async Task<IActionResult> Update(
         [FromRoute] Guid id,
-        [FromQuery] Guid customerId,
+        [FromQuery] int customerId,
         [FromBody] UpdateServiceRequestRequest dto)
     {
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
 
-        if (customerId == Guid.Empty)
+        if (customerId <= 0)
             return BadRequest(new { message = "A valid customerId (Guid) is required." });
 
         var result = await _service.UpdateAsync(id, customerId, dto);
@@ -82,9 +82,9 @@ public class ServiceRequestsController : ControllerBase
     [HttpDelete("{id:guid}")]
     public async Task<IActionResult> Cancel(
         [FromRoute] Guid id,
-        [FromQuery] Guid customerId)
+        [FromQuery] int customerId)
     {
-        if (customerId == Guid.Empty)
+        if (customerId <= 0)
             return BadRequest(new { message = "A valid customerId (Guid) is required." });
 
         var result = await _service.CancelAsync(id, customerId);
@@ -97,7 +97,7 @@ public class ServiceRequestsController : ControllerBase
     [HttpPatch("{id:guid}/status")]
     public async Task<IActionResult> ChangeStatus(
         [FromRoute] Guid id,
-        [FromQuery] Guid? adminUserId,
+        [FromQuery] int? adminUserId,
         [FromBody] ChangeServiceRequestStatusRequest dto)
     {
         if (!ModelState.IsValid)

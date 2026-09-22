@@ -50,7 +50,7 @@ public class ServiceRequestService : IServiceRequestService
 
     // ── CREATE ────────────────────────────────────────────────────────────────
 
-    public async Task<ServiceRequestDetailsResponse> CreateAsync(Guid customerId, CreateServiceRequestRequest request)
+    public async Task<ServiceRequestDetailsResponse> CreateAsync(int customerId, CreateServiceRequestRequest request)
     {
         var entity = new ServiceRequest
         {
@@ -79,16 +79,19 @@ public class ServiceRequestService : IServiceRequestService
 
         // Note: User table uses int UserId in code but uuid Id in DB — we look up by UserId (int) via auth
         // For now, CustomerName is resolved from context if available
-        return MapToDetails(entity, null);
+        var customer = await _context.Users
+            .FirstOrDefaultAsync(u => u.UserId == customerId);
+
+        return MapToDetails(entity, customer);
     }
 
     // ── READ ──────────────────────────────────────────────────────────────────
 
     public async Task<IEnumerable<ServiceRequestResponse>> GetAllAsync(
-        Guid? customerId = null,
+        int? customerId = null,
         string? status = null,
         string? requestType = null)
-    {
+        {
         var query = _context.ServiceRequests.AsQueryable();
 
         if (customerId.HasValue)
@@ -96,30 +99,51 @@ public class ServiceRequestService : IServiceRequestService
 
         if (!string.IsNullOrWhiteSpace(status) &&
             Enum.TryParse<ServiceRequestStatus>(status, ignoreCase: true, out var parsedStatus))
+        {
             query = query.Where(sr => sr.Status == parsedStatus);
+        }
 
         if (!string.IsNullOrWhiteSpace(requestType))
-            query = query.Where(sr => sr.RequestType.ToLower().Contains(requestType.ToLower()));
+        {
+            query = query.Where(sr =>
+                sr.RequestType.ToLower().Contains(requestType.ToLower()));
+        }
 
         var requests = await query
             .OrderByDescending(sr => sr.CreatedAt)
             .ToListAsync();
 
-        return requests.Select(sr => MapToSummary(sr, null));
+        var response = new List<ServiceRequestResponse>();
+
+        foreach (var sr in requests)
+        {
+            var customer = await _context.Users
+                .FirstOrDefaultAsync(u => u.UserId == sr.CustomerId);
+
+            response.Add(MapToSummary(sr, customer));
+        }
+
+        return response;
     }
 
     public async Task<ServiceRequestDetailsResponse?> GetByIdAsync(Guid requestId)
-    {
+{
         var entity = await _context.ServiceRequests
             .FirstOrDefaultAsync(sr => sr.ServiceRequestId == requestId);
 
-        return entity == null ? null : MapToDetails(entity, null);
+        if (entity == null)
+            return null;
+
+        var customer = await _context.Users
+            .FirstOrDefaultAsync(u => u.UserId == entity.CustomerId);
+
+        return MapToDetails(entity, customer);
     }
 
     // ── UPDATE ────────────────────────────────────────────────────────────────
 
     public async Task<ServiceRequestDetailsResponse?> UpdateAsync(
-        Guid requestId, Guid customerId, UpdateServiceRequestRequest request)
+        Guid requestId, int customerId, UpdateServiceRequestRequest request)
     {
         var entity = await _context.ServiceRequests
             .FirstOrDefaultAsync(sr => sr.ServiceRequestId == requestId);
@@ -152,7 +176,7 @@ public class ServiceRequestService : IServiceRequestService
 
     // ── CANCEL ────────────────────────────────────────────────────────────────
 
-    public async Task<ServiceRequestDetailsResponse?> CancelAsync(Guid requestId, Guid customerId)
+    public async Task<ServiceRequestDetailsResponse?> CancelAsync(Guid requestId, int customerId)
     {
         var entity = await _context.ServiceRequests
             .FirstOrDefaultAsync(sr => sr.ServiceRequestId == requestId);
@@ -182,7 +206,7 @@ public class ServiceRequestService : IServiceRequestService
     // ── ADMIN STATUS CHANGE ───────────────────────────────────────────────────
 
     public async Task<ServiceRequestDetailsResponse?> ChangeStatusAsync(
-        Guid requestId, ServiceRequestStatus newStatus, string? note, Guid? adminUserId)
+        Guid requestId, ServiceRequestStatus newStatus, string? note, int? adminUserId)
     {
         var entity = await _context.ServiceRequests
             .FirstOrDefaultAsync(sr => sr.ServiceRequestId == requestId);
@@ -215,7 +239,7 @@ public class ServiceRequestService : IServiceRequestService
     // ── HELPERS ───────────────────────────────────────────────────────────────
 
     private async Task AddAuditLogAsync(
-        Guid? userId, string action, string entityRef, string? prev, string? next)
+        int? userId, string action, string entityRef, string? prev, string? next)
     {
         var log = new AuditLog
         {
