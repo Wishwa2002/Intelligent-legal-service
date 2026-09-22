@@ -149,9 +149,9 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
   ];
 
   return (
-    <div className="min-h-screen bg-slate-100/70 flex flex-col font-sans text-slate-900 selection:bg-amber-500/20 selection:text-amber-900">
+    <div className="h-screen bg-slate-100/70 flex flex-col font-sans text-slate-900 selection:bg-amber-500/20 selection:text-amber-900 overflow-hidden">
       {/* ─── Top Header Bar ─── */}
-      <header className="sticky top-0 z-50 bg-slate-950 border-b border-slate-800 shadow-md backdrop-blur-md bg-opacity-95">
+      <header className="shrink-0 z-50 bg-slate-950 border-b border-slate-800 shadow-md backdrop-blur-md bg-opacity-95">
         <div className="flex items-center justify-between px-4 sm:px-6 h-16">
           {/* Left: Brand + Toggle */}
           <div className="flex items-center gap-4">
@@ -255,10 +255,10 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
         </div>
       </header>
 
-      <div className="flex flex-1 overflow-hidden">
-        {/* ─── Sidebar ─── */}
+      <div className="flex flex-1 overflow-hidden min-h-0">
+        {/* ─── Sidebar (Fixed side navigation, does not scroll with page) ─── */}
         <aside
-          className="bg-slate-950 border-r border-slate-800/90 transition-all duration-300 overflow-hidden flex flex-col shrink-0"
+          className="bg-slate-950 border-r border-slate-800/90 transition-all duration-300 overflow-y-auto overflow-x-hidden flex flex-col shrink-0 h-full select-none"
           style={{
             width: sidebarOpen ? 240 : 0,
             minWidth: sidebarOpen ? 240 : 0,
@@ -322,8 +322,8 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
           </div>
         </aside>
 
-        {/* ─── Main Content Canvas ─── */}
-        <div className="flex-1 flex flex-col overflow-auto">
+        {/* ─── Main Content Canvas (Scrolls independently) ─── */}
+        <div className="flex-1 flex flex-col overflow-y-auto min-w-0">
           {/* KPI stat cards banner */}
           <div className="bg-white/80 backdrop-blur-sm border-b border-slate-200/90 px-6 py-4">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-6xl mx-auto">
