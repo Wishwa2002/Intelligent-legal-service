@@ -12,22 +12,23 @@ import { AVAILABLE_SAMPLES } from "../../clerk/ClerkCasesPage";
 // ─────────────────────────────────────────────────────────
 
 const StatusBadge: React.FC<{ status: string; sm?: boolean }> = ({ status, sm }) => {
-  const cfg: Record<string, string> = {
-    PENDING: "bg-amber-50 text-amber-700 border-amber-200",
-    UNDER_REVIEW: "bg-blue-50 text-blue-700 border-blue-200",
-    ASSIGNED: "bg-indigo-50 text-indigo-700 border-indigo-200",
-    IN_PROGRESS: "bg-purple-50 text-purple-700 border-purple-200",
-    REQUIRES_DOCUMENTS: "bg-rose-50 text-rose-700 border-rose-200",
-    COMPLETED: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    REJECTED: "bg-slate-100 text-slate-600 border-slate-300",
-    CANCELLED: "bg-slate-100 text-slate-500 border-slate-200",
-    ADMIN_APPROVAL_PENDING: "bg-purple-50 text-purple-700 border-purple-200",
-    HUMAN_REVIEW: "bg-orange-50 text-orange-700 border-orange-200",
+  const cfg: Record<string, { cls: string; dot: string }> = {
+    PENDING: { cls: "bg-amber-50 text-amber-800 border-amber-200/80", dot: "bg-amber-500" },
+    UNDER_REVIEW: { cls: "bg-blue-50 text-blue-800 border-blue-200/80", dot: "bg-blue-500" },
+    ASSIGNED: { cls: "bg-indigo-50 text-indigo-800 border-indigo-200/80", dot: "bg-indigo-500" },
+    IN_PROGRESS: { cls: "bg-purple-50 text-purple-800 border-purple-200/80", dot: "bg-purple-500 animate-pulse" },
+    REQUIRES_DOCUMENTS: { cls: "bg-rose-50 text-rose-800 border-rose-200/80", dot: "bg-rose-500 animate-pulse" },
+    COMPLETED: { cls: "bg-emerald-50 text-emerald-800 border-emerald-200/80", dot: "bg-emerald-500" },
+    REJECTED: { cls: "bg-slate-100 text-slate-600 border-slate-300", dot: "bg-slate-400" },
+    CANCELLED: { cls: "bg-slate-100 text-slate-500 border-slate-200", dot: "bg-slate-400" },
+    ADMIN_APPROVAL_PENDING: { cls: "bg-purple-50 text-purple-800 border-purple-200/80", dot: "bg-purple-500 animate-pulse" },
+    HUMAN_REVIEW: { cls: "bg-orange-50 text-orange-800 border-orange-200/80", dot: "bg-orange-500" },
   };
-  const cls = cfg[status] ?? "bg-slate-100 text-slate-600 border-slate-200";
+  const item = cfg[status] ?? { cls: "bg-slate-100 text-slate-600 border-slate-200", dot: "bg-slate-400" };
   return (
-    <span className={`inline-flex items-center rounded-full border font-semibold ${sm ? "text-[10px] px-2 py-0.5" : "text-xs px-2.5 py-1"} ${cls}`}>
-      {status.replace(/_/g, " ")}
+    <span className={`inline-flex items-center gap-1.5 rounded-full border font-bold uppercase tracking-wider ${sm ? "text-[10px] px-2 py-0.5" : "text-xs px-3 py-1"} ${item.cls} shadow-2xs`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${item.dot}`} />
+      <span>{status.replace(/_/g, " ")}</span>
     </span>
   );
 };
