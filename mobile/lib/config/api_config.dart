@@ -8,8 +8,8 @@ class ApiConfig {
   // Localhost works seamlessly on Android via adb reverse (USB) and on desktop
   static const String defaultBackendUrl = 'http://localhost:5000';
   static const String defaultAiUrl = 'http://localhost:8001';
-  static const String lanBackendUrl = 'http://10.78.57.23:5000';
-  static const String lanAiUrl = 'http://10.78.57.23:8001';
+  static const String lanBackendUrl = 'http://172.27.62.23:5000';
+  static const String lanAiUrl = 'http://172.27.62.23:8001';
 
   static final ValueNotifier<String> backendUrl = ValueNotifier<String>(defaultBackendUrl);
   static final ValueNotifier<String> aiServiceUrl = ValueNotifier<String>(defaultAiUrl);

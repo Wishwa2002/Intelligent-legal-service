@@ -393,6 +393,19 @@ class _MyRequestsScreenState extends State<MyRequestsScreen> {
                                                   ],
                                                 ),
                                               ],
+                                              if (req.status != 'PENDING' && (req.reuploadNote == null || req.reuploadNote!.isEmpty)) ...[
+                                                const SizedBox(height: 6),
+                                                Row(
+                                                  children: [
+                                                    const Icon(Icons.notifications_active_outlined, size: 13, color: AppTheme.secondaryAmber),
+                                                    const SizedBox(width: 4),
+                                                    Text(
+                                                      'Status updated to: ${req.status}',
+                                                      style: const TextStyle(fontSize: 11, color: AppTheme.textMuted, fontWeight: FontWeight.w500),
+                                                    ),
+                                                  ],
+                                                ),
+                                              ],
                                               if (req.reuploadNote != null && req.reuploadNote!.isNotEmpty) ...[
                                                 const SizedBox(height: 8),
                                                 Container(

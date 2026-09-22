@@ -31,6 +31,7 @@ builder.Services.AddScoped<IDocumentationServiceService, DocumentationServiceSer
 builder.Services.AddScoped<IDocumentationRequestService, DocumentationRequestService>();
 builder.Services.AddScoped<IDocumentFileService, DocumentFileService>();
 builder.Services.AddScoped<ICareerService, CareerService>();
+builder.Services.AddScoped<IEmailNotificationService, EmailNotificationService>();
 
 // Agentic AI Integration
 builder.Services.AddHttpClient<IAgentIntegrationService, AgentIntegrationService>();

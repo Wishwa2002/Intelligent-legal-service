@@ -36,7 +36,7 @@ public class CareerServiceTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.NotEqual(Guid.Empty, result.CareerId);
+        Assert.True(result.CareerId > 0);
         Assert.Equal("Legal Researcher", result.JobTitle);
         Assert.Equal("Conduct in-depth case law research.", result.Description);
         Assert.Equal(0, result.ApplicationsCount);
@@ -49,7 +49,7 @@ public class CareerServiceTests
         using var context = CreateInMemoryDbContext();
         var career = new Career
         {
-            CareerId = Guid.NewGuid(),
+            CareerId = 1,
             JobTitle = "Documentation Specialist",
             Description = "Process and draft documents."
         };
@@ -68,7 +68,7 @@ public class CareerServiceTests
 
         // Assert
         Assert.NotNull(result);
-        Assert.NotEqual(Guid.Empty, result.ApplicationId);
+        Assert.True(result.ApplicationId > 0);
         Assert.Equal(career.CareerId, result.CareerId);
         Assert.Equal("Sarah Connor", result.ApplicantName);
         Assert.Equal("Submitted", result.Status);
@@ -81,17 +81,17 @@ public class CareerServiceTests
         using var context = CreateInMemoryDbContext();
         var career = new Career
         {
-            CareerId = Guid.NewGuid(),
+            CareerId = 1,
             JobTitle = "Documentation Specialist",
             Description = "Process and draft documents."
         };
         var app = new JobApplication
         {
-            ApplicationId = Guid.NewGuid(),
+            ApplicationId = 1,
             CareerId = career.CareerId,
             ApplicantName = "Sarah Connor",
             Status = "UnderReview",
-            AppliedAt = DateTime.UtcNow,
+            CreatedAt = DateTime.UtcNow,
             Career = career
         };
         context.Careers.Add(career);

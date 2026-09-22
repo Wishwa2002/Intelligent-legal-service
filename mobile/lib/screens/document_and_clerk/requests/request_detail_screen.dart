@@ -237,6 +237,193 @@ class _RequestDetailScreenState extends State<RequestDetailScreen> {
     }
   }
 
+  Widget _buildStatusNotificationCard(DocumentationRequest req) {
+    final status = req.status.toUpperCase();
+    final isUpdated = status != 'PENDING' || req.updatedAt != null;
+    if (!isUpdated) return const SizedBox.shrink();
+
+    Color bgColor;
+    Color borderColor;
+    Color accentColor;
+    IconData icon;
+    String statusTitle;
+    String statusExplanation;
+
+    switch (status) {
+      case 'COMPLETED':
+        bgColor = const Color(0xFFF0FDF4);
+        borderColor = const Color(0xFF86EFAC);
+        accentColor = const Color(0xFF15803D);
+        icon = Icons.verified_rounded;
+        statusTitle = 'Documentation Completed & Approved';
+        statusExplanation = 'All documents and requirements have been verified and finalized by our legal team.';
+        break;
+      case 'REQUIRES_DOCUMENTS':
+        bgColor = const Color(0xFFFEF2F2);
+        borderColor = const Color(0xFFFCA5A5);
+        accentColor = const Color(0xFFB91C1C);
+        icon = Icons.warning_amber_rounded;
+        statusTitle = 'Action Required: Documents Needed';
+        statusExplanation = 'The legal clerk or admin has requested additional or re-uploaded documents for your case.';
+        break;
+      case 'IN_PROGRESS':
+        bgColor = const Color(0xFFEFF6FF);
+        borderColor = const Color(0xFF93C5FD);
+        accentColor = const Color(0xFF1D4ED8);
+        icon = Icons.pending_actions_rounded;
+        statusTitle = 'Case In Progress';
+        statusExplanation = 'Our legal specialist is actively drafting and processing your legal documentation.';
+        break;
+      case 'ASSIGNED':
+        bgColor = const Color(0xFFF5F3FF);
+        borderColor = const Color(0xFFC4B5FD);
+        accentColor = const Color(0xFF6D28D9);
+        icon = Icons.assignment_ind_rounded;
+        statusTitle = 'Legal Clerk Assigned';
+        statusExplanation = 'Clerk ${req.assignedClerkName ?? "Legal Clerk"} has been assigned to oversee and review your case.';
+        break;
+      case 'UNDER_REVIEW':
+        bgColor = const Color(0xFFFFFBEB);
+        borderColor = const Color(0xFFFDE68A);
+        accentColor = const Color(0xFFB45309);
+        icon = Icons.policy_rounded;
+        statusTitle = 'Under Legal Review';
+        statusExplanation = 'Your details and uploaded files are being examined by our verification team.';
+        break;
+      case 'REJECTED':
+        bgColor = const Color(0xFFFEF2F2);
+        borderColor = const Color(0xFFF87171);
+        accentColor = const Color(0xFF991B1B);
+        icon = Icons.cancel_outlined;
+        statusTitle = 'Request Rejected';
+        statusExplanation = 'Your request could not be processed as submitted. Please check the review notes.';
+        break;
+      default:
+        bgColor = const Color(0xFFF8FAFC);
+        borderColor = const Color(0xFFE2E8F0);
+        accentColor = AppTheme.primaryNavy;
+        icon = Icons.notifications_rounded;
+        statusTitle = 'Status Updated: ${req.status}';
+        statusExplanation = 'The administrative status of this request has been updated.';
+    }
+
+    final updateTimeStr = req.updatedAt != null
+        ? DateFormat('MMM d, yyyy • h:mm a').format(req.updatedAt!.toLocal())
+        : null;
+
+    return Container(
+      margin: const EdgeInsets.only(bottom: 16),
+      padding: const EdgeInsets.all(16),
+      decoration: BoxDecoration(
+        color: bgColor,
+        borderRadius: BorderRadius.circular(16),
+        border: Border.all(color: borderColor, width: 1.5),
+        boxShadow: [
+          BoxShadow(
+            color: accentColor.withAlpha(15),
+            blurRadius: 10,
+            offset: const Offset(0, 3),
+          ),
+        ],
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Row(
+            children: [
+              Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: accentColor.withAlpha(25),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: Icon(icon, color: accentColor, size: 20),
+              ),
+              const SizedBox(width: 10),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      children: [
+                        Text(
+                          'STATUS NOTIFICATION',
+                          style: TextStyle(
+                            fontSize: 10,
+                            letterSpacing: 0.8,
+                            fontWeight: FontWeight.w800,
+                            color: accentColor,
+                          ),
+                        ),
+                        const Spacer(),
+                        Container(
+                          padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 2),
+                          decoration: BoxDecoration(
+                            color: accentColor,
+                            borderRadius: BorderRadius.circular(6),
+                          ),
+                          child: const Text(
+                            'LIVE',
+                            style: TextStyle(fontSize: 9, fontWeight: FontWeight.bold, color: Colors.white),
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      statusTitle,
+                      style: TextStyle(
+                        fontSize: 15,
+                        fontWeight: FontWeight.bold,
+                        color: accentColor,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 10),
+          Text(
+            statusExplanation,
+            style: const TextStyle(fontSize: 13, color: Color(0xFF334155), height: 1.4),
+          ),
+          if (updateTimeStr != null || req.assignedClerkName != null) ...[
+            const SizedBox(height: 10),
+            Row(
+              children: [
+                if (updateTimeStr != null) ...[
+                  const Icon(Icons.access_time_rounded, size: 13, color: Color(0xFF64748B)),
+                  const SizedBox(width: 4),
+                  Text(
+                    'Updated: $updateTimeStr',
+                    style: const TextStyle(fontSize: 11, color: Color(0xFF64748B), fontWeight: FontWeight.w500),
+                  ),
+                ],
+                if (updateTimeStr != null && req.assignedClerkName != null) ...[
+                  const SizedBox(width: 10),
+                  const Text('•', style: TextStyle(color: Color(0xFF94A3B8))),
+                  const SizedBox(width: 10),
+                ],
+                if (req.assignedClerkName != null) ...[
+                  const Icon(Icons.person_pin, size: 13, color: Color(0xFF64748B)),
+                  const SizedBox(width: 4),
+                  Expanded(
+                    child: Text(
+                      'By: ${req.assignedClerkName}',
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(fontSize: 11, color: Color(0xFF64748B), fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+
   Widget _buildTimeline(String currentStatus) {
     final steps = ['PENDING', 'UNDER_REVIEW', 'ASSIGNED', 'IN_PROGRESS', 'COMPLETED'];
     final statusIndex = steps.indexOf(currentStatus.toUpperCase());
@@ -377,6 +564,9 @@ class _RequestDetailScreenState extends State<RequestDetailScreen> {
                             ),
                           ),
                           const SizedBox(height: 16),
+
+                          // Status Update Notification Banner
+                          _buildStatusNotificationCard(_request!),
 
                           // Progress Timeline
                           _buildTimeline(_request!.status),

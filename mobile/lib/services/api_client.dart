@@ -150,16 +150,16 @@ class ApiClient {
 
   static String? _getFailoverUrl(String currentUrl) {
     if (currentUrl.contains('localhost')) {
-      return currentUrl.replaceAll('localhost', '10.78.57.23');
+      return currentUrl.replaceAll('localhost', '172.27.62.23');
     }
-    if (currentUrl.contains('10.78.57.23')) {
-      return currentUrl.replaceAll('10.78.57.23', 'localhost');
+    if (currentUrl.contains('172.27.62.23')) {
+      return currentUrl.replaceAll('172.27.62.23', 'localhost');
     }
     return null;
   }
 
   static void _applyFailoverSuccess(String failoverUrl) {
-    if (failoverUrl.contains('10.78.57.23')) {
+    if (failoverUrl.contains('172.27.62.23')) {
       ApiConfig.setBackendUrl(ApiConfig.lanBackendUrl);
       ApiConfig.setAiServiceUrl(ApiConfig.lanAiUrl);
     } else if (failoverUrl.contains('localhost')) {
