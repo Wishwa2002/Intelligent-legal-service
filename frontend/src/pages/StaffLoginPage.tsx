@@ -268,8 +268,42 @@ export const StaffLoginPage: React.FC = () => {
             </button>
           </form>
 
+          {/* Quick Demo Credentials */}
+          <div className="mt-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700/60">
+            <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2.5 flex items-center justify-between">
+              <span>Staff Demo Credentials</span>
+              <span className="text-[10px] text-amber-400/90 font-mono">Click to autofill</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail("admin@legalease.com");
+                  setPassword("AdminPassword123!");
+                  setError(null);
+                }}
+                className="p-2.5 rounded-lg bg-indigo-950/60 hover:bg-indigo-900/80 border border-indigo-800/50 text-left transition cursor-pointer group"
+              >
+                <div className="text-xs font-bold text-indigo-300 group-hover:text-indigo-200">Admin Account</div>
+                <div className="text-[10px] text-slate-400 truncate">admin@legalease.com</div>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail("clerk@legalease.com");
+                  setPassword("ClerkPassword123!");
+                  setError(null);
+                }}
+                className="p-2.5 rounded-lg bg-purple-950/60 hover:bg-purple-900/80 border border-purple-800/50 text-left transition cursor-pointer group"
+              >
+                <div className="text-xs font-bold text-purple-300 group-hover:text-purple-200">Clerk Account</div>
+                <div className="text-[10px] text-slate-400 truncate">clerk@legalease.com</div>
+              </button>
+            </div>
+          </div>
+
           {/* Divider */}
-          <div className="my-8 flex items-center gap-4">
+          <div className="my-6 flex items-center gap-4">
             <div className="flex-1 h-px bg-slate-800" />
             <span className="text-xs text-slate-600 font-medium">SECURE ACCESS</span>
             <div className="flex-1 h-px bg-slate-800" />
