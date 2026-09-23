@@ -21,7 +21,7 @@ public class DocumentFilesController : ControllerBase
     /// Upload a document (PDF, JPG, PNG) for a documentation request.
     /// </summary>
     [HttpPost("documentation-requests/{requestId:int}/files")]
-    public async Task<IActionResult> Upload(int requestId, [FromForm] IFormFile file)
+    public async Task<IActionResult> Upload(int requestId, IFormFile file)
     {
         if (file == null || file.Length == 0)
         {
