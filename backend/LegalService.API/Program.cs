@@ -41,6 +41,11 @@ builder.Services.AddScoped<ICareerService, CareerService>();
 // ================================================================
 builder.Services.AddScoped<IServiceRequestService, ServiceRequestService>();
 
+// ================================================================
+// Appointment & Booking Management
+// ================================================================
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+
 
 // Agentic AI Integration
 builder.Services.AddHttpClient<IAgentIntegrationService, AgentIntegrationService>();

@@ -7,6 +7,9 @@ import 'services/services_catalog_screen.dart';
 import 'chat/ai_chat_screen.dart';
 import 'requests/my_requests_screen.dart';
 import 'careers/careers_screen.dart';
+import 'appointments/my_appointments_screen.dart';
+import 'appointments/lawyers_screen.dart';
+import 'appointments/lawyer_schedule_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -50,10 +53,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
               children: [
                 CircleAvatar(
                   backgroundColor: AppTheme.primaryNavy,
-                  radius: 24,
+                  radius: 26,
                   child: Text(
                     user.fullName.isNotEmpty ? user.fullName[0].toUpperCase() : 'U',
-                    style: const TextStyle(color: AppTheme.secondaryAmber, fontWeight: FontWeight.bold, fontSize: 18),
+                    style: const TextStyle(color: AppTheme.gold, fontWeight: FontWeight.bold, fontSize: 20),
                   ),
                 ),
                 const SizedBox(width: 14),
@@ -61,15 +64,54 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(user.fullName, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+                      Text(user.fullName, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy)),
                       Text(user.email, style: const TextStyle(fontSize: 13, color: AppTheme.textMuted)),
-                      Text('Role: ${user.userType}', style: const TextStyle(fontSize: 11, color: AppTheme.secondaryAmber, fontWeight: FontWeight.bold)),
+                      const SizedBox(height: 2),
+                      Container(
+                        padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                        decoration: BoxDecoration(
+                          color: AppTheme.gold.withValues(alpha: 0.15),
+                          borderRadius: BorderRadius.circular(6),
+                        ),
+                        child: Text(
+                          user.userType.toUpperCase(),
+                          style: const TextStyle(fontSize: 10, color: AppTheme.goldDark, fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ],
                   ),
                 ),
               ],
             ),
-            const SizedBox(height: 24),
+            const SizedBox(height: 16),
+            ListTile(
+              leading: const Icon(Icons.calendar_month, color: AppTheme.primaryNavy),
+              title: const Text('My Consultations & Appointments', style: TextStyle(fontWeight: FontWeight.w600)),
+              onTap: () {
+                Navigator.pop(ctx);
+                Navigator.push(context, MaterialPageRoute(builder: (_) => const MyAppointmentsScreen()));
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.people_outline, color: AppTheme.primaryNavy),
+              title: const Text('Browse Lawyers & Book Slot'),
+              onTap: () {
+                Navigator.pop(ctx);
+                Navigator.push(context, MaterialPageRoute(builder: (_) => const LawyersScreen()));
+              },
+            ),
+            if (user.userType.toLowerCase() == 'lawyer' ||
+                user.userType.toLowerCase() == 'admin' ||
+                user.userType.toLowerCase() == 'clerk')
+              ListTile(
+                leading: const Icon(Icons.gavel, color: Color(0xFFD97706)),
+                title: const Text('Counsel Consultations Schedule', style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xFF92400E))),
+                onTap: () {
+                  Navigator.pop(ctx);
+                  Navigator.push(context, MaterialPageRoute(builder: (_) => const LawyerScheduleScreen()));
+                },
+              ),
+            const Divider(),
             ListTile(
               leading: const Icon(Icons.settings_input_antenna, color: AppTheme.primaryNavy),
               title: const Text('Backend & AI Endpoints'),
@@ -116,17 +158,24 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                     ? GestureDetector(
                         onTap: _showUserAccountModal,
                         child: Container(
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
                           decoration: BoxDecoration(
-                            color: AppTheme.primaryNavy.withValues(alpha: 0.9),
+                            color: AppTheme.primaryNavy,
                             borderRadius: BorderRadius.circular(20),
-                            border: Border.all(color: AppTheme.secondaryAmber.withValues(alpha: 0.5)),
+                            border: Border.all(color: AppTheme.gold.withValues(alpha: 0.6)),
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withValues(alpha: 0.15),
+                                blurRadius: 8,
+                                offset: const Offset(0, 2),
+                              ),
+                            ],
                           ),
                           child: Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-                              const Icon(Icons.account_circle, size: 16, color: AppTheme.secondaryAmber),
-                              const SizedBox(width: 4),
+                              const Icon(Icons.account_circle, size: 16, color: AppTheme.gold),
+                              const SizedBox(width: 5),
                               Text(
                                 user.fullName.split(' ').first,
                                 style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
@@ -137,12 +186,13 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                       )
                     : TextButton.icon(
                         style: TextButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: AppTheme.primaryNavy.withValues(alpha: 0.9),
-                          padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                          foregroundColor: AppTheme.primaryNavy,
+                          backgroundColor: AppTheme.gold,
+                          padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 5),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                         ),
-                        icon: const Icon(Icons.login, size: 14, color: AppTheme.secondaryAmber),
-                        label: const Text('Sign In', style: TextStyle(fontSize: 11)),
+                        icon: const Icon(Icons.login, size: 14, color: AppTheme.primaryNavy),
+                        label: const Text('Sign In', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold)),
                         onPressed: () {
                           Navigator.push(
                             context,
@@ -158,7 +208,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,
         onDestinationSelected: (idx) => setState(() => _selectedIndex = idx),
-        indicatorColor: AppTheme.secondaryAmber.withValues(alpha: 0.2),
+        indicatorColor: AppTheme.gold.withValues(alpha: 0.22),
         destinations: const [
           NavigationDestination(
             icon: Icon(Icons.gavel_outlined),

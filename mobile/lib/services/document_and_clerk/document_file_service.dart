@@ -4,11 +4,10 @@ import '../api_client.dart';
 
 class DocumentFileService {
   static Future<PlatformFile?> pickDocument() async {
-    final result = await FilePicker.platform.pickFiles(
+    return await FilePicker.pickFile(
       type: FileType.custom,
       allowedExtensions: ['pdf', 'jpg', 'jpeg', 'png', 'docx'],
     );
-    return result?.files.single;
   }
 
   static Future<DocumentFile> uploadDocument({

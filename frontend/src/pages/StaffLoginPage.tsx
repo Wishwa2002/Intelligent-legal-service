@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { authApi } from "../api/authApi";
 
@@ -10,10 +10,15 @@ export const StaffLoginPage: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  useEffect(() => {
-    if (authApi.isAdminAuthenticated()) navigate("/admin", { replace: true });
-    else if (authApi.isClerkAuthenticated()) navigate("/clerk/cases", { replace: true });
-  }, [navigate]);
+  // Active session tracking without aggressive force-redirect
+  const [activeSession, setActiveSession] = useState(() => {
+    return authApi.getCurrentAdmin() || authApi.getCurrentClerk();
+  });
+
+  const handleSignOut = () => {
+    authApi.logoutAll();
+    setActiveSession(null);
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -149,6 +154,38 @@ export const StaffLoginPage: React.FC = () => {
             </div>
           )}
 
+          {/* Active Session Notice */}
+          {activeSession && (
+            <div className="mb-6 p-4 rounded-xl bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs">
+              <div className="flex items-center gap-2 mb-1">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="font-semibold text-white">Signed in as {activeSession.name}</span>
+                <span className="px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 text-[10px] font-mono uppercase font-bold border border-amber-500/30">
+                  {activeSession.role}
+                </span>
+              </div>
+              <p className="text-slate-400 mb-3 text-[11px]">
+                You have an active session. You can go directly to your portal, or sign in below with different credentials.
+              </p>
+              <div className="flex gap-2">
+                <button
+                  type="button"
+                  onClick={() => navigate(activeSession.role?.toLowerCase() === "admin" ? "/admin" : "/clerk/cases")}
+                  className="px-3.5 py-1.5 rounded-lg bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold transition cursor-pointer"
+                >
+                  Go to Dashboard
+                </button>
+                <button
+                  type="button"
+                  onClick={handleSignOut}
+                  className="px-3.5 py-1.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 transition cursor-pointer"
+                >
+                  Sign Out
+                </button>
+              </div>
+            </div>
+          )}
+
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-5">
             {/* Email */}
@@ -231,8 +268,42 @@ export const StaffLoginPage: React.FC = () => {
             </button>
           </form>
 
+          {/* Quick Demo Credentials */}
+          <div className="mt-6 p-4 rounded-xl bg-slate-800/40 border border-slate-700/60">
+            <div className="text-[11px] font-semibold text-slate-400 uppercase tracking-wider mb-2.5 flex items-center justify-between">
+              <span>Staff Demo Credentials</span>
+              <span className="text-[10px] text-amber-400/90 font-mono">Click to autofill</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail("admin@legalease.com");
+                  setPassword("AdminPassword123!");
+                  setError(null);
+                }}
+                className="p-2.5 rounded-lg bg-indigo-950/60 hover:bg-indigo-900/80 border border-indigo-800/50 text-left transition cursor-pointer group"
+              >
+                <div className="text-xs font-bold text-indigo-300 group-hover:text-indigo-200">Admin Account</div>
+                <div className="text-[10px] text-slate-400 truncate">admin@legalease.com</div>
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setEmail("clerk@legalease.com");
+                  setPassword("ClerkPassword123!");
+                  setError(null);
+                }}
+                className="p-2.5 rounded-lg bg-purple-950/60 hover:bg-purple-900/80 border border-purple-800/50 text-left transition cursor-pointer group"
+              >
+                <div className="text-xs font-bold text-purple-300 group-hover:text-purple-200">Clerk Account</div>
+                <div className="text-[10px] text-slate-400 truncate">clerk@legalease.com</div>
+              </button>
+            </div>
+          </div>
+
           {/* Divider */}
-          <div className="my-8 flex items-center gap-4">
+          <div className="my-6 flex items-center gap-4">
             <div className="flex-1 h-px bg-slate-800" />
             <span className="text-xs text-slate-600 font-medium">SECURE ACCESS</span>
             <div className="flex-1 h-px bg-slate-800" />
