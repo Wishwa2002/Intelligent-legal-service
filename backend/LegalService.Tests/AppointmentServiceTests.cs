@@ -498,4 +498,70 @@ public class AppointmentServiceTests
         var noConflict = await svc.CheckConflictAsync(lawyerId, tomorrow, new TimeOnly(11, 0), new TimeOnly(12, 0));
         Assert.False(noConflict.HasConflict);
     }
+
+    [Fact]
+    public async Task GetAvailableSlotsAsync_AutoProvisionsFourAfternoonSlotsWhenNoneExist()
+    {
+        using var ctx = CreateInMemoryDb();
+        var svc = CreateService(ctx);
+
+        var lawyerId = Guid.NewGuid();
+        ctx.Lawyers.Add(new Lawyer
+        {
+            LawyerId = lawyerId,
+            Name = "Advocate Test",
+            LicenseNumber = "TEST-1234",
+            CreatedAt = DateTime.UtcNow
+        });
+        await ctx.SaveChangesAsync();
+
+        var tomorrow = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1));
+        var slots = (await svc.GetAvailableSlotsAsync(lawyerId, tomorrow)).ToList();
+
+        Assert.Equal(4, slots.Count);
+        Assert.Equal(new TimeOnly(15, 0), slots[0].StartTime);
+        Assert.Equal(new TimeOnly(15, 30), slots[0].EndTime);
+        Assert.Equal(new TimeOnly(15, 30), slots[1].StartTime);
+        Assert.Equal(new TimeOnly(16, 0), slots[1].EndTime);
+        Assert.Equal(new TimeOnly(16, 0), slots[2].StartTime);
+        Assert.Equal(new TimeOnly(16, 30), slots[2].EndTime);
+        Assert.Equal(new TimeOnly(16, 30), slots[3].StartTime);
+        Assert.Equal(new TimeOnly(17, 0), slots[3].EndTime);
+        Assert.All(slots, s => Assert.False(s.IsBooked));
+    }
+
+    [Fact]
+    public async Task BookAppointmentAsync_PersistsDescriptionAndConsultationType()
+    {
+        using var ctx = CreateInMemoryDb();
+        var svc = CreateService(ctx);
+
+        var lawyerId = Guid.NewGuid();
+        var tomorrow = DateOnly.FromDateTime(DateTime.UtcNow.AddDays(1));
+        var (_, slot) = SeedLawyerWithSlot(ctx, lawyerId, tomorrow, new TimeOnly(15, 0), new TimeOnly(15, 30));
+
+        var req = new BookAppointmentRequest
+        {
+            CustomerId = Guid.NewGuid(),
+            LawyerId = lawyerId,
+            SlotId = slot.SlotId,
+            Description = "Urgent legal defense needed for commercial dispute.",
+            ConsultationType = "In-Person",
+            LegalServiceCategory = "Criminal Law"
+        };
+
+        var res = await svc.BookAppointmentAsync(req);
+
+        Assert.NotNull(res);
+        Assert.Equal("Requested", res.Status);
+        Assert.Equal("Urgent legal defense needed for commercial dispute.", res.Description);
+        Assert.Equal("In-Person", res.ConsultationType);
+        Assert.Equal("Criminal Law", res.LegalServiceCategory);
+
+        var inDb = await ctx.Appointments.FindAsync(res.AppointmentId);
+        Assert.NotNull(inDb);
+        Assert.Equal("Urgent legal defense needed for commercial dispute.", inDb.Description);
+        Assert.Equal("In-Person", inDb.ConsultationType);
+        Assert.Equal("Criminal Law", inDb.LegalServiceCategory);
+    }
 }

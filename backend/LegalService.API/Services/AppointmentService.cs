@@ -69,6 +69,9 @@ public class AppointmentService : IAppointmentService
             LawyerId = request.LawyerId,
             SlotId = request.SlotId,
             Status = "Requested",
+            Description = request.Description ?? request.Notes,
+            ConsultationType = string.IsNullOrWhiteSpace(request.ConsultationType) ? "Online" : request.ConsultationType,
+            LegalServiceCategory = request.LegalServiceCategory,
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
         };
@@ -124,7 +127,9 @@ public class AppointmentService : IAppointmentService
         foreach (var a in appointments)
         {
             var customerName = await ResolveCustomerNameAsync(a.CustomerId);
-            var lawyerName = a.Lawyer?.Qualification ?? "Lawyer Counsel";
+            var lawyerName = !string.IsNullOrWhiteSpace(a.Lawyer?.Name)
+                ? a.Lawyer.Name
+                : (a.Lawyer?.Qualification ?? "Lawyer Counsel");
 
             responses.Add(new AppointmentResponse
             {
@@ -138,6 +143,9 @@ public class AppointmentService : IAppointmentService
                 StartTime = a.AvailabilitySlot?.StartTime ?? TimeOnly.MinValue,
                 EndTime = a.AvailabilitySlot?.EndTime ?? TimeOnly.MinValue,
                 Status = a.Status,
+                Description = a.Description,
+                ConsultationType = a.ConsultationType,
+                LegalServiceCategory = a.LegalServiceCategory,
                 CreatedAt = a.CreatedAt,
                 UpdatedAt = a.UpdatedAt
             });
@@ -362,6 +370,63 @@ public class AppointmentService : IAppointmentService
             .OrderBy(s => s.StartTime)
             .ToListAsync();
 
+        if (slots.Count == 0)
+        {
+            var availabilityExists = await _context.LawyerAvailabilities
+                .AnyAsync(la => la.LawyerId == lawyerId && la.Date == date);
+
+            if (!availabilityExists)
+            {
+                var lawyer = await _context.Lawyers.FirstOrDefaultAsync(l => l.LawyerId == lawyerId);
+                if (lawyer != null)
+                {
+                    var availability = new LawyerAvailability
+                    {
+                        AvailabilityId = Guid.NewGuid(),
+                        LawyerId = lawyerId,
+                        Date = date,
+                        StartTime = new TimeOnly(15, 0),
+                        EndTime = new TimeOnly(17, 0)
+                    };
+
+                    var slotTimes = new (TimeOnly Start, TimeOnly End)[]
+                    {
+                        (new TimeOnly(15, 0), new TimeOnly(15, 30)),
+                        (new TimeOnly(15, 30), new TimeOnly(16, 0)),
+                        (new TimeOnly(16, 0), new TimeOnly(16, 30)),
+                        (new TimeOnly(16, 30), new TimeOnly(17, 0))
+                    };
+
+                    foreach (var st in slotTimes)
+                    {
+                        availability.AvailabilitySlots.Add(new AvailabilitySlot
+                        {
+                            SlotId = Guid.NewGuid(),
+                            AvailabilityId = availability.AvailabilityId,
+                            StartTime = st.Start,
+                            EndTime = st.End,
+                            IsBooked = false
+                        });
+                    }
+
+                    await _context.LawyerAvailabilities.AddAsync(availability);
+                    await _context.SaveChangesAsync();
+
+                    return availability.AvailabilitySlots
+                        .OrderBy(s => s.StartTime)
+                        .Select(s => new AvailabilitySlotResponse
+                        {
+                            SlotId = s.SlotId,
+                            AvailabilityId = s.AvailabilityId,
+                            Date = date,
+                            StartTime = s.StartTime,
+                            EndTime = s.EndTime,
+                            IsBooked = false
+                        });
+                }
+            }
+        }
+
         return slots.Select(s => new AvailabilitySlotResponse
         {
             SlotId = s.SlotId,
@@ -449,7 +514,9 @@ public class AppointmentService : IAppointmentService
             .ToListAsync();
 
         var customerName = await ResolveCustomerNameAsync(a.CustomerId);
-        var lawyerName = a.Lawyer?.Qualification ?? "Lawyer Counsel";
+        var lawyerName = !string.IsNullOrWhiteSpace(a.Lawyer?.Name)
+            ? a.Lawyer.Name
+            : (a.Lawyer?.Qualification ?? "Lawyer Counsel");
         var lawyerLicense = a.Lawyer?.LicenseNumber ?? string.Empty;
 
         return new AppointmentDetailsResponse
@@ -466,6 +533,9 @@ public class AppointmentService : IAppointmentService
             StartTime = slot?.StartTime ?? TimeOnly.MinValue,
             EndTime = slot?.EndTime ?? TimeOnly.MinValue,
             Status = a.Status,
+            Description = a.Description,
+            ConsultationType = a.ConsultationType,
+            LegalServiceCategory = a.LegalServiceCategory,
             CreatedAt = a.CreatedAt,
             UpdatedAt = a.UpdatedAt,
             CanConfirm = a.Status == "Requested" || a.Status == "Rescheduled",
@@ -485,10 +555,18 @@ public class AppointmentService : IAppointmentService
 
     private async Task<string> ResolveCustomerNameAsync(Guid customerId)
     {
-        // Try matching UserId as integer or Guid
+        // 1. Direct integer check if Guid string is an int
         if (int.TryParse(customerId.ToString(), out int intId))
         {
             var user = await _context.Users.FindAsync(intId);
+            if (user != null) return user.Name;
+        }
+
+        // 2. Check if customerId is formatted from user int ID (e.g. 00000000-0000-0000-0000-000000000001)
+        var hexStr = customerId.ToString().Replace("-", "");
+        if (long.TryParse(hexStr[^8..], System.Globalization.NumberStyles.HexNumber, null, out long parsedId) && parsedId > 0 && parsedId <= int.MaxValue)
+        {
+            var user = await _context.Users.FindAsync((int)parsedId);
             if (user != null) return user.Name;
         }
 

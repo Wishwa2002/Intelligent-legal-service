@@ -15,6 +15,9 @@ public class AppointmentResponse
     public TimeOnly StartTime { get; set; }
     public TimeOnly EndTime { get; set; }
     public string Status { get; set; } = string.Empty;
+    public string? Description { get; set; }
+    public string ConsultationType { get; set; } = "Online";
+    public string? LegalServiceCategory { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 }
@@ -33,6 +36,9 @@ public class AppointmentDetailsResponse
     public TimeOnly StartTime { get; set; }
     public TimeOnly EndTime { get; set; }
     public string Status { get; set; } = string.Empty;
+    public string? Description { get; set; }
+    public string ConsultationType { get; set; } = "Online";
+    public string? LegalServiceCategory { get; set; }
     public DateTime CreatedAt { get; set; }
     public DateTime? UpdatedAt { get; set; }
 

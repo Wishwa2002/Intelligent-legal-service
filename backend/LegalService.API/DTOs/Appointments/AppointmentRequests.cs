@@ -16,6 +16,13 @@ public class BookAppointmentRequest
 
     [MaxLength(1000)]
     public string? Notes { get; set; }
+
+    [MaxLength(2000)]
+    public string? Description { get; set; }
+
+    public string ConsultationType { get; set; } = "Online";
+
+    public string? LegalServiceCategory { get; set; }
 }
 
 public class RescheduleAppointmentRequest

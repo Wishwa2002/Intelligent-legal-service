@@ -76,6 +76,14 @@ class _LoginScreenState extends State<LoginScreen> {
     super.dispose();
   }
 
+  void _fillDemoCredentials(String email, String password) {
+    setState(() {
+      _emailController.text = email;
+      _passwordController.text = password;
+      _errorMessage = null;
+    });
+  }
+
   Widget _buildServerBadge() {
     Color bgColor;
     Color fgColor;
@@ -207,33 +215,136 @@ class _LoginScreenState extends State<LoginScreen> {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 const SizedBox(height: 20),
+                const SizedBox(height: 10),
+                // LegalEase Logo & Title
                 Center(
-                  child: Container(
-                    padding: const EdgeInsets.all(16),
-                    decoration: BoxDecoration(
-                      color: AppTheme.primaryNavy.withValues(alpha: 0.08),
-                      shape: BoxShape.circle,
-                    ),
-                    child: const Icon(Icons.gavel, size: 48, color: AppTheme.primaryNavy),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(10),
+                        decoration: BoxDecoration(
+                          color: AppTheme.primaryNavy,
+                          borderRadius: BorderRadius.circular(14),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppTheme.gold.withValues(alpha: 0.3),
+                              blurRadius: 10,
+                              offset: const Offset(0, 3),
+                            ),
+                          ],
+                        ),
+                        child: const Text('⚖️', style: TextStyle(fontSize: 26)),
+                      ),
+                      const SizedBox(width: 12),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: const [
+                          Text(
+                            'LegalEase',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.bold,
+                              color: AppTheme.primaryNavy,
+                              letterSpacing: -0.5,
+                            ),
+                          ),
+                          Text(
+                            'INTELLIGENT LEGAL PRACTICE',
+                            style: TextStyle(
+                              fontSize: 9,
+                              fontWeight: FontWeight.bold,
+                              color: AppTheme.goldDark,
+                              letterSpacing: 1.2,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
-                const SizedBox(height: 20),
+                const SizedBox(height: 18),
                 const Text(
                   'Welcome Back',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 24,
+                    fontSize: 20,
                     fontWeight: FontWeight.bold,
                     color: AppTheme.primaryNavy,
                   ),
                 ),
-                const SizedBox(height: 8),
+                const SizedBox(height: 4),
                 const Text(
-                  'Sign in to submit legal requests & verify documents',
+                  'Sign in to your client or counsel account',
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 13, color: AppTheme.textMuted),
                 ),
-                const SizedBox(height: 24),
+                const SizedBox(height: 20),
+
+                // Fast Demo Logins Section
+                Container(
+                  padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(12),
+                    border: Border.all(color: const Color(0xFFE2E8F0)),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'QUICK DEMO ACCOUNTS',
+                        style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: AppTheme.goldDark,
+                          letterSpacing: 0.6,
+                        ),
+                      ),
+                      const SizedBox(height: 8),
+                      Row(
+                        children: [
+                          Expanded(
+                            child: OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 8),
+                                side: const BorderSide(color: Color(0xFFCBD5E1)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                              ),
+                              onPressed: () => _fillDemoCredentials('customer@legalease.com', 'CustomerPassword123!'),
+                              child: const Text('👤 Customer', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy)),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 8),
+                                side: const BorderSide(color: Color(0xFFCBD5E1)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                              ),
+                              onPressed: () => _fillDemoCredentials('lawyer@legalease.com', 'LawyerPassword123!'),
+                              child: const Text('⚖️ Lawyer', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy)),
+                            ),
+                          ),
+                          const SizedBox(width: 8),
+                          Expanded(
+                            child: OutlinedButton(
+                              style: OutlinedButton.styleFrom(
+                                padding: const EdgeInsets.symmetric(vertical: 8),
+                                side: const BorderSide(color: Color(0xFFCBD5E1)),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
+                              ),
+                              onPressed: () => _fillDemoCredentials('clerk@legalease.com', 'ClerkPassword123!'),
+                              child: const Text('🏛️ Clerk', style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy)),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                const SizedBox(height: 16),
 
                 // Server Status Banner
                 _buildServerBadge(),
@@ -299,16 +410,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 ElevatedButton(
                   onPressed: _loading ? null : _handleLogin,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: AppTheme.primaryNavy,
-                    foregroundColor: Colors.white,
+                    backgroundColor: AppTheme.gold,
+                    foregroundColor: AppTheme.primaryNavy,
                     padding: const EdgeInsets.symmetric(vertical: 14),
                     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+                    elevation: 0,
                   ),
                   child: _loading
                       ? const SizedBox(
                           width: 20,
                           height: 20,
-                          child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white),
+                          child: CircularProgressIndicator(strokeWidth: 2, color: AppTheme.primaryNavy),
                         )
                       : const Text('Sign In', style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 ),
@@ -325,7 +437,7 @@ class _LoginScreenState extends State<LoginScreen> {
                           MaterialPageRoute(builder: (_) => const RegisterScreen()),
                         );
                       },
-                      child: const Text('Register', style: TextStyle(fontWeight: FontWeight.bold)),
+                      child: const Text('Register', style: TextStyle(fontWeight: FontWeight.bold, color: AppTheme.primaryNavy)),
                     ),
                   ],
                 ),
