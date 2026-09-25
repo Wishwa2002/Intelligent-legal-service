@@ -18,13 +18,17 @@ public class AuthController : ControllerBase
     private readonly ApplicationDbContext _context;
     private readonly IPasswordService _passwordService;
 
+    private readonly JwtService _jwtService;
+
 
     public AuthController(
         ApplicationDbContext context,
-        IPasswordService passwordService)
+        IPasswordService passwordService,
+        JwtService jwtService)
     {
         _context = context;
         _passwordService = passwordService;
+        _jwtService = jwtService;
     }
 
 
@@ -39,7 +43,8 @@ public class AuthController : ControllerBase
 
         // Check existing email
         var existingUser = await _context.Users
-            .FirstOrDefaultAsync(x => x.Email.ToLower() == normalizedEmail);
+         .FirstOrDefaultAsync(x => x.Email != null &&
+                              x.Email.ToLower() == normalizedEmail);
 
         if (existingUser != null)
         {
@@ -49,9 +54,7 @@ public class AuthController : ControllerBase
         // Hash password
         var passwordHash = _passwordService.HashPassword(request.Password);
 
-        var roleName = string.IsNullOrWhiteSpace(request.Role) || request.Role.Equals("User", StringComparison.OrdinalIgnoreCase)
-            ? "Customer"
-            : request.Role.Trim();
+        var roleName = "Customer";
 
         var fullName = string.IsNullOrWhiteSpace(request.FullName)
             ? normalizedEmail.Split('@')[0]
@@ -105,8 +108,15 @@ public class AuthController : ControllerBase
             if (!passwordValid)
                 return Unauthorized(new { message = "Invalid email or password." });
 
+            var token = _jwtService.GenerateToken(
+                clerk.ClerkId,
+                clerk.Email!,
+                "Clerk"
+            );
+
             return Ok(new
             {
+                token,
                 userId = clerk.ClerkId,
                 name = clerk.Name,
                 email = clerk.Email,
@@ -127,12 +137,21 @@ public class AuthController : ControllerBase
             if (!valid)
                 return Unauthorized(new { message = "Invalid email or password." });
 
+            var role = user.Role ?? "Customer";
+
+            var token = _jwtService.GenerateToken(
+                user.UserId,
+                user.Email,
+                role
+            );
+
             return Ok(new
             {
+                token,
                 userId = user.UserId,
                 name = user.Name,
                 email = user.Email,
-                role = user.Role ?? "Customer",
+                role,
                 message = "Login successful"
             });
         }

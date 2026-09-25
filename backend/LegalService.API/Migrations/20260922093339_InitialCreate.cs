@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace LegalService.API.Migrations
 {
     /// <inheritdoc />
-    public partial class InitialLegalPlatformSchema : Migration
+    public partial class InitialCreate : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -27,21 +27,18 @@ namespace LegalService.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AuditLogs", x => x.AuditLogId);
-                    table.ForeignKey(
-                        name: "FK_AuditLogs_Users_UserId",
-                        column: x => x.UserId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.SetNull);
                 });
 
             migrationBuilder.CreateTable(
                 name: "Careers",
                 columns: table => new
                 {
-                    CareerId = table.Column<Guid>(type: "uuid", nullable: false),
+                    CareerId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     JobTitle = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false)
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -52,21 +49,20 @@ namespace LegalService.API.Migrations
                 name: "Clerks",
                 columns: table => new
                 {
-                    ClerkId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ClerkId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: true),
+                    PasswordHash = table.Column<string>(type: "text", nullable: true),
                     Contact = table.Column<string>(type: "text", nullable: false),
                     Department = table.Column<string>(type: "text", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Clerks", x => x.ClerkId);
-                    table.ForeignKey(
-                        name: "FK_Clerks_Users_ClerkId",
-                        column: x => x.ClerkId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -76,7 +72,11 @@ namespace LegalService.API.Migrations
                     ServiceId = table.Column<int>(type: "integer", nullable: false)
                         .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
                     Name = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false)
+                    Description = table.Column<string>(type: "text", nullable: false),
+                    IsActive = table.Column<bool>(type: "boolean", nullable: false, defaultValue: true),
+                    RequiredDocuments = table.Column<string>(type: "text", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -100,12 +100,6 @@ namespace LegalService.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Lawyers", x => x.LawyerId);
-                    table.ForeignKey(
-                        name: "FK_Lawyers_Users_LawyerId",
-                        column: x => x.LawyerId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateTable(
@@ -126,27 +120,34 @@ namespace LegalService.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Roles",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(type: "uuid", nullable: false),
+                    Name = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Roles", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "ServiceRequests",
                 columns: table => new
                 {
                     ServiceRequestId = table.Column<Guid>(type: "uuid", nullable: false),
                     CustomerId = table.Column<Guid>(type: "uuid", nullable: false),
-                    Title = table.Column<string>(type: "text", nullable: false),
-                    Description = table.Column<string>(type: "text", nullable: false),
-                    PreferredDeadline = table.Column<DateOnly>(type: "date", nullable: false),
-                    Status = table.Column<string>(type: "text", nullable: false),
+                    Title = table.Column<string>(type: "character varying(200)", maxLength: 200, nullable: false),
+                    Description = table.Column<string>(type: "character varying(2000)", maxLength: 2000, nullable: false),
+                    RequestType = table.Column<string>(type: "character varying(100)", maxLength: 100, nullable: false),
+                    Priority = table.Column<string>(type: "character varying(20)", maxLength: 20, nullable: true),
+                    Status = table.Column<string>(type: "character varying(30)", maxLength: 30, nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ServiceRequests", x => x.ServiceRequestId);
-                    table.ForeignKey(
-                        name: "FK_ServiceRequests_Users_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -164,14 +165,34 @@ namespace LegalService.API.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "Users",
+                columns: table => new
+                {
+                    UserId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Name = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    Role = table.Column<string>(type: "text", nullable: false),
+                    PasswordHash = table.Column<string>(type: "text", nullable: true),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Users", x => x.UserId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "JobApplications",
                 columns: table => new
                 {
-                    ApplicationId = table.Column<Guid>(type: "uuid", nullable: false),
-                    CareerId = table.Column<Guid>(type: "uuid", nullable: false),
+                    ApplicationId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    CareerId = table.Column<int>(type: "integer", nullable: false),
                     ApplicantName = table.Column<string>(type: "text", nullable: false),
                     Status = table.Column<string>(type: "text", nullable: false),
-                    AppliedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -188,21 +209,23 @@ namespace LegalService.API.Migrations
                 name: "DocumentationRequests",
                 columns: table => new
                 {
-                    RequestId = table.Column<Guid>(type: "uuid", nullable: false),
-                    CustomerId = table.Column<Guid>(type: "uuid", nullable: false),
+                    RequestId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    CustomerId = table.Column<int>(type: "integer", nullable: false),
                     ServiceId = table.Column<int>(type: "integer", nullable: false),
                     DocumentType = table.Column<string>(type: "text", nullable: false),
                     Status = table.Column<string>(type: "text", nullable: false),
-                    AssignedClerkId = table.Column<Guid>(type: "uuid", nullable: true),
+                    ClerkId = table.Column<int>(type: "integer", nullable: true),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
-                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true)
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: true),
+                    ReuploadNote = table.Column<string>(type: "text", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_DocumentationRequests", x => x.RequestId);
                     table.ForeignKey(
-                        name: "FK_DocumentationRequests_Clerks_AssignedClerkId",
-                        column: x => x.AssignedClerkId,
+                        name: "FK_DocumentationRequests_Clerks_ClerkId",
+                        column: x => x.ClerkId,
                         principalTable: "Clerks",
                         principalColumn: "ClerkId",
                         onDelete: ReferentialAction.SetNull);
@@ -211,12 +234,6 @@ namespace LegalService.API.Migrations
                         column: x => x.ServiceId,
                         principalTable: "DocumentationServices",
                         principalColumn: "ServiceId",
-                        onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_DocumentationRequests_Users_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -262,6 +279,24 @@ namespace LegalService.API.Migrations
                         column: x => x.LegalServiceId,
                         principalTable: "LegalServices",
                         principalColumn: "LegalServiceId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "UserRoles",
+                columns: table => new
+                {
+                    UserId = table.Column<Guid>(type: "uuid", nullable: false),
+                    RoleId = table.Column<Guid>(type: "uuid", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_UserRoles", x => new { x.UserId, x.RoleId });
+                    table.ForeignKey(
+                        name: "FK_UserRoles_Roles_RoleId",
+                        column: x => x.RoleId,
+                        principalTable: "Roles",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -314,10 +349,18 @@ namespace LegalService.API.Migrations
                 name: "DocumentFiles",
                 columns: table => new
                 {
-                    FileId = table.Column<Guid>(type: "uuid", nullable: false),
-                    RequestId = table.Column<Guid>(type: "uuid", nullable: false),
+                    FileId = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    RequestId = table.Column<int>(type: "integer", nullable: false),
+                    FileName = table.Column<string>(type: "text", nullable: false),
                     FilePath = table.Column<string>(type: "text", nullable: false),
-                    UploadDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
+                    ContentType = table.Column<string>(type: "text", nullable: false),
+                    FileSize = table.Column<long>(type: "bigint", nullable: false),
+                    DocumentStatus = table.Column<string>(type: "text", nullable: false, defaultValue: "Received"),
+                    RejectReason = table.Column<string>(type: "text", nullable: true),
+                    UploadDate = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
+                    UpdatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -401,12 +444,6 @@ namespace LegalService.API.Migrations
                         principalTable: "AgentWorkflows",
                         principalColumn: "WorkflowId",
                         onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_ApprovalDecisions_Users_ApproverId",
-                        column: x => x.ApproverId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -478,12 +515,6 @@ namespace LegalService.API.Migrations
                         principalTable: "Lawyers",
                         principalColumn: "LawyerId",
                         onDelete: ReferentialAction.Restrict);
-                    table.ForeignKey(
-                        name: "FK_Appointments_Users_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "Users",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.Restrict);
                 });
 
             migrationBuilder.CreateTable(
@@ -532,12 +563,12 @@ namespace LegalService.API.Migrations
 
             migrationBuilder.InsertData(
                 table: "DocumentationServices",
-                columns: new[] { "ServiceId", "Description", "Name" },
+                columns: new[] { "ServiceId", "CreatedAt", "Description", "IsActive", "Name", "RequiredDocuments", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, "Reviewing lease/sales agreements and drafting amendments.", "Contract Review & Amendment" },
-                    { 2, "Drafting affidavits and arranging official notarization.", "Affidavit & Notary Services" },
-                    { 3, "Drafting General or Special Power of Attorney documents.", "Power of Attorney Drafting" }
+                    { 1, new DateTime(2026, 9, 22, 9, 33, 38, 895, DateTimeKind.Utc).AddTicks(2151), "Reviewing lease/sales agreements and drafting amendments.", true, "Contract Review & Amendment", "[\"Original Contract\",\"Amendment Request Letter\",\"NIC Copy\"]", null },
+                    { 2, new DateTime(2026, 9, 22, 9, 33, 38, 895, DateTimeKind.Utc).AddTicks(2155), "Drafting affidavits and arranging official notarization.", true, "Affidavit & Notary Services", "[\"NIC\",\"Completed Affidavit Draft\",\"Witness Details\"]", null },
+                    { 3, new DateTime(2026, 9, 22, 9, 33, 38, 895, DateTimeKind.Utc).AddTicks(2157), "Drafting General or Special Power of Attorney documents.", true, "Power of Attorney Drafting", "[\"NIC of Grantor\",\"NIC of Grantee\",\"Scope of Authority Document\"]", null }
                 });
 
             migrationBuilder.InsertData(
@@ -545,9 +576,9 @@ namespace LegalService.API.Migrations
                 columns: new[] { "LegalServiceId", "Category", "CreatedAt", "Description", "ServiceName", "UpdatedAt" },
                 values: new object[,]
                 {
-                    { 1, "Criminal Law", new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1144), "Representation and case review for criminal defense cases.", "Criminal Defense Consulting", null },
-                    { 2, "Family Law", new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1153), "Preparation and filing for divorce and child custody.", "Divorce & Custody Filing", null },
-                    { 3, "Corporate Law", new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1155), "Incorporation filings and compliance setup.", "Corporate Registration & Compliance", null }
+                    { 1, "Criminal Law", new DateTime(2026, 9, 22, 9, 33, 38, 895, DateTimeKind.Utc).AddTicks(2045), "Representation and case review for criminal defense cases.", "Criminal Defense Consulting", null },
+                    { 2, "Family Law", new DateTime(2026, 9, 22, 9, 33, 38, 895, DateTimeKind.Utc).AddTicks(2052), "Preparation and filing for divorce and child custody.", "Divorce & Custody Filing", null },
+                    { 3, "Corporate Law", new DateTime(2026, 9, 22, 9, 33, 38, 895, DateTimeKind.Utc).AddTicks(2053), "Incorporation filings and compliance setup.", "Corporate Registration & Compliance", null }
                 });
 
             migrationBuilder.InsertData(
@@ -571,18 +602,6 @@ namespace LegalService.API.Migrations
                     { 3, "Business registration, compliance, and contract drafting.", "Corporate Law" },
                     { 4, "Real estate transactions, leases, and title disputes.", "Property Law" }
                 });
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Users_Email",
-                table: "Users",
-                column: "Email",
-                unique: true);
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Roles_Name",
-                table: "Roles",
-                column: "Name",
-                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_AgentSteps_WorkflowId",
@@ -622,11 +641,6 @@ namespace LegalService.API.Migrations
                 column: "AppointmentId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ApprovalDecisions_ApproverId",
-                table: "ApprovalDecisions",
-                column: "ApproverId");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_ApprovalDecisions_WorkflowId",
                 table: "ApprovalDecisions",
                 column: "WorkflowId");
@@ -652,9 +666,9 @@ namespace LegalService.API.Migrations
                 column: "LawyerId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_DocumentationRequests_AssignedClerkId",
+                name: "IX_DocumentationRequests_ClerkId",
                 table: "DocumentationRequests",
-                column: "AssignedClerkId");
+                column: "ClerkId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DocumentationRequests_CustomerId",
@@ -667,10 +681,20 @@ namespace LegalService.API.Migrations
                 column: "ServiceId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_DocumentationServices_IsActive",
+                table: "DocumentationServices",
+                column: "IsActive");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_DocumentationServices_Name",
                 table: "DocumentationServices",
                 column: "Name",
                 unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_DocumentFiles_DocumentStatus",
+                table: "DocumentFiles",
+                column: "DocumentStatus");
 
             migrationBuilder.CreateIndex(
                 name: "IX_DocumentFiles_RequestId",
@@ -715,9 +739,30 @@ namespace LegalService.API.Migrations
                 column: "SpecializationId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Roles_Name",
+                table: "Roles",
+                column: "Name",
+                unique: true);
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceRequests_CreatedAt",
+                table: "ServiceRequests",
+                column: "CreatedAt");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_ServiceRequests_CustomerId",
                 table: "ServiceRequests",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceRequests_RequestType",
+                table: "ServiceRequests",
+                column: "RequestType");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_ServiceRequests_Status",
+                table: "ServiceRequests",
+                column: "Status");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Specializations_Name",
@@ -729,6 +774,17 @@ namespace LegalService.API.Migrations
                 name: "IX_ToolExecutions_StepId",
                 table: "ToolExecutions",
                 column: "StepId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_UserRoles_RoleId",
+                table: "UserRoles",
+                column: "RoleId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Users_Email",
+                table: "Users",
+                column: "Email",
+                unique: true);
 
             migrationBuilder.CreateIndex(
                 name: "IX_ValidationResults_WorkflowId",
@@ -767,6 +823,12 @@ namespace LegalService.API.Migrations
                 name: "ToolExecutions");
 
             migrationBuilder.DropTable(
+                name: "UserRoles");
+
+            migrationBuilder.DropTable(
+                name: "Users");
+
+            migrationBuilder.DropTable(
                 name: "ValidationResults");
 
             migrationBuilder.DropTable(
@@ -788,6 +850,9 @@ namespace LegalService.API.Migrations
                 name: "AgentSteps");
 
             migrationBuilder.DropTable(
+                name: "Roles");
+
+            migrationBuilder.DropTable(
                 name: "AvailabilitySlots");
 
             migrationBuilder.DropTable(
@@ -807,34 +872,6 @@ namespace LegalService.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Lawyers");
-
-            migrationBuilder.DropIndex(
-                name: "IX_Users_Email",
-                table: "Users");
-
-            migrationBuilder.DropIndex(
-                name: "IX_Roles_Name",
-                table: "Roles");
-
-            migrationBuilder.DeleteData(
-                table: "Roles",
-                keyColumn: "Id",
-                keyValue: new Guid("15f92271-e0e6-42d8-bf12-cb4b71db3f05"));
-
-            migrationBuilder.DeleteData(
-                table: "Roles",
-                keyColumn: "Id",
-                keyValue: new Guid("7f7b3df6-6eb3-4a6c-b7ee-d57be45dc98a"));
-
-            migrationBuilder.DeleteData(
-                table: "Roles",
-                keyColumn: "Id",
-                keyValue: new Guid("c3a0767c-9b7e-40fb-881c-cb8e2c07df74"));
-
-            migrationBuilder.DeleteData(
-                table: "Roles",
-                keyColumn: "Id",
-                keyValue: new Guid("e81f5cb1-ea60-449e-b9ef-d4924a48045d"));
         }
     }
 }

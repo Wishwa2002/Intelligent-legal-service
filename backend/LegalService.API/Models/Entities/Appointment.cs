@@ -10,6 +10,9 @@ public class Appointment
     public Guid LawyerId { get; set; }
     public Guid SlotId { get; set; }
     public string Status { get; set; } = string.Empty;
+    public string? Description { get; set; }
+    public string ConsultationType { get; set; } = "Online";
+    public string? LegalServiceCategory { get; set; }
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public DateTime? UpdatedAt { get; set; }
 

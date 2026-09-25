@@ -14,7 +14,7 @@ public class ServiceRequest
     /// ID of the customer who submitted the request.
     /// Stored as Guid to match existing DB schema (Users.Id).
     /// </summary>
-    public Guid CustomerId { get; set; }
+    public int CustomerId { get; set; }
 
     [Required]
     [MaxLength(200)]

@@ -15,6 +15,8 @@ import { MyServiceRequestsPage } from "./pages/customer/MyServiceRequestsPage";
 import { CreateServiceRequestPage } from "./pages/customer/CreateServiceRequestPage";
 import { ServiceRequestDetailPage } from "./pages/customer/ServiceRequestDetailPage";
 import { AdminServiceRequestsPage } from "./pages/admin/ServiceRequestsAdminPage";
+// ── Member 2: Appointments & Booking Management ──
+import { AppointmentsPage } from "./pages/admin/AppointmentsPage";
 
 
 function App() {
@@ -93,6 +95,23 @@ function App() {
           element={
             <AdminRoute>
               <AdminServiceRequestsPage />
+            </AdminRoute>
+          }
+        />
+        {/* ── Member 2: Appointments & Booking Management ───────────── */}
+        <Route
+          path="/admin/appointments"
+          element={
+            <AdminRoute>
+              <AppointmentsPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/lawyer/appointments"
+          element={
+            <AdminRoute>
+              <AppointmentsPage />
             </AdminRoute>
           }
         />

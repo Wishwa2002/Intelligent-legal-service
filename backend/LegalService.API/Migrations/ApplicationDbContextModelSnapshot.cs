@@ -201,8 +201,8 @@ namespace LegalService.API.Migrations
                     b.Property<DateTime>("Timestamp")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("AuditLogId");
 
@@ -453,7 +453,7 @@ namespace LegalService.API.Migrations
                         new
                         {
                             ServiceId = 1,
-                            CreatedAt = new DateTime(2026, 9, 19, 12, 17, 59, 400, DateTimeKind.Utc).AddTicks(6418),
+                            CreatedAt = new DateTime(2026, 9, 22, 13, 22, 59, 540, DateTimeKind.Utc).AddTicks(5326),
                             Description = "Reviewing lease/sales agreements and drafting amendments.",
                             IsActive = true,
                             Name = "Contract Review & Amendment",
@@ -462,7 +462,7 @@ namespace LegalService.API.Migrations
                         new
                         {
                             ServiceId = 2,
-                            CreatedAt = new DateTime(2026, 9, 19, 12, 17, 59, 400, DateTimeKind.Utc).AddTicks(6421),
+                            CreatedAt = new DateTime(2026, 9, 22, 13, 22, 59, 540, DateTimeKind.Utc).AddTicks(5331),
                             Description = "Drafting affidavits and arranging official notarization.",
                             IsActive = true,
                             Name = "Affidavit & Notary Services",
@@ -471,7 +471,7 @@ namespace LegalService.API.Migrations
                         new
                         {
                             ServiceId = 3,
-                            CreatedAt = new DateTime(2026, 9, 19, 12, 17, 59, 400, DateTimeKind.Utc).AddTicks(6423),
+                            CreatedAt = new DateTime(2026, 9, 22, 13, 22, 59, 540, DateTimeKind.Utc).AddTicks(5332),
                             Description = "Drafting General or Special Power of Attorney documents.",
                             IsActive = true,
                             Name = "Power of Attorney Drafting",
@@ -670,7 +670,7 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 1,
                             Category = "Criminal Law",
-                            CreatedAt = new DateTime(2026, 9, 19, 12, 17, 59, 400, DateTimeKind.Utc).AddTicks(6387),
+                            CreatedAt = new DateTime(2026, 9, 22, 13, 22, 59, 540, DateTimeKind.Utc).AddTicks(5295),
                             Description = "Representation and case review for criminal defense cases.",
                             ServiceName = "Criminal Defense Consulting"
                         },
@@ -678,7 +678,7 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 2,
                             Category = "Family Law",
-                            CreatedAt = new DateTime(2026, 9, 19, 12, 17, 59, 400, DateTimeKind.Utc).AddTicks(6392),
+                            CreatedAt = new DateTime(2026, 9, 22, 13, 22, 59, 540, DateTimeKind.Utc).AddTicks(5300),
                             Description = "Preparation and filing for divorce and child custody.",
                             ServiceName = "Divorce & Custody Filing"
                         },
@@ -686,7 +686,7 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 3,
                             Category = "Corporate Law",
-                            CreatedAt = new DateTime(2026, 9, 19, 12, 17, 59, 400, DateTimeKind.Utc).AddTicks(6393),
+                            CreatedAt = new DateTime(2026, 9, 22, 13, 22, 59, 540, DateTimeKind.Utc).AddTicks(5301),
                             Description = "Incorporation filings and compliance setup.",
                             ServiceName = "Corporate Registration & Compliance"
                         });
@@ -741,8 +741,8 @@ namespace LegalService.API.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Description")
                         .IsRequired()
