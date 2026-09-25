@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { documentationApi } from "../../api/documentationApi";
 
 interface AdminLayoutProps {
@@ -78,6 +78,18 @@ const navItems = [
 
 export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subtitle }) => {
   const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    console.log("Logout clicked");
+
+    localStorage.clear();
+    sessionStorage.clear();
+
+    console.log("Storage cleared");
+
+    window.location.href = "/login";
+};
   const [stats, setStats] = useState<DashboardStats>({ total: 0, pending: 0, assigned: 0, missingDocs: 0 });
   const [statsLoading, setStatsLoading] = useState(true);
   const [lastRefreshed, setLastRefreshed] = useState<Date>(new Date());
@@ -209,6 +221,12 @@ export const AdminLayout: React.FC<AdminLayoutProps> = ({ children, title, subti
               <span className="hidden sm:inline">Clerk Portal</span>
             </Link>
 
+            <button
+              onClick={handleLogout}
+              className="text-xs font-semibold text-red-400 hover:text-red-300 bg-slate-900 hover:bg-slate-800 px-3.5 py-1.5 rounded-xl border border-slate-800 transition flex items-center gap-1.5"
+            >
+              🚪 Logout
+            </button>
             <Link
               to="/"
               className="text-slate-400 hover:text-white transition-colors flex items-center gap-1 text-xs"
