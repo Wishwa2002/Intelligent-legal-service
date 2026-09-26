@@ -4,12 +4,13 @@ import '../services/auth_service.dart';
 import '../widgets/server_settings_dialog.dart';
 import 'auth/login_screen.dart';
 import 'services/services_catalog_screen.dart';
-import 'chat/ai_chat_screen.dart';
+import 'chat/common_ai_screen.dart';
 import 'requests/my_requests_screen.dart';
-import 'careers/careers_screen.dart';
 import 'appointments/my_appointments_screen.dart';
 import 'appointments/lawyers_screen.dart';
 import 'appointments/lawyer_schedule_screen.dart';
+
+import 'home/project_hub_screen.dart';
 
 class MainNavigationScreen extends StatefulWidget {
   const MainNavigationScreen({super.key});
@@ -21,11 +22,12 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0;
 
-  final List<Widget> _screens = [
+  late final List<Widget> _screens = [
+    ProjectHubScreen(onSwitchTab: (idx) => setState(() => _selectedIndex = idx)),
+    const CommonAiScreen(),
     const ServicesCatalogScreen(),
-    const AiChatScreen(),
+    const LawyersScreen(),
     const MyRequestsScreen(),
-    const CareersScreen(),
   ];
 
   void _showUserAccountModal() {
@@ -211,24 +213,29 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         indicatorColor: AppTheme.gold.withValues(alpha: 0.22),
         destinations: const [
           NavigationDestination(
-            icon: Icon(Icons.gavel_outlined),
-            selectedIcon: Icon(Icons.gavel, color: AppTheme.primaryNavy),
-            label: 'Services',
+            icon: Icon(Icons.dashboard_outlined),
+            selectedIcon: Icon(Icons.dashboard_rounded, color: AppTheme.primaryNavy),
+            label: 'Hub',
           ),
           NavigationDestination(
             icon: Icon(Icons.auto_awesome_outlined),
             selectedIcon: Icon(Icons.auto_awesome, color: AppTheme.secondaryAmber),
-            label: 'AI Assistant',
+            label: 'AI Agent',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.description_outlined),
+            selectedIcon: Icon(Icons.description_rounded, color: AppTheme.goldDark),
+            label: 'Documents',
+          ),
+          NavigationDestination(
+            icon: Icon(Icons.balance_outlined),
+            selectedIcon: Icon(Icons.balance_rounded, color: AppTheme.primaryNavy),
+            label: 'Lawyers',
           ),
           NavigationDestination(
             icon: Icon(Icons.assignment_outlined),
-            selectedIcon: Icon(Icons.assignment, color: AppTheme.primaryNavy),
-            label: 'My Requests',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.work_outline),
-            selectedIcon: Icon(Icons.work, color: AppTheme.primaryNavy),
-            label: 'Careers',
+            selectedIcon: Icon(Icons.assignment_rounded, color: AppTheme.primaryNavy),
+            label: 'Requests',
           ),
         ],
       ),

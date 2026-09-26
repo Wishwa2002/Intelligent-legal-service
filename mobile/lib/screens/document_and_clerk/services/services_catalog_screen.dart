@@ -4,8 +4,7 @@ import '../../../models/documentation_service.dart';
 import '../../../services/documentation_service.dart';
 import '../../../widgets/server_settings_dialog.dart';
 import 'request_creation_dialog.dart';
-import '../../appointments/lawyers_screen.dart';
-import '../../appointments/my_appointments_screen.dart';
+import '../../chat/ai_chat_screen.dart';
 
 class ServicesCatalogScreen extends StatefulWidget {
   const ServicesCatalogScreen({super.key});
@@ -105,181 +104,6 @@ class _ServicesCatalogScreenState extends State<ServicesCatalogScreen> {
               : ListView(
                   padding: const EdgeInsets.all(16),
                   children: [
-                    // ── Hero Banner (Matching Website Hero Section) ──
-                    Container(
-                      margin: const EdgeInsets.only(bottom: 18),
-                      padding: const EdgeInsets.all(20),
-                      decoration: BoxDecoration(
-                        gradient: const LinearGradient(
-                          colors: [AppTheme.primaryNavy, Color(0xFF090D18)],
-                          begin: Alignment.topLeft,
-                          end: Alignment.bottomRight,
-                        ),
-                        borderRadius: BorderRadius.circular(20),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppTheme.primaryNavy.withValues(alpha: 0.25),
-                            blurRadius: 16,
-                            offset: const Offset(0, 6),
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Container(
-                            padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                            decoration: BoxDecoration(
-                              color: AppTheme.gold.withValues(alpha: 0.2),
-                              borderRadius: BorderRadius.circular(20),
-                              border: Border.all(color: AppTheme.gold.withValues(alpha: 0.6)),
-                            ),
-                            child: const Row(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                Icon(Icons.shield_outlined, size: 12, color: AppTheme.gold),
-                                SizedBox(width: 4),
-                                Text(
-                                  'A MODERN LEGAL PRACTICE',
-                                  style: TextStyle(
-                                    fontSize: 10,
-                                    fontWeight: FontWeight.bold,
-                                    color: AppTheme.gold,
-                                    letterSpacing: 0.8,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          const SizedBox(height: 12),
-                          const Text(
-                            'Trusted counsel, supported by intelligent technology',
-                            style: TextStyle(
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                              letterSpacing: -0.3,
-                              height: 1.25,
-                            ),
-                          ),
-                          const SizedBox(height: 8),
-                          const Text(
-                            'Connect with bar-certified advocates across criminal, family, corporate, and property law with verified documentation assistance.',
-                            style: TextStyle(fontSize: 12, color: Color(0xFFE2E8F0), height: 1.45),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    // ── Member 2: Lawyer Consultation & Booking Card ──
-                    Container(
-                      padding: const EdgeInsets.all(18),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(20),
-                        border: Border.all(color: AppTheme.gold.withValues(alpha: 0.6), width: 1.5),
-                        boxShadow: [
-                          BoxShadow(
-                            color: AppTheme.gold.withValues(alpha: 0.08),
-                            blurRadius: 16,
-                            offset: const Offset(0, 4),
-                          ),
-                        ],
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Container(
-                                padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-                                decoration: BoxDecoration(
-                                  color: AppTheme.primaryNavy,
-                                  borderRadius: BorderRadius.circular(20),
-                                ),
-                                child: const Row(
-                                  mainAxisSize: MainAxisSize.min,
-                                  children: [
-                                    Icon(Icons.gavel, size: 12, color: AppTheme.gold),
-                                    SizedBox(width: 4),
-                                    Text(
-                                      'APPOINTMENT BOOKING',
-                                      style: TextStyle(
-                                        fontSize: 10,
-                                        fontWeight: FontWeight.bold,
-                                        color: AppTheme.gold,
-                                        letterSpacing: 0.6,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              TextButton.icon(
-                                style: TextButton.styleFrom(
-                                  foregroundColor: AppTheme.primaryNavy,
-                                  padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-                                ),
-                                icon: const Icon(Icons.calendar_today, size: 14, color: AppTheme.goldDark),
-                                label: const Text('My Bookings', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold)),
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(builder: (_) => const MyAppointmentsScreen()),
-                                  );
-                                },
-                              ),
-                            ],
-                          ),
-                          const SizedBox(height: 12),
-                          const Text(
-                            'Consult a Specialist Lawyer',
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy),
-                          ),
-                          const SizedBox(height: 4),
-                          const Text(
-                            'Select your law domain, choose an advocate, and book your preferred afternoon consultation slot (3:00 – 5:00 PM).',
-                            style: TextStyle(fontSize: 12, color: AppTheme.textMuted, height: 1.4),
-                          ),
-                          const SizedBox(height: 14),
-
-                          // Types of laws chips
-                          Wrap(
-                            spacing: 8,
-                            runSpacing: 8,
-                            children: [
-                              _buildLawTypeButton('Criminal Law', '⚖️', context),
-                              _buildLawTypeButton('Family Law', '👨‍👩‍👧', context),
-                              _buildLawTypeButton('Corporate Law', '💼', context),
-                              _buildLawTypeButton('Property Law', '🏠', context),
-                            ],
-                          ),
-                          const SizedBox(height: 16),
-                          SizedBox(
-                            width: double.infinity,
-                            child: ElevatedButton.icon(
-                              icon: const Icon(Icons.people, size: 16),
-                              label: const Text('Browse All Advocates & Slots →'),
-                              style: ElevatedButton.styleFrom(
-                                backgroundColor: AppTheme.gold,
-                                foregroundColor: AppTheme.primaryNavy,
-                                padding: const EdgeInsets.symmetric(vertical: 12),
-                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
-                                elevation: 0,
-                              ),
-                              onPressed: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (_) => const LawyersScreen()),
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-
-                    const SizedBox(height: 28),
 
                     // ── Legal Documentation Services (Matching ServicesSection) ──
                     Padding(
@@ -419,37 +243,21 @@ class _ServicesCatalogScreenState extends State<ServicesCatalogScreen> {
                     }),
                   ],
                 ),
-    );
-  }
-
-  Widget _buildLawTypeButton(String title, String emoji, BuildContext context) {
-    return InkWell(
-      onTap: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (_) => LawyersScreen(initialCategory: title),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (_) => const AiChatScreen()),
+          );
+        },
+        backgroundColor: AppTheme.gold,
+        icon: const Icon(Icons.smart_toy_rounded, color: AppTheme.primaryNavy),
+        label: const Text(
+          'Document Agent',
+          style: TextStyle(
+            color: AppTheme.primaryNavy,
+            fontWeight: FontWeight.bold,
           ),
-        );
-      },
-      borderRadius: BorderRadius.circular(10),
-      child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
-        decoration: BoxDecoration(
-          color: const Color(0xFFF1F5F9),
-          borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: const Color(0xFFE2E8F0)),
-        ),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Text(emoji, style: const TextStyle(fontSize: 14)),
-            const SizedBox(width: 6),
-            Text(
-              title,
-              style: const TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy),
-            ),
-          ],
         ),
       ),
     );

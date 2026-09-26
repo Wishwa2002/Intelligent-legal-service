@@ -149,20 +149,22 @@ class ApiClient {
   }
 
   static String? _getFailoverUrl(String currentUrl) {
-    if (currentUrl.contains('localhost')) {
-      return currentUrl.replaceAll('localhost', '172.27.62.23');
+    final lanHost = Uri.tryParse(ApiConfig.lanBackendUrl)?.host ?? '10.88.177.23';
+    if (currentUrl.contains('localhost') || currentUrl.contains('127.0.0.1')) {
+      return currentUrl.replaceAll('localhost', lanHost).replaceAll('127.0.0.1', lanHost);
     }
-    if (currentUrl.contains('172.27.62.23')) {
-      return currentUrl.replaceAll('172.27.62.23', 'localhost');
+    if (currentUrl.contains(lanHost) || currentUrl.contains('172.27.62.23') || currentUrl.contains('10.164.')) {
+      return ApiConfig.defaultBackendUrl;
     }
     return null;
   }
 
   static void _applyFailoverSuccess(String failoverUrl) {
-    if (failoverUrl.contains('172.27.62.23')) {
+    final lanHost = Uri.tryParse(ApiConfig.lanBackendUrl)?.host ?? '10.88.177.23';
+    if (failoverUrl.contains(lanHost)) {
       ApiConfig.setBackendUrl(ApiConfig.lanBackendUrl);
       ApiConfig.setAiServiceUrl(ApiConfig.lanAiUrl);
-    } else if (failoverUrl.contains('localhost')) {
+    } else if (failoverUrl.contains('localhost') || failoverUrl.contains('127.0.0.1')) {
       ApiConfig.setBackendUrl(ApiConfig.defaultBackendUrl);
       ApiConfig.setAiServiceUrl(ApiConfig.defaultAiUrl);
     }
