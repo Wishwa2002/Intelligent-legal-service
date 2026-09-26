@@ -35,6 +35,7 @@ builder.Services.AddScoped<IDocumentationServiceService, DocumentationServiceSer
 builder.Services.AddScoped<IDocumentationRequestService, DocumentationRequestService>();
 builder.Services.AddScoped<IDocumentFileService, DocumentFileService>();
 builder.Services.AddScoped<ICareerService, CareerService>();
+builder.Services.AddScoped<IEmailNotificationService, EmailNotificationService>();
 
 // ================================================================
 // Customer Service Request Management
@@ -45,7 +46,6 @@ builder.Services.AddScoped<IServiceRequestService, ServiceRequestService>();
 // Appointment & Booking Management
 // ================================================================
 builder.Services.AddScoped<IAppointmentService, AppointmentService>();
-
 
 // Agentic AI Integration
 builder.Services.AddHttpClient<IAgentIntegrationService, AgentIntegrationService>();
@@ -104,7 +104,6 @@ builder.Services.AddSwaggerGen(options =>
     });
 });
 
-
 // ================================================================
 // JWT Authentication
 // ================================================================
@@ -131,7 +130,6 @@ builder.Services.AddAuthentication(options =>
             ))
     };
 });
-
 
 var app = builder.Build();
 

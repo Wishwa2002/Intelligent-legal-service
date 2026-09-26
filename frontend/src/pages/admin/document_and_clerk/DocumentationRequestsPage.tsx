@@ -7,15 +7,15 @@ import { clerksApi, type Clerk } from "../../../api/clerksApi";
 const formatDocId = (id: string | number) => `DMT${String(id).padStart(3, "0")}`;
 const formatClerkId = (id: string | number) => `CRK${String(id).padStart(3, "0")}`;
 
-const STATUS_CONFIG: Record<string, { label: string; className: string }> = {
-  PENDING: { label: "Pending", className: "bg-amber-50 text-amber-700 border-amber-200" },
-  UNDER_REVIEW: { label: "Under Review", className: "bg-blue-50 text-blue-700 border-blue-200" },
-  ASSIGNED: { label: "Assigned", className: "bg-indigo-50 text-indigo-700 border-indigo-200" },
-  IN_PROGRESS: { label: "In Progress", className: "bg-purple-50 text-purple-700 border-purple-200" },
-  REQUIRES_DOCUMENTS: { label: "Missing Docs", className: "bg-rose-50 text-rose-700 border-rose-200" },
-  COMPLETED: { label: "Completed", className: "bg-emerald-50 text-emerald-700 border-emerald-200" },
-  REJECTED: { label: "Rejected", className: "bg-slate-100 text-slate-600 border-slate-200" },
-  CANCELLED: { label: "Cancelled", className: "bg-slate-100 text-slate-500 border-slate-200" },
+const STATUS_CONFIG: Record<string, { label: string; bg: string; dot: string }> = {
+  PENDING: { label: "Pending", bg: "bg-amber-500/10 text-amber-800 border-amber-300/80", dot: "bg-amber-500 animate-pulse" },
+  UNDER_REVIEW: { label: "Under Review", bg: "bg-blue-500/10 text-blue-800 border-blue-300/80", dot: "bg-blue-500 animate-pulse" },
+  ASSIGNED: { label: "Assigned", bg: "bg-indigo-500/10 text-indigo-800 border-indigo-300/80", dot: "bg-indigo-500" },
+  IN_PROGRESS: { label: "In Progress", bg: "bg-purple-500/10 text-purple-800 border-purple-300/80", dot: "bg-purple-500 animate-pulse" },
+  REQUIRES_DOCUMENTS: { label: "Missing Docs", bg: "bg-rose-500/10 text-rose-800 border-rose-300/80", dot: "bg-rose-500 animate-pulse" },
+  COMPLETED: { label: "Completed", bg: "bg-emerald-500/10 text-emerald-800 border-emerald-300/80", dot: "bg-emerald-500" },
+  REJECTED: { label: "Rejected", bg: "bg-slate-500/10 text-slate-700 border-slate-300/80", dot: "bg-slate-400" },
+  CANCELLED: { label: "Cancelled", bg: "bg-slate-500/10 text-slate-700 border-slate-300/80", dot: "bg-slate-400" },
 };
 
 const FILTER_TABS = [
@@ -33,10 +33,15 @@ type SortKey = "requestId" | "createdAt" | "status" | "customerName";
 type SortDir = "asc" | "desc";
 
 const StatusBadge: React.FC<{ status: string }> = ({ status }) => {
-  const cfg = STATUS_CONFIG[status] ?? { label: status, className: "bg-slate-100 text-slate-600 border-slate-200" };
+  const cfg = STATUS_CONFIG[status] ?? {
+    label: status.replace(/_/g, " "),
+    bg: "bg-slate-100 text-slate-700 border-slate-200",
+    dot: "bg-slate-400",
+  };
   return (
-    <span className={`px-2.5 py-0.5 rounded-full text-[11px] font-semibold border ${cfg.className}`}>
-      {cfg.label}
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-semibold tracking-wide border shadow-2xs ${cfg.bg}`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${cfg.dot}`} />
+      <span>{cfg.label}</span>
     </span>
   );
 };
@@ -51,8 +56,24 @@ export const DocumentationRequestsPage: React.FC = () => {
   const [search, setSearch] = useState("");
   const [sortKey, setSortKey] = useState<SortKey>("createdAt");
   const [sortDir, setSortDir] = useState<SortDir>("desc");
+  const [deleteConfirm, setDeleteConfirm] = useState<DocumentationRequest | null>(null);
+  const [deleting, setDeleting] = useState(false);
 
   const clerkFilter = searchParams.get("clerkId") || "";
+
+  const confirmDelete = async () => {
+    if (!deleteConfirm) return;
+    try {
+      setDeleting(true);
+      await documentationApi.deleteRequest(deleteConfirm.requestId);
+      setDeleteConfirm(null);
+      await fetchRequests();
+    } catch (err: any) {
+      alert(err.response?.data?.message || err.message || "Failed to delete request");
+    } finally {
+      setDeleting(false);
+    }
+  };
 
   const fetchRequests = async () => {
     try {
@@ -238,20 +259,20 @@ export const DocumentationRequestsPage: React.FC = () => {
       ) : (
         <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden">
           <table className="min-w-full divide-y divide-slate-100 text-left text-sm">
-            <thead className="bg-slate-50 text-slate-500 text-xs font-semibold uppercase tracking-wider">
+            <thead className="bg-slate-50/75 border-b border-slate-200/80 text-slate-500 text-[11px] font-bold uppercase tracking-wider">
               <tr>
-                <th className="px-5 py-3.5 cursor-pointer select-none hover:text-slate-800" onClick={() => toggleSort("requestId")}>
+                <th className="px-5 py-3.5 cursor-pointer select-none hover:text-slate-800 transition-colors" onClick={() => toggleSort("requestId")}>
                   Doc ID <SortIcon col="requestId" />
                 </th>
-                <th className="px-5 py-3.5 cursor-pointer select-none hover:text-slate-800" onClick={() => toggleSort("customerName")}>
+                <th className="px-5 py-3.5 cursor-pointer select-none hover:text-slate-800 transition-colors" onClick={() => toggleSort("customerName")}>
                   Customer & Service <SortIcon col="customerName" />
                 </th>
                 <th className="px-5 py-3.5">Assigned Clerk</th>
-                <th className="px-5 py-3.5 cursor-pointer select-none hover:text-slate-800" onClick={() => toggleSort("createdAt")}>
+                <th className="px-5 py-3.5 cursor-pointer select-none hover:text-slate-800 transition-colors" onClick={() => toggleSort("createdAt")}>
                   Submitted <SortIcon col="createdAt" />
                 </th>
                 <th className="px-5 py-3.5">Documents</th>
-                <th className="px-5 py-3.5 cursor-pointer select-none hover:text-slate-800" onClick={() => toggleSort("status")}>
+                <th className="px-5 py-3.5 cursor-pointer select-none hover:text-slate-800 transition-colors" onClick={() => toggleSort("status")}>
                   Status <SortIcon col="status" />
                 </th>
                 <th className="px-5 py-3.5 text-right">Action</th>
@@ -263,13 +284,13 @@ export const DocumentationRequestsPage: React.FC = () => {
                   <td colSpan={7} className="text-center py-14 text-slate-400">
                     <div className="flex flex-col items-center gap-2">
                       <span className="text-3xl">🔍</span>
-                      <span className="text-sm font-medium text-slate-600">No requests found</span>
+                      <span className="text-sm font-semibold text-slate-700">No requests match criteria</span>
                       {(search || statusFilter) && (
                         <button
                           onClick={() => { setSearch(""); setStatusFilter(""); }}
-                          className="text-xs text-amber-600 hover:underline mt-1 font-semibold"
+                          className="text-xs text-amber-600 hover:text-amber-800 mt-1 font-bold cursor-pointer"
                         >
-                          Clear filters
+                          Clear all filters
                         </button>
                       )}
                     </div>
@@ -280,10 +301,10 @@ export const DocumentationRequestsPage: React.FC = () => {
                   const missingCount = req.missingDocuments?.length ?? 0;
                   const fileCount = req.documentFiles?.length ?? 0;
                   return (
-                    <tr key={req.requestId} className="hover:bg-amber-50/40 transition-colors group">
+                    <tr key={req.requestId} className="hover:bg-amber-50/30 transition-colors group">
                       {/* Doc ID */}
                       <td className="px-5 py-4">
-                        <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-slate-900 text-amber-400 border border-slate-800 shadow-2xs">
+                        <span className="inline-flex items-center px-2.5 py-1 rounded-lg text-xs font-mono font-bold bg-slate-900 text-amber-400 border border-slate-800 shadow-2xs group-hover:border-amber-500/40 transition-colors">
                           {formatDocId(req.requestId)}
                         </span>
                       </td>
@@ -291,14 +312,14 @@ export const DocumentationRequestsPage: React.FC = () => {
                       {/* Customer & Service */}
                       <td className="px-5 py-4">
                         <div className="flex items-center gap-3">
-                          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-400 to-amber-500 text-slate-950 font-extrabold text-xs flex items-center justify-center shadow-xs shrink-0">
+                          <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-400 to-amber-500 text-slate-950 font-extrabold text-xs flex items-center justify-center shadow-xs shrink-0 border border-amber-300">
                             {req.customerName ? req.customerName[0].toUpperCase() : "C"}
                           </div>
                           <div>
                             <div className="font-bold text-slate-900 text-xs">{req.customerName || "Customer"}</div>
                             <div className="text-[11px] text-slate-500">{req.customerEmail || "—"}</div>
                             <div className="mt-1">
-                              <span className="text-[11px] text-slate-700 font-semibold bg-slate-100/90 rounded-md px-2 py-0.5 border border-slate-200/60">
+                              <span className="text-[10px] font-semibold text-slate-700 bg-slate-100/90 rounded-md px-2 py-0.5 border border-slate-200/60 inline-block">
                                 {req.serviceName || req.documentType}
                               </span>
                             </div>
@@ -310,23 +331,24 @@ export const DocumentationRequestsPage: React.FC = () => {
                       <td className="px-5 py-4">
                         {req.assignedClerkId ? (
                           <div className="flex items-center gap-2">
-                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-50 text-amber-800 border border-amber-200">
+                            <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-mono font-bold bg-amber-50 text-amber-900 border border-amber-200">
                               {formatClerkId(req.assignedClerkId)}
                             </span>
                             {req.assignedClerkName && (
-                              <span className="text-xs font-medium text-slate-700">{req.assignedClerkName}</span>
+                              <span className="text-xs font-semibold text-slate-800">{req.assignedClerkName}</span>
                             )}
                           </div>
                         ) : (
-                          <span className="text-xs text-amber-600 bg-amber-50 border border-amber-200 px-2 py-0.5 rounded font-medium inline-block">
-                            ⏳ Unassigned
+                          <span className="inline-flex items-center gap-1 text-[11px] text-amber-700 bg-amber-50/80 border border-amber-200/90 px-2.5 py-0.5 rounded-full font-semibold">
+                            <span className="w-1.5 h-1.5 rounded-full bg-amber-400" />
+                            <span>Unassigned</span>
                           </span>
                         )}
                       </td>
 
                       {/* Submitted */}
                       <td className="px-5 py-4 whitespace-nowrap">
-                        <div className="text-xs font-medium text-slate-800">
+                        <div className="text-xs font-semibold text-slate-800">
                           {req.createdAt
                             ? new Date(req.createdAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })
                             : "—"}
@@ -342,12 +364,12 @@ export const DocumentationRequestsPage: React.FC = () => {
                       <td className="px-5 py-4">
                         <div className="text-xs font-semibold text-slate-700">{fileCount} uploaded</div>
                         {missingCount > 0 ? (
-                          <div className="inline-flex items-center gap-1 mt-1 text-[11px] font-bold text-rose-700 bg-rose-50 border border-rose-200 rounded-full px-2.5 py-0.5">
+                          <div className="inline-flex items-center gap-1.5 mt-1 text-[11px] font-bold text-rose-700 bg-rose-50 border border-rose-200 rounded-full px-2.5 py-0.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-rose-500 animate-pulse" />
                             <span>{missingCount} missing</span>
                           </div>
                         ) : (
-                          <div className="inline-flex items-center gap-1 mt-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2.5 py-0.5">
+                          <div className="inline-flex items-center gap-1.5 mt-1 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2.5 py-0.5">
                             <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                             <span>Complete</span>
                           </div>
@@ -361,13 +383,26 @@ export const DocumentationRequestsPage: React.FC = () => {
 
                       {/* Actions */}
                       <td className="px-5 py-4 text-right">
-                        <Link
-                          to={`/admin/documentation-requests/${req.requestId}`}
-                          className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-slate-900 hover:bg-amber-500 hover:text-slate-950 px-3.5 py-1.5 rounded-xl shadow-xs transition-all cursor-pointer"
-                        >
-                          <span>Review & AI</span>
-                          <span>→</span>
-                        </Link>
+                        <div className="flex items-center justify-end gap-2">
+                          <Link
+                            to={`/admin/documentation-requests/${req.requestId}`}
+                            className="inline-flex items-center gap-1.5 text-xs font-bold text-white bg-slate-900 hover:bg-amber-400 hover:text-slate-950 px-3.5 py-1.5 rounded-xl shadow-xs transition-all duration-200 cursor-pointer"
+                          >
+                            <span>Review & AI</span>
+                            <span>→</span>
+                          </Link>
+                          <button
+                            onClick={() => setDeleteConfirm(req)}
+                            className="inline-flex items-center gap-1 text-xs font-semibold text-rose-600 hover:text-white bg-rose-50 hover:bg-rose-600 px-2.5 py-1.5 rounded-xl border border-rose-200 hover:border-rose-600 transition-all cursor-pointer shadow-2xs"
+                            title="Delete this request"
+                          >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+                              <polyline points="3 6 5 6 21 6" />
+                              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                            </svg>
+                            <span className="hidden sm:inline">Delete</span>
+                          </button>
+                        </div>
                       </td>
                     </tr>
                   );
@@ -375,6 +410,49 @@ export const DocumentationRequestsPage: React.FC = () => {
               )}
             </tbody>
           </table>
+        </div>
+      )}
+
+      {/* Delete Confirmation Modal */}
+      {deleteConfirm && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/60 backdrop-blur-xs animate-in fade-in duration-150">
+          <div className="bg-white rounded-2xl max-w-md w-full shadow-2xl border border-slate-200 overflow-hidden transform scale-100 transition-all">
+            <div className="p-6">
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-xl mb-4 bg-rose-50 text-rose-600 border border-rose-200 shadow-inner">
+                🗑️
+              </div>
+              <h3 className="text-lg font-bold text-slate-900 tracking-tight">Delete Documentation Request?</h3>
+              <p className="text-xs text-slate-500 mt-2 leading-relaxed">
+                Are you sure you want to permanently delete <strong className="text-slate-800">Request #{deleteConfirm.requestId}</strong> ({deleteConfirm.customerName || "Customer"} — {deleteConfirm.serviceName || deleteConfirm.documentType})?
+              </p>
+              <div className="mt-3 p-3 rounded-xl bg-amber-50 border border-amber-200 text-[11px] text-amber-800">
+                ⚠️ <strong>Warning:</strong> All uploaded proof files, agent analysis notes, and re-upload audits associated with this request will be permanently removed.
+              </div>
+            </div>
+            <div className="bg-slate-50 px-6 py-4 border-t border-slate-200/80 flex items-center justify-end gap-2.5">
+              <button
+                onClick={() => setDeleteConfirm(null)}
+                disabled={deleting}
+                className="px-4 py-2 text-xs font-semibold text-slate-700 hover:text-slate-900 bg-white hover:bg-slate-100 rounded-xl border border-slate-200 shadow-2xs transition cursor-pointer disabled:opacity-50"
+              >
+                Cancel
+              </button>
+              <button
+                onClick={confirmDelete}
+                disabled={deleting}
+                className="px-4 py-2 text-xs font-bold text-white bg-rose-600 hover:bg-rose-700 rounded-xl shadow-xs transition flex items-center gap-2 cursor-pointer disabled:opacity-50"
+              >
+                {deleting ? (
+                  <>
+                    <div className="w-3.5 h-3.5 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                    <span>Deleting…</span>
+                  </>
+                ) : (
+                  <span>Yes, Delete Request</span>
+                )}
+              </button>
+            </div>
+          </div>
         </div>
       )}
     </AdminLayout>

@@ -17,6 +17,7 @@ public class DocumentationRequestService : IDocumentationRequestService
 {
     private readonly ApplicationDbContext _context;
     private readonly IAgentIntegrationService? _agentService;
+    private readonly IEmailNotificationService? _emailService;
 
     // Allowed status transitions
     private static readonly HashSet<string> ValidStatuses = new(StringComparer.OrdinalIgnoreCase)
@@ -31,10 +32,14 @@ public class DocumentationRequestService : IDocumentationRequestService
         "CANCELLED"
     };
 
-    public DocumentationRequestService(ApplicationDbContext context, IAgentIntegrationService? agentService = null)
+    public DocumentationRequestService(
+        ApplicationDbContext context,
+        IAgentIntegrationService? agentService = null,
+        IEmailNotificationService? emailService = null)
     {
         _context = context;
         _agentService = agentService;
+        _emailService = emailService;
     }
 
     public async Task<IEnumerable<DocumentationRequestResponse>> GetAllRequestsAsync(
@@ -170,6 +175,9 @@ public class DocumentationRequestService : IDocumentationRequestService
         request.UpdatedAt = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
+
+        NotifyClientStatusUpdated(request, normalizedStatus, request.AssignedClerk?.Name, request.ReuploadNote);
+
         return (await GetRequestByIdAsync(requestId))!;
     }
 
@@ -195,6 +203,9 @@ public class DocumentationRequestService : IDocumentationRequestService
         request.UpdatedAt = DateTime.UtcNow;
 
         await _context.SaveChangesAsync();
+
+        NotifyClientStatusUpdated(request, "ASSIGNED", clerk.Name, null);
+
         return (await GetRequestByIdAsync(requestId))!;
     }
 
@@ -230,7 +241,55 @@ public class DocumentationRequestService : IDocumentationRequestService
         }
 
         await _context.SaveChangesAsync();
+
+        NotifyClientStatusUpdated(request, "REQUIRES_DOCUMENTS", request.AssignedClerk?.Name, formattedNote);
+
         return (await GetRequestByIdAsync(requestId))!;
+    }
+
+    private void NotifyClientStatusUpdated(
+        DocumentationRequest request,
+        string status,
+        string? clerkName = null,
+        string? note = null)
+    {
+        if (_emailService == null) return;
+
+        try
+        {
+            var user = _context.Users.Find(request.CustomerId);
+            var clientEmail = user?.Email;
+            var clientName = user?.Name;
+            var serviceName = request.DocumentationService?.Name ?? request.DocumentType;
+            var assignedClerk = clerkName ?? request.AssignedClerk?.Name;
+            var requestId = request.RequestId;
+            var updatedAt = request.UpdatedAt ?? DateTime.UtcNow;
+
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await _emailService.SendRequestStatusUpdateEmailAsync(
+                        recipientEmail: clientEmail,
+                        recipientName: clientName,
+                        requestId: requestId,
+                        serviceName: serviceName,
+                        newStatus: status,
+                        clerkName: assignedClerk,
+                        note: note,
+                        updatedAt: updatedAt
+                    );
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[EmailNotification] Error sending status email: {ex.Message}");
+                }
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[EmailNotification] Failed to prepare status email: {ex.Message}");
+        }
     }
 
     public async Task<bool> CanCustomerAccessRequestAsync(int customerId, int requestId)
@@ -399,5 +458,36 @@ public class DocumentationRequestService : IDocumentationRequestService
         }
 
         return false;
+    }
+
+    public async Task<bool> DeleteRequestAsync(int requestId)
+    {
+        var request = await _context.DocumentationRequests
+            .Include(r => r.DocumentFiles)
+            .FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+        if (request == null)
+            return false;
+
+        // Clean up physical files on disk
+        foreach (var file in request.DocumentFiles)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(file.FilePath) && System.IO.File.Exists(file.FilePath))
+                {
+                    System.IO.File.Delete(file.FilePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[WARNING] Failed to delete file {file.FilePath}: {ex.Message}");
+            }
+        }
+
+        _context.DocumentFiles.RemoveRange(request.DocumentFiles);
+        _context.DocumentationRequests.Remove(request);
+        await _context.SaveChangesAsync();
+        return true;
     }
 }

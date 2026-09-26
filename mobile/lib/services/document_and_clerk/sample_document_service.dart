@@ -98,48 +98,164 @@ class SampleDocumentService {
       fileSize: '2.7 KB',
       icon: Icons.mail_outline,
     ),
+    SampleDocument(
+      title: 'Claim Evidence & Invoices',
+      fileName: 'Claim_Evidence_Invoices.pdf',
+      docType: 'Claim Evidence / Invoices',
+      description: 'Itemized commercial tax invoices and sworn declaration of unpaid claim',
+      fileSize: '2.8 KB',
+      icon: Icons.receipt_long_outlined,
+    ),
+    SampleDocument(
+      title: 'Opposing Party Service Address Proof',
+      fileName: 'Demand_Notice_Address_Proof.pdf',
+      docType: 'Opposing Party Service Address',
+      description: 'Certified process server confirmation of defendant registered office address',
+      fileSize: '2.7 KB',
+      icon: Icons.location_on_outlined,
+    ),
+    SampleDocument(
+      title: 'Grama Niladhari Certificate',
+      fileName: 'Grama_Niladhari_Certificate.pdf',
+      docType: 'Surety NIC & Grama Niladhari Certificate',
+      description: 'Official Ministry of Home Affairs residence and character certificate for bail surety',
+      fileSize: '2.7 KB',
+      icon: Icons.badge_outlined,
+    ),
+    SampleDocument(
+      title: 'Client Proxy Authorization',
+      fileName: 'Client_Proxy_Authorization.pdf',
+      docType: 'Client NIC & Proxy',
+      description: 'Supreme Court Advocate proxy appointment under Civil Procedure Code Section 27',
+      fileSize: '2.8 KB',
+      icon: Icons.assignment_ind_outlined,
+    ),
+    SampleDocument(
+      title: 'Business Registration Form (Form 1)',
+      fileName: 'Business_Registration_Form.pdf',
+      docType: 'Business Registration Form',
+      description: 'Official Companies Act No. 07 of 2007 Pvt Ltd incorporation application form',
+      fileSize: '2.9 KB',
+      icon: Icons.business_outlined,
+    ),
+    SampleDocument(
+      title: 'Articles of Association',
+      fileName: 'Articles_of_Association.pdf',
+      docType: 'Articles of Association',
+      description: 'Model Articles of Association establishing corporate capacity and shareholding',
+      fileSize: '2.7 KB',
+      icon: Icons.menu_book_outlined,
+    ),
+    SampleDocument(
+      title: 'Registered Office Address Proof',
+      fileName: 'Registered_Address_Proof.pdf',
+      docType: 'Registered Address Proof',
+      description: 'Colombo Municipal Council certified assessment rates and premises occupation certificate',
+      fileSize: '2.7 KB',
+      icon: Icons.domain_verification_outlined,
+    ),
+    SampleDocument(
+      title: 'Certified Title Deed Copy',
+      fileName: 'Property_Deed_Copy.pdf',
+      docType: 'Prior Title Deed Copy',
+      description: 'Certified true extract of registered Land Registry conveyance deed with pedigree',
+      fileSize: '2.8 KB',
+      icon: Icons.apartment_outlined,
+    ),
+    SampleDocument(
+      title: 'Certified Cadastral Survey Plan',
+      fileName: 'Certified_Survey_Plan.pdf',
+      docType: 'Survey Plan',
+      description: 'Licensed Surveyor boundary survey plan approved by Local Authority & SG',
+      fileSize: '2.8 KB',
+      icon: Icons.map_outlined,
+    ),
+    SampleDocument(
+      title: 'Sale & Purchase Agreement Draft',
+      fileName: 'Sale_Agreement_Draft.pdf',
+      docType: 'Sale Agreement Draft',
+      description: 'Bilateral agreement to sell real property with payment schedule & clear title covenants',
+      fileSize: '2.8 KB',
+      icon: Icons.handshake_outlined,
+    ),
   ];
 
   static SampleDocument? getMatchingSample(String? docType) {
     if (docType == null || docType.isEmpty) return null;
     final clean = docType.toLowerCase().trim();
 
-    // 1. Identity documents
-    if (clean.contains('nic') || clean.contains('identity') || clean.contains('passport') || clean.contains('surety nic') || clean.contains('signatory')) {
+    // 1. Specific Document Matches First
+    if (clean.contains('invoice') || clean.contains('claim evidence') || clean.contains('evidence of claim')) {
+      return samples.firstWhere((s) => s.fileName == 'Claim_Evidence_Invoices.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('service address') || clean.contains('opposing party') || clean.contains('address for service')) {
+      return samples.firstWhere((s) => s.fileName == 'Demand_Notice_Address_Proof.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('grama') || clean.contains('niladhari')) {
+      return samples.firstWhere((s) => s.fileName == 'Grama_Niladhari_Certificate.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('proxy')) {
+      return samples.firstWhere((s) => s.fileName == 'Client_Proxy_Authorization.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('business registration form') || clean.contains('form 1') || clean.contains('br form')) {
+      return samples.firstWhere((s) => s.fileName == 'Business_Registration_Form.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('articles') || clean.contains('association') || clean.contains('aoa')) {
+      return samples.firstWhere((s) => s.fileName == 'Articles_of_Association.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('registered address') || clean.contains('address proof') || clean.contains('premise')) {
+      return samples.firstWhere((s) => s.fileName == 'Registered_Address_Proof.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('survey') || clean.contains('plan')) {
+      return samples.firstWhere((s) => s.fileName == 'Certified_Survey_Plan.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('sale agreement') || clean.contains('agreement to sell')) {
+      return samples.firstWhere((s) => s.fileName == 'Sale_Agreement_Draft.pdf', orElse: () => samples.first);
+    }
+    if (clean.contains('prior title') || clean.contains('deed copy') || (clean.contains('deed') && !clean.contains('gift'))) {
+      return samples.firstWhere((s) => s.fileName == 'Property_Deed_Copy.pdf', orElse: () => samples.first);
+    }
+
+    // 2. Identity documents
+    if (clean.contains('nic') || clean.contains('identity') || clean.contains('passport') || clean.contains('signatory') || clean.contains('surety')) {
       return samples.firstWhere((s) => s.fileName == 'NIC_Copy.pdf', orElse: () => samples.first);
     }
-    // 2. Agreements, Tenancy, Contracts, NDAs, Custody/Settlement
+
+    // 3. Agreements, Tenancy, Contracts, NDAs, Custody/Settlement
     if (clean.contains('tenancy') || clean.contains('lease') || clean.contains('rent')) {
       return samples.firstWhere((s) => s.fileName == 'Tenancy_Agreement.pdf', orElse: () => samples.first);
     }
-    if (clean.contains('nda') || clean.contains('vetting') || clean.contains('settlement') || clean.contains('custody')) {
-      return samples.firstWhere((s) => s.fileName == 'Tenancy_Agreement.pdf', orElse: () => samples.first);
-    }
-    if (clean.contains('contract') || clean.contains('draft agreement') || clean.contains('business registration') || clean.contains('br')) {
+    if (clean.contains('contract') || clean.contains('draft agreement') || clean.contains('corporate registration')) {
       return samples.firstWhere((s) => s.fileName == 'Original_Contract.pdf', orElse: () => samples.first);
     }
-    // 3. Property, Deeds, Asset Proof, Survey Plans, Pedigree, Day Book
-    if (clean.contains('deed') || clean.contains('asset') || clean.contains('title') || clean.contains('survey') || clean.contains('plan') || clean.contains('pedigree') || clean.contains('day book') || clean.contains('property')) {
+
+    // 4. Property & Asset Proof
+    if (clean.contains('asset') || clean.contains('title') || clean.contains('ownership')) {
       return samples.firstWhere((s) => s.fileName == 'Asset_Ownership_Proof.pdf', orElse: () => samples.first);
     }
-    // 4. Power of Attorney
-    if (clean.contains('attorney') || clean.contains('poa') || clean.contains('proxy')) {
+
+    // 5. Power of Attorney
+    if (clean.contains('attorney') || clean.contains('poa') || clean.contains('authority')) {
       return samples.firstWhere((s) => s.fileName == 'Power_of_Attorney_Draft.pdf', orElse: () => samples.first);
     }
-    // 5. Last Will & Testament
-    if (clean.contains('will') || clean.contains('testament') || clean.contains('probate') || clean.contains('letters of administration')) {
+
+    // 6. Last Will & Testament
+    if (clean.contains('will') || clean.contains('testament') || clean.contains('probate')) {
       return samples.firstWhere((s) => s.fileName == 'Draft_Will_Agreement.pdf', orElse: () => samples.first);
     }
-    // 6. Witness & Certified Certificates (Marriage, Death, Grama Niladhari)
+
+    // 7. Witness & Certified Certificates
     if (clean.contains('witness')) {
       return samples.firstWhere((s) => s.fileName == 'Witness_Details.pdf', orElse: () => samples.first);
     }
-    // 7. Affidavits, Petitions, Plaints & Formal Certificates
-    if (clean.contains('affidavit') || clean.contains('certificate') || clean.contains('death') || clean.contains('marriage') || clean.contains('grama') || clean.contains('niladhari') || clean.contains('plaint') || clean.contains('injunction')) {
+
+    // 8. Affidavits, Petitions, Plaints & Formal Statements
+    if (clean.contains('affidavit') || clean.contains('facts') || clean.contains('declaration')) {
       return samples.firstWhere((s) => s.fileName == 'Completed_Affidavit_Draft.pdf', orElse: () => samples.first);
     }
-    // 8. Formal Letters, Notices, Invoices & Address Proofs
-    if (clean.contains('letter') || clean.contains('notice') || clean.contains('demand') || clean.contains('amendment') || clean.contains('address') || clean.contains('invoice') || clean.contains('evidence')) {
+
+    // 9. Formal Letters, Notices, Demands & Requests
+    if (clean.contains('letter') || clean.contains('notice') || clean.contains('demand') || clean.contains('amendment')) {
       return samples.firstWhere((s) => s.fileName == 'Amendment_Request_Letter.pdf', orElse: () => samples.first);
     }
 

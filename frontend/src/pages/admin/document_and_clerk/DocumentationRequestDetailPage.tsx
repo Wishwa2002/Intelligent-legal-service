@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import { documentationApi, type DocumentationRequest, type DocumentFile } from "../../../api/documentationApi";
 import { AdminLayout } from "../../../components/layout/AdminLayout";
 import MarkdownText from "../../../components/common/MarkdownText";
-import { documentationApi, type DocumentationRequest } from "../../../api/documentationApi";
 import { agentApi, type AgentAnalysisResult, type ChatMessage } from "../../../api/agentApi";
 import { clerksApi, type Clerk } from "../../../api/clerksApi";
 import { AVAILABLE_SAMPLES } from "../../clerk/ClerkCasesPage";
@@ -12,22 +12,23 @@ import { AVAILABLE_SAMPLES } from "../../clerk/ClerkCasesPage";
 // ─────────────────────────────────────────────────────────
 
 const StatusBadge: React.FC<{ status: string; sm?: boolean }> = ({ status, sm }) => {
-  const cfg: Record<string, string> = {
-    PENDING: "bg-amber-50 text-amber-700 border-amber-200",
-    UNDER_REVIEW: "bg-blue-50 text-blue-700 border-blue-200",
-    ASSIGNED: "bg-indigo-50 text-indigo-700 border-indigo-200",
-    IN_PROGRESS: "bg-purple-50 text-purple-700 border-purple-200",
-    REQUIRES_DOCUMENTS: "bg-rose-50 text-rose-700 border-rose-200",
-    COMPLETED: "bg-emerald-50 text-emerald-700 border-emerald-200",
-    REJECTED: "bg-slate-100 text-slate-600 border-slate-300",
-    CANCELLED: "bg-slate-100 text-slate-500 border-slate-200",
-    ADMIN_APPROVAL_PENDING: "bg-purple-50 text-purple-700 border-purple-200",
-    HUMAN_REVIEW: "bg-orange-50 text-orange-700 border-orange-200",
+  const cfg: Record<string, { cls: string; dot: string }> = {
+    PENDING: { cls: "bg-amber-50 text-amber-800 border-amber-200/80", dot: "bg-amber-500" },
+    UNDER_REVIEW: { cls: "bg-blue-50 text-blue-800 border-blue-200/80", dot: "bg-blue-500" },
+    ASSIGNED: { cls: "bg-indigo-50 text-indigo-800 border-indigo-200/80", dot: "bg-indigo-500" },
+    IN_PROGRESS: { cls: "bg-purple-50 text-purple-800 border-purple-200/80", dot: "bg-purple-500 animate-pulse" },
+    REQUIRES_DOCUMENTS: { cls: "bg-rose-50 text-rose-800 border-rose-200/80", dot: "bg-rose-500 animate-pulse" },
+    COMPLETED: { cls: "bg-emerald-50 text-emerald-800 border-emerald-200/80", dot: "bg-emerald-500" },
+    REJECTED: { cls: "bg-slate-100 text-slate-600 border-slate-300", dot: "bg-slate-400" },
+    CANCELLED: { cls: "bg-slate-100 text-slate-500 border-slate-200", dot: "bg-slate-400" },
+    ADMIN_APPROVAL_PENDING: { cls: "bg-purple-50 text-purple-800 border-purple-200/80", dot: "bg-purple-500 animate-pulse" },
+    HUMAN_REVIEW: { cls: "bg-orange-50 text-orange-800 border-orange-200/80", dot: "bg-orange-500" },
   };
-  const cls = cfg[status] ?? "bg-slate-100 text-slate-600 border-slate-200";
+  const item = cfg[status] ?? { cls: "bg-slate-100 text-slate-600 border-slate-200", dot: "bg-slate-400" };
   return (
-    <span className={`inline-flex items-center rounded-full border font-semibold ${sm ? "text-[10px] px-2 py-0.5" : "text-xs px-2.5 py-1"} ${cls}`}>
-      {status.replace(/_/g, " ")}
+    <span className={`inline-flex items-center gap-1.5 rounded-full border font-bold uppercase tracking-wider ${sm ? "text-[10px] px-2 py-0.5" : "text-xs px-3 py-1"} ${item.cls} shadow-2xs`}>
+      <span className={`w-1.5 h-1.5 rounded-full ${item.dot}`} />
+      <span>{status.replace(/_/g, " ")}</span>
     </span>
   );
 };
@@ -163,11 +164,18 @@ const AnalysisLoader: React.FC = () => {
 // ─────────────────────────────────────────────────────────
 export const DocumentationRequestDetailPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
+  const navigate = useNavigate();
 
   const [request, setRequest] = useState<DocumentationRequest | null>(null);
   const [clerks, setClerks] = useState<Clerk[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // Deletion states
+  const [deleteRequestConfirm, setDeleteRequestConfirm] = useState(false);
+  const [deletingRequest, setDeletingRequest] = useState(false);
+  const [deleteFileConfirm, setDeleteFileConfirm] = useState<DocumentFile | null>(null);
+  const [deletingFile, setDeletingFile] = useState(false);
 
   // AI analysis
   const [analyzing, setAnalyzing] = useState(false);
@@ -194,6 +202,7 @@ export const DocumentationRequestDetailPage: React.FC = () => {
   const [chatLoading, setChatLoading] = useState(false);
   const [chatError, setChatError] = useState<string | null>(null);
   const [chatSessionId, setChatSessionId] = useState<string | null>(null);
+  const [conversationOpen, setConversationOpen] = useState(false);
   const chatEndRef = useRef<HTMLDivElement>(null);
 
   // Status update
@@ -217,6 +226,35 @@ export const DocumentationRequestDetailPage: React.FC = () => {
       setLoading(false);
     }
   }, [id]);
+
+  const handleDeleteRequest = async () => {
+    if (!id) return;
+    try {
+      setDeletingRequest(true);
+      await documentationApi.deleteRequest(id);
+      navigate("/admin/documentation-requests");
+    } catch (err: any) {
+      setActionToast({ type: "error", message: err.response?.data?.message || err.message || "Failed to delete request" });
+      setDeleteRequestConfirm(false);
+    } finally {
+      setDeletingRequest(false);
+    }
+  };
+
+  const handleDeleteFile = async () => {
+    if (!deleteFileConfirm) return;
+    try {
+      setDeletingFile(true);
+      await documentationApi.deleteFile(deleteFileConfirm.fileId);
+      setActionToast({ type: "success", message: `Document '${deleteFileConfirm.fileName}' deleted successfully.` });
+      setDeleteFileConfirm(null);
+      await fetchDetails();
+    } catch (err: any) {
+      setActionToast({ type: "error", message: err.response?.data?.message || err.message || "Failed to delete file" });
+    } finally {
+      setDeletingFile(false);
+    }
+  };
 
   const fetchChatHistory = useCallback(async (requestId: string) => {
     setChatLoading(true);
@@ -632,8 +670,8 @@ export const DocumentationRequestDetailPage: React.FC = () => {
           </div>
         )}
 
-        {/* Back link */}
-        <div className="mb-5">
+        {/* Back link & Top Actions */}
+        <div className="mb-5 flex items-center justify-between">
           <Link
             to="/admin/documentation-requests"
             className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-500 hover:text-slate-800 transition-colors"
@@ -643,6 +681,19 @@ export const DocumentationRequestDetailPage: React.FC = () => {
             </svg>
             All Requests
           </Link>
+
+          <button
+            type="button"
+            onClick={() => setDeleteRequestConfirm(true)}
+            className="inline-flex items-center gap-1.5 text-xs font-bold text-rose-600 hover:text-white bg-rose-50 hover:bg-rose-600 px-3 py-1.5 rounded-xl border border-rose-200 hover:border-rose-600 transition-all shadow-2xs cursor-pointer"
+            title="Delete this documentation request"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5">
+              <polyline points="3 6 5 6 21 6" />
+              <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+            </svg>
+            <span>Delete Request</span>
+          </button>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
@@ -863,10 +914,22 @@ export const DocumentationRequestDetailPage: React.FC = () => {
                         <button
                           type="button"
                           onClick={() => openAskModal(file.fileName, file.fileId)}
-                          className="text-xs font-bold text-rose-700 bg-rose-50 hover:bg-rose-100 border border-rose-200 px-2.5 py-1 rounded-lg transition flex items-center gap-1"
+                          className="text-xs font-bold text-amber-700 bg-amber-50 hover:bg-amber-100 border border-amber-200 px-2.5 py-1 rounded-lg transition flex items-center gap-1 cursor-pointer"
                         >
                           <span>⚠️</span>
-                          <span>Ask to re-upload</span>
+                          <span>Ask re-upload</span>
+                        </button>
+                        <button
+                          type="button"
+                          onClick={() => setDeleteFileConfirm(file)}
+                          className="text-xs font-bold text-rose-600 hover:text-white bg-rose-50 hover:bg-rose-600 border border-rose-200 px-2 py-1 rounded-lg transition flex items-center gap-1 cursor-pointer"
+                          title="Delete this document file"
+                        >
+                          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3 h-3">
+                            <polyline points="3 6 5 6 21 6" />
+                            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                          </svg>
+                          <span>Delete</span>
                         </button>
                       </div>
                     </div>
@@ -1184,113 +1247,149 @@ export const DocumentationRequestDetailPage: React.FC = () => {
           </div>
         </div>
 
-        {/* ── Full-Width Chat History ── */}
-        <div className="mt-8 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          {/* Header */}
+        {/* ── Full-Width Chat History (Collapsible Dropdown Accordion) ── */}
+        <div className="mt-8 bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all">
+          {/* Collapsible Dropdown Header */}
           <div
-            className="flex items-center justify-between px-6 py-4 border-b border-slate-100"
+            onClick={() => setConversationOpen(prev => !prev)}
+            className="flex items-center justify-between px-6 py-4 border-b border-slate-800/80 cursor-pointer select-none group transition-colors"
             style={{ background: "linear-gradient(90deg, #0f172a 0%, #1e293b 100%)" }}
           >
             <div className="flex items-center gap-3">
-              <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-xl">
+              <div className="w-9 h-9 rounded-xl bg-amber-500/20 border border-amber-500/30 flex items-center justify-center text-xl group-hover:scale-105 transition-transform">
                 💬
               </div>
               <div>
-                <h3 className="text-sm font-bold text-white tracking-wide">Client Conversation History</h3>
+                <div className="flex items-center gap-2.5">
+                  <h3 className="text-sm font-bold text-white tracking-wide group-hover:text-amber-300 transition-colors">
+                    Client Conversation History
+                  </h3>
+                  <span className="text-[10px] font-semibold bg-slate-800 text-slate-300 border border-slate-700 px-2 py-0.5 rounded-full">
+                    {conversationOpen ? "Collapse ▲" : "Drop-down ▼"}
+                  </span>
+                </div>
                 <div className="flex items-center gap-2 mt-0.5">
+                  <span className="text-[11px] text-slate-400">
+                    {chatMessages.length > 0 ? `${chatMessages.length} messages logged` : "Client & AI chat session"}
+                  </span>
                   {chatSessionId && (
-                    <span className="text-[10px] font-mono text-slate-500">
-                      Session: {chatSessionId.substring(0, 8)}…
-                    </span>
+                    <>
+                      <span className="text-slate-600">•</span>
+                      <span className="text-[10px] font-mono text-slate-400">
+                        Session: {chatSessionId.substring(0, 8)}…
+                      </span>
+                    </>
                   )}
                   {chatPhase && <PhaseBadge phase={chatPhase} />}
                 </div>
               </div>
             </div>
+
             <div className="flex items-center gap-3">
               {chatMessages.length > 0 && (
-                <span className="text-[10px] font-semibold bg-slate-700 text-slate-300 px-2.5 py-1 rounded-full">
+                <span className="text-[11px] font-semibold bg-slate-800 text-amber-300 border border-amber-500/30 px-2.5 py-1 rounded-full">
                   {chatMessages.length} messages
                 </span>
               )}
               <button
-                onClick={() => request?.requestId && fetchChatHistory(String(request.requestId))}
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  request?.requestId && fetchChatHistory(String(request.requestId));
+                }}
                 disabled={chatLoading}
-                className="text-xs font-semibold text-amber-400 hover:text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 px-3 py-1.5 rounded-lg transition-all disabled:opacity-50 flex items-center gap-1.5"
+                className="text-xs font-semibold text-amber-400 hover:text-amber-300 bg-amber-500/10 hover:bg-amber-500/20 border border-amber-500/30 px-3 py-1.5 rounded-lg transition-all disabled:opacity-50 flex items-center gap-1.5 cursor-pointer"
+                title="Refresh conversation transcript"
               >
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={`w-3 h-3 ${chatLoading ? "animate-spin" : ""}`}>
                   <polyline points="23 4 23 10 17 10" />
                   <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10" />
                 </svg>
-                {chatLoading ? "Refreshing…" : "Refresh"}
+                <span className="hidden sm:inline">{chatLoading ? "Refreshing…" : "Refresh"}</span>
               </button>
+
+              {/* Chevron icon button */}
+              <div className="p-1.5 rounded-lg bg-slate-800 border border-slate-700 text-slate-300 group-hover:text-amber-300 transition-colors">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className={`w-4 h-4 transition-transform duration-200 ${conversationOpen ? "rotate-180 text-amber-400" : ""}`}
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </div>
             </div>
           </div>
 
-          {/* Body */}
-          <div className="p-6">
-            {chatLoading && (
-              <div className="flex items-center justify-center py-10 gap-3">
-                <div className="w-5 h-5 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
-                <span className="text-sm text-slate-400">Loading conversation…</span>
-              </div>
-            )}
+          {/* Collapsible Dropdown Body */}
+          {conversationOpen && (
+            <div className="p-6 animate-in fade-in duration-150">
+              {chatLoading && (
+                <div className="flex items-center justify-center py-10 gap-3">
+                  <div className="w-5 h-5 border-2 border-amber-400 border-t-transparent rounded-full animate-spin" />
+                  <span className="text-sm text-slate-400">Loading conversation…</span>
+                </div>
+              )}
 
-            {!chatLoading && chatError && (
-              <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
-                <span className="text-4xl">🔍</span>
-                <p className="text-sm font-semibold text-slate-600">No Chat Session Found</p>
-                <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
-                  {chatError} This request may have been created manually without an AI chat session.
-                </p>
-              </div>
-            )}
+              {!chatLoading && chatError && (
+                <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
+                  <span className="text-4xl">🔍</span>
+                  <p className="text-sm font-semibold text-slate-600">No Chat Session Found</p>
+                  <p className="text-xs text-slate-400 max-w-sm leading-relaxed">
+                    {chatError} This request may have been created manually without an AI chat session.
+                  </p>
+                </div>
+              )}
 
-            {!chatLoading && !chatError && chatMessages.length === 0 && (
-              <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
-                <span className="text-4xl">💭</span>
-                <p className="text-sm font-semibold text-slate-600">No Messages Yet</p>
-                <p className="text-xs text-slate-400">The client has not started a chat conversation for this request.</p>
-              </div>
-            )}
+              {!chatLoading && !chatError && chatMessages.length === 0 && (
+                <div className="flex flex-col items-center justify-center py-12 text-center gap-3">
+                  <span className="text-4xl">💭</span>
+                  <p className="text-sm font-semibold text-slate-600">No Messages Yet</p>
+                  <p className="text-xs text-slate-400">The client has not started a chat conversation for this request.</p>
+                </div>
+              )}
 
-            {!chatLoading && !chatError && chatMessages.length > 0 && (
-              <div className="space-y-5 max-h-[560px] overflow-y-auto pr-2 scrollbar-thin">
-                {chatMessages.map((msg, idx) => {
-                  const isAgent = msg.role === "agent";
-                  const time = new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true });
-                  const date = new Date(msg.timestamp).toLocaleDateString("en-US", { month: "short", day: "numeric" });
+              {!chatLoading && !chatError && chatMessages.length > 0 && (
+                <div className="space-y-5 max-h-[560px] overflow-y-auto pr-2 scrollbar-thin">
+                  {chatMessages.map((msg, idx) => {
+                    const isAgent = msg.role === "agent";
+                    const time = new Date(msg.timestamp).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit", hour12: true });
+                    const date = new Date(msg.timestamp).toLocaleDateString("en-US", { month: "short", day: "numeric" });
 
-                  return (
-                    <div key={idx} className={`flex items-end gap-3 ${isAgent ? "flex-row" : "flex-row-reverse"}`}>
-                      {/* Avatar */}
-                      <div className={`flex-shrink-0 w-8 h-8 rounded-xl flex items-center justify-center text-sm shadow ${
-                        isAgent
-                          ? "bg-gradient-to-br from-amber-400 to-amber-600 text-slate-900"
-                          : "bg-gradient-to-br from-slate-700 to-slate-900 text-white"
-                      }`}>
-                        {isAgent ? "🤖" : "👤"}
-                      </div>
-
-                      {/* Bubble */}
-                      <div className={`max-w-[75%] ${isAgent ? "" : ""}`}>
-                        <div className={`px-4 py-3 rounded-2xl shadow-sm ${
+                    return (
+                      <div key={idx} className={`flex items-end gap-3 ${isAgent ? "flex-row" : "flex-row-reverse"}`}>
+                        {/* Avatar */}
+                        <div className={`flex-shrink-0 w-8 h-8 rounded-xl flex items-center justify-center text-sm shadow ${
                           isAgent
-                            ? "bg-slate-50 text-slate-800 rounded-bl-sm border border-slate-200"
-                            : "bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-br-sm"
+                            ? "bg-gradient-to-br from-amber-400 to-amber-600 text-slate-900"
+                            : "bg-gradient-to-br from-slate-700 to-slate-900 text-white"
                         }`}>
-                          {isAgent ? (
-                            <MarkdownText content={msg.content} className={isAgent ? "text-slate-800" : "text-white"} />
-                          ) : (
-                            <p className="text-xs leading-relaxed">{msg.content}</p>
-                          )}
+                          {isAgent ? "🤖" : "👤"}
                         </div>
-                        <div className={`text-[10px] text-slate-400 mt-1 px-1 ${isAgent ? "text-left" : "text-right"}`}>
-                          <span className="font-semibold">{isAgent ? "AI Agent" : "Client"}</span>
-                          {" · "}{date} {time}
+
+                        {/* Bubble */}
+                        <div className="max-w-[75%]">
+                          <div className={`px-4 py-3 rounded-2xl shadow-sm ${
+                            isAgent
+                              ? "bg-slate-50 text-slate-800 rounded-bl-sm border border-slate-200"
+                              : "bg-gradient-to-br from-slate-800 to-slate-900 text-white rounded-br-sm"
+                          }`}>
+                            {isAgent ? (
+                              <MarkdownText content={msg.content} className={isAgent ? "text-slate-800" : "text-white"} />
+                            ) : (
+                              <p className="text-xs leading-relaxed">{msg.content}</p>
+                            )}
+                          </div>
+                          <div className={`text-[10px] text-slate-400 mt-1 px-1 ${isAgent ? "text-left" : "text-right"}`}>
+                            <span className="font-semibold">{isAgent ? "AI Agent" : "Client"}</span>
+                            {" · "}{date} {time}
+                          </div>
                         </div>
                       </div>
-                    </div>
                   );
                 })}
                 {/* Auto-scroll anchor */}
@@ -1298,7 +1397,8 @@ export const DocumentationRequestDetailPage: React.FC = () => {
               </div>
             )}
           </div>
-        </div>
+        )}
+      </div>
 
         {/* Ask Client to Upload / Re-upload Modal */}
         {askUploadModalOpen && (
@@ -1451,6 +1551,30 @@ export const DocumentationRequestDetailPage: React.FC = () => {
             </div>
           </div>
         )}
+
+        {/* Delete Request Confirm Modal */}
+        <ConfirmModal
+          open={deleteRequestConfirm}
+          title="Delete Documentation Request?"
+          message={`Are you sure you want to permanently delete Request #${request?.requestId}? All uploaded documents, AI verification audits, and case logs will be permanently deleted.`}
+          confirmLabel="Yes, Delete Request"
+          variant="rose"
+          loading={deletingRequest}
+          onConfirm={handleDeleteRequest}
+          onCancel={() => setDeleteRequestConfirm(false)}
+        />
+
+        {/* Delete File Confirm Modal */}
+        <ConfirmModal
+          open={!!deleteFileConfirm}
+          title="Delete Document File?"
+          message={`Are you sure you want to delete '${deleteFileConfirm?.fileName}'? This file will be permanently removed from this request and disk storage.`}
+          confirmLabel="Yes, Delete File"
+          variant="rose"
+          loading={deletingFile}
+          onConfirm={handleDeleteFile}
+          onCancel={() => setDeleteFileConfirm(null)}
+        />
       </AdminLayout>
     </>
   );
