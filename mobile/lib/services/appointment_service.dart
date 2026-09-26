@@ -39,6 +39,7 @@ class AppointmentService {
   static Future<List<Appointment>> getAppointments({
     String? customerId,
     String? lawyerId,
+    String? lawyerEmail,
     String? status,
     String? date,
   }) async {
@@ -48,6 +49,9 @@ class AppointmentService {
     }
     if (lawyerId != null && lawyerId.isNotEmpty) {
       query['lawyerId'] = lawyerId;
+    }
+    if (lawyerEmail != null && lawyerEmail.isNotEmpty) {
+      query['lawyerEmail'] = lawyerEmail;
     }
     if (status != null && status.isNotEmpty && status != 'All') {
       query['status'] = status;

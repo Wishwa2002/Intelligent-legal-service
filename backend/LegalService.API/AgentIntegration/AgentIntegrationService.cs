@@ -310,4 +310,77 @@ public class AgentIntegrationService : IAgentIntegrationService
         }
         return new Dictionary<int, string>();
     }
+
+    public async Task<object?> CreateSchedulingSessionAsync(string customerId, string? clientName, string? userRole)
+    {
+        try
+        {
+            var payload = new
+            {
+                customer_id = string.IsNullOrWhiteSpace(customerId) ? "guest" : customerId,
+                client_name = clientName,
+                user_role = string.IsNullOrWhiteSpace(userRole) ? "Client" : userRole
+            };
+            var response = await _httpClient.PostAsJsonAsync($"{_aiServiceBaseUrl}/api/agent/scheduling/session", payload);
+            if (!response.IsSuccessStatusCode)
+            {
+                _logger.LogError("AI Service returned {StatusCode} for scheduling session init", response.StatusCode);
+                return null;
+            }
+            return await response.Content.ReadFromJsonAsync<object>();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error creating scheduling session in AI service");
+            return null;
+        }
+    }
+
+    public async Task<object?> SendSchedulingMessageAsync(
+        string sessionId,
+        string message,
+        string? selectedLawyerId,
+        string? selectedSlotId,
+        string? selectedSlotTime,
+        string? consultationType)
+    {
+        try
+        {
+            var payload = new
+            {
+                message = message ?? string.Empty,
+                selected_lawyer_id = selectedLawyerId,
+                selected_slot_id = selectedSlotId,
+                selected_slot_time = selectedSlotTime,
+                consultation_type = consultationType
+            };
+            var response = await _httpClient.PostAsJsonAsync($"{_aiServiceBaseUrl}/api/agent/scheduling/{sessionId}/message", payload);
+            if (!response.IsSuccessStatusCode)
+            {
+                _logger.LogError("AI Service returned {StatusCode} for scheduling message", response.StatusCode);
+                return null;
+            }
+            return await response.Content.ReadFromJsonAsync<object>();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error sending scheduling message to AI service for session {SessionId}", sessionId);
+            return null;
+        }
+    }
+
+    public async Task<object?> GetSchedulingSessionStatusAsync(string sessionId)
+    {
+        try
+        {
+            var response = await _httpClient.GetAsync($"{_aiServiceBaseUrl}/api/agent/scheduling/{sessionId}/status");
+            if (!response.IsSuccessStatusCode) return null;
+            return await response.Content.ReadFromJsonAsync<object>();
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Error fetching scheduling session status for session {SessionId}", sessionId);
+            return null;
+        }
+    }
 }

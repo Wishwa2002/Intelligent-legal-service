@@ -27,7 +27,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
 
   late String _selectedCategory;
   late DateTime _selectedDate;
-  String _consultationType = 'Online'; // 'Online' or 'In-Person'
+  String _consultationType = 'Phone Consultation'; // 'Phone Consultation' or 'Meeting with a Lawyer'
 
   List<AvailabilitySlot> _slots = [];
   String? _selectedSlotId;
@@ -39,7 +39,13 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
   @override
   void initState() {
     super.initState();
-    _selectedCategory = widget.initialCategory ?? widget.lawyer.primarySpecialization;
+    final initial = widget.initialCategory?.trim();
+    if (initial != null && initial.isNotEmpty) {
+      _selectedCategory = initial;
+    } else {
+      _selectedCategory = widget.lawyer.primarySpecialization;
+    }
+
     // Default to tomorrow
     _selectedDate = DateTime.now().add(const Duration(days: 1));
     _fetchSlots();
@@ -56,6 +62,16 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
     final m = dt.month.toString().padLeft(2, '0');
     final d = dt.day.toString().padLeft(2, '0');
     return '$y-$m-$d';
+  }
+
+  String _getDayOfWeek(DateTime dt) {
+    const days = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'];
+    return days[dt.weekday - 1];
+  }
+
+  String _getMonthShort(DateTime dt) {
+    const months = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    return months[dt.month - 1];
   }
 
   Future<void> _fetchSlots() async {
@@ -123,7 +139,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
 
     if (_selectedSlotId == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        const SnackBar(content: Text('Please select an available afternoon time slot.')),
+        const SnackBar(content: Text('Please select an available 30-minute time slot.')),
       );
       return;
     }
@@ -210,7 +226,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
               ),
               const SizedBox(height: 12),
               Text(
-                'Your consultation request with ${widget.lawyer.name} for ${_formatDateYMD(_selectedDate)} has been sent to administration and legal counsel for review.',
+                'Your ${_consultationType.toLowerCase()} consultation with ${widget.lawyer.name} for ${_formatDateYMD(_selectedDate)} has been sent to counsel for review.',
                 textAlign: TextAlign.center,
                 style: const TextStyle(fontSize: 12, color: Color(0xFF475569)),
               ),
@@ -277,7 +293,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                       radius: 24,
                       backgroundColor: AppTheme.primaryNavy,
                       child: Text(
-                        widget.lawyer.name.isNotEmpty ? widget.lawyer.name.split(' ').last[0] : 'L',
+                        widget.lawyer.name.trim().isNotEmpty ? widget.lawyer.name.trim().split(' ').last[0] : 'L',
                         style: const TextStyle(color: AppTheme.secondaryAmber, fontWeight: FontWeight.bold),
                       ),
                     ),
@@ -286,9 +302,28 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Text(
-                            widget.lawyer.name,
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy),
+                          Row(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: Text(
+                                  widget.lawyer.name,
+                                  style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy),
+                                ),
+                              ),
+                              Container(
+                                padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 3),
+                                decoration: BoxDecoration(
+                                  color: const Color(0xFFFEF3C7),
+                                  borderRadius: BorderRadius.circular(12),
+                                  border: Border.all(color: const Color(0xFFFDE68A)),
+                                ),
+                                child: Text(
+                                  _selectedCategory,
+                                  style: const TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF92400E)),
+                                ),
+                              ),
+                            ],
                           ),
                           Text(
                             widget.lawyer.qualification,
@@ -308,96 +343,121 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
 
               const SizedBox(height: 20),
 
-              // ── 2. Legal Service Category ──
-              const Text(
-                'LEGAL SERVICE AREA',
-                style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: AppTheme.textMuted),
-              ),
-              const SizedBox(height: 8),
-              Container(
-                padding: const EdgeInsets.symmetric(horizontal: 12),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(12),
-                  border: Border.all(color: const Color(0xFFCBD5E1)),
-                ),
-                child: DropdownButtonHideUnderline(
-                  child: DropdownButton<String>(
-                    isExpanded: true,
-                    value: _selectedCategory,
-                    items: [
-                      'Criminal Law',
-                      'Family Law',
-                      'Corporate Law',
-                      'Property Law',
-                    ].map((cat) {
-                      return DropdownMenuItem(
-                        value: cat,
-                        child: Text(cat, style: const TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
-                      );
-                    }).toList(),
-                    onChanged: (val) {
-                      if (val != null) {
-                        setState(() => _selectedCategory = val);
-                      }
-                    },
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              // ── 3. Date Selection & Calendar ──
-              const Text(
-                'CONSULTATION DATE',
-                style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: AppTheme.textMuted),
-              ),
-              const SizedBox(height: 8),
-              InkWell(
-                onTap: _pickDate,
-                borderRadius: BorderRadius.circular(12),
-                child: Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(12),
-                    border: Border.all(color: const Color(0xFFCBD5E1)),
-                  ),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Row(
-                        children: [
-                          const Icon(Icons.calendar_today, size: 20, color: AppTheme.primaryNavy),
-                          const SizedBox(width: 12),
-                          Text(
-                            _formatDateYMD(_selectedDate),
-                            style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy),
-                          ),
-                        ],
-                      ),
-                      const Text(
-                        'Change Date',
-                        style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.secondaryAmber),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-
-              const SizedBox(height: 20),
-
-              // ── 4. Available 4 Afternoon Slots (3:00 - 5:00 PM) ──
+              // ── 2. Interactive Calendar Date Picker ──
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text(
-                    'AVAILABLE TIME SLOTS (AFTERNOON)',
+                    'SELECT CONSULTATION DATE',
                     style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: AppTheme.textMuted),
                   ),
-                  Text(
-                    '3:00 PM – 5:00 PM',
-                    style: TextStyle(fontSize: 11, fontWeight: FontWeight.w600, color: Colors.blue.shade700),
+                  TextButton.icon(
+                    style: TextButton.styleFrom(visualDensity: VisualDensity.compact),
+                    icon: const Icon(Icons.calendar_month, size: 16, color: AppTheme.primaryNavy),
+                    label: const Text('Pick Other Date', style: TextStyle(fontSize: 12, fontWeight: FontWeight.bold, color: AppTheme.primaryNavy)),
+                    onPressed: _pickDate,
+                  ),
+                ],
+              ),
+              const SizedBox(height: 8),
+
+              // Horizontal Calendar Strip (Next 14 Days)
+              SizedBox(
+                height: 76,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  itemCount: 14,
+                  itemBuilder: (context, i) {
+                    final date = DateTime.now().add(Duration(days: i + 1));
+                    final isSelected = date.year == _selectedDate.year &&
+                        date.month == _selectedDate.month &&
+                        date.day == _selectedDate.day;
+
+                    return GestureDetector(
+                      onTap: () {
+                        setState(() {
+                          _selectedDate = date;
+                        });
+                        _fetchSlots();
+                      },
+                      child: Container(
+                        width: 62,
+                        margin: const EdgeInsets.only(right: 8),
+                        decoration: BoxDecoration(
+                          color: isSelected ? AppTheme.primaryNavy : Colors.white,
+                          borderRadius: BorderRadius.circular(12),
+                          border: Border.all(
+                            color: isSelected ? AppTheme.primaryNavy : const Color(0xFFCBD5E1),
+                            width: isSelected ? 2 : 1,
+                          ),
+                          boxShadow: isSelected
+                              ? [
+                                  BoxShadow(
+                                    color: AppTheme.primaryNavy.withValues(alpha: 0.25),
+                                    blurRadius: 6,
+                                    offset: const Offset(0, 3),
+                                  )
+                                ]
+                              : null,
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Text(
+                              _getDayOfWeek(date),
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.bold,
+                                color: isSelected ? AppTheme.secondaryAmber : AppTheme.textMuted,
+                              ),
+                            ),
+                            const SizedBox(height: 3),
+                            Text(
+                              date.day.toString(),
+                              style: TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold,
+                                color: isSelected ? Colors.white : AppTheme.slateDark,
+                              ),
+                            ),
+                            const SizedBox(height: 2),
+                            Text(
+                              _getMonthShort(date),
+                              style: TextStyle(
+                                fontSize: 10,
+                                fontWeight: FontWeight.w600,
+                                color: isSelected ? Colors.white70 : const Color(0xFF94A3B8),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 20),
+
+              // ── 4. 30-Minute Time Slots ──
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  const Text(
+                    'AVAILABLE TIME SLOTS (30-MINUTES)',
+                    style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: AppTheme.textMuted),
+                  ),
+                  Container(
+                    padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+                    decoration: BoxDecoration(
+                      color: const Color(0xFFEFF6FF),
+                      borderRadius: BorderRadius.circular(8),
+                      border: Border.all(color: const Color(0xFFBFDBFE)),
+                    ),
+                    child: const Text(
+                      '⏱ 30 min duration',
+                      style: TextStyle(fontSize: 10, fontWeight: FontWeight.bold, color: Color(0xFF1D4ED8)),
+                    ),
                   ),
                 ],
               ),
@@ -418,7 +478,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 const Padding(
                   padding: EdgeInsets.symmetric(vertical: 16),
                   child: Text(
-                    'No afternoon slots available for this date. Please choose another day.',
+                    'No consultation slots available for this date. Please choose another day from the calendar.',
                     style: TextStyle(fontSize: 12, color: AppTheme.textMuted),
                   ),
                 )
@@ -430,7 +490,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                     crossAxisCount: 2,
                     crossAxisSpacing: 10,
                     mainAxisSpacing: 10,
-                    childAspectRatio: 2.8,
+                    childAspectRatio: 2.6,
                   ),
                   itemCount: _slots.length,
                   itemBuilder: (context, idx) {
@@ -477,11 +537,19 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                                           : AppTheme.primaryNavy,
                                 ),
                               ),
-                              if (slot.isBooked)
-                                const Text(
-                                  'Booked',
-                                  style: TextStyle(fontSize: 9, color: Color(0xFFEF4444), fontWeight: FontWeight.bold),
+                              const SizedBox(height: 2),
+                              Text(
+                                slot.isBooked ? 'Booked' : '30 min slot',
+                                style: TextStyle(
+                                  fontSize: 9,
+                                  color: slot.isBooked
+                                      ? const Color(0xFFEF4444)
+                                      : isSelected
+                                          ? Colors.white70
+                                          : const Color(0xFF059669),
+                                  fontWeight: FontWeight.bold,
                                 ),
+                              ),
                             ],
                           ),
                         ),
@@ -492,7 +560,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
 
               const SizedBox(height: 20),
 
-              // ── 5. Consultation Type (Online vs In-Person) ──
+              // ── 5. Consultation Mode (Phone Consultation vs Meeting with a Lawyer) ──
               const Text(
                 'CONSULTATION MODE',
                 style: TextStyle(fontSize: 11, fontWeight: FontWeight.bold, letterSpacing: 0.8, color: AppTheme.textMuted),
@@ -502,29 +570,30 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 children: [
                   Expanded(
                     child: InkWell(
-                      onTap: () => setState(() => _consultationType = 'Online'),
+                      onTap: () => setState(() => _consultationType = 'Phone Consultation'),
                       borderRadius: BorderRadius.circular(12),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                         decoration: BoxDecoration(
-                          color: _consultationType == 'Online' ? const Color(0xFFEFF6FF) : Colors.white,
+                          color: _consultationType == 'Phone Consultation' ? const Color(0xFFEFF6FF) : Colors.white,
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                            color: _consultationType == 'Online' ? const Color(0xFF2563EB) : const Color(0xFFCBD5E1),
-                            width: _consultationType == 'Online' ? 2 : 1,
+                            color: _consultationType == 'Phone Consultation' ? const Color(0xFF2563EB) : const Color(0xFFCBD5E1),
+                            width: _consultationType == 'Phone Consultation' ? 2 : 1,
                           ),
                         ),
-                        child: Row(
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text('🌐', style: TextStyle(fontSize: 16)),
-                            const SizedBox(width: 8),
+                            const Text('📞', style: TextStyle(fontSize: 20)),
+                            const SizedBox(height: 4),
                             Text(
-                              'Online Video',
+                              'Phone Consultation',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: 12,
                                 fontWeight: FontWeight.bold,
-                                color: _consultationType == 'Online' ? const Color(0xFF1D4ED8) : AppTheme.slateDark,
+                                color: _consultationType == 'Phone Consultation' ? const Color(0xFF1D4ED8) : AppTheme.slateDark,
                               ),
                             ),
                           ],
@@ -535,29 +604,30 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                   const SizedBox(width: 10),
                   Expanded(
                     child: InkWell(
-                      onTap: () => setState(() => _consultationType = 'In-Person'),
+                      onTap: () => setState(() => _consultationType = 'Meeting with a Lawyer'),
                       borderRadius: BorderRadius.circular(12),
                       child: Container(
-                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 10),
+                        padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 8),
                         decoration: BoxDecoration(
-                          color: _consultationType == 'In-Person' ? const Color(0xFFFEF3C7) : Colors.white,
+                          color: _consultationType == 'Meeting with a Lawyer' ? const Color(0xFFFEF3C7) : Colors.white,
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
-                            color: _consultationType == 'In-Person' ? const Color(0xFFD97706) : const Color(0xFFCBD5E1),
-                            width: _consultationType == 'In-Person' ? 2 : 1,
+                            color: _consultationType == 'Meeting with a Lawyer' ? const Color(0xFFD97706) : const Color(0xFFCBD5E1),
+                            width: _consultationType == 'Meeting with a Lawyer' ? 2 : 1,
                           ),
                         ),
-                        child: Row(
+                        child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            const Text('🏢', style: TextStyle(fontSize: 16)),
-                            const SizedBox(width: 8),
+                            const Text('🤝', style: TextStyle(fontSize: 20)),
+                            const SizedBox(height: 4),
                             Text(
-                              'In-Person Chambers',
+                              'Meeting with a Lawyer',
+                              textAlign: TextAlign.center,
                               style: TextStyle(
-                                fontSize: 13,
+                                fontSize: 12,
                                 fontWeight: FontWeight.bold,
-                                color: _consultationType == 'In-Person' ? const Color(0xFFB45309) : AppTheme.slateDark,
+                                color: _consultationType == 'Meeting with a Lawyer' ? const Color(0xFFB45309) : AppTheme.slateDark,
                               ),
                             ),
                           ],
@@ -580,7 +650,7 @@ class _BookAppointmentScreenState extends State<BookAppointmentScreen> {
                 controller: _descriptionController,
                 maxLines: 4,
                 decoration: InputDecoration(
-                  hintText: 'Describe your legal situation, charges, disputes, or contracts for counsel review...',
+                  hintText: 'Describe your legal situation, disputes, or contracts for counsel review...',
                   hintStyle: const TextStyle(fontSize: 13, color: AppTheme.textMuted),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(12),

@@ -1,6 +1,8 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using LegalService.API.Data;
 using LegalService.API.DTOs.Appointments;
 using LegalService.API.Interfaces;
 
@@ -11,10 +13,12 @@ namespace LegalService.API.Controllers;
 public class AppointmentsController : ControllerBase
 {
     private readonly IAppointmentService _appointmentService;
+    private readonly ApplicationDbContext _context;
 
-    public AppointmentsController(IAppointmentService appointmentService)
+    public AppointmentsController(IAppointmentService appointmentService, ApplicationDbContext context)
     {
         _appointmentService = appointmentService;
+        _context = context;
     }
 
     /// <summary>
@@ -42,19 +46,29 @@ public class AppointmentsController : ControllerBase
     }
 
     /// <summary>
-    /// Get all appointments, with optional filters for lawyer, customer, status, or date.
+    /// Get all appointments, with optional filters for lawyer, customer, status, date, or lawyer email.
     /// </summary>
     [HttpGet]
     public async Task<IActionResult> GetAllAppointments(
         [FromQuery] Guid? lawyerId,
         [FromQuery] Guid? customerId,
         [FromQuery] string? status,
-        [FromQuery] string? date)
+        [FromQuery] string? date,
+        [FromQuery] string? lawyerEmail)
     {
         DateOnly? parsedDate = null;
         if (!string.IsNullOrWhiteSpace(date) && DateOnly.TryParse(date, out var d))
         {
             parsedDate = d;
+        }
+
+        if (!lawyerId.HasValue && !string.IsNullOrWhiteSpace(lawyerEmail))
+        {
+            var l = await _context.Lawyers.FirstOrDefaultAsync(x => x.Email != null && x.Email.ToLower() == lawyerEmail.Trim().ToLower());
+            if (l != null)
+            {
+                lawyerId = l.LawyerId;
+            }
         }
 
         var appointments = await _appointmentService.GetAllAppointmentsAsync(lawyerId, customerId, status, parsedDate);

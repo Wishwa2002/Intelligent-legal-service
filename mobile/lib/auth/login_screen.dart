@@ -6,6 +6,7 @@ import '../../widgets/server_settings_dialog.dart';
 import '../screens/careers/careers_screen.dart';
 import 'auth_service.dart';
 import 'register_screen.dart';
+import '../screens/main_navigation_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   final bool asModal;
@@ -178,7 +179,10 @@ class _LoginScreenState extends State<LoginScreen> {
         if (widget.asModal) {
           Navigator.pop(context, true);
         } else {
-          Navigator.pushReplacementNamed(context, '/');
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (_) => const MainNavigationScreen()),
+          );
         }
       }
     } catch (e) {

@@ -561,6 +561,40 @@ class GeminiService:
                 rationale="Fallback rule: transformed query into explicit checklist search.",
             )
 
+    async def call(self, prompt: str, system_instruction: str = "") -> str:
+        """General text completion call."""
+        try:
+            messages = []
+            if system_instruction:
+                messages.append(SystemMessage(content=system_instruction))
+            messages.append(HumanMessage(content=prompt))
+            resp = await self._llm.ainvoke(messages)
+            return resp.content if isinstance(resp.content, str) else str(resp.content)
+        except Exception as e:
+            logger.warning("GeminiService.call failed: %s", e)
+            return ""
+
+    async def call_json(self, prompt: str, system_instruction: str = "") -> dict | None:
+        """Call Gemini and parse JSON output."""
+        import json
+        import re
+        raw = await self.call(prompt, system_instruction)
+        if not raw:
+            return None
+        m = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", raw)
+        clean = m.group(1).strip() if m else raw.strip()
+        try:
+            return json.loads(clean)
+        except Exception:
+            try:
+                start = clean.find("{")
+                end = clean.rfind("}")
+                if start != -1 and end != -1:
+                    return json.loads(clean[start:end+1])
+            except Exception as e:
+                logger.warning("Failed to parse JSON from Gemini: %s", e)
+        return None
+
 
 
 # Module-level singleton

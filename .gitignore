@@ -524,3 +524,4 @@ mobile/.pub/
 # Local Uploads & Scratch Scripts
 backend/LegalService.API/Storage/Uploads/
 scratch_*.py
+ai-service/data/

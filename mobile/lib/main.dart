@@ -20,6 +20,10 @@ class LegalServiceApp extends StatelessWidget {
       title: 'LegalEase Mobile',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.lightTheme,
+      routes: {
+        '/home': (context) => const MainNavigationScreen(),
+        '/login': (context) => const LoginScreen(),
+      },
       home: ValueListenableBuilder(
         valueListenable: AuthService.currentUser,
         builder: (ctx, user, _) {

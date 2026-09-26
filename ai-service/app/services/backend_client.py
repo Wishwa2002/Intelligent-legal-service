@@ -247,6 +247,133 @@ class BackendClient:
             return None
 
     # ================================================================
+    # Lawyers & Scheduling
+    # ================================================================
+
+    async def get_lawyers(
+        self,
+        specialization: str | None = None,
+        search: str | None = None,
+    ) -> list[dict]:
+        """GET /api/lawyers with optional specialization and text search filters."""
+        params: dict = {}
+        if specialization:
+            params["specialization"] = specialization
+        if search:
+            params["search"] = search
+        return await self._get("/api/lawyers", params=params if params else None)
+
+    async def get_lawyer(self, lawyer_id: str) -> dict:
+        """GET /api/lawyers/{id}"""
+        return await self._get(f"/api/lawyers/{lawyer_id}")
+
+    async def get_available_slots(self, lawyer_id: str, date: str) -> list[dict]:
+        """GET /api/appointments/available-slots?lawyerId={id}&date={date}"""
+        return await self._get(
+            "/api/appointments/available-slots",
+            params={"lawyerId": lawyer_id, "date": date},
+        )
+
+    async def check_schedule_conflict(
+        self,
+        lawyer_id: str,
+        date: str,
+        start_time: str,
+        end_time: str,
+        exclude_appointment_id: str | None = None,
+    ) -> bool:
+        """GET /api/appointments/check-conflict"""
+        params = {
+            "lawyerId": lawyer_id,
+            "date": date,
+            "startTime": start_time,
+            "endTime": end_time,
+        }
+        if exclude_appointment_id:
+            params["excludeAppointmentId"] = exclude_appointment_id
+        res = await self._get("/api/appointments/check-conflict", params=params)
+        return bool(res) if isinstance(res, bool) else bool(res.get("conflict", False) if isinstance(res, dict) else False)
+
+    async def book_appointment(
+        self,
+        lawyer_id: str,
+        customer_id: str,
+        slot_id: str,
+        consultation_type: str = "Meeting with a Lawyer",
+        description: str | None = None,
+        notes: str | None = None,
+        legal_service_category: str | None = None,
+    ) -> dict:
+        """POST /api/appointments"""
+        cid = str(customer_id).strip()
+        if not cid or cid.lower() == "guest":
+            formatted_cid = "00000000-0000-0000-0000-000000000001"
+        elif "-" in cid and len(cid) == 36:
+            formatted_cid = cid
+        else:
+            try:
+                num = int(cid)
+                formatted_cid = f"00000000-0000-0000-0000-{num:012x}"
+            except Exception:
+                formatted_cid = "00000000-0000-0000-0000-000000000001"
+
+        body = {
+            "lawyerId": lawyer_id,
+            "customerId": formatted_cid,
+            "slotId": slot_id,
+            "consultationType": consultation_type,
+            "description": description or "",
+            "notes": notes or "",
+            "legalServiceCategory": legal_service_category or "",
+        }
+        return await self._post("/api/appointments", body=body)
+
+    async def get_appointments(
+        self,
+        lawyer_id: str | None = None,
+        customer_id: str | None = None,
+        status: str | None = None,
+        date: str | None = None,
+        lawyer_email: str | None = None,
+    ) -> list[dict]:
+        """GET /api/appointments with optional filters."""
+        params: dict = {}
+        if lawyer_id:
+            params["lawyerId"] = lawyer_id
+        if customer_id:
+            params["customerId"] = customer_id
+        if status:
+            params["status"] = status
+        if date:
+            params["date"] = date
+        if lawyer_email:
+            params["lawyerEmail"] = lawyer_email
+        return await self._get("/api/appointments", params=params if params else None)
+
+    async def get_appointment_by_id(self, appointment_id: str) -> dict:
+        """GET /api/appointments/{id}"""
+        return await self._get(f"/api/appointments/{appointment_id}")
+
+    async def reschedule_appointment(
+        self,
+        appointment_id: str,
+        new_slot_id: str,
+        reason: str | None = None,
+    ) -> dict:
+        """POST /api/appointments/{id}/reschedule"""
+        body = {"newSlotId": new_slot_id, "reason": reason or "Rescheduled via AI Scheduling Assistant"}
+        return await self._post(f"/api/appointments/{appointment_id}/reschedule", body=body)
+
+    async def cancel_appointment(
+        self,
+        appointment_id: str,
+        reason: str | None = None,
+    ) -> dict:
+        """POST /api/appointments/{id}/cancel"""
+        body = {"reason": reason or "Cancelled via AI Scheduling Assistant"}
+        return await self._post(f"/api/appointments/{appointment_id}/cancel", body=body)
+
+    # ================================================================
     # Lifecycle
     # ================================================================
 

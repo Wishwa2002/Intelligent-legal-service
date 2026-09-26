@@ -22,14 +22,6 @@ class MainNavigationScreen extends StatefulWidget {
 class _MainNavigationScreenState extends State<MainNavigationScreen> {
   int _selectedIndex = 0;
 
-  late final List<Widget> _screens = [
-    ProjectHubScreen(onSwitchTab: (idx) => setState(() => _selectedIndex = idx)),
-    const CommonAiScreen(),
-    const ServicesCatalogScreen(),
-    const LawyersScreen(),
-    const MyRequestsScreen(),
-  ];
-
   void _showUserAccountModal() {
     final user = AuthService.currentUser.value;
     if (user == null) {
@@ -145,18 +137,89 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final user = AuthService.currentUser.value;
+    final isLawyer = user != null && user.userType.toLowerCase() == 'lawyer';
+
+    final screens = isLawyer
+        ? <Widget>[
+            const LawyerScheduleScreen(),
+            const LawyersScreen(),
+            const CommonAiScreen(),
+            ProjectHubScreen(onSwitchTab: (idx) => setState(() => _selectedIndex = idx)),
+          ]
+        : <Widget>[
+            ProjectHubScreen(onSwitchTab: (idx) => setState(() => _selectedIndex = idx)),
+            const CommonAiScreen(),
+            const ServicesCatalogScreen(),
+            const LawyersScreen(),
+            const MyRequestsScreen(),
+          ];
+
+    final destinations = isLawyer
+        ? const [
+            NavigationDestination(
+              icon: Icon(Icons.calendar_month_outlined),
+              selectedIcon: Icon(Icons.calendar_month, color: AppTheme.primaryNavy),
+              label: 'My Schedule',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.balance_outlined),
+              selectedIcon: Icon(Icons.balance, color: AppTheme.primaryNavy),
+              label: 'Lawyers',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.auto_awesome_outlined),
+              selectedIcon: Icon(Icons.auto_awesome, color: AppTheme.secondaryAmber),
+              label: 'AI Agent',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.dashboard_outlined),
+              selectedIcon: Icon(Icons.dashboard, color: AppTheme.primaryNavy),
+              label: 'Hub',
+            ),
+          ]
+        : const [
+            NavigationDestination(
+              icon: Icon(Icons.dashboard_outlined),
+              selectedIcon: Icon(Icons.dashboard_rounded, color: AppTheme.primaryNavy),
+              label: 'Hub',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.auto_awesome_outlined),
+              selectedIcon: Icon(Icons.auto_awesome, color: AppTheme.secondaryAmber),
+              label: 'AI Agent',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.description_outlined),
+              selectedIcon: Icon(Icons.description_rounded, color: AppTheme.goldDark),
+              label: 'Documents',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.balance_outlined),
+              selectedIcon: Icon(Icons.balance_rounded, color: AppTheme.primaryNavy),
+              label: 'Lawyers',
+            ),
+            NavigationDestination(
+              icon: Icon(Icons.assignment_outlined),
+              selectedIcon: Icon(Icons.assignment_rounded, color: AppTheme.primaryNavy),
+              label: 'Requests',
+            ),
+          ];
+
+    final activeIndex = _selectedIndex < screens.length ? _selectedIndex : 0;
+
     return Scaffold(
       body: Stack(
         children: [
-          _screens[_selectedIndex],
+          screens[activeIndex],
           // Floating profile pill top-right if on non-appbar or overlay
           Positioned(
             top: MediaQuery.of(context).padding.top + 8,
             right: 8,
             child: ValueListenableBuilder(
               valueListenable: AuthService.currentUser,
-              builder: (ctx, user, _) {
-                return user != null
+              builder: (ctx, u, _) {
+                return u != null
                     ? GestureDetector(
                         onTap: _showUserAccountModal,
                         child: Container(
@@ -179,7 +242,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
                               const Icon(Icons.account_circle, size: 16, color: AppTheme.gold),
                               const SizedBox(width: 5),
                               Text(
-                                user.fullName.split(' ').first,
+                                u.fullName.split(' ').first,
                                 style: const TextStyle(color: Colors.white, fontSize: 11, fontWeight: FontWeight.bold),
                               ),
                             ],
@@ -208,36 +271,10 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ],
       ),
       bottomNavigationBar: NavigationBar(
-        selectedIndex: _selectedIndex,
+        selectedIndex: activeIndex,
         onDestinationSelected: (idx) => setState(() => _selectedIndex = idx),
         indicatorColor: AppTheme.gold.withValues(alpha: 0.22),
-        destinations: const [
-          NavigationDestination(
-            icon: Icon(Icons.dashboard_outlined),
-            selectedIcon: Icon(Icons.dashboard_rounded, color: AppTheme.primaryNavy),
-            label: 'Hub',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.auto_awesome_outlined),
-            selectedIcon: Icon(Icons.auto_awesome, color: AppTheme.secondaryAmber),
-            label: 'AI Agent',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.description_outlined),
-            selectedIcon: Icon(Icons.description_rounded, color: AppTheme.goldDark),
-            label: 'Documents',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.balance_outlined),
-            selectedIcon: Icon(Icons.balance_rounded, color: AppTheme.primaryNavy),
-            label: 'Lawyers',
-          ),
-          NavigationDestination(
-            icon: Icon(Icons.assignment_outlined),
-            selectedIcon: Icon(Icons.assignment_rounded, color: AppTheme.primaryNavy),
-            label: 'Requests',
-          ),
-        ],
+        destinations: destinations,
       ),
     );
   }
