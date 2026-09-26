@@ -6,6 +6,8 @@ namespace LegalService.API.Models.Entities;
 public class Lawyer
 {
     public Guid LawyerId { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string? Email { get; set; }
     public string PhoneNumber { get; set; } = string.Empty;
     public string Qualification { get; set; } = string.Empty;
     public int Experience { get; set; }

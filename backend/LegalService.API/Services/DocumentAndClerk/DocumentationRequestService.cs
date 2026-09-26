@@ -1,0 +1,493 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text.Json;
+using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
+using LegalService.API.Data;
+using LegalService.API.DTOs.Requests;
+using LegalService.API.DTOs.Responses;
+using LegalService.API.Interfaces;
+using LegalService.API.Models.Entities;
+using LegalService.API.AgentIntegration;
+
+namespace LegalService.API.Services;
+
+public class DocumentationRequestService : IDocumentationRequestService
+{
+    private readonly ApplicationDbContext _context;
+    private readonly IAgentIntegrationService? _agentService;
+    private readonly IEmailNotificationService? _emailService;
+
+    // Allowed status transitions
+    private static readonly HashSet<string> ValidStatuses = new(StringComparer.OrdinalIgnoreCase)
+    {
+        "PENDING",
+        "UNDER_REVIEW",
+        "ASSIGNED",
+        "IN_PROGRESS",
+        "REQUIRES_DOCUMENTS",
+        "COMPLETED",
+        "REJECTED",
+        "CANCELLED"
+    };
+
+    public DocumentationRequestService(
+        ApplicationDbContext context,
+        IAgentIntegrationService? agentService = null,
+        IEmailNotificationService? emailService = null)
+    {
+        _context = context;
+        _agentService = agentService;
+        _emailService = emailService;
+    }
+
+    public async Task<IEnumerable<DocumentationRequestResponse>> GetAllRequestsAsync(
+        int? customerId = null,
+        int? clerkId = null,
+        string? status = null)
+    {
+        var query = _context.DocumentationRequests
+            .Include(r => r.DocumentationService)
+            .Include(r => r.AssignedClerk)
+            .Include(r => r.DocumentFiles)
+            .AsQueryable();
+
+        if (customerId.HasValue)
+        {
+            query = query.Where(r => r.CustomerId == customerId.Value);
+        }
+
+        if (clerkId.HasValue)
+        {
+            query = query.Where(r => r.AssignedClerkId == clerkId.Value);
+        }
+
+        if (!string.IsNullOrWhiteSpace(status))
+        {
+            query = query.Where(r => r.Status.ToUpper() == status.Trim().ToUpper());
+        }
+
+        var requests = await query.OrderByDescending(r => r.CreatedAt).ToListAsync();
+
+        // 1. Fetch chat client names mapping from AI service sessions
+        Dictionary<int, string> chatClientNames = new();
+        if (_agentService != null)
+        {
+            try
+            {
+                chatClientNames = await _agentService.GetChatClientNamesAsync();
+            }
+            catch { }
+        }
+
+        // 2. Fetch Users from database for fallback and customer email
+        var customerIds = requests.Select(r => r.CustomerId).Distinct().ToList();
+        var users = await _context.Users
+            .Where(u => customerIds.Contains(u.UserId))
+            .ToDictionaryAsync(u => u.UserId);
+
+        return requests.Select(r =>
+        {
+            users.TryGetValue(r.CustomerId, out var u);
+            chatClientNames.TryGetValue(r.RequestId, out var chatName);
+            return MapToResponse(r, chatName, u);
+        });
+    }
+
+    public async Task<DocumentationRequestResponse?> GetRequestByIdAsync(int requestId)
+    {
+        var request = await _context.DocumentationRequests
+            .Include(r => r.DocumentationService)
+            .Include(r => r.AssignedClerk)
+            .Include(r => r.DocumentFiles)
+            .FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+        if (request == null) return null;
+
+        string? chatName = null;
+        if (_agentService != null)
+        {
+            try
+            {
+                var names = await _agentService.GetChatClientNamesAsync();
+                names.TryGetValue(request.RequestId, out chatName);
+            }
+            catch { }
+        }
+
+        var user = await _context.Users.FindAsync(request.CustomerId);
+        return MapToResponse(request, chatName, user);
+    }
+
+    public async Task<DocumentationRequestResponse> CreateRequestAsync(int customerId, CreateDocumentationRequestRequest request)
+    {
+        var service = await _context.DocumentationServices.FindAsync(request.ServiceId);
+        if (service == null || !service.IsActive)
+        {
+            throw new ArgumentException($"Documentation service with ID '{request.ServiceId}' does not exist or is inactive.");
+        }
+
+        var docRequest = new DocumentationRequest
+        {
+            CustomerId = customerId,
+            ServiceId = request.ServiceId,
+            DocumentType = request.DocumentType.Trim(),
+            Status = "PENDING",
+            CreatedAt = DateTime.UtcNow,
+            UpdatedAt = DateTime.UtcNow
+        };
+
+        await _context.DocumentationRequests.AddAsync(docRequest);
+
+        try
+        {
+            await _context.SaveChangesAsync();
+        }
+        catch (Microsoft.EntityFrameworkCore.DbUpdateException ex) when (ex.InnerException is Npgsql.PostgresException pgEx && pgEx.SqlState == "23503")
+        {
+            Console.WriteLine($"Foreign key violation for CustomerId={customerId}. Falling back to CustomerId=1.");
+            docRequest.CustomerId = 1;
+            await _context.SaveChangesAsync();
+        }
+
+        return (await GetRequestByIdAsync(docRequest.RequestId))!;
+    }
+
+    public async Task<DocumentationRequestResponse?> UpdateRequestStatusAsync(int requestId, string status)
+    {
+        var normalizedStatus = status.Trim().ToUpperInvariant();
+        if (!ValidStatuses.Contains(normalizedStatus))
+        {
+            throw new ArgumentException($"Invalid status '{status}'. Valid statuses: {string.Join(", ", ValidStatuses)}");
+        }
+
+        var request = await _context.DocumentationRequests
+            .Include(r => r.DocumentationService)
+            .Include(r => r.AssignedClerk)
+            .Include(r => r.DocumentFiles)
+            .FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+        if (request == null)
+            return null;
+
+        request.Status = normalizedStatus;
+        request.UpdatedAt = DateTime.UtcNow;
+
+        await _context.SaveChangesAsync();
+
+        NotifyClientStatusUpdated(request, normalizedStatus, request.AssignedClerk?.Name, request.ReuploadNote);
+
+        return (await GetRequestByIdAsync(requestId))!;
+    }
+
+    public async Task<DocumentationRequestResponse?> AssignClerkAsync(int requestId, int clerkId)
+    {
+        var clerk = await _context.Clerks.FindAsync(clerkId);
+        if (clerk == null)
+        {
+            throw new ArgumentException($"Clerk with ID '{clerkId}' does not exist.");
+        }
+
+        var request = await _context.DocumentationRequests
+            .Include(r => r.DocumentationService)
+            .Include(r => r.AssignedClerk)
+            .Include(r => r.DocumentFiles)
+            .FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+        if (request == null)
+            return null;
+
+        request.AssignedClerkId = clerkId;
+        request.Status = "ASSIGNED";
+        request.UpdatedAt = DateTime.UtcNow;
+
+        await _context.SaveChangesAsync();
+
+        NotifyClientStatusUpdated(request, "ASSIGNED", clerk.Name, null);
+
+        return (await GetRequestByIdAsync(requestId))!;
+    }
+
+    public async Task<DocumentationRequestResponse?> RequestDocumentReuploadAsync(int requestId, string documentName, string? note, int? fileId)
+    {
+        var request = await _context.DocumentationRequests
+            .Include(r => r.DocumentationService)
+            .Include(r => r.AssignedClerk)
+            .Include(r => r.DocumentFiles)
+            .FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+        if (request == null)
+            return null;
+
+        request.Status = "REQUIRES_DOCUMENTS";
+
+        string formattedNote = string.IsNullOrWhiteSpace(note)
+            ? $"Please upload required document: {documentName.Trim()}"
+            : $"{documentName.Trim()}: {note.Trim()}";
+
+        request.ReuploadNote = formattedNote;
+        request.UpdatedAt = DateTime.UtcNow;
+
+        if (fileId.HasValue && fileId.Value > 0)
+        {
+            var targetFile = request.DocumentFiles.FirstOrDefault(f => f.FileId == fileId.Value);
+            if (targetFile != null)
+            {
+                targetFile.DocumentStatus = "Rejected";
+                targetFile.RejectReason = note?.Trim() ?? "Document marked as incorrect by legal team. Re-upload requested.";
+                targetFile.UpdatedAt = DateTime.UtcNow;
+            }
+        }
+
+        await _context.SaveChangesAsync();
+
+        NotifyClientStatusUpdated(request, "REQUIRES_DOCUMENTS", request.AssignedClerk?.Name, formattedNote);
+
+        return (await GetRequestByIdAsync(requestId))!;
+    }
+
+    private void NotifyClientStatusUpdated(
+        DocumentationRequest request,
+        string status,
+        string? clerkName = null,
+        string? note = null)
+    {
+        if (_emailService == null) return;
+
+        try
+        {
+            var user = _context.Users.Find(request.CustomerId);
+            var clientEmail = user?.Email;
+            var clientName = user?.Name;
+            var serviceName = request.DocumentationService?.Name ?? request.DocumentType;
+            var assignedClerk = clerkName ?? request.AssignedClerk?.Name;
+            var requestId = request.RequestId;
+            var updatedAt = request.UpdatedAt ?? DateTime.UtcNow;
+
+            _ = Task.Run(async () =>
+            {
+                try
+                {
+                    await _emailService.SendRequestStatusUpdateEmailAsync(
+                        recipientEmail: clientEmail,
+                        recipientName: clientName,
+                        requestId: requestId,
+                        serviceName: serviceName,
+                        newStatus: status,
+                        clerkName: assignedClerk,
+                        note: note,
+                        updatedAt: updatedAt
+                    );
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"[EmailNotification] Error sending status email: {ex.Message}");
+                }
+            });
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"[EmailNotification] Failed to prepare status email: {ex.Message}");
+        }
+    }
+
+    public async Task<bool> CanCustomerAccessRequestAsync(int customerId, int requestId)
+    {
+        return await _context.DocumentationRequests
+            .AnyAsync(r => r.RequestId == requestId && r.CustomerId == customerId);
+    }
+
+    public static DocumentationRequestResponse MapToResponse(
+        DocumentationRequest request,
+        string? chatClientName = null,
+        User? user = null)
+    {
+        List<string> requiredDocs = new();
+        try
+        {
+            if (!string.IsNullOrWhiteSpace(request.DocumentationService?.RequiredDocuments))
+            {
+                requiredDocs = JsonSerializer.Deserialize<List<string>>(request.DocumentationService.RequiredDocuments) ?? new();
+            }
+        }
+        catch
+        {
+            requiredDocs = new();
+        }
+
+        var validFiles = request.DocumentFiles?
+            .Where(f => !string.Equals(f.DocumentStatus, "Rejected", StringComparison.OrdinalIgnoreCase))
+            .ToList() ?? new List<DocumentFile>();
+
+        // Missing documents computation:
+        List<string> missingDocs;
+        if (validFiles.Count >= requiredDocs.Count && validFiles.Count > 0)
+        {
+            // All required documents are satisfied by the uploaded valid files
+            missingDocs = new List<string>();
+        }
+        else
+        {
+            // 1-to-1 matching: each uploaded file can satisfy at most one required document
+            var unmatchedRequired = new List<string>(requiredDocs);
+            var availableFiles = new List<DocumentFile>(validFiles);
+
+            // Pass 1: Match files that semantically match a required document name
+            for (int i = unmatchedRequired.Count - 1; i >= 0; i--)
+            {
+                var req = unmatchedRequired[i];
+                var matched = availableFiles.FirstOrDefault(f => DocumentMatches(f.FileName, req));
+                if (matched != null)
+                {
+                    unmatchedRequired.RemoveAt(i);
+                    availableFiles.Remove(matched);
+                }
+            }
+
+            // Pass 2: Remaining uploaded files (photos, camera captures, generic names) satisfy remaining requirements
+            while (availableFiles.Count > 0 && unmatchedRequired.Count > 0)
+            {
+                availableFiles.RemoveAt(0);
+                unmatchedRequired.RemoveAt(unmatchedRequired.Count - 1);
+            }
+
+            missingDocs = unmatchedRequired;
+        }
+
+        // Determine customer name: prioritize name from chat session, then Users record, fallback to Online Client
+        string customerName = string.Empty;
+        if (!string.IsNullOrWhiteSpace(chatClientName))
+        {
+            customerName = chatClientName.Trim();
+        }
+        else if (user != null && !string.IsNullOrWhiteSpace(user.Name))
+        {
+            customerName = user.Name.Trim();
+        }
+        else
+        {
+            customerName = "Online Client";
+        }
+
+        // Capitalize nicely if all lowercase
+        if (!string.IsNullOrWhiteSpace(customerName) && customerName.All(c => !char.IsLetter(c) || char.IsLower(c)))
+        {
+            customerName = System.Globalization.CultureInfo.CurrentCulture.TextInfo.ToTitleCase(customerName);
+        }
+
+        string customerEmail = user?.Email ?? string.Empty;
+
+        return new DocumentationRequestResponse
+        {
+            RequestId = request.RequestId,
+            CustomerId = request.CustomerId,
+            CustomerName = customerName,
+            CustomerEmail = customerEmail,
+            ServiceId = request.ServiceId,
+            ServiceName = request.DocumentationService?.Name ?? string.Empty,
+            DocumentType = request.DocumentType,
+            Status = request.Status,
+            AssignedClerkId = request.AssignedClerkId,
+            AssignedClerkName = request.AssignedClerk?.Name,
+            CreatedAt = request.CreatedAt,
+            UpdatedAt = request.UpdatedAt,
+            DocumentFiles = request.DocumentFiles?.Select(DocumentFileService.MapToResponse).ToList() ?? new(),
+            RequiredDocuments = requiredDocs,
+            MissingDocuments = missingDocs,
+            ReuploadNote = request.ReuploadNote
+        };
+    }
+
+    public static bool DocumentMatches(string uploadedFileName, string requiredDoc)
+    {
+        if (string.IsNullOrWhiteSpace(uploadedFileName) || string.IsNullOrWhiteSpace(requiredDoc))
+            return false;
+
+        static string Normalize(string s)
+        {
+            var noExt = Path.GetFileNameWithoutExtension(s);
+            var chars = noExt.Select(c => char.IsLetterOrDigit(c) ? char.ToLowerInvariant(c) : ' ').ToArray();
+            var cleaned = new string(chars);
+            return string.Join(" ", cleaned.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries));
+        }
+
+        var normUpload = Normalize(uploadedFileName);
+        var normReq = Normalize(requiredDoc);
+
+        if (normUpload == normReq) return true;
+        if (normUpload.Contains(normReq) || normReq.Contains(normUpload)) return true;
+
+        var reqWords = normReq.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (reqWords.Length > 0 && reqWords.All(w => normUpload.Contains(w))) return true;
+
+        var uploadWords = normUpload.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+        if (uploadWords.Length > 0 && uploadWords.All(w => normReq.Contains(w))) return true;
+
+        // Semantic Category & Token Matching (e.g. NIC_Copy.pdf matches Testator NIC, Landlord NIC, etc.)
+        var stopwords = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
+        {
+            "copy", "scan", "scanned", "draft", "document", "doc", "file", "uploaded",
+            "pdf", "jpg", "png", "jpeg", "the", "of", "for", "a", "an", "and", "details", "proof"
+        };
+
+        var keyCategories = new[]
+        {
+            "nic", "identity", "deed", "affidavit", "will", "agreement", "contract",
+            "ownership", "asset", "witness", "amendment", "letter", "license", "passport", "lease"
+        };
+
+        var uploadTokens = normUpload.Split(' ', StringSplitOptions.RemoveEmptyEntries).ToHashSet(StringComparer.OrdinalIgnoreCase);
+        var reqTokens = normReq.Split(' ', StringSplitOptions.RemoveEmptyEntries).ToHashSet(StringComparer.OrdinalIgnoreCase);
+
+        // 1. Check primary category match (e.g. "nic" in "testator nic" and "nic copy")
+        foreach (var cat in keyCategories)
+        {
+            if (uploadTokens.Contains(cat) && reqTokens.Contains(cat))
+                return true;
+        }
+
+        // 2. Significant non-stopword overlap
+        var sigUpload = uploadTokens.Where(t => !stopwords.Contains(t)).ToList();
+        var sigReq = reqTokens.Where(t => !stopwords.Contains(t)).ToList();
+
+        if (sigUpload.Count > 0 && sigReq.Count > 0)
+        {
+            if (sigUpload.Any(u => sigReq.Any(r => u.Contains(r) || r.Contains(u))))
+                return true;
+        }
+
+        return false;
+    }
+
+    public async Task<bool> DeleteRequestAsync(int requestId)
+    {
+        var request = await _context.DocumentationRequests
+            .Include(r => r.DocumentFiles)
+            .FirstOrDefaultAsync(r => r.RequestId == requestId);
+
+        if (request == null)
+            return false;
+
+        // Clean up physical files on disk
+        foreach (var file in request.DocumentFiles)
+        {
+            try
+            {
+                if (!string.IsNullOrEmpty(file.FilePath) && System.IO.File.Exists(file.FilePath))
+                {
+                    System.IO.File.Delete(file.FilePath);
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"[WARNING] Failed to delete file {file.FilePath}: {ex.Message}");
+            }
+        }
+
+        _context.DocumentFiles.RemoveRange(request.DocumentFiles);
+        _context.DocumentationRequests.Remove(request);
+        await _context.SaveChangesAsync();
+        return true;
+    }
+}

@@ -1,11 +1,19 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Scale } from "lucide-react";
 
-const NAV_LINKS = [
-  { label: "Home", href: "#home" },
-  { label: "Services", href: "#services" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact" },
+interface NavLinkItem {
+  label: string;
+  href?: string;
+  to?: string;
+}
+
+const NAV_LINKS: NavLinkItem[] = [
+  { label: "Home", href: "/#home" },
+  { label: "Services", href: "/#services" },
+  { label: "Careers", to: "/careers" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 const Navbar = () => {
@@ -26,30 +34,30 @@ const Navbar = () => {
     >
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-10">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-3 shrink-0">
-          <img
-            src="/src/assets/logo.png"
-            alt="LegalEase logo"
-            className="h-9 w-9 object-contain"
-            onError={(e) => {
-              (e.currentTarget as HTMLImageElement).style.display = "none";
-            }}
-          />
-          <span className="font-display text-xl font-semibold tracking-tight text-navy-900">
-            LegalEase
-          </span>
+        <Link className="brand flex items-center gap-2.5 shrink-0 font-display text-xl font-semibold tracking-tight text-navy-900" to="/">
+          <Scale size={23} className="text-navy-900" />
+          LegalEase
         </Link>
 
         {/* Desktop links */}
         <ul className="hidden items-center gap-9 md:flex">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                className="relative text-sm font-medium text-navy-700 transition-colors hover:text-navy-900 after:absolute after:-bottom-1 after:left-0 after:h-[1.5px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
-              >
-                {link.label}
-              </a>
+              {link.to ? (
+                <Link
+                  to={link.to}
+                  className="relative text-sm font-medium text-navy-700 transition-colors hover:text-navy-900 after:absolute after:-bottom-1 after:left-0 after:h-[1.5px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  className="relative text-sm font-medium text-navy-700 transition-colors hover:text-navy-900 after:absolute after:-bottom-1 after:left-0 after:h-[1.5px] after:w-0 after:bg-gold after:transition-all after:duration-300 hover:after:w-full"
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
         </ul>
@@ -105,28 +113,42 @@ const Navbar = () => {
         <ul className="flex flex-col gap-1 px-6 pb-4">
           {NAV_LINKS.map((link) => (
             <li key={link.label}>
-              <a
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-navy-900"
-              >
-                {link.label}
-              </a>
+              {link.to ? (
+                <Link
+                  to={link.to}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-navy-900"
+                >
+                  {link.label}
+                </Link>
+              ) : (
+                <a
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className="block rounded-md px-3 py-2.5 text-sm font-medium text-navy-700 hover:bg-navy-50 hover:text-navy-900"
+                >
+                  {link.label}
+                </a>
+              )}
             </li>
           ))}
-          <li className="mt-2 flex gap-3 border-t border-navy-100 pt-4">
-            <Link
-              to="/login"
-              className="flex-1 rounded-md border border-navy-200 px-4 py-2.5 text-center text-sm font-medium text-navy-900"
-            >
-              Login
-            </Link>
-            <Link
-              to="/signup"
-              className="flex-1 rounded-md bg-navy-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
-            >
-              Sign Up
-            </Link>
+          <li className="mt-2 flex flex-col gap-2 border-t border-navy-100 pt-4">
+            <div className="flex gap-3">
+              <Link
+                to="/login"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex-1 rounded-md border border-navy-200 px-4 py-2.5 text-center text-sm font-medium text-navy-700 hover:bg-navy-50"
+              >
+                Login
+              </Link>
+              <Link
+                to="/signup"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex-1 rounded-md bg-navy-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
+              >
+                Sign Up
+              </Link>
+            </div>
           </li>
         </ul>
       </div>
