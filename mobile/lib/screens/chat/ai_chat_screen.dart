@@ -32,13 +32,13 @@ class _AiChatScreenState extends State<AiChatScreen> {
   String? _sessionStatus;
 
   final List<String> _suggestedPrompts = [
-    '📁 View All Services',
+    '📁 View All 12 Document Services',
     'Rental & Lease Agreement',
     'Business & Corporate Registration',
     'Power of Attorney',
-    'Property Transfer',
-    'Bail Application',
-    '📁 View All Sample Docs',
+    'Property Transfer Deed',
+    'Affidavit & Declaration',
+    '✨ Test with Sample Legal Docs',
   ];
 
   String get _chatStorageKey {
@@ -177,8 +177,8 @@ class _AiChatScreenState extends State<AiChatScreen> {
       }
 
       final welcomeMsg = session['message']?.toString() ?? (isGuest
-          ? 'Hello! I am your AI Legal Assistant. You are currently in **Guest Mode**.\n\nWhat legal service or document assistance do you need today? You can select an option below or ask to view all services.'
-          : 'Hello ${user.fullName.split(" ").first}! I am your AI Legal Assistant.\n\nWhat legal service or document assistance do you need today? You can tap an option below or describe your legal matter.');
+          ? 'Hello! I am your **Document Agent** for LegalEase Document & Clerk Services (Member 3).\n\nI can verify your legal documents (affidavits, deeds, power of attorney, lease agreements), analyze requirements, and prepare your request for clerk approval. How can I assist with your documents today?'
+          : 'Hello ${user.fullName.split(" ").first}! I am your **Document Agent** for LegalEase Document & Clerk Services.\n\nI can verify your legal documents, check statutory requirements, or help submit a clerk request. Select a document service or describe your documentation requirements below:');
 
       _messages.clear();
       _messages.add(
@@ -192,7 +192,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
       _sessionId = 'session-local-${DateTime.now().millisecondsSinceEpoch}';
       _messages.add(
         ChatMessage.agent(
-          'Welcome to Legal Intelligence Assistant. How can I assist you today?',
+          'Welcome to the Document Agent (Document & Clerk AI). I can assist you with verifying legal documents, requirements check, and clerk workflows. How can I help today?',
           options: [
             'Rental & Lease Agreement',
             'Business Registration',
@@ -672,7 +672,7 @@ class _AiChatScreenState extends State<AiChatScreen> {
                 color: AppTheme.secondaryAmber,
                 borderRadius: BorderRadius.circular(8),
               ),
-              child: const Icon(Icons.auto_awesome, color: AppTheme.primaryNavy, size: 18),
+              child: const Icon(Icons.description_rounded, color: AppTheme.primaryNavy, size: 18),
             ),
             const SizedBox(width: 8),
             Expanded(
@@ -681,12 +681,12 @@ class _AiChatScreenState extends State<AiChatScreen> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   const Text(
-                    'AI Legal Assistant',
+                    'Document Agent',
                     style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
                     overflow: TextOverflow.ellipsis,
                   ),
                   Text(
-                    _sessionStatus != null ? 'State: $_sessionStatus' : 'LangGraph + Gemini 3.5',
+                    _sessionStatus != null ? 'State: $_sessionStatus' : 'Document & Clerk AI • LangGraph & OCR',
                     style: const TextStyle(fontSize: 11, color: Colors.white70),
                     overflow: TextOverflow.ellipsis,
                   ),
