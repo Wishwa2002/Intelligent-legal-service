@@ -20,9 +20,9 @@ class ApiConfig {
       final savedBackend = prefs.getString(_backendPrefKey);
       final savedAi = prefs.getString(_aiPrefKey);
 
-      // If an old unreachable LAN IP was saved, clear it and use localhost
+      // If running on Web, or if an outdated unreachable LAN IP was saved, use localhost
       final isOutdatedBackend = savedBackend != null &&
-          (savedBackend.contains('172.27.') || savedBackend.contains('10.164.'));
+          (kIsWeb || savedBackend.contains('10.') || savedBackend.contains('172.'));
       if (savedBackend != null && savedBackend.isNotEmpty && !isOutdatedBackend) {
         backendUrl.value = savedBackend;
       } else {
@@ -31,7 +31,7 @@ class ApiConfig {
       }
 
       final isOutdatedAi = savedAi != null &&
-          (savedAi.contains('172.27.') || savedAi.contains('10.164.'));
+          (kIsWeb || savedAi.contains('10.') || savedAi.contains('172.'));
       if (savedAi != null && savedAi.isNotEmpty && !isOutdatedAi) {
         aiServiceUrl.value = savedAi;
       } else {

@@ -139,6 +139,16 @@ public class AuthController : ControllerBase
 
             var role = user.Role ?? "Customer";
 
+            Guid? lawyerId = null;
+            if (role.Equals("Lawyer", StringComparison.OrdinalIgnoreCase))
+            {
+                var lawyer = await _context.Lawyers.FirstOrDefaultAsync(l => l.Email != null && l.Email.ToLower() == email);
+                if (lawyer != null)
+                {
+                    lawyerId = lawyer.LawyerId;
+                }
+            }
+
             var token = _jwtService.GenerateToken(
                 user.UserId,
                 user.Email,
@@ -149,6 +159,7 @@ public class AuthController : ControllerBase
             {
                 token,
                 userId = user.UserId,
+                lawyerId = lawyerId?.ToString(),
                 name = user.Name,
                 email = user.Email,
                 role,

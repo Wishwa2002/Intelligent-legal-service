@@ -18,6 +18,7 @@ import { ServiceRequestDetailPage } from "./pages/customer/ServiceRequestDetailP
 import { AdminServiceRequestsPage } from "./pages/admin/ServiceRequestsAdminPage";
 // ── Member 2: Appointments & Booking Management ──
 import { AppointmentsPage } from "./pages/admin/AppointmentsPage";
+import { LawyersPage } from "./pages/admin/LawyersPage";
 
 
 function App() {
@@ -113,6 +114,14 @@ function App() {
           element={
             <AdminRoute>
               <AppointmentsPage />
+            </AdminRoute>
+          }
+        />
+        <Route
+          path="/admin/lawyers"
+          element={
+            <AdminRoute>
+              <LawyersPage />
             </AdminRoute>
           }
         />

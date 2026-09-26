@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import '../../config/app_theme.dart';
 import '../../models/appointment.dart';
 import '../../models/lawyer.dart';
+import '../../services/auth_service.dart';
 import '../../services/appointment_service.dart';
 import '../../services/lawyer_service.dart';
 
@@ -38,8 +39,10 @@ class _LawyerScheduleScreenState extends State<LawyerScheduleScreen> {
     });
 
     try {
-      // In mobile, lawyer sees all their appointments or filtered by status
+      final user = AuthService.currentUser.value;
       final list = await AppointmentService.getAppointments(
+        lawyerId: user?.lawyerId,
+        lawyerEmail: user?.email,
         status: _activeTab == 'All' ? null : _activeTab,
       );
       if (mounted) {

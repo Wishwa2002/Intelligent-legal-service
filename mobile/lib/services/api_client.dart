@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
+import 'package:flutter/foundation.dart';
 import 'package:http/http.dart' as http;
 import 'package:http_parser/http_parser.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -149,6 +150,7 @@ class ApiClient {
   }
 
   static String? _getFailoverUrl(String currentUrl) {
+    if (kIsWeb) return null;
     final lanHost = Uri.tryParse(ApiConfig.lanBackendUrl)?.host ?? '10.88.177.23';
     if (currentUrl.contains('localhost') || currentUrl.contains('127.0.0.1')) {
       return currentUrl.replaceAll('localhost', lanHost).replaceAll('127.0.0.1', lanHost);

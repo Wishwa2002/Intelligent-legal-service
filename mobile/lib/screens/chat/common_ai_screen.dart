@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../config/app_theme.dart';
 import '../../services/auth_service.dart';
+import '../appointments/scheduling_agent_screen.dart';
 
 class CommonAiScreen extends StatefulWidget {
   const CommonAiScreen({super.key});
@@ -28,6 +29,7 @@ class _CommonAiScreenState extends State<CommonAiScreen> {
   bool _thinking = false;
 
   final List<String> _suggestedQuestions = [
+    '📅 Schedule Consultation with a Lawyer (AI Agent)',
     '⚖️ How do I file a civil lawsuit in Sri Lanka?',
     '🏢 What are the steps for company registration?',
     '👨‍👩‍👧 How are child custody matters handled?',
@@ -60,6 +62,14 @@ class _CommonAiScreenState extends State<CommonAiScreen> {
   void _sendMessage(String query) {
     final trimmed = query.trim();
     if (trimmed.isEmpty) return;
+
+    if (trimmed.contains('Schedule Consultation') || trimmed.contains('Lawyer (AI Agent)')) {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (_) => const SchedulingAgentScreen()),
+      );
+      return;
+    }
 
     setState(() {
       _messages.add(_CommonAiMessage(text: trimmed, isUser: true));
@@ -169,6 +179,16 @@ class _CommonAiScreenState extends State<CommonAiScreen> {
           ],
         ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.calendar_month, color: AppTheme.secondaryAmber),
+            tooltip: 'Lawyer Scheduling Assistant',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (_) => const SchedulingAgentScreen()),
+              );
+            },
+          ),
           IconButton(
             icon: const Icon(Icons.restart_alt),
             tooltip: 'Clear Chat',

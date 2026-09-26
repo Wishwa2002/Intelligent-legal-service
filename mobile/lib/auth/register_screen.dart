@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../config/app_theme.dart';
 import 'auth_service.dart';
+import '../screens/main_navigation_screen.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({super.key});
@@ -35,20 +36,45 @@ class _RegisterScreenState extends State<RegisterScreen> {
     });
 
     try {
+      final email = _emailController.text.trim();
+      final password = _passwordController.text;
+
       await AuthService.register(
         fullName: _fullNameController.text.trim(),
-        email: _emailController.text.trim(),
-        password: _passwordController.text,
+        email: email,
+        password: password,
       );
 
-      if (mounted) {
-        ScaffoldMessenger.of(context).showSnackBar(
-          const SnackBar(
-            content: Text('Registration successful! Please sign in with your credentials.'),
-            backgroundColor: Color(0xFF16A34A),
-          ),
+      // Auto sign-in immediately so user is taken straight into the app
+      try {
+        await AuthService.login(
+          email: email,
+          password: password,
         );
-        Navigator.pop(context);
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Registration successful! Welcome to LegalEase.'),
+              backgroundColor: Color(0xFF16A34A),
+            ),
+          );
+          Navigator.pushAndRemoveUntil(
+            context,
+            MaterialPageRoute(builder: (_) => const MainNavigationScreen()),
+            (route) => false,
+          );
+          return;
+        }
+      } catch (_) {
+        if (mounted) {
+          ScaffoldMessenger.of(context).showSnackBar(
+            const SnackBar(
+              content: Text('Registration successful! Please sign in with your credentials.'),
+              backgroundColor: Color(0xFF16A34A),
+            ),
+          );
+          Navigator.pop(context);
+        }
       }
     } catch (e) {
       if (mounted) {
