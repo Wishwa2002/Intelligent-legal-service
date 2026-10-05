@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Scale } from "lucide-react";
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -9,15 +10,8 @@ const Footer = () => {
         <div className="grid grid-cols-1 gap-12 md:grid-cols-4">
           {/* Brand */}
           <div className="md:col-span-2">
-            <Link to="/" className="flex items-center gap-3">
-              <img
-                src="/src/assets/logo.png"
-                alt="LegalEase logo"
-                className="h-8 w-8 object-contain"
-                onError={(e) => {
-                  (e.currentTarget as HTMLImageElement).style.display = "none";
-                }}
-              />
+            <Link to="/" className="brand flex items-center gap-2.5">
+              <Scale size={23} className="text-gold" />
               <span className="font-display text-lg font-semibold text-white">
                 LegalEase
               </span>
@@ -34,10 +28,11 @@ const Footer = () => {
               Navigate
             </h4>
             <ul className="mt-4 space-y-2.5 text-sm">
-              <li><a href="#home" className="transition-colors hover:text-white">Home</a></li>
-              <li><a href="#services" className="transition-colors hover:text-white">Services</a></li>
-              <li><a href="#about" className="transition-colors hover:text-white">About</a></li>
-              <li><a href="#contact" className="transition-colors hover:text-white">Contact</a></li>
+              <li><a href="/#home" className="transition-colors hover:text-white">Home</a></li>
+              <li><a href="/#services" className="transition-colors hover:text-white">Services</a></li>
+              <li><Link to="/careers" className="transition-colors hover:text-white">Careers</Link></li>
+              <li><a href="/#about" className="transition-colors hover:text-white">About</a></li>
+              <li><a href="/#contact" className="transition-colors hover:text-white">Contact</a></li>
             </ul>
           </div>
 

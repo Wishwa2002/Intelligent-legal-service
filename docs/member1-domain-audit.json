@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-03",
+  "mode": "read-only audit of currently configured project database via public API",
+  "practiceAreas": [
+    "Corporate & Commercial Law",
+    "Criminal Law",
+    "Real Estate & Property Law",
+    "Labour & Employment Law",
+    "Tax Law"
+  ],
+  "lawyers": 34,
+  "activeLawyers": 29,
+  "lawyersWithExactlyOnePracticeArea": 34,
+  "lawyersWithMissingOrMultiplePracticeAreas": 0,
+  "legalServices": 25,
+  "servicesMatchingOneCatalogArea": 25,
+  "servicesOutsideCatalog": 0,
+  "familyLawExists": false
+}

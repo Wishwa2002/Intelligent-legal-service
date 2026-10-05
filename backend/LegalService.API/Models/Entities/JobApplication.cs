@@ -4,11 +4,12 @@ namespace LegalService.API.Models.Entities;
 
 public class JobApplication
 {
-    public Guid ApplicationId { get; set; }
-    public Guid CareerId { get; set; }
+    public int ApplicationId { get; set; }
+    public int CareerId { get; set; }
     public string ApplicantName { get; set; } = string.Empty;
-    public string Status { get; set; } = string.Empty;
-    public DateTime AppliedAt { get; set; } = DateTime.UtcNow;
+    public string Status { get; set; } = "Submitted";
+    public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
+    public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
     // Navigation properties
     public Career Career { get; set; } = null!;

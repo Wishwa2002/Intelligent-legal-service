@@ -1,0 +1,42 @@
+name: Backend CI
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+    paths:
+      - "backend/**"
+      - "LegalService.sln"
+      - ".github/workflows/backend-ci.yml"
+
+  push:
+    branches:
+      - develop
+      - main
+    paths:
+      - "backend/**"
+      - "LegalService.sln"
+      - ".github/workflows/backend-ci.yml"
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Restore dependencies
+        run: dotnet restore LegalService.sln
+
+      - name: Build solution
+        run: dotnet build LegalService.sln --configuration Release --no-restore
+
+      - name: Run tests
+        run: dotnet test LegalService.sln --configuration Release --no-build --verbosity normal

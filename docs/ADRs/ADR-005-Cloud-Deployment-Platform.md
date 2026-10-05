@@ -8,9 +8,9 @@ The university assignment requires all components of the system to be deployed a
 1. The ASP.NET Core API must provide public Health and Swagger URLs.
 2. The PostgreSQL database must be deployed securely with migrations applied.
 3. The React web application must be hosted on a live public URL.
-4. The Python Agentic AI service must run in a location where the C# API can securely call it.
+4. The two Python FastAPI services must run where only the C# API calls their protected endpoints.
 
-All hosting must be done using free-tier / no-cost cloud service plans.
+Hosting costs must be checked against the selected student accounts before deployment.
 
 ## Options Considered
 1. **Microsoft Azure / AWS**: Highly professional but requires credit cards, and free credits expire quickly.
@@ -23,15 +23,15 @@ All hosting must be done using free-tier / no-cost cloud service plans.
 ## Decision
 We will deploy the application components using the following stack:
 - **Database**: Hosted on **Neon DB**.
-- **C# Backend & Python AI Backend**: Hosted on **Render** (via Dockerfiles).
+- **C# Backend & two Python AI services**: Planned for **Render** using the three repository Dockerfiles.
 - **React Frontend**: Hosted on **Vercel**.
 - **Flutter Mobile**: Distributed as a runnable Android APK.
 
 ## Justification
-- **100% Free**: No financial cost to the students.
+- **Cost goal**: Select available student or free plans after checking current provider limits.
 - **EF Core Migrations**: Neon DB supports remote SSL connections, allowing EF Core CLI to apply migrations from GitHub Actions or local machines.
-- **CI/CD Integration**: Vercel and Render connect directly to GitHub, enabling auto-deploy on main branch pushes.
+- **Deployment configuration**: The three Dockerfiles and Vercel rewrite are prepared on the deployment-readiness branch. Hosting and live URLs are still to be verified.
 
 ## Consequences
 - **Positive**: Production-grade environments, fully automated deployments, zero-cost.
-- **Negative**: Render's free tier spins down containers after 15 minutes of inactivity. Initial request cold starts may take 30-50 seconds (this behavior will be clearly documented for the course evaluators).
+- **Operational work**: Apply migrations to the hosted PostgreSQL database, configure each service's environment variables, and record live health, Swagger, and end-to-end evidence before submission.

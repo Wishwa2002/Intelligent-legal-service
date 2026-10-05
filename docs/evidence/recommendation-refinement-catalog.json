@@ -1,0 +1,18 @@
+{
+  "mode": "Read-only local catalog inspection; no external AI request or booking",
+  "practiceAreas": [
+    "Corporate & Commercial Law",
+    "Criminal Law",
+    "Real Estate & Property Law",
+    "Labour & Employment Law",
+    "Tax Law",
+    "[Demo] Corporate & Commercial Law",
+    "[Demo] Criminal Law",
+    "[Demo] Labour & Employment Law",
+    "[Demo] Real Estate & Property Law",
+    "[Demo] Tax Law"
+  ],
+  "legalServiceCount": 25,
+  "servicesWithExactlyOneMatchingPracticeArea": 25,
+  "familyLawPresent": false
+}

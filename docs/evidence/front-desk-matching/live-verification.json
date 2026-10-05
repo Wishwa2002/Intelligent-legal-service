@@ -1,0 +1,23 @@
+{
+  "existing": {
+    "workflowId": "6e5072fb-cfa4-4ce0-b15a-6644cda94c74",
+    "clientId": 15,
+    "appointmentId": "0fb61714-78ee-4990-a7d3-e51eaf6484f9",
+    "date": "2026-10-05",
+    "source": "AI_FRONT_DESK",
+    "normalAppointmentCopies": 1,
+    "conflictRejected": true
+  },
+  "conflictFixture": {
+    "appointmentId": "50027eca-239a-45c3-a0af-98ec24b47d14",
+    "status": "Cancelled"
+  },
+  "newClient": {
+    "clientId": 53,
+    "workflowId": "c542acc1-59c5-4054-8025-d602b2c74489",
+    "appointmentId": "36a85b70-6aa4-4cb8-b700-6eb3b42af38b",
+    "date": "2026-10-05",
+    "source": "AI_FRONT_DESK",
+    "normalClientManagementVisible": true
+  }
+}

@@ -1,0 +1,7 @@
+fastapi==0.111.0
+uvicorn==0.30.1
+httpx==0.28.1
+langgraph==1.2.12
+google-genai==1.75.0
+pydantic==2.13.5
+python-dotenv==1.0.1

@@ -14,6 +14,8 @@ public class ApplicationDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Role> Roles { get; set; }
     public DbSet<UserRole> UserRoles { get; set; }
+    public DbSet<LawyerWorkingSchedule> LawyerWorkingSchedules { get; set; }
+    public DbSet<LawyerUnavailability> LawyerUnavailabilities { get; set; }
     public DbSet<Lawyer> Lawyers { get; set; }
     public DbSet<Specialization> Specializations { get; set; }
     public DbSet<LawyerSpecialization> LawyerSpecializations { get; set; }
@@ -31,40 +33,134 @@ public class ApplicationDbContext : DbContext
     public DbSet<JobApplication> JobApplications { get; set; }
     public DbSet<ServiceRequest> ServiceRequests { get; set; }
     public DbSet<AgentWorkflow> AgentWorkflows { get; set; }
+    public DbSet<AgentSessionState> AgentSessionStates { get; set; }
     public DbSet<AgentStep> AgentSteps { get; set; }
     public DbSet<ToolExecution> ToolExecutions { get; set; }
     public DbSet<ValidationResult> ValidationResults { get; set; }
     public DbSet<ApprovalDecision> ApprovalDecisions { get; set; }
     public DbSet<ExecutionSummary> ExecutionSummaries { get; set; }
     public DbSet<AuditLog> AuditLogs { get; set; }
+    public DbSet<LawyerRecommendationWorkflow> LawyerRecommendationWorkflows { get; set; }
+
+    public DbSet<PracticeAreaWorkforceSetting> PracticeAreaWorkforceSettings { get; set; }
+    public DbSet<WorkforceDemoState> WorkforceDemoStates { get; set; }
+
+    public DbSet<HiringSuggestionWorkflow> HiringSuggestionWorkflows { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
+        modelBuilder.Entity<AgentSessionState>(entity =>
+        {
+            entity.HasKey(x => new { x.Kind, x.SessionId });
+            entity.Property(x => x.Kind).HasMaxLength(20);
+            entity.Property(x => x.SessionId).HasMaxLength(64);
+            entity.Property(x => x.StateJson).HasColumnType("jsonb");
+        });
+        modelBuilder.Entity<Lawyer>().Property(l => l.DefaultAppointmentDurationMinutes).HasDefaultValue(30);
+        modelBuilder.Entity<Lawyer>().ToTable(t => t.HasCheckConstraint("CK_Lawyer_Duration", "\"DefaultAppointmentDurationMinutes\" BETWEEN 15 AND 240"));
+        modelBuilder.Entity<LawyerWorkingSchedule>(e => {
+            e.HasKey(s => s.Id);
+            e.HasIndex(s => new { s.LawyerId, s.DayOfWeek }).IsUnique();
+            e.HasOne(s => s.Lawyer).WithMany().HasForeignKey(s => s.LawyerId).OnDelete(DeleteBehavior.Cascade);
+            e.ToTable(t => { t.HasCheckConstraint("CK_Schedule_Day", "\"DayOfWeek\" BETWEEN 0 AND 6"); t.HasCheckConstraint("CK_Schedule_Time", "NOT \"IsWorkingDay\" OR \"StartTime\" < \"EndTime\""); });
+        });
+        modelBuilder.Entity<LawyerUnavailability>(e => {
+            e.HasKey(s => s.Id);
+            e.HasIndex(s => new { s.LawyerId, s.StartDateTime, s.EndDateTime });
+            e.HasOne(s => s.Lawyer).WithMany().HasForeignKey(s => s.LawyerId).OnDelete(DeleteBehavior.Cascade);
+            e.Property(s => s.StartDateTime).HasColumnType("timestamp without time zone");
+            e.Property(s => s.EndDateTime).HasColumnType("timestamp without time zone");
+            e.Property(s => s.Reason).HasMaxLength(300);
+            e.ToTable(t => t.HasCheckConstraint("CK_Unavailability_Time", "\"StartDateTime\" < \"EndDateTime\""));
+        });
+        modelBuilder.Entity<LawyerAvailability>().HasIndex(s => new { s.LawyerId, s.Date });
+        modelBuilder.Entity<Appointment>().HasIndex(a => new { a.LawyerId, a.Status });
+
+
+        modelBuilder.Entity<PracticeAreaWorkforceSetting>(entity =>
+        {
+            entity.HasKey(x => x.Id);
+            entity.HasIndex(x => x.PracticeAreaId).IsUnique();
+            entity.HasOne<Specialization>().WithMany().HasForeignKey(x => x.PracticeAreaId).OnDelete(DeleteBehavior.Cascade);
+            entity.ToTable(t => t.HasCheckConstraint("CK_WorkforceSettings_Ranges", "\"MinimumActiveLawyers\" BETWEEN 0 AND 100 AND \"TargetActiveLawyers\" BETWEEN \"MinimumActiveLawyers\" AND 200 AND \"MinimumFutureSlots\" BETWEEN 0 AND 1000 AND \"HighDemandThreshold\" BETWEEN 0 AND 10000 AND \"WatchCapacityRatio\" > 0 AND \"WatchCapacityRatio\" <= 1"));
+        });
+        modelBuilder.Entity<WorkforceDemoState>(entity =>
+        {
+            entity.HasKey(x => x.Id);
+            entity.Property(x => x.Id).ValueGeneratedNever();
+            entity.Property(x => x.ArtifactsJson).HasColumnType("jsonb").IsConcurrencyToken();
+        });
+
+        modelBuilder.Entity<LawyerRecommendationWorkflow>(entity =>
+        {
+            entity.HasKey(x => x.WorkflowId);
+            entity.Property(x => x.Status).HasMaxLength(32).IsRequired();
+            entity.Property(x => x.Status).IsConcurrencyToken();
+            entity.Property(x => x.ClientId).IsConcurrencyToken();
+            entity.Property(x => x.ReviewStage).HasMaxLength(20).IsRequired().IsConcurrencyToken();
+            entity.Property(x => x.SelectedLawyerId).IsConcurrencyToken();
+            entity.Property(x => x.SelectedSlotId).IsConcurrencyToken();
+            entity.Property(x => x.BookingDate).IsConcurrencyToken();
+            entity.HasOne<User>().WithMany().HasForeignKey(x => x.ClientId).OnDelete(DeleteBehavior.SetNull);
+            entity.Property(x => x.UserRequirement).HasMaxLength(4000).IsRequired();
+            entity.Property(x => x.ParsedRequirementJson).HasColumnType("jsonb");
+            entity.Property(x => x.RecommendationsJson).HasColumnType("jsonb");
+            entity.Property(x => x.WarningsJson).HasColumnType("jsonb");
+            entity.Property(x => x.AuditJson).HasColumnType("jsonb");
+            entity.HasIndex(x => x.OwnerUserId);
+            entity.HasIndex(x => x.Status);
+        });
+
+        modelBuilder.Entity<HiringSuggestionWorkflow>(entity =>
+        {
+            entity.HasKey(x => x.WorkflowId);
+            entity.Property(x => x.Status).HasMaxLength(32).IsRequired().IsConcurrencyToken();
+            entity.Property(x => x.SystemSnapshotJson).HasColumnType("jsonb");
+            entity.Property(x => x.AiDraftJson).HasColumnType("jsonb");
+            entity.Property(x => x.ReviewedDraftJson).HasColumnType("jsonb");
+            entity.Property(x => x.ApprovedTitle).HasMaxLength(200);
+            entity.HasOne<Specialization>().WithMany().HasForeignKey(x => x.PracticeAreaId).OnDelete(DeleteBehavior.SetNull);
+            entity.HasOne<Career>().WithMany().HasForeignKey(x => x.CareerOpeningId).OnDelete(DeleteBehavior.SetNull);
+            entity.HasIndex(x => new { x.OwnerUserId, x.Status });
+            entity.HasIndex(x => new { x.OwnerUserId, x.PracticeAreaId }).IsUnique().HasFilter("\"Status\" = 'AWAITING_APPROVAL' AND \"PracticeAreaId\" IS NOT NULL");
+        });
+        modelBuilder.Entity<Career>().HasOne<Specialization>().WithMany()
+            .HasForeignKey(x => x.PracticeAreaId).OnDelete(DeleteBehavior.SetNull);
+        // Careers has no closed state. One linked existing opening is active recruitment.
+        modelBuilder.Entity<Career>().HasIndex(x => x.PracticeAreaId).IsUnique().HasFilter("\"PracticeAreaId\" IS NOT NULL");
 
         // ==========================================
         // 1. IDENTITY AND AUTHORIZATION CONFIG
         // ==========================================
+
+        // User entity mapped directly to Neon DB table "Users"
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.ToTable("Users");
+            entity.HasKey(u => u.UserId);
+            entity.Property(u => u.UserId).HasColumnName("UserId").ValueGeneratedOnAdd();
+            entity.Property(u => u.Name).HasColumnName("Name").IsRequired();
+            entity.Property(u => u.Email).HasColumnName("Email").IsRequired();
+            entity.Property(u => u.Role).HasColumnName("Role").IsRequired();
+            entity.Property(u => u.PasswordHash).HasColumnName("PasswordHash");
+            entity.Property(u => u.CreatedAt).HasColumnName("CreatedAt").IsRequired();
+            entity.Property(u => u.UpdatedAt).HasColumnName("UpdatedAt").IsRequired();
+            entity.HasIndex(u => u.Email).IsUnique();
+        });
 
         // UserRole Composite PK
         modelBuilder.Entity<UserRole>()
             .HasKey(ur => new { ur.UserId, ur.RoleId });
 
         modelBuilder.Entity<UserRole>()
-            .HasOne(ur => ur.User)
-            .WithMany(u => u.UserRoles)
-            .HasForeignKey(ur => ur.UserId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .Ignore(ur => ur.User);
 
         modelBuilder.Entity<UserRole>()
             .HasOne(ur => ur.Role)
             .WithMany(r => r.UserRoles)
             .HasForeignKey(ur => ur.RoleId)
             .OnDelete(DeleteBehavior.Cascade);
-
-        modelBuilder.Entity<User>()
-            .HasIndex(u => u.Email)
-            .IsUnique();
 
         modelBuilder.Entity<Role>()
             .HasIndex(r => r.Name)
@@ -75,15 +171,11 @@ public class ApplicationDbContext : DbContext
         // 2. LAWYER MANAGEMENT CONFIG
         // ==========================================
 
-        // 1:0..1 relationship between User and Lawyer
         modelBuilder.Entity<Lawyer>()
             .HasKey(l => l.LawyerId);
 
         modelBuilder.Entity<Lawyer>()
-            .HasOne(l => l.User)
-            .WithOne(u => u.Lawyer)
-            .HasForeignKey<Lawyer>(l => l.LawyerId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .Ignore(l => l.User);
 
         modelBuilder.Entity<Lawyer>()
             .HasIndex(l => l.LicenseNumber)
@@ -172,10 +264,7 @@ public class ApplicationDbContext : DbContext
             .HasKey(a => a.AppointmentId);
 
         modelBuilder.Entity<Appointment>()
-            .HasOne(a => a.Customer)
-            .WithMany(u => u.Appointments)
-            .HasForeignKey(a => a.CustomerId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .Ignore(a => a.Customer);
 
         modelBuilder.Entity<Appointment>()
             .HasOne(a => a.Lawyer)
@@ -213,15 +302,9 @@ public class ApplicationDbContext : DbContext
         // 5. CLERK AND DOCUMENTATION CONFIG
         // ==========================================
 
-        // 1:0..1 relationship between User and Clerk
+        // 1:0..1 relationship between User and Clerk — REMOVED (DB uses int PK, no FK to Users)
         modelBuilder.Entity<Clerk>()
             .HasKey(c => c.ClerkId);
-
-        modelBuilder.Entity<Clerk>()
-            .HasOne(c => c.User)
-            .WithOne(u => u.Clerk)
-            .HasForeignKey<Clerk>(c => c.ClerkId)
-            .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<DocumentationService>()
             .HasKey(ds => ds.ServiceId);
@@ -230,14 +313,24 @@ public class ApplicationDbContext : DbContext
             .HasIndex(ds => ds.Name)
             .IsUnique();
 
+        modelBuilder.Entity<DocumentationService>()
+            .Property(ds => ds.IsActive)
+            .HasDefaultValue(true);
+
+        modelBuilder.Entity<DocumentationService>()
+            .HasIndex(ds => ds.IsActive);
+
         modelBuilder.Entity<DocumentationRequest>()
             .HasKey(dr => dr.RequestId);
 
         modelBuilder.Entity<DocumentationRequest>()
-            .HasOne(dr => dr.Customer)
-            .WithMany(u => u.DocumentationRequests)
-            .HasForeignKey(dr => dr.CustomerId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .Property(dr => dr.RequestId)
+            .ValueGeneratedOnAdd();
+
+        // Map ClerkId FK column name to match DB column "ClerkId" (not "AssignedClerkId")
+        modelBuilder.Entity<DocumentationRequest>()
+            .Property(dr => dr.AssignedClerkId)
+            .HasColumnName("ClerkId");
 
         modelBuilder.Entity<DocumentationRequest>()
             .HasOne(dr => dr.DocumentationService)
@@ -266,6 +359,15 @@ public class ApplicationDbContext : DbContext
             .HasForeignKey(df => df.RequestId)
             .OnDelete(DeleteBehavior.Cascade);
 
+        modelBuilder.Entity<DocumentFile>()
+            .HasIndex(df => df.RequestId);
+
+        modelBuilder.Entity<DocumentFile>()
+            .Property(df => df.DocumentStatus)
+            .HasDefaultValue("Received");
+
+        modelBuilder.Entity<DocumentFile>()
+            .HasIndex(df => df.DocumentStatus);
 
         // ==========================================
         // 6. CAREER MANAGEMENT CONFIG
@@ -292,13 +394,51 @@ public class ApplicationDbContext : DbContext
             .HasKey(sr => sr.ServiceRequestId);
 
         modelBuilder.Entity<ServiceRequest>()
-            .HasOne(sr => sr.Customer)
-            .WithMany(u => u.ServiceRequests)
-            .HasForeignKey(sr => sr.CustomerId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .Property(sr => sr.ServiceRequestId)
+            .ValueGeneratedOnAdd();
+
+        // Store Status as its string name (e.g. "Submitted") for readability in DB
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.Status)
+            .HasConversion<string>()
+            .HasMaxLength(30)
+            .IsRequired();
+
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.Title)
+            .HasMaxLength(200)
+            .IsRequired();
+
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.Description)
+            .HasMaxLength(2000)
+            .IsRequired();
+
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.RequestType)
+            .HasMaxLength(100)
+            .IsRequired();
+
+        modelBuilder.Entity<ServiceRequest>()
+            .Property(sr => sr.Priority)
+            .HasMaxLength(20);
+
+        // Customer relationship: ServiceRequest.CustomerId → User.UserId
+        // Ignore navigation to avoid FK conflict with User table (int PK)
+        modelBuilder.Entity<ServiceRequest>()
+            .Ignore(sr => sr.Customer);
 
         modelBuilder.Entity<ServiceRequest>()
             .HasIndex(sr => sr.CustomerId);
+
+        modelBuilder.Entity<ServiceRequest>()
+            .HasIndex(sr => sr.Status);
+
+        modelBuilder.Entity<ServiceRequest>()
+            .HasIndex(sr => sr.RequestType);
+
+        modelBuilder.Entity<ServiceRequest>()
+            .HasIndex(sr => sr.CreatedAt);
 
 
         // ==========================================
@@ -385,10 +525,7 @@ public class ApplicationDbContext : DbContext
             .OnDelete(DeleteBehavior.Cascade);
 
         modelBuilder.Entity<ApprovalDecision>()
-            .HasOne(ad => ad.Approver)
-            .WithMany(u => u.ApprovalDecisions)
-            .HasForeignKey(ad => ad.ApproverId)
-            .OnDelete(DeleteBehavior.Restrict);
+            .Ignore(ad => ad.Approver);
 
         modelBuilder.Entity<ExecutionSummary>()
             .HasKey(es => es.SummaryId);
@@ -412,10 +549,7 @@ public class ApplicationDbContext : DbContext
             .HasKey(al => al.AuditLogId);
 
         modelBuilder.Entity<AuditLog>()
-            .HasOne(al => al.User)
-            .WithMany(u => u.AuditLogs)
-            .HasForeignKey(al => al.UserId)
-            .OnDelete(DeleteBehavior.SetNull);
+            .Ignore(al => al.User);
 
         modelBuilder.Entity<AuditLog>()
             .HasIndex(al => al.UserId);
@@ -448,16 +582,43 @@ public class ApplicationDbContext : DbContext
             new Specialization { SpecializationId = 4, Name = "Property Law", Description = "Real estate transactions, leases, and title disputes." }
         );
 
+        // Match the existing migration snapshot so model checks do not see new seed data on every build.
+        var legalServiceSeedCreatedAt = new DateTime(2026, 10, 4, 15, 11, 10, 985, DateTimeKind.Utc).AddTicks(3860);
+        var documentationSeedCreatedAt = new DateTime(2026, 10, 4, 15, 11, 10, 985, DateTimeKind.Utc).AddTicks(3880);
         modelBuilder.Entity<LegalService.API.Models.Entities.LegalService>().HasData(
-            new LegalService.API.Models.Entities.LegalService { LegalServiceId = 1, ServiceName = "Criminal Defense Consulting", Description = "Representation and case review for criminal defense cases.", Category = "Criminal Law" },
-            new LegalService.API.Models.Entities.LegalService { LegalServiceId = 2, ServiceName = "Divorce & Custody Filing", Description = "Preparation and filing for divorce and child custody.", Category = "Family Law" },
-            new LegalService.API.Models.Entities.LegalService { LegalServiceId = 3, ServiceName = "Corporate Registration & Compliance", Description = "Incorporation filings and compliance setup.", Category = "Corporate Law" }
+            new LegalService.API.Models.Entities.LegalService { LegalServiceId = 1, ServiceName = "Criminal Defense Consulting", Description = "Representation and case review for criminal defense cases.", Category = "Criminal Law", CreatedAt = legalServiceSeedCreatedAt },
+            new LegalService.API.Models.Entities.LegalService { LegalServiceId = 2, ServiceName = "Divorce & Custody Filing", Description = "Preparation and filing for divorce and child custody.", Category = "Family Law", CreatedAt = legalServiceSeedCreatedAt },
+            new LegalService.API.Models.Entities.LegalService { LegalServiceId = 3, ServiceName = "Corporate Registration & Compliance", Description = "Incorporation filings and compliance setup.", Category = "Corporate Law", CreatedAt = legalServiceSeedCreatedAt }
         );
 
         modelBuilder.Entity<DocumentationService>().HasData(
-            new DocumentationService { ServiceId = 1, Name = "Contract Review & Amendment", Description = "Reviewing lease/sales agreements and drafting amendments." },
-            new DocumentationService { ServiceId = 2, Name = "Affidavit & Notary Services", Description = "Drafting affidavits and arranging official notarization." },
-            new DocumentationService { ServiceId = 3, Name = "Power of Attorney Drafting", Description = "Drafting General or Special Power of Attorney documents." }
+            new DocumentationService
+            {
+                ServiceId = 1,
+                Name = "Contract Review & Amendment",
+                Description = "Reviewing lease/sales agreements and drafting amendments.",
+                IsActive = true,
+                CreatedAt = documentationSeedCreatedAt,
+                RequiredDocuments = "[\"Original Contract\",\"Amendment Request Letter\",\"NIC Copy\"]"
+            },
+            new DocumentationService
+            {
+                ServiceId = 2,
+                Name = "Affidavit & Notary Services",
+                Description = "Drafting affidavits and arranging official notarization.",
+                IsActive = true,
+                CreatedAt = documentationSeedCreatedAt,
+                RequiredDocuments = "[\"NIC\",\"Completed Affidavit Draft\",\"Witness Details\"]"
+            },
+            new DocumentationService
+            {
+                ServiceId = 3,
+                Name = "Power of Attorney Drafting",
+                Description = "Drafting General or Special Power of Attorney documents.",
+                IsActive = true,
+                CreatedAt = documentationSeedCreatedAt,
+                RequiredDocuments = "[\"NIC of Grantor\",\"NIC of Grantee\",\"Scope of Authority Document\"]"
+            }
         );
     }
 }
