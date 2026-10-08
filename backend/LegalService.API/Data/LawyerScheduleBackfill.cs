@@ -19,10 +19,16 @@ public static class LawyerScheduleBackfill
         INSERT INTO "LawyerWorkingSchedules"
           ("Id", "LawyerId", "DayOfWeek", "StartTime", "EndTime", "IsWorkingDay", "CreatedAt")
         SELECT md5(l."LawyerId"::text || ':default-weekly:' || d.day)::uuid,
-          l."LawyerId", d.day, TIME '09:00', TIME '17:00', d.day BETWEEN 1 AND 5, NOW()
+          l."LawyerId", d.day, TIME '09:00', TIME '20:00', d.day BETWEEN 1 AND 5, NOW()
         FROM "Lawyers" l CROSS JOIN generate_series(0, 6) AS d(day)
         WHERE NOT EXISTS (SELECT 1 FROM "LawyerWorkingSchedules" s WHERE s."LawyerId" = l."LawyerId")
         ON CONFLICT ("LawyerId", "DayOfWeek") DO NOTHING;
+        """;
+
+    public const string UpdateEndTimeSql = """
+        UPDATE "LawyerWorkingSchedules"
+        SET "EndTime" = TIME '20:00'
+        WHERE "EndTime" < TIME '20:00';
         """;
 
     public static async Task<(int Lawyers, int Durations)> RunAsync(ApplicationDbContext db, CancellationToken ct = default)
@@ -32,6 +38,7 @@ public static class LawyerScheduleBackfill
         await db.Database.ExecuteSqlRawAsync(LockSql, ct);
         var durations = await db.Database.ExecuteSqlRawAsync(DurationSql, ct);
         var rows = await db.Database.ExecuteSqlRawAsync(ScheduleSql, ct);
+        await db.Database.ExecuteSqlRawAsync(UpdateEndTimeSql, ct);
         await transaction.CommitAsync(ct);
         return (rows / 7, durations);
     }

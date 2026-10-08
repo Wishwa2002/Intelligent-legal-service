@@ -41,8 +41,11 @@ Return a JSON object with:
 {{
   "category": "Corporate & Commercial Law" | "Criminal Law" | "Real Estate & Property Law" | "Labour & Employment Law" | "Tax Law" | null,
   "consultation_type": "Phone Consultation" | "Meeting with a Lawyer" | null,
+  "fallback_consultation_type": "Phone Consultation" | "Meeting with a Lawyer" | null,
   "issue_summary": "1-2 sentence concise summary of the legal issue",
   "date_hint": "extracted date mention like 'tomorrow', 'next Monday', '2026-09-30' or null",
+  "time_window_start": "HH:MM (24h format, e.g. 17:00 for 5 PM) or null",
+  "time_window_end": "HH:MM (24h format, e.g. 20:00 for 8 PM) or null",
   "intent": "BOOK_APPOINTMENT" | "RESCHEDULE" | "CANCEL" | "VIEW_SCHEDULE" | "GENERAL_INQUIRY" | "OFF_TOPIC",
   "reasoning": "brief explanation for category selection"
 }}

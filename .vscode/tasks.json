@@ -1,0 +1,76 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run All Services",
+      "dependsOn": [
+        "Run Backend API",
+        "Run AI Service",
+        "Run Frontend Web",
+        "Run Mobile (Chrome)"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": [],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Run Backend API",
+      "type": "shell",
+      "command": "dotnet run --launch-profile http",
+      "options": {
+        "cwd": "${workspaceFolder}/backend/LegalService.API"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "services"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run AI Service",
+      "type": "shell",
+      "command": "${workspaceFolder}/ai-service/venv/Scripts/python.exe -m uvicorn app.main:app --host 0.0.0.0 --port 8001 --reload",
+      "options": {
+        "cwd": "${workspaceFolder}/ai-service"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "services"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Frontend Web",
+      "type": "shell",
+      "command": "npm run dev",
+      "options": {
+        "cwd": "${workspaceFolder}/frontend"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "services"
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Run Mobile (Chrome)",
+      "type": "shell",
+      "command": "flutter run -d chrome --web-port=5500",
+      "options": {
+        "cwd": "${workspaceFolder}/mobile"
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "services"
+      },
+      "problemMatcher": []
+    }
+  ]
+}

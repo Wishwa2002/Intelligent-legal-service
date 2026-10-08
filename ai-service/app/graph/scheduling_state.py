@@ -40,7 +40,10 @@ class SchedulingAgentState(TypedDict):
     # ---- Consultation Preferences ----
     # "Phone Consultation" or "Meeting with a Lawyer"
     consultation_type: str
+    fallback_consultation_type: str | None
     target_date: str | None  # YYYY-MM-DD
+    time_window_start: str | None  # HH:MM format e.g. "17:00"
+    time_window_end: str | None    # HH:MM format e.g. "20:00"
 
     # ---- Lawyer Selection ----
     selected_lawyer_id: str | None
@@ -84,7 +87,10 @@ def initial_scheduling_state(
         "issue_summary": None,
         "intake_notes": None,
         "consultation_type": "Meeting with a Lawyer",
+        "fallback_consultation_type": None,
         "target_date": None,
+        "time_window_start": None,
+        "time_window_end": None,
         "selected_lawyer_id": None,
         "selected_lawyer_name": None,
         "matched_lawyers": [],

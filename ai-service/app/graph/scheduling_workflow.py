@@ -178,6 +178,15 @@ async def process_scheduling_message(
     if consultation_type in ["Phone Consultation", "Meeting with a Lawyer"]:
         state["consultation_type"] = consultation_type
 
+    # Reset stale selection state if user submits a new search prompt
+    is_option_tap = any(opt in msg_lower for opt in ["option 1", "option 2", "option 3", "confirm", "select:"])
+    if not is_option_tap and any(kw in msg_lower for kw in ["want", "book", "lawyer", "attorney", "need", "criminal", "corporate", "property", "labour", "tax"]):
+        state["selected_slot_id"] = None
+        state["selected_slot_time"] = None
+        state["selected_lawyer_id"] = None
+        state["selected_lawyer_name"] = None
+        state["phase"] = "DISCOVERY"
+
     # 1. Check if user clicked "Confirm & Book Appointment"
     if "confirm" in msg_lower and "book" in msg_lower:
         logger.info("Session %s: User confirmed booking. Executing...", session_id)
@@ -185,16 +194,42 @@ async def process_scheduling_message(
         save_scheduling_state(session_id, updated)
         return updated
 
-    # 2. Check if user selected a slot from text (e.g. "Slot: 10:00 AM - 10:30 AM")
-    for s in state.get("available_slots", []):
+    # 2. Check if user tapped "Option 1", "Option 2", "Option 3", etc.
+    avail_slots = state.get("available_slots") or []
+    selected_opt = None
+    if "option 1" in msg_lower and len(avail_slots) >= 1:
+        selected_opt = avail_slots[0]
+    elif "option 2" in msg_lower and len(avail_slots) >= 2:
+        selected_opt = avail_slots[1]
+    elif "option 3" in msg_lower and len(avail_slots) >= 3:
+        selected_opt = avail_slots[2]
+
+    if selected_opt:
+        state["selected_lawyer_id"] = selected_opt.get("lawyer_id")
+        state["selected_lawyer_name"] = selected_opt.get("lawyer_name")
+        state["selected_slot_id"] = selected_opt.get("slot_id")
+        state["selected_slot_time"] = f"{selected_opt.get('date')} at {selected_opt.get('formatted_time')}"
+        state["consultation_type"] = selected_opt.get("mode", "Meeting with a Lawyer")
+        state["phase"] = "CONFIRMATION_PENDING"
+        logger.info("Session %s: Selected %s (%s). Preparing confirmation...", session_id, selected_opt.get('lawyer_name'), selected_opt.get('formatted_time'))
+        updated = await prepare_confirmation_node(state)
+        save_scheduling_state(session_id, updated)
+        return updated
+
+    # 3. Check if user selected a slot from text (e.g. "Slot: 10:00 AM - 10:30 AM")
+    for s in avail_slots:
         f_time = s.get("formatted_time", "").lower()
         if f_time and f_time in msg_lower:
+            state["selected_lawyer_id"] = s.get("lawyer_id") or state.get("selected_lawyer_id")
+            state["selected_lawyer_name"] = s.get("lawyer_name") or state.get("selected_lawyer_name")
             state["selected_slot_id"] = s["slot_id"]
-            state["selected_slot_time"] = s["formatted_time"]
+            state["selected_slot_time"] = f"{s.get('date')} at {s.get('formatted_time')}"
             state["target_date"] = s.get("date")
+            state["consultation_type"] = s.get("mode") or state.get("consultation_type")
             break
 
-    if state.get("selected_slot_id") and state.get("phase") == "CONFIRMATION_PENDING":
+    if state.get("selected_slot_id") and state.get("selected_lawyer_id"):
+        state["phase"] = "CONFIRMATION_PENDING"
         logger.info("Session %s: Slot chosen. Preparing confirmation proposal...", session_id)
         updated = await prepare_confirmation_node(state)
         save_scheduling_state(session_id, updated)

@@ -29,7 +29,7 @@ def _parse_date_hint(hint: str | None) -> str | None:
 
     if "today" in hint_clean:
         return today.isoformat()
-    if "tomorrow" in hint_clean:
+    if any(w in hint_clean for w in ["tomorrow", "tommorow", "tomorow"]):
         return (today + timedelta(days=1)).isoformat()
 
     # Look for ISO format YYYY-MM-DD
@@ -37,16 +37,65 @@ def _parse_date_hint(hint: str | None) -> str | None:
     if match:
         return match.group(1)
 
-    # Default to tomorrow if mentioned "soon" or "upcoming"
-    if any(w in hint_clean for w in ["soon", "next", "upcoming", "this week"]):
+    # Weekday detection e.g. "monday", "next monday"
+    weekdays = ["monday", "tuesday", "wednesday", "thursday", "friday", "saturday", "sunday"]
+    for idx, w in enumerate(weekdays):
+        if w in hint_clean:
+            days_ahead = idx - today.weekday()
+            if days_ahead <= 0 or "next" in hint_clean:
+                days_ahead += 7
+            return (today + timedelta(days=days_ahead)).isoformat()
+
+    if any(w in hint_clean for w in ["soon", "upcoming", "this week"]):
         return (today + timedelta(days=1)).isoformat()
 
     return None
 
 
+def _extract_time_window_from_text(text: str) -> tuple[str | None, str | None]:
+    """Extract start and end times e.g. '3pm to 5pm' -> ('15:00', '17:00')."""
+    if not text:
+        return None, None
+    t_clean = text.lower()
+
+    pattern = r"(?:between\s+)?(\d{1,2}(?::\d{2})?)\s*(am|pm)?\s*(?:and|to|-)\s*(\d{1,2}(?::\d{2})?)\s*(am|pm)?"
+    match = re.search(pattern, t_clean)
+    if match:
+        raw_start = match.group(1)
+        start_ampm = match.group(2)
+        raw_end = match.group(3)
+        end_ampm = match.group(4)
+
+        default_ampm = end_ampm or start_ampm or ("pm" if any(w in t_clean for w in ["evening", "afternoon", "night"]) else "am")
+        start_ampm = start_ampm or default_ampm
+        end_ampm = end_ampm or default_ampm
+
+        def parse_to_24h(raw: str, ampm: str | None) -> str:
+            if ":" in raw:
+                h, m = map(int, raw.split(":"))
+            else:
+                h, m = int(raw), 0
+            if ampm == "pm" and h < 12:
+                h += 12
+            elif ampm == "am" and h == 12:
+                h = 0
+            return f"{h:02d}:{m:02d}"
+
+        return parse_to_24h(raw_start, start_ampm), parse_to_24h(raw_end, end_ampm)
+
+    if "evening" in t_clean:
+        return "17:00", "20:00"
+    if "morning" in t_clean:
+        return "08:00", "12:00"
+    if "afternoon" in t_clean:
+        return "12:00", "17:00"
+
+    return None, None
+
+
 async def classify_intent_node(state: SchedulingAgentState) -> SchedulingAgentState:
     """
-    Classifies the user's latest message to determine intent, category, mode, and date.
+    Classifies the user's latest message to determine intent, category, mode, date, and time window.
     """
     state = dict(state)
     messages = state.get("messages", [])
@@ -82,6 +131,26 @@ async def classify_intent_node(state: SchedulingAgentState) -> SchedulingAgentSt
     if not last_user_msg.strip():
         return state
 
+    # Parse consultation modes & preferences
+    text_lower = last_user_msg.lower()
+    if "phone" in text_lower:
+        state["consultation_type"] = "Phone Consultation"
+        if any(w in text_lower for w in ["in person", "in-person", "meet", "meeting"]):
+            state["fallback_consultation_type"] = "Meeting with a Lawyer"
+    elif any(w in text_lower for w in ["in person", "in-person", "meet"]):
+        state["consultation_type"] = "Meeting with a Lawyer"
+
+    # Extract time window hints
+    tw_start, tw_end = _extract_time_window_from_text(last_user_msg)
+    if tw_start:
+        state["time_window_start"] = tw_start
+        state["time_window_end"] = tw_end
+
+    # Extract date hints
+    date_parsed = _parse_date_hint(last_user_msg)
+    if date_parsed:
+        state["target_date"] = date_parsed
+
     # Direct match if user tapped one of the category chips
     for cat in LEGAL_PRACTICE_CATEGORIES:
         if cat.lower() in last_user_msg.lower():
@@ -106,12 +175,21 @@ async def classify_intent_node(state: SchedulingAgentState) -> SchedulingAgentSt
             if mode in ["Phone Consultation", "Meeting with a Lawyer"]:
                 state["consultation_type"] = mode
 
+            fb_mode = raw_resp.get("fallback_consultation_type")
+            if fb_mode in ["Phone Consultation", "Meeting with a Lawyer"]:
+                state["fallback_consultation_type"] = fb_mode
+
             if raw_resp.get("issue_summary"):
                 state["issue_summary"] = raw_resp["issue_summary"]
 
             date_hint = _parse_date_hint(raw_resp.get("date_hint"))
             if date_hint:
                 state["target_date"] = date_hint
+
+            if raw_resp.get("time_window_start"):
+                state["time_window_start"] = raw_resp["time_window_start"]
+            if raw_resp.get("time_window_end"):
+                state["time_window_end"] = raw_resp["time_window_end"]
 
             intent = raw_resp.get("intent")
             if intent:
@@ -138,7 +216,7 @@ async def classify_intent_node(state: SchedulingAgentState) -> SchedulingAgentSt
         state["legal_category"] = "Corporate & Commercial Law"
     elif any(k in text_lower for k in ["police", "arrest", "criminal", "bail", "theft", "court", "assault"]):
         state["legal_category"] = "Criminal Law"
-    elif any(k in text_lower for k in ["land", "property", "lease", "rent", "tenant", "deed", "evict"]):
+    elif any(k in text_lower for k in ["land", "property", "lease", "rent", "tenant", "deed", "evict", "house", "tenancy", "apartment", "agreement", "title"]):
         state["legal_category"] = "Real Estate & Property Law"
     elif any(k in text_lower for k in ["employ", "job", "dismiss", "salary", "epf", "gratuity", "workplace"]):
         state["legal_category"] = "Labour & Employment Law"

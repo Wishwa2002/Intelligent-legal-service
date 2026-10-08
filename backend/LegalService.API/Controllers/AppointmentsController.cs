@@ -26,6 +26,7 @@ public class AppointmentsController : ControllerBase
     /// <summary>
     /// Book a new appointment slot for a customer with a lawyer.
     /// </summary>
+    [AllowAnonymous]
     [HttpPost]
     public async Task<IActionResult> BookAppointment([FromBody] BookAppointmentRequest request)
     {

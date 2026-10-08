@@ -31,6 +31,8 @@ import { CustomerLoginPage } from "./pages/customer/CustomerLoginPage";
 import { MyServiceRequestsPage } from "./pages/customer/MyServiceRequestsPage";
 import { CreateServiceRequestPage } from "./pages/customer/CreateServiceRequestPage";
 import { ServiceRequestDetailPage } from "./pages/customer/ServiceRequestDetailPage";
+import { AboutPublicPage } from "./pages/public/AboutPublicPage";
+import { ServicesPublicPage } from "./pages/public/ServicesPublicPage";
 function App() {
   return (
     <BrowserRouter>
@@ -40,6 +42,16 @@ function App() {
         ========================================================= */}
 
         <Route path="/" element={<LandingPage />} />
+
+        <Route
+          path="/about"
+          element={<AboutPublicPage />}
+        />
+
+        <Route
+          path="/services"
+          element={<ServicesPublicPage />}
+        />
 
         <Route
           path="/careers"
