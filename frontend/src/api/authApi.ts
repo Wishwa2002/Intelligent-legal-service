@@ -2,6 +2,7 @@ import { apiClient } from "./apiClient";
 
 export interface StaffUser {
   userId: number;
+  clerkId?: number;
   name: string;
   email: string;
   role: string;
@@ -14,6 +15,7 @@ export interface StaffUser {
 export interface LoginResponse {
   token?: string;
   userId: number;
+  clerkId?: number;
   name: string;
   email: string;
   role: string;

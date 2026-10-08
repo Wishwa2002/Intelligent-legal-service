@@ -162,10 +162,16 @@ export const ClerkCasesPage: React.FC = () => {
     try {
       setLoading(true);
       setError(null);
-      // Fetch specifically filtered by clerkId
+      // Authentication account IDs and clerk profile IDs are independent.
+      // Older stored sessions must refresh rather than guessing an identity.
+      if (clerk.clerkId == null) {
+        setRequests([]);
+        setError("Please sign in again to refresh your session.");
+        return;
+      }
       const allRequests = await documentationApi.getRequests();
       const myRequests = allRequests.filter(
-        (r) => String(r.assignedClerkId) === String(clerk.userId)
+        (r) => String(r.assignedClerkId) === String(clerk.clerkId)
       );
       setRequests(myRequests);
     } catch (err: any) {

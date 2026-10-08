@@ -77,6 +77,22 @@ public class DocumentFileService : IDocumentFileService
             throw new ArgumentException($"MIME type '{file.ContentType}' is not allowed.");
         }
 
+        // Read and validate before creating storage or mutating request state. Bound the
+        // actual stream too: client-reported Length is not a trust boundary.
+        await using var input = file.OpenReadStream();
+        await using var buffer = new MemoryStream();
+        var chunk = new byte[81920];
+        int read;
+        while ((read = await input.ReadAsync(chunk)) > 0)
+        {
+            if (buffer.Length + read > MaxFileSizeBytes)
+                throw new ArgumentException("File exceeds the maximum allowed limit of 10MB.");
+            await buffer.WriteAsync(chunk.AsMemory(0, read));
+        }
+        var validatedBytes = buffer.ToArray();
+        if (validatedBytes.Length == 0) throw new ArgumentException("No file was provided for upload.");
+        DocumentContentValidator.Validate(validatedBytes, extension, contentType);
+
         var request = await _context.DocumentationRequests.FindAsync(requestId);
         if (request == null)
         {
@@ -94,13 +110,11 @@ public class DocumentFileService : IDocumentFileService
             Directory.CreateDirectory(uploadsFolder);
             physicalPath = Path.Combine(uploadsFolder, storedFileName);
             await using var stream = new FileStream(physicalPath, FileMode.Create, FileAccess.Write, FileShare.None);
-            await file.CopyToAsync(stream);
+            await stream.WriteAsync(validatedBytes);
         }
         else
         {
-            await using var stream = new MemoryStream();
-            await file.CopyToAsync(stream);
-            contents = stream.ToArray();
+            contents = validatedBytes;
         }
 
         var documentFile = new DocumentFile
@@ -110,7 +124,7 @@ public class DocumentFileService : IDocumentFileService
             FilePath = physicalPath,
             FileContents = contents,
             ContentType = contentType,
-            FileSize = file.Length,
+            FileSize = validatedBytes.Length,
             DocumentStatus = "Received",
             UploadDate = DateTime.UtcNow,
             CreatedAt = DateTime.UtcNow,
@@ -238,7 +252,11 @@ public class DocumentFileService : IDocumentFileService
         }
 
         var fileBytes = await File.ReadAllBytesAsync(sourcePath);
-        var extension = Path.GetExtension(cleanSampleName);
+        if (fileBytes.LongLength > MaxFileSizeBytes)
+            throw new ArgumentException("Sample file exceeds the maximum allowed limit of 10MB.");
+        var extension = Path.GetExtension(cleanSampleName).ToLowerInvariant();
+        if (extension != ".pdf") throw new ArgumentException("Sample document must be a PDF.");
+        DocumentContentValidator.Validate(fileBytes, extension, "application/pdf");
         var tempFileId = Guid.NewGuid();
         var storedFileName = $"{tempFileId}{extension}";
         string physicalPath = string.Empty;

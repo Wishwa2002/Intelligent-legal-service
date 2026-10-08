@@ -37,7 +37,7 @@ public sealed class LawyerMobilePostgresTheoryAttribute : TheoryAttribute
     }
 }
 
-public sealed class LawyerMobileHttpTests : IAsyncLifetime
+public sealed partial class LawyerMobileHttpTests : IAsyncLifetime
 {
     private WebApplication app = null!;
     private HttpClient client = null!;

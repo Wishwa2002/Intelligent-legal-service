@@ -276,15 +276,16 @@ class SampleDocumentService {
     required int requestId,
     required SampleDocument sample,
   }) async {
-    final file = await getSampleFile(sample);
-    final bytes = await file.readAsBytes();
+    // MultipartRequest accepts bytes on every Flutter target. Avoid dart:io
+    // temporary files, which are unavailable in browser builds.
+    final byteData = await rootBundle.load('assets/sample_documents/${sample.fileName}');
+    final bytes = byteData.buffer.asUint8List(byteData.offsetInBytes, byteData.lengthInBytes);
 
     final res = await ApiClient.uploadFile(
       '/api/documentation-requests/$requestId/files',
       fileFieldName: 'file',
       fileName: sample.fileName,
       fileBytes: bytes,
-      filePath: file.path,
     );
 
     return DocumentFile.fromJson(res as Map<String, dynamic>);

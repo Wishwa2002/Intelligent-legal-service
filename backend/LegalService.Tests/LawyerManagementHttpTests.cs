@@ -28,7 +28,7 @@ namespace LegalService.Tests;
 
 // Real HTTP routing, JWT authentication, authorization and MVC validation with an isolated DB.
 // This host never invokes production startup, database seeding or Gemini.
-public sealed class LawyerManagementHttpTests : IAsyncLifetime
+public sealed partial class LawyerManagementHttpTests : IAsyncLifetime
 {
     private WebApplication _app = null!;
     private HttpClient _client = null!;
@@ -56,6 +56,9 @@ public sealed class LawyerManagementHttpTests : IAsyncLifetime
         builder.Services.AddScoped<LawyerScheduleService>();
         builder.Services.AddScoped<IAppointmentService, AppointmentService>();
         builder.Services.AddScoped<ICareerService, CareerService>();
+        builder.Services.AddScoped<IDocumentationRequestService, DocumentationRequestService>();
+        builder.Services.AddScoped<IClerkService, ClerkService>();
+        builder.Services.AddScoped<IDocumentFileService, DocumentFileService>();
         builder.Services.AddSingleton(TimeProvider.System);
         builder.Services.Configure<LegalService.API.Services.Workforce.WorkforceOptions>(_ => { });
         builder.Services.AddScoped<LegalService.API.Services.Workforce.WorkforceAnalysisService>();
