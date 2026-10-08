@@ -29,8 +29,11 @@ class Settings(BaseSettings):
     gemini_model: str = DEFAULT_GEMINI_MODEL
 
     # ---- ASP.NET Core Backend ----
-    backend_api_url: str = "http://localhost:5000"
+    backend_api_url: str = "http://localhost:5295"
     ai_service_api_key: str = ""
+
+    # ---- Lawyer Recommendation Service (Member 1 sub-service) ----
+    lawyer_recommendation_url: str = "http://localhost:8002"
 
     # ---- Document Processing ----
     ocr_enabled: bool = True

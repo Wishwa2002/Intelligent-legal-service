@@ -7,6 +7,7 @@ import '../appointments/my_appointments_screen.dart';
 import '../careers/careers_screen.dart';
 import '../document_and_clerk/services/services_catalog_screen.dart';
 import '../document_and_clerk/requests/my_requests_screen.dart';
+import '../service_requests/create_service_request_screen.dart';
 
 class ProjectHubScreen extends StatelessWidget {
   final Function(int)? onSwitchTab;
@@ -485,6 +486,42 @@ class ProjectHubScreen extends StatelessWidget {
               style: TextStyle(fontSize: 12, color: Color(0xFF64748B)),
             ),
             const SizedBox(height: 16),
+            ListTile(
+              leading: Container(
+                padding: const EdgeInsets.all(8),
+                decoration: BoxDecoration(
+                  color: const Color(0xFF7C3AED).withValues(alpha: 0.12),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: const Icon(
+                  Icons.add_comment_rounded,
+                  color: Color(0xFF7C3AED),
+                ),
+              ),
+              title: const Text(
+                'AI Guided Legal Request',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              subtitle: const Text(
+                'Tell us your legal problem and request assistance',
+                style: TextStyle(fontSize: 11),
+              ),
+              trailing: const Icon(Icons.chevron_right),
+              onTap: () {
+                Navigator.pop(ctx);
+
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => const CreateServiceRequestScreen(),
+                  ),
+                );
+              },
+            ),
+
+            const Divider(),
             ListTile(
               leading: Container(
                 padding: const EdgeInsets.all(8),

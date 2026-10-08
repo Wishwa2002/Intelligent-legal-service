@@ -5,6 +5,7 @@ import HowItWorks from "../components/common/HowItWorks";
 import AISection from "../components/common/AISection";
 import AboutSection from "../components/common/AboutSection";
 import Footer from "../components/common/Footer";
+import Legalintelligencesection from "../components/common/Legalintelligencesection";
 
 const LandingPage = () => {
   return (
@@ -15,7 +16,9 @@ const LandingPage = () => {
         <ServicesSection />
         <HowItWorks />
         <AISection />
+        <Legalintelligencesection />
         <AboutSection />
+        
       </main>
       <Footer />
     </div>

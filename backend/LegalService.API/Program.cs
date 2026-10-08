@@ -13,6 +13,7 @@ using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json;
+using LegalService.API.Services.AgentWorkflows;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -59,6 +60,7 @@ builder.Services.AddScoped<IEmailNotificationService, EmailNotificationService>(
 // Customer Service Request Management
 // ================================================================
 builder.Services.AddScoped<IServiceRequestService, ServiceRequestService>();
+builder.Services.AddScoped<IServiceRequestChatService,ServiceRequestChatService>();
 
 // ================================================================
 // Appointment & Booking Management
@@ -69,6 +71,11 @@ builder.Services.AddScoped<IAppointmentService, AppointmentService>();
 
 // Agentic AI Integration
 builder.Services.AddHttpClient<IAgentIntegrationService, AgentIntegrationService>();
+
+//Condinator Agent Integration
+builder.Services.AddScoped<
+    IPlanningCoordinatorService,
+    PlanningCoordinatorService>();
 
 // ================================================================
 // CORS Configuration

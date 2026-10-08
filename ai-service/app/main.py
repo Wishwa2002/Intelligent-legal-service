@@ -69,9 +69,13 @@ def create_app() -> FastAPI:
     from app.api.routes.agent import router as agent_router
     from app.api.routes.component_routes import router as component_router
     from app.api.routes.scheduling_routes import router as scheduling_router
+    from app.api.routes.coordinator_routes import router as coordinator_router
+
+
     app.include_router(agent_router)
     app.include_router(component_router)
     app.include_router(scheduling_router)
+    app.include_router(coordinator_router)
 
 
     # ---- Health ----

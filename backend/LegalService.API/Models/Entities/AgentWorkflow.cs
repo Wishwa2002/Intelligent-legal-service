@@ -13,6 +13,7 @@ public class AgentWorkflow
 
     // Navigation properties
     public ServiceRequest ServiceRequest { get; set; } = null!;
+    
     public ICollection<AgentStep> AgentSteps { get; set; } = new List<AgentStep>();
     public ICollection<ValidationResult> ValidationResults { get; set; } = new List<ValidationResult>();
     public ICollection<ApprovalDecision> ApprovalDecisions { get; set; } = new List<ApprovalDecision>();

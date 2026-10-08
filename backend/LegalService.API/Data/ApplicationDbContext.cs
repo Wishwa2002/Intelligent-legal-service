@@ -40,12 +40,15 @@ public class ApplicationDbContext : DbContext
     public DbSet<ExecutionSummary> ExecutionSummaries { get; set; }
     public DbSet<AuditLog> AuditLogs { get; set; }
     public DbSet<LawyerRecommendationWorkflow> LawyerRecommendationWorkflows { get; set; }
+    
 
     public DbSet<PracticeAreaWorkforceSetting> PracticeAreaWorkforceSettings { get; set; }
+
     public DbSet<WorkforceDemoState> WorkforceDemoStates { get; set; }
 
     public DbSet<HiringSuggestionWorkflow> HiringSuggestionWorkflows { get; set; }
 
+    public DbSet<LegalDocument> LegalDocuments { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
@@ -532,6 +535,34 @@ public class ApplicationDbContext : DbContext
             .HasIndex(es => es.WorkflowId)
             .IsUnique();
 
+        //LegalDocument entity configuration
+        modelBuilder.Entity<LegalDocument>(entity =>
+{
+    entity.HasKey(x => x.Id);
+
+    entity.Property(x => x.Title)
+        .IsRequired()
+        .HasMaxLength(500);
+
+    entity.Property(x => x.DocumentType)
+        .IsRequired()
+        .HasMaxLength(100);
+
+    entity.Property(x => x.ActNumber)
+        .HasMaxLength(100);
+
+    entity.Property(x => x.OfficialUrl)
+        .HasMaxLength(1000);
+
+    entity.Property(x => x.SourceName)
+        .HasMaxLength(100);
+
+    entity.Property(x => x.ExternalId)
+        .HasMaxLength(300);
+
+    entity.HasIndex(x => x.ExternalId)
+        .IsUnique();
+});
 
         // ==========================================
         // 9. AUDIT CONFIG
