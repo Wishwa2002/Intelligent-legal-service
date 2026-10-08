@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-07",
+  "samples": [
+    {
+      "scenario": 0,
+      "date": "2026-10-07",
+      "workingDay": true,
+      "slotCount": 0,
+      "reason": "ON_LEAVE",
+      "duration": 30
+    },
+    {
+      "scenario": 1,
+      "date": "2026-10-07",
+      "workingDay": true,
+      "slotCount": 8,
+      "reason": null,
+      "duration": 30
+    },
+    {
+      "scenario": 2,
+      "date": "2026-10-07",
+      "workingDay": true,
+      "slotCount": 15,
+      "reason": null,
+      "duration": 30
+    },
+    {
+      "scenario": 3,
+      "date": "2026-10-07",
+      "workingDay": true,
+      "slotCount": 0,
+      "reason": "FULLY_BOOKED",
+      "duration": 30
+    },
+    {
+      "scenario": 4,
+      "date": "2026-10-07",
+      "workingDay": true,
+      "slotCount": 16,
+      "reason": null,
+      "duration": 30
+    },
+    {
+      "scenario": 5,
+      "date": "2026-10-07",
+      "workingDay": true,
+      "slotCount": 16,
+      "reason": null,
+      "duration": 30
+    }
+  ],
+  "offDay": {
+    "date": "2026-10-11",
+    "reason": "NOT_WORKING_DAY"
+  },
+  "scheduleDays": 7,
+  "futureWindowDays": 30,
+  "workforceFutureCapacity": 7065,
+  "summaryFutureCapacity": 7065,
+  "checks": "read-only real API; six scheduling scenarios verified; no Gemini call"
+}

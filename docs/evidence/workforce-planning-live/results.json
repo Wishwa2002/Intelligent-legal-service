@@ -1,0 +1,14 @@
+{
+  "adminLogin": "PASS",
+  "settings": "PASS",
+  "recruitmentNeeded": "PASS",
+  "aiGeneration": "HTTP 200",
+  "careerCreation": "PASS",
+  "existingRecruitment": "PASS",
+  "reset": "PASS",
+  "originalSettingsRestored": true,
+  "createdCareerId": 3,
+  "careersUi": "PASS",
+  "baselineUi": "PASS",
+  "liveMobile": "PASS"
+}

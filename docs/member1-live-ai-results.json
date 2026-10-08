@@ -1,0 +1,158 @@
+{
+  "mode": "live Gemini classification using only user-supplied test text and Practice Area names; no database access",
+  "attempts": [
+    [
+      {
+        "case": "Corporate",
+        "requirement": "I need a lawyer to review a commercial contract.",
+        "expected": "Corporate & Commercial Law",
+        "actual": "Corporate & Commercial Law",
+        "status": "NO_MATCH",
+        "recommendationCount": 0,
+        "result": "PASS"
+      },
+      {
+        "case": "Criminal",
+        "expected": "Criminal Law",
+        "result": "FAIL",
+        "errorType": "GeminiUnavailable",
+        "error": "Gemini is temporarily unavailable"
+      },
+      {
+        "case": "Employment",
+        "expected": "Labour & Employment Law",
+        "result": "FAIL",
+        "errorType": "GeminiUnavailable",
+        "error": "Gemini is temporarily unavailable"
+      },
+      {
+        "case": "Property",
+        "requirement": "I have a dispute about ownership of my land.",
+        "expected": "Real Estate & Property Law",
+        "actual": "Real Estate & Property Law",
+        "status": "NO_MATCH",
+        "recommendationCount": 0,
+        "result": "PASS"
+      },
+      {
+        "case": "Tax",
+        "requirement": "I received a tax assessment that I believe is incorrect.",
+        "expected": "Tax Law",
+        "actual": "Tax Law",
+        "status": "NO_MATCH",
+        "recommendationCount": 0,
+        "result": "PASS"
+      },
+      {
+        "case": "Unsupported Family",
+        "requirement": "I need help with divorce and child custody.",
+        "expected": null,
+        "actual": null,
+        "status": "UNSUPPORTED",
+        "recommendationCount": 0,
+        "result": "PASS"
+      },
+      {
+        "case": "Nonsense",
+        "expected": null,
+        "result": "FAIL",
+        "errorType": "GeminiUnavailable",
+        "error": "Gemini is temporarily unavailable"
+      }
+    ],
+    [
+      {
+        "case": "Criminal",
+        "requirement": "I have been charged with an offence and need legal representation.",
+        "expected": "Criminal Law",
+        "actual": "Criminal Law",
+        "status": "NO_MATCH",
+        "recommendationCount": 0,
+        "result": "PASS"
+      },
+      {
+        "case": "Employment",
+        "requirement": "My employer terminated me without proper notice.",
+        "expected": "Labour & Employment Law",
+        "actual": "Labour & Employment Law",
+        "status": "NO_MATCH",
+        "recommendationCount": 0,
+        "result": "PASS"
+      },
+      {
+        "case": "Nonsense",
+        "requirement": "banana rocket purple chair",
+        "expected": null,
+        "actual": null,
+        "status": "UNSUPPORTED",
+        "recommendationCount": 0,
+        "result": "PASS"
+      }
+    ]
+  ],
+  "results": [
+    {
+      "case": "Corporate",
+      "requirement": "I need a lawyer to review a commercial contract.",
+      "expected": "Corporate & Commercial Law",
+      "actual": "Corporate & Commercial Law",
+      "status": "NO_MATCH",
+      "recommendationCount": 0,
+      "result": "PASS"
+    },
+    {
+      "case": "Criminal",
+      "requirement": "I have been charged with an offence and need legal representation.",
+      "expected": "Criminal Law",
+      "actual": "Criminal Law",
+      "status": "NO_MATCH",
+      "recommendationCount": 0,
+      "result": "PASS"
+    },
+    {
+      "case": "Employment",
+      "requirement": "My employer terminated me without proper notice.",
+      "expected": "Labour & Employment Law",
+      "actual": "Labour & Employment Law",
+      "status": "NO_MATCH",
+      "recommendationCount": 0,
+      "result": "PASS"
+    },
+    {
+      "case": "Property",
+      "requirement": "I have a dispute about ownership of my land.",
+      "expected": "Real Estate & Property Law",
+      "actual": "Real Estate & Property Law",
+      "status": "NO_MATCH",
+      "recommendationCount": 0,
+      "result": "PASS"
+    },
+    {
+      "case": "Tax",
+      "requirement": "I received a tax assessment that I believe is incorrect.",
+      "expected": "Tax Law",
+      "actual": "Tax Law",
+      "status": "NO_MATCH",
+      "recommendationCount": 0,
+      "result": "PASS"
+    },
+    {
+      "case": "Unsupported Family",
+      "requirement": "I need help with divorce and child custody.",
+      "expected": null,
+      "actual": null,
+      "status": "UNSUPPORTED",
+      "recommendationCount": 0,
+      "result": "PASS"
+    },
+    {
+      "case": "Nonsense",
+      "requirement": "banana rocket purple chair",
+      "expected": null,
+      "actual": null,
+      "status": "UNSUPPORTED",
+      "recommendationCount": 0,
+      "result": "PASS"
+    }
+  ]
+}

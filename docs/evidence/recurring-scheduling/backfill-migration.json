@@ -1,0 +1,27 @@
+{
+  "migration": "20261004095244_BackfillMissingLawyerSchedules",
+  "before": {
+    "lawyers": 28,
+    "withoutSchedules": 0,
+    "scheduleRows": 196,
+    "duplicateDays": 0,
+    "unsetDurations": 0,
+    "workingScheduleTable": true,
+    "unavailabilityTable": true,
+    "durationColumn": true,
+    "migrationApplied": false
+  },
+  "after": {
+    "lawyers": 28,
+    "withoutSchedules": 0,
+    "scheduleRows": 196,
+    "duplicateDays": 0,
+    "unsetDurations": 0,
+    "workingScheduleTable": true,
+    "unavailabilityTable": true,
+    "durationColumn": true,
+    "migrationApplied": true
+  },
+  "lawyersBackfilled": 0,
+  "existingSchedulesUnchanged": true
+}
