@@ -1,0 +1,11 @@
+{
+  "lawyerId": "f42193d6-906f-441c-9540-ecf0a18e7d45",
+  "scheduleRead": true,
+  "scheduleEditSaved": true,
+  "readAfterSave": true,
+  "originalValuesRestored": true,
+  "unavailabilityRead": true,
+  "scheduleDays": 7,
+  "duration": 30,
+  "change": "Temporary off-day start-time edit only; working hours and duration preserved."
+}

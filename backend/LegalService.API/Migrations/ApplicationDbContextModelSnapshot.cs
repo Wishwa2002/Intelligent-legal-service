@@ -96,14 +96,27 @@ namespace LegalService.API.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
+                    b.Property<string>("AppointmentSource")
+                        .HasColumnType("text");
+
+                    b.Property<string>("ConsultationType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.Property<Guid>("CustomerId")
                         .HasColumnType("uuid");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("text");
+
                     b.Property<Guid>("LawyerId")
                         .HasColumnType("uuid");
+
+                    b.Property<string>("LegalServiceCategory")
+                        .HasColumnType("text");
 
                     b.Property<Guid>("SlotId")
                         .HasColumnType("uuid");
@@ -123,6 +136,8 @@ namespace LegalService.API.Migrations
 
                     b.HasIndex("SlotId")
                         .IsUnique();
+
+                    b.HasIndex("LawyerId", "Status");
 
                     b.ToTable("Appointments");
                 });
@@ -179,8 +194,6 @@ namespace LegalService.API.Migrations
 
                     b.HasKey("DecisionId");
 
-                    b.HasIndex("ApproverId");
-
                     b.HasIndex("WorkflowId");
 
                     b.ToTable("ApprovalDecisions");
@@ -203,8 +216,8 @@ namespace LegalService.API.Migrations
                     b.Property<DateTime>("Timestamp")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid?>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
 
                     b.HasKey("AuditLogId");
 
@@ -247,9 +260,14 @@ namespace LegalService.API.Migrations
 
             modelBuilder.Entity("LegalService.API.Models.Entities.Career", b =>
                 {
-                    b.Property<Guid>("CareerId")
+                    b.Property<int>("CareerId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("CareerId"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Description")
                         .IsRequired()
@@ -259,15 +277,28 @@ namespace LegalService.API.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<int?>("PracticeAreaId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("CareerId");
+
+                    b.HasIndex("PracticeAreaId")
+                        .IsUnique()
+                        .HasFilter("\"PracticeAreaId\" IS NOT NULL");
 
                     b.ToTable("Careers");
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.Clerk", b =>
                 {
-                    b.Property<Guid>("ClerkId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("ClerkId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ClerkId"));
 
                     b.Property<string>("Contact")
                         .IsRequired()
@@ -280,31 +311,76 @@ namespace LegalService.API.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("boolean");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
+
                     b.HasKey("ClerkId");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Clerks");
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.DocumentFile", b =>
                 {
-                    b.Property<Guid>("FileId")
+                    b.Property<int>("FileId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("FileId"));
+
+                    b.Property<string>("ContentType")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("DocumentStatus")
+                        .IsRequired()
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("text")
+                        .HasDefaultValue("Received");
+
+                    b.Property<string>("FileName")
+                        .IsRequired()
+                        .HasColumnType("text");
 
                     b.Property<string>("FilePath")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<Guid>("RequestId")
-                        .HasColumnType("uuid");
+                    b.Property<long>("FileSize")
+                        .HasColumnType("bigint");
+
+                    b.Property<string>("RejectReason")
+                        .HasColumnType("text");
+
+                    b.Property<int>("RequestId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<DateTime>("UploadDate")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("FileId");
+
+                    b.HasIndex("DocumentStatus");
 
                     b.HasIndex("RequestId");
 
@@ -313,21 +389,27 @@ namespace LegalService.API.Migrations
 
             modelBuilder.Entity("LegalService.API.Models.Entities.DocumentationRequest", b =>
                 {
-                    b.Property<Guid>("RequestId")
+                    b.Property<int>("RequestId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer");
 
-                    b.Property<Guid?>("AssignedClerkId")
-                        .HasColumnType("uuid");
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("RequestId"));
+
+                    b.Property<int?>("AssignedClerkId")
+                        .HasColumnType("integer")
+                        .HasColumnName("ClerkId");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("DocumentType")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("ReuploadNote")
                         .HasColumnType("text");
 
                     b.Property<int>("ServiceId")
@@ -359,15 +441,32 @@ namespace LegalService.API.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ServiceId"));
 
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.Property<string>("Description")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<bool>("IsActive")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("boolean")
+                        .HasDefaultValue(true);
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("RequiredDocuments")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
                     b.HasKey("ServiceId");
+
+                    b.HasIndex("IsActive");
 
                     b.HasIndex("Name")
                         .IsUnique();
@@ -378,20 +477,29 @@ namespace LegalService.API.Migrations
                         new
                         {
                             ServiceId = 1,
+                            CreatedAt = new DateTime(2026, 10, 4, 15, 11, 10, 985, DateTimeKind.Utc).AddTicks(3880),
                             Description = "Reviewing lease/sales agreements and drafting amendments.",
-                            Name = "Contract Review & Amendment"
+                            IsActive = true,
+                            Name = "Contract Review & Amendment",
+                            RequiredDocuments = "[\"Original Contract\",\"Amendment Request Letter\",\"NIC Copy\"]"
                         },
                         new
                         {
                             ServiceId = 2,
+                            CreatedAt = new DateTime(2026, 10, 4, 15, 11, 10, 985, DateTimeKind.Utc).AddTicks(3880),
                             Description = "Drafting affidavits and arranging official notarization.",
-                            Name = "Affidavit & Notary Services"
+                            IsActive = true,
+                            Name = "Affidavit & Notary Services",
+                            RequiredDocuments = "[\"NIC\",\"Completed Affidavit Draft\",\"Witness Details\"]"
                         },
                         new
                         {
                             ServiceId = 3,
+                            CreatedAt = new DateTime(2026, 10, 4, 15, 11, 10, 985, DateTimeKind.Utc).AddTicks(3880),
                             Description = "Drafting General or Special Power of Attorney documents.",
-                            Name = "Power of Attorney Drafting"
+                            IsActive = true,
+                            Name = "Power of Attorney Drafting",
+                            RequiredDocuments = "[\"NIC of Grantor\",\"NIC of Grantee\",\"Scope of Authority Document\"]"
                         });
                 });
 
@@ -419,25 +527,94 @@ namespace LegalService.API.Migrations
                     b.ToTable("ExecutionSummaries");
                 });
 
-            modelBuilder.Entity("LegalService.API.Models.Entities.JobApplication", b =>
+            modelBuilder.Entity("LegalService.API.Models.Entities.HiringSuggestionWorkflow", b =>
                 {
-                    b.Property<Guid>("ApplicationId")
+                    b.Property<Guid>("WorkflowId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
+
+                    b.Property<string>("AiDraftJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime?>("ApprovedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int?>("ApprovedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ApprovedTitle")
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
+
+                    b.Property<int?>("CareerOpeningId")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("OwnerUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("PracticeAreaId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ReviewedDraftJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("Status")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<string>("SystemSnapshotJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("WorkflowId");
+
+                    b.HasIndex("CareerOpeningId");
+
+                    b.HasIndex("PracticeAreaId");
+
+                    b.HasIndex("OwnerUserId", "PracticeAreaId")
+                        .IsUnique()
+                        .HasFilter("\"Status\" = 'AWAITING_APPROVAL' AND \"PracticeAreaId\" IS NOT NULL");
+
+                    b.HasIndex("OwnerUserId", "Status");
+
+                    b.ToTable("HiringSuggestionWorkflows");
+                });
+
+            modelBuilder.Entity("LegalService.API.Models.Entities.JobApplication", b =>
+                {
+                    b.Property<int>("ApplicationId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("ApplicationId"));
 
                     b.Property<string>("ApplicantName")
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<DateTime>("AppliedAt")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<int>("CareerId")
+                        .HasColumnType("integer");
 
-                    b.Property<Guid>("CareerId")
-                        .HasColumnType("uuid");
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.Property<string>("Status")
                         .IsRequired()
                         .HasColumnType("text");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
 
                     b.HasKey("ApplicationId");
 
@@ -449,15 +626,28 @@ namespace LegalService.API.Migrations
             modelBuilder.Entity("LegalService.API.Models.Entities.Lawyer", b =>
                 {
                     b.Property<Guid>("LawyerId")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
 
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int>("DefaultAppointmentDurationMinutes")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer")
+                        .HasDefaultValue(30);
+
+                    b.Property<string>("Email")
+                        .HasColumnType("text");
+
                     b.Property<int>("Experience")
                         .HasColumnType("integer");
 
                     b.Property<string>("LicenseNumber")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -480,6 +670,9 @@ namespace LegalService.API.Migrations
                     b.Property<DateTime?>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
+                    b.Property<int?>("UserId")
+                        .HasColumnType("integer");
+
                     b.HasKey("LawyerId");
 
                     b.HasIndex("LicenseNumber")
@@ -487,7 +680,10 @@ namespace LegalService.API.Migrations
 
                     b.HasIndex("Status");
 
-                    b.ToTable("Lawyers");
+                    b.ToTable("Lawyers", t =>
+                        {
+                            t.HasCheckConstraint("CK_Lawyer_Duration", "\"DefaultAppointmentDurationMinutes\" BETWEEN 15 AND 240");
+                        });
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.LawyerAvailability", b =>
@@ -530,6 +726,93 @@ namespace LegalService.API.Migrations
                     b.ToTable("LawyerLegalServices");
                 });
 
+            modelBuilder.Entity("LegalService.API.Models.Entities.LawyerRecommendationWorkflow", b =>
+                {
+                    b.Property<Guid>("WorkflowId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("AppointmentId")
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("ApprovedLawyerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("AuditJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateOnly?>("BookingDate")
+                        .IsConcurrencyToken()
+                        .HasColumnType("date");
+
+                    b.Property<int?>("CategoryId")
+                        .HasColumnType("integer");
+
+                    b.Property<int?>("ClientId")
+                        .IsConcurrencyToken()
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("OwnerUserId")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ParsedRequirementJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<string>("RecommendationsJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateOnly?>("RequestedDate")
+                        .HasColumnType("date");
+
+                    b.Property<string>("ReviewStage")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<Guid?>("SelectedLawyerId")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uuid");
+
+                    b.Property<Guid?>("SelectedSlotId")
+                        .IsConcurrencyToken()
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Status")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasMaxLength(32)
+                        .HasColumnType("character varying(32)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<string>("UserRequirement")
+                        .IsRequired()
+                        .HasMaxLength(4000)
+                        .HasColumnType("character varying(4000)");
+
+                    b.Property<string>("WarningsJson")
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.HasKey("WorkflowId");
+
+                    b.HasIndex("ClientId");
+
+                    b.HasIndex("OwnerUserId");
+
+                    b.HasIndex("Status");
+
+                    b.ToTable("LawyerRecommendationWorkflows");
+                });
+
             modelBuilder.Entity("LegalService.API.Models.Entities.LawyerSpecialization", b =>
                 {
                     b.Property<Guid>("LawyerId")
@@ -543,6 +826,85 @@ namespace LegalService.API.Migrations
                     b.HasIndex("SpecializationId");
 
                     b.ToTable("LawyerSpecializations");
+                });
+
+            modelBuilder.Entity("LegalService.API.Models.Entities.LawyerUnavailability", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<DateTime>("EndDateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<bool>("IsFullDay")
+                        .HasColumnType("boolean");
+
+                    b.Property<Guid>("LawyerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Reason")
+                        .IsRequired()
+                        .HasMaxLength(300)
+                        .HasColumnType("character varying(300)");
+
+                    b.Property<DateTime>("StartDateTime")
+                        .HasColumnType("timestamp without time zone");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LawyerId", "StartDateTime", "EndDateTime");
+
+                    b.ToTable("LawyerUnavailabilities", t =>
+                        {
+                            t.HasCheckConstraint("CK_Unavailability_Time", "\"StartDateTime\" < \"EndDateTime\"");
+                        });
+                });
+
+            modelBuilder.Entity("LegalService.API.Models.Entities.LawyerWorkingSchedule", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uuid");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("DayOfWeek")
+                        .HasColumnType("integer");
+
+                    b.Property<TimeOnly>("EndTime")
+                        .HasColumnType("time without time zone");
+
+                    b.Property<bool>("IsWorkingDay")
+                        .HasColumnType("boolean");
+
+                    b.Property<Guid>("LawyerId")
+                        .HasColumnType("uuid");
+
+                    b.Property<TimeOnly>("StartTime")
+                        .HasColumnType("time without time zone");
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LawyerId", "DayOfWeek")
+                        .IsUnique();
+
+                    b.ToTable("LawyerWorkingSchedules", t =>
+                        {
+                            t.HasCheckConstraint("CK_Schedule_Day", "\"DayOfWeek\" BETWEEN 0 AND 6");
+
+                            t.HasCheckConstraint("CK_Schedule_Time", "NOT \"IsWorkingDay\" OR \"StartTime\" < \"EndTime\"");
+                        });
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.LegalService", b =>
@@ -580,7 +942,7 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 1,
                             Category = "Criminal Law",
-                            CreatedAt = new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1144),
+                            CreatedAt = new DateTime(2026, 10, 4, 15, 11, 10, 985, DateTimeKind.Utc).AddTicks(3860),
                             Description = "Representation and case review for criminal defense cases.",
                             ServiceName = "Criminal Defense Consulting"
                         },
@@ -588,7 +950,7 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 2,
                             Category = "Family Law",
-                            CreatedAt = new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1153),
+                            CreatedAt = new DateTime(2026, 10, 4, 15, 11, 10, 985, DateTimeKind.Utc).AddTicks(3860),
                             Description = "Preparation and filing for divorce and child custody.",
                             ServiceName = "Divorce & Custody Filing"
                         },
@@ -596,9 +958,55 @@ namespace LegalService.API.Migrations
                         {
                             LegalServiceId = 3,
                             Category = "Corporate Law",
-                            CreatedAt = new DateTime(2026, 8, 25, 9, 37, 50, 386, DateTimeKind.Utc).AddTicks(1155),
+                            CreatedAt = new DateTime(2026, 10, 4, 15, 11, 10, 985, DateTimeKind.Utc).AddTicks(3860),
                             Description = "Incorporation filings and compliance setup.",
                             ServiceName = "Corporate Registration & Compliance"
+                        });
+                });
+
+            modelBuilder.Entity("LegalService.API.Models.Entities.PracticeAreaWorkforceSetting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("HighDemandThreshold")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MinimumActiveLawyers")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("MinimumFutureSlots")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("PracticeAreaId")
+                        .HasColumnType("integer");
+
+                    b.Property<int>("TargetActiveLawyers")
+                        .HasColumnType("integer");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.Property<int>("UpdatedBy")
+                        .HasColumnType("integer");
+
+                    b.Property<double>("WatchCapacityRatio")
+                        .HasColumnType("double precision");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PracticeAreaId")
+                        .IsUnique();
+
+                    b.ToTable("PracticeAreaWorkforceSettings", t =>
+                        {
+                            t.HasCheckConstraint("CK_WorkforceSettings_Ranges", "\"MinimumActiveLawyers\" BETWEEN 0 AND 100 AND \"TargetActiveLawyers\" BETWEEN \"MinimumActiveLawyers\" AND 200 AND \"MinimumFutureSlots\" BETWEEN 0 AND 1000 AND \"HighDemandThreshold\" BETWEEN 0 AND 10000 AND \"WatchCapacityRatio\" > 0 AND \"WatchCapacityRatio\" <= 1");
                         });
                 });
 
@@ -651,30 +1059,45 @@ namespace LegalService.API.Migrations
                     b.Property<DateTime>("CreatedAt")
                         .HasColumnType("timestamp with time zone");
 
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("CustomerId")
+                        .HasColumnType("integer");
 
                     b.Property<string>("Description")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(2000)
+                        .HasColumnType("character varying(2000)");
 
-                    b.Property<DateOnly>("PreferredDeadline")
-                        .HasColumnType("date");
+                    b.Property<string>("Priority")
+                        .HasMaxLength(20)
+                        .HasColumnType("character varying(20)");
+
+                    b.Property<string>("RequestType")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("character varying(100)");
 
                     b.Property<string>("Status")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(30)
+                        .HasColumnType("character varying(30)");
 
                     b.Property<string>("Title")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasMaxLength(200)
+                        .HasColumnType("character varying(200)");
 
-                    b.Property<DateTime?>("UpdatedAt")
+                    b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("timestamp with time zone");
 
                     b.HasKey("ServiceRequestId");
 
+                    b.HasIndex("CreatedAt");
+
                     b.HasIndex("CustomerId");
+
+                    b.HasIndex("RequestType");
+
+                    b.HasIndex("Status");
 
                     b.ToTable("ServiceRequests");
                 });
@@ -765,43 +1188,55 @@ namespace LegalService.API.Migrations
 
             modelBuilder.Entity("LegalService.API.Models.Entities.User", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<int>("UserId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uuid");
+                        .HasColumnType("integer")
+                        .HasColumnName("UserId");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("UserId"));
 
                     b.Property<DateTime>("CreatedAt")
-                        .HasColumnType("timestamp with time zone");
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("CreatedAt");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("Email");
 
-                    b.Property<string>("FullName")
-                        .IsRequired()
-                        .HasColumnType("text");
-
-                    b.Property<bool>("IsActive")
+                    b.Property<bool>("MustChangePassword")
                         .HasColumnType("boolean");
 
-                    b.Property<string>("PasswordHash")
+                    b.Property<string>("Name")
                         .IsRequired()
-                        .HasColumnType("text");
+                        .HasColumnType("text")
+                        .HasColumnName("Name");
 
-                    b.Property<DateTime?>("UpdatedAt")
-                        .HasColumnType("timestamp with time zone");
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("text")
+                        .HasColumnName("PasswordHash");
 
-                    b.HasKey("Id");
+                    b.Property<string>("Role")
+                        .IsRequired()
+                        .HasColumnType("text")
+                        .HasColumnName("Role");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone")
+                        .HasColumnName("UpdatedAt");
+
+                    b.HasKey("UserId");
 
                     b.HasIndex("Email")
                         .IsUnique();
 
-                    b.ToTable("Users");
+                    b.ToTable("Users", (string)null);
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.UserRole", b =>
                 {
-                    b.Property<Guid>("UserId")
-                        .HasColumnType("uuid");
+                    b.Property<int>("UserId")
+                        .HasColumnType("integer");
 
                     b.Property<Guid>("RoleId")
                         .HasColumnType("uuid");
@@ -843,6 +1278,24 @@ namespace LegalService.API.Migrations
                     b.ToTable("ValidationResults");
                 });
 
+            modelBuilder.Entity("LegalService.API.Models.Entities.WorkforceDemoState", b =>
+                {
+                    b.Property<int>("Id")
+                        .HasColumnType("integer");
+
+                    b.Property<string>("ArtifactsJson")
+                        .IsConcurrencyToken()
+                        .IsRequired()
+                        .HasColumnType("jsonb");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("timestamp with time zone");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("WorkforceDemoStates");
+                });
+
             modelBuilder.Entity("LegalService.API.Models.Entities.AgentStep", b =>
                 {
                     b.HasOne("LegalService.API.Models.Entities.AgentWorkflow", "AgentWorkflow")
@@ -867,12 +1320,6 @@ namespace LegalService.API.Migrations
 
             modelBuilder.Entity("LegalService.API.Models.Entities.Appointment", b =>
                 {
-                    b.HasOne("LegalService.API.Models.Entities.User", "Customer")
-                        .WithMany("Appointments")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("LegalService.API.Models.Entities.Lawyer", "Lawyer")
                         .WithMany("Appointments")
                         .HasForeignKey("LawyerId")
@@ -886,8 +1333,6 @@ namespace LegalService.API.Migrations
                         .IsRequired();
 
                     b.Navigation("AvailabilitySlot");
-
-                    b.Navigation("Customer");
 
                     b.Navigation("Lawyer");
                 });
@@ -905,12 +1350,6 @@ namespace LegalService.API.Migrations
 
             modelBuilder.Entity("LegalService.API.Models.Entities.ApprovalDecision", b =>
                 {
-                    b.HasOne("LegalService.API.Models.Entities.User", "Approver")
-                        .WithMany("ApprovalDecisions")
-                        .HasForeignKey("ApproverId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("LegalService.API.Models.Entities.AgentWorkflow", "AgentWorkflow")
                         .WithMany("ApprovalDecisions")
                         .HasForeignKey("WorkflowId")
@@ -918,18 +1357,6 @@ namespace LegalService.API.Migrations
                         .IsRequired();
 
                     b.Navigation("AgentWorkflow");
-
-                    b.Navigation("Approver");
-                });
-
-            modelBuilder.Entity("LegalService.API.Models.Entities.AuditLog", b =>
-                {
-                    b.HasOne("LegalService.API.Models.Entities.User", "User")
-                        .WithMany("AuditLogs")
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.SetNull);
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.AvailabilitySlot", b =>
@@ -947,13 +1374,19 @@ namespace LegalService.API.Migrations
                     b.Navigation("LawyerAvailability");
                 });
 
+            modelBuilder.Entity("LegalService.API.Models.Entities.Career", b =>
+                {
+                    b.HasOne("LegalService.API.Models.Entities.Specialization", null)
+                        .WithMany()
+                        .HasForeignKey("PracticeAreaId")
+                        .OnDelete(DeleteBehavior.SetNull);
+                });
+
             modelBuilder.Entity("LegalService.API.Models.Entities.Clerk", b =>
                 {
                     b.HasOne("LegalService.API.Models.Entities.User", "User")
-                        .WithOne("Clerk")
-                        .HasForeignKey("LegalService.API.Models.Entities.Clerk", "ClerkId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .WithMany()
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });
@@ -976,12 +1409,6 @@ namespace LegalService.API.Migrations
                         .HasForeignKey("AssignedClerkId")
                         .OnDelete(DeleteBehavior.SetNull);
 
-                    b.HasOne("LegalService.API.Models.Entities.User", "Customer")
-                        .WithMany("DocumentationRequests")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-
                     b.HasOne("LegalService.API.Models.Entities.DocumentationService", "DocumentationService")
                         .WithMany("DocumentationRequests")
                         .HasForeignKey("ServiceId")
@@ -989,8 +1416,6 @@ namespace LegalService.API.Migrations
                         .IsRequired();
 
                     b.Navigation("AssignedClerk");
-
-                    b.Navigation("Customer");
 
                     b.Navigation("DocumentationService");
                 });
@@ -1006,6 +1431,19 @@ namespace LegalService.API.Migrations
                     b.Navigation("AgentWorkflow");
                 });
 
+            modelBuilder.Entity("LegalService.API.Models.Entities.HiringSuggestionWorkflow", b =>
+                {
+                    b.HasOne("LegalService.API.Models.Entities.Career", null)
+                        .WithMany()
+                        .HasForeignKey("CareerOpeningId")
+                        .OnDelete(DeleteBehavior.SetNull);
+
+                    b.HasOne("LegalService.API.Models.Entities.Specialization", null)
+                        .WithMany()
+                        .HasForeignKey("PracticeAreaId")
+                        .OnDelete(DeleteBehavior.SetNull);
+                });
+
             modelBuilder.Entity("LegalService.API.Models.Entities.JobApplication", b =>
                 {
                     b.HasOne("LegalService.API.Models.Entities.Career", "Career")
@@ -1015,17 +1453,6 @@ namespace LegalService.API.Migrations
                         .IsRequired();
 
                     b.Navigation("Career");
-                });
-
-            modelBuilder.Entity("LegalService.API.Models.Entities.Lawyer", b =>
-                {
-                    b.HasOne("LegalService.API.Models.Entities.User", "User")
-                        .WithOne("Lawyer")
-                        .HasForeignKey("LegalService.API.Models.Entities.Lawyer", "LawyerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.LawyerAvailability", b =>
@@ -1058,6 +1485,14 @@ namespace LegalService.API.Migrations
                     b.Navigation("LegalService");
                 });
 
+            modelBuilder.Entity("LegalService.API.Models.Entities.LawyerRecommendationWorkflow", b =>
+                {
+                    b.HasOne("LegalService.API.Models.Entities.User", null)
+                        .WithMany()
+                        .HasForeignKey("ClientId")
+                        .OnDelete(DeleteBehavior.SetNull);
+                });
+
             modelBuilder.Entity("LegalService.API.Models.Entities.LawyerSpecialization", b =>
                 {
                     b.HasOne("LegalService.API.Models.Entities.Lawyer", "Lawyer")
@@ -1077,15 +1512,35 @@ namespace LegalService.API.Migrations
                     b.Navigation("Specialization");
                 });
 
-            modelBuilder.Entity("LegalService.API.Models.Entities.ServiceRequest", b =>
+            modelBuilder.Entity("LegalService.API.Models.Entities.LawyerUnavailability", b =>
                 {
-                    b.HasOne("LegalService.API.Models.Entities.User", "Customer")
-                        .WithMany("ServiceRequests")
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Restrict)
+                    b.HasOne("LegalService.API.Models.Entities.Lawyer", "Lawyer")
+                        .WithMany()
+                        .HasForeignKey("LawyerId")
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Customer");
+                    b.Navigation("Lawyer");
+                });
+
+            modelBuilder.Entity("LegalService.API.Models.Entities.LawyerWorkingSchedule", b =>
+                {
+                    b.HasOne("LegalService.API.Models.Entities.Lawyer", "Lawyer")
+                        .WithMany()
+                        .HasForeignKey("LawyerId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Lawyer");
+                });
+
+            modelBuilder.Entity("LegalService.API.Models.Entities.PracticeAreaWorkforceSetting", b =>
+                {
+                    b.HasOne("LegalService.API.Models.Entities.Specialization", null)
+                        .WithMany()
+                        .HasForeignKey("PracticeAreaId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.ToolExecution", b =>
@@ -1107,15 +1562,13 @@ namespace LegalService.API.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("LegalService.API.Models.Entities.User", "User")
+                    b.HasOne("LegalService.API.Models.Entities.User", null)
                         .WithMany("UserRoles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Role");
-
-                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("LegalService.API.Models.Entities.ValidationResult", b =>
@@ -1215,20 +1668,6 @@ namespace LegalService.API.Migrations
 
             modelBuilder.Entity("LegalService.API.Models.Entities.User", b =>
                 {
-                    b.Navigation("Appointments");
-
-                    b.Navigation("ApprovalDecisions");
-
-                    b.Navigation("AuditLogs");
-
-                    b.Navigation("Clerk");
-
-                    b.Navigation("DocumentationRequests");
-
-                    b.Navigation("Lawyer");
-
-                    b.Navigation("ServiceRequests");
-
                     b.Navigation("UserRoles");
                 });
 #pragma warning restore 612, 618
