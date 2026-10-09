@@ -9,7 +9,13 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
   // Load environment variables
-  await dotenv.load(fileName: ".env");
+  try {
+    await dotenv.load(fileName: "assets/.env");
+  } catch (_) {
+    try {
+      await dotenv.load(fileName: ".env");
+    } catch (_) {}
+  }
 
   // Initialize API configuration
   await ApiConfig.initialize();

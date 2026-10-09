@@ -1,0 +1,31 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Open Frontend in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/frontend"
+    },
+    {
+      "name": "Open Backend (Swagger) in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5000/swagger"
+    },
+    {
+      "name": "Open AI Service (Swagger Docs) in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:8001/docs"
+    },
+    {
+      "name": "Open Mobile App in Chrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5500",
+      "webRoot": "${workspaceFolder}/mobile"
+    }
+  ]
+}

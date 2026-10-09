@@ -66,6 +66,7 @@ flutter:
   assets:
     - .env
     - assets/
+    - assets/.env
     - assets/sample_documents/
     - assets/careers/
 

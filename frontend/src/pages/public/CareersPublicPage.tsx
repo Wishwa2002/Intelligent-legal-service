@@ -160,7 +160,7 @@ export const CareersPublicPage: React.FC = () => {
         {/* Hero Section matching Homepage Hero styling — career.jpg background clearly visible */}
         <section
           id="careers-hero"
-          className="relative isolate overflow-hidden bg-navy-950 pt-32 pb-24 lg:pt-44 lg:pb-32"
+          className="relative isolate overflow-hidden bg-navy-950 py-24 text-white lg:py-36"
         >
           {/* Background photograph (career.jpg) */}
           <div className="absolute inset-0">
@@ -172,10 +172,9 @@ export const CareersPublicPage: React.FC = () => {
             />
           </div>
 
-          {/* Scrim — light enough that the photo remains crisp and clearly visible.
-              Softly darkens toward the left behind the text copy only. */}
-          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/85 via-navy-950/40 to-transparent" />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy-950/50 via-transparent to-navy-950/20" />
+          {/* Scrim matching About Page main image */}
+          <div className="absolute inset-0 bg-gradient-to-r from-navy-950/90 via-navy-950/60 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-navy-950/70 via-transparent to-navy-950/30" />
 
           {/* Subtle texture + warm accent glow from homepage theme */}
           <div className="pointer-events-none absolute inset-0 bg-ledger-lines opacity-[0.15]" />

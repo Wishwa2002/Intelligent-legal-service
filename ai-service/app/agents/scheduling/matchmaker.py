@@ -23,7 +23,13 @@ def score_lawyer_candidate(lawyer: dict, category: str) -> float:
     Multi-factor Transparent Matching:
       Score = 0.45 * CategoryMatch + 0.35 * Experience + 0.20 * WorkloadBalance
     """
-    specs = [s.lower() for s in lawyer.get("specializations", [])]
+    raw_specs = lawyer.get("specializations", [])
+    specs = []
+    for s in raw_specs:
+        name = s.get("name") if isinstance(s, dict) else str(s)
+        if name:
+            specs.append(name.lower())
+
     clean_cat = category.lower()
 
     # 1. Category match

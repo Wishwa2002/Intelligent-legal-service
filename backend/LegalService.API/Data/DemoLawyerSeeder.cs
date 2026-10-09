@@ -302,7 +302,7 @@ public static class DemoLawyerSeeder
                 var migratedId = Guid.Parse(Convert.ToHexString(System.Security.Cryptography.MD5.HashData(System.Text.Encoding.UTF8.GetBytes($"{lawyer.LawyerId}:working:{day}"))));
                 if (row is not null && (row.Id != migratedId || row.UpdatedAt is not null)) continue;
                 if (row is null) { row = new() { LawyerId = lawyer.LawyerId, DayOfWeek = (DayOfWeek)day }; db.LawyerWorkingSchedules.Add(row); }
-                row.IsWorkingDay = day is >= 1 and <= 5; row.StartTime = new(9, 0); row.EndTime = new(17, 0); row.UpdatedAt = DateTime.UtcNow;
+                row.IsWorkingDay = day is >= 1 and <= 5; row.StartTime = new(9, 0); row.EndTime = new(20, 0); row.UpdatedAt = DateTime.UtcNow;
             }
         await db.SaveChangesAsync(ct);
         var demoDate = today.AddDays(3);

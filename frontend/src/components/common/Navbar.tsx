@@ -10,9 +10,9 @@ interface NavLinkItem {
 
 const NAV_LINKS: NavLinkItem[] = [
   { label: "Home", href: "/#home" },
-  { label: "Services", href: "/#services" },
+  { label: "Services", to: "/services" },
   { label: "Careers", to: "/careers" },
-  { label: "About", href: "/#about" },
+  { label: "About", to: "/about" },
   { label: "Contact", href: "/#contact" },
 ];
 
@@ -66,15 +66,9 @@ const Navbar = () => {
         <div className="hidden items-center gap-3 md:flex">
           <Link
             to="/login"
-            className="rounded-md px-4 py-2 text-sm font-medium text-navy-900 transition-colors hover:bg-navy-50"
-          >
-            Login
-          </Link>
-          <Link
-            to="/signup"
             className="rounded-md bg-navy-900 px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition-all hover:bg-navy-800 hover:shadow-md"
           >
-            Sign Up
+            Login
           </Link>
         </div>
 
@@ -133,22 +127,13 @@ const Navbar = () => {
             </li>
           ))}
           <li className="mt-2 flex flex-col gap-2 border-t border-navy-100 pt-4">
-            <div className="flex gap-3">
-              <Link
-                to="/login"
-                onClick={() => setIsMenuOpen(false)}
-                className="flex-1 rounded-md border border-navy-200 px-4 py-2.5 text-center text-sm font-medium text-navy-700 hover:bg-navy-50"
-              >
-                Login
-              </Link>
-              <Link
-                to="/signup"
-                onClick={() => setIsMenuOpen(false)}
-                className="flex-1 rounded-md bg-navy-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
-              >
-                Sign Up
-              </Link>
-            </div>
+            <Link
+              to="/login"
+              onClick={() => setIsMenuOpen(false)}
+              className="w-full rounded-md bg-navy-900 px-4 py-2.5 text-center text-sm font-semibold text-white"
+            >
+              Login
+            </Link>
           </li>
         </ul>
       </div>

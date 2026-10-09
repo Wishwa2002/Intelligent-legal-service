@@ -10,7 +10,7 @@ public class Lawyer
     // Directory profiles can exist without a linked login account.
     public int? UserId { get; set; }
 
-    public User User { get; set; } = null!;
+    public User? User { get; set; }
 
     public string Name { get; set; } = string.Empty;
     public string? Email { get; set; }
