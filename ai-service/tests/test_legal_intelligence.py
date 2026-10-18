@@ -1,17 +1,15 @@
 import pytest
 
-from app.agents.legal_intelligence import agent as legal_agent
-
-
-from app.agents.legal_intelligence.classifier import classify_query
-from app.agents.legal_intelligence.models import LegalQueryIntent
-
+from fastapi.testclient import TestClient
 from pydantic import ValidationError
+
+from app.main import create_app
+from app.agents.legal_intelligence import agent as legal_agent
+from app.agents.legal_intelligence.classifier import classify_query
 from app.agents.legal_intelligence.models import (
     LegalIntelligenceRequest,
     LegalQueryIntent,
 )
-
 
 # ---------------------------------------------------------
 # M4-TC21
@@ -262,3 +260,80 @@ async def test_legal_intelligence_agent_recovers_after_transient_retrieval_failu
     assert response.confidence == 0.75
     assert response.validation_errors == []
     assert response.requires_human_review is False
+
+# ---------------------------------------------------------
+# M4-TC31
+# Integration:
+# FastAPI route -> Legal Intelligence Agent -> HTTP response
+# ---------------------------------------------------------
+
+def test_legal_intelligence_api_integration_returns_valid_response(
+    monkeypatch,
+):
+    async def fake_execute_research_task(task):
+        return []
+
+    async def fake_generate_legal_summary(
+        query,
+        sources,
+    ):
+        return "Integrated legal research response."
+
+    def fake_validate_legal_response(
+        sources,
+        citations,
+        answer,
+    ):
+        return (
+            0.80,
+            [],
+            False,
+        )
+
+    monkeypatch.setattr(
+        legal_agent,
+        "execute_research_task",
+        fake_execute_research_task,
+    )
+
+    monkeypatch.setattr(
+        legal_agent,
+        "generate_legal_summary",
+        fake_generate_legal_summary,
+    )
+
+    monkeypatch.setattr(
+        legal_agent,
+        "validate_legal_response",
+        fake_validate_legal_response,
+    )
+
+    app = create_app()
+
+    with TestClient(app) as client:
+        response = client.post(
+            "/api/legal-intelligence/ask",
+            json={
+                "query":
+                    "What law applies to cybercrime in Sri Lanka?"
+            },
+        )
+
+    assert response.status_code == 200
+
+    data = response.json()
+
+    assert data["query"] == (
+        "What law applies to cybercrime in Sri Lanka?"
+    )
+
+    assert data["intent"] == "law"
+
+    assert (
+        data["answer"]
+        == "Integrated legal research response."
+    )
+
+    assert data["confidence"] == 0.80
+    assert data["requires_human_review"] is False
+    assert data["validation_errors"] == []
