@@ -1,0 +1,8 @@
+START UTC 2026-10-08T04:30:11.584914+00:00
+COMMAND ['dotnet', 'test', 'backend/LegalService.Tests/LegalService.Tests.csproj', '--logger', 'trx;LogFileName=backend-completion.trx', '--results-directory', 'qmse-output/completion-20261008/evidence', '--collect', 'XPlat Code Coverage']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service
+  Determining projects to restore...
+  Restored /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/LegalService.API.csproj (in 1.54 sec).
+  Restored /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/LegalService.Tests.csproj (in 1.54 sec).
+  LegalService.API -> /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/bin/Debug/net8.0/LegalService.API.dll
+/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/QmseUploadRegressionTests.cs(20,139): error CS0144: Cannot create an instance of the abstract type or interface 'IHeaderDictionary' [/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/LegalService.Tests.csproj]

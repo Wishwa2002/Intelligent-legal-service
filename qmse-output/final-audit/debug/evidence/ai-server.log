@@ -1,0 +1,30 @@
+INFO:     Started server process [15892]
+INFO:     Waiting for application startup.
+2026-10-08 17:46:14,383 [INFO] app.main: AI Service starting — model=gemini-3.8-flash backend=http://127.0.0.1:55543
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:55544 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54117 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54117 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54132 - "POST /api/ai/document/audit-checklist HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54326 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54326 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54326 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54326 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54480 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54480 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54480 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54480 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54581 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54581 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54581 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54581 - "GET /api/agent/request/1/status HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56502 - "POST /api/ai/scheduling/classify HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:56714 - "GET /api/agent/requests/client-names HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56714 - "GET /api/agent/requests/client-names HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56714 - "GET /api/agent/requests/client-names HTTP/1.1" 401 Unauthorized
+INFO:     127.0.0.1:56714 - "GET /api/agent/requests/client-names HTTP/1.1" 401 Unauthorized
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-10-08 19:01:57,744 [INFO] app.main: AI Service shut down cleanly.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [15892]

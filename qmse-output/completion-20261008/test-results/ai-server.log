@@ -1,0 +1,207 @@
+INFO:     Started server process [98015]
+INFO:     Waiting for application startup.
+2026-10-08 10:01:54,544 [INFO] app.main: AI Service starting — model=gemini-3.8-flash backend=http://127.0.0.1:55443
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:55444 (Press CTRL+C to quit)
+2026-10-08 10:05:40,124 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57588 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:07:03,405 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57632 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:10:28,025 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57709 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:11:33,295 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57740 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:13:20,116 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57893 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:13:23,046 [INFO] httpx: HTTP Request: PUT http://127.0.0.1:55443/internal/ai-state/chat/a9c5bba6-9d3d-4d01-86c1-657816693077 "HTTP/1.1 204 No Content"
+2026-10-08 10:13:23,047 [INFO] app.graph.workflow: New session created: session_id=a9c5bba6-9d3d-4d01-86c1-657816693077 workflow_id=91f62881-63ce-4f55-b9db-f5171ac90e72
+2026-10-08 10:13:23,062 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/api/documentation-services?includeInactive=false "HTTP/1.1 200 OK"
+2026-10-08 10:13:23,068 [INFO] httpx: HTTP Request: PUT http://127.0.0.1:55443/internal/ai-state/chat/a9c5bba6-9d3d-4d01-86c1-657816693077 "HTTP/1.1 204 No Content"
+INFO:     127.0.0.1:57893 - "POST /api/agent/chat/session HTTP/1.1" 200 OK
+2026-10-08 10:14:28,360 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57942 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:14:30,941 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57942 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:43,860 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:43,863 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:44,901 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:44,906 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:45,956 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:45,961 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:46,994 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:47,000 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:48,025 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:48,033 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:49,041 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:49,047 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:49,110 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:50,055 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:50,059 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:51,081 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:51,087 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:52,113 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:52,120 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:53,145 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:53,152 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:54,177 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:54,184 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:55,214 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:55,220 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:56,246 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:56,253 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:57,274 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:57,281 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:58,292 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57973 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:15:58,297 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57972 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:18:25,367 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58131 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:18:26,593 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58131 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:20:05,240 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58187 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:20:06,292 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58187 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:20:08,604 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58187 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:00,907 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:00,910 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:01,924 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:01,931 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:02,950 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:02,958 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:03,976 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:03,984 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:05,001 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:05,009 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:06,011 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:06,017 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:06,415 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:07,038 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:07,045 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:08,063 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:08,071 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:09,089 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:09,097 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:10,120 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:10,128 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:11,149 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:11,157 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:12,176 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:12,183 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:13,203 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:13,210 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:14,229 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:14,237 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:15,255 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58207 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:21:15,263 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58206 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:24:30,274 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58640 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:26:23,457 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58697 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:26:24,505 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58697 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:26:26,176 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58697 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:26:26,828 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:58697 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:26:26,867 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/api/clerks "HTTP/1.1 200 OK"
+2026-10-08 10:26:26,916 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/api/clerks/1/requests "HTTP/1.1 200 OK"
+2026-10-08 10:26:26,919 [INFO] app.tools.clerk_tools: Eligible clerks (excluding []): 1 found
+INFO:     127.0.0.1:58743 - "POST /clerk/recommend HTTP/1.1" 200 OK
+2026-10-08 10:28:42,347 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:59786 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:28:49,573 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:59800 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:28:50,652 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:59800 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:28:52,213 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:59800 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:28:52,948 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:59800 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:28:52,952 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/api/clerks "HTTP/1.1 200 OK"
+2026-10-08 10:28:52,953 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/api/clerks/1/requests "HTTP/1.1 200 OK"
+2026-10-08 10:28:52,954 [INFO] app.tools.clerk_tools: Eligible clerks (excluding []): 1 found
+INFO:     127.0.0.1:59812 - "POST /clerk/recommend HTTP/1.1" 200 OK
+2026-10-08 10:28:52,984 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:59800 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:28:54,063 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:59800 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:31:53,706 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:60332 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:31:54,821 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:60332 - "GET /api/agent/request/12/status HTTP/1.1" 404 Not Found
+2026-10-08 10:31:54,848 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:60332 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:31:58,501 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:60332 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:31:59,094 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:60332 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+2026-10-08 10:34:49,946 [INFO] httpx: HTTP Request: GET http://127.0.0.1:55443/internal/ai-state/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:61839 - "GET /api/agent/requests/client-names HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+2026-10-08 10:53:54,240 [INFO] app.main: AI Service shut down cleanly.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [98015]

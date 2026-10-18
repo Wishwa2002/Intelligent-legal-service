@@ -1,0 +1,13 @@
+{
+  "command": [
+    "ai-service/.venv/bin/python",
+    "backend/LegalService.Tests/historical_api_replay.py"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T10:46:21.649676+00:00",
+  "ended_utc": "2026-10-08T10:46:25.513351+00:00",
+  "duration_seconds": 3.864,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/historical-resolution/evidence/historical-api.log"
+}

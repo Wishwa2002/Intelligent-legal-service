@@ -1,0 +1,141 @@
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Description", s."Name"
+      FROM "Specializations" AS s
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__adminEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__adminEmail_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__clerkEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__clerkEmail_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__clerkUser_UserId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId"
+      FROM "Clerks" AS c
+      WHERE c."UserId" = @__clerkUser_UserId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      UPDATE "Clerks" SET "UpdatedAt" = @p0
+      WHERE "ClerkId" = @p1;
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55543
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Staging
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", CASE
+          WHEN btrim(l."Name", E' \t\n\r') = '' THEN l."Qualification"
+          ELSE l."Name"
+      END, l."Email", l."PhoneNumber", l."Qualification", l."Experience", l."LicenseNumber", l."ProfileDescription", l."Status", t."specializationId", t.name, t.description, t."LawyerId", t."SpecializationId0"
+      FROM "Lawyers" AS l
+      LEFT JOIN (
+          SELECT l0."SpecializationId" AS "specializationId", s."Name" AS name, s."Description" AS description, l0."LawyerId", s."SpecializationId" AS "SpecializationId0"
+          FROM "LawyerSpecializations" AS l0
+          INNER JOIN "Specializations" AS s ON l0."SpecializationId" = s."SpecializationId"
+      ) AS t ON l."LawyerId" = t."LawyerId"
+      ORDER BY l."Name", l."LawyerId", t."LawyerId", t."specializationId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId" AS "specializationId", s."Name" AS name, s."Description" AS description, (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l
+          WHERE s."SpecializationId" = l."SpecializationId") AS "lawyerCount", (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l0
+          INNER JOIN "Lawyers" AS l1 ON l0."LawyerId" = l1."LawyerId"
+          WHERE s."SpecializationId" = l0."SpecializationId" AND l1."Status" = 'Active' AND (
+              SELECT count(*)::int
+              FROM "LawyerSpecializations" AS l2
+              WHERE l1."LawyerId" = l2."LawyerId") = 1) AS "activeLawyerCount", (
+          SELECT count(*)::int
+          FROM "LegalServices" AS l3
+          WHERE lower(l3."Category") = lower(s."Name")) AS "legalServiceCount"
+      FROM "Specializations" AS s
+      ORDER BY s."SpecializationId"
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

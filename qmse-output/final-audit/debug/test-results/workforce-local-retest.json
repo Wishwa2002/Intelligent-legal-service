@@ -1,0 +1,13 @@
+{
+  "command": [
+    "ai-service/.venv/bin/python",
+    "qmse-output/final-audit/debug/audit/probe_workforce.py"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T12:33:01.985204+00:00",
+  "ended_utc": "2026-10-08T12:33:02.395731+00:00",
+  "duration_seconds": 0.41,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/workforce-local-retest.log"
+}

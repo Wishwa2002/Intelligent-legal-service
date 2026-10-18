@@ -1,0 +1,99 @@
+Flutter crash report.
+Please report a bug at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter --version
+
+## exception
+
+_Exception: Exception: Could not find file at /private/tmp/qmse-flutter-source/bin/cache/dart-sdk/bin/resources/devtools/version.json
+
+```
+#0      Cache.devToolsVersion (package:flutter_tools/src/cache.dart:445:9)
+#1      _FlutterVersionGit.devToolsVersion (package:flutter_tools/src/version.dart:703:47)
+#2      FlutterVersion.toJson (package:flutter_tools/src/version.dart:303:24)
+#3      _FlutterVersionGit.ensureVersionFile (package:flutter_tools/src/version.dart:733:54)
+#4      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:449:32)
+<asynchronous suspension>
+#5      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#6      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+<asynchronous suspension>
+#7      FlutterCommandRunner.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:307:33)
+<asynchronous suspension>
+#8      run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:104:11)
+<asynchronous suspension>
+#9      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+<asynchronous suspension>
+#10     main (package:flutter_tools/executable.dart:103:3)
+<asynchronous suspension>
+```
+
+## flutter doctor
+
+```
+[☠] Flutter (the doctor check crashed)
+    ✗ Due to an error, the doctor check did not complete. If the error message below is not helpful, please let us know about this issue at https://github.com/flutter/flutter/issues.
+    ✗ Exception: Could not find file at /private/tmp/qmse-flutter-source/bin/cache/dart-sdk/bin/resources/devtools/version.json
+    • #0      Cache.devToolsVersion (package:flutter_tools/src/cache.dart:445:9)
+      #1      _DefaultDoctorValidatorsProvider.validators.<anonymous closure> (package:flutter_tools/src/doctor.dart:100:46)
+      #2      FlutterValidator.validateImpl (package:flutter_tools/src/doctor.dart:552:70)
+      #3      DoctorValidator.validate (package:flutter_tools/src/doctor_validator.dart:58:43)
+      #4      Doctor.startValidatorTasks.<anonymous closure> (package:flutter_tools/src/doctor.dart:204:72)
+      #5      asyncGuard.<anonymous closure> (package:flutter_tools/src/base/async_guard.dart:108:32)
+      #6      _rootRun (dart:async/zone_root.dart:35:13)
+      #7      _CustomZone.run (dart:async/zone.dart:810:35)
+      #8      _runZoned (dart:async/zone_api.dart:165:6)
+      #9      runZonedGuarded (dart:async/zone_api.dart:151:12)
+      #10     asyncGuard (package:flutter_tools/src/base/async_guard.dart:106:3)
+      #11     Doctor.startValidatorTasks (package:flutter_tools/src/doctor.dart:194:9)
+      #12     DoctorText._validatorTasks (package:flutter_tools/src/doctor.dart:834:60)
+      #13     DoctorText._validatorTasks (package:flutter_tools/src/doctor.dart)
+      #14     DoctorText._runDiagnosis (package:flutter_tools/src/doctor.dart:839:32)
+      #15     DoctorText.text (package:flutter_tools/src/doctor.dart:830:36)
+      #16     DoctorText.text (package:flutter_tools/src/doctor.dart)
+      #17     _createLocalCrashReport (package:flutter_tools/runner.dart:329:51)
+      #18     _handleToolErrorImpl (package:flutter_tools/runner.dart:290:31)
+      <asynchronous suspension>
+      #19     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+      <asynchronous suspension>
+      #20     main (package:flutter_tools/executable.dart:103:3)
+      <asynchronous suspension>
+
+
+[!] Android toolchain - develop for Android devices (Android SDK version 36.1.0) [607ms]
+    • Android SDK at /Users/jeyam/Library/Android/sdk
+    • Emulator version 36.6.11.0 (build_id 15507667) (CL:N/A)
+    ✗ cmdline-tools component is missing.
+      Try installing or updating Android Studio.
+      Alternatively, download the tools from https://developer.android.com/studio#command-line-tools-only and make sure to set the ANDROID_HOME environment variable.
+      See https://developer.android.com/studio/command-line for more details.
+    ✗ Android license status unknown.
+      Run `flutter doctor --android-licenses` to accept the SDK licenses.
+      See https://flutter.dev/to/macos-android-setup for more details.
+
+[!] Xcode - develop for iOS and macOS [57ms]
+    ✗ Xcode installation is incomplete; a full installation is necessary for iOS and macOS development.
+      Download at: https://developer.apple.com/xcode/
+      Or install Xcode via the App Store.
+      Once installed, run:
+        sudo xcode-select --switch /Applications/Xcode.app/Contents/Developer
+        sudo xcodebuild -runFirstLaunch
+    ! CocoaPods not installed.
+        CocoaPods is a package manager for iOS or macOS platform code.
+        Without CocoaPods, plugins will not work on iOS or macOS.
+        For more info, see https://flutter.dev/to/platform-plugins
+      For installation instructions, see https://guides.cocoapods.org/using/getting-started.html#installation
+
+[✗] Chrome - develop for the web (Cannot find Chrome executable at /Applications/Google Chrome.app/Contents/MacOS/Google Chrome) [22ms]
+    ! Cannot find Chrome. Try setting CHROME_EXECUTABLE to a Chrome executable.
+
+[✓] Connected device (1 available) [3.2s]
+    • macOS (desktop) • macos • darwin-arm64 • macOS 26.4.1 25E253 darwin-arm64
+
+[✓] Network resources [1,205ms]
+    • All expected network resources are available.
+
+! Doctor found issues in 4 categories.
+```

@@ -1,0 +1,1032 @@
+{
+  "cases": [
+    {
+      "test_id": "TC-BK-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/password.trx",
+        "qmse-output/historical-resolution/evidence/password-cost.trx",
+        "qmse-output/historical-resolution/evidence/password-cost.log"
+      ]
+    },
+    {
+      "test_id": "TC-BK-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-03",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/accepted-http-extra.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-04",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-05",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-06",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-07",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/additional-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-DB-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/postgres-setup.trx",
+        "qmse-output/historical-resolution/evidence/postgres-setup.log",
+        "qmse-output/final-audit/debug/evidence/postgres-original.trx",
+        "qmse-output/final-audit/debug/evidence/regression-backend-postgres.trx"
+      ]
+    },
+    {
+      "test_id": "TC-DB-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ef-duplicate.trx",
+        "qmse-output/historical-resolution/evidence/ef-duplicate.log",
+        "qmse-output/historical-resolution/evidence/duplicate-precondition.json"
+      ]
+    },
+    {
+      "test_id": "TC-DB-03",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/migrate.log",
+        "qmse-output/historical-resolution/evidence/migration-tables.log",
+        "qmse-output/historical-resolution/evidence/migration-history.log"
+      ]
+    },
+    {
+      "test_id": "TC-DB-04",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-FE-01",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-01.png",
+        "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log",
+        "qmse-output/historical-resolution/evidence/TC-FE-01.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-FE-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-02.png",
+        "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log",
+        "qmse-output/historical-resolution/evidence/TC-FE-02.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json",
+        "qmse-output/historical-resolution/evidence/playwright-no-slot.json"
+      ]
+    },
+    {
+      "test_id": "TC-FE-03",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-03.png",
+        "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log",
+        "qmse-output/historical-resolution/evidence/TC-FE-03.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-FE-04",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-FE-04.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-FE-05",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-FE-05.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-01",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/accepted-flutter-final.log",
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-03",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/accepted-flutter-final.log",
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-04",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-05",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-01",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/real-flutter-login.png",
+        "qmse-output/historical-resolution/evidence/real-flutter-catalogue.png",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-03",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-04",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-05",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/live-gemini.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-06",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+        "qmse-output/historical-resolution/evidence/real-react-clerk-review.png"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-07",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/real-react-clerk-review.png",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C101",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C102",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json",
+        "qmse-output/completion-20261008/evidence/specialization-database.log"
+      ]
+    },
+    {
+      "test_id": "TC-C103",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C104",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/live-gemini.json",
+        "qmse-output/final-audit/debug/evidence/secondary-startup-probe.json"
+      ]
+    },
+    {
+      "test_id": "TC-C105",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/workforce-snapshot.json",
+        "qmse-output/historical-resolution/evidence/additional-http.json",
+        "qmse-output/historical-resolution/evidence/live-gemini.json",
+        "qmse-output/final-audit/debug/evidence/secondary-workforce-probe.json"
+      ]
+    },
+    {
+      "test_id": "TC-C106",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C106.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-C107",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/ai-completion.xml"
+      ]
+    },
+    {
+      "test_id": "TC-C108",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C109",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C110",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C111",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/ai-completion.xml"
+      ]
+    },
+    {
+      "test_id": "TC-C112",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C113",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/ai-completion.xml"
+      ]
+    },
+    {
+      "test_id": "TC-C2-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-03",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-04",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C2-04.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-05",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+        "qmse-output/historical-resolution/evidence/additional-http.json",
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-06",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C2-06.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-07",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-08",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/timezone-conflict.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-09",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C2-10",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C2-11",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C2-12",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C3-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-03",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-04",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-05",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/accepted-ai.log",
+        "qmse-output/final-audit/debug/evidence/accepted-ai.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log"
+      ]
+    },
+    {
+      "test_id": "TC-C3-06",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-07",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/spoof-before.trx",
+        "qmse-output/completion-20261008/evidence/upload-retest.trx",
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-08",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-09",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C3-10",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C3-11",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C3-12",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx",
+        "qmse-output/completion-20261008/audit/requirements-traceability.md"
+      ]
+    },
+    {
+      "test_id": "TC-C4-01",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-03",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-04",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-05",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-06",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C4-06.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-07",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C4-08",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log"
+      ]
+    },
+    {
+      "test_id": "TC-C4-09",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C4-10",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C4-11",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C4-12",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/live-gemini.json",
+        "qmse-output/completion-20261008/audit/requirements-traceability.md"
+      ]
+    }
+  ],
+  "referenced_artifacts": [
+    {
+      "path": "qmse-output/completion-20261008/audit/requirements-traceability.md",
+      "bytes": 2705,
+      "sha256": "1f31e379934b40583842e9ab9301269c09b188a927f44171ed3f11662040774f"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/ai-completion.xml",
+      "bytes": 13297,
+      "sha256": "38a853ca88b26ed01f5902ba8bba789de21b46301f0f31cdeeafe281ec307c82"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/backend-final-verified.trx",
+      "bytes": 481499,
+      "sha256": "b852adb30a1227606f9ebe3572758e3fca01265c8129587a2208dc209636330d"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/live-gemini.json",
+      "bytes": 467,
+      "sha256": "a0a34f7ff2193edbb9f84198cd0efad01e853434ae29151e01528b170c5533b8"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/real-api-http.json",
+      "bytes": 18857,
+      "sha256": "4bf19e4fe145d3e1399c4922df37f90753cb8fa9f5ac521150f6a01b4424e415"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/specialization-database.log",
+      "bytes": 466,
+      "sha256": "bd739cf7846805c03f88c6b492e700e66fb16d26c3a9b0fc0a2874c211050351"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/spoof-before.trx",
+      "bytes": 4179,
+      "sha256": "981c1191b5d2d11cf317f40bf8eb69fbf6bf725d0a6ac6a47892a2934631c449"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/upload-retest.trx",
+      "bytes": 27709,
+      "sha256": "bd6aa4a5aa8552aa61b19284de068235c540b0d5a2b61b5de4093a19bc131c47"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-01.png",
+      "bytes": 135909,
+      "sha256": "ba212d22628aa2471c75566dfa0df9adc2954fb46baa047672b9704cea0dcf17"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-02.png",
+      "bytes": 127721,
+      "sha256": "d1f4bfd9f130dfd747b989ddfc3917c7e2e09bcf7ae410665f0583cee1f22806"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-03.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/accepted-ai.log",
+      "bytes": 1112,
+      "sha256": "aaf5f477846b0c49d5e8dbe188fbc74f0467c7a500557e82367be95e9f1f8c10"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/accepted-ai.xml",
+      "bytes": 377,
+      "sha256": "bc42627197a566c542e26594e25ffb47841d28ccad2b75ee8a819b29fc2e9897"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/accepted-api.json",
+      "bytes": 5289,
+      "sha256": "5465ba843b58ace01a37bcb0025549609bfbd876da1299c4ab04190f82abc016"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/accepted-flutter-final.log",
+      "bytes": 3506,
+      "sha256": "40410a753c44a2f0cc5e8466e1bb4f9696170ae1eb2aaf433c3a90d92f945540"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/accepted-http-extra.json",
+      "bytes": 679,
+      "sha256": "c12e36a506398cb0ba973a999e2ec4eabe1dda267686b98e8b8b2ac60b02ae51"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log",
+      "bytes": 10320,
+      "sha256": "7266be3c1c6db1aceaeed4707fba4183ae9f7dc665d1547d963704ca11370e55"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "bytes": 50780,
+      "sha256": "dd9c0ec8d072d701a78c7e40c376e4446306a7e86712f52554b9fea34895fedc"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/postgres-original.trx",
+      "bytes": 5934,
+      "sha256": "b4b0a0a682acfd00981a91ef87943ebc83f83e8939b8c3629c5fd57f56a6c55f"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/regression-backend-postgres.trx",
+      "bytes": 487922,
+      "sha256": "1c6ff9bc0b7403313252e220e3a22734b26e43648380d278590fd56b379d25e8"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/secondary-startup-probe.json",
+      "bytes": 13624,
+      "sha256": "c56e867ae1872a5e29076a5f0113b4d749f7df8a7764ab4b6f9c54f2e1c95ef8"
+    },
+    {
+      "path": "qmse-output/final-audit/debug/evidence/secondary-workforce-probe.json",
+      "bytes": 6802,
+      "sha256": "9ded89887954d2584f3568f5ebca4365c32a208c055fd586152cc53704ed44a8"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-C106.png",
+      "bytes": 135957,
+      "sha256": "5fca8e72e5771324038dee01564a5fbc2da107a675e480e5f04c16dda766ee9e"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-C2-04.png",
+      "bytes": 1201675,
+      "sha256": "15519dafceeec7ee12048e265ef569a8a5f321b0b60b36530895ffd5d2eccc8f"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-C2-06.png",
+      "bytes": 111025,
+      "sha256": "5ed3c6672ea0f1ede56dae4e2957308bf26486a4ef58fc2779d67ff5c70ee8f4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-C4-06.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-01.png",
+      "bytes": 135951,
+      "sha256": "fc6c5f3516141e1094205077e6b9f74903144f9df399caa33316390a17f2c13a"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-02.png",
+      "bytes": 127688,
+      "sha256": "292abb89e8035131ebf4765a73bcc7a8a0ce549b0e83846d4a3a1a0e281d49c4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-03.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-04.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-05.png",
+      "bytes": 128771,
+      "sha256": "81755727e83b528630e37d79337576aa8e27af43336de350f9557d767b1a2f0d"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/additional-http.json",
+      "bytes": 1054,
+      "sha256": "298c75374fde031f8c7aea7664b47bc1a47d2e93fef93f15d900f369752570d6"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+      "bytes": 10050,
+      "sha256": "57c94f301af9bbc4215ddae6aef0bbddff21ec9a29ace9ad9902bcde68ec6809"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+      "bytes": 3813,
+      "sha256": "7d55613ff106b4338ac2f48f091587973404fb36d98fc5e001a32f6a81061fc1"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/duplicate-precondition.json",
+      "bytes": 1404,
+      "sha256": "e6e8e3c315a14ce973e611452c05e280d3f64c9ae53240c2af033ce877ed3b63"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ef-duplicate.log",
+      "bytes": 803,
+      "sha256": "21347cf514dc70af307d73f1816caeaeb6de5a9842ade0232c89c7cb1cec8595"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ef-duplicate.trx",
+      "bytes": 3319,
+      "sha256": "8ded201588638d9649d9bc568ef1c1c87772d86df0e37b31dbe45a0474daa81a"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/flutter-historical-final.log",
+      "bytes": 8252,
+      "sha256": "e47319f3a1b28078918390dec67e023fbf2b8f3237c2ef0e7e5e832f9647d665"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/historical-http.json",
+      "bytes": 50782,
+      "sha256": "879a3febaf057b7e42121116198e9592c638c675d9d913dc2ba54fdc231f0383"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/live-gemini.json",
+      "bytes": 493,
+      "sha256": "8b3a20f378e3d1db5a1cb65fdb4e716f97f75753838a72c305ebdf6b4170ad14"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/migrate.log",
+      "bytes": 961,
+      "sha256": "8657dfad1fe3cee9f8a9e37fd5b4020d57b044b19e7c216ece1a4ded6f2e8208"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/migration-history.log",
+      "bytes": 703,
+      "sha256": "7f4e42c10a86ea7aabf59aff4df7bc72e9386de07c4878eb4b7f972f9ef85fc8"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/migration-tables.log",
+      "bytes": 667,
+      "sha256": "bd54896e100c160b975dffefc38e85defa32449f1c8e5063a032208a8e5e2482"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password-cost.log",
+      "bytes": 1774,
+      "sha256": "7ab4e56ca9c7899652edaf716a1c420b632c3fd86e7e02d78c96802d07662f71"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password-cost.trx",
+      "bytes": 5140,
+      "sha256": "d557bb081de6cd45fb565a25e3b8bff6beaf58c690f52c3a1bd2d1732bdbc8e1"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password.trx",
+      "bytes": 3152,
+      "sha256": "6610506f6fa18e0c55392d96437040e1d36a2243476c63879cd22699bf28c910"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-historical.json",
+      "bytes": 55253,
+      "sha256": "425e1fcc54b61e7426377b972788d3892b34da5fc2a19cfe3a69439223acbba8"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-no-slot.json",
+      "bytes": 16963,
+      "sha256": "1a6b13bd5b61a6189f7f3a422a3009a0f5d9d1b426801fef4c2099be986bcd1c"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/postgres-setup.log",
+      "bytes": 1479,
+      "sha256": "80814dd95af17f3315b8a2fcc6577106d27bcbf1c3ccb80dc2af07b96f886196"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/postgres-setup.trx",
+      "bytes": 5934,
+      "sha256": "a9e51e6483b9637f3d9935eb9c6084a2e9f7188f29f9a3c535a15a3feecda841"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-flutter-catalogue.png",
+      "bytes": 120936,
+      "sha256": "45da2fc4af45a569c885910ce7739e82cb0dcb1b2175a5ec91848178085c5890"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-flutter-login.png",
+      "bytes": 315812,
+      "sha256": "ed0d3842bea7656d4392a4943f0bb728646a1b0ad83051034cfee06201e5b145"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-react-clerk-review.png",
+      "bytes": 174878,
+      "sha256": "b838171693938d456486ab729e791095ee992703be6b63b25cbdc317df98555c"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+      "bytes": 7559,
+      "sha256": "ab236df7c17bca5858c74fbbe5c0e9a6fb4435aadc404f542468f9f51aef6e0e"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+      "bytes": 5484,
+      "sha256": "58377945a79128eea65902821a0efd825d6519ec1ebd0cc0134dd0d5f6592c25"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/timezone-conflict.json",
+      "bytes": 1606,
+      "sha256": "af881d337f8962f219cdfe06f58f18ddd88062811d644cd9aa710d6f81552a03"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/workforce-snapshot.json",
+      "bytes": 4045,
+      "sha256": "7625086095d61c08328081d7aa8daaee50dfab444a2c0a8b5c2ed895222f03a0"
+    }
+  ],
+  "figure_captions": [
+    "Figure 6.1. xUnit execution totals",
+    "Figure 6.2. DEF-12: spoofed PDF rejection fails",
+    "Figure 6.3. React project: Node test output",
+    "Figure 6.4. Flutter machine runner: successful completion",
+    "Figure 6.5. Playwright HTML execution report",
+    "Figure 6.6. Actual React schedule editor under Playwright",
+    "Figure 6.7. OWASP ZAP passive scan summary",
+    "Figure 6.8. ZAP alert instances and missing-header detail",
+    "Figure 6.9. k6 controlled local execution completes",
+    "Figure 6.10. k6 original machine metrics",
+    "Figure 6.11. Coverlet results displayed by ReportGenerator",
+    "Figure 6.12. pytest deterministic and mocked AI suite",
+    "Figure 6.13. Deployment repository: historical Mobile CI success",
+    "Figure 6.14. Upload validation: original assertion and regression retest",
+    "Figure 6.15. Real Flutter web submits a genuine bundled PDF",
+    "Figure 6.16. Real React clerk performs human review",
+    "Figure 6.17. Flutter reads the completed result from the API",
+    "Figure 6.18. k6 retest against actual PostgreSQL-backed endpoints",
+    "Figure 6.19. Native expanded ZAP report after schema repair",
+    "Figure 6.20. Earlier completion-phase xUnit execution on its tested source",
+    "Figure 6.21. Official group repository overview",
+    "Figure 6.22. Original main-branch development history",
+    "Figure 6.23. Original lawyer-management development record",
+    "Figure 6.24. Original appointment-management development record",
+    "Figure 6.25. Original document/clerk/AI development record",
+    "Figure 6.26. Original authentication and authorization record",
+    "Figure 6.27. Published final QMSE testing branch",
+    "Figure 6.28. Published tested source and replay-script commit",
+    "Figure 6.29. Published testing-related commit history",
+    "Figure 6.30. GitHub Actions: no run for the published testing branch",
+    "Figure 6.31. Historical BCrypt work-factor precondition fails",
+    "Figure 6.32. React catalogue handles recorded HTTP 500",
+    "Figure 6.33. React booking UI completes recorded approval fixture",
+    "Figure 6.34. Senior Counsel career is visible from real PostgreSQL API",
+    "Figure 6.35. Real Flutter catalogue reveals historical intake mismatch",
+    "Figure 6.36. Actual clerk review uses current statuses instead of Approved",
+    "Figure 6.37: Backend CI success \u2014 Wishwa2002/Intelligent-legal-service; chore/deployment-readiness; SHA 8a9b8a24; captured 2026-10-08 UTC.",
+    "Figure 6.38: Frontend CI success \u2014 Wishwa2002/Intelligent-legal-service; chore/deployment-readiness; SHA 8a9b8a24; captured 2026-10-08 UTC.",
+    "Figure 6.39: Mobile CI success \u2014 Wishwa2002/Intelligent-legal-service; chore/deployment-readiness; SHA 8a9b8a24; captured 2026-10-08 UTC.",
+    "Figure 6.40: Mobile CI failure \u2014 Wishwa2002/Intelligent-legal-service; chore/deployment-readiness; SHA 6d982e60; captured 2026-10-08 UTC.",
+    "Figure 6.41: Frontend CI failure \u2014 Wishwa2002/Intelligent-legal-service; feature/appointment-scheduling-enhancements; SHA fb471202; captured 2026-10-08 UTC.",
+    "Figure 6.42: genuine ZAP 2.17.0 passive report, before nosniff fix; local API on port 55543/isolated PostgreSQL; unpublished overlay over SHA 05359214; captured 2026-10-08 UTC.",
+    "Figure 6.43: genuine ZAP 2.17.0 passive report, after nosniff fix; local API on port 55543/isolated PostgreSQL; unpublished overlay over SHA 05359214; captured 2026-10-08 UTC."
+  ],
+  "population_accounting": {
+    "case_totals": {
+      "VERIFIED/FAIL": 16,
+      "VERIFIED/PASS": 49,
+      "BLOCKED": 12
+    },
+    "original_failures": 30,
+    "passing_accepted_replacements": 14,
+    "original_failures_remaining": 16,
+    "failed_to_blocked": 0,
+    "original_blocked": 12,
+    "fully_unblocked": 0,
+    "still_blocked": 12,
+    "local_prerequisites_resolved": [
+      "Separate recommendation/drafting service startup/internal authentication",
+      "Copied runner Playwright module path",
+      "Current route/DTO/widget replacement fixtures"
+    ],
+    "confirmed_product_defects_fixed": 1,
+    "baseline_607_pass_5_skip": "Preserved dated baseline; not proof of final work tree",
+    "prior_23_native_12_pass_11_fail": "Preserved dated population; no overlap sums",
+    "final_regression": {
+      "backend": {
+        "total": 365,
+        "passed": 362,
+        "failed": 1,
+        "skipped": 2,
+        "evidence": "qmse-output/final-audit/debug/evidence/issue6-backend-complete.trx",
+        "bootstrap": "Startup already executed separately; no repeated fixture reset",
+        "remaining_failure": "Historical BCryptcost12 versus11",
+        "tls_variability": "Final nativeTLSassertion passes; priorcold585.067msfailure retained. No code/performancefix or stablecoldtargetproof inferred."
+      },
+      "node": {
+        "passed": 19,
+        "failed": 0
+      },
+      "flutter": {
+        "total": 60,
+        "passed": 60,
+        "failed": 0,
+        "evidence": "qmse-output/final-audit/debug/evidence/issue5-flutter-final.log"
+      },
+      "ai": {
+        "total": 114,
+        "passed": 114,
+        "failed": 0,
+        "evidence": "qmse-output/final-audit/debug/evidence/issue6-ai-patched-final.xml"
+      },
+      "playwright_baseline": {
+        "passed": 111,
+        "failed": 0,
+        "skipped": 3,
+        "evidence": "qmse-output/final-audit/debug/evidence/issue5-react-final.log"
+      },
+      "playwright_replacements_and_controls": {
+        "passed": 8,
+        "failed": 0
+      },
+      "http_sql_replacements": {
+        "passed": 8,
+        "failed": 0
+      }
+    },
+    "do_not_sum": "These runs overlap earlier populations and one another. Full suite reruns are reported by tool, not accumulated as unique acceptance cases.",
+    "provider_calls_this_phase": 0,
+    "historical_provider_calls": 2,
+    "source_head": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "authorship": "Local AI-assisted tests/config/documentation; no personal execution attribution; no push/deploy.",
+    "new_rule_tests": {
+      "total": 70,
+      "passed": 70,
+      "failed": 0,
+      "skipped": 0,
+      "evidence": "qmse-output/final-audit/debug/evidence/issue5-retest.trx",
+      "scope": "70 targeted tests including 27 new requirement-decision cases; overlaps full backend"
+    },
+    "recommendation_ui_boundaries": {
+      "passed": 8,
+      "failed": 0,
+      "evidence": "qmse-output/final-audit/debug/evidence/issue5-playwright-confirmed.log"
+    },
+    "security_configuration_fixes": 1,
+    "application_changes": "Local filesystem orphan cleanup; nosniff middleware; default-disabled cancellation/headroom/batch proposals; Flutter capability agreement; client length guard; three targeted AI dependency security patches",
+    "new_requirement_decision_tests": 29
+  }
+}

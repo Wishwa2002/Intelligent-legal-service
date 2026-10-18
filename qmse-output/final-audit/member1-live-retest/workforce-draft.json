@@ -1,0 +1,10 @@
+{
+  "status": 503,
+  "response": {
+    "title": "AI hiring assistance is temporarily unavailable.",
+    "status": 503,
+    "traceId": "0HNP59K1M59GK:00000045",
+    "conflicts": null
+  },
+  "historical_acceptance": "BLOCKED: live draft is not expert-approved predictive forecasting"
+}

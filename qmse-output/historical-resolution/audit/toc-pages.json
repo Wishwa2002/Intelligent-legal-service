@@ -1,0 +1,218 @@
+{
+  "_Toc1": {
+    "title": "1. Introduction",
+    "page": 3
+  },
+  "_Toc2": {
+    "title": "1.1 Purpose of this report",
+    "page": 3
+  },
+  "_Toc3": {
+    "title": "1.2 System under test",
+    "page": 3
+  },
+  "_Toc4": {
+    "title": "1.3 Quality risks identified",
+    "page": 3
+  },
+  "_Toc5": {
+    "title": "2. Test Plan",
+    "page": 5
+  },
+  "_Toc6": {
+    "title": "2.1 Objectives",
+    "page": 5
+  },
+  "_Toc7": {
+    "title": "2.2 Scope",
+    "page": 5
+  },
+  "_Toc8": {
+    "title": "2.3 Testing areas, tools and techniques",
+    "page": 5
+  },
+  "_Toc9": {
+    "title": "2.4 Test environment",
+    "page": 6
+  },
+  "_Toc10": {
+    "title": "2.5 Entry and exit criteria",
+    "page": 6
+  },
+  "_Toc11": {
+    "title": "2.6 Responsibilities",
+    "page": 6
+  },
+  "_Toc12": {
+    "title": "2.7 Schedule",
+    "page": 7
+  },
+  "_Toc13": {
+    "title": "3. Test Case Document",
+    "page": 8
+  },
+  "_Toc14": {
+    "title": "3.1 Backend / API tests (xUnit, isolated Kestrel HTTP fixtures)",
+    "page": 8
+  },
+  "_Toc15": {
+    "title": "3.2 Database tests (xUnit + PostgreSQL + EF Core)",
+    "page": 9
+  },
+  "_Toc16": {
+    "title": "3.3 React web tests (Node runner, Playwright)",
+    "page": 10
+  },
+  "_Toc17": {
+    "title": "3.4 Flutter mobile tests (flutter_test)",
+    "page": 11
+  },
+  "_Toc18": {
+    "title": "3.5 Integrated end-to-end workflow: Flutter, API, PostgreSQL, AI, React",
+    "page": 12
+  },
+  "_Toc19": {
+    "title": "3.6 Component 1 test cases (Jeyashankar J)",
+    "page": 14
+  },
+  "_Toc20": {
+    "title": "3.7 Component 2 test cases (Buddhika P. Y. H): appointments, careers, scheduling agent",
+    "page": 16
+  },
+  "_Toc21": {
+    "title": "3.8 Component 3 test cases (Vithusan V): documentation, clerks, verification agent",
+    "page": 19
+  },
+  "_Toc22": {
+    "title": "3.9 Component 4 test cases (Wijayananda W. J. W): authentication, service requests, consultation agent",
+    "page": 21
+  },
+  "_Toc23": {
+    "title": "3.10 Agentic AI evaluation (Golden Cases)",
+    "page": 23
+  },
+  "_Toc24": {
+    "title": "3.11 Security tests",
+    "page": 24
+  },
+  "_Toc25": {
+    "title": "3.12 Performance tests against NFR-01",
+    "page": 25
+  },
+  "_Toc26": {
+    "title": "4. Test Execution Summary",
+    "page": 26
+  },
+  "_Toc27": {
+    "title": "4.1 Automated suite results",
+    "page": 26
+  },
+  "_Toc28": {
+    "title": "4.2 Test cases documented in this report",
+    "page": 26
+  },
+  "_Toc29": {
+    "title": "4.3 Requirement coverage",
+    "page": 27
+  },
+  "_Toc30": {
+    "title": "4.4 Conclusion of execution",
+    "page": 28
+  },
+  "_Toc31": {
+    "title": "5. Defect / Bug Report",
+    "page": 28
+  },
+  "_Toc32": {
+    "title": "5.1 Defect summary",
+    "page": 34
+  },
+  "_Toc33": {
+    "title": "6. Tool-Generated Evidence",
+    "page": 34
+  },
+  "_Toc34": {
+    "title": "7. Non-Functional Test Analysis",
+    "page": 68
+  },
+  "_Toc35": {
+    "title": "7.1 Performance",
+    "page": 68
+  },
+  "_Toc36": {
+    "title": "7.2 Security",
+    "page": 69
+  },
+  "_Toc37": {
+    "title": "7.3 Reliability and recovery",
+    "page": 69
+  },
+  "_Toc38": {
+    "title": "7.4 Usability and compatibility",
+    "page": 69
+  },
+  "_Toc39": {
+    "title": "8. Agentic AI Testing and Evaluation",
+    "page": 69
+  },
+  "_Toc40": {
+    "title": "9. Individual Testing Contributions",
+    "page": 70
+  },
+  "_Toc41": {
+    "title": "9.1 Jeyashankar J (IT24103900), C1",
+    "page": 71
+  },
+  "_Toc42": {
+    "title": "9.2 Buddhika P. Y. H (IT24103041), C2",
+    "page": 74
+  },
+  "_Toc43": {
+    "title": "9.3 Vithusan V (IT24100360), C3",
+    "page": 77
+  },
+  "_Toc44": {
+    "title": "9.4 Wijayananda W. J. W (Team Leader) (IT24102275), C4",
+    "page": 80
+  },
+  "_Toc45": {
+    "title": "10. Group Contribution Matrix",
+    "page": 82
+  },
+  "_Toc46": {
+    "title": "11. Conclusion and Recommendations",
+    "page": 83
+  },
+  "_Toc47": {
+    "title": "12. AI Usage Declaration (CLEAR Framework)",
+    "page": 84
+  },
+  "_Toc48": {
+    "title": "13. References",
+    "page": 84
+  },
+  "_Toc49": {
+    "title": "Appendix A: Specification Compliance Checklist",
+    "page": 85
+  },
+  "_Toc50": {
+    "title": "Appendix B: Reproduction Guide",
+    "page": 87
+  },
+  "_Toc51": {
+    "title": "B.1 Prerequisites",
+    "page": 87
+  },
+  "_Toc52": {
+    "title": "B.2 Start the system",
+    "page": 87
+  },
+  "_Toc53": {
+    "title": "B.3 Run the test suites",
+    "page": 88
+  },
+  "_Toc54": {
+    "title": "B.4 Test accounts",
+    "page": 89
+  }
+}

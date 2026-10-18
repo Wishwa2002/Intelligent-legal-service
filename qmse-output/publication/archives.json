@@ -1,0 +1,93 @@
+{
+  "format": 1,
+  "archives": [
+    {
+      "original_path": "qmse-output/SE3110_GR42_Completed_Evidence_Package.zip",
+      "size": 104790887,
+      "sha256": "453ffcd487087da399d73db2387f78ba6a9951e7efb4bae33c8fb0772fe5a189",
+      "parts": [
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Completed_Evidence_Package.zip/SE3110_GR42_Completed_Evidence_Package.zip.part001",
+          "size": 47185920,
+          "sha256": "033d67cf388a0d458a6724ca8975b8136797879943a907a993cc432207bd0727"
+        },
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Completed_Evidence_Package.zip/SE3110_GR42_Completed_Evidence_Package.zip.part002",
+          "size": 47185920,
+          "sha256": "028eca456affa708981df1e11cde76db3d3ea40a4e7c962a5b6c2945fd06f2e7"
+        },
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Completed_Evidence_Package.zip/SE3110_GR42_Completed_Evidence_Package.zip.part003",
+          "size": 10419047,
+          "sha256": "c0b6c0f09596710ea5a1862b77fc4146a0f9b60a4dc9ba12d5e20a294a544555"
+        }
+      ]
+    },
+    {
+      "original_path": "qmse-output/SE3110_GR42_Historical_Verification_Evidence.zip",
+      "size": 125445810,
+      "sha256": "6d2a8d820e6654297fa7f89e3806a9a81123762b4040b0b369ae56b88eda1f9b",
+      "parts": [
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Historical_Verification_Evidence.zip/SE3110_GR42_Historical_Verification_Evidence.zip.part001",
+          "size": 47185920,
+          "sha256": "033d67cf388a0d458a6724ca8975b8136797879943a907a993cc432207bd0727"
+        },
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Historical_Verification_Evidence.zip/SE3110_GR42_Historical_Verification_Evidence.zip.part002",
+          "size": 47185920,
+          "sha256": "028eca456affa708981df1e11cde76db3d3ea40a4e7c962a5b6c2945fd06f2e7"
+        },
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Historical_Verification_Evidence.zip/SE3110_GR42_Historical_Verification_Evidence.zip.part003",
+          "size": 31073970,
+          "sha256": "d52d4186f59384e7d098c076c403f73f4fa90d30b054c8927e5e68aa63fb0b25"
+        }
+      ]
+    },
+    {
+      "original_path": "qmse-output/git-publication/backup-60-page/SE3110_GR42_PrePublication_Evidence_Package.zip",
+      "size": 87108599,
+      "sha256": "f5c31a542ab46e902657410f4a3c04439235e332a81d8a72b7e96c70bbe149f0",
+      "parts": [
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_PrePublication_Evidence_Package.zip/SE3110_GR42_PrePublication_Evidence_Package.zip.part001",
+          "size": 47185920,
+          "sha256": "0772ad5aa8b1076eb27f49e9584f81bffea7fdeade31394325e67d291be4766f"
+        },
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_PrePublication_Evidence_Package.zip/SE3110_GR42_PrePublication_Evidence_Package.zip.part002",
+          "size": 39922679,
+          "sha256": "fa709f69fc904568d0834b5104733012242013fdcc6e5d916c0c9d3a777af224"
+        }
+      ]
+    },
+    {
+      "original_path": "qmse-output/final-audit/SE3110_GR42_Consolidated_Final_Evidence.zip",
+      "size": 164143135,
+      "sha256": "b8809c7b8098d9c6c5e611091c31f17a1ff2dcc1eeb0bb4764961b6dc34dc5fe",
+      "parts": [
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Consolidated_Final_Evidence.zip/SE3110_GR42_Consolidated_Final_Evidence.zip.part001",
+          "size": 47185920,
+          "sha256": "033d67cf388a0d458a6724ca8975b8136797879943a907a993cc432207bd0727"
+        },
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Consolidated_Final_Evidence.zip/SE3110_GR42_Consolidated_Final_Evidence.zip.part002",
+          "size": 47185920,
+          "sha256": "028eca456affa708981df1e11cde76db3d3ea40a4e7c962a5b6c2945fd06f2e7"
+        },
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Consolidated_Final_Evidence.zip/SE3110_GR42_Consolidated_Final_Evidence.zip.part003",
+          "size": 47185920,
+          "sha256": "de5e9ef72a04b9032acc492d513cf589f9213fe41743fb7be893374f3ed0b07b"
+        },
+        {
+          "path": "qmse-output/publication/archive-parts/SE3110_GR42_Consolidated_Final_Evidence.zip/SE3110_GR42_Consolidated_Final_Evidence.zip.part004",
+          "size": 22585375,
+          "sha256": "09d63c7cc2fd4978cbfb77a25075dc5867e993ad41f12b894e62acbe7b0b20c9"
+        }
+      ]
+    }
+  ]
+}

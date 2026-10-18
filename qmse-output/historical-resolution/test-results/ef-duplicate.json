@@ -1,0 +1,21 @@
+{
+  "command": [
+    "dotnet",
+    "test",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~HistoricalSlotConstraintTests",
+    "--logger",
+    "trx;LogFileName=ef-duplicate.trx",
+    "--results-directory",
+    "qmse-output/historical-resolution/evidence"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T10:59:52.940257+00:00",
+  "ended_utc": "2026-10-08T10:59:56.019407+00:00",
+  "duration_seconds": 3.079,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/historical-resolution/evidence/ef-duplicate.log"
+}

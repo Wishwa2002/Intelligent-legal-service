@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "tests",
+    "--junitxml=../qmse-output/final-audit/debug/evidence/issue6-ai-patched-final.xml",
+    "-q"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/ai-service",
+  "started_utc": "2026-10-08T13:08:42.730532+00:00",
+  "ended_utc": "2026-10-08T13:08:48.929174+00:00",
+  "duration_seconds": 6.198,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/issue6-ai-patched-final.log"
+}

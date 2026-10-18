@@ -1,0 +1,16 @@
+{
+  "name": "completion-20261008-frontend-build",
+  "command": [
+    "npm",
+    "run",
+    "build"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T05:48:33.772639+00:00",
+  "ended_utc": "2026-10-08T05:48:37.326180+00:00",
+  "duration_seconds": 3.553,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-frontend-build.log"
+}

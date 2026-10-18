@@ -1,0 +1,308 @@
+{
+  "metrics": {
+    "iterations": {
+      "values": {
+        "count": 20,
+        "rate": 1.9315562693729058
+      },
+      "type": "counter",
+      "contains": "default"
+    },
+    "http_req_duration{expected_response:true}": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 7.8558395061728366,
+        "med": 2.034,
+        "p(50)": 2.034,
+        "p(95)": 35.323,
+        "min": 0.394,
+        "max": 88.11
+      }
+    },
+    "data_sent": {
+      "values": {
+        "count": 53725,
+        "rate": 5188.643028602968
+      },
+      "type": "counter",
+      "contains": "data"
+    },
+    "iteration_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 1031.46488345,
+        "med": 1011.916667,
+        "p(50)": 1011.916667,
+        "p(95)": 1166.15733575,
+        "min": 1006.385542,
+        "max": 1166.314917
+      }
+    },
+    "http_req_receiving": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 0.24,
+        "avg": 0.058765432098765405,
+        "med": 0.049,
+        "p(50)": 0.049,
+        "p(95)": 0.137,
+        "min": 0.008
+      }
+    },
+    "http_req_waiting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 88.036,
+        "avg": 7.771999999999998,
+        "med": 2.004,
+        "p(50)": 2.004,
+        "p(95)": 35.286,
+        "min": 0.368
+      }
+    },
+    "http_req_connecting": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "avg": 0.007925925925925927,
+        "med": 0,
+        "p(50)": 0,
+        "p(95)": 0,
+        "min": 0,
+        "max": 0.265
+      }
+    },
+    "vus_max": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 2,
+        "min": 2,
+        "max": 2
+      }
+    },
+    "http_req_failed": {
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 81
+      },
+      "type": "rate"
+    },
+    "appointment_list_ms": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(50)": 1.263,
+        "p(95)": 23.507450000000002,
+        "min": 0.394,
+        "max": 23.516,
+        "avg": 3.4726999999999997,
+        "med": 1.263
+      },
+      "thresholds": {
+        "p(95)<200": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_duration": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 2.034,
+        "p(50)": 2.034,
+        "p(95)": 35.323,
+        "min": 0.394,
+        "max": 88.11,
+        "avg": 7.8558395061728366
+      }
+    },
+    "http_req_blocked": {
+      "values": {
+        "avg": 0.032345679012345606,
+        "med": 0.004,
+        "p(50)": 0.004,
+        "p(95)": 0.02,
+        "min": 0.001,
+        "max": 1.583
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "http_reqs": {
+      "contains": "default",
+      "values": {
+        "count": 81,
+        "rate": 7.8228028909602685
+      },
+      "type": "counter"
+    },
+    "mock_ai_gateway_ms": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(50)": 4.274,
+        "p(95)": 88.11,
+        "min": 1.791,
+        "max": 88.11,
+        "avg": 16.937350000000002,
+        "med": 4.274
+      }
+    },
+    "http_req_sending": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "max": 0.429,
+        "avg": 0.025074074074074065,
+        "med": 0.015,
+        "p(50)": 0.015,
+        "p(95)": 0.058,
+        "min": 0.002
+      }
+    },
+    "qmse_error_rate": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 0,
+        "passes": 0,
+        "fails": 80
+      }
+    },
+    "lawyer_detail_ms": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "med": 1.732,
+        "p(50)": 1.732,
+        "p(95)": 35.31825,
+        "min": 0.694,
+        "max": 35.323,
+        "avg": 5.03405
+      },
+      "thresholds": {
+        "p(95)<200": {
+          "ok": true
+        }
+      }
+    },
+    "http_req_tls_handshaking": {
+      "values": {
+        "p(95)": 0,
+        "min": 0,
+        "max": 0,
+        "avg": 0,
+        "med": 0,
+        "p(50)": 0
+      },
+      "type": "trend",
+      "contains": "time"
+    },
+    "vus": {
+      "type": "gauge",
+      "contains": "default",
+      "values": {
+        "value": 2,
+        "min": 2,
+        "max": 2
+      }
+    },
+    "data_received": {
+      "type": "counter",
+      "contains": "data",
+      "values": {
+        "count": 74400,
+        "rate": 7185.389322067209
+      }
+    },
+    "lawyer_search_ms": {
+      "type": "trend",
+      "contains": "time",
+      "values": {
+        "p(50)": 2.9975,
+        "p(95)": 16.8762,
+        "min": 1.431,
+        "max": 16.937,
+        "avg": 4.604649999999999,
+        "med": 2.9975
+      },
+      "thresholds": {
+        "p(95)<200": {
+          "ok": true
+        }
+      }
+    },
+    "checks": {
+      "type": "rate",
+      "contains": "default",
+      "values": {
+        "rate": 1,
+        "passes": 80,
+        "fails": 0
+      }
+    }
+  },
+  "setup_data": {
+    "id": "531413f9-287f-48a1-bd66-cea04c69703c"
+  },
+  "root_group": {
+    "path": "",
+    "id": "d41d8cd98f00b204e9800998ecf8427e",
+    "groups": [],
+    "checks": [
+        {
+          "path": "::search returns 200",
+          "id": "fbf2814d50b5719c72a2c6509a69338e",
+          "passes": 20,
+          "fails": 0,
+          "name": "search returns 200"
+        },
+        {
+          "passes": 20,
+          "fails": 0,
+          "name": "detail returns 200",
+          "path": "::detail returns 200",
+          "id": "1cf2532801db7654706ab50f4e79cc76"
+        },
+        {
+          "id": "5be07f8cac59cd0401ddd5e917edc667",
+          "passes": 20,
+          "fails": 0,
+          "name": "appointments returns 200",
+          "path": "::appointments returns 200"
+        },
+        {
+          "name": "mock gateway returns 200",
+          "path": "::mock gateway returns 200",
+          "id": "b4f7aa868c3c083e1acf705e661ba7e6",
+          "passes": 20,
+          "fails": 0
+        }
+      ],
+    "name": ""
+  },
+  "options": {
+    "summaryTrendStats": [
+      "avg",
+      "med",
+      "p(50)",
+      "p(95)",
+      "min",
+      "max"
+    ],
+    "summaryTimeUnit": "",
+    "noColor": true
+  },
+  "state": {
+    "isStdOutTTY": false,
+    "isStdErrTTY": false,
+    "testRunDurationMs": 10354.345
+  }
+}

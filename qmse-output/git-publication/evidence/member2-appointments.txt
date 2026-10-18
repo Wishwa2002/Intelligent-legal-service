@@ -1,0 +1,1850 @@
+Skip to content
+Navigation Menu
+Sign in
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Commit d461a84
+Browse files
+yhprasadhew
+committed
+feat(appointments): implement booking APIs, conflict detection, and status transitions
+chore/deployment-readiness(#31, #13)+
+develop(#32, #13)+
+feature/appointment-scheduling-enhancements(#33, #34, #13)+
+feature/booking_appointment_management(#15, #13)+
+feature/member1-lawyer-management(#13)+
+fix/auth-security-improvements(#13)+
+fix/unified-staff-auth(#13)+
+se3110-qmse-testing(#13)
+1 parent 
+2ca3197
+ commit 
+d461a84
+
+7 files changed
+
++1,449
+Lines changed: 1449 additions & 0 deletions
+File tree
+backend
+LegalService.API
+Controllers
+AppointmentsController.cs
+DTOs/Appointments
+AppointmentRequests.cs
+AppointmentResponses.cs
+Interfaces
+IAppointmentService.cs
+Program.cs
+Services
+AppointmentService.cs
+LegalService.Tests
+AppointmentServiceTests.cs
+ 
+‎backend/LegalService.API/Controllers/AppointmentsController.cs‎
++268
+Lines changed: 268 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,268 @@
+
+	1	
++
+using System;
+
+	2	
++
+using System.Threading.Tasks;
+
+	3	
++
+using Microsoft.AspNetCore.Mvc;
+
+	4	
++
+using LegalService.API.DTOs.Appointments;
+
+	5	
++
+using LegalService.API.Interfaces;
+
+	6	
++
+
+	7	
++
+namespace LegalService.API.Controllers;
+
+	8	
++
+
+	9	
++
+[ApiController]
+
+	10	
++
+[Route("api/appointments")]
+
+	11	
++
+public class AppointmentsController : ControllerBase
+
+	12	
++
+{
+
+	13	
++
+    private readonly IAppointmentService _appointmentService;
+
+	14	
++
+
+	15	
++
+    public AppointmentsController(IAppointmentService appointmentService)
+
+	16	
++
+    {
+
+	17	
++
+        _appointmentService = appointmentService;
+
+	18	
++
+    }
+
+	19	
++
+
+	20	
++
+    /// <summary>
+
+	21	
++
+    /// Book a new appointment slot for a customer with a lawyer.
+
+	22	
++
+    /// </summary>
+
+	23	
++
+    [HttpPost]
+
+	24	
++
+    public async Task<IActionResult> BookAppointment([FromBody] BookAppointmentRequest request)
+
+	25	
++
+    {
+
+	26	
++
+        if (!ModelState.IsValid)
+
+	27	
++
+            return BadRequest(ModelState);
+
+	28	
++
+
+	29	
++
+        try
+
+	30	
++
+        {
+
+	31	
++
+            var appointment = await _appointmentService.BookAppointmentAsync(request);
+
+	32	
++
+            return CreatedAtAction(nameof(GetAppointmentById), new { id = appointment.AppointmentId }, appointment);
+
+	33	
++
+        }
+
+	34	
++
+        catch (KeyNotFoundException ex)
+
+	35	
++
+        {
+
+	36	
++
+            return NotFound(new { message = ex.Message });
+
+	37	
++
+        }
+
+	38	
++
+        catch (InvalidOperationException ex)
+
+	39	
++
+        {
+
+	40	
++
+            return Conflict(new { message = ex.Message });
+
+	41	
++
+        }
+
+	42	
++
+    }
+
+	43	
++
+
+	44	
++
+    /// <summary>
+
+	45	
++
+    /// Get all appointments, with optional filters for lawyer, customer, status, or date.
+
+	46	
++
+    /// </summary>
+
+	47	
++
+    [HttpGet]
+
+	48	
++
+    public async Task<IActionResult> GetAllAppointments(
+
+	49	
++
+        [FromQuery] Guid? lawyerId,
+
+	50	
++
+        [FromQuery] Guid? customerId,
+
+	51	
++
+        [FromQuery] string? status,
+
+	52	
++
+        [FromQuery] string? date)
+
+	53	
++
+    {
+
+	54	
++
+        DateOnly? parsedDate = null;
+
+	55	
++
+        if (!string.IsNullOrWhiteSpace(date) && DateOnly.TryParse(date, out var d))
+
+	56	
++
+        {
+
+	57	
++
+            parsedDate = d;
+
+	58	
++
+        }
+
+	59	
++
+
+	60	
++
+        var appointments = await _appointmentService.GetAllAppointmentsAsync(lawyerId, customerId, status, parsedDate);
+
+	61	
++
+        return Ok(appointments);
+
+	62	
++
+    }
+
+	63	
++
+
+	64	
++
+    /// <summary>
+
+	65	
++
+    /// Get appointment details by appointment ID.
+
+	66	
++
+    /// </summary>
+
+	67	
++
+    [HttpGet("{id:guid}")]
+
+	68	
++
+    public async Task<IActionResult> GetAppointmentById(Guid id)
+
+	69	
++
+    {
+
+	70	
++
+        var appointment = await _appointmentService.GetAppointmentByIdAsync(id);
+
+	71	
++
+        if (appointment == null)
+
+	72	
++
+            return NotFound(new { message = $"Appointment '{id}' was not found." });
+
+	73	
++
+
+	74	
++
+        return Ok(appointment);
+
+	75	
++
+    }
+
+	76	
++
+
+	77	
++
+    /// <summary>
+
+	78	
++
+    /// Update appointment notes or non-critical details.
+
+	79	
++
+    /// </summary>
+
+	80	
++
+    [HttpPut("{id:guid}")]
+
+	81	
++
+    public async Task<IActionResult> UpdateAppointment(Guid id, [FromBody] UpdateAppointmentRequest request)
+
+	82	
++
+    {
+
+	83	
++
+        try
+
+	84	
++
+        {
+
+	85	
++
+            var updated = await _appointmentService.UpdateAppointmentAsync(id, request);
+
+	86	
++
+            if (updated == null)
+
+	87	
++
+                return NotFound(new { message = $"Appointment '{id}' was not found." });
+
+	88	
++
+
+	89	
++
+            return Ok(updated);
+
+	90	
++
+        }
+
+	91	
++
+        catch (InvalidOperationException ex)
+
+	92	
++
+        {
+
+	93	
++
+            return BadRequest(new { message = ex.Message });
+
+	94	
++
+        }
+
+	95	
++
+    }
+
+	96	
++
+
+	97	
++
+    /// <summary>
+
+	98	
++
+    /// Delete an appointment record.
+
+	99	
++
+    /// </summary>
+
+	100	
++
+    [HttpDelete("{id:guid}")]
+
+	101	
++
+    public async Task<IActionResult> DeleteAppointment(Guid id)
+
+	102	
++
+    {
+
+	103	
++
+        var deleted = await _appointmentService.DeleteAppointmentAsync(id);
+
+	104	
++
+        if (!deleted)
+
+	105	
++
+            return NotFound(new { message = $"Appointment '{id}' was not found." });
+
+	106	
++
+
+	107	
++
+        return NoContent();
+
+	108	
++
+    }
+
+	109	
++
+
+	110	
++
+    /// <summary>
+
+	111	
++
+    /// Confirm a requested or rescheduled appointment.
+
+	112	
++
+    /// </summary>
+
+	113	
++
+    [HttpPost("{id:guid}/confirm")]
+
+	114	
++
+    public async Task<IActionResult> ConfirmAppointment(Guid id, [FromBody] AppointmentActionRequest? request = null)
+
+	115	
++
+    {
+
+	116	
++
+        try
+
+	117	
++
+        {
+
+	118	
++
+            var result = await _appointmentService.ConfirmAppointmentAsync(id, request?.Notes);
+
+	119	
++
+            if (result == null)
+
+	120	
++
+                return NotFound(new { message = $"Appointment '{id}' was not found." });
+
+	121	
++
+
+	122	
++
+            return Ok(result);
+
+	123	
++
+        }
+
+	124	
++
+        catch (InvalidOperationException ex)
+
+	125	
++
+        {
+
+	126	
++
+            return BadRequest(new { message = ex.Message });
+
+	127	
++
+        }
+
+	128	
++
+    }
+
+	129	
++
+
+	130	
++
+    /// <summary>
+
+	131	
++
+    /// Reject an appointment request.
+
+	132	
++
+    /// </summary>
+
+	133	
++
+    [HttpPost("{id:guid}/reject")]
+
+	134	
++
+    public async Task<IActionResult> RejectAppointment(Guid id, [FromBody] AppointmentActionRequest? request = null)
+
+	135	
++
+    {
+
+	136	
++
+        try
+
+	137	
++
+        {
+
+	138	
++
+            var result = await _appointmentService.RejectAppointmentAsync(id, request?.Notes);
+
+	139	
++
+            if (result == null)
+
+	140	
++
+                return NotFound(new { message = $"Appointment '{id}' was not found." });
+
+	141	
++
+
+	142	
++
+            return Ok(result);
+
+	143	
++
+        }
+
+	144	
++
+        catch (InvalidOperationException ex)
+
+	145	
++
+        {
+
+	146	
++
+            return BadRequest(new { message = ex.Message });
+
+	147	
++
+        }
+
+	148	
++
+    }
+
+	149	
++
+
+	150	
++
+    /// <summary>
+
+	151	
++
+    /// Cancel an active appointment.
+
+	152	
++
+    /// </summary>
+
+	153	
++
+    [HttpPost("{id:guid}/cancel")]
+
+	154	
++
+    public async Task<IActionResult> CancelAppointment(Guid id, [FromBody] CancelAppointmentRequest? request = null)
+
+	155	
++
+    {
+
+	156	
++
+        try
+
+	157	
++
+        {
+
+	158	
++
+            var result = await _appointmentService.CancelAppointmentAsync(id, request?.Reason);
+
+	159	
++
+            if (result == null)
+
+	160	
++
+                return NotFound(new { message = $"Appointment '{id}' was not found." });
+
+	161	
++
+
+	162	
++
+            return Ok(result);
+
+	163	
++
+        }
+
+	164	
++
+        catch (InvalidOperationException ex)
+
+	165	
++
+        {
+
+	166	
++
+            return BadRequest(new { message = ex.Message });
+
+	167	
++
+        }
+
+	168	
++
+    }
+
+	169	
++
+
+	170	
++
+    /// <summary>
+
+	171	
++
+    /// Reschedule an appointment to a new available time slot.
+
+	172	
++
+    /// </summary>
+
+	173	
++
+    [HttpPost("{id:guid}/reschedule")]
+
+	174	
++
+    public async Task<IActionResult> RescheduleAppointment(Guid id, [FromBody] RescheduleAppointmentRequest request)
+
+	175	
++
+    {
+
+	176	
++
+        if (!ModelState.IsValid)
+
+	177	
++
+            return BadRequest(ModelState);
+
+	178	
++
+
+	179	
++
+        try
+
+	180	
++
+        {
+
+	181	
++
+            var result = await _appointmentService.RescheduleAppointmentAsync(id, request.NewSlotId, request.Reason);
+
+	182	
++
+            if (result == null)
+
+	183	
++
+                return NotFound(new { message = $"Appointment '{id}' was not found." });
+
+	184	
++
+
+	185	
++
+            return Ok(result);
+
+	186	
++
+        }
+
+	187	
++
+        catch (KeyNotFoundException ex)
+
+	188	
++
+        {
+
+	189	
++
+            return NotFound(new { message = ex.Message });
+
+	190	
++
+        }
+
+	191	
++
+        catch (InvalidOperationException ex)
+
+	192	
++
+        {
+
+	193	
++
+            return Conflict(new { message = ex.Message });
+
+	194	
++
+        }
+
+	195	
++
+    }
+
+	196	
++
+
+	197	
++
+    /// <summary>
+
+	198	
++
+    /// Mark an appointment as completed.
+
+	199	
++
+    /// </summary>
+
+	200	
++
+    [HttpPost("{id:guid}/complete")]
+
+	201	
++
+    public async Task<IActionResult> CompleteAppointment(Guid id, [FromBody] AppointmentActionRequest? request = null)
+
+	202	
++
+    {
+
+	203	
++
+        try
+
+	204	
++
+        {
+
+	205	
++
+            var result = await _appointmentService.CompleteAppointmentAsync(id, request?.Notes);
+
+	206	
++
+            if (result == null)
+
+	207	
++
+                return NotFound(new { message = $"Appointment '{id}' was not found." });
+
+	208	
++
+
+	209	
++
+            return Ok(result);
+
+	210	
++
+        }
+
+	211	
++
+        catch (InvalidOperationException ex)
+
+	212	
++
+        {
+
+	213	
++
+            return BadRequest(new { message = ex.Message });
+
+	214	
++
+        }
+
+	215	
++
+    }
+
+	216	
++
+
+	217	
++
+    /// <summary>
+
+	218	
++
+    /// Get the complete status transition history audit log for an appointment.
+
+	219	
++
+    /// </summary>
+
+	220	
++
+    [HttpGet("{id:guid}/history")]
+
+	221	
++
+    public async Task<IActionResult> GetAppointmentHistory(Guid id)
+
+	222	
++
+    {
+
+	223	
++
+        var history = await _appointmentService.GetAppointmentHistoryAsync(id);
+
+	224	
++
+        return Ok(history);
+
+	225	
++
+    }
+
+	226	
++
+
+	227	
++
+    /// <summary>
+
+	228	
++
+    /// Get all unbooked slots for a specific lawyer on a given date.
+
+	229	
++
+    /// </summary>
+
+	230	
++
+    [HttpGet("available-slots")]
+
+	231	
++
+    public async Task<IActionResult> GetAvailableSlots(
+
+	232	
++
+        [FromQuery] Guid lawyerId,
+
+	233	
++
+        [FromQuery] string date)
+
+	234	
++
+    {
+
+	235	
++
+        if (lawyerId == Guid.Empty)
+
+	236	
++
+            return BadRequest(new { message = "lawyerId parameter is required." });
+
+	237	
++
+
+	238	
++
+        if (string.IsNullOrWhiteSpace(date) || !DateOnly.TryParse(date, out var parsedDate))
+
+	239	
++
+            return BadRequest(new { message = "Valid date parameter (YYYY-MM-DD) is required." });
+
+	240	
++
+
+	241	
++
+        var slots = await _appointmentService.GetAvailableSlotsAsync(lawyerId, parsedDate);
+
+	242	
++
+        return Ok(slots);
+
+	243	
++
+    }
+
+	244	
++
+
+	245	
++
+    /// <summary>
+
+	246	
++
+    /// Check whether a proposed appointment time conflicts with any existing booking for the lawyer.
+
+	247	
++
+    /// </summary>
+
+	248	
++
+    [HttpGet("check-conflict")]
+
+	249	
++
+    public async Task<IActionResult> CheckConflict(
+
+	250	
++
+        [FromQuery] Guid lawyerId,
+
+	251	
++
+        [FromQuery] string date,
+
+	252	
++
+        [FromQuery] string startTime,
+
+	253	
++
+        [FromQuery] string endTime,
+
+	254	
++
+        [FromQuery] Guid? excludeAppointmentId = null)
+
+	255	
++
+    {
+
+	256	
++
+        if (lawyerId == Guid.Empty)
+
+	257	
++
+            return BadRequest(new { message = "lawyerId parameter is required." });
+
+	258	
++
+
+	259	
++
+        if (!DateOnly.TryParse(date, out var parsedDate))
+
+	260	
++
+            return BadRequest(new { message = "Valid date (YYYY-MM-DD) is required." });
+
+	261	
++
+
+	262	
++
+        if (!TimeOnly.TryParse(startTime, out var parsedStart) || !TimeOnly.TryParse(endTime, out var parsedEnd))
+
+	263	
++
+            return BadRequest(new { message = "Valid startTime and endTime (HH:mm) are required." });
+
+	264	
++
+
+	265	
++
+        var conflict = await _appointmentService.CheckConflictAsync(lawyerId, parsedDate, parsedStart, parsedEnd, excludeAppointmentId);
+
+	266	
++
+        return Ok(conflict);
+
+	267	
++
+    }
+
+	268	
++
+}
+‎backend/LegalService.API/DTOs/Appointments/AppointmentRequests.cs‎
++63
+Lines changed: 63 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,63 @@
+
+	1	
++
+using System;
+
+	2	
++
+using System.ComponentModel.DataAnnotations;
+
+	3	
++
+
+	4	
++
+namespace LegalService.API.DTOs.Appointments;
+
+	5	
++
+
+	6	
++
+public class BookAppointmentRequest
+
+	7	
++
+{
+
+	8	
++
+    [Required]
+
+	9	
++
+    public Guid LawyerId { get; set; }
+
+	10	
++
+
+	11	
++
+    [Required]
+
+	12	
++
+    public Guid SlotId { get; set; }
+
+	13	
++
+
+	14	
++
+    [Required]
+
+	15	
++
+    public Guid CustomerId { get; set; }
+
+	16	
++
+
+	17	
++
+    [MaxLength(1000)]
+
+	18	
++
+    public string? Notes { get; set; }
+
+	19	
++
+}
+
+	20	
++
+
+	21	
++
+public class RescheduleAppointmentRequest
+
+	22	
++
+{
+
+	23	
++
+    [Required]
+
+	24	
++
+    public Guid NewSlotId { get; set; }
+
+	25	
++
+
+	26	
++
+    [MaxLength(500)]
+
+	27	
++
+    public string? Reason { get; set; }
+
+	28	
++
+}
+
+	29	
++
+
+	30	
++
+public class CancelAppointmentRequest
+
+	31	
++
+{
+
+	32	
++
+    [MaxLength(500)]
+
+	33	
++
+    public string? Reason { get; set; }
+
+	34	
++
+}
+
+	35	
++
+
+	36	
++
+public class UpdateAppointmentRequest
+
+	37	
++
+{
+
+	38	
++
+    [MaxLength(1000)]
+
+	39	
++
+    public string? Notes { get; set; }
+
+	40	
++
+}
+
+	41	
++
+
+	42	
++
+public class AppointmentActionRequest
+
+	43	
++
+{
+
+	44	
++
+    [MaxLength(500)]
+
+	45	
++
+    public string? Notes { get; set; }
+
+	46	
++
+}
+
+	47	
++
+
+	48	
++
+public class CheckConflictRequest
+
+	49	
++
+{
+
+	50	
++
+    [Required]
+
+	51	
++
+    public Guid LawyerId { get; set; }
+
+	52	
++
+
+	53	
++
+    [Required]
+
+	54	
++
+    public DateOnly Date { get; set; }
+
+	55	
++
+
+	56	
++
+    [Required]
+
+	57	
++
+    public TimeOnly StartTime { get; set; }
+
+	58	
++
+
+	59	
++
+    [Required]
+
+	60	
++
+    public TimeOnly EndTime { get; set; }
+
+	61	
++
+
+	62	
++
+    public Guid? ExcludeAppointmentId { get; set; }
+
+	63	
++
+}
+‎backend/LegalService.API/DTOs/Appointments/AppointmentResponses.cs‎
++71
+Lines changed: 71 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,71 @@
+
+	1	
++
+using System;
+
+	2	
++
+using System.Collections.Generic;
+
+	3	
++
+
+	4	
++
+namespace LegalService.API.DTOs.Appointments;
+
+	5	
++
+
+	6	
++
+public class AppointmentResponse
+
+	7	
++
+{
+
+	8	
++
+    public Guid AppointmentId { get; set; }
+
+	9	
++
+    public Guid CustomerId { get; set; }
+
+	10	
++
+    public string CustomerName { get; set; } = string.Empty;
+
+	11	
++
+    public Guid LawyerId { get; set; }
+
+	12	
++
+    public string LawyerName { get; set; } = string.Empty;
+
+	13	
++
+    public Guid SlotId { get; set; }
+
+	14	
++
+    public DateOnly Date { get; set; }
+
+	15	
++
+    public TimeOnly StartTime { get; set; }
+
+	16	
++
+    public TimeOnly EndTime { get; set; }
+
+	17	
++
+    public string Status { get; set; } = string.Empty;
+
+	18	
++
+    public DateTime CreatedAt { get; set; }
+
+	19	
++
+    public DateTime? UpdatedAt { get; set; }
+
+	20	
++
+}
+
+	21	
++
+
+	22	
++
+public class AppointmentDetailsResponse
+
+	23	
++
+{
+
+	24	
++
+    public Guid AppointmentId { get; set; }
+
+	25	
++
+    public Guid CustomerId { get; set; }
+
+	26	
++
+    public string CustomerName { get; set; } = string.Empty;
+
+	27	
++
+    public string CustomerEmail { get; set; } = string.Empty;
+
+	28	
++
+    public Guid LawyerId { get; set; }
+
+	29	
++
+    public string LawyerName { get; set; } = string.Empty;
+
+	30	
++
+    public string LawyerLicense { get; set; } = string.Empty;
+
+	31	
++
+    public Guid SlotId { get; set; }
+
+	32	
++
+    public DateOnly Date { get; set; }
+
+	33	
++
+    public TimeOnly StartTime { get; set; }
+
+	34	
++
+    public TimeOnly EndTime { get; set; }
+
+	35	
++
+    public string Status { get; set; } = string.Empty;
+
+	36	
++
+    public DateTime CreatedAt { get; set; }
+
+	37	
++
+    public DateTime? UpdatedAt { get; set; }
+
+	38	
++
+
+	39	
++
+    public bool CanConfirm { get; set; }
+
+	40	
++
+    public bool CanCancel { get; set; }
+
+	41	
++
+    public bool CanReschedule { get; set; }
+
+	42	
++
+    public bool CanComplete { get; set; }
+
+	43	
++
+
+	44	
++
+    public List<AppointmentHistoryResponse> History { get; set; } = new();
+
+	45	
++
+}
+
+	46	
++
+
+	47	
++
+public class AvailabilitySlotResponse
+
+	48	
++
+{
+
+	49	
++
+    public Guid SlotId { get; set; }
+
+	50	
++
+    public Guid AvailabilityId { get; set; }
+
+	51	
++
+    public DateOnly Date { get; set; }
+
+	52	
++
+    public TimeOnly StartTime { get; set; }
+
+	53	
++
+    public TimeOnly EndTime { get; set; }
+
+	54	
++
+    public bool IsBooked { get; set; }
+
+	55	
++
+}
+
+	56	
++
+
+	57	
++
+public class AppointmentHistoryResponse
+
+	58	
++
+{
+
+	59	
++
+    public Guid HistoryId { get; set; }
+
+	60	
++
+    public Guid AppointmentId { get; set; }
+
+	61	
++
+    public string PreviousStatus { get; set; } = string.Empty;
+
+	62	
++
+    public string NewStatus { get; set; } = string.Empty;
+
+	63	
++
+    public DateTime ChangedDate { get; set; }
+
+	64	
++
+}
+
+	65	
++
+
+	66	
++
+public class ConflictCheckResponse
+
+	67	
++
+{
+
+	68	
++
+    public bool HasConflict { get; set; }
+
+	69	
++
+    public string? Reason { get; set; }
+
+	70	
++
+    public Guid? ConflictingAppointmentId { get; set; }
+
+	71	
++
+}
+‎backend/LegalService.API/Interfaces/IAppointmentService.cs‎
++44
+Lines changed: 44 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,44 @@
+
+	1	
++
+using System;
+
+	2	
++
+using System.Collections.Generic;
+
+	3	
++
+using System.Threading.Tasks;
+
+	4	
++
+using LegalService.API.DTOs.Appointments;
+
+	5	
++
+
+	6	
++
+namespace LegalService.API.Interfaces;
+
+	7	
++
+
+	8	
++
+public interface IAppointmentService
+
+	9	
++
+{
+
+	10	
++
+    Task<AppointmentDetailsResponse> BookAppointmentAsync(BookAppointmentRequest request);
+
+	11	
++
+
+	12	
++
+    Task<IEnumerable<AppointmentResponse>> GetAllAppointmentsAsync(
+
+	13	
++
+        Guid? lawyerId = null,
+
+	14	
++
+        Guid? customerId = null,
+
+	15	
++
+        string? status = null,
+
+	16	
++
+        DateOnly? date = null);
+
+	17	
++
+
+	18	
++
+    Task<AppointmentDetailsResponse?> GetAppointmentByIdAsync(Guid appointmentId);
+
+	19	
++
+
+	20	
++
+    Task<AppointmentDetailsResponse?> UpdateAppointmentAsync(Guid appointmentId, UpdateAppointmentRequest request);
+
+	21	
++
+
+	22	
++
+    Task<bool> DeleteAppointmentAsync(Guid appointmentId);
+
+	23	
++
+
+	24	
++
+    Task<AppointmentDetailsResponse?> ConfirmAppointmentAsync(Guid appointmentId, string? notes);
+
+	25	
++
+
+	26	
++
+    Task<AppointmentDetailsResponse?> RejectAppointmentAsync(Guid appointmentId, string? reason);
+
+	27	
++
+
+	28	
++
+    Task<AppointmentDetailsResponse?> CancelAppointmentAsync(Guid appointmentId, string? reason);
+
+	29	
++
+
+	30	
++
+    Task<AppointmentDetailsResponse?> RescheduleAppointmentAsync(Guid appointmentId, Guid newSlotId, string? reason);
+
+	31	
++
+
+	32	
++
+    Task<AppointmentDetailsResponse?> CompleteAppointmentAsync(Guid appointmentId, string? notes);
+
+	33	
++
+
+	34	
++
+    Task<IEnumerable<AppointmentHistoryResponse>> GetAppointmentHistoryAsync(Guid appointmentId);
+
+	35	
++
+
+	36	
++
+    Task<IEnumerable<AvailabilitySlotResponse>> GetAvailableSlotsAsync(Guid lawyerId, DateOnly date);
+
+	37	
++
+
+	38	
++
+    Task<ConflictCheckResponse> CheckConflictAsync(
+
+	39	
++
+        Guid lawyerId,
+
+	40	
++
+        DateOnly date,
+
+	41	
++
+        TimeOnly start,
+
+	42	
++
+        TimeOnly end,
+
+	43	
++
+        Guid? excludeAppointmentId = null);
+
+	44	
++
+}
+‎backend/LegalService.API/Program.cs‎
++5
+Lines changed: 5 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -41,6 +41,11 @@
+
+41	41	
+// ================================================================
+
+42	42	
+builder.Services.AddScoped<IServiceRequestService, ServiceRequestService>();
+
+43	43	
+
+
+
+	44	
++
+// ================================================================
+
+	45	
++
+// Appointment & Booking Management
+
+	46	
++
+// ================================================================
+
+	47	
++
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+
+	48	
++
+
+44	49	
+
+
+
+45	50	
+// Agentic AI Integration
+
+46	51	
+builder.Services.AddHttpClient<IAgentIntegrationService, AgentIntegrationService>();
+
+
+‎backend/LegalService.API/Services/AppointmentService.cs‎
++497
+Lines changed: 497 additions & 0 deletions
+Load diff
+Large diffs are not rendered by default.
+‎backend/LegalService.Tests/AppointmentServiceTests.cs‎
++501
+Lines changed: 501 additions & 0 deletions
+Load diff
+Large diffs are not rendered by default.
+0 commit comments
+Comments
+0
+ (0)
+Please sign in to comment.
+2 files remain

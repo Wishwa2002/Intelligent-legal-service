@@ -1,0 +1,1707 @@
+[
+  {
+    "index": 0,
+    "style": "Normal",
+    "text": "SLIIT  |  Faculty of Computing  |  Department of Software Engineering"
+  },
+  {
+    "index": 1,
+    "style": "Normal",
+    "text": "SE3110: Quality Management in Software Engineering"
+  },
+  {
+    "index": 2,
+    "style": "Normal",
+    "text": "Software Testing and Quality Evaluation"
+  },
+  {
+    "index": 3,
+    "style": "Normal",
+    "text": "of the SE3090 Integrated System"
+  },
+  {
+    "index": 4,
+    "style": "Normal",
+    "text": "LegalEase AI: Enterprise Omnichannel Legal Practice Management and Autonomous Multi-Agent AI Subsystem"
+  },
+  {
+    "index": 7,
+    "style": "Normal",
+    "text": "Table of Contents"
+  },
+  {
+    "index": 9,
+    "style": "Heading 1",
+    "text": "1. Introduction"
+  },
+  {
+    "index": 10,
+    "style": "Heading 2",
+    "text": "1.1 Purpose of this report"
+  },
+  {
+    "index": 11,
+    "style": "Normal",
+    "text": "This report records tool-based testing and quality evaluation of the LegalEase AI system developed for SE3090. It preserves the SE3110 test plan, case designs, defects and contribution disclosures while distinguishing actual execution evidence from historical claims and unresolved requirements."
+  },
+  {
+    "index": 12,
+    "style": "Normal",
+    "text": "Publication revision: 8 October 2026 (Asia/Colombo). Approved tested source 05359214df52, including fixes f360e4ac21f1, is published on Wishwa2002/Intelligent-legal-service, branch se3110-qmse-testing. Original development history is preserved; no deployment or submission occurred. GitHub CI did not trigger for this branch. Available SE3090 Version 3.0 reference reviewed; formal approval unconfirmed. Original, 51-page and pre-publication 60-page reports are preserved."
+  },
+  {
+    "index": 13,
+    "style": "Normal",
+    "text": "Repository provenance: Wishwa2002/Intelligent-legal-service is the original group development repository. Its main/develop/feature histories retain recorded authors and dates; the new testing branch preserves that ancestry. Jeyamdev/legalease-ai is the deployment repository used for hosting and recent local QMSE preparation. It is not the original group-history repository. Eleven newer deployment-only commits were excluded because they were outside the verified baseline."
+  },
+  {
+    "index": 14,
+    "style": "Heading 2",
+    "text": "1.2 System under test"
+  },
+  {
+    "index": 16,
+    "style": "Heading 2",
+    "text": "1.3 Quality risks identified"
+  },
+  {
+    "index": 17,
+    "style": "Normal",
+    "text": "Testing effort was prioritised by risk. The table links each risk to the requirement it threatens and the test area that addresses it."
+  },
+  {
+    "index": 19,
+    "style": "Heading 1",
+    "text": "2. Test Plan"
+  },
+  {
+    "index": 20,
+    "style": "Heading 2",
+    "text": "2.1 Objectives"
+  },
+  {
+    "index": 21,
+    "style": "List Paragraph",
+    "text": "Verify that the key features of all four business components behave as specified (FR-01 to FR-16)."
+  },
+  {
+    "index": 22,
+    "style": "List Paragraph",
+    "text": "Demonstrate at least one complete integrated workflow across Flutter, the .NET API, PostgreSQL, the Python AI mesh and the React clerk portal."
+  },
+  {
+    "index": 23,
+    "style": "List Paragraph",
+    "text": "Measure performance against NFR-01 (API p95 < 200 ms, AI < 1.5 s) and verify security controls (JWT, RBAC, BCrypt, prompt-injection defence)."
+  },
+  {
+    "index": 24,
+    "style": "List Paragraph",
+    "text": "Record actual results, mark every test Passed or Failed, log defects, fix important ones and retest."
+  },
+  {
+    "index": 25,
+    "style": "List Paragraph",
+    "text": "Keep reusable automated test scripts in the published testing branch and retain native reports, screenshots and final documents in the separately supplied evidence package so results can be reproduced and explained."
+  },
+  {
+    "index": 26,
+    "style": "Heading 2",
+    "text": "2.2 Scope"
+  },
+  {
+    "index": 28,
+    "style": "Heading 2",
+    "text": "2.3 Testing areas, tools and techniques"
+  },
+  {
+    "index": 29,
+    "style": "Normal",
+    "text": "Additional non-functional types were selected where relevant: reliability/recovery (R7, AI outage must not break booking) and usability/compatibility (responsive web and mobile parity, NFR-06). Accessibility checks with Lighthouse/axe are listed as a recommended extension."
+  },
+  {
+    "index": 30,
+    "style": "Heading 2",
+    "text": "2.4 Test environment"
+  },
+  {
+    "index": 32,
+    "style": "Heading 2",
+    "text": "2.5 Entry and exit criteria"
+  },
+  {
+    "index": 34,
+    "style": "Heading 2",
+    "text": "2.6 Responsibilities"
+  },
+  {
+    "index": 36,
+    "style": "Heading 2",
+    "text": "2.7 Schedule"
+  },
+  {
+    "index": 37,
+    "style": "Normal",
+    "text": "The dated schedule below is the original plan, not evidence that activities occurred on those dates. Fresh execution times are recorded in qmse-output/test-results/*.json."
+  },
+  {
+    "index": 39,
+    "style": "Normal",
+    "text": "Source baseline for all case references: application/test fixes f360e4ac21f149ae5b90a125c57bf928982a9c53 and replay-script commit 05359214df52fa743b234e1d77e6671f57c14dea. The exact objects are now published on the original group repository testing branch. Publication does not change prior local execution outcomes or convert historical cases into passes."
+  },
+  {
+    "index": 40,
+    "style": "Heading 1",
+    "text": "3. Test Case Document"
+  },
+  {
+    "index": 41,
+    "style": "Normal",
+    "text": "Each case records design, expected outcome, actual observation and evidence. VERIFIED means a scoped fresh result supported by an execution artifact; FAILED means an observed defect or a report expectation conflict (identified explicitly). BLOCKED and NOT EXECUTED mean no valid execution result. H/U means HISTORICAL/UNVERIFIED: the original reported result is retained as history, not a current PASS. Current automation-case names and exact setups are in qmse-output/completion-20261008/test-results/case-verification.json. Fixture dates such as 2030-01-14 are synthetic inputs, not execution dates."
+  },
+  {
+    "index": 42,
+    "style": "Heading 2",
+    "text": "3.1 Backend / API tests (xUnit, isolated Kestrel HTTP fixtures)"
+  },
+  {
+    "index": 43,
+    "style": "Heading 2",
+    "text": "3.2 Database tests (xUnit + PostgreSQL + EF Core)"
+  },
+  {
+    "index": 44,
+    "style": "Heading 2",
+    "text": "3.3 React web tests (Node runner, Playwright)"
+  },
+  {
+    "index": 45,
+    "style": "Heading 2",
+    "text": "3.4 Flutter mobile tests (flutter_test)"
+  },
+  {
+    "index": 46,
+    "style": "Heading 2",
+    "text": "3.5 Integrated end-to-end workflow: Flutter, API, PostgreSQL, AI, React"
+  },
+  {
+    "index": 47,
+    "style": "Normal",
+    "text": "One complete alternate document workflow is VERIFIED: real Flutter web creates an Affidavit & Notary request and uploads a genuine NIC PDF; two additional genuine PDFs are uploaded via API; actual FastAPI ranks a real PostgreSQL clerk; an admin assigns the clerk; React human review completes the case; Flutter displays COMPLETED. PostgreSQL confirms three binary attachments (7,667 bytes). No API responses were mocked. Historical Deed/ChecklistResult/PendingChecklist/Approved expectations below remain separately qualified; they are not silently replaced. See completion-20261008/evidence/integrated-result.json and HTTP/database records."
+  },
+  {
+    "index": 48,
+    "style": "Heading 2",
+    "text": "3.6 Component 1 test cases (Jeyashankar J)"
+  },
+  {
+    "index": 49,
+    "style": "Heading 2",
+    "text": "3.7 Component 2 test cases (Buddhika P. Y. H): appointments, careers, scheduling agent"
+  },
+  {
+    "index": 50,
+    "style": "Heading 2",
+    "text": "3.8 Component 3 test cases (Vithusan V): documentation, clerks, verification agent"
+  },
+  {
+    "index": 51,
+    "style": "Heading 2",
+    "text": "3.9 Component 4 test cases (Wijayananda W. J. W): authentication, service requests, consultation agent"
+  },
+  {
+    "index": 52,
+    "style": "Heading 2",
+    "text": "3.10 Agentic AI evaluation (Golden Cases)"
+  },
+  {
+    "index": 54,
+    "style": "Heading 2",
+    "text": "3.11 Security tests"
+  },
+  {
+    "index": 56,
+    "style": "Heading 2",
+    "text": "3.12 Performance tests against NFR-01"
+  },
+  {
+    "index": 58,
+    "style": "Heading 1",
+    "text": "4. Test Execution Summary"
+  },
+  {
+    "index": 59,
+    "style": "Heading 2",
+    "text": "4.1 Automated suite results"
+  },
+  {
+    "index": 60,
+    "style": "Normal",
+    "text": "Current totals are parsed from original TRX, pytest XML, Playwright JSON/HTML and runner output. Available SE3090 consolidated requirements were reviewed before fixes. Golden Case deterministic subcriteria are distinguished from live Gemini: the single authorised provider attempt returned 504; no live output or successful live response-time measurement exists. See completion-20261008/test-results/summary.json and the execution summary."
+  },
+  {
+    "index": 61,
+    "style": "Heading 2",
+    "text": "4.2 Test cases documented in this report"
+  },
+  {
+    "index": 63,
+    "style": "Normal",
+    "text": "The 77 designed original report cases now comprise 23 scoped VERIFIED results, 3 FAILED report expectations, 2 BLOCKED cases and 49 HISTORICAL/UNVERIFIED cases. The three failures concern unresolved query-length, workforce-threshold and cancellation requirements; current-contract characterisation tests pass but do not approve the historical expectations. All 57 formerly historical cases were reviewed individually: eight now have matching scoped execution; 49 remain unverified. Machine-suite counts and the new complete workflow are reported separately."
+  },
+  {
+    "index": 64,
+    "style": "Heading 2",
+    "text": "4.3 Requirement coverage"
+  },
+  {
+    "index": 66,
+    "style": "Heading 2",
+    "text": "4.4 Conclusion of execution"
+  },
+  {
+    "index": 67,
+    "style": "Normal",
+    "text": "Latest backend: 326 passed, zero failed, two skipped, 328 total. Node: 19 passed; Flutter: 49 unit/widget tests passed; Playwright: 111 passed and three skipped in 114 cases across 15 spec files; Python: 102 deterministic/mocked tests passed. The original spoof-rejection test now passes after content-validation repair. The real five-component document workflow passes; live Gemini Golden Cases, native-device acceptance and unresolved historical requirements remain incomplete."
+  },
+  {
+    "index": 68,
+    "style": "Heading 1",
+    "text": "5. Defect / Bug Report"
+  },
+  {
+    "index": 69,
+    "style": "Normal",
+    "text": "Historical defect narratives, commits and prior screenshots are retained. DEF-12 was reproduced and fixed, with its original rejection assertion and genuine-file regressions executed. Fresh integration also revealed and verified repairs for missing appointment migration columns (DEF-16), Flutter web sample upload (DEF-17), and React clerk identity filtering (DEF-18). These AI-assisted fixes are not attributed to individual students. Other historical retests remain qualified; see completion-20261008/audit/defect-verification.md."
+  },
+  {
+    "index": 71,
+    "style": "Heading 3",
+    "text": "DEF-01: AI recommendation returned free-text and invented win rates instead of structured JSON"
+  },
+  {
+    "index": 73,
+    "style": "Heading 3",
+    "text": "DEF-02: Lawyer to user link and schema changes not persisted"
+  },
+  {
+    "index": 75,
+    "style": "Heading 3",
+    "text": "DEF-03: Flutter analyzer reported issues"
+  },
+  {
+    "index": 77,
+    "style": "Heading 3",
+    "text": "DEF-04: Mobile CI failed: missing env asset"
+  },
+  {
+    "index": 79,
+    "style": "Heading 3",
+    "text": "DEF-05: AI-suggested JWT middleware lacked lifetime and audience validation"
+  },
+  {
+    "index": 81,
+    "style": "Heading 3",
+    "text": "DEF-06: 9 backend tests skipped (need live cloud secrets)"
+  },
+  {
+    "index": 83,
+    "style": "Heading 3",
+    "text": "DEF-07: Login p95 (180 ms) is close to the 200 ms budget"
+  },
+  {
+    "index": 85,
+    "style": "Heading 3",
+    "text": "DEF-08: Timezone drift in appointment collision query"
+  },
+  {
+    "index": 87,
+    "style": "Heading 3",
+    "text": "DEF-09: Careers create endpoint lacked an admin-only authorisation check"
+  },
+  {
+    "index": 89,
+    "style": "Heading 3",
+    "text": "DEF-10: Login page auto-redirect loop"
+  },
+  {
+    "index": 91,
+    "style": "Heading 3",
+    "text": "DEF-11: Web client could not reach API on localhost (IPv6) and lost auth token"
+  },
+  {
+    "index": 93,
+    "style": "Heading 3",
+    "text": "DEF-12: Upload accepted spoofed file types (MIME-only check)"
+  },
+  {
+    "index": 95,
+    "style": "Heading 3",
+    "text": "DEF-13: Document Agent failed because the 12 services were not seeded"
+  },
+  {
+    "index": 97,
+    "style": "Heading 3",
+    "text": "DEF-14: Over-confident document classification on poor OCR"
+  },
+  {
+    "index": 99,
+    "style": "Heading 3",
+    "text": "DEF-15: Authentication security, validation and health-check weaknesses"
+  },
+  {
+    "index": 101,
+    "style": "Heading 2",
+    "text": "5.1 Defect summary"
+  },
+  {
+    "index": 102,
+    "style": "Heading 1",
+    "text": "6. Tool-Generated Evidence"
+  },
+  {
+    "index": 103,
+    "style": "Normal",
+    "text": "Figures 6.1\u20136.13 remain genuine dated earlier-phase evidence. Figures 6.14\u20136.20 retain the verified fixes and real local workflow; new Figures 6.21\u20136.30 establish original group history, member commit records, publication and CI non-trigger. Historical deployment-repository images are preserved with provenance. Full native sources are included; GitHub screenshots prove repository observations, not successful test execution. Paths are relative to qmse-output."
+  },
+  {
+    "index": 104,
+    "style": "Normal",
+    "text": "Figure 6.1. xUnit execution totals"
+  },
+  {
+    "index": 106,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:56:37 UTC."
+  },
+  {
+    "index": 107,
+    "style": "Normal",
+    "text": "Source: test-results/backend-final.log; evidence/backend/backend-final.trx"
+  },
+  {
+    "index": 108,
+    "style": "Normal",
+    "text": "313 total: 310 passed, 1 failed, 2 skipped. Exit code 1. Skips include live-provider transport and the evidence-host harness. Historical pre-fix run; superseded by Figure 6.20 and latest TRX."
+  },
+  {
+    "index": 109,
+    "style": "Normal",
+    "text": "Figure 6.2. DEF-12: spoofed PDF rejection fails"
+  },
+  {
+    "index": 111,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:56:37 UTC."
+  },
+  {
+    "index": 112,
+    "style": "Normal",
+    "text": "Source: test-results/backend-final.log; evidence/backend/backend-final.trx"
+  },
+  {
+    "index": 113,
+    "style": "Normal",
+    "text": "Historical before-fix capture: inert MZ bytes labelled PDF were accepted. DEF-12 is now FIXED AND RETESTED; Figure 6.14 and upload-retest.trx show the unchanged rejection test passing."
+  },
+  {
+    "index": 114,
+    "style": "Normal",
+    "text": "Figure 6.3. React project: Node test output"
+  },
+  {
+    "index": 116,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:42:14 UTC."
+  },
+  {
+    "index": 117,
+    "style": "Normal",
+    "text": "Source: test-results/frontend-node.log; test-results/frontend-node.json"
+  },
+  {
+    "index": 118,
+    "style": "Normal",
+    "text": "The actual npm run test:member1 execution passed all 19 subtests. These are Node routing/helper checks, not React Testing Library component tests."
+  },
+  {
+    "index": 119,
+    "style": "Normal",
+    "text": "Figure 6.4. Flutter machine runner: successful completion"
+  },
+  {
+    "index": 121,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 03:15:24 UTC."
+  },
+  {
+    "index": 122,
+    "style": "Normal",
+    "text": "Source: test-results/mobile-minimal.log; evidence/mobile/flutter-events.jsonl"
+  },
+  {
+    "index": 123,
+    "style": "Normal",
+    "text": "Visible final widget cases succeed and the runner reports success=true. The full machine stream contains 49 visible unit/widget tests across six files; no device or integrated workflow is inferred."
+  },
+  {
+    "index": 124,
+    "style": "Normal",
+    "text": "Figure 6.5. Playwright HTML execution report"
+  },
+  {
+    "index": 126,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:42:40 UTC."
+  },
+  {
+    "index": 127,
+    "style": "Normal",
+    "text": "Source: evidence/e2e/playwright-report/index.html; evidence/e2e/playwright.json"
+  },
+  {
+    "index": 128,
+    "style": "Normal",
+    "text": "109 passed and three skipped, across 14 specification files (112 cases). The report All tab excludes skipped cases. Most tests intercept API requests with mocks. This preserved figure belongs to the earlier execution phase; consult current results for final status."
+  },
+  {
+    "index": 129,
+    "style": "Normal",
+    "text": "Figure 6.6. Actual React schedule editor under Playwright"
+  },
+  {
+    "index": 131,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:42:40 UTC (suite start)."
+  },
+  {
+    "index": 132,
+    "style": "Normal",
+    "text": "Source: evidence/e2e/schedule-1280.png; evidence/e2e/playwright.json"
+  },
+  {
+    "index": 133,
+    "style": "Normal",
+    "text": "Focused browser view of the preserved application screenshot. Weekly hours, duration and synthetic 2030 leave data are visible. API responses were mocked: this is UI evidence, separate from the later verified Flutter-to-clerk workflow."
+  },
+  {
+    "index": 134,
+    "style": "Normal",
+    "text": "Figure 6.7. OWASP ZAP passive scan summary"
+  },
+  {
+    "index": 136,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:54:12 UTC."
+  },
+  {
+    "index": 137,
+    "style": "Normal",
+    "text": "Source: evidence/security/zap-passive-report.html; evidence/security/scan-metadata.json"
+  },
+  {
+    "index": 138,
+    "style": "Normal",
+    "text": "Six deliberate requests to isolated loopback HTTP; no active scan or spider. Two alert types: one Low and one Informational. Zero High/Medium alerts in this scope does not establish absence of vulnerabilities."
+  },
+  {
+    "index": 139,
+    "style": "Normal",
+    "text": "Figure 6.8. ZAP alert instances and missing-header detail"
+  },
+  {
+    "index": 141,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:54:12 UTC."
+  },
+  {
+    "index": 142,
+    "style": "Normal",
+    "text": "Source: evidence/security/zap-passive-report.html; evidence/security/zap-alerts.json"
+  },
+  {
+    "index": 143,
+    "style": "Normal",
+    "text": "The Low missing X-Content-Type-Options alert has three instances; authentication discovery has one Informational instance. Fixture headers differ from full production startup. The report false-positive count is not a manual disposition. This preserved figure belongs to the earlier execution phase; consult current results for final status."
+  },
+  {
+    "index": 144,
+    "style": "Normal",
+    "text": "Figure 6.9. k6 controlled local execution completes"
+  },
+  {
+    "index": 146,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:52:15 UTC."
+  },
+  {
+    "index": 147,
+    "style": "Normal",
+    "text": "Source: test-results/performance-final.log; test-results/performance-final.json"
+  },
+  {
+    "index": 148,
+    "style": "Normal",
+    "text": "Actual output records completion of 20 iterations with two VUs over ten seconds. The fixture used EF InMemory and mocked AI; PostgreSQL and live Gemini performance were not measured. This preserved figure belongs to the earlier execution phase; consult current results for final status."
+  },
+  {
+    "index": 149,
+    "style": "Normal",
+    "text": "Figure 6.10. k6 original machine metrics"
+  },
+  {
+    "index": 151,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:52:15 UTC."
+  },
+  {
+    "index": 152,
+    "style": "Normal",
+    "text": "Source: evidence/performance/k6-summary.json; evidence/performance/k6-raw-final.json"
+  },
+  {
+    "index": 153,
+    "style": "Normal",
+    "text": "HTTP failure rate is 0 across 81 requests. Appointment-list p50 is 1.263 ms, p95 23.507 ms, average 3.473 ms. The rate metric fails=81 means 81 false samples for http_req_failed, not 81 failed requests. This preserved figure belongs to the earlier execution phase; consult current results for final status."
+  },
+  {
+    "index": 154,
+    "style": "Normal",
+    "text": "Figure 6.11. Coverlet results displayed by ReportGenerator"
+  },
+  {
+    "index": 156,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:56:37 UTC (test run)."
+  },
+  {
+    "index": 157,
+    "style": "Normal",
+    "text": "Source: evidence/backend/coverage-html/index.html; evidence/backend/e95ff97b-fff2-40aa-993d-8317a0ac8565/coverage.cobertura.xml"
+  },
+  {
+    "index": 158,
+    "style": "Normal",
+    "text": "Line coverage is 23%. Coverlet XML root records 48.91% branches (1326/2711); ReportGenerator displays 48.7% (1293/2655) after its own aggregation. Both originals are retained; this rendering is not a new execution or coverage increase. This preserved figure belongs to the earlier execution phase; consult current results for final status."
+  },
+  {
+    "index": 159,
+    "style": "Normal",
+    "text": "Figure 6.12. pytest deterministic and mocked AI suite"
+  },
+  {
+    "index": 161,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 02:47:35 UTC."
+  },
+  {
+    "index": 162,
+    "style": "Normal",
+    "text": "Source: test-results/ai-final.log; evidence/ai/pytest-final.xml"
+  },
+  {
+    "index": 163,
+    "style": "Normal",
+    "text": "98 passed, with nine warnings. Synthetic provider initialization and mocked/deterministic tests do not demonstrate live Gemini accuracy, Golden Case success or response latency."
+  },
+  {
+    "index": 164,
+    "style": "Normal",
+    "text": "Figure 6.13. Deployment repository: historical Mobile CI success"
+  },
+  {
+    "index": 166,
+    "style": "Normal",
+    "text": "Execution: 2026-10-05 23:48:54 UTC (run created)."
+  },
+  {
+    "index": 167,
+    "style": "Normal",
+    "text": "Source: https://github.com/Jeyamdev/legalease-ai/actions/runs/37390618065; evidence/ci/github-actions-runs.json"
+  },
+  {
+    "index": 168,
+    "style": "Normal",
+    "text": "This preserved Jeyamdev/legalease-ai page shows historical Mobile CI Success for base commit 8a9b8a2, duration 2m18s; other historical runs failed. It does not cover later QMSE commits f360e4a/0535921 or prove group-branch CI success. Figure 6.30 records the published group-branch non-trigger."
+  },
+  {
+    "index": 169,
+    "style": "Normal",
+    "text": "New verified workflow evidence follows. Flutter ran as the real web target rather than a native device. FastAPI used deterministic ranking over actual backend clerk/workload data; Gemini was not called in this workflow. Ranking uses default enrichment for unspecified clerk skills/experience. The three documents were uploaded through one Flutter UI step and two real API steps. Live model evaluation remains separate and blocked by the provider failure."
+  },
+  {
+    "index": 170,
+    "style": "Normal",
+    "text": "Figure 6.14. Upload validation: original assertion and regression retest"
+  },
+  {
+    "index": 172,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 05:02:41 UTC."
+  },
+  {
+    "index": 173,
+    "style": "Normal",
+    "text": "Source: test-results/completion-20261008-upload-retest.log; completion-20261008/evidence/upload-retest.trx"
+  },
+  {
+    "index": 174,
+    "style": "Normal",
+    "text": "The unchanged original spoof-rejection assertion now passes. This focused execution contains 18 passing tests; genuine PDF/image uploads and the size boundary are also verified. Earlier failure remains Figure 6.2."
+  },
+  {
+    "index": 175,
+    "style": "Normal",
+    "text": "Figure 6.15. Real Flutter web submits a genuine bundled PDF"
+  },
+  {
+    "index": 177,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 04:58:52 UTC (recorded application step)."
+  },
+  {
+    "index": 178,
+    "style": "Normal",
+    "text": "Source: completion-20261008/evidence/integrated-final-http.json; completion-20261008/evidence/e2e-10-flutter-uploaded.png"
+  },
+  {
+    "index": 179,
+    "style": "Normal",
+    "text": "The real Flutter UI completed its multipart upload after the web-platform fix. The actual API returned 201 and stored the bytes in PostgreSQL; two remaining genuine attachments were supplied through the API."
+  },
+  {
+    "index": 180,
+    "style": "Normal",
+    "text": "Figure 6.16. Real React clerk performs human review"
+  },
+  {
+    "index": 182,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 05:01:55 UTC (recorded application step)."
+  },
+  {
+    "index": 183,
+    "style": "Normal",
+    "text": "Source: completion-20261008/evidence/integrated-completion-http.json; completion-20261008/evidence/e2e-13-react-completed.png"
+  },
+  {
+    "index": 184,
+    "style": "Normal",
+    "text": "React uses ClerkId rather than UserId to display the assigned case. The actual human-review status action returned 200 and changed request 12 to COMPLETED."
+  },
+  {
+    "index": 185,
+    "style": "Normal",
+    "text": "Figure 6.17. Flutter reads the completed result from the API"
+  },
+  {
+    "index": 187,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 05:02:00 UTC (workflow completed)."
+  },
+  {
+    "index": 188,
+    "style": "Normal",
+    "text": "Source: completion-20261008/evidence/integrated-result.json; completion-20261008/evidence/integrated-final-database.log"
+  },
+  {
+    "index": 189,
+    "style": "Normal",
+    "text": "Flutter displays COMPLETED after fetching the real API. Independent SQL confirms request 12, clerk 1 and three binary attachments totalling 7,667 bytes. Actual FastAPI clerk ranking preceded explicit human assignment; Gemini was not used."
+  },
+  {
+    "index": 190,
+    "style": "Normal",
+    "text": "Figure 6.18. k6 retest against actual PostgreSQL-backed endpoints"
+  },
+  {
+    "index": 192,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 04:51:00 UTC."
+  },
+  {
+    "index": 193,
+    "style": "Normal",
+    "text": "Source: test-results/completion-20261008-k6-retest.log; completion-20261008/evidence/k6-postgres-summary.json"
+  },
+  {
+    "index": 194,
+    "style": "Normal",
+    "text": "Two virtual users over 15 seconds produced 120 requests and zero HTTP errors. Four measured p95 values are below 200 ms in this local synthetic scope. The pre-fix failing run and raw samples remain in the package."
+  },
+  {
+    "index": 195,
+    "style": "Normal",
+    "text": "Figure 6.19. Native expanded ZAP report after schema repair"
+  },
+  {
+    "index": 197,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 05:04:49 UTC."
+  },
+  {
+    "index": 198,
+    "style": "Normal",
+    "text": "Source: completion-20261008/evidence/zap-postgres.html; completion-20261008/evidence/zap-postgres-metadata.json"
+  },
+  {
+    "index": 199,
+    "style": "Normal",
+    "text": "Actual Staging API/PostgreSQL target; passive scanning plus finite manual probes. Nine Low missing-nosniff instances and one Informational alert remain. Scan completion is not proof of absence of vulnerabilities."
+  },
+  {
+    "index": 200,
+    "style": "Normal",
+    "text": "Figure 6.20. Final xUnit execution on the tested source"
+  },
+  {
+    "index": 202,
+    "style": "Normal",
+    "text": "Execution: 2026-10-08 05:10:33 UTC."
+  },
+  {
+    "index": 203,
+    "style": "Normal",
+    "text": "Source: test-results/completion-20261008-backend-final-verified.log; completion-20261008/evidence/backend-final-verified.trx"
+  },
+  {
+    "index": 204,
+    "style": "Normal",
+    "text": "328 total: 326 passed, zero failed, two skipped. Real PostgreSQL migration/rollback tests are included. Coverlet raw line coverage is 81.11%, affected by generated migrations; non-migration distinct source lines are 57.82%."
+  },
+  {
+    "index": 205,
+    "style": "Normal",
+    "text": "Figure 6.21. Official group repository overview"
+  },
+  {
+    "index": 207,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: main."
+  },
+  {
+    "index": 208,
+    "style": "Normal",
+    "text": "Relevant SHA: 59337bba0227aa07e18e60f697bd758db327f0bd"
+  },
+  {
+    "index": 209,
+    "style": "Normal",
+    "text": "Git record: Wishwa Wijayananda; author date 2026-08-25T19:08:10+05:30; committer date 2026-08-25T19:08:10+05:30"
+  },
+  {
+    "index": 210,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:51:42.266Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service"
+  },
+  {
+    "index": 211,
+    "style": "Normal",
+    "text": "The original group repository remains on its unchanged main revision. This overview establishes repository identity; the final tested implementation is on a separate branch."
+  },
+  {
+    "index": 212,
+    "style": "Normal",
+    "text": "Figure 6.22. Original main-branch development history"
+  },
+  {
+    "index": 214,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: main."
+  },
+  {
+    "index": 215,
+    "style": "Normal",
+    "text": "Relevant SHA: 59337bba0227aa07e18e60f697bd758db327f0bd"
+  },
+  {
+    "index": 216,
+    "style": "Normal",
+    "text": "Git record: Wishwa Wijayananda; author date 2026-08-25T19:08:10+05:30; committer date 2026-08-25T19:08:10+05:30"
+  },
+  {
+    "index": 217,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:52:53.376Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/commits/main/"
+  },
+  {
+    "index": 218,
+    "style": "Normal",
+    "text": "Original dated main commits and author records are preserved. Main has 14 reachable commits under Wishwa and yhprasad-related author strings; other member records occur in incorporated develop/feature history."
+  },
+  {
+    "index": 219,
+    "style": "Normal",
+    "text": "Figure 6.23. Original lawyer-management development record"
+  },
+  {
+    "index": 221,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: develop / tested-branch ancestry."
+  },
+  {
+    "index": 222,
+    "style": "Normal",
+    "text": "Relevant SHA: b082f54790a0ea5f99db9b31df532d56433319c5"
+  },
+  {
+    "index": 223,
+    "style": "Normal",
+    "text": "Git record: Jeyamdev; author date 2026-10-05T09:48:02+05:30; committer date 2026-10-05T09:48:02+05:30"
+  },
+  {
+    "index": 224,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:53:55.801Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/commit/b082f54"
+  },
+  {
+    "index": 225,
+    "style": "Normal",
+    "text": "Recorded author Jeyamdev; lawyer/mobile/matching/workforce changes. Related specialization and recommendation commits are linked in Section 9.1. This is historical source evidence; personal effort requires confirmation."
+  },
+  {
+    "index": 226,
+    "style": "Normal",
+    "text": "Figure 6.24. Original appointment-management development record"
+  },
+  {
+    "index": 228,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: develop / tested-branch ancestry."
+  },
+  {
+    "index": 229,
+    "style": "Normal",
+    "text": "Relevant SHA: d461a8407971eeb7e2349f6ccf5cb8f6150a22be"
+  },
+  {
+    "index": 230,
+    "style": "Normal",
+    "text": "Git record: yhprasad; author date 2026-09-23T02:32:18+05:30; committer date 2026-09-23T02:32:18+05:30"
+  },
+  {
+    "index": 231,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:53:58.224Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/commit/d461a84"
+  },
+  {
+    "index": 232,
+    "style": "Normal",
+    "text": "Recorded author yhprasad (GitHub account yhprasadhew); appointment APIs, conflict detection and status transitions. Scheduling/careers records are in Section 9.2. This does not prove historical test execution."
+  },
+  {
+    "index": 233,
+    "style": "Normal",
+    "text": "Figure 6.25. Original document/clerk/AI development record"
+  },
+  {
+    "index": 235,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: Document-&-Cleark / tested-branch ancestry."
+  },
+  {
+    "index": 236,
+    "style": "Normal",
+    "text": "Relevant SHA: a566efa7951fa06505fe4c943014826f3b796170"
+  },
+  {
+    "index": 237,
+    "style": "Normal",
+    "text": "Git record: VTN02; author date 2026-09-11T17:58:17+05:30; committer date 2026-09-11T17:58:17+05:30"
+  },
+  {
+    "index": 238,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:54:27.109Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/commit/a566efa"
+  },
+  {
+    "index": 239,
+    "style": "Normal",
+    "text": "Recorded author VTN02; document validation, mobile client and clerk management. Section 9.3 records related commits. Shared supervisor code appears in this history, so component assignment alone cannot establish ownership."
+  },
+  {
+    "index": 240,
+    "style": "Normal",
+    "text": "Figure 6.26. Original authentication and authorization record"
+  },
+  {
+    "index": 242,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: feature/admin-auth / tested-branch ancestry."
+  },
+  {
+    "index": 243,
+    "style": "Normal",
+    "text": "Relevant SHA: 43f6345d8cdd3158e5ecf51d124dcfab869261c9"
+  },
+  {
+    "index": 244,
+    "style": "Normal",
+    "text": "Git record: Wishwa; author date 2026-09-22T19:41:53+05:30; committer date 2026-09-22T19:41:53+05:30"
+  },
+  {
+    "index": 245,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:54:27.310Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/commit/43f6345"
+  },
+  {
+    "index": 246,
+    "style": "Normal",
+    "text": "Recorded author Wishwa (GitHub account Wishwa2002); JWT/admin authorization and service-request changes. Section 9.4 records related security/service commits and qualifies consultation ownership."
+  },
+  {
+    "index": 247,
+    "style": "Normal",
+    "text": "Figure 6.27. Published final QMSE testing branch"
+  },
+  {
+    "index": 249,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: se3110-qmse-testing."
+  },
+  {
+    "index": 250,
+    "style": "Normal",
+    "text": "Relevant SHA: 05359214df52fa743b234e1d77e6671f57c14dea"
+  },
+  {
+    "index": 251,
+    "style": "Normal",
+    "text": "Git record: Jeyamdev; author date 2026-10-08T11:00:40+05:30; committer date 2026-10-08T11:00:40+05:30"
+  },
+  {
+    "index": 252,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:52:40.197Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/tree/se3110-qmse-testing"
+  },
+  {
+    "index": 253,
+    "style": "Normal",
+    "text": "The branch selector identifies the published testing branch. This narrow capture retains asynchronous counter placeholders; the earlier genuine wide capture and native Git verification establish 83 commits beyond main and 97 reachable commits. The remote head matches the approved SHA. All 15 pre-existing branch tips were unchanged immediately after publication; eleven newer deployment-only commits were excluded."
+  },
+  {
+    "index": 254,
+    "style": "Normal",
+    "text": "Figure 6.28. Published tested source and replay-script commit"
+  },
+  {
+    "index": 256,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: se3110-qmse-testing."
+  },
+  {
+    "index": 257,
+    "style": "Normal",
+    "text": "Relevant SHA: 05359214df52fa743b234e1d77e6671f57c14dea"
+  },
+  {
+    "index": 258,
+    "style": "Normal",
+    "text": "Git record: Jeyamdev; author date 2026-10-08T11:00:40+05:30; committer date 2026-10-08T11:00:40+05:30"
+  },
+  {
+    "index": 259,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T09:21:02.853Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/commit/05359214df52fa743b234e1d77e6671f57c14dea"
+  },
+  {
+    "index": 260,
+    "style": "Normal",
+    "text": "Actual published commit 0535921 has parent f360e4a. The nine-file replay-script addition preserves executed tooling. Recorded author is Jeyamdev; these Codex-assisted QMSE additions are not original student-development attribution."
+  },
+  {
+    "index": 261,
+    "style": "Normal",
+    "text": "Figure 6.29. Published testing-related commit history"
+  },
+  {
+    "index": 263,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: se3110-qmse-testing."
+  },
+  {
+    "index": 264,
+    "style": "Normal",
+    "text": "Relevant SHA: 05359214df52fa743b234e1d77e6671f57c14dea"
+  },
+  {
+    "index": 265,
+    "style": "Normal",
+    "text": "Git record: Jeyamdev; author date 2026-10-08T11:00:40+05:30; committer date 2026-10-08T11:00:40+05:30"
+  },
+  {
+    "index": 266,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:53:13.747Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/commits/se3110-qmse-testing/"
+  },
+  {
+    "index": 267,
+    "style": "Normal",
+    "text": "The two new QMSE commits f360e4a and 0535921 sit above preserved development/deployment ancestry. Git authors and dates remain unchanged. Historical check icons belong to their own revisions, not the latest tested head."
+  },
+  {
+    "index": 268,
+    "style": "Normal",
+    "text": "Figure 6.30. GitHub Actions: no run for the published testing branch"
+  },
+  {
+    "index": 270,
+    "style": "Normal",
+    "text": "Repository: Wishwa2002/Intelligent-legal-service; branch: se3110-qmse-testing."
+  },
+  {
+    "index": 271,
+    "style": "Normal",
+    "text": "Relevant SHA: 05359214df52fa743b234e1d77e6671f57c14dea"
+  },
+  {
+    "index": 272,
+    "style": "Normal",
+    "text": "Git record: Jeyamdev; author date 2026-10-08T11:00:40+05:30; committer date 2026-10-08T11:00:40+05:30"
+  },
+  {
+    "index": 273,
+    "style": "Normal",
+    "text": "Capture: 2026-10-08T08:53:21.946Z (UTC); source: https://github.com/Wishwa2002/Intelligent-legal-service/actions?query=branch%3Ase3110-qmse-testing"
+  },
+  {
+    "index": 274,
+    "style": "Normal",
+    "text": "Actual GitHub branch filter shows zero workflow results; read-only API queries also show zero for the exact SHA. Backend, frontend and mobile push filters permit only main/develop; no workflow_dispatch is declared. No CI pass is claimed. Managed workflow trigger settings are not established by source YAML."
+  },
+  {
+    "index": 275,
+    "style": "Heading 1",
+    "text": "7. Non-Functional Test Analysis"
+  },
+  {
+    "index": 276,
+    "style": "Heading 2",
+    "text": "7.1 Performance"
+  },
+  {
+    "index": 277,
+    "style": "Normal",
+    "text": "A controlled k6 2.3.0 retest used two virtual users for 15 seconds against the actual ASP.NET Staging API and isolated PostgreSQL 18. It completed 30 iterations and 120 requests with 0% HTTP errors and 7.803 requests/second. Search p50/p95/average: 3.487/5.679/3.724 ms; details: 2.134/3.528/2.277 ms; appointments GET: 1.500/3.585/1.694 ms; documentation GET: 15.475/20.966/15.831 ms. All measured p95 values meet 200 ms in this small synthetic local scope; no hosted or transactional booking load acceptance is inferred."
+  },
+  {
+    "index": 278,
+    "style": "List Paragraph",
+    "text": "The original login p95 of 180 ms has no measurement artifact. Login latency was not benchmarked in the new run. DEF-07 is a monitoring observation, not a demonstrated breach of the 200 ms budget. Hash cost and latency should be measured with the actual configured deployment."
+  },
+  {
+    "index": 279,
+    "style": "List Paragraph",
+    "text": "One live Gemini request, retries disabled, returned provider ServerError 504 after 29.326 seconds. No successful output/token usage or verified pricing was returned, so estimated cost is unavailable and the 1.5-second successful-response NFR is BLOCKED. Only one of eight authorised calls was attempted; testing stopped on provider failure. Prior mock-gateway timings remain historical mock measurements."
+  },
+  {
+    "index": 280,
+    "style": "List Paragraph",
+    "text": "The initial real PostgreSQL k6 run exposed appointment-list HTTP 500 due to missing migration columns and failed its error threshold. The additive migration fixed the isolated schema, and the retained retest has zero HTTP errors. Read-only endpoint timings do not measure transactional booking throughput. Concurrent booking is separately verified with real PostgreSQL service tests."
+  },
+  {
+    "index": 281,
+    "style": "Heading 2",
+    "text": "7.2 Security"
+  },
+  {
+    "index": 282,
+    "style": "Normal",
+    "text": "Expanded OWASP ZAP 2.17.0 inspection used 15 deliberate loopback requests to the actual Staging API/PostgreSQL environment, with passive scanning and finite manual authentication/injection probes. Final native report: nine Low X-Content-Type-Options missing instances and one Informational authentication-identification instance. The header finding remains OPEN. The earlier application-error alert associated with schema HTTP 500 is absent after repair; this does not prove absence of other vulnerabilities. No automated active scan, spider or production traffic was used. Genuine upload/JWT/role tests and SQL-like input probes complement the scan."
+  },
+  {
+    "index": 283,
+    "style": "Normal",
+    "text": "Git publication security note: GitHub push output reported nine default-branch Dependabot alerts (seven high, two moderate); no authenticated advisory review or remediation was performed. These are separate from local ZAP findings. A database-connection artifact was also identified in pre-existing public main history and is absent from the tested tree. Its contents/credential-like filename are excluded from deliverables; the group must review rotation/removal with repository owners. No history rewrite was authorised."
+  },
+  {
+    "index": 284,
+    "style": "Heading 2",
+    "text": "7.3 Reliability and recovery"
+  },
+  {
+    "index": 285,
+    "style": "Normal",
+    "text": "Actual PostgreSQL attachment commit failure rolls back the file insert and request-status change. An explicit caller transaction rolls back request creation after failed attachment validation. Separate create/upload HTTP operations remain non-atomic as a group; no new batch operation was invented. Mocked timeout recovery and direct booking without AI still pass at their documented service scope."
+  },
+  {
+    "index": 286,
+    "style": "Heading 2",
+    "text": "7.4 Usability and compatibility"
+  },
+  {
+    "index": 287,
+    "style": "Normal",
+    "text": "Flutter SDK recovery enabled a genuine web build and actual browser workflow, including upload and synchronized completion. The 49 existing Flutter unit/widget cases also pass. React integration now uses the correct clerk profile ID; two added browser regressions pass and the real queue/review was executed. Physical Android/iOS-device compatibility, accessibility conformance and complete cross-platform equivalence remain unverified."
+  },
+  {
+    "index": 288,
+    "style": "Heading 1",
+    "text": "8. Agentic AI Testing and Evaluation"
+  },
+  {
+    "index": 289,
+    "style": "Normal",
+    "text": "All 102 final Python deterministic/mocked tests pass. A versioned synthetic Golden Case dataset now records fixtures, expected outputs and success criteria. Three GC-03 deterministic checklist subcases produce the expected missing-document/ready statuses; the GC-04 subcase demonstrates sanitizer isolation only, not live refusal or a universal disclaimer. GC-01 live classification returned provider 504; live GC-02\u201304 were not attempted after failure. No historical 98.9% mean or original case accuracy is certified."
+  },
+  {
+    "index": 291,
+    "style": "Heading 1",
+    "text": "9. Individual Testing Contributions"
+  },
+  {
+    "index": 292,
+    "style": "Normal",
+    "text": "The original component assignments and member disclosures are retained. Source/test files and 26 original member-associated commit records were checked in the original group repository, with author/date/path evidence and preserved ancestry. Personal ownership, effort and responsibilities still require member confirmation. The two new Codex-assisted QMSE commits are recorded separately and are not individual contribution proof."
+  },
+  {
+    "index": 293,
+    "style": "Normal",
+    "text": "Section 3 status counts are report-case counts. Section 10 lists observed machine cases by named classes; these are not proof of personal ownership or effort percentages."
+  },
+  {
+    "index": 295,
+    "style": "Heading 2",
+    "text": "9.1 Jeyashankar J (IT24103900), C1"
+  },
+  {
+    "index": 296,
+    "style": "Normal",
+    "text": "Component 1: Lawyer Management, Practice Specializations, Legal Services Catalogue and AI Lawyer Recommendation / Workforce Intelligence"
+  },
+  {
+    "index": 297,
+    "style": "Heading 3",
+    "text": "Ownership"
+  },
+  {
+    "index": 298,
+    "style": "Heading 3",
+    "text": "Tools and why they were chosen"
+  },
+  {
+    "index": 299,
+    "style": "List Paragraph",
+    "text": "xUnit with an in-memory seeder: fast, deterministic service tests without calling Gemini."
+  },
+  {
+    "index": 300,
+    "style": "List Paragraph",
+    "text": "Isolated Kestrel HTTP fixtures exercise real controller routing, model binding and JWT authorization. Microsoft.AspNetCore.Mvc.Testing/WebApplicationFactory is not declared in the current test project."
+  },
+  {
+    "index": 301,
+    "style": "List Paragraph",
+    "text": "Playwright: drives the real React admin UI and checks state changes without a reload."
+  },
+  {
+    "index": 302,
+    "style": "List Paragraph",
+    "text": "Current recommendation eligibility and score validation use recorded data. Ranking points are recorded experience (0\u201370); the claimed weighted percentage formula is not implemented."
+  },
+  {
+    "index": 303,
+    "style": "Heading 3",
+    "text": "Test design"
+  },
+  {
+    "index": 304,
+    "style": "Normal",
+    "text": "13 cases documented: 7 scoped VERIFIED, 2 FAILED report expectations, 0 BLOCKED and 4 HISTORICAL/UNVERIFIED. These are component-assigned report cases, not proof of personal authorship."
+  },
+  {
+    "index": 305,
+    "style": "Heading 3",
+    "text": "Commit evidence"
+  },
+  {
+    "index": 306,
+    "style": "Normal",
+    "text": "Original group commit evidence (7 records): Jeyamdev, Jegatheeswaran Jeyashankar, Jeyashankar Jegatheeswaran. The linked commits exist in Wishwa2002/Intelligent-legal-service and are ancestors of the published tested SHA. Author dates and changed paths are recorded in git-publication/evidence/member-commit-evidence.json. Identity association uses the supplied group context; personal effort, responsibility and AI use require member confirmation. No new QMSE work is attributed personally."
+  },
+  {
+    "index": 307,
+    "style": "Heading 3",
+    "text": "AI assistance in testing and how it was verified"
+  },
+  {
+    "index": 308,
+    "style": "Heading 3",
+    "text": "Historical defect and fix assignments"
+  },
+  {
+    "index": 309,
+    "style": "Normal",
+    "text": "DEF-01 (AI free-text and invented win rates), DEF-02 (lawyer-user link persistence), DEF-03 (Flutter analyzer), DEF-04 (mobile CI asset)."
+  },
+  {
+    "index": 310,
+    "style": "Heading 3",
+    "text": "How to rerun my tests"
+  },
+  {
+    "index": 311,
+    "style": "Heading 3",
+    "text": "Result interpretation"
+  },
+  {
+    "index": 312,
+    "style": "Normal",
+    "text": "Fresh real PostgreSQL/API evidence verifies lawyer filtering and specialization creation. Duplicate license, Customer authorisation, invalid specialization, score boundaries and mocked timeout tests pass. Query/headroom expectations remain unresolved: the available consolidated specification contains a 20% narrative, while later configurable workforce rules differ. Historical high match scores, fee mutation and availability-toggle scenarios remain unverified. Jeyashankar must confirm responsibilities and intended requirements; new AI-assisted work is not assigned personally."
+  },
+  {
+    "index": 314,
+    "style": "Heading 2",
+    "text": "9.2 Buddhika P. Y. H (IT24103041), C2"
+  },
+  {
+    "index": 315,
+    "style": "Normal",
+    "text": "Component 2: Lawyer Appointment Scheduling, Booking Lifecycle and Careers Portal"
+  },
+  {
+    "index": 316,
+    "style": "Heading 3",
+    "text": "Ownership"
+  },
+  {
+    "index": 317,
+    "style": "Heading 3",
+    "text": "Tools and why they were chosen"
+  },
+  {
+    "index": 318,
+    "style": "List Paragraph",
+    "text": "xUnit: service-level tests for slot calculation, conflict detection, cancellation rules and career CRUD."
+  },
+  {
+    "index": 319,
+    "style": "List Paragraph",
+    "text": "Isolated PostgreSQL tests exercise current unique-slot/recurring overlap and concurrent mutation protection. The original claimed (LawyerId, AppointmentDate) constraint is not the current model."
+  },
+  {
+    "index": 320,
+    "style": "List Paragraph",
+    "text": "Playwright: validates the booking journey (select lawyer, pick slot, confirm) in the browser."
+  },
+  {
+    "index": 321,
+    "style": "List Paragraph",
+    "text": "The original 20-string live date-classification evaluation is historical/unverified. Deterministic schedule and conflict cases are traceable to current test artifacts."
+  },
+  {
+    "index": 322,
+    "style": "Heading 3",
+    "text": "Test design"
+  },
+  {
+    "index": 323,
+    "style": "Normal",
+    "text": "12 cases documented: 4 scoped VERIFIED, 1 FAILED report expectations, 0 BLOCKED and 7 HISTORICAL/UNVERIFIED. These are component-assigned report cases, not proof of personal authorship."
+  },
+  {
+    "index": 324,
+    "style": "Heading 3",
+    "text": "Commit evidence"
+  },
+  {
+    "index": 325,
+    "style": "Normal",
+    "text": "Original group commit evidence (6 records): yhprasad, yh prasad. The linked commits exist in Wishwa2002/Intelligent-legal-service and are ancestors of the published tested SHA. Author dates and changed paths are recorded in git-publication/evidence/member-commit-evidence.json. Identity association uses the supplied group context; personal effort, responsibility and AI use require member confirmation. No new QMSE work is attributed personally."
+  },
+  {
+    "index": 326,
+    "style": "Heading 3",
+    "text": "AI assistance in testing and how it was verified"
+  },
+  {
+    "index": 327,
+    "style": "Heading 3",
+    "text": "Historical defect and fix assignments"
+  },
+  {
+    "index": 328,
+    "style": "Normal",
+    "text": "DEF-08 (timezone drift), DEF-09 (careers authorisation), DEF-10 (login redirect loop), DEF-11 (IPv6 refusal and token persistence)."
+  },
+  {
+    "index": 329,
+    "style": "Heading 3",
+    "text": "How to rerun my tests"
+  },
+  {
+    "index": 330,
+    "style": "Heading 3",
+    "text": "Result interpretation"
+  },
+  {
+    "index": 331,
+    "style": "Normal",
+    "text": "Current cancellation characterisation passes at 1439/1440/1441 minutes; historical 24-hour prohibition lacks an established product rule. Real PostgreSQL concurrency has one winner, outside-hours bookings are rejected and direct booking works without AI. Non-admin career publishing is denied. A migration repair makes the real appointment API usable. Historical immediate Confirmed status, timezone and live scheduling outputs remain qualified; Buddhika should confirm original scenarios and ownership."
+  },
+  {
+    "index": 333,
+    "style": "Heading 2",
+    "text": "9.3 Vithusan V (IT24100360), C3"
+  },
+  {
+    "index": 334,
+    "style": "Normal",
+    "text": "Component 3: Legal Documentation Services, Clerk Management and Verification"
+  },
+  {
+    "index": 335,
+    "style": "Heading 3",
+    "text": "Ownership"
+  },
+  {
+    "index": 336,
+    "style": "Heading 3",
+    "text": "Tools and why they were chosen"
+  },
+  {
+    "index": 337,
+    "style": "List Paragraph",
+    "text": "xUnit: request lifecycle, upload rules (size, type), clerk assignment and approval transitions."
+  },
+  {
+    "index": 338,
+    "style": "List Paragraph",
+    "text": "The original zero-orphan rollback result is historical/unverified. A three-file atomic application filing/rollback operation was not identified and TC-C3-12 remains blocked."
+  },
+  {
+    "index": 339,
+    "style": "List Paragraph",
+    "text": "Swagger / Postman multipart requests: exercise file upload limits end to end."
+  },
+  {
+    "index": 340,
+    "style": "List Paragraph",
+    "text": "Deterministic completeness check (valid files / mandatory files x 100): easy to assert exactly."
+  },
+  {
+    "index": 341,
+    "style": "Heading 3",
+    "text": "Test design"
+  },
+  {
+    "index": 342,
+    "style": "Normal",
+    "text": "12 cases documented: 4 scoped VERIFIED, 0 FAILED report expectations, 1 BLOCKED and 7 HISTORICAL/UNVERIFIED. These are component-assigned report cases, not proof of personal authorship."
+  },
+  {
+    "index": 343,
+    "style": "Heading 3",
+    "text": "Commit evidence"
+  },
+  {
+    "index": 344,
+    "style": "Normal",
+    "text": "Original group commit evidence (6 records): VTN02. The linked commits exist in Wishwa2002/Intelligent-legal-service and are ancestors of the published tested SHA. Author dates and changed paths are recorded in git-publication/evidence/member-commit-evidence.json. Identity association uses the supplied group context; personal effort, responsibility and AI use require member confirmation. No new QMSE work is attributed personally."
+  },
+  {
+    "index": 345,
+    "style": "Heading 3",
+    "text": "AI assistance in testing and how it was verified"
+  },
+  {
+    "index": 346,
+    "style": "Heading 3",
+    "text": "Historical defect and fix assignments"
+  },
+  {
+    "index": 347,
+    "style": "Normal",
+    "text": "DEF-12 (spoofed uploads), DEF-13 (services not seeded), DEF-14 (over-confident classification)."
+  },
+  {
+    "index": 348,
+    "style": "Heading 3",
+    "text": "How to rerun my tests"
+  },
+  {
+    "index": 349,
+    "style": "Heading 3",
+    "text": "Result interpretation"
+  },
+  {
+    "index": 350,
+    "style": "Normal",
+    "text": "Spoofed-PDF acceptance is repaired and the unchanged original rejection test passes. Genuine PDFs, images, MIME combinations, repository sample PDFs and exact 10 MiB boundaries pass regressions. PostgreSQL rollback tests and the complete Flutter/API/AI/React document workflow provide new evidence. An atomic three-file HTTP operation is still not established. Historical Approved/50% completeness claims differ from current statuses. Vithusan must confirm intended transaction boundary and ownership."
+  },
+  {
+    "index": 352,
+    "style": "Heading 2",
+    "text": "9.4 Wijayananda W. J. W (Team Leader) (IT24102275), C4"
+  },
+  {
+    "index": 353,
+    "style": "Normal",
+    "text": "Component 4: Legal Consultation and AI Advisor, Client Service Requests and Platform Security"
+  },
+  {
+    "index": 354,
+    "style": "Heading 3",
+    "text": "Ownership"
+  },
+  {
+    "index": 355,
+    "style": "Heading 3",
+    "text": "Tools and why they were chosen"
+  },
+  {
+    "index": 356,
+    "style": "List Paragraph",
+    "text": "Current xUnit tests exercise service-request logic and scoped JWT/authorization checks. AuthSecurityTests.cs is absent; do not assign its claimed ten cases to this member."
+  },
+  {
+    "index": 357,
+    "style": "List Paragraph",
+    "text": "Fresh automated JWT checks use synthetic signing keys in an isolated HTTP fixture. The original jwt.io/Swagger tamper session is historical/unverified; no real token is sent to a third-party website."
+  },
+  {
+    "index": 358,
+    "style": "List Paragraph",
+    "text": "Playwright: real browser checks for token storage and protected routes."
+  },
+  {
+    "index": 359,
+    "style": "List Paragraph",
+    "text": "Published testing branch Actions check: zero runs for SHA 05359214df52fa743b234e1d77e6671f57c14dea and branch se3110-qmse-testing. The three committed source workflows allow push only to main/develop and none declares workflow_dispatch. Managed CodeQL/Dependabot have no observed run for this revision; their trigger settings are not established by source YAML. Separate unapplied CI proposals are retained for review."
+  },
+  {
+    "index": 360,
+    "style": "Heading 3",
+    "text": "Test design"
+  },
+  {
+    "index": 361,
+    "style": "Normal",
+    "text": "12 cases documented: 7 scoped VERIFIED, 0 FAILED report expectations, 1 BLOCKED and 4 HISTORICAL/UNVERIFIED. These are component-assigned report cases, not proof of personal authorship."
+  },
+  {
+    "index": 362,
+    "style": "Heading 3",
+    "text": "Commit evidence"
+  },
+  {
+    "index": 363,
+    "style": "Normal",
+    "text": "Original group commit evidence (7 records): Wishwa, Wishwa Wijayananda. The linked commits exist in Wishwa2002/Intelligent-legal-service and are ancestors of the published tested SHA. Author dates and changed paths are recorded in git-publication/evidence/member-commit-evidence.json. Identity association uses the supplied group context; personal effort, responsibility and AI use require member confirmation. No new QMSE work is attributed personally."
+  },
+  {
+    "index": 364,
+    "style": "Heading 3",
+    "text": "AI assistance in testing and how it was verified"
+  },
+  {
+    "index": 365,
+    "style": "Heading 3",
+    "text": "Historical defect and fix assignments"
+  },
+  {
+    "index": 366,
+    "style": "Normal",
+    "text": "DEF-05 (JWT lifetime and audience validation), DEF-15 (authentication security and validation)."
+  },
+  {
+    "index": 367,
+    "style": "Heading 3",
+    "text": "How to rerun my tests"
+  },
+  {
+    "index": 368,
+    "style": "Normal",
+    "text": "Consultation ownership limitation: history for app/agents/supervisor.py and its prompt records a566efa/6b59d19 under VTN02. Do not assign this implementation or RAG scoring to Wijayananda solely because it belongs to C4. Shared work and identity mapping require group confirmation. Authentication and service-request evidence under Wishwa is independently recorded (43f6345, 9309287, 9579cee)."
+  },
+  {
+    "index": 369,
+    "style": "Heading 3",
+    "text": "Result interpretation"
+  },
+  {
+    "index": 370,
+    "style": "Normal",
+    "text": "Actual isolated staff login, wrong-password denial and service submission are verified. Expired/invalid/tampered JWT, duplicate registration and role denials pass their documented fixtures. Live refusal, Sri Lankan-law retrieval accuracy and universal disclaimer behaviour remain unverified after provider failure. Wijayananda should confirm guardrail requirements, member disclosures and future CI results after separately authorised push."
+  },
+  {
+    "index": 371,
+    "style": "Heading 1",
+    "text": "10. Group Contribution Matrix"
+  },
+  {
+    "index": 372,
+    "style": "Normal",
+    "text": "Observed class counts are derived from the final TRX. Original ownership assignments are historical statements pending member confirmation. New QMSE tests are AI-assisted work from this task, with no invented student attribution or percentage."
+  },
+  {
+    "index": 373,
+    "style": "Normal",
+    "text": "Contribution matrix provenance: original member development records are linked in Section 9 and Figures 6.23\u20136.26. The matrix test counts are observed suite cases, not personal-effort percentages. New Codex-assisted fixes and replay scripts are recorded separately under the actual Git author Jeyamdev (f360e4a, 0535921); no reassignment to students is made. Original main has 14 reachable commits; the testing branch has 97, including 83 beyond main. All original object identities and authors are intact."
+  },
+  {
+    "index": 374,
+    "style": "Heading 1",
+    "text": "11. Conclusion and Recommendations"
+  },
+  {
+    "index": 375,
+    "style": "Normal",
+    "text": "The task repaired and retested four concrete defects, completed a real Flutter web \u2192 API \u2192 PostgreSQL/FastAPI \u2192 React \u2192 Flutter document workflow, and expanded PostgreSQL security/performance evidence. Final automated suites contain no failures; five cases are explicitly skipped across xUnit/Playwright. The report still contains three unresolved expectation conflicts, 49 historical/unverified cases and two blocked cases. Live Golden Case acceptance, native-device/accessibility validation, member confirmation and CI execution for the published tested commit remain outstanding; the published branch is verified, but assessment completeness is not claimed."
+  },
+  {
+    "index": 376,
+    "style": "Heading 3",
+    "text": "Recommendations"
+  },
+  {
+    "index": 377,
+    "style": "List Paragraph",
+    "text": "Retain the fixed upload validation and regressions. Consider deeper image decoding and malware/sanitization controls only against agreed requirements; current format validation is not antivirus."
+  },
+  {
+    "index": 378,
+    "style": "List Paragraph",
+    "text": "Confirm approval/version precedence for query length, the specification\u2019s 20% workforce narrative versus configurable rules, cancellation notice and document transaction boundaries. Preserve conflicting expectations until resolved."
+  },
+  {
+    "index": 379,
+    "style": "List Paragraph",
+    "text": "Prioritise uncovered business/security branches. Raw line coverage is 81.11%, largely influenced by executed generated migrations; distinct non-migration source coverage is 57.82%, compared with 57.45% previously. This modest change must not be presented as a dramatic business-logic coverage increase."
+  },
+  {
+    "index": 380,
+    "style": "List Paragraph",
+    "text": "Retain genuine workflow logs/screenshots and rerun on a native Flutter device where available. Confirm the historical Deed/checklist/Approved flow separately rather than treating the verified Affidavit workflow as identical."
+  },
+  {
+    "index": 381,
+    "style": "List Paragraph",
+    "text": "Address the verified Low missing nosniff header finding through the deployment/security policy. Repeat representative PostgreSQL load after staging approval; current two-user read tests do not certify production capacity."
+  },
+  {
+    "index": 382,
+    "style": "List Paragraph",
+    "text": "Resolve provider availability/model/budget before further live Golden Cases. Obtain member contribution confirmations and complete native/accessibility/manual demonstrations. CI needs a separately approved configuration revision: current branch filters prevent execution, and no manual dispatch is declared. Publication of the verified SHA is complete; no approval for an additional SHA, deployment or submission is inferred."
+  },
+  {
+    "index": 383,
+    "style": "Heading 1",
+    "text": "12. AI Usage Declaration (CLEAR Framework)"
+  },
+  {
+    "index": 384,
+    "style": "Normal",
+    "text": "Revision assistance: Codex generated scoped test additions, ran tools, assembled evidence and edited this report on the actual logged execution date. Members must inspect, understand and confirm this work before submission."
+  },
+  {
+    "index": 385,
+    "style": "Heading 1",
+    "text": "13. References"
+  },
+  {
+    "index": 386,
+    "style": "List Paragraph",
+    "text": "SE3110 Assignment: Software Testing and Quality Evaluation of the SE3090 Integrated System (SLIIT, 2026)."
+  },
+  {
+    "index": 387,
+    "style": "List Paragraph",
+    "text": "SE3090 LegalEase AI Full Report, Version 3.0 \u2014 Consolidated Final Verified Specification, Group 2026-SE-42. Available requirements reference; formal approval not independently confirmed."
+  },
+  {
+    "index": 388,
+    "style": "List Paragraph",
+    "text": "Microsoft (2024). Integration tests in ASP.NET Core. Microsoft Learn."
+  },
+  {
+    "index": 389,
+    "style": "List Paragraph",
+    "text": "OWASP Foundation (2023). OWASP API Security Top 10."
+  },
+  {
+    "index": 390,
+    "style": "List Paragraph",
+    "text": "Myers, G. J., Sandler, C. and Badgett, T. (2011). The Art of Software Testing, 3rd ed. Wiley."
+  },
+  {
+    "index": 391,
+    "style": "List Paragraph",
+    "text": "ISO/IEC/IEEE 29119 Software Testing standard series."
+  },
+  {
+    "index": 393,
+    "style": "Normal",
+    "text": "Original group development repository: https://github.com/Wishwa2002/Intelligent-legal-service"
+  },
+  {
+    "index": 394,
+    "style": "Normal",
+    "text": "Final published QMSE testing branch: https://github.com/Wishwa2002/Intelligent-legal-service/tree/se3110-qmse-testing; expected SHA 05359214df52fa743b234e1d77e6671f57c14dea."
+  },
+  {
+    "index": 395,
+    "style": "Normal",
+    "text": "Deployment repository: https://github.com/Jeyamdev/legalease-ai (hosting/deployment history; historical CI Figure 6.13)."
+  },
+  {
+    "index": 396,
+    "style": "Normal",
+    "text": "Publication and commit evidence: git-publication/evidence/publication-verification.json, fresh-clone-verification.json, member-commit-evidence.json and ci-verification.json; captured 8 October 2026."
+  },
+  {
+    "index": 397,
+    "style": "Heading 1",
+    "text": "Appendix A: Specification Compliance Checklist"
+  },
+  {
+    "index": 398,
+    "style": "Normal",
+    "text": "This checklist distinguishes verified document/evidence preparation from unresolved execution and assessment requirements. The legitimate individual demonstration/viva requirement is preserved; generic preparation instructions are replaced with actual status."
+  },
+  {
+    "index": 400,
+    "style": "Heading 1",
+    "text": "Appendix B: Reproduction Guide"
+  },
+  {
+    "index": 401,
+    "style": "Heading 2",
+    "text": "B.1 Prerequisites"
+  },
+  {
+    "index": 402,
+    "style": "List Paragraph",
+    "text": "Reproduction requirements: .NET SDK 8.0.x, Node.js, a complete Flutter SDK, Python environment with ai-service requirements, and a dedicated local PostgreSQL cluster. Tested host is macOS ARM64; hosted Windows/Ubuntu results are historical except where CI metadata explicitly supports them."
+  },
+  {
+    "index": 403,
+    "style": "List Paragraph",
+    "text": "Use synthetic local JWT/AI fixture configuration. Keep real database credentials and provider keys outside deliverables. Tests need no production data. Current pytest uses a synthetic initialization key and mocks, not live Gemini access."
+  },
+  {
+    "index": 404,
+    "style": "Normal",
+    "text": "Recorded real-workflow setup and replay details are in frontend/tests/qmse-integration/README.md and git-publication/audit/reproduction-published.md. The committed supervisor uses macOS-specific runtime paths; adapt them to the assessor host. A clone contains reusable scripts, not local caches, private settings or the separately delivered native evidence. Build each service and use fresh isolated PostgreSQL fixtures before replay. The reference-assisted publication clone verified remote head and original commit metadata using audited local objects; no application rerun or independent full-object download is claimed. A first unassisted clone timed out and is retained."
+  },
+  {
+    "index": 405,
+    "style": "Heading 2",
+    "text": "B.2 Start the system"
+  },
+  {
+    "index": 406,
+    "style": "Heading 2",
+    "text": "B.3 Run the test suites"
+  },
+  {
+    "index": 407,
+    "style": "Heading 2",
+    "text": "B.4 Test accounts"
+  },
+  {
+    "index": 408,
+    "style": "Normal",
+    "text": "Tests use synthetic example.test identities and test-only signing material. Production/confidential credentials are excluded. The real workflow used locally generated credentials and private browser state, which are not packaged. Reproduction requires a fresh isolated setup; the original SE3090 account-list reference remains historical/unverified."
+  }
+]

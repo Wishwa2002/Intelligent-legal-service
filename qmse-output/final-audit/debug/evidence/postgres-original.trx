@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="363a6d24-b183-4fb6-ac1b-234b379ac944" name="@Jegatheeswarans-MacBook-Air 2026-10-08 17:48:12" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-08T17:48:12.7079560+05:30" queuing="2026-10-08T17:48:12.7079560+05:30" start="2026-10-08T17:48:11.5077280+05:30" finish="2026-10-08T17:48:12.7099520+05:30" />
+  <TestSettings name="default" id="b04a114d-68de-4697-ac10-250836c7f752">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-08_17_48_12" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="0f5007be-8fa1-48c1-979f-47af04627795" testId="f513340f-0f02-8e09-abe7-43c74581b154" testName="LegalService.Tests.HistoricalPostgresSetupTests.TC_DB_01_TlsConnection" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.3660958" startTime="2026-10-08T17:48:11.7845520+05:30" endTime="2026-10-08T17:48:12.1565950+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0f5007be-8fa1-48c1-979f-47af04627795">
+      <Output>
+        <StdOut>UTC=2026-10-08T12:18:12.1497100Z; CanConnectAsync=True; latency_ms=317.168; SSL Mode=Require; pooling=true.</StdOut>
+        <ErrorInfo>
+          <Message>Historical connection latency expectation exceeded.</Message>
+          <StackTrace>   at LegalService.Tests.HistoricalPostgresSetupTests.TC_DB_01_TlsConnection() in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/HistoricalCaseVerificationTests.cs:line 36
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="b30b60bd-fd37-49e9-9a4e-14add132aa43" testId="e7e527bf-debe-2c90-ab49-5afe4ceb0a94" testName="LegalService.Tests.HistoricalPostgresSetupTests.BootstrapActualStartupSeeders" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.5050944" startTime="2026-10-08T17:48:12.1613540+05:30" endTime="2026-10-08T17:48:12.6623800+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="b30b60bd-fd37-49e9-9a4e-14add132aa43">
+      <Output>
+        <StdOut>Actual startup seeders executed on dedicated qmse_history database; synthetic credentials omitted.</StdOut>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LegalService.Tests.HistoricalPostgresSetupTests.BootstrapActualStartupSeeders" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="e7e527bf-debe-2c90-ab49-5afe4ceb0a94">
+      <Execution id="b30b60bd-fd37-49e9-9a4e-14add132aa43" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.HistoricalPostgresSetupTests" name="BootstrapActualStartupSeeders" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.HistoricalPostgresSetupTests.TC_DB_01_TlsConnection" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="f513340f-0f02-8e09-abe7-43c74581b154">
+      <Execution id="0f5007be-8fa1-48c1-979f-47af04627795" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.HistoricalPostgresSetupTests" name="TC_DB_01_TlsConnection" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="f513340f-0f02-8e09-abe7-43c74581b154" executionId="0f5007be-8fa1-48c1-979f-47af04627795" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e7e527bf-debe-2c90-ab49-5afe4ceb0a94" executionId="b30b60bd-fd37-49e9-9a4e-14add132aa43" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="2" executed="2" passed="1" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.29)
+[xUnit.net 00:00:00.04]   Discovering: LegalService.Tests
+[xUnit.net 00:00:00.07]   Discovered:  LegalService.Tests
+[xUnit.net 00:00:00.08]   Starting:    LegalService.Tests
+[xUnit.net 00:00:00.46]       Historical connection latency expectation exceeded.
+[xUnit.net 00:00:00.46]       Stack Trace:
+[xUnit.net 00:00:00.46]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/HistoricalCaseVerificationTests.cs(36,0): at LegalService.Tests.HistoricalPostgresSetupTests.TC_DB_01_TlsConnection()
+[xUnit.net 00:00:00.46]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:00.46]       Output:
+[xUnit.net 00:00:00.46]         UTC=2026-10-08T12:18:12.1497100Z; CanConnectAsync=True; latency_ms=317.168; SSL Mode=Require; pooling=true.
+[xUnit.net 00:00:00.97]   Finished:    LegalService.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="Jegatheeswarans-MacBook-Air" outcome="Error" timestamp="2026-10-08T17:48:12.1578110+05:30">
+        <Text>[xUnit.net 00:00:00.46]     LegalService.Tests.HistoricalPostgresSetupTests.TC_DB_01_TlsConnection [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

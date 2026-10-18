@@ -1,0 +1,428 @@
+﻿2026-10-06T04:44:43.5266279Z Current runner version: '2.337.0'
+2026-10-06T04:44:43.5286064Z ##[group]Runner Image Provisioner
+2026-10-06T04:44:43.5286798Z Hosted Compute Agent
+2026-10-06T04:44:43.5287379Z Version: 20260901.588
+2026-10-06T04:44:43.5287835Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-06T04:44:43.5288587Z Build Date: 2026-09-01T19:56:44Z
+2026-10-06T04:44:43.5289089Z Worker ID: {8cf57c9c-8704-466d-9547-5ab81f38d228}
+2026-10-06T04:44:43.5289813Z Azure Region: centralus
+2026-10-06T04:44:43.5290261Z ##[endgroup]
+2026-10-06T04:44:43.5291235Z ##[group]Operating System
+2026-10-06T04:44:43.5291697Z Ubuntu
+2026-10-06T04:44:43.5292085Z 24.04.5
+2026-10-06T04:44:43.5292447Z LTS
+2026-10-06T04:44:43.5292823Z ##[endgroup]
+2026-10-06T04:44:43.5293206Z ##[group]Runner Image
+2026-10-06T04:44:43.5293696Z Image: ubuntu-24.04
+2026-10-06T04:44:43.5294093Z Version: 20260927.320.1
+2026-10-06T04:44:43.5295085Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-06T04:44:43.5296340Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-06T04:44:43.5297085Z ##[endgroup]
+2026-10-06T04:44:43.5297903Z ##[group]GITHUB_TOKEN Permissions
+2026-10-06T04:44:43.5299813Z Contents: read
+2026-10-06T04:44:43.5300233Z Metadata: read
+2026-10-06T04:44:43.5300648Z Packages: read
+2026-10-06T04:44:43.5301070Z ##[endgroup]
+2026-10-06T04:44:43.5302644Z Secret source: Actions
+2026-10-06T04:44:43.5303325Z Cache mode: write
+2026-10-06T04:44:43.5303818Z Prepare workflow directory
+2026-10-06T04:44:43.5595819Z Prepare all required actions
+2026-10-06T04:44:43.5634113Z Getting action download info
+2026-10-06T04:44:43.7956178Z Download action repository 'actions/checkout@v7' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-10-06T04:44:43.8964802Z Download action repository 'subosito/flutter-action@v2' (SHA:1a449444c387b1966244ae4d4f8c696479add0b2)
+2026-10-06T04:44:44.2106591Z Getting action download info
+2026-10-06T04:44:44.3031147Z Download action repository 'actions/cache@v5' (SHA:caa296126883cff596d87d8935842f9db880ef25)
+2026-10-06T04:44:44.5502490Z Complete job name: test
+2026-10-06T04:44:44.6057635Z ##[group]Run actions/checkout@v7
+2026-10-06T04:44:44.6058310Z with:
+2026-10-06T04:44:44.6058759Z   repository: Wishwa2002/Intelligent-legal-service
+2026-10-06T04:44:44.6062342Z   token: ***
+2026-10-06T04:44:44.6062784Z   ssh-strict: true
+2026-10-06T04:44:44.6063212Z   ssh-user: git
+2026-10-06T04:44:44.6063686Z   persist-credentials: true
+2026-10-06T04:44:44.6064128Z   clean: true
+2026-10-06T04:44:44.6064571Z   sparse-checkout-cone-mode: true
+2026-10-06T04:44:44.6065121Z   fetch-depth: 1
+2026-10-06T04:44:44.6065551Z   fetch-tags: false
+2026-10-06T04:44:44.6065980Z   show-progress: true
+2026-10-06T04:44:44.6066399Z   lfs: false
+2026-10-06T04:44:44.6066803Z   submodules: false
+2026-10-06T04:44:44.6067259Z   set-safe-directory: true
+2026-10-06T04:44:44.6067708Z   allow-unsafe-pr-checkout: false
+2026-10-06T04:44:44.6068406Z ##[endgroup]
+2026-10-06T04:44:44.6947406Z Syncing repository: Wishwa2002/Intelligent-legal-service
+2026-10-06T04:44:44.6949902Z ##[group]Getting Git version info
+2026-10-06T04:44:44.6951186Z Working directory is '/home/runner/work/Intelligent-legal-service/Intelligent-legal-service'
+2026-10-06T04:44:44.6953105Z [command]/usr/bin/git version
+2026-10-06T04:44:44.7006294Z git version 2.55.0
+2026-10-06T04:44:44.7033844Z ##[endgroup]
+2026-10-06T04:44:44.7044729Z Temporarily overriding HOME='/home/runner/work/_temp/12529fd3-7ed8-491f-b22d-85e9e993be39' before making global git config changes
+2026-10-06T04:44:44.7046835Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-06T04:44:44.7051050Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-06T04:44:44.7101821Z Deleting the contents of '/home/runner/work/Intelligent-legal-service/Intelligent-legal-service'
+2026-10-06T04:44:44.7104946Z ##[group]Determining repository object format
+2026-10-06T04:44:44.7106856Z ##[endgroup]
+2026-10-06T04:44:44.7108035Z ##[group]Initializing the repository
+2026-10-06T04:44:44.7111370Z [command]/usr/bin/git init /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-06T04:44:44.7254007Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-06T04:44:44.7255751Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-06T04:44:44.7257292Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-06T04:44:44.7258380Z hint: call:
+2026-10-06T04:44:44.7259057Z hint:
+2026-10-06T04:44:44.7260007Z hint: 	git config --global init.defaultBranch <name>
+2026-10-06T04:44:44.7260658Z hint:
+2026-10-06T04:44:44.7261290Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-06T04:44:44.7262207Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-06T04:44:44.7263080Z hint:
+2026-10-06T04:44:44.7263689Z hint: 	git branch -m <name>
+2026-10-06T04:44:44.7264447Z hint:
+2026-10-06T04:44:44.7265455Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-06T04:44:44.7267048Z Initialized empty Git repository in /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git/
+2026-10-06T04:44:44.7272581Z [command]/usr/bin/git remote add origin https://github.com/Wishwa2002/Intelligent-legal-service
+2026-10-06T04:44:44.7319857Z ##[endgroup]
+2026-10-06T04:44:44.7321024Z ##[group]Disabling automatic garbage collection
+2026-10-06T04:44:44.7322875Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-06T04:44:44.7351906Z ##[endgroup]
+2026-10-06T04:44:44.7353882Z ##[group]Setting up auth
+2026-10-06T04:44:44.7354683Z Removing SSH command configuration
+2026-10-06T04:44:44.7355755Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-06T04:44:44.7382141Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-06T04:44:44.7673978Z Removing HTTP extra header
+2026-10-06T04:44:44.7679217Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-06T04:44:44.7707529Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-06T04:44:44.7857504Z Removing includeIf entries pointing to credentials config files
+2026-10-06T04:44:44.7862402Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-06T04:44:44.7886138Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-06T04:44:44.8049562Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-06T04:44:44.8071676Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git.path /home/runner/work/_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config
+2026-10-06T04:44:44.8097112Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config
+2026-10-06T04:44:44.8125037Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config
+2026-10-06T04:44:44.8149624Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config
+2026-10-06T04:44:44.8171643Z ##[endgroup]
+2026-10-06T04:44:44.8172722Z ##[group]Fetching the repository
+2026-10-06T04:44:44.8177123Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +711c9b15cc0f2d978d23c3f481b5a84d446925b4:refs/remotes/pull/32/merge
+2026-10-06T04:44:47.3513506Z From https://github.com/Wishwa2002/Intelligent-legal-service
+2026-10-06T04:44:47.3514357Z  * [new ref]         711c9b15cc0f2d978d23c3f481b5a84d446925b4 -> pull/32/merge
+2026-10-06T04:44:47.3517131Z ##[endgroup]
+2026-10-06T04:44:47.3517836Z ##[group]Determining the checkout info
+2026-10-06T04:44:47.3518370Z ##[endgroup]
+2026-10-06T04:44:47.3522853Z [command]/usr/bin/git sparse-checkout disable
+2026-10-06T04:44:47.3567969Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-06T04:44:47.3593200Z ##[group]Checking out the ref
+2026-10-06T04:44:47.3596281Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/32/merge
+2026-10-06T04:44:47.5476479Z Note: switching to 'refs/remotes/pull/32/merge'.
+2026-10-06T04:44:47.5476966Z 
+2026-10-06T04:44:47.5477270Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-06T04:44:47.5478030Z changes and commit them, and you can discard any commits you make in this
+2026-10-06T04:44:47.5478545Z state without impacting any branches by switching back to a branch.
+2026-10-06T04:44:47.5478862Z 
+2026-10-06T04:44:47.5479085Z If you want to create a new branch to retain commits you create, you may
+2026-10-06T04:44:47.5479711Z do so (now or later) by using -c with the switch command. Example:
+2026-10-06T04:44:47.5479944Z 
+2026-10-06T04:44:47.5480107Z   git switch -c <new-branch-name>
+2026-10-06T04:44:47.5480303Z 
+2026-10-06T04:44:47.5480445Z Or undo this operation with:
+2026-10-06T04:44:47.5480644Z 
+2026-10-06T04:44:47.5480750Z   git switch -
+2026-10-06T04:44:47.5480946Z 
+2026-10-06T04:44:47.5481154Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-06T04:44:47.5481435Z 
+2026-10-06T04:44:47.5481787Z HEAD is now at 711c9b1 Merge 54aecccc780e99ee0bded70338277bccbfac76cd into 59337bba0227aa07e18e60f697bd758db327f0bd
+2026-10-06T04:44:47.5498439Z ##[endgroup]
+2026-10-06T04:44:47.5535211Z [command]/usr/bin/git log -1 --format=%H
+2026-10-06T04:44:47.5555597Z 711c9b15cc0f2d978d23c3f481b5a84d446925b4
+2026-10-06T04:44:47.5848455Z ##[group]Run subosito/flutter-action@v2
+2026-10-06T04:44:47.5848835Z with:
+2026-10-06T04:44:47.5849104Z   flutter-version: 3.47.5
+2026-10-06T04:44:47.5849373Z   channel: stable
+2026-10-06T04:44:47.5849887Z   cache: true
+2026-10-06T04:44:47.5850151Z   architecture: X64
+2026-10-06T04:44:47.5850443Z   pub-cache-path: default
+2026-10-06T04:44:47.5850761Z   dry-run: false
+2026-10-06T04:44:47.5851112Z   git-source: https://github.com/flutter/flutter.git
+2026-10-06T04:44:47.5851469Z ##[endgroup]
+2026-10-06T04:44:47.5904142Z ##[start-action display=Make yq tool available on Windows runners;id=__subosito_flutter-action.__run]
+2026-10-06T04:44:47.5921891Z ##[end-action id=__subosito_flutter-action.__run;outcome=skipped;conclusion=skipped;duration_ms=0]
+2026-10-06T04:44:47.5924440Z ##[start-action display=Make setup script executable;id=__subosito_flutter-action.__run_2]
+2026-10-06T04:44:47.5966832Z ##[group]Run chmod +x "$GITHUB_ACTION_PATH/setup.sh"
+2026-10-06T04:44:47.5967476Z [36;1mchmod +x "$GITHUB_ACTION_PATH/setup.sh"[0m
+2026-10-06T04:44:47.6138030Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-06T04:44:47.6138447Z ##[endgroup]
+2026-10-06T04:44:47.6231827Z ##[end-action id=__subosito_flutter-action.__run_2;outcome=success;conclusion=success;duration_ms=30]
+2026-10-06T04:44:47.6234290Z ##[start-action display=Set action inputs;id=__subosito_flutter-action.flutter-action]
+2026-10-06T04:44:47.6277435Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh -p \
+2026-10-06T04:44:47.6277845Z [36;1m$GITHUB_ACTION_PATH/setup.sh -p \[0m
+2026-10-06T04:44:47.6278226Z [36;1m  -n '3.47.5' \[0m
+2026-10-06T04:44:47.6278496Z [36;1m  -f '' \[0m
+2026-10-06T04:44:47.6278801Z [36;1m  -a 'X64' \[0m
+2026-10-06T04:44:47.6279182Z [36;1m  -k '' \[0m
+2026-10-06T04:44:47.6279736Z [36;1m  -c '' \[0m
+2026-10-06T04:44:47.6280053Z [36;1m  -l '' \[0m
+2026-10-06T04:44:47.6280316Z [36;1m  -d 'default' \[0m
+2026-10-06T04:44:47.6280663Z [36;1m  -g 'https://github.com/flutter/flutter.git' \[0m
+2026-10-06T04:44:47.6281064Z [36;1m  stable[0m
+2026-10-06T04:44:47.6311798Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-06T04:44:47.6312170Z ##[endgroup]
+2026-10-06T04:44:47.8618389Z ##[end-action id=__subosito_flutter-action.flutter-action;outcome=success;conclusion=success;duration_ms=238]
+2026-10-06T04:44:47.8623026Z ##[start-action display=Cache Flutter;id=__subosito_flutter-action.cache-flutter]
+2026-10-06T04:44:47.8678101Z ##[group]Run actions/cache@v5
+2026-10-06T04:44:47.8678410Z with:
+2026-10-06T04:44:47.8678704Z   path: /opt/hostedtoolcache/flutter/stable-3.47.5-x64
+2026-10-06T04:44:47.8679171Z   key: flutter-linux-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1
+2026-10-06T04:44:47.8679779Z   enableCrossOsArchive: false
+2026-10-06T04:44:47.8680048Z   fail-on-cache-miss: false
+2026-10-06T04:44:47.8680294Z   lookup-only: false
+2026-10-06T04:44:47.8680554Z   save-always: false
+2026-10-06T04:44:47.8680817Z ##[endgroup]
+2026-10-06T04:44:48.0880169Z Cache not found for input keys: flutter-linux-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1
+2026-10-06T04:44:48.0920815Z ##[end-action id=__subosito_flutter-action.cache-flutter;outcome=success;conclusion=success;duration_ms=229]
+2026-10-06T04:44:48.0923691Z ##[start-action display=Cache pub dependencies;id=__subosito_flutter-action.cache-pub]
+2026-10-06T04:44:48.2553418Z ##[group]Run actions/cache@v5
+2026-10-06T04:44:48.2553676Z with:
+2026-10-06T04:44:48.2553914Z   path: /home/runner/.pub-cache
+2026-10-06T04:44:48.2554502Z   key: flutter-pub-linux-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1-33584938b8c473856ce417c6fe4cc0ac3af17f5213cab683ca33a8a40294efe2
+2026-10-06T04:44:48.2555078Z   enableCrossOsArchive: false
+2026-10-06T04:44:48.2555361Z   fail-on-cache-miss: false
+2026-10-06T04:44:48.2555596Z   lookup-only: false
+2026-10-06T04:44:48.2555854Z   save-always: false
+2026-10-06T04:44:48.2556066Z ##[endgroup]
+2026-10-06T04:44:48.4694002Z Cache not found for input keys: flutter-pub-linux-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1-33584938b8c473856ce417c6fe4cc0ac3af17f5213cab683ca33a8a40294efe2
+2026-10-06T04:44:48.4731299Z ##[end-action id=__subosito_flutter-action.cache-pub;outcome=success;conclusion=success;duration_ms=380]
+2026-10-06T04:44:48.4734072Z ##[start-action display=Run setup script;id=__subosito_flutter-action.__run_3]
+2026-10-06T04:44:48.4774624Z ##[group]Run $GITHUB_ACTION_PATH/setup.sh \
+2026-10-06T04:44:48.4774976Z [36;1m$GITHUB_ACTION_PATH/setup.sh \[0m
+2026-10-06T04:44:48.4775266Z [36;1m  -n '3.47.5' \[0m
+2026-10-06T04:44:48.4775521Z [36;1m  -a 'x64' \[0m
+2026-10-06T04:44:48.4775830Z [36;1m  -c '/opt/hostedtoolcache/flutter/stable-3.47.5-x64' \[0m
+2026-10-06T04:44:48.4776163Z [36;1m  -d '/home/runner/.pub-cache' \[0m
+2026-10-06T04:44:48.4776448Z [36;1m  stable[0m
+2026-10-06T04:44:48.4816750Z shell: /usr/bin/bash --noprofile --norc -e -o pipefail {0}
+2026-10-06T04:44:48.4817083Z ##[endgroup]
+2026-10-06T04:44:48.7250603Z   % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
+2026-10-06T04:44:48.7251583Z                                  Dload  Upload   Total   Spent    Left  Speed
+2026-10-06T04:44:48.7252394Z 
+2026-10-06T04:44:49.1722868Z   0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0
+2026-10-06T04:44:50.1719299Z   2 1503M    2 35.6M    0     0  79.8M      0  0:00:18 --:--:--  0:00:18 79.7M
+2026-10-06T04:44:51.1717466Z  17 1503M   17  267M    0     0   184M      0  0:00:08  0:00:01  0:00:07  184M
+2026-10-06T04:44:52.1716253Z  34 1503M   34  525M    0     0   214M      0  0:00:06  0:00:02  0:00:04  214M
+2026-10-06T04:44:53.1719806Z  53 1503M   53  808M    0     0   234M      0  0:00:06  0:00:03  0:00:03  234M
+2026-10-06T04:44:54.1716231Z  70 1503M   70 1066M    0     0   239M      0  0:00:06  0:00:04  0:00:02  239M
+2026-10-06T04:44:54.7864824Z  88 1503M   88 1334M    0     0   245M      0  0:00:06  0:00:05  0:00:01  259M
+2026-10-06T04:44:54.7865322Z 100 1503M  100 1503M    0     0   247M      0  0:00:06  0:00:06 --:--:--  267M
+2026-10-06T04:45:38.0279888Z ##[end-action id=__subosito_flutter-action.__run_3;outcome=success;conclusion=success;duration_ms=49554]
+2026-10-06T04:45:38.0332133Z ##[group]Run flutter --version
+2026-10-06T04:45:38.0332459Z [36;1mflutter --version[0m
+2026-10-06T04:45:38.0369272Z shell: /usr/bin/bash -e {0}
+2026-10-06T04:45:38.0369729Z env:
+2026-10-06T04:45:38.0370071Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.5-x64/flutter
+2026-10-06T04:45:38.0370453Z   PUB_CACHE: /home/runner/.pub-cache
+2026-10-06T04:45:38.0370713Z ##[endgroup]
+2026-10-06T04:45:38.4293247Z Flutter 3.47.5 • channel stable • https://github.com/flutter/flutter.git
+2026-10-06T04:45:38.4293834Z Framework • revision 6a19cca564 (3 weeks ago) • 2026-09-17 14:13:22 -0400
+2026-10-06T04:45:38.4294689Z Engine • hash ab598368592da0064197e2bc15c7f5b0a2c6bb1f (revision af7e796e16) (19 days ago) • 2026-09-16 18:35:09.000Z
+2026-10-06T04:45:38.4295195Z Tools • Dart 3.13.4 • DevTools 2.60.0
+2026-10-06T04:45:38.4345029Z ##[group]Run cp .env.example .env
+2026-10-06T04:45:38.4345409Z [36;1mcp .env.example .env[0m
+2026-10-06T04:45:38.4380227Z shell: /usr/bin/bash -e {0}
+2026-10-06T04:45:38.4380495Z env:
+2026-10-06T04:45:38.4380889Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.5-x64/flutter
+2026-10-06T04:45:38.4381242Z   PUB_CACHE: /home/runner/.pub-cache
+2026-10-06T04:45:38.4381546Z ##[endgroup]
+2026-10-06T04:45:38.4485909Z ##[group]Run flutter pub get
+2026-10-06T04:45:38.4486305Z [36;1mflutter pub get[0m
+2026-10-06T04:45:38.4527784Z shell: /usr/bin/bash -e {0}
+2026-10-06T04:45:38.4528168Z env:
+2026-10-06T04:45:38.4528584Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.5-x64/flutter
+2026-10-06T04:45:38.4529140Z   PUB_CACHE: /home/runner/.pub-cache
+2026-10-06T04:45:38.4529914Z ##[endgroup]
+2026-10-06T04:45:42.1259262Z Resolving dependencies...
+2026-10-06T04:45:42.6168487Z Downloading packages...
+2026-10-06T04:45:45.2430901Z   android_file_picker 1.0.3 (2.0.0 available)
+2026-10-06T04:45:45.2431302Z   clock 1.1.2 (1.1.3 available)
+2026-10-06T04:45:45.2431768Z   cross_file 0.3.5+5 (0.4.0 available)
+2026-10-06T04:45:45.2432178Z   cupertino_icons 1.0.9 (2.0.0 available)
+2026-10-06T04:45:45.2432551Z   dbus 0.7.15 (0.8.0 available)
+2026-10-06T04:45:45.2432933Z   file_picker 12.1.3 (13.1.0 available)
+2026-10-06T04:45:45.2433334Z   file_picker_darwin 1.0.4 (2.1.2 available)
+2026-10-06T04:45:45.2433947Z   file_picker_linux 1.0.2 (2.0.1 available)
+2026-10-06T04:45:45.2434926Z   file_picker_platform_interface 3.2.0 (4.0.0 available)
+2026-10-06T04:45:45.2435415Z   file_picker_web 3.0.3 (4.0.0 available)
+2026-10-06T04:45:45.2435816Z   material_color_utilities 0.13.0 (0.13.1 available)
+2026-10-06T04:45:45.2436179Z   petitparser 7.0.2 (7.1.0 available)
+2026-10-06T04:45:45.2436604Z   shared_preferences 2.5.5 (2.5.6 available)
+2026-10-06T04:45:45.2437007Z   stack_trace 1.12.1 (1.12.2 available)
+2026-10-06T04:45:45.2437381Z   test_api 0.7.12 (0.7.14 available)
+2026-10-06T04:45:45.2437763Z   windows_file_picker 1.1.0 (2.0.0 available)
+2026-10-06T04:45:45.2438150Z   xml 7.0.1 (7.1.0 available)
+2026-10-06T04:45:45.2438534Z Got dependencies!
+2026-10-06T04:45:45.2439113Z 17 packages have newer versions incompatible with dependency constraints.
+2026-10-06T04:45:45.2439921Z Try `flutter pub outdated` for more information.
+2026-10-06T04:45:45.5116218Z ##[group]Run flutter analyze
+2026-10-06T04:45:45.5116506Z [36;1mflutter analyze[0m
+2026-10-06T04:45:45.5150810Z shell: /usr/bin/bash -e {0}
+2026-10-06T04:45:45.5151167Z env:
+2026-10-06T04:45:45.5151480Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.5-x64/flutter
+2026-10-06T04:45:45.5151830Z   PUB_CACHE: /home/runner/.pub-cache
+2026-10-06T04:45:45.5152119Z ##[endgroup]
+2026-10-06T04:45:45.6309778Z Resolving dependencies...
+2026-10-06T04:45:45.6699658Z Downloading packages...
+2026-10-06T04:45:45.7940624Z   android_file_picker 1.0.3 (2.0.0 available)
+2026-10-06T04:45:45.7941668Z   clock 1.1.2 (1.1.3 available)
+2026-10-06T04:45:45.7942319Z   cross_file 0.3.5+5 (0.4.0 available)
+2026-10-06T04:45:45.7942857Z   cupertino_icons 1.0.9 (2.0.0 available)
+2026-10-06T04:45:45.7943623Z   dbus 0.7.15 (0.8.0 available)
+2026-10-06T04:45:45.7944146Z   file_picker 12.1.3 (13.1.0 available)
+2026-10-06T04:45:45.7944445Z   file_picker_darwin 1.0.4 (2.1.2 available)
+2026-10-06T04:45:45.7944875Z   file_picker_linux 1.0.2 (2.0.1 available)
+2026-10-06T04:45:45.7945205Z   file_picker_platform_interface 3.2.0 (4.0.0 available)
+2026-10-06T04:45:45.7945525Z   file_picker_web 3.0.3 (4.0.0 available)
+2026-10-06T04:45:45.7945829Z   material_color_utilities 0.13.0 (0.13.1 available)
+2026-10-06T04:45:45.7946107Z   petitparser 7.0.2 (7.1.0 available)
+2026-10-06T04:45:45.7946403Z   shared_preferences 2.5.5 (2.5.6 available)
+2026-10-06T04:45:45.7946710Z   stack_trace 1.12.1 (1.12.2 available)
+2026-10-06T04:45:45.7946970Z   test_api 0.7.12 (0.7.14 available)
+2026-10-06T04:45:45.7947281Z   windows_file_picker 1.1.0 (2.0.0 available)
+2026-10-06T04:45:45.7947538Z   xml 7.0.1 (7.1.0 available)
+2026-10-06T04:45:45.7947807Z Got dependencies!
+2026-10-06T04:45:45.7948125Z 17 packages have newer versions incompatible with dependency constraints.
+2026-10-06T04:45:45.7948490Z Try `flutter pub outdated` for more information.
+2026-10-06T04:45:53.2092204Z Analyzing mobile...                                             
+2026-10-06T04:45:53.2100131Z No issues found! (ran in 7.0s)
+2026-10-06T04:45:53.2181220Z ##[group]Run flutter test
+2026-10-06T04:45:53.2181526Z [36;1mflutter test[0m
+2026-10-06T04:45:53.2218378Z shell: /usr/bin/bash -e {0}
+2026-10-06T04:45:53.2218727Z env:
+2026-10-06T04:45:53.2219083Z   FLUTTER_ROOT: /opt/hostedtoolcache/flutter/stable-3.47.5-x64/flutter
+2026-10-06T04:45:53.2219597Z   PUB_CACHE: /home/runner/.pub-cache
+2026-10-06T04:45:53.2219890Z ##[endgroup]
+2026-10-06T04:45:53.3502903Z Resolving dependencies...
+2026-10-06T04:45:53.3939545Z Downloading packages...
+2026-10-06T04:45:53.5262253Z   android_file_picker 1.0.3 (2.0.0 available)
+2026-10-06T04:45:53.5262770Z   clock 1.1.2 (1.1.3 available)
+2026-10-06T04:45:53.5263073Z   cross_file 0.3.5+5 (0.4.0 available)
+2026-10-06T04:45:53.5263439Z   cupertino_icons 1.0.9 (2.0.0 available)
+2026-10-06T04:45:53.5263755Z   dbus 0.7.15 (0.8.0 available)
+2026-10-06T04:45:53.5264039Z   file_picker 12.1.3 (13.1.0 available)
+2026-10-06T04:45:53.5264360Z   file_picker_darwin 1.0.4 (2.1.2 available)
+2026-10-06T04:45:53.5264802Z   file_picker_linux 1.0.2 (2.0.1 available)
+2026-10-06T04:45:53.5265143Z   file_picker_platform_interface 3.2.0 (4.0.0 available)
+2026-10-06T04:45:53.5265477Z   file_picker_web 3.0.3 (4.0.0 available)
+2026-10-06T04:45:53.5265915Z   material_color_utilities 0.13.0 (0.13.1 available)
+2026-10-06T04:45:53.5266318Z   petitparser 7.0.2 (7.1.0 available)
+2026-10-06T04:45:53.5266653Z   shared_preferences 2.5.5 (2.5.6 available)
+2026-10-06T04:45:53.5266949Z   stack_trace 1.12.1 (1.12.2 available)
+2026-10-06T04:45:53.5267281Z   test_api 0.7.12 (0.7.14 available)
+2026-10-06T04:45:53.5267565Z   windows_file_picker 1.1.0 (2.0.0 available)
+2026-10-06T04:45:53.5267898Z   xml 7.0.1 (7.1.0 available)
+2026-10-06T04:45:53.5268202Z Got dependencies!
+2026-10-06T04:45:53.5268543Z 17 packages have newer versions incompatible with dependency constraints.
+2026-10-06T04:45:53.5268961Z Try `flutter pub outdated` for more information.
+2026-10-06T04:45:54.1480536Z 
+2026-10-06T04:46:01.7269672Z ##[group]✅ Passing tests
+2026-10-06T04:46:01.7271190Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/models_test.dart: Model Serialization Tests DocumentationService parses from valid JSON
+2026-10-06T04:46:01.7307574Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/models_test.dart: Model Serialization Tests DocumentFile correctly formats file sizes and statuses
+2026-10-06T04:46:01.7338190Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/models_test.dart: Model Serialization Tests DocumentationRequest parses nested DocumentFiles and missing documents
+2026-10-06T04:46:01.7361268Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/models_test.dart: Model Serialization Tests ChatMessage factories produce valid model structures
+2026-10-06T04:46:02.2903006Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/widget_test.dart: App loads smoke test
+2026-10-06T04:46:02.9422074Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/appointment_test.dart: Member 2: Appointment & Lawyer Model Tests Lawyer parses correctly with specializations
+2026-10-06T04:46:02.9471673Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/appointment_test.dart: Member 2: Appointment & Lawyer Model Tests AvailabilitySlot formats afternoon times correctly
+2026-10-06T04:46:02.9532214Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/appointment_test.dart: Member 2: Appointment & Lawyer Model Tests Appointment parses status and attributes
+2026-10-06T04:46:02.9557796Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/appointment_test.dart: Member 2: Appointment & Lawyer Model Tests AppointmentService formats integer customerId to UUID
+2026-10-06T04:46:03.7483941Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_details_test.dart: lawyer details preserve backend services and specialization descriptions
+2026-10-06T04:46:04.1139163Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: Home leads with Today and includes completed consultations
+2026-10-06T04:46:04.1632468Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+2026-10-06T04:46:04.1998166Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_details_test.dart: missing description is stated without invented content
+2026-10-06T04:46:04.2472445Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: Home counts are compact and use server summary values
+2026-10-06T04:46:04.3295329Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: Up Next uses the backend appointment rather than choosing from Today
+2026-10-06T04:46:04.3888634Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: Home has honest empty Today and no-next states
+2026-10-06T04:46:04.7019264Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: horizontal filters request the selected server filter
+2026-10-06T04:46:04.7285437Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment card groups time status client service and date
+2026-10-06T04:46:04.7964745Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Customer and Lawyer supported; staff roles rejected
+2026-10-06T04:46:04.8152234Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Lawyer login retains role and password setup flag
+2026-10-06T04:46:04.8297027Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Unsupported role cannot establish mobile session
+2026-10-06T04:46:04.8306218Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment detail presents permitted requirement and server actions
+2026-10-06T04:46:04.8337195Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Schedule model serializes all weekdays and duration
+2026-10-06T04:46:04.9120773Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Requested
+2026-10-06T04:46:04.9919935Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Rescheduled
+2026-10-06T04:46:05.0664421Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Confirmed
+2026-10-06T04:46:05.1257704Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Completed
+2026-10-06T04:46:05.1899906Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Cancelled
+2026-10-06T04:46:05.2680270Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Rejected
+2026-10-06T04:46:05.3501788Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: weekly schedule exposes Working Off and appointment duration
+2026-10-06T04:46:05.3886869Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: leave cards show clean reasons multi-day and partial periods
+2026-10-06T04:46:05.3919265Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: seed cleanup is narrowly scoped and does not erase real bracketed reasons
+2026-10-06T04:46:05.5266748Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: full-day form uses End date and hides time fields
+2026-10-06T04:46:05.5717356Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Lawyer routes into four-tab dashboard with empty server state
+2026-10-06T04:46:05.6508158Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: partial leave form shows separate date and time fields
+2026-10-06T04:46:05.7669770Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: full-day save keeps the exclusive backend end and internal legacy marker
+2026-10-06T04:46:05.7810339Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Initial password gate prevents dashboard access
+2026-10-06T04:46:05.8461826Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: profile shows identity initials status and professional information
+2026-10-06T04:46:05.8920597Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Customer retains existing customer navigation
+2026-10-06T04:46:05.9572100Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Dashboard failure offers retry and no blank screen
+2026-10-06T04:46:05.9621527Z ##[endgroup]
+2026-10-06T04:46:05.9623096Z ##[group]✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Expired token clears stored mobile session
+2026-10-06T04:46:05.9624065Z LOGOUT DONE - currentUser: null
+2026-10-06T04:46:05.9624779Z ##[endgroup]
+2026-10-06T04:46:05.9673625Z ##[group]✅ Passing tests
+2026-10-06T04:46:05.9675067Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Conflict response retains appointment information for the UI
+2026-10-06T04:46:06.0081700Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: profile editor exposes only phone and description and preserves payload
+2026-10-06T04:46:06.0492697Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Phone layout and larger text render without overflow
+2026-10-06T04:46:06.1442376Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: empty completed list and leave use meaningful shared empty states
+2026-10-06T04:46:06.1737931Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: native loading remains visible until real request completion
+2026-10-06T04:46:06.3740106Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: schedule editing hides nonworking times and supports existing duration
+2026-10-06T04:46:06.6649291Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: four-tab navigation remains consistent and no extra tabs are introduced
+2026-10-06T04:46:11.2229145Z ✅ /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: all screens avoid overflow at narrow large-text phone and tablet widths
+2026-10-06T04:46:11.2386674Z ##[endgroup]
+2026-10-06T04:46:11.2387873Z 
+2026-10-06T04:46:11.2390199Z 🎉 49 tests passed.
+2026-10-06T04:46:11.2800209Z Post job cleanup.
+2026-10-06T04:46:11.2804608Z ##[start-action display=Cache pub dependencies;id=__7ef085fb-a0ea-4298-8068-c0d946d4d3e0.cache-pub]
+2026-10-06T04:46:11.4261703Z Post job cleanup.
+2026-10-06T04:46:11.5312691Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/Intelligent-legal-service/Intelligent-legal-service --files-from manifest.txt --use-compress-program zstdmt
+2026-10-06T04:46:13.2093631Z Sent 45097119 of 45097119 (100.0%), 43.0 MBs/sec
+2026-10-06T04:46:13.5292063Z Cache saved with key: flutter-pub-linux-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1-33584938b8c473856ce417c6fe4cc0ac3af17f5213cab683ca33a8a40294efe2
+2026-10-06T04:46:13.5352639Z ##[end-action id=__7ef085fb-a0ea-4298-8068-c0d946d4d3e0.cache-pub;outcome=success;conclusion=success;duration_ms=2254]
+2026-10-06T04:46:13.5356788Z ##[start-action display=Cache Flutter;id=__7ef085fb-a0ea-4298-8068-c0d946d4d3e0.cache-flutter]
+2026-10-06T04:46:13.5416471Z Post job cleanup.
+2026-10-06T04:46:13.6509638Z [command]/usr/bin/tar --posix -cf cache.tzst --exclude cache.tzst -P -C /home/runner/work/Intelligent-legal-service/Intelligent-legal-service --files-from manifest.txt --use-compress-program zstdmt
+2026-10-06T04:46:19.4452538Z Sent 0 of 1720584384 (0.0%), 0.0 MBs/sec
+2026-10-06T04:46:20.4430616Z Sent 536870912 of 1720584384 (31.2%), 256.0 MBs/sec
+2026-10-06T04:46:21.4444409Z Sent 738197504 of 1720584384 (42.9%), 234.7 MBs/sec
+2026-10-06T04:46:22.4429790Z Sent 1140850688 of 1720584384 (66.3%), 272.0 MBs/sec
+2026-10-06T04:46:23.4479188Z Sent 1653475520 of 1720584384 (96.1%), 315.3 MBs/sec
+2026-10-06T04:46:24.0831510Z Sent 1720584384 of 1720584384 (100.0%), 290.9 MBs/sec
+2026-10-06T04:46:24.3107643Z Cache saved with key: flutter-linux-stable-3.47.5-x64-6a19cca56475dbfba1478ee68d7bd0c2ef891da1
+2026-10-06T04:46:24.3174475Z ##[end-action id=__7ef085fb-a0ea-4298-8068-c0d946d4d3e0.cache-flutter;outcome=success;conclusion=success;duration_ms=10781]
+2026-10-06T04:46:24.3244574Z Post job cleanup.
+2026-10-06T04:46:24.3911699Z [command]/usr/bin/git version
+2026-10-06T04:46:24.3947398Z git version 2.55.0
+2026-10-06T04:46:24.3979740Z Temporarily overriding HOME='/home/runner/work/_temp/968025e0-6851-482d-aa57-a1c438365751' before making global git config changes
+2026-10-06T04:46:24.3980974Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-06T04:46:24.3984827Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-06T04:46:24.4010108Z Removing SSH command configuration
+2026-10-06T04:46:24.4014788Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-06T04:46:24.4040973Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-06T04:46:24.4204143Z Removing HTTP extra header
+2026-10-06T04:46:24.4209100Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-06T04:46:24.4233505Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-06T04:46:24.4388062Z Removing includeIf entries pointing to credentials config files
+2026-10-06T04:46:24.4393585Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-06T04:46:24.4416903Z includeif.gitdir:/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git.path
+2026-10-06T04:46:24.4417762Z includeif.gitdir:/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git/worktrees/*.path
+2026-10-06T04:46:24.4418368Z includeif.gitdir:/github/workspace/.git.path
+2026-10-06T04:46:24.4418745Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-06T04:46:24.4424941Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git.path
+2026-10-06T04:46:24.4581084Z /home/runner/work/_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config
+2026-10-06T04:46:24.4600748Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-63f2e8b9\-4d29\-47f7\-b87b\-5f182de8ebb9\.config
+2026-10-06T04:46:24.4602480Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git/worktrees/*.path
+2026-10-06T04:46:24.4603233Z /home/runner/work/_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config
+2026-10-06T04:46:24.4605612Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-63f2e8b9\-4d29\-47f7\-b87b\-5f182de8ebb9\.config
+2026-10-06T04:46:24.4606618Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-10-06T04:46:24.4607132Z /github/runner_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config
+2026-10-06T04:46:24.4608200Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-63f2e8b9\-4d29\-47f7\-b87b\-5f182de8ebb9\.config
+2026-10-06T04:46:24.4610971Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-10-06T04:46:24.4627212Z /github/runner_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config
+2026-10-06T04:46:24.4633239Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-63f2e8b9\-4d29\-47f7\-b87b\-5f182de8ebb9\.config
+2026-10-06T04:46:24.4674224Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-06T04:46:24.4822153Z Removing credentials config '/home/runner/work/_temp/git-credentials-63f2e8b9-4d29-47f7-b87b-5f182de8ebb9.config'
+2026-10-06T04:46:24.4937206Z Cleaning up orphan processes

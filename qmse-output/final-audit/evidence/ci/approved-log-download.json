@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-08T13:12:05.648380+00:00",
+  "approval": "User approved existing credential use solely for selected read-only CI logs",
+  "credential_retained": false,
+  "attempts": [
+    {
+      "run_id": 37386601420,
+      "workflow": "Frontend CI",
+      "sha": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "d9366940d18f58497caf4ac0da02ff914adc234ec2623811cc248db4d1f4f3ce",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37386601420-native-logs.zip"
+    },
+    {
+      "run_id": 37386601103,
+      "workflow": "Backend CI",
+      "sha": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "b5a417e6b6cc82d294bbe982be5f12af93b2966c1bba59463316d6ab86cc710d",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37386601103-native-logs.zip"
+    },
+    {
+      "run_id": 37386601104,
+      "workflow": "Mobile CI",
+      "sha": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "da4587d177596b176091512140ba4ac766cd52f0bd6e06b0acb9cacd58ba7915",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37386601104-native-logs.zip"
+    },
+    {
+      "run_id": 37415146816,
+      "workflow": "Backend CI",
+      "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "bfad129bb6f1c0bfeffda32790e0371dc09c01a94deff9b6c582f576ff29f1cd",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37415146816-native-logs.zip"
+    },
+    {
+      "run_id": 37415146862,
+      "workflow": "Mobile CI",
+      "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "413a0b98633b0b6e0c8e43e68efc1e4afb559869b683ed0715e91df71a894277",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37415146862-native-logs.zip"
+    },
+    {
+      "run_id": 37415147442,
+      "workflow": "Frontend CI",
+      "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "c1dd7cbfbeceecb2bde393d0a98fa1b64215fc61f15dae19573fdb85e3638c1e",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37415147442-native-logs.zip"
+    },
+    {
+      "run_id": 37385133126,
+      "workflow": "Backend CI",
+      "sha": "6d982e60aa65af54d39d0beac4f527abcd785820",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "c1622f574cd40202309c2184847c12fcfad28c92a4775b83c907570cb3dc08b4",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37385133126-native-logs.zip"
+    },
+    {
+      "run_id": 37385133013,
+      "workflow": "Mobile CI",
+      "sha": "6d982e60aa65af54d39d0beac4f527abcd785820",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "af9216894137704609fc5d434b3020fe4e1672e21e656cd3e61307c8c53281c1",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37385133013-native-logs.zip"
+    },
+    {
+      "run_id": 37385133035,
+      "workflow": "Frontend CI",
+      "sha": "6d982e60aa65af54d39d0beac4f527abcd785820",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "7476dc95a8af85f7fdfaa8f22a89bbd2b12e3a42819f39ba49339c3785b89ee8",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37385133035-native-logs.zip"
+    },
+    {
+      "run_id": 37717885208,
+      "workflow": "Mobile CI",
+      "sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "a92b687b27243eb6ee1daac16d8d3eeb50fc6839ec6313c5e61731c56ddb604e",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37717885208-native-logs.zip"
+    },
+    {
+      "run_id": 37717885104,
+      "workflow": "Frontend CI",
+      "sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "d2f42e661a8a9b4d7aabcb4cfd1d0d12286c9761f6b6e030e2d2e60ee433c285",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37717885104-native-logs.zip"
+    },
+    {
+      "run_id": 37717885253,
+      "workflow": "Backend CI",
+      "sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+      "status": "downloaded",
+      "files": 2,
+      "original_archive_sha256": "e3b71ff16c328517ba8565f573fad6d8110752c6c222492e045db39ebb43c794",
+      "credential_redaction_applied": false,
+      "archive": "qmse-output/final-audit/evidence/ci/37717885253-native-logs.zip"
+    }
+  ]
+}

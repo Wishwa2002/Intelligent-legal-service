@@ -1,0 +1,17 @@
+{
+  "command": [
+    "dotnet",
+    "restore",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--ignore-failed-sources",
+    "--source",
+    "/Users/jeyam/.nuget/packages"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T10:39:32.410710+00:00",
+  "ended_utc": "2026-10-08T10:39:33.670155+00:00",
+  "duration_seconds": 1.259,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/historical-resolution/evidence/restore-offline.log"
+}

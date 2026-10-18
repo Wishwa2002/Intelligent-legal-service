@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="88" time="2.976" timestamp="2026-10-08T08:12:16.060119" hostname="Jegatheeswarans-MacBook-Air.local"><testcase classname="tests.test_agent_comprehensive" name="test_01_document_upload_validation" time="0.001" /><testcase classname="tests.test_agent_comprehensive" name="test_02_pdf_text_extraction" time="0.306" /><testcase classname="tests.test_agent_comprehensive" name="test_03_image_ocr_processing" time="0.076" /><testcase classname="tests.test_agent_comprehensive" name="test_04_document_classification" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_05_low_confidence_classification_flags_review" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_06_official_requirement_retrieval" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_07_bm25_retrieval" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_08_chroma_retrieval" time="0.406" /><testcase classname="tests.test_agent_comprehensive" name="test_09_rrf_ranking_calculation" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_10_retrieval_grading" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_11_query_rewriting" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_12_self_correction_loop" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_13_missing_document_detection" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_14_clerk_ranking_transparent_scoring" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_15_human_approval_approve" time="0.020" /><testcase classname="tests.test_agent_comprehensive" name="test_16_human_modification_modify" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_17_human_rejection_reject" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_18_checkpoint_save_and_restore" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_19_thread_authorization" time="0.000" /><testcase classname="tests.test_agent_comprehensive" name="test_20_end_to_end_workflow" time="0.002" /><testcase classname="tests.test_deployment_service_auth" name="test_main_ai_routes_require_backend_key" time="0.004" /><testcase classname="tests.test_development_admin_setup.DevelopmentAdminSetupTests" name="test_missing_credentials_refused_without_dotnet" time="0.000" /><testcase classname="tests.test_development_admin_setup.DevelopmentAdminSetupTests" name="test_private_credentials_only_in_backend_environment_and_output_is_safe" time="0.000" /><testcase classname="tests.test_development_admin_setup.DevelopmentAdminSetupTests" name="test_tracked_file_refused_before_credentials_or_dotnet" time="0.000" /><testcase classname="tests.test_documents" name="test_high_confidence_readable_correct_type_is_accepted" time="0.000" /><testcase classname="tests.test_documents" name="test_blurry_document_is_rejected" time="0.000" /><testcase classname="tests.test_documents" name="test_wrong_document_type_is_rejected" time="0.000" /><testcase classname="tests.test_documents" name="test_medium_confidence_is_accepted_with_flag" time="0.000" /><testcase classname="tests.test_documents" name="test_confidence_below_medium_is_rejected" time="0.000" /><testcase classname="tests.test_documents" name="test_unreadable_high_confidence_still_rejected" time="0.000" /><testcase classname="tests.test_documents" name="test_validation_node_accept_updates_state" time="0.001" /><testcase classname="tests.test_documents" name="test_validation_node_reject_increments_retry" time="0.001" /><testcase classname="tests.test_documents" name="test_max_retries_triggers_human_review" time="0.001" /><testcase classname="tests.test_documents" name="test_medium_confidence_sets_flag" time="0.001" /><testcase classname="tests.test_documents" name="test_validation_node_provides_missing_document_upload_buttons" time="0.001"><failure message="pydantic_core._pydantic_core.ValidationError: 1 validation error for ChatGoogleGenerativeAI&#10;  Value error, API key required for Gemini Developer API. Provide api_key parameter or set GOOGLE_API_KEY/GEMINI_API_KEY environment variable. [type=value_error, input_value={'model': 'gemini-3.8-fla...e, 'google_api_key': ''}, input_type=dict]&#10;    For further information visit https://errors.pydantic.dev/2.13/v/value_error">@pytest.mark.asyncio
+    async def test_validation_node_provides_missing_document_upload_buttons():
+        """When documents remain, action_options contains upload buttons for missing documents."""
+        from app.agents.document_validation import document_validation_node
+    
+        state = _make_state_with_analysis(
+            doc_type="NIC", confidence=0.95, readable=True, issues=[]
+        )
+        state["required_documents"] = ["NIC", "Salary Slip"]
+        state["document_statuses"]["Salary Slip"] = {
+            "doc_type": "Salary Slip", "file_id": None, "status": "pending", "retry_count": 0
+        }
+    
+        with patch("app.agents.document_validation.get_backend_client") as mock_backend_fn:
+            mock_backend = AsyncMock()
+            mock_backend.update_file_status = AsyncMock()
+            mock_backend_fn.return_value = mock_backend
+    
+&gt;           result = await document_validation_node(state)
+
+tests/test_documents.py:218: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/agents/document_validation.py:44: in document_validation_node
+    gemini = get_gemini_service()
+app/services/gemini_service.py:603: in get_gemini_service
+    return GeminiService()
+app/services/gemini_service.py:49: in __init__
+    self._llm = _get_llm()
+app/services/gemini_service.py:33: in _get_llm
+    return ChatGoogleGenerativeAI(
+.venv/lib/python3.12/site-packages/langchain_google_genai/chat_models.py:3119: in __init__
+    super().__init__(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ChatGoogleGenerativeAI(metadata={'lc_versions': {'langchain-core': '1.6.6', 'langchain': '1.4.3', 'langchain-google-ge...3.8-flash', temperature=0.1, max_retries=2, default_metadata=(), model_kwargs={}, convert_system_message_to_human=True)
+args = ()
+kwargs = {'convert_system_message_to_human': True, 'google_api_key': '', 'max_retries': 2, 'model': 'gemini-3.8-flash', ...}
+
+    def __init__(self, *args: Any, **kwargs: Any) -&gt; None:
+        """"""  # noqa: D419  # Intentional blank docstring
+&gt;       super().__init__(*args, **kwargs)
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for ChatGoogleGenerativeAI
+E         Value error, API key required for Gemini Developer API. Provide api_key parameter or set GOOGLE_API_KEY/GEMINI_API_KEY environment variable. [type=value_error, input_value={'model': 'gemini-3.8-fla...e, 'google_api_key': ''}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+.venv/lib/python3.12/site-packages/langchain_core/load/serializable.py:136: ValidationError</failure></testcase><testcase classname="tests.test_documents" name="test_clerk_recommendation_greets_and_notifies_after_admin_approval" time="0.001" /><testcase classname="tests.test_documents" name="test_accepted_document_explicitly_confirms_and_shows_balance_documents" time="0.001"><failure message="pydantic_core._pydantic_core.ValidationError: 1 validation error for ChatGoogleGenerativeAI&#10;  Value error, API key required for Gemini Developer API. Provide api_key parameter or set GOOGLE_API_KEY/GEMINI_API_KEY environment variable. [type=value_error, input_value={'model': 'gemini-3.8-fla...e, 'google_api_key': ''}, input_type=dict]&#10;    For further information visit https://errors.pydantic.dev/2.13/v/value_error">@pytest.mark.asyncio
+    async def test_accepted_document_explicitly_confirms_and_shows_balance_documents():
+        """Agent must state 'You uploaded ..., and it has been Accepted' and list balance documents with buttons."""
+        from app.agents.document_validation import document_validation_node
+    
+        state = _make_state_with_analysis(
+            doc_type="Tenancy Agreement", confidence=0.96, readable=True, issues=[]
+        )
+        state["required_documents"] = ["Tenancy Agreement", "Property Deed", "Utility Bill"]
+        state["document_statuses"]["Property Deed"] = {
+            "doc_type": "Property Deed", "file_id": None, "status": "pending", "retry_count": 0
+        }
+        state["document_statuses"]["Utility Bill"] = {
+            "doc_type": "Utility Bill", "file_id": None, "status": "pending", "retry_count": 0
+        }
+    
+        with patch("app.agents.document_validation.get_backend_client") as mock_backend_fn:
+            mock_backend = AsyncMock()
+            mock_backend.update_file_status = AsyncMock()
+            mock_backend_fn.return_value = mock_backend
+    
+&gt;           result = await document_validation_node(state)
+
+tests/test_documents.py:304: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/agents/document_validation.py:44: in document_validation_node
+    gemini = get_gemini_service()
+app/services/gemini_service.py:603: in get_gemini_service
+    return GeminiService()
+app/services/gemini_service.py:49: in __init__
+    self._llm = _get_llm()
+app/services/gemini_service.py:33: in _get_llm
+    return ChatGoogleGenerativeAI(
+.venv/lib/python3.12/site-packages/langchain_google_genai/chat_models.py:3119: in __init__
+    super().__init__(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ChatGoogleGenerativeAI(metadata={'lc_versions': {'langchain-core': '1.6.6', 'langchain': '1.4.3', 'langchain-google-ge...3.8-flash', temperature=0.1, max_retries=2, default_metadata=(), model_kwargs={}, convert_system_message_to_human=True)
+args = ()
+kwargs = {'convert_system_message_to_human': True, 'google_api_key': '', 'max_retries': 2, 'model': 'gemini-3.8-flash', ...}
+
+    def __init__(self, *args: Any, **kwargs: Any) -&gt; None:
+        """"""  # noqa: D419  # Intentional blank docstring
+&gt;       super().__init__(*args, **kwargs)
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for ChatGoogleGenerativeAI
+E         Value error, API key required for Gemini Developer API. Provide api_key parameter or set GOOGLE_API_KEY/GEMINI_API_KEY environment variable. [type=value_error, input_value={'model': 'gemini-3.8-fla...e, 'google_api_key': ''}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+.venv/lib/python3.12/site-packages/langchain_core/load/serializable.py:136: ValidationError</failure></testcase><testcase classname="tests.test_documents" name="test_rejected_document_explicitly_confirms_not_accepted" time="0.001" /><testcase classname="tests.test_member1_local_startup.LocalStartupTests" name="test_correct_modules_and_ports" time="0.000" /><testcase classname="tests.test_member1_local_startup.LocalStartupTests" name="test_maps_one_existing_dotenv_value_without_stale_env_or_browser_exposure" time="0.001" /><testcase classname="tests.test_member1_local_startup.LocalStartupTests" name="test_missing_key_fails_without_creating_or_replacing_any_secret" time="0.000" /><testcase classname="tests.test_recommendation.AgentTests" name="test_date_requires_recorded_availability" time="0.020" /><testcase classname="tests.test_recommendation.AgentTests" name="test_grounded_ranking_excludes_inactive" time="0.009" /><testcase classname="tests.test_recommendation.AgentTests" name="test_hallucinated_category_is_rejected" time="0.004" /><testcase classname="tests.test_recommendation.AgentTests" name="test_legacy_service_link_does_not_change_score_or_order" time="0.009" /><testcase classname="tests.test_recommendation.AgentTests" name="test_model_date_requires_real_unbooked_availability" time="0.009" /><testcase classname="tests.test_recommendation.AgentTests" name="test_no_available_candidates" time="0.009" /><testcase classname="tests.test_recommendation.AgentTests" name="test_unmatched_requirement_requests_clarification" time="0.006" /><testcase classname="tests.test_recommendation_gemini.GeminiClassificationTests" name="test_exhausted_daily_quota_does_not_rapidly_retry_or_sleep_for_hours" time="0.005" /><testcase classname="tests.test_recommendation_gemini.GeminiClassificationTests" name="test_invalid_json_fails_without_fabricating_category" time="0.005" /><testcase classname="tests.test_recommendation_gemini.GeminiClassificationTests" name="test_provider_429_is_logged_safely_and_retried_without_a_fallback" time="0.005" /><testcase classname="tests.test_recommendation_gemini.GeminiClassificationTests" name="test_schema_accepted_by_gemini_and_unexpected_fields_rejected_locally" time="0.001" /><testcase classname="tests.test_recommendation_gemini.GeminiClassificationTests" name="test_structured_parse_failure_has_a_distinct_safe_stage" time="0.004" /><testcase classname="tests.test_recommendation_gemini.GeminiClassificationTests" name="test_uses_configured_model_and_structured_output" time="0.005" /><testcase classname="tests.test_recommendation_guardrails.Guardrails" name="test_ai_cannot_inject_business_ids_or_explanations" time="0.018" /><testcase classname="tests.test_recommendation_guardrails.Guardrails" name="test_all_five_supported_requirements_and_no_date_claim" time="0.043" /><testcase classname="tests.test_recommendation_guardrails.Guardrails" name="test_family_and_nonsense_stop_without_retrieving_unrelated_lawyers" time="0.012" /><testcase classname="tests.test_recommendation_guardrails.Guardrails" name="test_inactive_wrong_area_ambiguous_and_bad_experience_are_excluded" time="0.010" /><testcase classname="tests.test_recommendation_guardrails.Guardrails" name="test_invalid_category_id_name_and_type_are_rejected" time="0.027" /><testcase classname="tests.test_recommendation_guardrails.Guardrails" name="test_no_eligible_and_zero_available_candidates" time="0.017" /><testcase classname="tests.test_recommendation_guardrails.Guardrails" name="test_requested_date_is_filtered_before_limit" time="0.009" /><testcase classname="tests.test_recommendation_guardrails.Guardrails" name="test_ties_use_stable_id_and_experience_is_the_only_points" time="0.016" /><testcase classname="tests.test_recommendation_services.ServiceInterpretationTests" name="test_service_is_verified_without_changing_ranking" time="0.010" /><testcase classname="tests.test_recommendation_services.ServiceInterpretationTests" name="test_supported_flag_is_system_derived_and_reasoning_is_rejected" time="0.018" /><testcase classname="tests.test_recommendation_services.ServiceInterpretationTests" name="test_uncertain_service_is_null_and_area_matching_continues" time="0.009" /><testcase classname="tests.test_recommendation_services.ServiceInterpretationTests" name="test_unknown_unpaired_or_wrong_area_service_is_rejected" time="0.022" /><testcase classname="tests.test_recommendation_snapshot.SnapshotTests" name="test_health_exposes_only_liveness" time="0.002" /><testcase classname="tests.test_recommendation_snapshot.SnapshotTests" name="test_missing_gemini_key_is_safe_error" time="0.003" /><testcase classname="tests.test_recommendation_snapshot.SnapshotTests" name="test_ranks_only_matching_active_snapshot_candidates" time="0.004" /><testcase classname="tests.test_recommendation_snapshot.SnapshotTests" name="test_requires_internal_authentication" time="0.001" /><testcase classname="tests.test_security" name="test_injection_markers_always_present" time="0.000" /><testcase classname="tests.test_security" name="test_injection_keywords_dont_remove_content" time="0.000" /><testcase classname="tests.test_security" name="test_long_document_is_truncated" time="0.001" /><testcase classname="tests.test_security" name="test_control_characters_are_stripped" time="0.000" /><testcase classname="tests.test_security" name="test_empty_document_handled" time="0.000" /><testcase classname="tests.test_security" name="test_document_analysis_node_allowed_tools" time="0.000" /><testcase classname="tests.test_security" name="test_document_analysis_cannot_call_clerk_tools" time="0.000" /><testcase classname="tests.test_security" name="test_clerk_recommendation_cannot_call_update_file_status" time="0.000" /><testcase classname="tests.test_security" name="test_supervisor_cannot_call_download_document" time="0.000" /><testcase classname="tests.test_security" name="test_gemini_confidence_cannot_override_threshold" time="0.000" /><testcase classname="tests.test_workforce_hiring.WorkforceHiringTests" name="test_admin_rules_remain_verified_facts_in_gemini_prompt" time="0.004" /><testcase classname="tests.test_workforce_hiring.WorkforceHiringTests" name="test_gemini_structured_schema_and_safe_invalid_json" time="0.007" /><testcase classname="tests.test_workforce_hiring.WorkforceHiringTests" name="test_graph_returns_only_draft_and_never_performs_business_action" time="0.005" /><testcase classname="tests.test_workforce_hiring.WorkforceHiringTests" name="test_internal_auth_controlled_errors_and_filtered_output" time="0.005" /><testcase classname="tests.test_workforce_hiring.WorkforceHiringTests" name="test_malformed_or_invented_prose_and_focus_rejected" time="0.001" /><testcase classname="tests.test_workforce_hiring.WorkforceHiringTests" name="test_provider_quota_metadata_is_safe_and_not_retried" time="0.005" /><testcase classname="tests.test_workforce_hiring.WorkforceHiringTests" name="test_valid_draft_requires_no_unprovided_employment_fields" time="0.001" /><testcase classname="tests.test_workforce_hiring.WorkforceHiringTests" name="test_verified_payload_and_missing_invalid_data" time="0.001" /></testsuite></testsuites>

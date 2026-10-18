@@ -1,0 +1,9 @@
+{
+  "credential_value_exposed_in_new_text_artifacts": false,
+  "credential_value_exposed_in_docx_xml": false,
+  "synthetic_password_exposed_in_new_text_artifacts": false,
+  "all_existing_media_preserved_byte_for_byte": true,
+  "media_files": 44,
+  "scope": "New C1 text artifacts and final DOCX; values never printed",
+  "zip_packaging_modified": false
+}

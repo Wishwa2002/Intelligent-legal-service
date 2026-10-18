@@ -1,0 +1,45 @@
+{
+  "started_from_historical": 49,
+  "new_verified": 39,
+  "new_passed": 12,
+  "new_failed": 27,
+  "new_blocked": 10,
+  "remaining_historical_unverified": 0,
+  "report_cases": 77,
+  "report_status_totals": {
+    "VERIFIED/FAIL": 30,
+    "VERIFIED/PASS": 35,
+    "BLOCKED": 12
+  },
+  "baseline_machine_passes_preserved": 607,
+  "new_native_unique_test_cases": 23,
+  "new_native_passed": 12,
+  "new_native_failed": 11,
+  "native_scope": "xUnit 4:2 pass/2 fail (includes setup); Flutter5:2/3; pytest5:3/2 (subcriteria/diagnostic); Playwright9:5/4. Retry attempts are not added as distinct cases. HTTP acceptances are separate from native machine-suite counts.",
+  "published_sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "new_test_source": "uncommitted local AI-assisted overlay; no push/commit/deploy",
+  "components": {
+    "C1": {
+      "VERIFIED/FAIL": 2,
+      "BLOCKED": 2
+    },
+    "C2": {
+      "VERIFIED/FAIL": 2,
+      "VERIFIED/PASS": 4,
+      "BLOCKED": 1
+    },
+    "C3": {
+      "VERIFIED/FAIL": 6,
+      "BLOCKED": 1
+    },
+    "C4": {
+      "VERIFIED/PASS": 1,
+      "BLOCKED": 3
+    },
+    "shared": {
+      "VERIFIED/FAIL": 17,
+      "VERIFIED/PASS": 7,
+      "BLOCKED": 3
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "version": 1,
+  "parameters": "--vulnerable --include-transitive",
+  "sources": [
+    "https://api.nuget.org/v3/index.json"
+  ],
+  "projects": [
+    {
+      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/LegalService.API.csproj"
+    }
+  ]
+}

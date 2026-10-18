@@ -1,0 +1,26 @@
+[
+  {
+    "name": "group-main-history",
+    "url": "https://github.com/Wishwa2002/Intelligent-legal-service/commits/main/",
+    "error": "page.goto: Timeout 40000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://github.com/Wishwa2002/Intelligent-legal-service/commits/main/\", waiting until \"domcontentloaded\"\u001b[22m\n",
+    "captured_utc": "2026-10-08T08:33:59.177Z"
+  },
+  {
+    "name": "group-develop-history",
+    "url": "https://github.com/Wishwa2002/Intelligent-legal-service/commits/develop/",
+    "final_url": "https://github.com/Wishwa2002/Intelligent-legal-service/commits/develop/",
+    "http_status": 200,
+    "title": "Commits · Wishwa2002/Intelligent-legal-service · GitHub",
+    "captured_utc": "2026-10-08T08:34:38.095Z",
+    "scope": "Genuine public GitHub page before publication; not proof of new branch or workflow execution"
+  },
+  {
+    "name": "group-actions-before-publication",
+    "url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions",
+    "final_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions",
+    "http_status": 200,
+    "title": "Workflow runs · Wishwa2002/Intelligent-legal-service · GitHub",
+    "captured_utc": "2026-10-08T08:34:59.101Z",
+    "scope": "Genuine public GitHub page before publication; not proof of new branch or workflow execution"
+  }
+]

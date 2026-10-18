@@ -1,0 +1,89 @@
+{
+  "execution_date": "2026-10-08",
+  "source": {
+    "head": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "branch": "docs/se3110-qmse-testing",
+    "local_uncommitted_overlay_present": true,
+    "application_logic_modified_during_this_retest": false
+  },
+  "live_requests_authorised": 3,
+  "live_requests_used": 2,
+  "unnecessary_retries": 0,
+  "connectivity": "Real provider reached; two HTTP503 UNAVAILABLE responses. No authentication, quota or billing error observed. Successful generation not established.",
+  "TC-C104": {
+    "historical_status": "BLOCKED",
+    "current_contract_live_status": "BLOCKED",
+    "provider_seconds": 4.049338749959134,
+    "reason": "Provider high demand; no usable classification or recommendation. Expert-labelled >90% criterion also unverified."
+  },
+  "TC-C105": {
+    "historical_status": "BLOCKED",
+    "live_draft_status": "BLOCKED",
+    "database_capacity_scope": "PASS",
+    "provider_seconds": 6.696693207952194,
+    "reason": "Provider high demand; retrospective capacity is not a predictive forecast."
+  },
+  "TC-C113": {
+    "status": "PASS",
+    "evidence": "ai-focused.xml",
+    "kind": "Deterministic mocked timeout recovery; not live acceptance"
+  },
+  "focused_backend": {
+    "total": "29",
+    "executed": "29",
+    "passed": "29",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "focused_ai": {
+    "tests": 7,
+    "passed": 7,
+    "failed": 0,
+    "skipped": 0
+  },
+  "overall_77_case_ledger": {
+    "FAIL": 16,
+    "PASS": 49,
+    "BLOCKED": 12
+  },
+  "c1": {
+    "PASS": 7,
+    "FAIL": 4,
+    "BLOCKED": 2
+  },
+  "separate_populations_not_summed": true,
+  "token_usage": "Not provided in provider error responses",
+  "estimated_cost": "Unavailable; no fabricated pricing or zero-cost claim",
+  "production_records_modified": false,
+  "business_rules_modified": false,
+  "personal_execution": "AI-assisted; pending member confirmation",
+  "estimated_minutes": [
+    24,
+    35
+  ],
+  "actual_elapsed_seconds": 1342.024195,
+  "completed_utc": "2026-10-08T15:19:01.024195+00:00",
+  "focused_backend_exit_code": 0,
+  "focused_ai_exit_code": 0,
+  "final_report_pages": 101,
+  "original_figures_preserved": 43,
+  "cleanup": {
+    "owned_services_stopped": true,
+    "isolated_cluster_stopped": true,
+    "database_retained": "qmse_c1_retest_20261008",
+    "production_data_modified": false
+  },
+  "final_pdf": "qmse-output/final-audit/final-report/SE3110_Testing_Report_GR42_Consolidated_Final.pdf",
+  "final_docx": "qmse-output/final-audit/final-report/SE3110_Testing_Report_GR42_Consolidated_Final.docx"
+}

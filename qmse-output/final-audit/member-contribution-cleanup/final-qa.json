@@ -1,0 +1,61 @@
+{
+  "docx": "qmse-output/final-audit/final-report/SE3110_Testing_Report_GR42_Consolidated_Final.docx",
+  "pdf": "qmse-output/final-audit/final-report/SE3110_Testing_Report_GR42_Consolidated_Final.pdf",
+  "pdf_pages": 100,
+  "pdf_size_bytes": 8709000,
+  "docx_paragraphs": 473,
+  "figure_text_occurrences": 49,
+  "embedded_media": 44,
+  "expected_preserved_figures": 43,
+  "section_pages": {
+    "9.1 Jeyashankar": [
+      2,
+      82
+    ],
+    "9.2 Buddhika": [
+      2,
+      84
+    ],
+    "9.3 Vithusan": [
+      2,
+      86
+    ],
+    "9.4 Wijayananda": [
+      2,
+      89
+    ],
+    "10. Group Contribution Matrix": [
+      2,
+      92
+    ],
+    "Appendix A: Specification Compliance Checklist": [
+      2,
+      95
+    ]
+  },
+  "toc_page": 2,
+  "toc_updated": true,
+  "visual_pages_checked": [
+    2,
+    82,
+    84,
+    86,
+    89,
+    92,
+    95
+  ],
+  "ledger_counts": {
+    "VERIFIED/FAIL": 16,
+    "VERIFIED/PASS": 49,
+    "BLOCKED": 12
+  },
+  "ledger_expected": {
+    "PASS": 49,
+    "FAIL": 16,
+    "BLOCKED": 12
+  },
+  "evidence_reference_count": 59,
+  "source_code_changed": false,
+  "tests_executed": false,
+  "notes": "Contribution sections and matrix revised; Git authorship and operator-attribution distinctions preserved."
+}

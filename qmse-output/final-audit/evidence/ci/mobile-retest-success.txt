@@ -1,0 +1,56 @@
+Skip to content
+Navigation Menu
+Platform
+Solutions
+Resources
+Open Source
+Enterprise
+Pricing
+Sign in
+Sign up
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Mobile CI
+Chore/deployment readiness #15
+Sign in to view logs
+Summary
+All jobs
+Loading
+Run details
+Usage
+Workflow file
+Triggered via pull request 
+Jeyamdev
+synchronize
+#31
+chore/deployment-readiness
+Status
+Success
+Total duration
+2m 6s
+Artifacts
+–
+mobile-ci.yml
+on: pull_request
+test
+2m 2s
+
+Oh hello! Nice to see you.
+
+Made with ❤️ by humans.txt
+
+Annotations
+1 notice
+test
+"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Show more

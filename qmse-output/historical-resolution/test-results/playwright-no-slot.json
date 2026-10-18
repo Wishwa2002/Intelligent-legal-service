@@ -1,0 +1,18 @@
+{
+  "command": [
+    "npx",
+    "playwright",
+    "test",
+    "--config",
+    "historical.playwright.config.ts",
+    "--grep",
+    "TC-FE-02"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T11:13:37.601511+00:00",
+  "ended_utc": "2026-10-08T11:13:41.958854+00:00",
+  "duration_seconds": 4.357,
+  "exit_code": 1,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/historical-resolution/evidence/playwright-no-slot.log"
+}

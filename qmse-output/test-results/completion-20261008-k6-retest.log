@@ -1,0 +1,66 @@
+START UTC 2026-10-08T04:51:00.807525+00:00
+COMMAND ['/private/tmp/qmse-k6/k6-v2.3.0-macos-arm64/k6', 'run', '--out', 'json=qmse-output/completion-20261008/evidence/k6-postgres-raw.json', 'qmse-output/completion-20261008/audit/postgres-smoke.k6.js']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: qmse-output/completion-20261008/audit/postgres-smoke.k6.js
+        output: json (qmse-output/completion-20261008/evidence/k6-postgres-raw.json)
+
+     scenarios: (100.00%) 1 scenario, 2 max VUs, 45s max duration (incl. graceful stop):
+              * default: 2 looping VUs for 15s (gracefulStop: 30s)
+
+
+running (01.0s), 2/2 VUs, 0 complete and 0 interrupted iterations
+default   [   7% ] 2 VUs  01.0s/15s
+
+running (02.0s), 2/2 VUs, 2 complete and 0 interrupted iterations
+default   [  13% ] 2 VUs  02.0s/15s
+
+running (03.0s), 2/2 VUs, 4 complete and 0 interrupted iterations
+default   [  20% ] 2 VUs  03.0s/15s
+
+running (04.0s), 2/2 VUs, 6 complete and 0 interrupted iterations
+default   [  27% ] 2 VUs  04.0s/15s
+
+running (05.0s), 2/2 VUs, 8 complete and 0 interrupted iterations
+default   [  33% ] 2 VUs  05.0s/15s
+
+running (06.0s), 2/2 VUs, 10 complete and 0 interrupted iterations
+default   [  40% ] 2 VUs  06.0s/15s
+
+running (07.0s), 2/2 VUs, 12 complete and 0 interrupted iterations
+default   [  47% ] 2 VUs  07.0s/15s
+
+running (08.0s), 2/2 VUs, 14 complete and 0 interrupted iterations
+default   [  53% ] 2 VUs  08.0s/15s
+
+running (09.0s), 2/2 VUs, 16 complete and 0 interrupted iterations
+default   [  60% ] 2 VUs  09.0s/15s
+
+running (10.0s), 2/2 VUs, 18 complete and 0 interrupted iterations
+default   [  67% ] 2 VUs  10.0s/15s
+
+running (11.0s), 2/2 VUs, 20 complete and 0 interrupted iterations
+default   [  73% ] 2 VUs  11.0s/15s
+
+running (12.0s), 2/2 VUs, 22 complete and 0 interrupted iterations
+default   [  80% ] 2 VUs  12.0s/15s
+
+running (13.0s), 2/2 VUs, 24 complete and 0 interrupted iterations
+default   [  87% ] 2 VUs  13.0s/15s
+
+running (14.0s), 2/2 VUs, 26 complete and 0 interrupted iterations
+default   [  93% ] 2 VUs  14.0s/15s
+
+running (15.0s), 2/2 VUs, 28 complete and 0 interrupted iterations
+default   [ 100% ] 2 VUs  15.0s/15s
+
+running (15.4s), 0/2 VUs, 30 complete and 0 interrupted iterations
+default ✓ [ 100% ] 2 VUs  15s

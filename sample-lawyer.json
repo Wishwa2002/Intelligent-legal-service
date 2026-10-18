@@ -1,0 +1,12 @@
+{
+  "name": "Nimal Perera (Sample)",
+  "email": "nimal.perera.sample@example.com",
+  "phoneNumber": "",
+  "qualification": "LL.B, Attorney-at-Law (Sample)",
+  "experience": 5,
+  "licenseNumber": "SAMPLE-LAW-2026-1004",
+  "profileDescription": "Fictional sample lawyer record for demonstration and testing. Focuses on commercial contracts, business registration, and corporate governance.",
+  "specializationId": 1,
+  "category": "Corporate & Commercial Law",
+  "password": "SampleLawyer2026!"
+}

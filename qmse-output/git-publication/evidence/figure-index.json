@@ -1,0 +1,112 @@
+[
+  {
+    "figure": "6.21",
+    "title": "Official group repository overview",
+    "execution_date": "2026-10-08T08:51:42.266Z",
+    "source": "git-publication/evidence/official-overview.png; https://github.com/Wishwa2002/Intelligent-legal-service",
+    "image": "git-publication/evidence/official-overview.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "main",
+    "sha": "59337bba0227aa07e18e60f697bd758db327f0bd",
+    "interpretation": "The original group repository remains on its unchanged main revision. This overview establishes repository identity; the final tested implementation is on a separate branch."
+  },
+  {
+    "figure": "6.22",
+    "title": "Original main-branch development history",
+    "execution_date": "2026-10-08T08:52:53.376Z",
+    "source": "git-publication/evidence/original-main-history.png; https://github.com/Wishwa2002/Intelligent-legal-service/commits/main/",
+    "image": "git-publication/evidence/original-main-history.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "main",
+    "sha": "59337bba0227aa07e18e60f697bd758db327f0bd",
+    "interpretation": "Original dated main commits and author records are preserved. Main has 14 reachable commits under Wishwa and yhprasad-related author strings; other member records occur in incorporated develop/feature history."
+  },
+  {
+    "figure": "6.23",
+    "title": "Original lawyer-management development record",
+    "execution_date": "2026-10-08T08:53:55.801Z",
+    "source": "git-publication/evidence/member1-lawyer-development.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/b082f54",
+    "image": "git-publication/evidence/member1-lawyer-development.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "develop / tested-branch ancestry",
+    "sha": "b082f54790a0ea5f99db9b31df532d56433319c5",
+    "interpretation": "Recorded author Jeyamdev; lawyer/mobile/matching/workforce changes. Related specialization and recommendation commits are linked in Section 9.1. This is historical source evidence; personal effort requires confirmation."
+  },
+  {
+    "figure": "6.24",
+    "title": "Original appointment-management development record",
+    "execution_date": "2026-10-08T08:53:58.224Z",
+    "source": "git-publication/evidence/member2-appointments.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/d461a84",
+    "image": "git-publication/evidence/member2-appointments.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "develop / tested-branch ancestry",
+    "sha": "d461a8407971eeb7e2349f6ccf5cb8f6150a22be",
+    "interpretation": "Recorded author yhprasad (GitHub account yhprasadhew); appointment APIs, conflict detection and status transitions. Scheduling/careers records are in Section 9.2. This does not prove historical test execution."
+  },
+  {
+    "figure": "6.25",
+    "title": "Original document/clerk/AI development record",
+    "execution_date": "2026-10-08T08:54:27.109Z",
+    "source": "git-publication/evidence/member3-document-agent.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/a566efa",
+    "image": "git-publication/evidence/member3-document-agent.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "Document-&-Cleark / tested-branch ancestry",
+    "sha": "a566efa7951fa06505fe4c943014826f3b796170",
+    "interpretation": "Recorded author VTN02; document validation, mobile client and clerk management. Section 9.3 records related commits. Shared supervisor code appears in this history, so component assignment alone cannot establish ownership."
+  },
+  {
+    "figure": "6.26",
+    "title": "Original authentication and authorization record",
+    "execution_date": "2026-10-08T08:54:27.310Z",
+    "source": "git-publication/evidence/member4-authentication.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/43f6345",
+    "image": "git-publication/evidence/member4-authentication.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "feature/admin-auth / tested-branch ancestry",
+    "sha": "43f6345d8cdd3158e5ecf51d124dcfab869261c9",
+    "interpretation": "Recorded author Wishwa (GitHub account Wishwa2002); JWT/admin authorization and service-request changes. Section 9.4 records related security/service commits and qualifies consultation ownership."
+  },
+  {
+    "figure": "6.27",
+    "title": "Published final QMSE testing branch",
+    "execution_date": "2026-10-08T08:52:40.197Z",
+    "source": "git-publication/evidence/published-branch.png; https://github.com/Wishwa2002/Intelligent-legal-service/tree/se3110-qmse-testing",
+    "image": "git-publication/evidence/published-branch.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "se3110-qmse-testing",
+    "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "interpretation": "The branch selector identifies the published testing branch. This narrow capture retains asynchronous counter placeholders; the earlier genuine wide capture and native Git verification establish 83 commits beyond main and 97 reachable commits. The remote head matches the approved SHA. All 15 pre-existing branch tips were unchanged immediately after publication; eleven newer deployment-only commits were excluded."
+  },
+  {
+    "figure": "6.28",
+    "title": "Published tested source and replay-script commit",
+    "execution_date": "2026-10-08T09:21:02.853Z",
+    "source": "git-publication/evidence/published-tested-commit.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/05359214df52fa743b234e1d77e6671f57c14dea",
+    "image": "git-publication/evidence/published-tested-commit.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "se3110-qmse-testing",
+    "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "interpretation": "Actual published commit 0535921 has parent f360e4a. The nine-file replay-script addition preserves executed tooling. Recorded author is Jeyamdev; these Codex-assisted QMSE additions are not original student-development attribution."
+  },
+  {
+    "figure": "6.29",
+    "title": "Published testing-related commit history",
+    "execution_date": "2026-10-08T08:53:13.747Z",
+    "source": "git-publication/evidence/testing-history.png; https://github.com/Wishwa2002/Intelligent-legal-service/commits/se3110-qmse-testing/",
+    "image": "git-publication/evidence/testing-history.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "se3110-qmse-testing",
+    "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "interpretation": "The two new QMSE commits f360e4a and 0535921 sit above preserved development/deployment ancestry. Git authors and dates remain unchanged. Historical check icons belong to their own revisions, not the latest tested head."
+  },
+  {
+    "figure": "6.30",
+    "title": "GitHub Actions: no run for the published testing branch",
+    "execution_date": "2026-10-08T08:53:21.946Z",
+    "source": "git-publication/evidence/actions-for-tested-revision.png; https://github.com/Wishwa2002/Intelligent-legal-service/actions?query=branch%3Ase3110-qmse-testing",
+    "image": "git-publication/evidence/actions-for-tested-revision.png",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "se3110-qmse-testing",
+    "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "interpretation": "Actual GitHub branch filter shows zero workflow results; read-only API queries also show zero for the exact SHA. Backend, frontend and mobile push filters permit only main/develop; no workflow_dispatch is declared. No CI pass is claimed. Managed workflow trigger settings are not established by source YAML."
+  }
+]

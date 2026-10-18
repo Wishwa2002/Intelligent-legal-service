@@ -1,0 +1,11 @@
+{
+  "corrected_text_nodes": 27,
+  "mapping": {
+    "05362214": "05359214",
+    "0536221": "0535921",
+    "05362214df52fa743b234e1d77e6671f57c14dea": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "05362214df52": "05359214df52"
+  },
+  "actual_head": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "reason": "Correct collateral source-identity substitution before delivery; no Git data changed"
+}

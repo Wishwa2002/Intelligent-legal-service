@@ -1,0 +1,42 @@
+{
+  "scope": "Two real Chromium timezone contexts; explicit caller normalisation to documented business timezone; API DateOnly/TimeOnly contract has no implicit timezone conversion.",
+  "sameResult": true,
+  "records": [
+    {
+      "at": "2026-10-08T11:12:17.499Z",
+      "zone": "UTC",
+      "conversion": {
+        "browserZone": "UTC",
+        "browserLocal": "Thu Oct 15 2026 08:30:00 GMT+0000 (Coordinated Universal Time)",
+        "date": "2026-10-15",
+        "startTime": "14:00",
+        "endTime": "15:00"
+      },
+      "request": "lawyerId=2ecc9be9-3c7f-4ab3-be61-9f2da38f54a0&date=2026-10-15&startTime=14%3A00&endTime=15%3A00",
+      "http": 200,
+      "actual": {
+        "hasConflict": true,
+        "reason": "Lawyer has an overlapping appointment from 2:00 PM to 3:00 PM (Status: Requested).",
+        "conflictingAppointmentId": "73c8510d-6e4b-47fa-96f2-25d66c925090"
+      }
+    },
+    {
+      "at": "2026-10-08T11:12:18.372Z",
+      "zone": "Asia/Colombo",
+      "conversion": {
+        "browserZone": "Asia/Colombo",
+        "browserLocal": "Thu Oct 15 2026 14:00:00 GMT+0530 (India Standard Time)",
+        "date": "2026-10-15",
+        "startTime": "14:00",
+        "endTime": "15:00"
+      },
+      "request": "lawyerId=2ecc9be9-3c7f-4ab3-be61-9f2da38f54a0&date=2026-10-15&startTime=14%3A00&endTime=15%3A00",
+      "http": 200,
+      "actual": {
+        "hasConflict": true,
+        "reason": "Lawyer has an overlapping appointment from 2:00 PM to 3:00 PM (Status: Requested).",
+        "conflictingAppointmentId": "73c8510d-6e4b-47fa-96f2-25d66c925090"
+      }
+    }
+  ]
+}

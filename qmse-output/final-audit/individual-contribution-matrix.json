@@ -1,0 +1,258 @@
+[
+  {
+    "member": "Jeyashankar",
+    "component": "C1",
+    "assigned_responsibility": "Lawyer management, specializations, legal services, recommendations and workforce",
+    "test_ids": [
+      "TC-C101",
+      "TC-C102",
+      "TC-C103",
+      "TC-C104",
+      "TC-C105",
+      "TC-C106",
+      "TC-C107",
+      "TC-C108",
+      "TC-C109",
+      "TC-C110",
+      "TC-C111",
+      "TC-C112",
+      "TC-C113"
+    ],
+    "counts": {
+      "VERIFIED/PASS": 7,
+      "VERIFIED/FAIL": 4,
+      "BLOCKED": 2
+    },
+    "shared_primary_proposal": [
+      "TC-BK-03",
+      "TC-BK-06",
+      "TC-FE-01",
+      "TC-FE-05",
+      "TC-MOB-01",
+      "TC-MOB-02"
+    ],
+    "supporting_components": "All four support E2E; C4 authentication supports other components; C1 catalogue supports C2 booking and C3 service identity.",
+    "source_files": [
+      "backend/LegalService.API/Controllers/LawyersController.cs",
+      "backend/LegalService.API/Controllers/LegalCatalogController.cs",
+      "backend/LegalService.API/Services/Workforce/WorkforceAnalysisService.cs",
+      "ai-service/lawyer_recommendation/app.py"
+    ],
+    "test_script": "LawyerManagementHttpTests",
+    "reproduction_command": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --filter FullyQualifiedName~LawyerManagementHttpTests --logger \"trx;LogFileName=c1-member-reproduction.trx\" --results-directory qmse-output/member-reproduction",
+    "prerequisites": "Clone published SHA; apply hashed historical-resolution and final-audit source overlays; .NET8 and cached/restored dependencies. Chosen demonstration filters run isolated fixtures; full PostgreSQL reproduction needs a fresh loopback maintenance cluster and guarded variables. See reproduction.md.",
+    "expected_output": "Selected existing tests pass in the recorded full relational regression; inspect native TRX, not only process exit. No personal execution claimed.",
+    "original_development_commit": {
+      "sha": "b082f54790a0ea5f99db9b31df532d56433319c5",
+      "recorded_author": "Jeyamdev",
+      "author_date": "2026-10-05T09:48:02+05:30",
+      "subject": "feat(member1): integrate lawyer mobile, matching, and workforce refinements",
+      "url": "https://github.com/Wishwa2002/Intelligent-legal-service/commit/b082f54"
+    },
+    "ci_evidence": "Frontend/Backend/Mobile successes at54aecccc, recorded runs at this SHA are PR32 develop-to-main; PR30 is the merge commit subject, not the selected run trigger. Twelve selected native log archives are now retained following approved read-only credential use; exact final baseline has no observed runs.",
+    "screenshots": "frontDesk-1280 / published member1-lawyer-development; existing lawyer/workforce figures",
+    "personal_verification": "Pending member confirmation",
+    "failed_expectations": [
+      "TC-C103: HTTP 200, fee updated",
+      "TC-C106: Badge updates without reload",
+      "TC-C107: 9 and 1001 rejected (HTTP 422); 10 and 1000 accepted",
+      "TC-C112: Hiring proposal drafted only below 20%"
+    ],
+    "blocked_cases": [
+      "TC-C104",
+      "TC-C105"
+    ],
+    "ai_assistance": "Codex-assisted final tests/config/audit/documentation; no student authorship inferred.",
+    "local_final_work": "Existing query boundaries verified; optional headroom proposal disabled; current responsibility not authorship."
+  },
+  {
+    "member": "Buddhika",
+    "component": "C2",
+    "assigned_responsibility": "Appointments, availability, scheduling, careers and scheduling AI",
+    "test_ids": [
+      "TC-C2-01",
+      "TC-C2-02",
+      "TC-C2-03",
+      "TC-C2-04",
+      "TC-C2-05",
+      "TC-C2-06",
+      "TC-C2-07",
+      "TC-C2-08",
+      "TC-C2-09",
+      "TC-C2-10",
+      "TC-C2-11",
+      "TC-C2-12"
+    ],
+    "counts": {
+      "VERIFIED/FAIL": 2,
+      "VERIFIED/PASS": 9,
+      "BLOCKED": 1
+    },
+    "shared_primary_proposal": [
+      "TC-BK-02",
+      "TC-BK-07",
+      "TC-DB-02",
+      "TC-FE-02",
+      "TC-MOB-04",
+      "TC-E2E-01",
+      "TC-E2E-07"
+    ],
+    "supporting_components": "All four support E2E; C4 authentication supports other components; C1 catalogue supports C2 booking and C3 service identity.",
+    "source_files": [
+      "backend/LegalService.API/Controllers/AppointmentsController.cs",
+      "backend/LegalService.API/Services/AppointmentService.cs",
+      "backend/LegalService.API/Controllers/CareersController.cs",
+      "ai-service/app/agents/scheduling/classifier.py"
+    ],
+    "test_script": "QmseAppointmentTests",
+    "reproduction_command": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --filter FullyQualifiedName~QmseAppointmentTests --logger \"trx;LogFileName=c2-member-reproduction.trx\" --results-directory qmse-output/member-reproduction",
+    "prerequisites": "Clone published SHA; apply hashed historical-resolution and final-audit source overlays; .NET8 and cached/restored dependencies. Chosen demonstration filters run isolated fixtures; full PostgreSQL reproduction needs a fresh loopback maintenance cluster and guarded variables. See reproduction.md.",
+    "expected_output": "Selected existing tests pass in the recorded full relational regression; inspect native TRX, not only process exit. No personal execution claimed.",
+    "original_development_commit": {
+      "sha": "d461a8407971eeb7e2349f6ccf5cb8f6150a22be",
+      "recorded_author": "yhprasad",
+      "author_date": "2026-09-23T02:32:18+05:30",
+      "subject": "feat(appointments): implement booking APIs, conflict detection, and status transitions",
+      "url": "https://github.com/Wishwa2002/Intelligent-legal-service/commit/d461a84"
+    },
+    "ci_evidence": "Historical8a9b8a24 shared CI succeeds. fb471202 PR33/34 failure authored yhprasad is excluded from tested baseline; identity mapping needs confirmation. Twelve selected native log archives are now retained following approved read-only credential use; exact final baseline has no observed runs.",
+    "screenshots": "Figures6.33/6.34 booking UI and real career; existing scheduling/timezone captures",
+    "personal_verification": "Pending member confirmation",
+    "failed_expectations": [
+      "TC-C2-01: HTTP 201 Created, status Confirmed",
+      "TC-C2-09: First rejected; second accepted"
+    ],
+    "blocked_cases": [
+      "TC-C2-05"
+    ],
+    "ai_assistance": "Codex-assisted final tests/config/audit/documentation; no student authorship inferred.",
+    "local_final_work": "Optional cancellation notice tested/default disabled; Flutter canCancel capability fix with60passing suite."
+  },
+  {
+    "member": "Vithusan",
+    "component": "C3",
+    "assigned_responsibility": "Documentation requests, uploads, clerks and document verification",
+    "test_ids": [
+      "TC-C3-01",
+      "TC-C3-02",
+      "TC-C3-03",
+      "TC-C3-04",
+      "TC-C3-05",
+      "TC-C3-06",
+      "TC-C3-07",
+      "TC-C3-08",
+      "TC-C3-09",
+      "TC-C3-10",
+      "TC-C3-11",
+      "TC-C3-12"
+    ],
+    "counts": {
+      "VERIFIED/FAIL": 2,
+      "VERIFIED/PASS": 8,
+      "BLOCKED": 2
+    },
+    "shared_primary_proposal": [
+      "TC-DB-01",
+      "TC-DB-03",
+      "TC-DB-04",
+      "TC-E2E-02",
+      "TC-E2E-03",
+      "TC-E2E-04",
+      "TC-E2E-05",
+      "TC-E2E-06"
+    ],
+    "supporting_components": "All four support E2E; C4 authentication supports other components; C1 catalogue supports C2 booking and C3 service identity.",
+    "source_files": [
+      "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentationRequestsController.cs",
+      "backend/LegalService.API/Services/DocumentAndClerk/DocumentFileService.cs",
+      "backend/LegalService.API/Controllers/DocumentAndClerk/ClerksController.cs",
+      "ai-service/app/agents/completeness.py"
+    ],
+    "test_script": "QmseUploadRegressionTests",
+    "reproduction_command": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --filter FullyQualifiedName~QmseUploadRegressionTests --logger \"trx;LogFileName=c3-member-reproduction.trx\" --results-directory qmse-output/member-reproduction",
+    "prerequisites": "Clone published SHA; apply hashed historical-resolution and final-audit source overlays; .NET8 and cached/restored dependencies. Chosen demonstration filters run isolated fixtures; full PostgreSQL reproduction needs a fresh loopback maintenance cluster and guarded variables. See reproduction.md.",
+    "expected_output": "Selected existing tests pass in the recorded full relational regression; inspect native TRX, not only process exit. No personal execution claimed.",
+    "original_development_commit": {
+      "sha": "a566efa7951fa06505fe4c943014826f3b796170",
+      "recorded_author": "VTN02",
+      "author_date": "2026-09-11T17:58:17+05:30",
+      "subject": "feat(document-clerk): implement Agentic AI document validation, mobile client, and clerk management",
+      "url": "https://github.com/Wishwa2002/Intelligent-legal-service/commit/a566efa"
+    },
+    "ci_evidence": "Historical shared backend/frontend/mobile successes; no selected member-specific VTN02 workflow attribution is established. Twelve selected native log archives are now retained following approved read-only credential use; exact final baseline has no observed runs.",
+    "screenshots": "Figures6.35/6.36 actual Flutter catalogue/clerk review; spoofed PDF failure/retest and upload validation figures",
+    "personal_verification": "Pending member confirmation",
+    "failed_expectations": [
+      "TC-C3-01: HTTP 201 + 4 checklist items",
+      "TC-C3-04: HTTP 200; status Approved"
+    ],
+    "blocked_cases": [
+      "TC-C3-08",
+      "TC-C3-12"
+    ],
+    "ai_assistance": "Codex-assisted final tests/config/audit/documentation; no student authorship inferred.",
+    "local_final_work": "Confirmed development orphan cleanup fixed/realPostgres retested; proposed atomicservicebatch disabled/noHTTProute."
+  },
+  {
+    "member": "Wijayananda",
+    "component": "C4",
+    "assigned_responsibility": "Authentication, JWT/RBAC, service requests, consultation and security",
+    "test_ids": [
+      "TC-C4-01",
+      "TC-C4-02",
+      "TC-C4-03",
+      "TC-C4-04",
+      "TC-C4-05",
+      "TC-C4-06",
+      "TC-C4-07",
+      "TC-C4-08",
+      "TC-C4-09",
+      "TC-C4-10",
+      "TC-C4-11",
+      "TC-C4-12"
+    ],
+    "counts": {
+      "VERIFIED/PASS": 8,
+      "BLOCKED": 4
+    },
+    "shared_primary_proposal": [
+      "TC-BK-01",
+      "TC-BK-04",
+      "TC-BK-05",
+      "TC-FE-03",
+      "TC-FE-04",
+      "TC-MOB-03",
+      "TC-MOB-05"
+    ],
+    "supporting_components": "All four support E2E; C4 authentication supports other components; C1 catalogue supports C2 booking and C3 service identity.",
+    "source_files": [
+      "backend/LegalService.API/Authentication/Services/JwtService.cs",
+      "backend/LegalService.API/Authentication/Services/PasswordService.cs",
+      "backend/LegalService.API/Controllers/ServiceRequestsController.cs",
+      "ai-service/app/retrieval/hybrid_service.py"
+    ],
+    "test_script": "Qmse_TC_C4_09",
+    "reproduction_command": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --filter FullyQualifiedName~Qmse_TC_C4_09 --logger \"trx;LogFileName=c4-member-reproduction.trx\" --results-directory qmse-output/member-reproduction",
+    "prerequisites": "Clone published SHA; apply hashed historical-resolution and final-audit source overlays; .NET8 and cached/restored dependencies. Chosen demonstration filters run isolated fixtures; full PostgreSQL reproduction needs a fresh loopback maintenance cluster and guarded variables. See reproduction.md.",
+    "expected_output": "Selected existing tests pass in the recorded full relational regression; inspect native TRX, not only process exit. No personal execution claimed.",
+    "original_development_commit": {
+      "sha": "43f6345d8cdd3158e5ecf51d124dcfab869261c9",
+      "recorded_author": "Wishwa",
+      "author_date": "2026-09-22T19:41:53+05:30",
+      "subject": "Implement JWT authentication and admin authorization",
+      "url": "https://github.com/Wishwa2002/Intelligent-legal-service/commit/43f6345"
+    },
+    "ci_evidence": "Shared historical CI only; exact published testing SHA has no runs. PR32 actorWishwa2002 is not personal test execution. Twelve selected native log archives are now retained following approved read-only credential use; exact final baseline has no observed runs.",
+    "screenshots": "Existing JWT/security/ZAP and member4-authentication captures; C4 retrieval diagnostics qualified",
+    "personal_verification": "Pending member confirmation",
+    "failed_expectations": [],
+    "blocked_cases": [
+      "TC-C4-04",
+      "TC-C4-05",
+      "TC-C4-08",
+      "TC-C4-12"
+    ],
+    "ai_assistance": "Codex-assisted final tests/config/audit/documentation; no student authorship inferred.",
+    "local_final_work": "Nosniff header fixed/passive retested; credential incident/three dependency patches;114deterministicAItests do not prove live acceptance."
+  }
+]

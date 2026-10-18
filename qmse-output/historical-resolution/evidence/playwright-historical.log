@@ -1,0 +1,87 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node@22/22.23.2_1/bin/node",
+      "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/node_modules/.bin/playwright",
+      "test",
+      "historical-acceptance.spec.ts",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/playwright.config.ts",
+    "rootDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {},
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {},
+        "id": "",
+        "name": "",
+        "testDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": {
+      "command": "npm run dev -- --host 127.0.0.1 --port 5175 --strictPort --mode test",
+      "url": "http://127.0.0.1:5175",
+      "reuseExistingServer": false
+    }
+  },
+  "suites": [],
+  "errors": [
+    {
+      "message": "Error: \"serial\" mode is already assigned for the enclosing scope.",
+      "stack": "Error: \"serial\" mode is already assigned for the enclosing scope.\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/historical-acceptance.spec.ts:11:15",
+      "location": {
+        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/historical-acceptance.spec.ts",
+        "column": 15,
+        "line": 11
+      },
+      "snippet": "\u001b[90m   at \u001b[39mhistorical-acceptance.spec.ts:11\n\n   9 | async function run(id:string,page:Page,body:()=>Promise<any>,scope:string){let actual:any,error:any;try{actual=await body();}catch(e){error=e;actual={failure:String(e).slice(0,2000)};}const image=`${id}.png`;await page.screenshot({path:path.join(out,'evidence',image),fullPage:true});results.push({test_id:id,expected:inputs.find((x:any)=>x.test_id===id).expected,status:error?'VERIFIED/FAIL':'VERIFIED/PASS',observed:actual,execution_date:new Date().toISOString(),environment:'Actual React/Vite/Chromium on loopback',limitations:scope,evidence:[`qmse-output/historical-resolution/evidence/${image}`,'qmse-output/historical-resolution/evidence/playwright-historical.json']});fs.writeFileSync(path.join(out,'test-results/ui-cases.json'),JSON.stringify(results,null,2));if(error)throw error;}\n  10 | test.describe.configure({mode:'serial'}); // Each test independent; use default serial worker for shared result file, do not skip after a failure.\n> 11 | test.describe.configure({mode:'default'});\n     |               ^\n  12 | async function catalogue(page:Page,fail=false){await staff(page);await page.route('**/api/**',async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p==='/api/lawyers/search'){if(fail)return r.fulfill({status:500,json:{message:'Synthetic catalogue outage'}});body={items:[{lawyerId:'lawyer-1',name:'Kavinda Silva',email:'synthetic@example.test',experience:10,licenseNumber:'SYNTHETIC',qualification:'Attorney',status:'Active',specializations:[],fee:25000}],page:1,pageSize:10,totalItems:1,totalPages:1,totalLawyers:1};}await r.fulfill({json:body});});await page.goto('/admin/lawyer-services/lawyers');}\n  13 | test('TC-FE-01 lawyer name fee and Book button',async({page})=>run('TC-FE-01',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByText(/25,?000/)).toBeVisible({timeout:1500});await expect(page.getByRole('button',{name:/book/i})).toBeVisible();return {name:true,fee:true,book:true};},'Historical standalone LawyerCard absent; actual catalogue rendered with explicit UI fixture. Original fee/book expectation preserved.'));\n  14 | test('TC-C106 availability toggle without reload',async({page})=>run('TC-C106',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByRole('switch')).toBeVisible({timeout:1500});return {availabilityToggle:true};},'Current directory uses an availability date filter and Edit/Delete actions; historical card toggle is not present.'));"
+    },
+    {
+      "message": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments.",
+      "stack": "Error: No tests found.\nMake sure that arguments are regular expressions matching test files.\nYou may need to escape symbols like \"$\" or \"*\" and quote the arguments."
+    }
+  ],
+  "stats": {
+    "startTime": "2026-10-08T10:55:39.057Z",
+    "duration": 482.752,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

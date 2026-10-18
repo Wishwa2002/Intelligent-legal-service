@@ -1,0 +1,131 @@
+START UTC 2026-10-08T02:42:14.472866+00:00
+COMMAND ['npm', 'run', 'test:member1']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service/frontend
+
+> frontend@0.0.0 test:member1
+> node --test tests/member1-routes.test.mjs
+
+TAP version 13
+# Subtest: confirmed unsupported result overrides a stale request flag and counts confirmed stages
+ok 1 - confirmed unsupported result overrides a stale request flag and counts confirmed stages
+  ---
+  duration_ms: 452.957292
+  type: 'test'
+  ...
+# Subtest: each direct section URL renders the shared header and its active section
+ok 2 - each direct section URL renders the shared header and its active section
+  ---
+  duration_ms: 43.95075
+  type: 'test'
+  ...
+# Subtest: shared operational summary uses dynamic cards, verified coverage sums and honest request states
+ok 3 - shared operational summary uses dynamic cards, verified coverage sums and honest request states
+  ---
+  duration_ms: 3.124708
+  type: 'test'
+  ...
+# Subtest: coverage renders actual areas and factual warnings
+ok 4 - coverage renders actual areas and factual warnings
+  ---
+  duration_ms: 4.727333
+  type: 'test'
+  ...
+# Subtest: lawyer identity shows actual status without a synthetic badge
+ok 5 - lawyer identity shows actual status without a synthetic badge
+  ---
+  duration_ms: 0.265084
+  type: 'test'
+  ...
+# Subtest: shared summary uses one Admin aggregate endpoint
+ok 6 - shared summary uses one Admin aggregate endpoint
+  ---
+  duration_ms: 0.071583
+  type: 'test'
+  ...
+# Subtest: successful catalog mutations notify the shared summary to refresh
+ok 7 - successful catalog mutations notify the shared summary to refresh
+  ---
+  duration_ms: 0.198708
+  type: 'test'
+  ...
+# Subtest: the module default and legacy lawyer URL point to lawyers
+ok 8 - the module default and legacy lawyer URL point to lawyers
+  ---
+  duration_ms: 0.223042
+  type: 'test'
+  ...
+# Subtest: practice area manager shows real counts, sorted list actions and empty state
+ok 9 - practice area manager shows real counts, sorted list actions and empty state
+  ---
+  duration_ms: 1.586
+  type: 'test'
+  ...
+# Subtest: legal service catalog shows real summary, area filters, counts and actions
+ok 10 - legal service catalog shows real summary, area filters, counts and actions
+  ---
+  duration_ms: 1.591166
+  type: 'test'
+  ...
+# Subtest: service Admin list and details use eligibility routes while the public list stays unchanged
+ok 11 - service Admin list and details use eligibility routes while the public list stays unchanged
+  ---
+  duration_ms: 0.07675
+  type: 'test'
+  ...
+# Subtest: service details show matching eligible practitioners without assignment controls
+ok 12 - service details show matching eligible practitioners without assignment controls
+  ---
+  duration_ms: 0.232625
+  type: 'test'
+  ...
+# Subtest: practice area details use the Admin endpoint without changing the public list
+ok 13 - practice area details use the Admin endpoint without changing the public list
+  ---
+  duration_ms: 0.049833
+  type: 'test'
+  ...
+# Subtest: existing recommendation form renders without requesting recommendations
+ok 14 - existing recommendation form renders without requesting recommendations
+  ---
+  duration_ms: 2.441084
+  type: 'test'
+  ...
+# Subtest: workflow stages distinguish AI, system, human and stop after unsupported catalog
+ok 15 - workflow stages distinguish AI, system, human and stop after unsupported catalog
+  ---
+  duration_ms: 1.463625
+  type: 'test'
+  ...
+# Subtest: workflow stages use recorded events and only complete booking after its audit event
+ok 16 - workflow stages use recorded events and only complete booking after its audit event
+  ---
+  duration_ms: 0.075667
+  type: 'test'
+  ...
+# Subtest: lawyer filters reset to page one and ranges follow server totals
+ok 17 - lawyer filters reset to page one and ranges follow server totals
+  ---
+  duration_ms: 0.076625
+  type: 'test'
+  ...
+# Subtest: pagination footer shows the correct range and disables boundary controls
+ok 18 - pagination footer shows the correct range and disables boundary controls
+  ---
+  duration_ms: 0.513166
+  type: 'test'
+  ...
+# Subtest: paged lawyer requests carry page, size and active filters
+ok 19 - paged lawyer requests carry page, size and active filters
+  ---
+  duration_ms: 0.069875
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 823.962125

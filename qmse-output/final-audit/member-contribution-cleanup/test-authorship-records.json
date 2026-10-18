@@ -1,0 +1,154 @@
+[
+  {
+    "component": "C1",
+    "test_file": "backend/LegalService.Tests/LawyerManagementHttpTests.cs",
+    "recorded_addition_commits": [
+      "097ab397aac062b9d78182b00980c1ac9d1c4148\tJeyamdev\t2026-09-28T03:55:54+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C1",
+    "test_file": "backend/LegalService.Tests/Member1RecommendationTests.cs",
+    "recorded_addition_commits": [
+      "0548fd56382f97d2ff934ec031339347db825421\tJeyamdev\t2026-10-04T17:10:08+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C1",
+    "test_file": "backend/LegalService.Tests/WorkforceHiringTests.cs",
+    "recorded_addition_commits": [
+      "0548fd56382f97d2ff934ec031339347db825421\tJeyamdev\t2026-10-04T17:10:08+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C1",
+    "test_file": "ai-service/tests/test_qmse_boundaries.py",
+    "recorded_addition_commits": [
+      "f360e4ac21f149ae5b90a125c57bf928982a9c53\tJeyamdev\t2026-10-08T10:42:35+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C2",
+    "test_file": "backend/LegalService.Tests/AppointmentServiceTests.cs",
+    "recorded_addition_commits": [
+      "d461a8407971eeb7e2349f6ccf5cb8f6150a22be\tyhprasad\t2026-09-23T02:32:18+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C2",
+    "test_file": "backend/LegalService.Tests/QmseAppointmentTests.cs",
+    "recorded_addition_commits": [
+      "f360e4ac21f149ae5b90a125c57bf928982a9c53\tJeyamdev\t2026-10-08T10:42:35+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C2",
+    "test_file": "backend/LegalService.Tests/CareerServiceTests.cs",
+    "recorded_addition_commits": [
+      "a566efa7951fa06505fe4c943014826f3b796170\tVTN02\t2026-09-11T17:58:17+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C2",
+    "test_file": "frontend/tests/derived-booking.spec.ts",
+    "recorded_addition_commits": [
+      "0548fd56382f97d2ff934ec031339347db825421\tJeyamdev\t2026-10-04T17:10:08+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C2",
+    "test_file": "mobile/test/appointment_test.dart",
+    "recorded_addition_commits": [
+      "07af04ef2f8e6ec5c81ff0bbc7297478426de534\tyhprasad\t2026-09-23T07:02:00+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C3",
+    "test_file": "backend/LegalService.Tests/DocumentationRequestServiceTests.cs",
+    "recorded_addition_commits": [
+      "a566efa7951fa06505fe4c943014826f3b796170\tVTN02\t2026-09-11T17:58:17+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C3",
+    "test_file": "backend/LegalService.Tests/ClerkServiceTests.cs",
+    "recorded_addition_commits": [
+      "a566efa7951fa06505fe4c943014826f3b796170\tVTN02\t2026-09-11T17:58:17+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C3",
+    "test_file": "backend/LegalService.Tests/QmseUploadRegressionTests.cs",
+    "recorded_addition_commits": [
+      "f360e4ac21f149ae5b90a125c57bf928982a9c53\tJeyamdev\t2026-10-08T10:42:35+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C3",
+    "test_file": "backend/LegalService.Tests/QmseDocumentPostgresTests.cs",
+    "recorded_addition_commits": [
+      "f360e4ac21f149ae5b90a125c57bf928982a9c53\tJeyamdev\t2026-10-08T10:42:35+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C3",
+    "test_file": "ai-service/tests/test_documents.py",
+    "recorded_addition_commits": [
+      "a566efa7951fa06505fe4c943014826f3b796170\tVTN02\t2026-09-11T17:58:17+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C4",
+    "test_file": "backend/LegalService.Tests/ServiceRequestServiceTests.cs",
+    "recorded_addition_commits": [
+      "930928719904f021b7254a90e5d565c4b2bcb2ad\tWishwa\t2026-09-19T18:02:11+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C4",
+    "test_file": "backend/LegalService.Tests/QmseHttpTests.cs",
+    "recorded_addition_commits": [
+      "f360e4ac21f149ae5b90a125c57bf928982a9c53\tJeyamdev\t2026-10-08T10:42:35+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C4",
+    "test_file": "backend/LegalService.Tests/QmseRegistrationTests.cs",
+    "recorded_addition_commits": [
+      "f360e4ac21f149ae5b90a125c57bf928982a9c53\tJeyamdev\t2026-10-08T10:42:35+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C4",
+    "test_file": "frontend/tests/auth.spec.ts",
+    "recorded_addition_commits": [
+      "1189aa0e8334cc252c6b14c78e0915f73665fdf0\tJegatheeswaran Jeyashankar\t2026-09-27T05:01:46+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  },
+  {
+    "component": "C4",
+    "test_file": "ai-service/tests/test_security.py",
+    "recorded_addition_commits": [
+      "a566efa7951fa06505fe4c943014826f3b796170\tVTN02\t2026-09-11T17:58:17+05:30"
+    ],
+    "authorship_limit": "Addition/change is not exclusive manual authorship or operator proof"
+  }
+]

@@ -1,0 +1,24 @@
+INFO:     Started server process [16757]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:55545 (Press CTRL+C to quit)
+INFO:     127.0.0.1:54717 - "GET /health HTTP/1.1" 200 OK
+Recommendation failure stage=internal_authentication status=401 correlationId=unavailable
+INFO:     127.0.0.1:54718 - "POST /lawyer-recommendations HTTP/1.1" 401 Unauthorized
+Recommendation failure stage=configuration providerStatus=None status=503 correlationId=unavailable
+INFO:     127.0.0.1:54719 - "POST /lawyer-recommendations HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:54720 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56133 - "GET /health HTTP/1.1" 200 OK
+Recommendation failure stage=internal_authentication status=401 correlationId=unavailable
+INFO:     127.0.0.1:56134 - "POST /lawyer-recommendations HTTP/1.1" 401 Unauthorized
+Recommendation failure stage=configuration providerStatus=None status=503 correlationId=unavailable
+INFO:     127.0.0.1:56135 - "POST /lawyer-recommendations HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:56136 - "GET /health HTTP/1.1" 200 OK
+Hiring failure stage=classification providerStatus=None status=503
+INFO:     127.0.0.1:56139 - "POST /hiring-suggestions HTTP/1.1" 503 Service Unavailable
+Hiring failure stage=classification providerStatus=None status=503
+INFO:     127.0.0.1:56503 - "POST /hiring-suggestions HTTP/1.1" 503 Service Unavailable
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [16757]

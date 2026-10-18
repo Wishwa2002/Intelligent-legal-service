@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="70e698e3-d783-4cf0-8a4b-01a9361b2e3d" name="@Jegatheeswarans-MacBook-Air 2026-10-08 08:12:59" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-08T08:12:59.0706690+05:30" queuing="2026-10-08T08:12:59.0706690+05:30" start="2026-10-08T08:12:58.9834980+05:30" finish="2026-10-08T08:12:59.0709590+05:30" />
+  <TestSettings name="default" id="6608d1a2-d759-47e6-976d-e9ebcc74a95f">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-08_08_12_59" />
+  </TestSettings>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="0" executed="0" passed="0" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <RunInfos>
+      <RunInfo computerName="Jegatheeswarans-MacBook-Air" outcome="Error" timestamp="2026-10-08T08:12:59.0341660+05:30">
+        <Text>System.AggregateException: One or more errors occurred. (Permission denied)
+ ---&gt; System.Net.Sockets.SocketException (13): Permission denied
+   at System.Net.Sockets.Socket.DoBind(EndPoint endPointSnapshot, SocketAddress socketAddress)
+   at System.Net.Sockets.Socket.Bind(EndPoint localEP)
+   at System.Net.Sockets.TcpListener.Start(Int32 backlog)
+   at Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.SocketCommunicationManager.HostServer(IPEndPoint endpoint) in /_/src/Microsoft.TestPlatform.CommunicationUtilities/SocketCommunicationManager.cs:line 102
+   at Microsoft.VisualStudio.TestPlatform.CommunicationUtilities.DataCollection.DataCollectionRequestSender.InitializeCommunication() in /_/src/Microsoft.TestPlatform.CommunicationUtilities/DataCollectionRequestSender.cs:line 59
+   at Microsoft.VisualStudio.TestPlatform.CrossPlatEngine.DataCollection.ProxyDataCollectionManager.Initialize() in /_/src/Microsoft.TestPlatform.CrossPlatEngine/DataCollection/ProxyDataCollectionManager.cs:line 236
+   at Microsoft.VisualStudio.TestPlatform.CrossPlatEngine.Client.ProxyExecutionManagerWithDataCollection.Initialize(Boolean skipDefaultAdapters) in /_/src/Microsoft.TestPlatform.CrossPlatEngine/Client/ProxyExecutionManagerWithDataCollection.cs:line 94
+   at Microsoft.VisualStudio.TestPlatform.CrossPlatEngine.Client.Parallel.ParallelProxyExecutionManager.&lt;&gt;c__DisplayClass29_0.&lt;StartTestRunOnConcurrentManager&gt;b__0() in /_/src/Microsoft.TestPlatform.CrossPlatEngine/Client/Parallel/ParallelProxyExecutionManager.cs:line 443
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task&amp; currentTaskSlot, Thread threadPoolThread)
+   --- End of inner exception stack trace ---</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

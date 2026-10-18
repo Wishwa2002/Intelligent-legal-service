@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="e5a6ae2c-ded6-4bb6-915e-e1c64c0c608a" name="@Jegatheeswarans-MacBook-Air 2026-10-18 12:41:56" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-18T12:41:56.1385030+05:30" queuing="2026-10-18T12:41:56.1385030+05:30" start="2026-10-18T12:41:55.1966500+05:30" finish="2026-10-18T12:41:56.1483420+05:30" />
+  <TestSettings name="default" id="6971ab97-d3e0-4e3e-bc10-101b2454363d">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-18_12_41_56" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="098cc3b1-d6f7-4408-a2ae-2365aae3af5c" testId="aa5fe444-6d61-89ef-8516-27631ca7f5e2" testName="LegalService.Tests.QmseUploadRegressionTests.PdfRenamedAsImageIsRejected(name: &quot;valid.jpg&quot;, mime: &quot;image/jpeg&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0023812" startTime="2026-10-18T12:41:56.1211350+05:30" endTime="2026-10-18T12:41:56.1211520+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="098cc3b1-d6f7-4408-a2ae-2365aae3af5c" />
+    <UnitTestResult executionId="69a70baa-a3e1-4299-9a85-b12d282863ff" testId="825f5375-0a92-3dc7-d0b9-84e7960db8f5" testName="LegalService.Tests.QmseUploadRegressionTests.PdfRenamedAsImageIsRejected(name: &quot;valid.png&quot;, mime: &quot;image/png&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0011546" startTime="2026-10-18T12:41:56.1210860+05:30" endTime="2026-10-18T12:41:56.1211040+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="69a70baa-a3e1-4299-9a85-b12d282863ff" />
+    <UnitTestResult executionId="e7e44788-f6de-4c30-854f-4cf76b686ba0" testId="7a48dde9-574c-d818-4dbc-824093c77730" testName="LegalService.Tests.QmseUploadRegressionTests.InvalidContentHasNoPersistenceOrStateTransition(text: &quot;&lt;html&gt;not PDF&lt;/html&gt;&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0040783" startTime="2026-10-18T12:41:55.9023880+05:30" endTime="2026-10-18T12:41:55.9062600+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e7e44788-f6de-4c30-854f-4cf76b686ba0" />
+    <UnitTestResult executionId="10df5b31-7ba0-44f2-a7b8-058235ac9cb8" testId="0d533204-bad0-6b0e-b325-9e5029bd3149" testName="LegalService.Tests.QmseUploadRegressionTests.InvalidContentHasNoPersistenceOrStateTransition(text: &quot;%PDF-1.7\nnot a PDF&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0233113" startTime="2026-10-18T12:41:55.8822360+05:30" endTime="2026-10-18T12:41:55.9021690+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="10df5b31-7ba0-44f2-a7b8-058235ac9cb8" />
+    <UnitTestResult executionId="c82f4cf6-1607-45c0-a832-6da928785285" testId="3918fcbb-3242-561f-0222-e7654fc06972" testName="LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: &quot;application/octet-stream&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.1135851" startTime="2026-10-18T12:41:55.9066230+05:30" endTime="2026-10-18T12:41:56.0200060+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c82f4cf6-1607-45c0-a832-6da928785285" />
+    <UnitTestResult executionId="04038e38-fa07-4b86-babb-40ec29dd26a2" testId="e049dd50-512a-c0aa-3d51-9b946039296e" testName="LegalService.Tests.QmseUploadRegressionTests.GenuineImageUploadStillPersists(extension: &quot;png&quot;, mime: &quot;image/png&quot;, base64: &quot;iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAE0&quot;···)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0007649" startTime="2026-10-18T12:41:56.1209610+05:30" endTime="2026-10-18T12:41:56.1209900+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="04038e38-fa07-4b86-babb-40ec29dd26a2" />
+    <UnitTestResult executionId="35b57387-3cf5-4e72-bf50-5c2c57d4cf6a" testId="22e285dd-56bd-08b4-0462-3cec3f25e980" testName="LegalService.Tests.QmseUploadRegressionTests.EveryRepositorySamplePdfPassesValidation" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0825242" startTime="2026-10-18T12:41:56.0222440+05:30" endTime="2026-10-18T12:41:56.1055810+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="35b57387-3cf5-4e72-bf50-5c2c57d4cf6a" />
+    <UnitTestResult executionId="5f5a3442-b552-4c62-99e9-b444abecffe1" testId="28cb4feb-e761-95de-9416-7abe8d838a57" testName="LegalService.Tests.QmseUploadRegressionTests.InvalidContentHasNoPersistenceOrStateTransition(text: &quot;MZ inert bytes&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.3630689" startTime="2026-10-18T12:41:55.5135600+05:30" endTime="2026-10-18T12:41:55.8788160+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f5a3442-b552-4c62-99e9-b444abecffe1" />
+    <UnitTestResult executionId="df5ef02e-0121-4ac5-9d29-9254e988bbc5" testId="47bbda16-8af2-e782-8428-eb0f4404ef20" testName="LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: &quot;application/pdf&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0013244" startTime="2026-10-18T12:41:56.0200930+05:30" endTime="2026-10-18T12:41:56.0213480+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="df5ef02e-0121-4ac5-9d29-9254e988bbc5" />
+    <UnitTestResult executionId="ed955e36-2aab-4c28-8fe4-1452a357d3f9" testId="206d0d7b-9cb4-230c-4c75-9b8493a278d8" testName="LegalService.Tests.QmseUploadRegressionTests.GenuineImageUploadStillPersists(extension: &quot;jpg&quot;, mime: &quot;image/jpeg&quot;, base64: &quot;/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQ&quot;···)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0029477" startTime="2026-10-18T12:41:56.1071960+05:30" endTime="2026-10-18T12:41:56.1101160+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ed955e36-2aab-4c28-8fe4-1452a357d3f9" />
+    <UnitTestResult executionId="6aff8eaa-09bd-472b-ae28-ad70fa256007" testId="8d3b214b-3a55-3d7c-192c-a5eed6bd4e12" testName="LegalService.Tests.QmseUploadRegressionTests.PdfWithImageMimeIsRejected" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0011530" startTime="2026-10-18T12:41:56.1059900+05:30" endTime="2026-10-18T12:41:56.1071410+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="6aff8eaa-09bd-472b-ae28-ad70fa256007" />
+    <UnitTestResult executionId="365a0546-c72c-417a-844e-096f037951e2" testId="b889c4cf-6878-49b6-1f8c-9a924016a591" testName="LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: &quot;&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0008144" startTime="2026-10-18T12:41:56.0214030+05:30" endTime="2026-10-18T12:41:56.0221730+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="365a0546-c72c-417a-844e-096f037951e2" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.InvalidContentHasNoPersistenceOrStateTransition(text: &quot;%PDF-1.7\nnot a PDF&quot;)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="0d533204-bad0-6b0e-b325-9e5029bd3149">
+      <Execution id="10df5b31-7ba0-44f2-a7b8-058235ac9cb8" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="InvalidContentHasNoPersistenceOrStateTransition" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.GenuineImageUploadStillPersists(extension: &quot;jpg&quot;, mime: &quot;image/jpeg&quot;, base64: &quot;/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAgGBgcGBQgHBwcJCQ&quot;···)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="206d0d7b-9cb4-230c-4c75-9b8493a278d8">
+      <Execution id="ed955e36-2aab-4c28-8fe4-1452a357d3f9" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="GenuineImageUploadStillPersists" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: &quot;application/octet-stream&quot;)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="3918fcbb-3242-561f-0222-e7654fc06972">
+      <Execution id="c82f4cf6-1607-45c0-a832-6da928785285" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="GenuinePdfIsStoredAndDownloadsUnchanged" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.PdfRenamedAsImageIsRejected(name: &quot;valid.jpg&quot;, mime: &quot;image/jpeg&quot;)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="aa5fe444-6d61-89ef-8516-27631ca7f5e2">
+      <Execution id="098cc3b1-d6f7-4408-a2ae-2365aae3af5c" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="PdfRenamedAsImageIsRejected" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.GenuineImageUploadStillPersists(extension: &quot;png&quot;, mime: &quot;image/png&quot;, base64: &quot;iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAE0&quot;···)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="e049dd50-512a-c0aa-3d51-9b946039296e">
+      <Execution id="04038e38-fa07-4b86-babb-40ec29dd26a2" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="GenuineImageUploadStillPersists" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.EveryRepositorySamplePdfPassesValidation" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="22e285dd-56bd-08b4-0462-3cec3f25e980">
+      <Execution id="35b57387-3cf5-4e72-bf50-5c2c57d4cf6a" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="EveryRepositorySamplePdfPassesValidation" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: &quot;&quot;)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="b889c4cf-6878-49b6-1f8c-9a924016a591">
+      <Execution id="365a0546-c72c-417a-844e-096f037951e2" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="GenuinePdfIsStoredAndDownloadsUnchanged" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: &quot;application/pdf&quot;)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="47bbda16-8af2-e782-8428-eb0f4404ef20">
+      <Execution id="df5ef02e-0121-4ac5-9d29-9254e988bbc5" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="GenuinePdfIsStoredAndDownloadsUnchanged" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.InvalidContentHasNoPersistenceOrStateTransition(text: &quot;MZ inert bytes&quot;)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="28cb4feb-e761-95de-9416-7abe8d838a57">
+      <Execution id="5f5a3442-b552-4c62-99e9-b444abecffe1" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="InvalidContentHasNoPersistenceOrStateTransition" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.InvalidContentHasNoPersistenceOrStateTransition(text: &quot;&lt;html&gt;not PDF&lt;/html&gt;&quot;)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="7a48dde9-574c-d818-4dbc-824093c77730">
+      <Execution id="e7e44788-f6de-4c30-854f-4cf76b686ba0" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="InvalidContentHasNoPersistenceOrStateTransition" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.PdfRenamedAsImageIsRejected(name: &quot;valid.png&quot;, mime: &quot;image/png&quot;)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="825f5375-0a92-3dc7-d0b9-84e7960db8f5">
+      <Execution id="69a70baa-a3e1-4299-9a85-b12d282863ff" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="PdfRenamedAsImageIsRejected" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseUploadRegressionTests.PdfWithImageMimeIsRejected" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="8d3b214b-3a55-3d7c-192c-a5eed6bd4e12">
+      <Execution id="6aff8eaa-09bd-472b-ae28-ad70fa256007" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseUploadRegressionTests" name="PdfWithImageMimeIsRejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="aa5fe444-6d61-89ef-8516-27631ca7f5e2" executionId="098cc3b1-d6f7-4408-a2ae-2365aae3af5c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="825f5375-0a92-3dc7-d0b9-84e7960db8f5" executionId="69a70baa-a3e1-4299-9a85-b12d282863ff" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7a48dde9-574c-d818-4dbc-824093c77730" executionId="e7e44788-f6de-4c30-854f-4cf76b686ba0" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0d533204-bad0-6b0e-b325-9e5029bd3149" executionId="10df5b31-7ba0-44f2-a7b8-058235ac9cb8" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3918fcbb-3242-561f-0222-e7654fc06972" executionId="c82f4cf6-1607-45c0-a832-6da928785285" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e049dd50-512a-c0aa-3d51-9b946039296e" executionId="04038e38-fa07-4b86-babb-40ec29dd26a2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="22e285dd-56bd-08b4-0462-3cec3f25e980" executionId="35b57387-3cf5-4e72-bf50-5c2c57d4cf6a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="28cb4feb-e761-95de-9416-7abe8d838a57" executionId="5f5a3442-b552-4c62-99e9-b444abecffe1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="47bbda16-8af2-e782-8428-eb0f4404ef20" executionId="df5ef02e-0121-4ac5-9d29-9254e988bbc5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="206d0d7b-9cb4-230c-4c75-9b8493a278d8" executionId="ed955e36-2aab-4c28-8fe4-1452a357d3f9" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8d3b214b-3a55-3d7c-192c-a5eed6bd4e12" executionId="6aff8eaa-09bd-472b-ae28-ad70fa256007" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b889c4cf-6878-49b6-1f8c-9a924016a591" executionId="365a0546-c72c-417a-844e-096f037951e2" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="12" executed="12" passed="12" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.29)
+[xUnit.net 00:00:00.04]   Discovering: LegalService.Tests
+[xUnit.net 00:00:00.08]   Discovered:  LegalService.Tests
+[xUnit.net 00:00:00.09]   Starting:    LegalService.Tests
+Validated 19 genuine repository sample PDFs.
+[xUnit.net 00:00:00.71]   Finished:    LegalService.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

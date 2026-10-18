@@ -1,0 +1,258 @@
+[
+  {
+    "at": "2026-10-08T04:58:35.662Z",
+    "method": "POST",
+    "url": "/api/auth/signup",
+    "status": 200,
+    "input": {
+      "fullName": "Synthetic QMSE Workflow Customer",
+      "email": "workflow-1791435515534@example.test",
+      "password": "[REDACTED]",
+      "role": "Customer"
+    },
+    "output": {
+      "message": "Customer registered successfully",
+      "userId": 17,
+      "name": "Synthetic QMSE Workflow Customer",
+      "email": "workflow-1791435515534@example.test",
+      "role": "Customer",
+      "lawyerId": null
+    }
+  },
+  {
+    "at": "2026-10-08T04:58:37.270Z",
+    "method": "GET",
+    "url": "/api/health",
+    "status": 200,
+    "output": {
+      "status": "Healthy",
+      "timestamp": "2026-10-08T04:58:36.638326Z"
+    },
+    "via": "actual UI"
+  },
+  {
+    "at": "2026-10-08T04:58:39.632Z",
+    "method": "POST",
+    "url": "/api/auth/login",
+    "status": 200,
+    "output": {
+      "token": "[REDACTED]",
+      "userId": 17,
+      "lawyerId": null,
+      "clerkId": null,
+      "name": "Synthetic QMSE Workflow Customer",
+      "email": "workflow-1791435515534@example.test",
+      "role": "Customer",
+      "department": null,
+      "contact": null,
+      "mustChangePassword": "[REDACTED]",
+      "message": "Login successful"
+    },
+    "via": "actual UI"
+  },
+  {
+    "at": "2026-10-08T04:58:40.433Z",
+    "method": "GET",
+    "url": "/api/documentation-services",
+    "status": 200,
+    "output": [
+      {
+        "serviceId": 2,
+        "name": "Affidavit & Notary Services",
+        "description": "Drafting affidavits and arranging official notarization.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ]
+      },
+      {
+        "serviceId": 9,
+        "name": "Bail Application & Criminal Representation",
+        "description": "Magistrate & High Court bail filings, police B-report review, and surety documentation.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC of Accused",
+          "Police B Report",
+          "Affidavit of Sureties",
+          "Surety Asset Proof"
+        ]
+      },
+      {
+        "serviceId": 6,
+        "name": "Business & Corporate Registration",
+        "description": "Company incorporation (Pvt Ltd), sole proprietorship, and partnership registration with ROC.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC Copy",
+          "Form 1 / Form 18",
+          "Articles of Association",
+          "Address Proof"
+        ]
+      },
+      {
+        "serviceId": 14,
+        "name": "Commercial Lease Agreement",
+        "description": "Office and industrial property leases, rent review mechanisms, and fit-out covenants.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Title Deed Copy",
+          "Local Council Assessment Receipt",
+          "Draft Commercial Lease",
+          "NIC Copy"
+        ]
+      },
+      {
+        "serviceId": 1,
+        "name": "Contract Review & Amendment",
+        "description": "Reviewing lease/sales agreements and drafting amendments.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Original Contract",
+          "Amendment Request Letter",
+          "NIC Copy"
+        ]
+      },
+      {
+        "serviceId": 11,
+        "name": "Contract Vetting & Corporate NDA Drafting",
+        "description": "Commercial contracts, confidentiality agreements, dispute indemnity, and termination clauses.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Commercial Agreement Draft",
+          "Business Registration",
+          "NIC Copy"
+        ]
+      },
+      {
+        "serviceId": 8,
+        "name": "Last Will and Testament",
+        "description": "Estate planning, testamentary dispositions, executor appointment, and notarial attestation.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC of Testator",
+          "Schedule of Assets & Deeds",
+          "Draft Will Agreement",
+          "Beneficiary Details"
+        ]
+      },
+      {
+        "serviceId": 13,
+        "name": "Mutual Divorce & Custody Settlement",
+        "description": "Divorce by mutual consent, maintenance agreements, custody orders, and asset dissolution.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Marriage Certificate",
+          "Custody & Settlement Agreement",
+          "NIC of Parties",
+          "Child Birth Certificates"
+        ]
+      },
+      {
+        "serviceId": 7,
+        "name": "Power of Attorney",
+        "description": "General and Special Power of Attorney drafting, principal authorization, and notarial execution.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC of Grantor",
+          "NIC of Grantee",
+          "Scope of Authority Document",
+          "Deed / Asset Proof"
+        ]
+      },
+      {
+        "serviceId": 3,
+        "name": "Power of Attorney Drafting",
+        "description": "Drafting General or Special Power of Attorney documents.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC of Grantor",
+          "NIC of Grantee",
+          "Scope of Authority Document"
+        ]
+      },
+      {
+        "serviceId": 4,
+        "name": "Property Transfer",
+        "description": "Land registry deed conveyance, title verification, and official ownership transfer.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC Copy",
+          "Prior Title Deed Copy",
+          "Survey Plan",
+          "Sale Agreement Draft"
+        ]
+      },
+      {
+        "serviceId": 5,
+        "name": "Rental & Lease Agreement",
+        "description": "Residential and commercial tenancy agreements, covenant clauses, and stamp duty calculation.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC Copy",
+          "Title Deed / Ownership Proof",
+          "Tenancy Agreement Draft"
+        ]
+      },
+      {
+        "serviceId": 12,
+        "name": "Testamentary & Probate Court Application",
+        "description": "Probate petitioning, letters of administration, estate accounting, and court representation.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Death Certificate",
+          "Original Last Will",
+          "Estate Asset Inventory",
+          "NIC of Applicant"
+        ]
+      },
+      {
+        "serviceId": 10,
+        "name": "Title Search & Pedigree Due Diligence",
+        "description": "Comprehensive 40-year land registry search, encumbrance verification, and title report issuance.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Prior Title Deed Copy",
+          "Survey Plan",
+          "Land Registry Extract Request",
+          "NIC Copy"
+        ]
+      }
+    ],
+    "via": "actual UI"
+  },
+  {
+    "at": "2026-10-08T04:58:42.428Z",
+    "method": "POST",
+    "url": "/api/documentation-requests?customerId=17",
+    "status": 201,
+    "output": {
+      "requestId": 12,
+      "customerId": 17,
+      "customerName": "Synthetic QMSE Workflow Customer",
+      "customerEmail": "workflow-1791435515534@example.test",
+      "serviceId": 2,
+      "serviceName": "Affidavit & Notary Services",
+      "documentType": "Affidavit & Notary Services",
+      "status": "PENDING",
+      "assignedClerkId": null,
+      "assignedClerkName": null,
+      "createdAt": "2026-10-08T04:58:42.334778Z",
+      "updatedAt": "2026-10-08T04:58:42.334778Z",
+      "documentFiles": [],
+      "requiredDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "missingDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "reuploadNote": null
+    },
+    "via": "actual UI"
+  }
+]

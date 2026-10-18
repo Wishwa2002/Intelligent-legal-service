@@ -1,0 +1,212 @@
+[
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:02:56.190Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "01-xunit-result",
+    "source": "test-results/backend-final.log",
+    "needle": "Failed!",
+    "height": 310,
+    "captured_utc": "2026-10-08T04:02:56.787Z",
+    "source_sha256": "b8379c1b2f576aa7c318a5850775c2d2b2b64b2ca77fc232d29ccf9b9d79c0bf",
+    "screenshot": "evidence/visual/01-xunit-result.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:02:56.887Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "02-spoofed-pdf-failure",
+    "source": "test-results/backend-final.log",
+    "needle": "[xUnit.net 00:00:00.49]",
+    "height": 470,
+    "font": 16,
+    "captured_utc": "2026-10-08T04:02:57.509Z",
+    "source_sha256": "b8379c1b2f576aa7c318a5850775c2d2b2b64b2ca77fc232d29ccf9b9d79c0bf",
+    "screenshot": "evidence/visual/02-spoofed-pdf-failure.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:02:57.602Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "03-node-result",
+    "source": "test-results/frontend-node.log",
+    "needle": "# Subtest: pagination footer",
+    "height": 700,
+    "font": 19,
+    "captured_utc": "2026-10-08T04:02:58.220Z",
+    "source_sha256": "5ca82e670936e5581a44cdd09b886282fef8b95ca7d67b6c1fbdb5a75eb9b243",
+    "screenshot": "evidence/visual/03-node-result.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:02:58.313Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "04-flutter-result",
+    "source": "test-results/mobile-minimal.log",
+    "needle": "{\"testID\":67,\"result\"",
+    "height": 560,
+    "font": 15,
+    "captured_utc": "2026-10-08T04:02:58.935Z",
+    "source_sha256": "d6ccd20fee2888e0679516e91aed0c718abce59b1178d9142e2f34aa0b8ea336",
+    "screenshot": "evidence/visual/04-flutter-result.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:02:59.024Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "05-playwright-report",
+    "source": "evidence/e2e/playwright-report/index.html",
+    "height": 640,
+    "html": true,
+    "zoom": 1.15,
+    "captured_utc": "2026-10-08T04:02:59.660Z",
+    "source_sha256": "ad9cbc825f7196db7803d207dcc1411e03886d0928b3febfcf346f716090f48f",
+    "screenshot": "evidence/visual/05-playwright-report.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:02:59.755Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "07-zap-summary",
+    "source": "evidence/security/zap-passive-report.html",
+    "height": 720,
+    "html": true,
+    "zoom": 1.15,
+    "captured_utc": "2026-10-08T04:03:00.375Z",
+    "source_sha256": "b5ea9b44708e346198f6fca2c8ac5cc786f643ede7cedd0c31d129443a171e12",
+    "screenshot": "evidence/visual/07-zap-summary.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:03:00.466Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "08-zap-alert-details",
+    "source": "evidence/security/zap-passive-report.html",
+    "height": 760,
+    "html": true,
+    "selector": "th.risk-1",
+    "zoom": 1.1,
+    "captured_utc": "2026-10-08T04:03:01.134Z",
+    "source_sha256": "b5ea9b44708e346198f6fca2c8ac5cc786f643ede7cedd0c31d129443a171e12",
+    "screenshot": "evidence/visual/08-zap-alert-details.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:03:01.226Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "09-k6-execution",
+    "source": "test-results/performance-final.log",
+    "needle": "running (08.0s)",
+    "height": 340,
+    "captured_utc": "2026-10-08T04:03:01.824Z",
+    "source_sha256": "2e5d3e710dec623eedeecb98f686663723c6f374157c2dd5ced0d7fcc754acbb",
+    "screenshot": "evidence/visual/09-k6-execution.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:03:01.920Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "10-k6-metrics",
+    "source": "evidence/performance/k6-summary.json",
+    "needle": "\"http_req_failed\"",
+    "height": 660,
+    "captured_utc": "2026-10-08T04:03:02.534Z",
+    "source_sha256": "b5d01b42f4664a837221283d4de6c9f996fbb6f89138b0318871e3e87d857f39",
+    "screenshot": "evidence/visual/10-k6-metrics.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:03:02.622Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "11-coverage",
+    "source": "evidence/backend/coverage-html/index.html",
+    "height": 720,
+    "html": true,
+    "zoom": 1.15,
+    "captured_utc": "2026-10-08T04:03:03.397Z",
+    "source_sha256": "0cb8b3102c9717f527f474db07285edd58f7749ce370338303dd9d53446df333",
+    "screenshot": "evidence/visual/11-coverage.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:03:03.504Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "12-ai-tests",
+    "source": "test-results/ai-final.log",
+    "needle": "-- Docs:",
+    "height": 330,
+    "font": 18,
+    "captured_utc": "2026-10-08T04:03:04.112Z",
+    "source_sha256": "6ca40a83bcc5f1892d5b9306825eb9b8f3b4f63f7bb957faa0ea2e51c9597616",
+    "screenshot": "evidence/visual/12-ai-tests.png",
+    "method": "Playwright Chromium screenshot of original artifact served without content modification; browser font/wrapping adjusted for readability"
+  },
+  {
+    "id": "06-react-schedule",
+    "source": "evidence/e2e/schedule-1280.png",
+    "screenshot": "evidence/visual/06-react-schedule.png",
+    "captured_utc": "2026-10-08T04:03:04.203Z",
+    "method": "Browser viewport of preserved original Playwright application screenshot at natural resolution; mocked API, not integrated E2E"
+  },
+  {
+    "id": "13-github-mobile-ci",
+    "source": "https://github.com/Jeyamdev/legalease-ai/actions/runs/37390618065",
+    "screenshot": "evidence/visual/13-github-mobile-ci.png",
+    "captured_utc": "2026-10-08T04:03:08.108Z",
+    "method": "Actual GitHub Actions workflow page in Chromium; historical base commit run"
+  }
+]

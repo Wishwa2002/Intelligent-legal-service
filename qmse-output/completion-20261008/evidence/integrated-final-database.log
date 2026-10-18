@@ -1,0 +1,5 @@
+ RequestId | CustomerId | ClerkId |  Status   | attachments | stored_bytes 
+-----------+------------+---------+-----------+-------------+--------------
+        12 |         17 |       1 | COMPLETED |           3 |         7667
+(1 row)
+

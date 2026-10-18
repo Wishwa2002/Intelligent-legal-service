@@ -1,0 +1,18 @@
+{
+  "name": "mobile-dependencies",
+  "command": [
+    "/private/tmp/qmse-flutter-source/bin/cache/dart-sdk/bin/dart",
+    "/private/tmp/qmse-flutter-source/bin/cache/flutter_tools.snapshot",
+    "pub",
+    "get",
+    "--offline"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/mobile",
+  "started_utc": "2026-10-08T03:04:12.795655+00:00",
+  "ended_utc": "2026-10-08T03:11:12.805248+00:00",
+  "duration_seconds": 420.033,
+  "exit_code": 0,
+  "timed_out": true,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/mobile-dependencies.log"
+}

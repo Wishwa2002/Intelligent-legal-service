@@ -1,0 +1,8 @@
+{
+  "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier": "1",
+  "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress": "qmse-history-admin@example.test",
+  "http://schemas.microsoft.com/ws/2008/06/identity/claims/role": "Admin",
+  "exp": 1791542782,
+  "iss": "qmse-history",
+  "aud": "qmse-history"
+}

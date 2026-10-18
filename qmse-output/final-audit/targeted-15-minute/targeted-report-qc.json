@@ -1,0 +1,25 @@
+{
+  "checked_utc": "2026-10-08T14:48:21.753962+00:00",
+  "pages": 101,
+  "figures": 43,
+  "figure_objects_unchanged": true,
+  "changed_pages_visually_reviewed_at_original_resolution": [
+    6,
+    31,
+    80,
+    94,
+    95,
+    97
+  ],
+  "remaining_pages": "Hash-identical to previously individually reviewed page images",
+  "toc_entries_still_match_actual_pages": 54,
+  "blank_pages": 0,
+  "page_numbering_correct": true,
+  "ledger_unchanged": "49 PASS / 16 FAIL / 12 BLOCKED",
+  "ai_results_unchanged": "114 deterministic PASS; live Gemini/Golden acceptance BLOCKED",
+  "final_docx": "qmse-output/final-audit/final-report/SE3110_Testing_Report_GR42_Consolidated_Final.docx",
+  "final_pdf": "qmse-output/final-audit/final-report/SE3110_Testing_Report_GR42_Consolidated_Final.pdf",
+  "focused_result": "14 PASS / 1 FAIL / 0 SKIPPED",
+  "full_suite_not_rerun": true,
+  "evidence_zip_not_modified": true
+}

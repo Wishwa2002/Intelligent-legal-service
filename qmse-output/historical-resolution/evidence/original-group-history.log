@@ -1,0 +1,14 @@
+59337bba0227aa07e18e60f697bd758db327f0bd|2026-08-25T19:08:10+05:30|Wishwa Wijayananda|Merge pull request #6 from Wishwa2002/feature/database-setup
+2e2f764e18843b6832e7352ba64ea0848a3842b6|2026-08-25T15:09:32+05:30|yhprasad|feat(database): implement complete legal platform schema, seeds, and ADRs
+a9608877e21ca2a07dc049a81608ee964eb8e344|2026-08-23T16:37:36+05:30|Wishwa Wijayananda|Merge pull request #4 from Wishwa2002/feature/frontend-setup
+7db28170ac4c2c44a173e3233291675b34903575|2026-08-23T16:33:18+05:30|Wishwa|feat(frontend): add public landing page and common components
+6f78d19337b00a74c214da3f7ecec215225588f9|2026-08-22T12:09:14+05:30|Wishwa Wijayananda|Merge pull request #3 from Wishwa2002/feature/frontend-setup
+91d96284d9cc4b3b330d9fd2d87372bf3447dd06|2026-08-22T12:04:35+05:30|Wishwa|Setup React TypeScript Tailwind frontend structure
+0fce3fd424d5c1948b2b16a7007cb550b975984f|2026-08-19T14:34:50+05:30|Wishwa Wijayananda|Merge pull request #2 from Wishwa2002/feature/authentication
+56f4bbd42099e6a803277ec52fde84fcbf218ac7|2026-08-19T14:31:17+05:30|Wishwa|Implement user registration and role assignment
+3e0403f3eb57b8adb7bef395b1b3df1f89ecc313|2026-08-19T12:02:02+05:30|yh prasad|Merge pull request #1 from Wishwa2002/develop
+3beb4c6ddf881200747a42e0c85154a51fb69d6b|2026-08-19T00:26:55+05:30|Wishwa|Add complete project folder structure
+043336bfdfb8f3add72f9dfafd289fa9533a5d41|2026-08-19T00:09:28+05:30|Wishwa|Complete merge of remote develop branch
+55057163b4d14aa94cd937eed15b4e0aee3ae96c|2026-08-19T00:07:35+05:30|Wishwa|Merge GitHub develop branch with local project
+c0ea64584769a65b217a2eadb1a4a30489bd4af0|2026-08-19T00:00:08+05:30|Wishwa|Initial project structure and ASP.NET Core setup
+59e413c7742dd0e2c5c5662ed79784203646aa49|2026-08-18T12:01:34+05:30|Wishwa Wijayananda|Initial commit

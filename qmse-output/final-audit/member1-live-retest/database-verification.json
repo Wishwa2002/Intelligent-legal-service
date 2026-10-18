@@ -1,0 +1,175 @@
+{
+  "database": "qmse_c1_retest_20261008",
+  "propertyLawyers": [
+    {
+      "id": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "name": "Synthetic C1 Lawyer 1",
+      "experience": 18,
+      "status": "Active",
+      "specialization": "Real Estate & Property Law"
+    },
+    {
+      "id": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "name": "Synthetic C1 Lawyer 2",
+      "experience": 7,
+      "status": "Active",
+      "specialization": "Real Estate & Property Law"
+    },
+    {
+      "id": "e6d916e6-f34e-467c-9681-a406483ef4e9",
+      "name": "Synthetic C1 Lawyer 3",
+      "experience": 25,
+      "status": "Active",
+      "specialization": "Criminal Law"
+    }
+  ],
+  "eligibleDemand": 20,
+  "appointments": 0,
+  "careers": 0,
+  "workflowStates": [
+    {
+      "id": "428faec1-67e4-463a-84c4-361114931be7",
+      "status": "FAILED",
+      "categoryId": null,
+      "createdAt": "2026-10-08T20:36:06.62345+05:30"
+    },
+    {
+      "id": "21d62e90-52e7-4554-a641-13cf31b3cb60",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "8b6deb7f-a6cc-4161-beea-a8bebfb35aab",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "dff3f921-866b-4ead-9be1-a9f84c830ac4",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "ca88bfd5-ad06-4995-97a1-85e73d4f6684",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "66b19796-177b-4d3b-8251-a00e80a4095a",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "276d4e48-aed9-45ea-a138-ce33b928bdcf",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "c8f780ed-94a6-4247-8877-6a55c307c11f",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "ae6e8d78-153f-437e-9b4e-a9c5bf5df9c3",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "bac4e9df-7122-4847-bbce-9be1ce814943",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "7f7c3a62-36d0-4cf6-80a5-ce139f29a385",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "1825f325-46a7-4638-8361-6eb4e314563f",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "c6d04922-ef95-40d0-8304-4b160317e5d7",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "86e36f50-af55-47ce-a28c-0ba050a72533",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "0613eea6-c57e-48d3-9de3-83fa76f50be8",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "eb81de9f-2a06-49a5-99e5-165005a1978c",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "9c410e1c-5756-4d42-aa7d-742549fb70d7",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "1903e065-3efa-48ec-85e0-0dbb1ef39374",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "d5019714-5452-4c04-b0e7-6a0d4632ef51",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "3bb6544f-7216-4f81-b85c-fa60528d2d9e",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "c07b59c6-f544-4527-bd19-be09f7991cd5",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "5489f099-56c6-48aa-9fea-45330953c021",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-09-07T20:36:11.187107+05:30"
+    },
+    {
+      "id": "b4cf8687-354f-4fd8-b640-6b7ba803e15d",
+      "status": "AWAITING_APPROVAL",
+      "categoryId": 4,
+      "createdAt": "2026-10-09T20:36:11.187107+05:30"
+    },
+    {
+      "id": "13b56cfb-993a-40f3-8684-0ab35080d64d",
+      "status": "FAILED",
+      "categoryId": 4,
+      "createdAt": "2026-10-07T20:36:11.187107+05:30"
+    }
+  ]
+}

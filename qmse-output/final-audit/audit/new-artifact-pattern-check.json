@@ -1,0 +1,5 @@
+{
+  "scanned_scope": "Final-audit text/source artifacts excluding binary/render/private runtime controls",
+  "findings": [],
+  "limitation": "Heuristic only; actual credential redaction also applied to nativeCI archives"
+}

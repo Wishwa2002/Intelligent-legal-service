@@ -1,0 +1,85 @@
+{
+  "scan_type": "passive only; six deliberate local requests; no spider or active scan",
+  "tool": "OWASP ZAP",
+  "version": "2.17.0",
+  "target": "http://127.0.0.1:52815/",
+  "started_utc": "2026-10-08T02:54:12.135324+00:00",
+  "ended_utc": "2026-10-08T02:54:14.483322+00:00",
+  "scope": "isolated actual ASP.NET controllers; EF InMemory; synthetic users; mocked AI; loopback HTTP",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "api/lawyers/search?page=1&pageSize=10",
+      "status": 200,
+      "response_length": 407,
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Thu, 08 Oct 2026 02:54:12 GMT",
+        "Server": "Kestrel",
+        "content-length": "407"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "api/appointments",
+      "status": 200,
+      "response_length": 2,
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Thu, 08 Oct 2026 02:54:12 GMT",
+        "Server": "Kestrel",
+        "content-length": "2"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "api/lawyers",
+      "status": 401,
+      "response_length": 0,
+      "headers": {
+        "Content-Length": "0",
+        "Date": "Thu, 08 Oct 2026 02:54:12 GMT",
+        "Server": "Kestrel",
+        "WWW-Authenticate": "Bearer"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "api/lawyers",
+      "status": 401,
+      "response_length": 0,
+      "headers": {
+        "Content-Length": "0",
+        "Date": "Thu, 08 Oct 2026 02:54:12 GMT",
+        "Server": "Kestrel",
+        "WWW-Authenticate": "Bearer error=\"invalid_token\""
+      }
+    },
+    {
+      "method": "POST",
+      "path": "api/auth/login",
+      "status": 401,
+      "response_length": 56,
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Thu, 08 Oct 2026 02:54:12 GMT",
+        "Server": "Kestrel",
+        "content-length": "56"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "api/lawyers/search?search=%27%20OR%201%3D1--",
+      "status": 200,
+      "response_length": 2,
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Date": "Thu, 08 Oct 2026 02:54:12 GMT",
+        "Server": "Kestrel",
+        "content-length": "2"
+      }
+    }
+  ],
+  "pending_records": 0,
+  "alerts_count": 4
+}

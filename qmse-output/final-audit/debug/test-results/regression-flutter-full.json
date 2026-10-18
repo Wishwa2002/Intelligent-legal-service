@@ -1,0 +1,15 @@
+{
+  "command": [
+    "/private/tmp/qmse-flutter-source/bin/flutter",
+    "test",
+    "--no-pub",
+    "--machine"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/mobile",
+  "started_utc": "2026-10-08T12:28:52.514380+00:00",
+  "ended_utc": "2026-10-08T12:28:58.511809+00:00",
+  "duration_seconds": 5.997,
+  "exit_code": 1,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/regression-flutter-full.log"
+}

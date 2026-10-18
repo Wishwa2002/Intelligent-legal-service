@@ -1,0 +1,17 @@
+{
+  "checked_utc": "2026-10-08T03:27:58.227097+00:00",
+  "docx_zip_opens": true,
+  "docx_python_docx_opens": true,
+  "pdf_pymupdf_opens": true,
+  "pages": 41,
+  "original_tables": 71,
+  "preserved_tables": 71,
+  "toc_entries_verified": 54,
+  "case_evidence_paths_verified": 77,
+  "page_footers_consistent": true,
+  "student_ids_preserved": true,
+  "original_input_hashes_unchanged": true,
+  "text_outside_page_bounds": [],
+  "visual_review": "Every rendered page inspected; changed table/case/TOC pages rechecked after revisions. Landscape case tables readable, repeated headers, no visibly truncated rows. Sparse pages from original explicit member/reference breaks retained. Report contains no inline screenshots; current actual UI images are supplied as separate evidence and explicitly scoped to mocked API tests.",
+  "limitations": "LibreOffice rendering verifies opening/layout; no interactive Microsoft Word session was available. Historical external citations/deployed cover URLs are retained references, not verified service availability."
+}

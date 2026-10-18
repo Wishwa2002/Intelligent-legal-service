@@ -1,0 +1,71 @@
+INPUTS 2 [
+  { type: 'text', aria: 'Email / Username' },
+  { type: 'password', aria: 'Password' }
+]
+e2e-01-flutter-login LegalEase Platform 4-Member Integrated System
+Server Settings
+Synthetic
+INTEGRATED LEGAL HUB
+CUSTOMER
+Welcome, Synthetic
+Select any module below to access counsel, documentation, consultations, or customer support services.
+Project Modules & Services
+4 Core Parts
+MEMBER 1 • COUNSEL Lawyer Services Advocate profiles, bar qualifications & practice areas
+MEMBER 3 • DOCUMENT SERVICES Document & Clerk Services 12 legal document services, clerk reviews & filings
+MEMBER 2 • SLOTS Booking & Consultation Afternoon slots, conflict validation & appointments
+MEMBER 4 • SUPPORT Customer Support Case tracking, hotline helpdesk & client support
+My Requests Track clerk reviews
+Careers Legal & tech roles
+e2e-02-flutter-catalogue Back
+⚖️ Legal Ease
+Create Manual Request
+Server Settings
+WHAT WE OFFER Legal Documentation Services Professional document review, legal drafting, and automated clerk assignment.
+Create Request
+Request This Service
+Request This Service
+Request This Service
+Commercial Lease Agreement Office and industrial property leases, rent review mechanisms, and fit-out covenants. Required Documents: Title Deed Copy Local Council Assessment Receipt Draft Commercial Lease NIC Copy
+Document Agent
+e2e-03-flutter-form Create Service Request
+Direct submission for Admin & Clerk review
+Select Legal Service:
+Affidavit & Notary Services
+Drafting affidavits and arranging official notarization.
+Required Documents for Submission:
+NIC
+Completed Affidavit Draft
+Witness Details
+💡 You can attach these documents directly after creating this request.
+Create Request & Begin Review
+Scrim
+e2e-04-flutter-request Back
+⚖️ Legal Ease
+Create Manual Request
+Server Settings
+WHAT WE OFFER Legal Documentation Services Professional document review, legal drafting, and automated clerk assignment.
+Create Request
+Request This Service
+Request This Service
+Request This Service
+Commercial Lease Agreement Office and industrial property leases, rent review mechanisms, and fit-out covenants. Required Documents: Title Deed Copy Local Council Assessment Receipt Draft Commercial Lease NIC Copy
+View
+Document Agent
+e2e-05-flutter-detail Back
+⚖️ Legal Ease
+Create Manual Request
+Server Settings
+WHAT WE OFFER Legal Documentation Services Professional document review, legal drafting, and automated clerk assignment.
+Create Request
+Request This Service
+Request This Service
+Request This Service
+Commercial Lease Agreement Office and industrial property leases, rent review mechanisms, and fit-out covenants. Required Documents: Title Deed Copy Local Council Assessment Receipt Draft Commercial Lease NIC Copy
+View
+Document Agent
+locator.evaluate: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByRole('button', { name: 'Upload Doc', exact: true })[22m
+
+    at /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/completion-20261008/audit/integrated_workflow.cjs:19:66

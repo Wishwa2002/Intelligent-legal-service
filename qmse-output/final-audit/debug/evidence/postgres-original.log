@@ -1,0 +1,19 @@
+Test run for /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.46]     LegalService.Tests.HistoricalPostgresSetupTests.TC_DB_01_TlsConnection [FAIL]
+  Failed LegalService.Tests.HistoricalPostgresSetupTests.TC_DB_01_TlsConnection [366 ms]
+  Error Message:
+   Historical connection latency expectation exceeded.
+  Stack Trace:
+     at LegalService.Tests.HistoricalPostgresSetupTests.TC_DB_01_TlsConnection() in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/HistoricalCaseVerificationTests.cs:line 36
+--- End of stack trace from previous location ---
+  Standard Output Messages:
+ UTC=2026-10-08T12:18:12.1497100Z; CanConnectAsync=True; latency_ms=317.168; SSL Mode=Require; pooling=true.
+
+
+Results File: /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/final-audit/debug/evidence/postgres-original.trx
+
+Failed!  - Failed:     1, Passed:     1, Skipped:     0, Total:     2, Duration: 877 ms - LegalService.Tests.dll (net8.0)

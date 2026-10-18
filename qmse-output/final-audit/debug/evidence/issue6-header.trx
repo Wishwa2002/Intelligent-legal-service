@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="bff1e894-d4b5-4895-b95b-5874676cb7bf" name="@Jegatheeswarans-MacBook-Air 2026-10-08 18:30:29" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-08T18:30:29.5324320+05:30" queuing="2026-10-08T18:30:29.5324320+05:30" start="2026-10-08T18:30:28.9204230+05:30" finish="2026-10-08T18:30:29.5345450+05:30" />
+  <TestSettings name="default" id="f5ecec2a-d2ea-4e7f-93b3-c932b5e34f64">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-08_18_30_29" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="2479fdc5-b6a6-4384-9f9b-40beffe038ac" testId="974f14aa-8477-711d-b693-31036ca7da0e" testName="LegalService.Tests.SecurityHeaderTests.NosniffIsAppliedToAllResponseKinds(path: &quot;/error&quot;, status: 500)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.1246676" startTime="2026-10-08T18:30:29.2269370+05:30" endTime="2026-10-08T18:30:29.3549030+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2479fdc5-b6a6-4384-9f9b-40beffe038ac" />
+    <UnitTestResult executionId="21d7fb78-12a1-443e-8c34-52b64743ab10" testId="7754c56f-f68b-2b04-c0af-4650eda69636" testName="LegalService.Tests.SecurityHeaderTests.NosniffIsAppliedToAllResponseKinds(path: &quot;/unauthorized&quot;, status: 401)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0421043" startTime="2026-10-08T18:30:29.4018830+05:30" endTime="2026-10-08T18:30:29.4438560+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="21d7fb78-12a1-443e-8c34-52b64743ab10" />
+    <UnitTestResult executionId="59e8286d-bfd9-4fcb-9671-e4ab1e7729c4" testId="8ebc7152-8904-03e2-ef66-924115ef192c" testName="LegalService.Tests.SecurityHeaderTests.NosniffIsAppliedToAllResponseKinds(path: &quot;/missing&quot;, status: 404)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0462976" startTime="2026-10-08T18:30:29.3589080+05:30" endTime="2026-10-08T18:30:29.4016410+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="59e8286d-bfd9-4fcb-9671-e4ab1e7729c4" />
+    <UnitTestResult executionId="2f9d6a80-0f1d-4cef-b6ee-1aef95af4289" testId="31044f85-41f1-04e0-4c0f-a045166b1c32" testName="LegalService.Tests.SecurityHeaderTests.NosniffIsAppliedToAllResponseKinds(path: &quot;/ok&quot;, status: 200)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0397249" startTime="2026-10-08T18:30:29.4439380+05:30" endTime="2026-10-08T18:30:29.4837070+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2f9d6a80-0f1d-4cef-b6ee-1aef95af4289" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LegalService.Tests.SecurityHeaderTests.NosniffIsAppliedToAllResponseKinds(path: &quot;/error&quot;, status: 500)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="974f14aa-8477-711d-b693-31036ca7da0e">
+      <Execution id="2479fdc5-b6a6-4384-9f9b-40beffe038ac" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.SecurityHeaderTests" name="NosniffIsAppliedToAllResponseKinds" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.SecurityHeaderTests.NosniffIsAppliedToAllResponseKinds(path: &quot;/unauthorized&quot;, status: 401)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="7754c56f-f68b-2b04-c0af-4650eda69636">
+      <Execution id="21d7fb78-12a1-443e-8c34-52b64743ab10" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.SecurityHeaderTests" name="NosniffIsAppliedToAllResponseKinds" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.SecurityHeaderTests.NosniffIsAppliedToAllResponseKinds(path: &quot;/missing&quot;, status: 404)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="8ebc7152-8904-03e2-ef66-924115ef192c">
+      <Execution id="59e8286d-bfd9-4fcb-9671-e4ab1e7729c4" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.SecurityHeaderTests" name="NosniffIsAppliedToAllResponseKinds" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.SecurityHeaderTests.NosniffIsAppliedToAllResponseKinds(path: &quot;/ok&quot;, status: 200)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="31044f85-41f1-04e0-4c0f-a045166b1c32">
+      <Execution id="2f9d6a80-0f1d-4cef-b6ee-1aef95af4289" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.SecurityHeaderTests" name="NosniffIsAppliedToAllResponseKinds" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="974f14aa-8477-711d-b693-31036ca7da0e" executionId="2479fdc5-b6a6-4384-9f9b-40beffe038ac" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7754c56f-f68b-2b04-c0af-4650eda69636" executionId="21d7fb78-12a1-443e-8c34-52b64743ab10" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="8ebc7152-8904-03e2-ef66-924115ef192c" executionId="59e8286d-bfd9-4fcb-9671-e4ab1e7729c4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="31044f85-41f1-04e0-4c0f-a045166b1c32" executionId="2f9d6a80-0f1d-4cef-b6ee-1aef95af4289" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="4" executed="4" passed="4" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.29)
+[xUnit.net 00:00:00.04]   Discovering: LegalService.Tests
+[xUnit.net 00:00:00.08]   Discovered:  LegalService.Tests
+[xUnit.net 00:00:00.09]   Starting:    LegalService.Tests
+[xUnit.net 00:00:00.36]   Finished:    LegalService.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

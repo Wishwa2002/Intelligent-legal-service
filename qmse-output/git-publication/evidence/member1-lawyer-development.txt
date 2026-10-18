@@ -1,0 +1,1193 @@
+Skip to content
+Navigation Menu
+Sign in
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Commit b082f54
+Browse files
+Jeyamdev
+committed
+feat(member1): integrate lawyer mobile, matching, and workforce refinements
+1 parent 
+0548fd5
+ commit 
+b082f54
+
+276 files changed
+
++10,212
+-503
+Lines changed: 10212 additions & 503 deletions
+File tree
+.gitignore
+backend
+LegalService.API
+Controllers
+AppointmentsController.cs
+AuthController.cs
+ClientsController.cs
+LawyerMeController.cs
+LawyerRecommendationsController.cs
+LawyersController.cs
+DTOs
+Appointments
+AppointmentRequests.cs
+AppointmentResponses.cs
+Clients
+ClientDtos.cs
+LawyerMobile
+LawyerMobileDtos.cs
+Data
+ApplicationDbContext.cs
+DemoLawyerSeeder.cs
+Infrastructure
+LawyerAccessFilter.cs
+Migrations
+20261004151111_AddFrontDeskMatchingIntake.Designer.cs
+20261004151111_AddFrontDeskMatchingIntake.cs
+20261004165105_AddLawyerInitialPasswordChange.Designer.cs
+20261004165105_AddLawyerInitialPasswordChange.cs
+ApplicationDbContextModelSnapshot.cs
+Models/Entities
+Appointment.cs
+LawyerRecommendationWorkflow.cs
+User.cs
+Program.cs
+Services
+AppointmentService.cs
+Clients
+ClientService.cs
+Lawyers
+RecommendationService.cs
+LegalService.Tests
+DemoLawyerSeederTests.cs
+FrontDeskMatchingPostgresTests.cs
+FrontDeskMatchingTests.cs
+LawyerManagementHttpTests.cs
+LawyerMobileHttpTests.cs
+LawyerRecommendationApprovalTests.cs
+Member1PostgresTests.cs
+Member1RecommendationTests.cs
+RecommendationLiveTransportTests.cs
+RecommendationServiceCatalogTests.cs
+RecommendationTransportTests.cs
+RecurringRecommendationTests.cs
+docs
+evidence
+front-desk-matching
+lawyer-mobile-ui-refinement
+member1-workforce-ui-refinement
+recurring-scheduling
+sql
+frontend
+src
+api
+components
+lawyers
+layout
+features/lawyerServices
+aiOperations
+components
+pages
+recommendations/components
+hooks
+pages
+admin
+lawyer
+routes
+tests
+mobile
+lib
+auth
+lawyer
+appointments
+dashboard
+profile
+schedule
+services
+test
+scripts
+Some content is hidden
+Large Commits have some content hidden by default. Use the searchbox below for content that may be hidden.
+ 
+‎.gitignore‎
++3
+Lines changed: 3 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -527,3 +527,6 @@ backend/LegalService.API/Storage/Uploads/
+
+527	527	
+scratch_*.py
+
+528	528	
+sample-lawyer.json
+
+529	529	
+ai-service/data/
+
+	530	
++
+
+	531	
++
+# Keep personal editor appearance out of feature commits.
+
+	532	
++
+.vscode/settings.json
+‎backend/LegalService.API/Controllers/AppointmentsController.cs‎
++4
+Lines changed: 4 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -1,6 +1,7 @@
+
+1	1	
+using System;
+
+2	2	
+using System.Threading.Tasks;
+
+3	3	
+using Microsoft.AspNetCore.Mvc;
+
+	4	
++
+using Microsoft.AspNetCore.Authorization;
+
+4	5	
+using Microsoft.EntityFrameworkCore;
+
+5	6	
+using LegalService.API.Data;
+
+6	7	
+using LegalService.API.DTOs.Appointments;
+
+
+@@ -10,6 +11,7 @@ namespace LegalService.API.Controllers;
+
+10	11	
+
+
+
+11	12	
+[ApiController]
+
+12	13	
+[Route("api/appointments")]
+
+	14	
++
+[Authorize]
+
+13	15	
+public class AppointmentsController : ControllerBase
+
+14	16	
+{
+
+15	17	
+    private readonly IAppointmentService _appointmentService;
+
+
+@@ -241,6 +243,7 @@ public async Task<IActionResult> GetAppointmentHistory(Guid id)
+
+241	243	
+    /// <summary>
+
+242	244	
+    /// Get all unbooked slots for a specific lawyer on a given date.
+
+243	245	
+    /// </summary>
+
+	246	
++
+    [AllowAnonymous]
+
+244	247	
+    [HttpGet("available-slots")]
+
+245	248	
+    public async Task<IActionResult> GetAvailableSlots(
+
+246	249	
+        [FromQuery] Guid lawyerId,
+
+
+@@ -259,6 +262,7 @@ public async Task<IActionResult> GetAvailableSlots(
+
+259	262	
+    /// <summary>
+
+260	263	
+    /// Check whether a proposed appointment time conflicts with any existing booking for the lawyer.
+
+261	264	
+    /// </summary>
+
+	265	
++
+    [AllowAnonymous]
+
+262	266	
+    [HttpGet("check-conflict")]
+
+263	267	
+    public async Task<IActionResult> CheckConflict(
+
+264	268	
+        [FromQuery] Guid lawyerId,
+
+
+‎backend/LegalService.API/Controllers/AuthController.cs‎
++40
+Lines changed: 40 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -1,4 +1,7 @@
+
+1	1	
+using Microsoft.AspNetCore.Mvc;
+
+	2	
++
+using Microsoft.AspNetCore.Authorization;
+
+	3	
++
+using System.Security.Claims;
+
+	4	
++
+using LegalService.API.DTOs.LawyerMobile;
+
+2	5	
+using Microsoft.EntityFrameworkCore;
+
+3	6	
+using System.ComponentModel.DataAnnotations;
+
+4	7	
+using LegalService.API.Data;
+
+
+@@ -119,6 +122,14 @@ public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+
+119	122	
+        // Lawyer validation BEFORE creating User
+
+120	123	
+        // ---------------------------------------------------------
+
+121	124	
+
+
+
+	125	
++
+        if (roleName == "Customer")
+
+	126	
++
+        {
+
+	127	
++
+            var customer = await new LegalService.API.Services.Clients.ClientService(_context, _passwordService).RegisterAsync(
+
+	128	
++
+                new() { FullName = request.FullName, Email = request.Email, Password = request.Password });
+
+	129	
++
+            await transaction.CommitAsync();
+
+	130	
++
+            return Ok(new { message = "Customer registered successfully", userId = customer.UserId, name = customer.Name, email = customer.Email, role = "Customer", lawyerId = (string?)null });
+
+	131	
++
+        }
+
+	132	
++
+
+122	133	
+        string? normalizedLicense = null;
+
+123	134	
+
+
+
+124	135	
+        if (roleName.Equals(
+
+
+@@ -378,6 +389,10 @@ public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+
+378	389	
+            role = user.Role
+
+379	390	
+        });
+
+380	391	
+    }
+
+	392	
++
+    catch (LegalService.API.DTOs.Clients.DuplicateClientException)
+
+	393	
++
+    { await transaction.RollbackAsync(); return BadRequest(new { message = "Email already exists." }); }
+
+	394	
++
+    catch (LegalService.API.Infrastructure.ApiException error)
+
+	395	
++
+    { await transaction.RollbackAsync(); return StatusCode(error.Status, new { message = error.Message }); }
+
+381	396	
+    catch (DbUpdateException ex)
+
+382	397	
+    {
+
+383	398	
+        await transaction.RollbackAsync();
+
+
+@@ -515,6 +530,9 @@ public async Task<IActionResult> Login([FromBody] LoginRequest request)
+
+515	530	
+            });
+
+516	531	
+        }
+
+517	532	
+
+
+
+	533	
++
+        if (lawyer.Status != "Active")
+
+	534	
++
+            return Unauthorized(new { message = lawyer.Status == "Pending"
+
+	535	
++
+                ? "Your lawyer account is pending approval." : "Your lawyer account is inactive. Contact the administrator." });
+
+518	536	
+        lawyerId = lawyer.LawyerId;
+
+519	537	
+    }
+
+520	538	
+
+
+
+
+@@ -582,10 +600,32 @@ public async Task<IActionResult> Login([FromBody] LoginRequest request)
+
+582	600	
+        department,
+
+583	601	
+        contact,
+
+584	602	
+
+
+
+	603	
++
+        mustChangePassword = user.MustChangePassword,
+
+585	604	
+        message = "Login successful"
+
+586	605	
+    });
+
+587	606	
+}
+
+588	607	
+
+
+
+	608	
++
+    [Authorize]
+
+	609	
++
+    [HttpPost("change-password")]
+
+	610	
++
+    public async Task<IActionResult> ChangePassword(ChangePasswordRequest request)
+
+	611	
++
+    {
+
+	612	
++
+        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out var id)) return Unauthorized();
+
+	613	
++
+        var user = await _context.Users.SingleOrDefaultAsync(u => u.UserId == id);
+
+	614	
++
+        if (user == null) return Unauthorized();
+
+	615	
++
+        if (string.IsNullOrWhiteSpace(user.PasswordHash) || !_passwordService.VerifyPassword(request.CurrentPassword, user.PasswordHash))
+
+	616	
++
+            return BadRequest(new { message = "The current password is incorrect." });
+
+	617	
++
+        if (request.NewPassword != request.ConfirmPassword)
+
+	618	
++
+            return BadRequest(new { message = "The new passwords do not match." });
+
+	619	
++
+        if (request.CurrentPassword == request.NewPassword || System.Text.Encoding.UTF8.GetByteCount(request.NewPassword) > 72 ||
+
+	620	
++
+            !request.NewPassword.Any(char.IsLetter) || !request.NewPassword.Any(char.IsDigit))
+
+	621	
++
+            return BadRequest(new { message = "Use a different password with letters and numbers, at most 72 UTF-8 bytes." });
+
+	622	
++
+        user.PasswordHash = _passwordService.HashPassword(request.NewPassword);
+
+	623	
++
+        user.MustChangePassword = false;
+
+	624	
++
+        user.UpdatedAt = DateTime.UtcNow;
+
+	625	
++
+        await _context.SaveChangesAsync();
+
+	626	
++
+        return Ok(new { message = "Password changed successfully.", mustChangePassword = false });
+
+	627	
++
+    }
+
+	628	
++
+
+589	629	
+    /// <summary>
+
+590	630	
+    /// Retrieve user profile by user ID.
+
+591	631	
+    /// </summary>
+
+
+‎backend/LegalService.API/Controllers/ClientsController.cs‎
++16
+-1
+Lines changed: 16 additions & 1 deletion
+Original file line number	Diff line number	Diff line change
+@@ -10,15 +10,30 @@
+
+10	10	
+
+
+
+11	11	
+namespace LegalService.API.Controllers;
+
+12	12	
+
+
+
+	13	
++
+[Microsoft.AspNetCore.Authorization.Authorize(Roles = "Admin")]
+
+13	14	
+[ApiController]
+
+14	15	
+[Route("api/clients")]
+
+15	16	
+public class ClientsController : ControllerBase
+
+16	17	
+{
+
+17	18	
+    private readonly ApplicationDbContext _context;
+
+	19	
++
+    private readonly LegalService.API.Services.Clients.ClientService clients;
+
+18	20	
+
+
+
+19		
+-
+    public ClientsController(ApplicationDbContext context)
+
+	21	
++
+    public ClientsController(ApplicationDbContext context, LegalService.API.Authentication.Services.IPasswordService passwords)
+
+20	22	
+    {
+
+21	23	
+        _context = context;
+
+	24	
++
+        clients = new(context, passwords);
+
+	25	
++
+    }
+
+	26	
++
+
+	27	
++
+    [HttpGet("search")]
+
+	28	
++
+    public async Task<IActionResult> Search([FromQuery] string? search, CancellationToken ct) => Ok(await clients.SearchAsync(search, ct));
+
+	29	
++
+    [HttpGet("{id:int}/summary")]
+
+	30	
++
+    public async Task<IActionResult> Summary(int id, CancellationToken ct) => Ok(await clients.GetAsync(id, ct));
+
+	31	
++
+    [HttpPost]
+
+	32	
++
+    public async Task<IActionResult> Register(LegalService.API.DTOs.Clients.RegisterClientRequest request, CancellationToken ct)
+
+	33	
++
+    {
+
+	34	
++
+        try { var client = await clients.RegisterAsync(request, ct); return CreatedAtAction(nameof(Summary), new { id = client.UserId }, client); }
+
+	35	
++
+        catch (LegalService.API.DTOs.Clients.DuplicateClientException error)
+
+	36	
++
+        { return Conflict(new { message = error.Message, existingClient = error.ExistingClient }); }
+
+22	37	
+    }
+
+23	38	
+
+
+
+24	39	
+    /// <summary>
+
+
+‎backend/LegalService.API/Controllers/LawyerMeController.cs‎
++133
+Lines changed: 133 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,133 @@
+
+	1	
++
+using System.Security.Claims;
+
+	2	
++
+using LegalService.API.Data;
+
+	3	
++
+using LegalService.API.DTOs.LawyerMobile;
+
+	4	
++
+using LegalService.API.DTOs.Scheduling;
+
+	5	
++
+using LegalService.API.Infrastructure;
+
+	6	
++
+using LegalService.API.Interfaces;
+
+	7	
++
+using LegalService.API.Models.Entities;
+
+	8	
++
+using LegalService.API.Services.Scheduling;
+
+	9	
++
+using Microsoft.AspNetCore.Authorization;
+
+	10	
++
+using Microsoft.AspNetCore.Mvc;
+
+	11	
++
+using Microsoft.EntityFrameworkCore;
+
+	12	
++
+namespace LegalService.API.Controllers;
+
+	13	
++
+
+	14	
++
+[ApiController, Route("api/lawyer/me"), Authorize(Roles = "Lawyer")]
+
+	15	
++
+public sealed class LawyerMeController(ApplicationDbContext db, AvailabilityService availability,
+
+	16	
++
+    LawyerScheduleService schedules, IAppointmentService appointments) : ControllerBase
+
+	17	
++
+{
+
+	18	
++
+    private async Task<Lawyer> Me(CancellationToken ct)
+
+	19	
++
+    {
+
+	20	
++
+        if (!int.TryParse(User.FindFirstValue(ClaimTypes.NameIdentifier), out var id)) throw new ApiException(401, "Sign in again.");
+
+	21	
++
+        var account = await db.Users.AsNoTracking().SingleOrDefaultAsync(u => u.UserId == id, ct);
+
+	22	
++
+        var lawyer = await db.Lawyers.Include(l => l.LawyerSpecializations).ThenInclude(s => s.Specialization)
+
+	23	
++
+            .SingleOrDefaultAsync(l => l.UserId == id, ct);
+
+	24	
++
+        if (account?.Role != "Lawyer" || lawyer == null) throw new ApiException(403, "A linked lawyer account is required.");
+
+	25	
++
+        if (lawyer.Status != "Active") throw new ApiException(403, "Your lawyer account is inactive or pending approval. Contact the administrator.");
+
+	26	
++
+        if (account.MustChangePassword) throw new ApiException(403, "Change your initial password before accessing lawyer services.");
+
+	27	
++
+        return lawyer;
+
+	28	
++
+    }
+
+	29	
++
+    private static MyLawyerProfile Profile(Lawyer l) => new(l.LawyerId, l.Name, l.Email, l.PhoneNumber, l.Qualification,
+
+	30	
++
+        l.LawyerSpecializations.Count == 1 ? l.LawyerSpecializations.Single().Specialization.Name : null,
+
+	31	
++
+        l.Experience, l.LicenseNumber, l.ProfileDescription, l.Status);
+
+	32	
++
+    private IQueryable<Appointment> Own(Guid id) => db.Appointments.AsNoTracking().Where(a => a.LawyerId == id);
+
+	33	
++
+    private static IQueryable<MyAppointment> Project(IQueryable<Appointment> query) => query.Select(a => new MyAppointment(
+
+	34	
++
+        a.AppointmentId, "Client", a.AvailabilitySlot.LawyerAvailability.Date, a.AvailabilitySlot.StartTime,
+
+	35	
++
+        a.AvailabilitySlot.EndTime, a.Status, a.LegalServiceCategory, null, a.Description, a.ConsultationType,
+
+	36	
++
+        a.Status == "Requested" || a.Status == "Rescheduled", a.Status == "Confirmed"));
+
+	37	
++
+    private IQueryable<Appointment> Upcoming(IQueryable<Appointment> query) => query.Where(a =>
+
+	38	
++
+        (a.Status == "Requested" || a.Status == "Confirmed" || a.Status == "Rescheduled") &&
+
+	39	
++
+        (a.AvailabilitySlot.LawyerAvailability.Date > availability.Today ||
+
+	40	
++
+        a.AvailabilitySlot.LawyerAvailability.Date == availability.Today && a.AvailabilitySlot.StartTime >= TimeOnly.FromDateTime(availability.LocalNow)));
+
+	41	
++
+    [HttpGet, HttpGet("profile")]
+
+	42	
++
+    public async Task<MyLawyerProfile> GetProfile(CancellationToken ct) => Profile(await Me(ct));
+
+	43	
++
+    [HttpPut("profile")]
+
+	44	
++
+    public async Task<MyLawyerProfile> UpdateProfile(LawyerProfileUpdateRequest request, CancellationToken ct)
+
+	45	
++
+    {
+
+	46	
++
+        var lawyer = await Me(ct);
+
+	47	
++
+        lawyer.PhoneNumber = (request.PhoneNumber ?? "").Trim();
+
+	48	
++
+        lawyer.ProfileDescription = (request.ProfileDescription ?? "").Trim();
+
+	49	
++
+        lawyer.UpdatedAt = DateTime.UtcNow;
+
+	50	
++
+        await db.SaveChangesAsync(ct);
+
+	51	
++
+        return Profile(lawyer);
+
+	52	
++
+    }
+
+	53	
++
+    [HttpGet("dashboard")]
+
+	54	
++
+    public async Task<MyLawyerDashboard> Dashboard(CancellationToken ct)
+
+	55	
++
+    {
+
+	56	
++
+        var lawyer = await Me(ct); var own = Own(lawyer.LawyerId);
+
+	57	
++
+        var counts = new DashboardCounts(
+
+	58	
++
+            await own.CountAsync(a => a.AvailabilitySlot.LawyerAvailability.Date == availability.Today && a.Status != "Cancelled" && a.Status != "Rejected", ct),
+
+	59	
++
+            await Upcoming(own).CountAsync(ct),
+
+	60	
++
+            await own.CountAsync(a => a.Status == "Requested" || a.Status == "Rescheduled", ct),
+
+	61	
++
+            await own.CountAsync(a => a.Status == "Completed", ct));
+
+	62	
++
+        var next = await Project(Upcoming(own).OrderBy(a => a.AvailabilitySlot.LawyerAvailability.Date)
+
+	63	
++
+            .ThenBy(a => a.AvailabilitySlot.StartTime).ThenBy(a => a.AppointmentId)).FirstOrDefaultAsync(ct);
+
+	64	
++
+        if (next != null) next = await Appointment(lawyer.LawyerId, next.AppointmentId, ct);
+
+	65	
++
+        return new(Profile(lawyer), counts, next, availability.TimeZoneId);
+
+	66	
++
+    }
+
+	67	
++
+    [HttpGet("appointments")]
+
+	68	
++
+    public async Task<IReadOnlyList<MyAppointment>> GetAppointments([FromQuery] string? filter, CancellationToken ct)
+
+	69	
++
+    {
+
+	70	
++
+        var lawyer = await Me(ct); var query = Own(lawyer.LawyerId);
+
+	71	
++
+        query = filter?.ToLowerInvariant() switch {
+
+	72	
++
+            null or "" or "all" => query,
+
+	73	
++
+            "today" => query.Where(a => a.AvailabilitySlot.LawyerAvailability.Date == availability.Today && a.Status != "Cancelled" && a.Status != "Rejected"),
+
+	74	
++
+            "upcoming" => Upcoming(query),
+
+	75	
++
+            "pending" => query.Where(a => a.Status == "Requested" || a.Status == "Rescheduled"),
+
+	76	
++
+            "completed" => query.Where(a => a.Status == "Completed"),
+
+	77	
++
+            "cancelled" => query.Where(a => a.Status == "Cancelled" || a.Status == "Rejected"),
+
+	78	
++
+            _ => throw new ApiException(400, "Choose Today, Upcoming, Pending, Completed, Cancelled or All.")
+
+	79	
++
+        };
+
+	80	
++
+        var ids = await query.Select(a => a.AppointmentId).ToListAsync(ct);
+
+	81	
++
+        var allowed = ids.ToHashSet();
+
+	82	
++
+        var rows = await appointments.GetAllAppointmentsAsync(lawyerId: lawyer.LawyerId);
+
+	83	
++
+        return rows.Where(a => allowed.Contains(a.AppointmentId)).OrderBy(a => a.Date).ThenBy(a => a.StartTime).ThenBy(a => a.AppointmentId)
+
+	84	
++
+            .Select(a => new MyAppointment(a.AppointmentId, a.CustomerName, a.Date, a.StartTime, a.EndTime,
+
+	85	
++
+                a.Status, a.LegalServiceCategory ?? Profile(lawyer).PracticeArea, null, a.Description, a.ConsultationType,
+
+	86	
++
+                a.Status is "Requested" or "Rescheduled", a.Status == "Confirmed")).ToArray();
+
+	87	
++
+    }
+
+	88	
++
+    private async Task<MyAppointment> Appointment(Guid lawyerId, Guid id, CancellationToken ct)
+
+	89	
++
+    {
+
+	90	
++
+        if (!await Own(lawyerId).AnyAsync(a => a.AppointmentId == id, ct)) throw new ApiException(404, "Appointment not found.");
+
+	91	
++
+        var a = await appointments.GetAppointmentByIdAsync(id) ?? throw new ApiException(404, "Appointment not found.");
+
+	92	
++
+        var area = await db.LawyerSpecializations.Where(s => s.LawyerId == lawyerId).Select(s => s.Specialization.Name).FirstOrDefaultAsync(ct);
+
+	93	
++
+        return new(a.AppointmentId, a.CustomerName, a.Date, a.StartTime, a.EndTime, a.Status,
+
+	94	
++
+            a.LegalServiceCategory ?? area, null, a.Description, a.ConsultationType, a.CanConfirm, a.CanComplete);
+
+	95	
++
+    }
+
+	96	
++
+    [HttpGet("appointments/{id:guid}")]
+
+	97	
++
+    public async Task<MyAppointment> GetAppointment(Guid id, CancellationToken ct) => await Appointment((await Me(ct)).LawyerId, id, ct);
+
+	98	
++
+    [HttpPost("appointments/{id:guid}/confirm")]
+
+	99	
++
+    public Task<MyAppointment> Confirm(Guid id, CancellationToken ct) => Act(id, false, ct);
+
+	100	
++
+    [HttpPost("appointments/{id:guid}/complete")]
+
+	101	
++
+    public Task<MyAppointment> Complete(Guid id, CancellationToken ct) => Act(id, true, ct);
+
+	102	
++
+    private async Task<MyAppointment> Act(Guid id, bool complete, CancellationToken ct)
+
+	103	
++
+    {
+
+	104	
++
+        var lawyer = await Me(ct);
+
+	105	
++
+        await using var transaction = await availability.BeginMutationAsync(ct);
+
+	106	
++
+        await availability.LockLawyerAsync(lawyer.LawyerId, ct);
+
+	107	
++
+        await Appointment(lawyer.LawyerId, id, ct);
+
+	108	
++
+        try {
+
+	109	
++
+            if (complete) await appointments.CompleteAppointmentAsync(id, null);
+
+	110	
++
+            else await appointments.ConfirmAppointmentAsync(id, null);
+
+	111	
++
+        } catch (InvalidOperationException error) { throw new ApiException(409, error.Message); }
+
+	112	
++
+        if (transaction != null) await transaction.CommitAsync(ct);
+
+	113	
++
+        return await Appointment(lawyer.LawyerId, id, ct);
+
+	114	
++
+    }
+
+	115	
++
+    [HttpGet("schedule")]
+
+	116	
++
+    public async Task<ScheduleResponse> Schedule(CancellationToken ct) => await schedules.GetAsync((await Me(ct)).LawyerId, ct);
+
+	117	
++
+    [HttpPut("schedule")]
+
+	118	
++
+    public async Task<ScheduleResponse> SaveSchedule(ScheduleRequest request, CancellationToken ct) => await schedules.SaveAsync((await Me(ct)).LawyerId, request, ct);
+
+	119	
++
+    [HttpGet("unavailability")]
+
+	120	
++
+    public async Task<IReadOnlyList<UnavailabilityResponse>> Leave(CancellationToken ct)
+
+	121	
++
+    {
+
+	122	
++
+        var id = (await Me(ct)).LawyerId;
+
+	123	
++
+        return await db.LawyerUnavailabilities.AsNoTracking().Where(l => l.LawyerId == id && l.EndDateTime > availability.LocalNow)
+
+	124	
++
+            .OrderBy(l => l.StartDateTime).Select(l => new UnavailabilityResponse(l.Id, l.StartDateTime, l.EndDateTime, l.Reason, l.IsFullDay)).ToListAsync(ct);
+
+	125	
++
+    }
+
+	126	
++
+    [HttpPost("unavailability")]
+
+	127	
++
+    public async Task<UnavailabilityResponse> AddLeave(UnavailabilityRequest request, CancellationToken ct) => await schedules.SaveLeaveAsync((await Me(ct)).LawyerId, null, request, ct);
+
+	128	
++
+    [HttpPut("unavailability/{id:guid}")]
+
+	129	
++
+    public async Task<UnavailabilityResponse> EditLeave(Guid id, UnavailabilityRequest request, CancellationToken ct) => await schedules.SaveLeaveAsync((await Me(ct)).LawyerId, id, request, ct);
+
+	130	
++
+    [HttpDelete("unavailability/{id:guid}")]
+
+	131	
++
+    public async Task<IActionResult> DeleteLeave(Guid id, CancellationToken ct)
+
+	132	
++
+    { await schedules.DeleteLeaveAsync((await Me(ct)).LawyerId, id, ct); return NoContent(); }
+
+	133	
++
+}
+0 commit comments
+Comments
+0
+ (0)
+10 files remain

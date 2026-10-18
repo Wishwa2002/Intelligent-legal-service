@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="2" skipped="0" tests="5" time="1.057" timestamp="2026-10-08T16:20:46.590889" hostname="Jegatheeswarans-MacBook-Air.local"><testcase classname="tests.test_historical_acceptance" name="test_C3_05_missing_title_deed_historical_fifty_percent" time="0.001"><failure message="AssertionError: Historical 50% expectation retained; actual missing-one-of-four ratio is 75%.&#10;assert 75.0 == 50">def test_C3_05_missing_title_deed_historical_fifty_percent():
+     required=['NIC Copy','Prior Title Deed Copy','Survey Plan','Sale Agreement Draft'] # actual Property Transfer seed requirements
+     provided=['NIC Copy','Survey Plan','Sale Agreement Draft']
+     result=evaluate_completeness(required,provided).model_dump()
+     ratio=100*len(result['provided_documents'])/len(required)
+     print({'case':'TC-C3-05','required':required,'provided':provided,'actual':result,'percent':ratio,'scope':'real deterministic completeness logic, not Gemini'})
+&gt;    assert ratio==50, 'Historical 50% expectation retained; actual missing-one-of-four ratio is 75%.'
+E    AssertionError: Historical 50% expectation retained; actual missing-one-of-four ratio is 75%.
+E    assert 75.0 == 50
+
+tests/test_historical_acceptance.py:17: AssertionError</failure></testcase><testcase classname="tests.test_historical_acceptance" name="test_C2_05_tomorrow_date_helper_subcriterion" time="0.000" /><testcase classname="tests.test_historical_acceptance" name="test_C4_04_document_injection_sanitization_subcriterion" time="0.000" /><testcase classname="tests.test_historical_acceptance" name="test_C4_08_synthetic_rrf_comparison_subcriterion" time="0.000" /><testcase classname="tests.test_historical_acceptance" name="test_C4_05_actual_hybrid_tenant_query_with_disclaimer" time="0.272"><failure message="AssertionError: Historical disclaimer absent in actual hybrid search output.&#10;assert ('disclaimer' in 'mandatory documents for executing general and special powers of attorney under the powers of attorney ordinance: 1. n...wills. 5. attestation requirement: signed before a notary public and two independent witnesses present simultaneously.' or 'not legal advice' in 'mandatory documents for executing general and special powers of attorney under the powers of attorney ordinance: 1. n...wills. 5. attestation requirement: signed before a notary public and two independent witnesses present simultaneously.')">def test_C4_05_actual_hybrid_tenant_query_with_disclaimer():
+     from app.retrieval.hybrid_service import get_hybrid_retrieval_service
+     query='Tenant eviction notice period in Colombo';result=get_hybrid_retrieval_service().search(query)
+     print({'case':'TC-C4-05','query':query,'actual':result,'scope':'actual BM25+Chroma deterministic embedding+RRF over repository corpus; no generated legal advice or live Gemini'})
+     text=' '.join(x['content'] for x in result).lower()
+&gt;    assert 'disclaimer' in text or 'not legal advice' in text,'Historical disclaimer absent in actual hybrid search output.'
+E    AssertionError: Historical disclaimer absent in actual hybrid search output.
+E    assert ('disclaimer' in 'mandatory documents for executing general and special powers of attorney under the powers of attorney ordinance: 1. n...wills. 5. attestation requirement: signed before a notary public and two independent witnesses present simultaneously.' or 'not legal advice' in 'mandatory documents for executing general and special powers of attorney under the powers of attorney ordinance: 1. n...wills. 5. attestation requirement: signed before a notary public and two independent witnesses present simultaneously.')
+
+tests/test_historical_acceptance.py:34: AssertionError</failure></testcase></testsuite></testsuites>

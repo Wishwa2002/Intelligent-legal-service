@@ -1,0 +1,6 @@
+2026-10-08T09:30:25: Arguments
+2026-10-08T09:30:25:  -reports:qmse-output/evidence/backend/e95ff97b-fff2-40aa-993d-8317a0ac8565/coverage.cobertura.xml
+2026-10-08T09:30:25:  -targetdir:qmse-output/evidence/backend/coverage-html
+2026-10-08T09:30:25:  -reporttypes:Html
+2026-10-08T09:30:26: Writing report file 'qmse-output/evidence/backend/coverage-html/index.html'
+2026-10-08T09:30:26: Report generation took 0.4 seconds

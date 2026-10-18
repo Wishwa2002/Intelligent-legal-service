@@ -1,0 +1,180 @@
+[
+  {
+    "type": "paragraph",
+    "index": 12,
+    "style": "Normal",
+    "text": "Completion revision: 8 October 2026 (Asia/Colombo). Local docs/se3110-qmse-testing: tested fixes f360e4ac21f1; executed replay scripts 05359214df52. No push, deployment or submission; remote CI unverified. Available SE3090 Version 3.0 reference reviewed; formal approval unconfirmed. Original and prior 51-page reports preserved."
+  },
+  {
+    "type": "paragraph",
+    "index": 67,
+    "style": "Normal",
+    "text": "Historical defect narratives, commits and prior screenshots are retained. DEF-12 was reproduced and fixed, with its original rejection assertion and genuine-file regressions executed. Fresh integration also revealed and verified repairs for missing appointment migration columns (DEF-16), Flutter web sample upload (DEF-17), and React clerk identity filtering (DEF-18). These AI-assisted fixes are not attributed to individual students. Other historical retests remain qualified; see completion-20261008/audit/defect-verification.md."
+  },
+  {
+    "type": "paragraph",
+    "index": 162,
+    "style": "Normal",
+    "text": "Figure 6.13. GitHub Actions: historical Mobile CI success"
+  },
+  {
+    "type": "paragraph",
+    "index": 165,
+    "style": "Normal",
+    "text": "Source: https://github.com/Jeyamdev/legalease-ai/actions/runs/37390618065; evidence/ci/github-actions-runs.json"
+  },
+  {
+    "type": "paragraph",
+    "index": 166,
+    "style": "Normal",
+    "text": "The real GitHub page shows Success for base commit 8a9b8a2, duration 2m18s. It does not cover uncommitted local test additions; other recorded runs failed. Job logs require sign-in."
+  },
+  {
+    "type": "paragraph",
+    "index": 206,
+    "style": "List Paragraph",
+    "text": "The original login p95 of 180 ms has no measurement artifact. Login latency was not benchmarked in the new run. DEF-07 is a monitoring observation, not a demonstrated breach of the 200 ms budget. Hash cost and latency should be measured with the actual configured deployment."
+  },
+  {
+    "type": "paragraph",
+    "index": 283,
+    "style": "List Paragraph",
+    "text": "GitHub Actions workflows are filtered to main/develop and component paths. Public metadata contains successes and failures; no universal every-push/green-pipeline claim is supported."
+  },
+  {
+    "type": "paragraph",
+    "index": 296,
+    "style": "Normal",
+    "text": "The task repaired and retested four concrete defects, completed a real Flutter web \u2192 API \u2192 PostgreSQL/FastAPI \u2192 React \u2192 Flutter document workflow, and expanded PostgreSQL security/performance evidence. Final automated suites contain no failures; five cases are explicitly skipped across xUnit/Playwright. The report still contains three unresolved expectation conflicts, 49 historical/unverified cases and two blocked cases. Live Golden Case acceptance, native-device/accessibility validation, member confirmation and CI for the unpushed tested commit remain outstanding; assessment completeness is not claimed."
+  },
+  {
+    "type": "paragraph",
+    "index": 301,
+    "style": "List Paragraph",
+    "text": "Retain genuine workflow logs/screenshots and rerun on a native Flutter device where available. Confirm the historical Deed/checklist/Approved flow separately rather than treating the verified Affidavit workflow as identical."
+  },
+  {
+    "type": "paragraph",
+    "index": 302,
+    "style": "List Paragraph",
+    "text": "Address the verified Low missing nosniff header finding through the deployment/security policy. Repeat representative PostgreSQL load after staging approval; current two-user read tests do not certify production capacity."
+  },
+  {
+    "type": "paragraph",
+    "index": 303,
+    "style": "List Paragraph",
+    "text": "Resolve provider availability/model/budget configuration before further live Golden Cases. Obtain group-member confirmations and explicit push approval before verifying remote CI for the local tested commit; complete accessibility/manual demonstrations."
+  },
+  {
+    "type": "cell",
+    "table": 0,
+    "row": 3,
+    "cell": 1,
+    "text": "https://github.com/Jeyamdev/legalease-ai"
+  },
+  {
+    "type": "cell",
+    "table": 0,
+    "row": 4,
+    "cell": 1,
+    "text": "Web: https://legalease-ai-nu.vercel.app  |  API: https://legalease-api-mufi.onrender.com/swagger/index.html"
+  },
+  {
+    "type": "cell",
+    "table": 2,
+    "row": 6,
+    "cell": 1,
+    "text": ".github/workflows/backend-ci.yml, frontend-ci.yml and mobile-ci.yml; branch/path filters; observed CI run metadata in evidence/ci."
+  },
+  {
+    "type": "cell",
+    "table": 6,
+    "row": 6,
+    "cell": 1,
+    "text": "Local docs/se3110-qmse-testing, f360e4ac21f1. No push/deploy; remote CI not available for this commit."
+  },
+  {
+    "type": "cell",
+    "table": 9,
+    "row": 4,
+    "cell": 2,
+    "text": "Reports, screenshots"
+  },
+  {
+    "type": "cell",
+    "table": 29,
+    "row": 2,
+    "cell": 1,
+    "text": "GitHub Actions mobile.yml"
+  },
+  {
+    "type": "cell",
+    "table": 42,
+    "row": 9,
+    "cell": 2,
+    "text": "Public GitHub API"
+  },
+  {
+    "type": "cell",
+    "table": 42,
+    "row": 9,
+    "cell": 3,
+    "text": "evidence/ci/github-actions-runs.json; current local additions not covered"
+  },
+  {
+    "type": "cell",
+    "table": 42,
+    "row": 10,
+    "cell": 2,
+    "text": "Actual application screenshots + HTTP/PG"
+  },
+  {
+    "type": "cell",
+    "table": 61,
+    "row": 5,
+    "cell": 1,
+    "text": "Historical member-assigned claim; ownership confirmation pending: GitHub Actions: backend.yml, frontend.yml, mobile.yml run the suites on every push and pull request"
+  },
+  {
+    "type": "cell",
+    "table": 64,
+    "row": 2,
+    "cell": 2,
+    "text": "GitHub Actions workflows"
+  },
+  {
+    "type": "cell",
+    "table": 67,
+    "row": 2,
+    "cell": 1,
+    "text": "Codex assisted tests, four fixes, local isolated executions and documentation. No production data, push, deployment or submission. New work is not attributed to students without confirmation."
+  },
+  {
+    "type": "cell",
+    "table": 68,
+    "row": 12,
+    "cell": 0,
+    "text": "Evidence: output, screenshots, coverage, scans, logs"
+  },
+  {
+    "type": "cell",
+    "table": 68,
+    "row": 14,
+    "cell": 2,
+    "text": "Committed locally on docs/se3110-qmse-testing (f360e4ac21f1); no push."
+  },
+  {
+    "type": "cell",
+    "table": 68,
+    "row": 15,
+    "cell": 0,
+    "text": "GitHub link and commit evidence"
+  },
+  {
+    "type": "cell",
+    "table": 69,
+    "row": 1,
+    "cell": 1,
+    "text": "git clone https://github.com/Jeyamdev/legalease-ai"
+  }
+]

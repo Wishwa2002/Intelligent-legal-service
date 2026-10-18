@@ -1,0 +1,4 @@
+BEGIN
+INSERT 0 1
+ERROR:  null value in column "FileName" of relation "DocumentFiles" violates not-null constraint
+DETAIL:  Failing row contains (8, -9999, null, null, null, null, Received, null, null, null, null, null).

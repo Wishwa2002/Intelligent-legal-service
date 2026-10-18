@@ -1,0 +1,18 @@
+{
+  "refs/heads/Document-&-Cleark": "44f3f25ac0ac15162d0cee63844bafd532ad4820",
+  "refs/heads/backup/old-main": "59337bba0227aa07e18e60f697bd758db327f0bd",
+  "refs/heads/chore/deployment-readiness": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+  "refs/heads/dependabot/npm_and_yarn/frontend/npm_and_yarn-19c47bcc88": "429a41be4e53b830af1948ce59da5e7ee7294b76",
+  "refs/heads/develop": "54aecccc780e99ee0bded70338277bccbfac76cd",
+  "refs/heads/feature/admin-auth": "43f6345d8cdd3158e5ecf51d124dcfab869261c9",
+  "refs/heads/feature/appointment-scheduling-enhancements": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+  "refs/heads/feature/auth-login": "a502dcdbbce0481b8d0a51baec664d1286e70667",
+  "refs/heads/feature/booking-management": "3beb4c6ddf881200747a42e0c85154a51fb69d6b",
+  "refs/heads/feature/booking_appointment_management": "2c0c4e5c20e63fb01bb64a5a4f8707ee2af79a21",
+  "refs/heads/feature/database-setup": "2e2f764e18843b6832e7352ba64ea0848a3842b6",
+  "refs/heads/feature/member1-lawyer-management": "54aecccc780e99ee0bded70338277bccbfac76cd",
+  "refs/heads/fix/auth-security-improvements": "3ff0d2a0d481a6a26aff316a59b0d6789f00bb43",
+  "refs/heads/fix/unified-staff-auth": "ee78a38117d40f77be9a55cb3d18ff778d097e20",
+  "refs/heads/main": "59337bba0227aa07e18e60f697bd758db327f0bd",
+  "refs/heads/se3110-qmse-testing": "05359214df52fa743b234e1d77e6671f57c14dea"
+}

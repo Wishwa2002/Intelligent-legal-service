@@ -1,0 +1,67 @@
+[
+  {
+    "figure": "6.31",
+    "title": "Historical BCrypt work-factor precondition fails",
+    "image": "historical-resolution/evidence/password-cost-output.png",
+    "source": [
+      "historical-resolution/evidence/password-cost.log",
+      "historical-resolution/evidence/password-cost.trx"
+    ],
+    "execution_date": "2026-10-08T11:19:54.548Z",
+    "interpretation": "Actual VSTest log in Chromium plain-text viewer; not a simulated terminal. Password hash length and verification pass, but cost 11 differs from historical 12. No product cryptographic rule changed."
+  },
+  {
+    "figure": "6.32",
+    "title": "React catalogue handles recorded HTTP 500",
+    "image": "historical-resolution/evidence/TC-FE-05.png",
+    "source": [
+      "historical-resolution/evidence/playwright-historical.json"
+    ],
+    "execution_date": "2026-10-08T11:08:51.065Z",
+    "interpretation": "Actual React rendering with an explicitly mocked HTTP 500 response. The alert and Retry remain usable; this is UI error-handling evidence, not backend uptime."
+  },
+  {
+    "figure": "6.33",
+    "title": "React booking UI completes recorded approval fixture",
+    "image": "historical-resolution/evidence/TC-C2-06.png",
+    "source": [
+      "historical-resolution/evidence/playwright-historical.json"
+    ],
+    "execution_date": "2026-10-08T11:08:58.171Z",
+    "interpretation": "Lawyer/date/slot selection and completion banner execute in real React. API approval is mocked; no PostgreSQL booking or live AI is inferred."
+  },
+  {
+    "figure": "6.34",
+    "title": "Senior Counsel career is visible from real PostgreSQL API",
+    "image": "historical-resolution/evidence/career-card.png",
+    "source": [
+      "historical-resolution/evidence/historical-http.json",
+      "historical-resolution/evidence/playwright-historical.json",
+      "historical-resolution/evidence/career-card-manifest.json"
+    ],
+    "execution_date": "2026-10-08T11:33:08.766Z",
+    "interpretation": "Real API career creation returns 201 and the actual React careers page displays the vacancy. Synthetic local data; no API interception."
+  },
+  {
+    "figure": "6.35",
+    "title": "Real Flutter catalogue reveals historical intake mismatch",
+    "image": "historical-resolution/evidence/real-flutter-catalogue.png",
+    "source": [
+      "historical-resolution/evidence/real-ui-assigned-http.json",
+      "historical-resolution/evidence/real-ui-assigned-steps.json"
+    ],
+    "execution_date": "2026-10-08T11:13:15.731Z",
+    "interpretation": "Real Flutter web login/catalogue executed against the isolated API. Current catalogue/service identity and sequential request/upload design differ from historical Deed intake. Two-PDF historical multipart creation was not completed."
+  },
+  {
+    "figure": "6.36",
+    "title": "Actual clerk review uses current statuses instead of Approved",
+    "image": "historical-resolution/evidence/real-react-clerk-review.png",
+    "source": [
+      "historical-resolution/evidence/real-ui-assigned-http.json",
+      "historical-resolution/evidence/real-ui-assigned-steps.json"
+    ],
+    "execution_date": "2026-10-08T11:13:19.692Z",
+    "interpretation": "Real API assignment and PostgreSQL attachment are visible in React. Status options exclude Approved and no Approve button exists; the historical action was not forced or replaced with COMPLETED."
+  }
+]

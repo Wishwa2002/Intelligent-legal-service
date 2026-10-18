@@ -1,0 +1,23 @@
+{
+  "name": "completion-20261008-before",
+  "command": [
+    "dotnet",
+    "test",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~Qmse_DEF12",
+    "--logger",
+    "trx;LogFileName=spoof-before.trx",
+    "--results-directory",
+    "qmse-output/completion-20261008/evidence"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T04:26:37.152963+00:00",
+  "ended_utc": "2026-10-08T04:26:38.204059+00:00",
+  "duration_seconds": 1.051,
+  "exit_code": 1,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-before.log"
+}

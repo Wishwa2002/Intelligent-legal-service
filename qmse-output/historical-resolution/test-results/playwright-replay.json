@@ -1,0 +1,16 @@
+{
+  "command": [
+    "npx",
+    "playwright",
+    "test",
+    "--config",
+    "historical.playwright.config.ts"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T11:08:42.327508+00:00",
+  "ended_utc": "2026-10-08T11:09:02.373444+00:00",
+  "duration_seconds": 20.046,
+  "exit_code": 1,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/historical-resolution/evidence/playwright-replay.log"
+}

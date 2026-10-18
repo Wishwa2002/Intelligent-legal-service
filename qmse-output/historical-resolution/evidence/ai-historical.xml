@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><testsuites><testsuite name="pytest" errors="0" failures="1" skipped="0" tests="4" time="0.586" timestamp="2026-10-08T16:19:35.248932" hostname="Jegatheeswarans-MacBook-Air.local"><testcase classname="tests.test_historical_acceptance" name="test_C3_05_missing_title_deed_historical_fifty_percent" time="0.001"><failure message="AssertionError: Historical 50% expectation retained; actual missing-one-of-four ratio is 75%.&#10;assert 75.0 == 50">def test_C3_05_missing_title_deed_historical_fifty_percent():
+     required=['NIC Copy','Prior Title Deed Copy','Survey Plan','Sale Agreement Draft'] # actual Property Transfer seed requirements
+     provided=['NIC Copy','Survey Plan','Sale Agreement Draft']
+     result=evaluate_completeness(required,provided).model_dump()
+     ratio=100*len(result['provided_documents'])/len(required)
+     print({'case':'TC-C3-05','required':required,'provided':provided,'actual':result,'percent':ratio,'scope':'real deterministic completeness logic, not Gemini'})
+&gt;    assert ratio==50, 'Historical 50% expectation retained; actual missing-one-of-four ratio is 75%.'
+E    AssertionError: Historical 50% expectation retained; actual missing-one-of-four ratio is 75%.
+E    assert 75.0 == 50
+
+tests/test_historical_acceptance.py:17: AssertionError</failure></testcase><testcase classname="tests.test_historical_acceptance" name="test_C2_05_tomorrow_date_helper_subcriterion" time="0.000" /><testcase classname="tests.test_historical_acceptance" name="test_C4_04_document_injection_sanitization_subcriterion" time="0.000" /><testcase classname="tests.test_historical_acceptance" name="test_C4_08_synthetic_rrf_comparison_subcriterion" time="0.000" /></testsuite></testsuites>

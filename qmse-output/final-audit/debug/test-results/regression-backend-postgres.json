@@ -1,0 +1,21 @@
+{
+  "command": [
+    "dotnet",
+    "test",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--no-build",
+    "--filter",
+    "FullyQualifiedName!~HistoricalPostgresSetupTests.BootstrapActualStartupSeeders",
+    "--logger",
+    "trx;LogFileName=regression-backend-postgres.trx",
+    "--results-directory",
+    "qmse-output/final-audit/debug/evidence"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T12:33:25.834131+00:00",
+  "ended_utc": "2026-10-08T12:33:44.938322+00:00",
+  "duration_seconds": 19.104,
+  "exit_code": 1,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/regression-backend-postgres.log"
+}

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "backend-success",
+    "run_id": 37386601103,
+    "url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37386601103",
+    "final_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37386601103",
+    "purpose": "Backend CI at 8a9b8a24",
+    "captured_utc": "2026-10-08T12:17:16.512Z",
+    "image": "qmse-output/final-audit/evidence/ci/backend-success.png",
+    "sha256": "3293c1b174f72707fcec0c5b6db3c4202e33476fd40252fd05948ed0cfdd0baa",
+    "http_status": 200,
+    "method": "Unmodified public GitHub run page captured with Chromium; no invented states"
+  },
+  {
+    "id": "frontend-success",
+    "run_id": 37386601420,
+    "url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37386601420",
+    "final_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37386601420",
+    "purpose": "Frontend CI at 8a9b8a24",
+    "captured_utc": "2026-10-08T12:17:26.655Z",
+    "image": "qmse-output/final-audit/evidence/ci/frontend-success.png",
+    "sha256": "7e8365ef778b2f09371572924551534aba44b6b34f005f10057426c9b4183cbd",
+    "http_status": 200,
+    "method": "Unmodified public GitHub run page captured with Chromium; no invented states"
+  },
+  {
+    "id": "mobile-retest-success",
+    "run_id": 37386601104,
+    "url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37386601104",
+    "final_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37386601104",
+    "purpose": "Mobile CI at 8a9b8a24",
+    "captured_utc": "2026-10-08T12:17:32.161Z",
+    "image": "qmse-output/final-audit/evidence/ci/mobile-retest-success.png",
+    "sha256": "c9a2082d629021fa2a176575228df718d061165697b703c5a78f8222ff9813d9",
+    "http_status": 200,
+    "method": "Unmodified public GitHub run page captured with Chromium; no invented states"
+  },
+  {
+    "id": "mobile-failure",
+    "run_id": 37385133013,
+    "url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37385133013",
+    "final_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37385133013",
+    "purpose": "Mobile Analyze failure at 6d982e60",
+    "captured_utc": "2026-10-08T12:17:36.844Z",
+    "image": "qmse-output/final-audit/evidence/ci/mobile-failure.png",
+    "sha256": "10fdf5bfc2cf39ee60dba17b7be5a2906f290dafe50d90d516ae9b36906b2b4b",
+    "http_status": 200,
+    "method": "Unmodified public GitHub run page captured with Chromium; no invented states"
+  },
+  {
+    "id": "frontend-error",
+    "run_id": 37717885104,
+    "url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37717885104",
+    "final_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37717885104",
+    "purpose": "Frontend compilation annotations at fb471202",
+    "captured_utc": "2026-10-08T12:35:13.041Z",
+    "image": "qmse-output/final-audit/evidence/ci/frontend-error.png",
+    "sha256": "8c3882979a0f051d3c09dd06c911ce1beade7c7bbba36fb3350299e4d7db7fbe",
+    "http_status": 200,
+    "method": "Unmodified public GitHub run page captured with Chromium; no invented states"
+  }
+]

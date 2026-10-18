@@ -1,0 +1,820 @@
+{
+  "head": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "branch": "docs/se3110-qmse-testing",
+  "local_uncommitted_overlay_present": true,
+  "application_logic_modified_during_this_retest": false,
+  "files": [
+    {
+      "path": "backend/LegalService.API/AgentIntegration/AgentIntegrationService.cs",
+      "sha256": "e05ee06c0cdaae7c1f2b559aac236725da0b60c9b71968e38ebd606b21b60491"
+    },
+    {
+      "path": "backend/LegalService.API/AgentIntegration/IAgentIntegrationService.cs",
+      "sha256": "6d31ba0027aabb8b2a344c712eebd97e5e851dd566a955604bc44fee558bd2c1"
+    },
+    {
+      "path": "backend/LegalService.API/Authentication/RequestAccess.cs",
+      "sha256": "c3bf6cbb649cf5ecab7864c871a59f01a0a4071ee5242be7fef4a7ba7b3ee41e"
+    },
+    {
+      "path": "backend/LegalService.API/Authentication/Services/IPasswordService.cs",
+      "sha256": "4c31f92f1663ff18c9a4bbdc39f2be7080348063098e94075576bc1d92b1ae6b"
+    },
+    {
+      "path": "backend/LegalService.API/Authentication/Services/JwtService.cs",
+      "sha256": "32e8bf3b9f24df7177ae02e16fbb9739b4eac305695e876affeb70a9403daff1"
+    },
+    {
+      "path": "backend/LegalService.API/Authentication/Services/PasswordService.cs",
+      "sha256": "0fd7f9403ca87f77ce4461a342f32b610d99c348d51f783db5c972613dd38ef9"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/AdminController.cs",
+      "sha256": "c4a28df2fa6fcfd632a29f47ff8f07f611896d5e100f0a529a9fbd948dd7b083"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/AiStateController.cs",
+      "sha256": "77f80da32276c807b57e3a1de37df1af5fb49a835bbedafdf7320aaf0465438c"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/AppointmentsController.cs",
+      "sha256": "fdc15afc262c458711ea0bf2bf8a6c90228dfbf2dc86ef8ea089cdd8d1d7d970"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/AuthController.cs",
+      "sha256": "b84200dd5b194d385bcb3a21f5542429642441b2d0e489ed121720d230e75de0"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/CareersController.cs",
+      "sha256": "f59b3d97ef69b376614bc4178d1922bb883b7d6da15e123420bf6748e0d33811"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/ClientsController.cs",
+      "sha256": "39ffb73b783056eaa1cfbfcca1663d76ef68c24bf6874de5904562bcac3fd527"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/DocumentAndClerk/AgentChatController.cs",
+      "sha256": "5f78139fc429857f173e64468a1a66ebd78fa70e9e04cc31dd3faab2a58492e0"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/DocumentAndClerk/AgentController.cs",
+      "sha256": "e722f151506014e7d0736bf963619c015aeaa68f85eb9b3ccb4157d771b460eb"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/DocumentAndClerk/ClerksController.cs",
+      "sha256": "2b61b16fb35013a8824b39ad375353c4acf6e13be5c8bb2b097aac6aad16b5dd"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentFilesController.cs",
+      "sha256": "b6de03170832115c97ded0df08817f8c82b0ae3873552db6c2dc016ac74772b6"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentationRequestsController.cs",
+      "sha256": "cda074f1485db9b7ea9188bdeab70daf69eecb5819c469171b58262d844779b8"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentationServicesController.cs",
+      "sha256": "a59c04809de51525739b33d3ec78ee5449f074664c64a4b06bff7d854f219055"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/HealthController.cs",
+      "sha256": "5c2c76436e97b1b756209342e472ed45ab0e055263cc64897da4ef989fe012df"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/JobApplicationsController.cs",
+      "sha256": "235e59ec6d9529273b29e6c448d78c9364a2e843592515b528945176601b5456"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/LawyerMeController.cs",
+      "sha256": "857f7bc702ecad1096c4e1196ebf94a587ba35f055c00cd33091b3fca7a67c02"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/LawyerRecommendationsController.cs",
+      "sha256": "bdc2fae39765aa64f48f522dc610b68d182a567b80cc14f6c1cb14171d9bb7ab"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/LawyerSchedulesController.cs",
+      "sha256": "d30f0ee7df77dfc349911a035efbc8f1d95e78fa0449246195fa5aec183df442"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/LawyerServicesSummaryController.cs",
+      "sha256": "99bd9d512c451ddcc71051b6cdb39355cc4a3c04d5167b549196a912bc83cccf"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/LawyersController.cs",
+      "sha256": "ba399a91af6945bf72c9b7fff958308bd5a15ff5818f36da2a8dea81f1fba682"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/LegalCatalogController.cs",
+      "sha256": "936700879a3499432f7d3cbcf6f9960ab6cf65d919ad43023ec7c4f3155a18a7"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/SchedulingAgentController.cs",
+      "sha256": "3144a51ad92d0cfb40d4eb9f651e350a4ce25b31d0c18f918f779f72224cbca8"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/ServiceRequestsController.cs",
+      "sha256": "9e77a80512da56a07fe6138b357ffe4e2a7a3291882536d5ab5e457302f17799"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/WorkforceAnalysisController.cs",
+      "sha256": "e8283591cbdc911c487b739f15cd8623b4a70be24774d7babba8e79354b2f0a8"
+    },
+    {
+      "path": "backend/LegalService.API/Controllers/WorkforceSettingsController.cs",
+      "sha256": "4a61b872204c1944d479e5b297b2a5696b6dd064a02860acd90e13c05a2f16af"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Agent/AgentChatDtos.cs",
+      "sha256": "386dcafb4e5af13f576e8f6c0ba0157951a49e6a21883c8f77f7067164247818"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Agent/AgentDtos.cs",
+      "sha256": "6bf64b1c86ddc055da34776ac57193f84c5cbeb63fd5abe1496be447ab3d0dcf"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Agent/SchedulingAgentDtos.cs",
+      "sha256": "089455d8f4662ca1167f548d375568354208aaaf27934cf8b3cec74aaa89d96f"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Appointments/AppointmentRequests.cs",
+      "sha256": "b5aa6578ff9202973b36b17b7c8859ebcdc4a8dab53985d779d58cf1f3de6951"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Appointments/AppointmentResponses.cs",
+      "sha256": "e26c067da76d299044e2a6ccfa27e806ff832c24880124939d643c8b8ff01f81"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Clients/ClientDtos.cs",
+      "sha256": "9f3a8c57d445ba2d995ec573b063e74d2288693f20ab2cca1e1de0c8447e598b"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/DocumentAndClerk/Requests/ClerkRequests.cs",
+      "sha256": "4dc03811a7a8d73a94b2ae728320bdd09cd49ef877f2d7e06c34ab9b71780fb8"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/DocumentAndClerk/Requests/DocumentationRequestRequests.cs",
+      "sha256": "a82463e0a8123b33a052995e7947f850801680905228d33e5c5f0b6d6afbc2b0"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/DocumentAndClerk/Requests/DocumentationServiceRequests.cs",
+      "sha256": "5b084a9ef75a95d3577897286dda9ab4f0e8a522c38ecb1563cd98b5f280519a"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/DocumentAndClerk/Responses/ClerkResponse.cs",
+      "sha256": "9ecda1f5b613c9bd9e8c9c627c7a3fb8288b9eb2de27cba7de34a442bfeef93b"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/DocumentAndClerk/Responses/DocumentFileResponse.cs",
+      "sha256": "886a99c511e02878f40709ca3951811f6b8a4a71be0e88518f2135efbd30ed51"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/DocumentAndClerk/Responses/DocumentationRequestResponse.cs",
+      "sha256": "b87122b09b2e7393fa4f9d573ebe2cf42e8dfc9ceed8cf9969203e944e686157"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/DocumentAndClerk/Responses/DocumentationServiceResponse.cs",
+      "sha256": "d87eaaed088c684604c649887483987a8e1c5609bf152002efebd12f6d01ec79"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/LawyerMobile/LawyerMobileDtos.cs",
+      "sha256": "ab4fad9c5b2f7b5bde7d8a3729feb96a8436fc66764dcdbb784571c94b69079c"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Requests/CareerRequests.cs",
+      "sha256": "19b6b5fc8d13d7df1e1fa77e0d2cea9643a5565f7ffba85cda11d838cb45deec"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Requests/CreateLawyerRequest.cs",
+      "sha256": "d892b0091a314c8aad7d799445aecf79057647dd43b3fc5389d17689b3fdbd5b"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Requests/LegalServiceRequest.cs",
+      "sha256": "21729788a2ef77cd2bcff20fbde99fca605c5f6c56427ac0e79a9dec3f4b1378"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Requests/LoginRequest.cs",
+      "sha256": "08f5ea5156f0c1cd62dfb7bb8408ca0441947e862381b563521cf4e8b62794fe"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Requests/RegisterRequest.cs",
+      "sha256": "35a5c9da03c083d96a8995cf44141db5e25ed7e1194b15db27000207a9fee46f"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Requests/ServiceRequestRequests.cs",
+      "sha256": "826a2b61df0aa78d16783add904b828ce0b5ca6eff377f7d51f92e6dda07b2a7"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Requests/SpecializationRequest.cs",
+      "sha256": "4034fc003d103047d75e01a14fed0af268b4fcf487255ac45c5a79f7c2d42d9f"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Requests/UpdateLawyerRequest.cs",
+      "sha256": "4fa8e7877a5b54034337a907c5f60d884e6ba49a7384a068e3d50fe0b4e1e522"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Responses/CareerResponses.cs",
+      "sha256": "f82b3f04c0c0791d2212908bf66a96a6fdc32e567a3ce2802c5cc58b6fab73b1"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Responses/LoginResponse.cs",
+      "sha256": "dbb22fcfeada146a6f3043e439650b37cdeef28e34ceb225a3f6438544ac6b01"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Responses/ServiceRequestResponses.cs",
+      "sha256": "035edf075f0cbd5f4fce8ee96b0b60b8a2fa80b63a70e51f05860359dbf6498c"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Scheduling/SchedulingDtos.cs",
+      "sha256": "445283f3a3969f09349a030adbc5adf7635e42367e7ed5d4ec761e4363488f29"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Workforce/WorkforceDtos.cs",
+      "sha256": "58a186232ae1dcdee813ca84a042033f9a18243b5e84650ce5d12df327e6ad8c"
+    },
+    {
+      "path": "backend/LegalService.API/DTOs/Workforce/WorkforceSettingsDtos.cs",
+      "sha256": "4577899c1edd15c985d19db667e340eae49f97f9bb332c813c10a2b3a9451178"
+    },
+    {
+      "path": "backend/LegalService.API/Data/ApplicationDbContext.cs",
+      "sha256": "3d8c0a6a3dee4d1cc46e55097657a3f2c5c3e222e83e4cd9691de05d4aa342b6"
+    },
+    {
+      "path": "backend/LegalService.API/Data/ApplicationDbContextFactory.cs",
+      "sha256": "ca80710969601d342fc5436c8caec81f36a8cf1764b94fb28fb38fb9e470790c"
+    },
+    {
+      "path": "backend/LegalService.API/Data/DbInitializer.cs",
+      "sha256": "4d87ae8a7721e5905f00bec9ce256dcf4ed398507b65fe1a3166ffc480fc5b32"
+    },
+    {
+      "path": "backend/LegalService.API/Data/DemoLawyerSeeder.cs",
+      "sha256": "ff8989f78da5d03045b5ebc14a680cd8ec9dc04737f6a91fc54cf064b3e01e43"
+    },
+    {
+      "path": "backend/LegalService.API/Data/DevelopmentAdminSeeder.cs",
+      "sha256": "2c33caa59513f7e80f9f16a316ed5ecc0e18242844839fc5a802d9fc6526604e"
+    },
+    {
+      "path": "backend/LegalService.API/Data/LawyerScheduleBackfill.cs",
+      "sha256": "92ec486aac49dde2dcce1d86794f2ecbb87c5730dfcff39fc60e7dfa6b175cc4"
+    },
+    {
+      "path": "backend/LegalService.API/Infrastructure/ApiException.cs",
+      "sha256": "07a87eaaadf5178b281a1f4e86fae00094e9c3543afab654c6d2cd0b497470cb"
+    },
+    {
+      "path": "backend/LegalService.API/Infrastructure/LawyerAccessFilter.cs",
+      "sha256": "bdfb098ce5713709fdb04e1eb01d745b7fbab626bd153529155f590ca8f1eac6"
+    },
+    {
+      "path": "backend/LegalService.API/Interfaces/DocumentAndClerk/IClerkService.cs",
+      "sha256": "872c1a1c15f966caf074959e54e7e20f357c660da49206f66ba6e0d756db65fc"
+    },
+    {
+      "path": "backend/LegalService.API/Interfaces/DocumentAndClerk/IDocumentFileService.cs",
+      "sha256": "578621e194aab8f5480f9a377a136353ab935f099bfbd4ffe2cf38943f0d9fd4"
+    },
+    {
+      "path": "backend/LegalService.API/Interfaces/DocumentAndClerk/IDocumentationRequestService.cs",
+      "sha256": "6728f2bceccef096964b7eaae80b995997bbc719677c7b04fc1a833416951897"
+    },
+    {
+      "path": "backend/LegalService.API/Interfaces/DocumentAndClerk/IDocumentationServiceService.cs",
+      "sha256": "2141fb0afb1795232f598424e1543ba0fc294bddde69e0f06af1f858fd36fbdd"
+    },
+    {
+      "path": "backend/LegalService.API/Interfaces/IAppointmentService.cs",
+      "sha256": "22424812c44d0823e16be044226a23ef9c33e0254ae44a16fe14f876fefad7ff"
+    },
+    {
+      "path": "backend/LegalService.API/Interfaces/ICareerService.cs",
+      "sha256": "c074e4c9f3ff001f4446400237a0a23544490673ec21bde55eab277b4f4856b1"
+    },
+    {
+      "path": "backend/LegalService.API/Interfaces/IEmailNotificationService.cs",
+      "sha256": "e445c0b563eb16ddfc887fa2175de883269490f11200d0da55237702b369bf2d"
+    },
+    {
+      "path": "backend/LegalService.API/Interfaces/IServiceRequestService.cs",
+      "sha256": "8543bbe64adc77ee1c830294381919749b8a11dfd1d0739cbd73b3906205e1b0"
+    },
+    {
+      "path": "backend/LegalService.API/LegalService.API.csproj",
+      "sha256": "07d1176156d4db8059663629664cb6604365b3648041b031c683a7da6deb2d5c"
+    },
+    {
+      "path": "backend/LegalService.API/Middleware/ExceptionMiddleware.cs",
+      "sha256": "fcbeba1a7adf09e7963687a67db32d3aba4bdca1a1c88af7ecdb490ad68626be"
+    },
+    {
+      "path": "backend/LegalService.API/Middleware/SecurityHeadersMiddleware.cs",
+      "sha256": "f0fa3cc24eecd803b2a1b4f466f79fb73533761c2a3f2a7bab3692376e0ff73f"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20260922093339_InitialCreate.Designer.cs",
+      "sha256": "31d9e5360eb45d319e8cf8d3dc7fa25f7684e095a989746c58c6dd0950a71f08"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20260922093339_InitialCreate.cs",
+      "sha256": "5bb0c7bbf461a7eafbda53c76a9204a7e4ae848b3d107846ec6e885cdaec06e6"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20260922132300_FixAuditLogUserId.Designer.cs",
+      "sha256": "cd38189fc8d3aec4526b492b658ca9e55725f338dfde4a66b59b73cb7e21a8eb"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20260922132300_FixAuditLogUserId.cs",
+      "sha256": "04810380f03c8a7d2c82cd4b507c9ff580692eac9f3387dafc21058b1b642de3"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20260927120000_AddLawyerRecommendationWorkflows.cs",
+      "sha256": "a3ee7150d7cf705b0f8cdd1ca69b22c1e074f8f62f2c71e4aca573f7c6b2bc68"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20260929051536_SyncCurrentDatabaseSchema.Designer.cs",
+      "sha256": "b000ac88328a28f250ae48d9c9b5f0c44d9230f0c931d2a6b851009b3e5739ee"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20260929051536_SyncCurrentDatabaseSchema.cs",
+      "sha256": "8ef1b5ac7cbd882e293b5145b4e10c678ee12d0dfea28e9da7cbad092b930e4d"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261003065251_AddMissingCurrentSchemaColumns.Designer.cs",
+      "sha256": "b89c6f13a142b9a474c615f1706f48d417fd3efebc6c68b882d21f44319f69c3"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261003065251_AddMissingCurrentSchemaColumns.cs",
+      "sha256": "4d578ed836aa7889ce2053aed35715953e094a6c9e1cafa01bc80424fe78e0f5"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261003090000_FixLegacyUserRoleIds.cs",
+      "sha256": "a978352c1307cb3ed3acf2e33f7f23dae99b3ce040b89aa4918ae81f22304257"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261003233848_AddWorkforceHiringIntelligence.Designer.cs",
+      "sha256": "b4b593a6cc00235ed6e80acbbfb86078b262c2c2f5a3883c07d732b4cadab2d7"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261003233848_AddWorkforceHiringIntelligence.cs",
+      "sha256": "d488ded7b08755da3afe7dc3e19ee585e4e658a52f858220e310ae01afff22da"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261003235618_AllowUnlinkedLawyerProfiles.Designer.cs",
+      "sha256": "42c75ea39d8f12999c3d05096375665d213e2e6655faa9ab37cc8c9954130868"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261003235618_AllowUnlinkedLawyerProfiles.cs",
+      "sha256": "b002f8fd399df23fb97c8869ad679ca507c7c78b99159508a68929af4bdccda7"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004061310_AddWorkforcePlanningSettings.Designer.cs",
+      "sha256": "11d0bd66cca705e5e0789b651fdf02a8fa96c1af46ba37fcafe546a435cf9c2c"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004061310_AddWorkforcePlanningSettings.cs",
+      "sha256": "6f669802024a9379bb7359c06bb37f28f4dff11245c0eaad014f6b6f4f867a5f"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004080145_AddRecurringLawyerScheduling.Designer.cs",
+      "sha256": "244f219d0025d1eb58c18140f7e9a93ccccbe5e07f758c16f9b15eec1754802c"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004080145_AddRecurringLawyerScheduling.cs",
+      "sha256": "f64fd8680a9087ee1fa4f57dcc7fdd0c37351fc99a6d20599105adcbeeca1c14"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004095244_BackfillMissingLawyerSchedules.Designer.cs",
+      "sha256": "f44d3076abab79dc5e91ad1e23db2e0adde23d845f844f31fcf386103b1a0e06"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004095244_BackfillMissingLawyerSchedules.cs",
+      "sha256": "5247f1f76298792eda844854d6f7b03378085afc11a0a62b0f4afc75def8ac59"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004151111_AddFrontDeskMatchingIntake.Designer.cs",
+      "sha256": "87d67c09a73c7790106dac1c53d3fb4dccdfc87335d9f4a07d7bc5f41e3af1b1"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004151111_AddFrontDeskMatchingIntake.cs",
+      "sha256": "c878b8acfd2bc3559adddda479c501e2774214cc893e77439a19cf784be4824b"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004165105_AddLawyerInitialPasswordChange.Designer.cs",
+      "sha256": "527b5681f2d3989a1c647bb84ed097658c89613cd003c46919f9e8fd037e57d1"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261004165105_AddLawyerInitialPasswordChange.cs",
+      "sha256": "a37cdcc83c0e7fc09bb4da461a179c8e08b9b814f90562d6590eeed8e78f248d"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261006120000_PrepareDeploymentStorage.cs",
+      "sha256": "b188e432bdcd37bcc6eec9a48ed7ebe01ba68cb878c3e0c591dcb5ce20408f1b"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/20261008110000_CompleteAppointmentSchema.cs",
+      "sha256": "1bbdd5f64807a10ed2e1165a35e9e6601d304f629194949ce9bb1331426146f5"
+    },
+    {
+      "path": "backend/LegalService.API/Migrations/ApplicationDbContextModelSnapshot.cs",
+      "sha256": "d822188e6e7a5a8d29a51fde9f85d6e3659b093b50b3ae914397cafef874ada5"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/AgentSessionState.cs",
+      "sha256": "48bb95d05129b6d6704b62a5c8b23d0f9a5e704edfac5534c5734d1e91ccf0ca"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/AgentStep.cs",
+      "sha256": "63468872c7e56d17eb1eed88dc6fd5a19d2625c4f27c511aa35f228450b584bf"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/AgentWorkflow.cs",
+      "sha256": "e0cdd2c5c9f27116a9efe5f160c9948306c4eb3e1f3748cf6b01258ecc43bf93"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/Appointment.cs",
+      "sha256": "bab15bb176e64607fdca87f25d5579c034043c2bad418b2cca094480f32b630b"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/AppointmentStatusHistory.cs",
+      "sha256": "e439ba51842b68a63ed9994930892fdb0759e0d6a4cd3246799053d35d69180d"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/ApprovalDecision.cs",
+      "sha256": "fea235daa5702f0b8c3888cf25ea94fb64886966fa53c5f7d9cbacf2ab04e841"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/AuditLog.cs",
+      "sha256": "b48cbb238d02ebddafeaeb98bdccc7e71d25b62f02e6519f1a6283fe52a56e83"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/AvailabilitySlot.cs",
+      "sha256": "534de555329f1a811bb4421f41d679c0bede345efdf49f3cb619885ef4e634e2"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/Career.cs",
+      "sha256": "aed3de9ad3c592a27f0eca67fb1209e0ef8a195067da527ebcaf5325748e65ec"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/Clerk.cs",
+      "sha256": "16b818701e3cf3c207abcf184ff932aae4dc5831f228c5afa75e93067ec053fb"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/DocumentFile.cs",
+      "sha256": "6f42d1776edefed7a615ebbe125aa22003d54e00b308b0d4716af43ffb6bf63c"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/DocumentationRequest.cs",
+      "sha256": "4e670f533b7800f4d1ae24561fc582aba03a3a4ddbbc3f46e71fc405bb396b27"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/DocumentationService.cs",
+      "sha256": "7d1439485db0ea550ce42f1ddab53006207064759a171dde4e4597e3edba20cf"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/ExecutionSummary.cs",
+      "sha256": "e5ca46fb4778b9622181dd0a26b9bb484bc4b4ced0e4cfa1027713f53258ce35"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/HiringSuggestionWorkflow.cs",
+      "sha256": "03080593249877d27e2ceb47a4e53eb6b002f6ec25d5eaa099216d4aad2ccd4c"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/JobApplication.cs",
+      "sha256": "babf8711cb43b669867f5a14a19b848d70ddce3067200ba6862e180f7818226a"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/Lawyer.cs",
+      "sha256": "84b24903b61e444bfccf736c032d16b02476e1f45515449b8695bbc7a7c66866"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/LawyerAvailability.cs",
+      "sha256": "1e623b9814f95480ddf7cd73224e34155d9281287c3f0c2602a684435c3b8e73"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/LawyerLegalService.cs",
+      "sha256": "8a02839add0f01d4f667f98900a5c173a4c98f334eeb294558f26b8d9c91805b"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/LawyerRecommendationWorkflow.cs",
+      "sha256": "119a833f9af7a1a69c81e340155b29f6da387191dc0c5b52e3606c86890dedc8"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/LawyerSpecialization.cs",
+      "sha256": "1aee827cc966b5fd9601f5404296710b049bbcec5fb10bdb454fe66650b462c9"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/LawyerUnavailability.cs",
+      "sha256": "0b3fa06afbd363102b35ca757a780193e26f3018cb372142af947c1bc8c1f7aa"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/LawyerWorkingSchedule.cs",
+      "sha256": "34e2ecfaafc50b1449099c2f4a076f12bef57a9c7c62e0d57779a98ae727cb01"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/LegalService.cs",
+      "sha256": "4e15131e2d79460aa5ea12fb10abf387fc951ffb2c2cad4f14e1672dbf61de42"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/PracticeAreaWorkforceSetting.cs",
+      "sha256": "9b17f4763508509c23f1f1942aecda0e71dac729b840f080b32b1449d5e73e37"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/Role.cs",
+      "sha256": "516af33a89893056148cb0d77baf4f25998120e7c3daa2042fc42922b14ea9c3"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/ServiceRequest.cs",
+      "sha256": "861046b58597822f31169890c908bb9314cc4428987f0505e0e9663c6296416b"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/ServiceRequestStatus.cs",
+      "sha256": "c9012d6f66e52f6fb07a834dad7405b8bc5840bc632cd883ee4c9a51bbb74eb5"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/Specialization.cs",
+      "sha256": "a1c85be9839f551389d101d7cef3d495948be688fedbbd3dd638e544b20eb486"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/ToolExecution.cs",
+      "sha256": "1ce45eba802cdb7db66bde30bb7d08d5fa456612ae41b06081e9a6cc0ea8224b"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/User.cs",
+      "sha256": "065a06762b53ebcdac29e5d432e6613d60251aa688705abcdf66ac7c840e88c4"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/UserRole.cs",
+      "sha256": "8ac4cfcfd5459c91128921af210e4ae202e823b84a96fd19b34c5f5cf815d357"
+    },
+    {
+      "path": "backend/LegalService.API/Models/Entities/ValidationResult.cs",
+      "sha256": "2e61896f66a8ef49bfd39ee6a1a98fa4bfb22bb1c9da5f28866b2a901fdc4e24"
+    },
+    {
+      "path": "backend/LegalService.API/Program.cs",
+      "sha256": "a8910453118dbf5189282867d09c41bef5398d8214a67bd341ac12b78aecf989"
+    },
+    {
+      "path": "backend/LegalService.API/Services/AppointmentService.cs",
+      "sha256": "0cec133b09d2e3eb1f55bdd38a63e45b47d0a84cdf3cdcdfc0fa01170177a902"
+    },
+    {
+      "path": "backend/LegalService.API/Services/CareerService.cs",
+      "sha256": "617c752d7d2424dca97cc0d1fb121b6102537f5776852b4a792ff13486a94b12"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Clients/ClientService.cs",
+      "sha256": "afdcd38add40b639d2df5de250004fc10f31225dec41770fb619ae3a01ca6688"
+    },
+    {
+      "path": "backend/LegalService.API/Services/DocumentAndClerk/ClerkService.cs",
+      "sha256": "d9b890671e9a4eab33326ee53a1388b14033c77743d07211afb931aee32585e2"
+    },
+    {
+      "path": "backend/LegalService.API/Services/DocumentAndClerk/DocumentContentValidator.cs",
+      "sha256": "b9c3b88c3f16997245a309d6260bfa0ba7f7c9cfbb3da21e46398c8851dd227b"
+    },
+    {
+      "path": "backend/LegalService.API/Services/DocumentAndClerk/DocumentFileService.cs",
+      "sha256": "a29b21704af3ce5bc370a7a8e0b4e4f7508120252423a823124bf2ffb623027f"
+    },
+    {
+      "path": "backend/LegalService.API/Services/DocumentAndClerk/DocumentationRequestService.cs",
+      "sha256": "199074012eb8c59b1358a713adaf1afb2ec0b274ba46e9abac91d8c9182da7f7"
+    },
+    {
+      "path": "backend/LegalService.API/Services/DocumentAndClerk/DocumentationServiceService.cs",
+      "sha256": "52729d5b700f7cacf206caf2b1d760174db7a8431f26d8327b1ee1ca01fbd56c"
+    },
+    {
+      "path": "backend/LegalService.API/Services/EmailNotificationService.cs",
+      "sha256": "303bc35411a773b744fb29c9c4b9f8e121c7bf0e2a0482780a9eaac38961404e"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Lawyers/RecommendationService.cs",
+      "sha256": "4efb8f109e885434dce0718718705670ccb9d1716042ed1e52e362ab03ac2ec8"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Scheduling/AvailabilityService.cs",
+      "sha256": "d96c4f3718dcef78f407c2678ff76c203bf980c6074d1e66626c394ad5579efc"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Scheduling/LawyerScheduleService.cs",
+      "sha256": "6ac616ff52aa21e01d1e5f58dc1d32edf5a712b9b859c899e7d805b88134a97b"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Scheduling/ProposedCancellationPolicy.cs",
+      "sha256": "7bb7e9a8ec0008954d741f3e1766c2922fd4b84edac013d52f3f39525168da42"
+    },
+    {
+      "path": "backend/LegalService.API/Services/ServiceRequestService.cs",
+      "sha256": "f3b40afcf3619b026ab7d1187df6da249ae4078916297434d237bd5f3a6ba6f9"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Workforce/HiringSuggestionService.cs",
+      "sha256": "83aa2c73ba1b9908ced92a3661b936d58361960fa7a06ac655894894f444489a"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Workforce/WorkforceAnalysisService.cs",
+      "sha256": "781ce42837f698f793ef612c72f318c54a42fe9aa7f2057b2d98abc4022b1d7d"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Workforce/WorkforceDemoEndpoints.cs",
+      "sha256": "3d860241dc67959ea0e45d706ee1805702df06e637450fb10a57b4db25ed4d49"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Workforce/WorkforceDemoService.cs",
+      "sha256": "ba41c36aeff0a73dd9850f3b42c2a4e334f6006c0b4a3380c8dd21e6feda088b"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Workforce/WorkforceSettingsService.cs",
+      "sha256": "7e739e3134260d267131f90425f8088c6574a340c4c148c642abdc5d418e5e03"
+    },
+    {
+      "path": "backend/LegalService.Tests/AppointmentServiceTests.cs",
+      "sha256": "ec8678d2817b671f1e1b5f8db4ba2b95f206a694d2fce0b56bc96ddb2de45d66"
+    },
+    {
+      "path": "backend/LegalService.Tests/CareerServiceTests.cs",
+      "sha256": "b856e60a0ae0b7b4694d9bfeb25db4ec5e6535652f4093069237aa3bc7a7d0e4"
+    },
+    {
+      "path": "backend/LegalService.Tests/ClerkServiceTests.cs",
+      "sha256": "aa0b9bb694a77886ba9805fa07ef093c71accdbd53223ca8b2d8f94cccfccd4a"
+    },
+    {
+      "path": "backend/LegalService.Tests/DemoLawyerSeederTests.cs",
+      "sha256": "b6af271e2cb531adaaf9b2c0e27c3fc5ca4cd97572225aa04e38a8e6812a6f6f"
+    },
+    {
+      "path": "backend/LegalService.Tests/DeploymentMigrationTests.cs",
+      "sha256": "e8bc1ea59d08590b5cf8959b5bfec292684ed9941f713b2d88a263c2d4dd6030"
+    },
+    {
+      "path": "backend/LegalService.Tests/DevelopmentAdminSeederTests.cs",
+      "sha256": "761e7c859e3a9047bd1030ae73516ed8d81682edd950cb87c63522dcfe241c42"
+    },
+    {
+      "path": "backend/LegalService.Tests/DocumentationRequestServiceTests.cs",
+      "sha256": "cc7b58851a7b6283756d0fb39d1f2e85f9b7c9fa07df0ee770303f9dc7063ce3"
+    },
+    {
+      "path": "backend/LegalService.Tests/DocumentationServiceServiceTests.cs",
+      "sha256": "deaf7f5b296d045264540886c7477b4650f6249cc4796469cf09eb332c1a5032"
+    },
+    {
+      "path": "backend/LegalService.Tests/FrontDeskMatchingPostgresTests.cs",
+      "sha256": "fd87447dc517084967a907abe88a93acc3595f3c4d71222e515658d93e603f83"
+    },
+    {
+      "path": "backend/LegalService.Tests/FrontDeskMatchingTests.cs",
+      "sha256": "3a577b9a8fc71719232a3fe0fca1fc88b3ce05f70e3a1f71f4358a2b181fe329"
+    },
+    {
+      "path": "backend/LegalService.Tests/HistoricalCaseVerificationTests.cs",
+      "sha256": "9faab0522e8790529c3f68f4ee7d2bb314bd190cd0a6a281d76aa01040f62f07"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerManagementHttpTests.cs",
+      "sha256": "3042b6ec7ce100cfc26c8f6f92fdbd4b90253813674dabf9290a8cd155ade5a8"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerMobileHttpTests.cs",
+      "sha256": "83e3ff43c58dbdba2ca2309bfdc663c0f13bc55258b66b0645aa7ba91283cdfc"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerRecommendationApprovalTests.cs",
+      "sha256": "97c8d2374e1dd044bd7d2c933bd3d422fce008595d2807f34e3099c139d98335"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerScheduleBackfillTests.cs",
+      "sha256": "916183161398eb4faae2e675e3150e066cfec9c703e69a673d060c8e40c87fe7"
+    },
+    {
+      "path": "backend/LegalService.Tests/LegalService.Tests.csproj",
+      "sha256": "135454edfa563c48b69b4f8568f0a72cf86a02b0bc40c441805b3d574227be9a"
+    },
+    {
+      "path": "backend/LegalService.Tests/Member1PostgresTests.cs",
+      "sha256": "8c940a2247a8842984b86da6a83a5bf0cd8f307298fbe3894b6c6863f7ca9fae"
+    },
+    {
+      "path": "backend/LegalService.Tests/Member1RecommendationTests.cs",
+      "sha256": "8143c5a7c2efb1f47cb576eb65fe5982e33a7ff653d9f9d30365f796d5616767"
+    },
+    {
+      "path": "backend/LegalService.Tests/PasswordCurrentContractTests.cs",
+      "sha256": "8db59642bf6006f6f01dfcf6cf967c3d7ab5c9a0cd3be1506c772abcdf560f27"
+    },
+    {
+      "path": "backend/LegalService.Tests/QmseAppointmentTests.cs",
+      "sha256": "6437a56534f48bcef774526de924111c078effc6c2e86f2e2b56298111ae6dd4"
+    },
+    {
+      "path": "backend/LegalService.Tests/QmseDocumentPostgresTests.cs",
+      "sha256": "78a5655029b6de168e6e971bd07022f6e7e1b69f1fe39d77e60df0fa8409460c"
+    },
+    {
+      "path": "backend/LegalService.Tests/QmseDocumentTests.cs",
+      "sha256": "64853d5bbd98467793d6efd1ecdbbdeb95a1843fa4764c7fa9a8c8aba71fc5ff"
+    },
+    {
+      "path": "backend/LegalService.Tests/QmseHttpTests.cs",
+      "sha256": "b7bfb14750604172e0301f13a3b811af4b035147bdbdaee051442ab4d529b643"
+    },
+    {
+      "path": "backend/LegalService.Tests/QmseMigrationRegressionTests.cs",
+      "sha256": "567b45f0750b17cadb67fa380eed887e40e2d323405bed234aa1556a34027591"
+    },
+    {
+      "path": "backend/LegalService.Tests/QmseRegistrationTests.cs",
+      "sha256": "f04b2e51913e90299eaee820a9ceaf3dbc35a1d87579732954113645ec8f6dd9"
+    },
+    {
+      "path": "backend/LegalService.Tests/QmseUploadRegressionTests.cs",
+      "sha256": "87655d2082c16684b40726fc36e00d031fd1a97add387d4e3aa9de8b15212b4f"
+    },
+    {
+      "path": "backend/LegalService.Tests/RecommendationLiveTransportTests.cs",
+      "sha256": "df64063ffde1ab0f3bca58aca9c80ac07f1d436338fb23b752b474d198d455aa"
+    },
+    {
+      "path": "backend/LegalService.Tests/RecommendationServiceCatalogTests.cs",
+      "sha256": "15fd90f44236476325012d74e79dd5fb7f37cbf73bb23f85cb02666cc30e28eb"
+    },
+    {
+      "path": "backend/LegalService.Tests/RecommendationTransportTests.cs",
+      "sha256": "f2325fa23104e79e3789e6021bfd37c9c59a2fa11219a2e6bb39d428c53c2df2"
+    },
+    {
+      "path": "backend/LegalService.Tests/RecurringRecommendationTests.cs",
+      "sha256": "aa076efab117189e0e1f04fd5cf3454f1a2a2a7064a7f84f04d8ddbd935171fe"
+    },
+    {
+      "path": "backend/LegalService.Tests/RecurringSchedulingPostgresTests.cs",
+      "sha256": "3a999a66c58b42b3e52bd16d5101da2596243dc2c5b10a34a149d873aabd936a"
+    },
+    {
+      "path": "backend/LegalService.Tests/RecurringSchedulingTests.cs",
+      "sha256": "6c29782c44b64f78ac76c6b94568551274c903699352a0555b83a7e2d9d62de9"
+    },
+    {
+      "path": "backend/LegalService.Tests/RequirementsDecisionTests.cs",
+      "sha256": "9a8650bab1018b44f0a0c7360a32c17a1a94c0677c2564f7730eaba882f299c3"
+    },
+    {
+      "path": "backend/LegalService.Tests/SecurityHeaderTests.cs",
+      "sha256": "59af1b19304e25e6c361e551e17c1a401ac1ce31605731cea32eb921bf3de2bf"
+    },
+    {
+      "path": "backend/LegalService.Tests/ServiceRequestServiceTests.cs",
+      "sha256": "1b5fa4f49822a01df6db235a8b04402c99764e75336d2c55e49ccbd5b60199b2"
+    },
+    {
+      "path": "backend/LegalService.Tests/WorkforceDemoHttpTests.cs",
+      "sha256": "41ba2ca7daf0b9fc20458d2e653185f438fec75182b323d68ea7a430d5ab4dc5"
+    },
+    {
+      "path": "backend/LegalService.Tests/WorkforceHiringTests.cs",
+      "sha256": "aa7ef4b32d072b86d868a2310f2b533778f302482d9018f2144070e941513c48"
+    },
+    {
+      "path": "backend/LegalService.Tests/WorkforcePlanningPostgresTests.cs",
+      "sha256": "5ad9a76fcb47362542b8667c396ea41126a6533369185e24ff12d98e0fe69e69"
+    },
+    {
+      "path": "backend/LegalService.Tests/WorkforcePlanningTests.cs",
+      "sha256": "f3fc4f3e39771a5c117be91453d292983c987f2e3a73fa97e6e51f350b494df6"
+    },
+    {
+      "path": "backend/LegalService.Tests/WorkforcePostgresTests.cs",
+      "sha256": "8a3d90291a20f7fbffa057954e91e539fd331e05e8aa1a4d30b1fbc664cee652"
+    },
+    {
+      "path": "backend/LegalService.Tests/final_audit_contract_replay.py",
+      "sha256": "2c922469ebd00a03f9c2e2160683e2ecbe228d61c646e5e8e11c9542f57eff51"
+    },
+    {
+      "path": "backend/LegalService.Tests/historical_api_replay.py",
+      "sha256": "3015ae5252a1f2e6934fc20d21cec8caa438e2714b2cdc0d8d6b8454deee649f"
+    },
+    {
+      "path": "ai-service/lawyer_recommendation/__init__.py",
+      "sha256": "fd2c4a862d153413f831fb84ac2c2219e756a977a0d2562ff10ed3b60c3f073d"
+    },
+    {
+      "path": "ai-service/lawyer_recommendation/agent.py",
+      "sha256": "9ac41024a1836ca00feff1d55890978d8b909003b6824f7dba17b8f3642944e5"
+    },
+    {
+      "path": "ai-service/lawyer_recommendation/app.py",
+      "sha256": "9c302c46762541c7f65c8de5a0edd610576447cbb66acdbfbfdab59d61306562"
+    },
+    {
+      "path": "ai-service/lawyer_recommendation/gemini.py",
+      "sha256": "a5db9ef0ba8510f3773e42da010781a828db25333f13fc950effab6c76d76fa8"
+    }
+  ]
+}

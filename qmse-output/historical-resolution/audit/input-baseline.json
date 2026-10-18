@@ -1,0 +1,13 @@
+{
+  "source_sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "local_branch": "docs/se3110-qmse-testing",
+  "inputs": {
+    "/Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/final-report/SE3110_Testing_Report_GR42_Final.docx": "aabe423dae3fba312f6cd82052f2b7593919d6595772149afa3645faa305cce5",
+    "/Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/final-report/SE3110_Testing_Report_GR42_Final.pdf": "5c02bd034f33dd348f48fc890c5459d4ecbd9559748c99214806cf9ed52bcd5b",
+    "/Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/completion-20261008/test-results/case-verification.json": "42503c6af37422d553e5c88d2e1a992ad13c0cdd3b7fb4d0e795851137935608",
+    "/Users/jeyam/Downloads/SE3110 Assignment.pdf": "320eebf33ac5e70b29ec5c861d725339498c04e19e82135ab91e7b75e7c3884b"
+  },
+  "execution": "NOT STARTED",
+  "authorship": "New work AI-assisted; no student attribution",
+  "historical_cases": 49
+}

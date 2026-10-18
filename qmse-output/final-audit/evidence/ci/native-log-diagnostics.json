@@ -1,0 +1,153 @@
+[
+  {
+    "run_id": 37386601420,
+    "workflow": "Frontend CI",
+    "sha": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+    "conclusion": "success",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37386601420-native-logs.zip",
+    "selected_actual_log_lines": []
+  },
+  {
+    "run_id": 37386601103,
+    "workflow": "Backend CI",
+    "sha": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+    "conclusion": "success",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37386601103-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-05T23:08:01.7002858Z Total tests: 282",
+      "2026-10-05T23:08:01.7003219Z      Passed: 273",
+      "2026-10-05T23:08:01.7003786Z     Skipped: 9"
+    ]
+  },
+  {
+    "run_id": 37386601104,
+    "workflow": "Mobile CI",
+    "sha": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+    "conclusion": "success",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37386601104-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-05T23:08:20.5752582Z No issues found! (ran in 8.3s)"
+    ]
+  },
+  {
+    "run_id": 37415146816,
+    "workflow": "Backend CI",
+    "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+    "conclusion": "success",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37415146816-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-06T04:45:36.6194297Z Total tests: 281",
+      "2026-10-06T04:45:36.6194664Z      Passed: 272",
+      "2026-10-06T04:45:36.6195003Z     Skipped: 9"
+    ]
+  },
+  {
+    "run_id": 37415146862,
+    "workflow": "Mobile CI",
+    "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+    "conclusion": "success",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37415146862-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-06T04:45:53.2100131Z No issues found! (ran in 7.0s)"
+    ]
+  },
+  {
+    "run_id": 37415147442,
+    "workflow": "Frontend CI",
+    "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+    "conclusion": "success",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37415147442-native-logs.zip",
+    "selected_actual_log_lines": []
+  },
+  {
+    "run_id": 37385133126,
+    "workflow": "Backend CI",
+    "sha": "6d982e60aa65af54d39d0beac4f527abcd785820",
+    "conclusion": "success",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37385133126-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-05T22:52:40.3657365Z Total tests: 282",
+      "2026-10-05T22:52:40.3657870Z      Passed: 273",
+      "2026-10-05T22:52:40.3658285Z     Skipped: 9"
+    ]
+  },
+  {
+    "run_id": 37385133013,
+    "workflow": "Mobile CI",
+    "sha": "6d982e60aa65af54d39d0beac4f527abcd785820",
+    "conclusion": "failure",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37385133013-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-05T22:53:24.7950255Z    info \u2022 Statements in an if should be enclosed in a block. Try wrapping the statement in a block \u2022 lib/config/api_config.dart:11:7 \u2022 curly_braces_in_flow_control_structures",
+      "2026-10-05T22:53:24.7952501Z    info \u2022 Statements in an if should be enclosed in a block. Try wrapping the statement in a block \u2022 lib/config/api_config.dart:30:7 \u2022 curly_braces_in_flow_control_structures",
+      "2026-10-05T22:53:24.8127078Z ##[error]Process completed with exit code 1."
+    ]
+  },
+  {
+    "run_id": 37385133035,
+    "workflow": "Frontend CI",
+    "sha": "6d982e60aa65af54d39d0beac4f527abcd785820",
+    "conclusion": "success",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37385133035-native-logs.zip",
+    "selected_actual_log_lines": []
+  },
+  {
+    "run_id": 37717885208,
+    "workflow": "Mobile CI",
+    "sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+    "conclusion": "failure",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37717885208-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-08T02:27:14.7768256Z warning \u2022 The asset file 'assets/.env' doesn't exist. Try creating the file or fixing the path to the file \u2022 pubspec.yaml:69:7 \u2022 asset_does_not_exist",
+      "2026-10-08T02:27:14.7880955Z ##[error]Process completed with exit code 1."
+    ]
+  },
+  {
+    "run_id": 37717885104,
+    "workflow": "Frontend CI",
+    "sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+    "conclusion": "failure",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37717885104-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-08T02:26:58.7686706Z ##[error]src/components/common/OurValuesServicesSection.tsx(2,10): error TS6133: 'ArrowRight' is declared but its value is never read.",
+      "2026-10-08T02:26:58.7701453Z ##[error]src/components/common/OurValuesServicesSection.tsx(2,22): error TS6133: 'Scale' is declared but its value is never read.",
+      "2026-10-08T02:26:58.7724100Z ##[error]src/components/common/OurValuesServicesSection.tsx(3,1): error TS6133: 'Link' is declared but its value is never read.",
+      "2026-10-08T02:26:58.7728750Z ##[error]src/pages/public/ServicesPublicPage.tsx(16,3): error TS6133: 'Briefcase' is declared but its value is never read.",
+      "2026-10-08T02:26:59.3792671Z ##[error]Process completed with exit code 2."
+    ]
+  },
+  {
+    "run_id": 37717885253,
+    "workflow": "Backend CI",
+    "sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+    "conclusion": "failure",
+    "native_archive": "qmse-output/final-audit/evidence/ci/37717885253-native-logs.zip",
+    "selected_actual_log_lines": [
+      "2026-10-08T02:27:12.5476528Z [xUnit.net 00:00:04.15]       Expected: 17",
+      "2026-10-08T02:27:12.5504725Z [xUnit.net 00:00:04.15]       Actual:   23",
+      "2026-10-08T02:27:12.7135709Z   Failed LegalService.Tests.DemoLawyerSeederTests.SeedsThirtyLawyersWithRecurringSchedulesAndAppointmentSnapshotsWithoutDuplicates [270 ms]",
+      "2026-10-08T02:27:12.7224584Z Expected: 17",
+      "2026-10-08T02:27:12.7254569Z Actual:   23",
+      "2026-10-08T02:27:12.7655558Z [xUnit.net 00:00:04.34]       Expected: 17",
+      "2026-10-08T02:27:12.7684522Z [xUnit.net 00:00:04.34]       Actual:   23",
+      "2026-10-08T02:27:12.9374706Z [xUnit.net 00:00:04.53]       Expected: 17",
+      "2026-10-08T02:27:12.9394838Z [xUnit.net 00:00:04.53]       Actual:   23",
+      "2026-10-08T02:27:12.9955819Z   Failed LegalService.Tests.DemoLawyerSeederTests.SchedulingOnlySeedPreservesEditedProfilesSchedulesAndIsIdempotent [185 ms]",
+      "2026-10-08T02:27:12.9958520Z Expected: 17",
+      "2026-10-08T02:27:12.9959102Z Actual:   23",
+      "2026-10-08T02:27:12.9975598Z   Failed LegalService.Tests.DemoLawyerSeederTests.UsesOnlyExistingPracticeAreasAndPreservesAdminServiceData [196 ms]",
+      "2026-10-08T02:27:12.9977727Z Expected: 17",
+      "2026-10-08T02:27:12.9978056Z Actual:   23",
+      "2026-10-08T02:27:13.1718848Z [xUnit.net 00:00:04.77]       Expected: 17",
+      "2026-10-08T02:27:13.1744848Z [xUnit.net 00:00:04.77]       Actual:   23",
+      "2026-10-08T02:27:13.2765978Z   Failed LegalService.Tests.DemoLawyerSeederTests.SchedulingSeedRecognizesLegacyMarkersWithoutRewritingStoredRecords [100 ms]",
+      "2026-10-08T02:27:13.2824761Z Expected: 17",
+      "2026-10-08T02:27:13.2854691Z Actual:   23",
+      "2026-10-08T02:27:32.0667757Z Total tests: 281",
+      "2026-10-08T02:27:32.0668331Z      Passed: 268",
+      "2026-10-08T02:27:32.0669256Z      Failed: 4",
+      "2026-10-08T02:27:32.0669485Z     Skipped: 9",
+      "2026-10-08T02:27:32.1253568Z ##[error]Process completed with exit code 1."
+    ]
+  }
+]

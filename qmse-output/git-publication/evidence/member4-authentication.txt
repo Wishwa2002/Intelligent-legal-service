@@ -1,0 +1,1250 @@
+Skip to content
+Navigation Menu
+Sign in
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Commit 43f6345
+Browse files
+Wishwa2002
+committed
+Implement JWT authentication and admin authorization
+chore/deployment-readiness(#31, #12)+
+develop(#32, #12)+
+feature/admin-auth(#12)+
+feature/appointment-scheduling-enhancements(#33, #34, #12)+
+feature/booking_appointment_management(#15, #12)+
+feature/member1-lawyer-management(#12)+
+fix/auth-security-improvements(#12)+
+fix/unified-staff-auth(#12)+
+se3110-qmse-testing(#12)
+1 parent 
+9309287
+ commit 
+43f6345
+
+26 files changed
+
++790
+-2,285
+Lines changed: 790 additions & 2285 deletions
+File tree
+backend/LegalService.API
+Authentication/Services
+JwtService.cs
+Controllers
+AdminController.cs
+AuthController.cs
+DocumentAndClerk
+DocumentFilesController.cs
+ServiceRequestsController.cs
+DTOs
+Requests
+RegisterRequest.cs
+Responses
+ServiceRequestResponses.cs
+Interfaces
+IServiceRequestService.cs
+LegalService.API.csproj
+Migrations
+20260819084112_AddAuthenticationTables.Designer.cs
+20260819084112_AddAuthenticationTables.cs
+20260821060106_AddUpdatedAtAndUserRoleRelationships.Designer.cs
+20260821060106_AddUpdatedAtAndUserRoleRelationships.cs
+20260825093751_InitialLegalPlatformSchema.Designer.cs
+20260902120031_AddDocumentFileMetadataAndServiceFlags.cs
+20260919121759_AddCustomerServiceRequests.cs
+20260922093339_InitialCreate.Designer.cs
+20260922093339_InitialCreate.cs
+20260922132300_FixAuditLogUserId.Designer.cs
+20260922132300_FixAuditLogUserId.cs
+ApplicationDbContextModelSnapshot.cs
+Models/Entities
+AuditLog.cs
+ServiceRequest.cs
+Program.cs
+Services
+ServiceRequestService.cs
+appsettings.json
+ 
+‎backend/LegalService.API/Authentication/Services/JwtService.cs‎
++68
+Lines changed: 68 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,68 @@
+
+	1	
++
+using System.IdentityModel.Tokens.Jwt;
+
+	2	
++
+using System.Security.Claims;
+
+	3	
++
+using System.Text;
+
+	4	
++
+using Microsoft.IdentityModel.Tokens;
+
+	5	
++
+
+	6	
++
+namespace LegalService.API.Authentication.Services;
+
+	7	
++
+
+	8	
++
+public class JwtService
+
+	9	
++
+{
+
+	10	
++
+    private readonly IConfiguration _configuration;
+
+	11	
++
+
+	12	
++
+    public JwtService(IConfiguration configuration)
+
+	13	
++
+    {
+
+	14	
++
+        _configuration = configuration;
+
+	15	
++
+    }
+
+	16	
++
+
+	17	
++
+    public string GenerateToken(int userId, string email, string role)
+
+	18	
++
+    {
+
+	19	
++
+        var claims = new[]
+
+	20	
++
+        {
+
+	21	
++
+            new Claim(
+
+	22	
++
+                ClaimTypes.NameIdentifier,
+
+	23	
++
+                userId.ToString()
+
+	24	
++
+            ),
+
+	25	
++
+
+	26	
++
+            new Claim(
+
+	27	
++
+                ClaimTypes.Email,
+
+	28	
++
+                email
+
+	29	
++
+            ),
+
+	30	
++
+
+	31	
++
+            new Claim(
+
+	32	
++
+                ClaimTypes.Role,
+
+	33	
++
+                role
+
+	34	
++
+            )
+
+	35	
++
+        };
+
+	36	
++
+
+	37	
++
+
+	38	
++
+        var key = new SymmetricSecurityKey(
+
+	39	
++
+            Encoding.UTF8.GetBytes(
+
+	40	
++
+                _configuration["Jwt:Key"]!
+
+	41	
++
+            )
+
+	42	
++
+        );
+
+	43	
++
+
+	44	
++
+
+	45	
++
+        var credentials = new SigningCredentials(
+
+	46	
++
+            key,
+
+	47	
++
+            SecurityAlgorithms.HmacSha256
+
+	48	
++
+        );
+
+	49	
++
+
+	50	
++
+
+	51	
++
+        var expiryMinutes = Convert.ToDouble(
+
+	52	
++
+            _configuration["Jwt:ExpiryMinutes"]
+
+	53	
++
+        );
+
+	54	
++
+
+	55	
++
+
+	56	
++
+        var token = new JwtSecurityToken(
+
+	57	
++
+            issuer: _configuration["Jwt:Issuer"],
+
+	58	
++
+            audience: _configuration["Jwt:Audience"],
+
+	59	
++
+            claims: claims,
+
+	60	
++
+            expires: DateTime.UtcNow.AddMinutes(expiryMinutes),
+
+	61	
++
+            signingCredentials: credentials
+
+	62	
++
+        );
+
+	63	
++
+
+	64	
++
+
+	65	
++
+        return new JwtSecurityTokenHandler()
+
+	66	
++
+            .WriteToken(token);
+
+	67	
++
+    }
+
+	68	
++
+}
+‎backend/LegalService.API/Controllers/AdminController.cs‎
++26
+Lines changed: 26 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,26 @@
+
+	1	
++
+using Microsoft.AspNetCore.Authorization;
+
+	2	
++
+using Microsoft.AspNetCore.Mvc;
+
+	3	
++
+using System.Security.Claims;
+
+	4	
++
+
+	5	
++
+namespace LegalService.API.Controllers;
+
+	6	
++
+
+	7	
++
+[ApiController]
+
+	8	
++
+[Route("api/admin")]
+
+	9	
++
+[Authorize(Roles = "Admin")]
+
+	10	
++
+public class AdminController : ControllerBase
+
+	11	
++
+{
+
+	12	
++
+    /// <summary>
+
+	13	
++
+    /// Test admin authorization access.
+
+	14	
++
+    /// </summary>
+
+	15	
++
+    [HttpGet("test")]
+
+	16	
++
+    public IActionResult Test()
+
+	17	
++
+    {
+
+	18	
++
+        return Ok(new
+
+	19	
++
+        {
+
+	20	
++
+            message = "Admin access granted",
+
+	21	
++
+            userId = User.FindFirstValue(ClaimTypes.NameIdentifier),
+
+	22	
++
+            email = User.FindFirstValue(ClaimTypes.Email),
+
+	23	
++
+            role = User.FindFirstValue(ClaimTypes.Role)
+
+	24	
++
+        });
+
+	25	
++
+    }
+
+	26	
++
+}
+‎backend/LegalService.API/Controllers/AuthController.cs‎
++25
+-6
+Lines changed: 25 additions & 6 deletions
+Original file line number	Diff line number	Diff line change
+@@ -18,13 +18,17 @@ public class AuthController : ControllerBase
+
+18	18	
+    private readonly ApplicationDbContext _context;
+
+19	19	
+    private readonly IPasswordService _passwordService;
+
+20	20	
+
+
+
+	21	
++
+    private readonly JwtService _jwtService;
+
+	22	
++
+
+21	23	
+
+
+
+22	24	
+    public AuthController(
+
+23	25	
+        ApplicationDbContext context,
+
+24		
+-
+        IPasswordService passwordService)
+
+	26	
++
+        IPasswordService passwordService,
+
+	27	
++
+        JwtService jwtService)
+
+25	28	
+    {
+
+26	29	
+        _context = context;
+
+27	30	
+        _passwordService = passwordService;
+
+	31	
++
+        _jwtService = jwtService;
+
+28	32	
+    }
+
+29	33	
+
+
+
+30	34	
+
+
+
+
+@@ -39,7 +43,8 @@ public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+
+39	43	
+
+
+
+40	44	
+        // Check existing email
+
+41	45	
+        var existingUser = await _context.Users
+
+42		
+-
+            .FirstOrDefaultAsync(x => x.Email.ToLower() == normalizedEmail);
+
+	46	
++
+         .FirstOrDefaultAsync(x => x.Email != null &&
+
+	47	
++
+                              x.Email.ToLower() == normalizedEmail);
+
+43	48	
+
+
+
+44	49	
+        if (existingUser != null)
+
+45	50	
+        {
+
+
+@@ -49,9 +54,7 @@ public async Task<IActionResult> Register([FromBody] RegisterRequest request)
+
+49	54	
+        // Hash password
+
+50	55	
+        var passwordHash = _passwordService.HashPassword(request.Password);
+
+51	56	
+
+
+
+52		
+-
+        var roleName = string.IsNullOrWhiteSpace(request.Role) || request.Role.Equals("User", StringComparison.OrdinalIgnoreCase)
+
+53		
+-
+            ? "Customer"
+
+54		
+-
+            : request.Role.Trim();
+
+	57	
++
+        var roleName = "Customer";
+
+55	58	
+
+
+
+56	59	
+        var fullName = string.IsNullOrWhiteSpace(request.FullName)
+
+57	60	
+            ? normalizedEmail.Split('@')[0]
+
+
+@@ -105,8 +108,15 @@ public async Task<IActionResult> Login([FromBody] LoginRequest request)
+
+105	108	
+            if (!passwordValid)
+
+106	109	
+                return Unauthorized(new { message = "Invalid email or password." });
+
+107	110	
+
+
+
+	111	
++
+            var token = _jwtService.GenerateToken(
+
+	112	
++
+                clerk.ClerkId,
+
+	113	
++
+                clerk.Email!,
+
+	114	
++
+                "Clerk"
+
+	115	
++
+            );
+
+	116	
++
+
+108	117	
+            return Ok(new
+
+109	118	
+            {
+
+	119	
++
+                token,
+
+110	120	
+                userId = clerk.ClerkId,
+
+111	121	
+                name = clerk.Name,
+
+112	122	
+                email = clerk.Email,
+
+
+@@ -127,12 +137,21 @@ public async Task<IActionResult> Login([FromBody] LoginRequest request)
+
+127	137	
+            if (!valid)
+
+128	138	
+                return Unauthorized(new { message = "Invalid email or password." });
+
+129	139	
+
+
+
+	140	
++
+            var role = user.Role ?? "Customer";
+
+	141	
++
+
+	142	
++
+            var token = _jwtService.GenerateToken(
+
+	143	
++
+                user.UserId,
+
+	144	
++
+                user.Email,
+
+	145	
++
+                role
+
+	146	
++
+            );
+
+	147	
++
+
+130	148	
+            return Ok(new
+
+131	149	
+            {
+
+	150	
++
+                token,
+
+132	151	
+                userId = user.UserId,
+
+133	152	
+                name = user.Name,
+
+134	153	
+                email = user.Email,
+
+135		
+-
+                role = user.Role ?? "Customer",
+
+	154	
++
+                role,
+
+136	155	
+                message = "Login successful"
+
+137	156	
+            });
+
+138	157	
+        }
+
+
+‎backend/LegalService.API/Controllers/DocumentAndClerk/DocumentFilesController.cs‎
++2
+-1
+Lines changed: 2 additions & 1 deletion
+Original file line number	Diff line number	Diff line change
+@@ -21,7 +21,8 @@ public DocumentFilesController(IDocumentFileService fileService)
+
+21	21	
+    /// Upload a document (PDF, JPG, PNG) for a documentation request.
+
+22	22	
+    /// </summary>
+
+23	23	
+    [HttpPost("documentation-requests/{requestId:int}/files")]
+
+24		
+-
+    public async Task<IActionResult> Upload(int requestId, [FromForm] IFormFile file)
+
+	24	
++
+    [Consumes("multipart/form-data")]
+
+	25	
++
+    public async Task<IActionResult> Upload(int requestId, IFormFile file)
+
+25	26	
+    {
+
+26	27	
+        if (file == null || file.Length == 0)
+
+27	28	
+        {
+
+
+‎backend/LegalService.API/Controllers/ServiceRequestsController.cs‎
++9
+-9
+Lines changed: 9 additions & 9 deletions
+Original file line number	Diff line number	Diff line change
+@@ -25,14 +25,14 @@ public ServiceRequestsController(IServiceRequestService service)
+
+25	25	
+    // POST /api/service-requests?customerId={guid}
+
+26	26	
+    [HttpPost]
+
+27	27	
+    public async Task<IActionResult> Create(
+
+28		
+-
+        [FromQuery] Guid customerId,
+
+	28	
++
+        [FromQuery] int customerId,
+
+29	29	
+        [FromBody] CreateServiceRequestRequest dto)
+
+30	30	
+    {
+
+31	31	
+        if (!ModelState.IsValid)
+
+32	32	
+            return BadRequest(ModelState);
+
+33	33	
+
+
+
+34		
+-
+        if (customerId == Guid.Empty)
+
+35		
+-
+            return BadRequest(new { message = "A valid customerId (Guid) is required." });
+
+	34	
++
+        if (customerId <= 0)
+
+	35	
++
+            return BadRequest(new { message = "A valid customerId  is required." });
+
+36	36	
+
+
+
+37	37	
+        var result = await _service.CreateAsync(customerId, dto);
+
+38	38	
+        return CreatedAtAction(nameof(GetById), new { id = result.ServiceRequestId }, result);
+
+
+@@ -41,7 +41,7 @@ public async Task<IActionResult> Create(
+
+41	41	
+    // GET /api/service-requests[?customerId=&status=&requestType=]
+
+42	42	
+    [HttpGet]
+
+43	43	
+    public async Task<IActionResult> GetAll(
+
+44		
+-
+        [FromQuery] Guid? customerId,
+
+	44	
++
+        [FromQuery] int? customerId,
+
+45	45	
+        [FromQuery] string? status,
+
+46	46	
+        [FromQuery] string? requestType)
+
+47	47	
+    {
+
+
+@@ -63,13 +63,13 @@ public async Task<IActionResult> GetById([FromRoute] Guid id)
+
+63	63	
+    [HttpPut("{id:guid}")]
+
+64	64	
+    public async Task<IActionResult> Update(
+
+65	65	
+        [FromRoute] Guid id,
+
+66		
+-
+        [FromQuery] Guid customerId,
+
+	66	
++
+        [FromQuery] int customerId,
+
+67	67	
+        [FromBody] UpdateServiceRequestRequest dto)
+
+68	68	
+    {
+
+69	69	
+        if (!ModelState.IsValid)
+
+70	70	
+            return BadRequest(ModelState);
+
+71	71	
+
+
+
+72		
+-
+        if (customerId == Guid.Empty)
+
+	72	
++
+        if (customerId <= 0)
+
+73	73	
+            return BadRequest(new { message = "A valid customerId (Guid) is required." });
+
+74	74	
+
+
+
+75	75	
+        var result = await _service.UpdateAsync(id, customerId, dto);
+
+
+@@ -82,9 +82,9 @@ public async Task<IActionResult> Update(
+
+82	82	
+    [HttpDelete("{id:guid}")]
+
+83	83	
+    public async Task<IActionResult> Cancel(
+
+84	84	
+        [FromRoute] Guid id,
+
+85		
+-
+        [FromQuery] Guid customerId)
+
+	85	
++
+        [FromQuery] int customerId)
+
+86	86	
+    {
+
+87		
+-
+        if (customerId == Guid.Empty)
+
+	87	
++
+        if (customerId <= 0)
+
+88	88	
+            return BadRequest(new { message = "A valid customerId (Guid) is required." });
+
+89	89	
+
+
+
+90	90	
+        var result = await _service.CancelAsync(id, customerId);
+
+
+@@ -97,7 +97,7 @@ public async Task<IActionResult> Cancel(
+
+97	97	
+    [HttpPatch("{id:guid}/status")]
+
+98	98	
+    public async Task<IActionResult> ChangeStatus(
+
+99	99	
+        [FromRoute] Guid id,
+
+100		
+-
+        [FromQuery] Guid? adminUserId,
+
+	100	
++
+        [FromQuery] int? adminUserId,
+
+101	101	
+        [FromBody] ChangeServiceRequestStatusRequest dto)
+
+102	102	
+    {
+
+103	103	
+        if (!ModelState.IsValid)
+
+
+‎backend/LegalService.API/DTOs/Requests/RegisterRequest.cs‎
+-2
+Lines changed: 0 additions & 2 deletions
+Original file line number	Diff line number	Diff line change
+@@ -7,6 +7,4 @@ public class RegisterRequest
+
+7	7	
+    public string Email { get; set; } = "";
+
+8	8	
+
+
+
+9	9	
+    public string Password { get; set; } = "";
+
+10		
+-
+
+11		
+-
+    public string Role { get; set; } = "Customer";
+
+12	10	
+}
+‎backend/LegalService.API/DTOs/Responses/ServiceRequestResponses.cs‎
++2
+-2
+Lines changed: 2 additions & 2 deletions
+Original file line number	Diff line number	Diff line change
+@@ -9,7 +9,7 @@ namespace LegalService.API.DTOs.Responses;
+
+9	9	
+public class ServiceRequestResponse
+
+10	10	
+{
+
+11	11	
+    public Guid ServiceRequestId { get; set; }
+
+12		
+-
+    public Guid CustomerId { get; set; }
+
+	12	
++
+    public int CustomerId { get; set; }
+
+13	13	
+    public string CustomerName { get; set; } = string.Empty;
+
+14	14	
+    public string Title { get; set; } = string.Empty;
+
+15	15	
+    public string RequestType { get; set; } = string.Empty;
+
+
+@@ -25,7 +25,7 @@ public class ServiceRequestResponse
+
+25	25	
+public class ServiceRequestDetailsResponse
+
+26	26	
+{
+
+27	27	
+    public Guid ServiceRequestId { get; set; }
+
+28		
+-
+    public Guid CustomerId { get; set; }
+
+	28	
++
+    public int CustomerId { get; set; }
+
+29	29	
+    public string CustomerName { get; set; } = string.Empty;
+
+30	30	
+    public string CustomerEmail { get; set; } = string.Empty;
+
+31	31	
+    public string Title { get; set; } = string.Empty;
+
+
+‎backend/LegalService.API/Interfaces/IServiceRequestService.cs‎
++17
+-6
+Lines changed: 17 additions & 6 deletions
+Original file line number	Diff line number	Diff line change
+@@ -9,18 +9,29 @@ namespace LegalService.API.Interfaces;
+
+9	9	
+
+
+
+10	10	
+public interface IServiceRequestService
+
+11	11	
+{
+
+12		
+-
+    Task<ServiceRequestDetailsResponse> CreateAsync(Guid customerId, CreateServiceRequestRequest request);
+
+	12	
++
+    Task<ServiceRequestDetailsResponse> CreateAsync(
+
+	13	
++
+        int customerId,
+
+	14	
++
+        CreateServiceRequestRequest request);
+
+13	15	
+
+
+
+14	16	
+    Task<IEnumerable<ServiceRequestResponse>> GetAllAsync(
+
+15		
+-
+        Guid? customerId = null,
+
+	17	
++
+        int? customerId = null,
+
+16	18	
+        string? status = null,
+
+17	19	
+        string? requestType = null);
+
+18	20	
+
+
+
+19	21	
+    Task<ServiceRequestDetailsResponse?> GetByIdAsync(Guid requestId);
+
+20	22	
+
+
+
+21		
+-
+    Task<ServiceRequestDetailsResponse?> UpdateAsync(Guid requestId, Guid customerId, UpdateServiceRequestRequest request);
+
+	23	
++
+    Task<ServiceRequestDetailsResponse?> UpdateAsync(
+
+	24	
++
+        Guid requestId,
+
+	25	
++
+        int customerId,
+
+	26	
++
+        UpdateServiceRequestRequest request);
+
+22	27	
+
+
+
+23		
+-
+    Task<ServiceRequestDetailsResponse?> CancelAsync(Guid requestId, Guid customerId);
+
+	28	
++
+    Task<ServiceRequestDetailsResponse?> CancelAsync(
+
+	29	
++
+        Guid requestId,
+
+	30	
++
+        int customerId);
+
+24	31	
+
+
+
+25		
+-
+    Task<ServiceRequestDetailsResponse?> ChangeStatusAsync(Guid requestId, ServiceRequestStatus newStatus, string? note, Guid? adminUserId);
+
+26		
+-
+}
+
+	32	
++
+    Task<ServiceRequestDetailsResponse?> ChangeStatusAsync(
+
+	33	
++
+        Guid requestId,
+
+	34	
++
+        ServiceRequestStatus newStatus,
+
+	35	
++
+        string? note,
+
+	36	
++
+        int? adminUserId);
+
+	37	
++
+}
+‎backend/LegalService.API/LegalService.API.csproj‎
++1
+-1
+Lines changed: 1 addition & 1 deletion
+Original file line number	Diff line number	Diff line change
+@@ -17,7 +17,7 @@
+
+17	17	
+      <PrivateAssets>all</PrivateAssets>
+
+18	18	
+    </PackageReference>
+
+19	19	
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.8" />
+
+20		
+-
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="10.2.3" />
+
+	20	
++
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+
+21	21	
+  </ItemGroup>
+
+22	22	
+
+
+
+23	23	
+</Project>
+0 commit comments
+Comments
+0
+ (0)
+Please sign in to comment.
+9 files remain

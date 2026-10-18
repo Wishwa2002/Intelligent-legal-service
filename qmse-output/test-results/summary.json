@@ -1,0 +1,189 @@
+{
+  "backend": {
+    "total": "328",
+    "executed": "326",
+    "passed": "326",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0",
+    "skipped_from_result_elements": 2,
+    "note": "TRX root notExecuted counter is 0; two UnitTestResult outcomes are NotExecuted, matching console skips and total minus executed."
+  },
+  "node": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0
+  },
+  "flutter": {
+    "total": 49,
+    "passed": 49,
+    "failed": 0,
+    "scope": "Unit/widget tests, six files; separate real Flutter web E2E"
+  },
+  "playwright": {
+    "startTime": "2026-10-08T05:02:38.526Z",
+    "duration": 53757.794,
+    "expected": 111,
+    "skipped": 3,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "ai": {
+    "total": 102,
+    "passed": 102,
+    "failed": 0,
+    "scope": "Mocked/deterministic; four added Golden Case subcriteria"
+  },
+  "upload_retest": {
+    "total": "18",
+    "executed": "18",
+    "passed": "18",
+    "failed": "0",
+    "error": "0",
+    "timeout": "0",
+    "aborted": "0",
+    "inconclusive": "0",
+    "passedButRunAborted": "0",
+    "notRunnable": "0",
+    "notExecuted": "0",
+    "disconnected": "0",
+    "warning": "0",
+    "completed": "0",
+    "inProgress": "0",
+    "pending": "0"
+  },
+  "coverage": {
+    "line-rate": "0.8111",
+    "branch-rate": "0.4976",
+    "lines-covered": "20654",
+    "lines-valid": "25463",
+    "branches-covered": "1375",
+    "branches-valid": "2763"
+  },
+  "zap": {
+    "instances": 10,
+    "dispositions": {
+      "Low: X-Content-Type-Options Header Missing": 9,
+      "Informational: Authentication Request Identified": 1
+    }
+  },
+  "performance": {
+    "lawyer_search_ms": {
+      "max": 6.136,
+      "avg": 3.7243000000000004,
+      "med": 3.4865000000000004,
+      "p(50)": 3.4865000000000004,
+      "p(95)": 5.6787,
+      "min": 0.953
+    },
+    "lawyer_details_ms": {
+      "avg": 2.2769,
+      "med": 2.1334999999999997,
+      "p(50)": 2.1334999999999997,
+      "p(95)": 3.5275999999999996,
+      "min": 0.854,
+      "max": 4.03
+    },
+    "appointments_ms": {
+      "avg": 1.6944000000000001,
+      "med": 1.4994999999999998,
+      "p(50)": 1.4994999999999998,
+      "p(95)": 3.585349999999998,
+      "min": 0.506,
+      "max": 4.331
+    },
+    "documentation_ms": {
+      "avg": 15.830866666666667,
+      "med": 15.474499999999999,
+      "p(50)": 15.474499999999999,
+      "p(95)": 20.965899999999998,
+      "min": 4.59,
+      "max": 23.511
+    },
+    "http_req_failed": {
+      "rate": 0,
+      "passes": 0,
+      "fails": 120
+    },
+    "http_reqs": {
+      "count": 120,
+      "rate": 7.8028967473885
+    }
+  },
+  "integrated": {
+    "status": "PASS",
+    "request_id": 12,
+    "scope": "Real Flutter web, ASP.NET Core, PostgreSQL, actual deterministic FastAPI clerk ranking, React human review; Gemini not used in this workflow",
+    "completed_utc": "2026-10-08T05:02:00.518Z",
+    "checks": [
+      "Flutter authenticates and creates real request",
+      "Flutter sends genuine bundled NIC PDF via multipart; server stores bytes",
+      "Two additional genuine sample files uploaded through real API",
+      "FastAPI ranks actual DB clerk and requires human approval",
+      "Admin assigns actual ClerkId verified against normalized AI identity",
+      "React clerk updates actual request to COMPLETED",
+      "Flutter displays COMPLETED after reading API",
+      "PostgreSQL verifies 3 stored binary attachments and assigned clerk"
+    ]
+  },
+  "live_ai": {
+    "authorised_cap": 8,
+    "cumulative_attempted_calls": 1,
+    "retries": "disabled; attempts=1",
+    "results": [
+      {
+        "case": "GC-01",
+        "status": "BLOCKED",
+        "started_utc": "2026-10-08T04:40:26.265381+00:00",
+        "model": "gemini-3.8-flash",
+        "latency_seconds": 29.325653749983758,
+        "error_type": "ServerError",
+        "code": 504,
+        "reason": "Provider rejected or unavailable; raw exception omitted to protect credentials"
+      }
+    ]
+  },
+  "commit": "f360e4ac21f149ae5b90a125c57bf928982a9c53",
+  "report_cases": {
+    "HISTORICAL/UNVERIFIED": 49,
+    "VERIFIED": 23,
+    "FAILED": 3,
+    "BLOCKED": 2
+  },
+  "script_commit": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "frontend_build": {
+    "name": "completion-20261008-frontend-build",
+    "command": [
+      "npm",
+      "run",
+      "build"
+    ],
+    "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+    "started_utc": "2026-10-08T05:48:33.772639+00:00",
+    "ended_utc": "2026-10-08T05:48:37.326180+00:00",
+    "duration_seconds": 3.553,
+    "exit_code": 0,
+    "timed_out": false,
+    "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+    "log": "qmse-output/test-results/completion-20261008-frontend-build.log"
+  },
+  "publication": {
+    "source_sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "repository": "Wishwa2002/Intelligent-legal-service",
+    "branch": "se3110-qmse-testing",
+    "status": "VERIFIED",
+    "actions": "NO OBSERVED RUN; SOURCE BRANCH FILTER NON-TRIGGER",
+    "evidence": "qmse-output/git-publication/evidence/publication-verification.json",
+    "note": "No new application execution; native test results unchanged."
+  }
+}

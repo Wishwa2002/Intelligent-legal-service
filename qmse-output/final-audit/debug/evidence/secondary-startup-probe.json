@@ -1,0 +1,428 @@
+[
+  {
+    "executed_utc": "2026-10-08T12:29:35.657744+00:00",
+    "method": "POST",
+    "url": "http://127.0.0.1:55543/api/auth/login",
+    "inputs": {
+      "email": "qmse-history-admin@example.test",
+      "password": "[REDACTED]"
+    },
+    "http": 200,
+    "observed": {
+      "userId": 1,
+      "lawyerId": null,
+      "clerkId": null,
+      "name": "System Administrator",
+      "email": "qmse-history-admin@example.test",
+      "role": "Admin",
+      "department": null,
+      "contact": null,
+      "message": "Login successful"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:29:35.667575+00:00",
+    "method": "GET",
+    "url": "http://127.0.0.1:55545/health",
+    "inputs": null,
+    "http": 200,
+    "observed": {
+      "status": "ok"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:29:35.674163+00:00",
+    "method": "POST",
+    "url": "http://127.0.0.1:55545/lawyer-recommendations",
+    "inputs": {
+      "requirement": "Synthetic property dispute"
+    },
+    "http": 401,
+    "observed": {
+      "detail": "Internal authentication required"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:29:35.684470+00:00",
+    "method": "POST",
+    "url": "http://127.0.0.1:55545/lawyer-recommendations",
+    "inputs": {
+      "requirement": "Synthetic property dispute"
+    },
+    "http": 503,
+    "observed": {
+      "detail": "Requirement understanding is temporarily unavailable"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:29:35.688256+00:00",
+    "method": "GET",
+    "url": "http://127.0.0.1:55545/health",
+    "inputs": null,
+    "http": 200,
+    "observed": {
+      "status": "ok"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:29:35.784772+00:00",
+    "method": "GET",
+    "url": "http://127.0.0.1:55543/api/workforce-analysis",
+    "inputs": null,
+    "http": 200,
+    "observed": {
+      "generatedAt": "2026-10-08T12:29:35.726356Z",
+      "recentWindowDays": 30,
+      "futureWindowDays": 30,
+      "practiceAreas": [
+        {
+          "practiceAreaId": 3,
+          "practiceAreaName": "Corporate & Commercial Law",
+          "activeLawyerCount": 4,
+          "legalServiceCount": 2,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 1,
+          "futureAvailableSlotCount": 231,
+          "openCareerOpeningCount": 1,
+          "status": "HEALTHY",
+          "reasons": [
+            "CAPACITY_WITHIN_CONFIGURED_RULES",
+            "RECRUITMENT_ALREADY_ACTIVE"
+          ],
+          "openings": [
+            {
+              "careerId": 1,
+              "jobTitle": "Senior Counsel"
+            }
+          ],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 1,
+          "practiceAreaName": "Criminal Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 1,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 5,
+          "practiceAreaName": "Labour & Employment Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 4,
+          "practiceAreaName": "Real Estate & Property Law",
+          "activeLawyerCount": 2,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "WATCH",
+          "reasons": [
+            "LOW_FUTURE_CAPACITY"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 6,
+          "practiceAreaName": "Tax Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        }
+      ],
+      "unmappedCareerOpeningCount": 0,
+      "limitations": [
+        "Requests are Admin recommendation workflows, not unique customer cases. Appointments are counted by creation date; current single-area membership maps them to an area.",
+        "Requests and appointments may overlap; assessment uses their maximum, not their sum. This is a capacity signal, not a forecast or proof that hiring is required.",
+        "Service-specific demand cannot be reliably identified in the existing persisted data.",
+        "Careers has no open/closed field: every existing Career record is treated as open. Unlinked postings require human review."
+      ]
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:29:35.808104+00:00",
+    "method": "GET",
+    "url": "http://127.0.0.1:55543/api/lawyers",
+    "inputs": null,
+    "http": 200,
+    "observed": [
+      {
+        "lawyerId": "d5e816f3-8db9-4c09-933a-0a5021aac9ff",
+        "name": "Synthetic Empty Bar",
+        "email": "qmse-history-empty-bar@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic",
+        "experience": 5,
+        "licenseNumber": "QMSE-BAR-CONTROL",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "bef64bea-dcae-4460-9e2d-87573d4c656e",
+        "name": "Synthetic History Lawyer 1",
+        "email": "qmse-history-lawyer0@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-0",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "de7747ca-4eed-42a7-865e-dbfff551c65d",
+        "name": "Synthetic History Lawyer 2",
+        "email": "qmse-history-lawyer1@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-1",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "5e30e292-4206-4cbb-9db0-e581ef312b51",
+        "name": "Synthetic History Lawyer 3",
+        "email": "qmse-history-lawyer2@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-2",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "949e5b9b-7898-465f-b342-03506f500400",
+        "name": "Synthetic History Lawyer 4",
+        "email": "qmse-history-lawyer3@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-3",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 4,
+            "name": "Real Estate & Property Law",
+            "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+          }
+        ]
+      },
+      {
+        "lawyerId": "4a2e79e9-9748-4036-b8f8-e9535b0343d9",
+        "name": "Synthetic History Lawyer 5",
+        "email": "qmse-history-lawyer4@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-4",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 4,
+            "name": "Real Estate & Property Law",
+            "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "executed_utc": "2026-10-08T12:29:35.844511+00:00",
+    "method": "GET",
+    "url": "http://127.0.0.1:55543/api/lawyers/bef64bea-dcae-4460-9e2d-87573d4c656e/available-slots?date=2026-10-15",
+    "inputs": null,
+    "http": 200,
+    "observed": {
+      "lawyerId": "bef64bea-dcae-4460-9e2d-87573d4c656e",
+      "date": "2026-10-15",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "f04054cb-3151-4cd3-3f4a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "f04054cb-3151-4cd3-3f4a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        },
+        {
+          "slotId": "f04054cb-3151-4cd3-3f4a-0b009402d002",
+          "start": "11:00:00",
+          "end": "12:00:00"
+        },
+        {
+          "slotId": "f04054cb-3151-4cd3-3f4a-0b00d0020c03",
+          "start": "12:00:00",
+          "end": "13:00:00"
+        },
+        {
+          "slotId": "f04054cb-3151-4cd3-3f4a-0b000c034803",
+          "start": "13:00:00",
+          "end": "14:00:00"
+        },
+        {
+          "slotId": "f04054cb-3151-4cd3-3f4a-0b0048038403",
+          "start": "14:00:00",
+          "end": "15:00:00"
+        },
+        {
+          "slotId": "f04054cb-3151-4cd3-3f4a-0b008403c003",
+          "start": "15:00:00",
+          "end": "16:00:00"
+        },
+        {
+          "slotId": "f04054cb-3151-4cd3-3f4a-0b00c003fc03",
+          "start": "16:00:00",
+          "end": "17:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:29:35.923732+00:00",
+    "method": "POST",
+    "url": "http://127.0.0.1:55543/api/appointments",
+    "inputs": {
+      "lawyerId": "bef64bea-dcae-4460-9e2d-87573d4c656e",
+      "slotId": "f04054cb-3151-4cd3-3f4a-0b0048038403",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "consultationType": "Online"
+    },
+    "http": 201,
+    "observed": {
+      "appointmentId": "d01a91c6-0714-420d-8058-e40859105752",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "customerName": "Synthetic History Customer",
+      "customerEmail": "",
+      "lawyerId": "bef64bea-dcae-4460-9e2d-87573d4c656e",
+      "lawyerName": "Lawyer Counsel",
+      "lawyerLicense": "",
+      "slotId": "2d03086d-08dc-4f85-afd4-dc180ca699f9",
+      "date": "2026-10-15",
+      "startTime": "14:00:00",
+      "endTime": "15:00:00",
+      "status": "Requested",
+      "description": null,
+      "appointmentSource": null,
+      "consultationType": "Online",
+      "legalServiceCategory": null,
+      "createdAt": "2026-10-08T12:29:35.880755Z",
+      "updatedAt": "2026-10-08T12:29:35.880764Z",
+      "canConfirm": true,
+      "canCancel": true,
+      "canReschedule": true,
+      "canComplete": false,
+      "history": [
+        {
+          "historyId": "3781a33a-a471-412a-8406-429fed1fbd36",
+          "appointmentId": "d01a91c6-0714-420d-8058-e40859105752",
+          "previousStatus": "None",
+          "newStatus": "Requested",
+          "changedDate": "2026-10-08T12:29:35.880836Z"
+        }
+      ]
+    }
+  }
+]

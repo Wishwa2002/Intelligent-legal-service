@@ -1,0 +1,46 @@
+{
+  "checked_utc": "2026-10-08T08:48:30.864047+00:00",
+  "repository": "Wishwa2002/Intelligent-legal-service",
+  "source_sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "source_workflows": [
+    {
+      "workflow": "backend-ci.yml",
+      "push_branches": [
+        "main",
+        "develop"
+      ],
+      "path_filter": "backend/**, LegalService.sln, own workflow",
+      "new_branch_matches": false,
+      "workflow_dispatch_available": false,
+      "source_sha": "05359214df52fa743b234e1d77e6671f57c14dea"
+    },
+    {
+      "workflow": "frontend-ci.yml",
+      "push_branches": [
+        "main",
+        "develop"
+      ],
+      "path_filter": "frontend/**, own workflow",
+      "new_branch_matches": false,
+      "workflow_dispatch_available": false,
+      "source_sha": "05359214df52fa743b234e1d77e6671f57c14dea"
+    },
+    {
+      "workflow": "mobile-ci.yml",
+      "push_branches": [
+        "main",
+        "develop"
+      ],
+      "path_filter": "mobile/**, own workflow",
+      "new_branch_matches": false,
+      "workflow_dispatch_available": false,
+      "source_sha": "05359214df52fa743b234e1d77e6671f57c14dea"
+    }
+  ],
+  "sha_runs": 0,
+  "branch_runs": 0,
+  "outcome": "NOT TRIGGERED / NO OBSERVED RUN; CI PASS NOT CLAIMED",
+  "manual_dispatch": "Not declared in any of the three source workflows. Dynamic CodeQL/Dependabot metadata does not establish a safe user-dispatch action. No dispatch performed.",
+  "dynamic_workflows": "GitHub also lists managed CodeQL and Dependabot Updates. No run observed for this SHA; exact managed trigger configuration unavailable in committed source.",
+  "proposals": "Three local uncommitted patch files add only testing-branch push triggers; backend additionally provisions isolated PostgreSQL. Not applied, committed, tested or published. Applying and publishing would require approval of a different SHA."
+}

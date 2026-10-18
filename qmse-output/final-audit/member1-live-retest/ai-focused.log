@@ -1,0 +1,22 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.15, pytest-8.2.2, pluggy-1.6.0
+rootdir: /Users/jeyam/Downloads/Intelligent-legal-service
+plugins: asyncio-0.23.7, langsmith-0.14.3, anyio-4.15.1
+asyncio: mode=Mode.STRICT
+collected 7 items
+
+ai-service/tests/test_qmse_boundaries.py .                               [ 14%]
+ai-service/tests/test_provider_resilience_final.py ......                [100%]
+
+=============================== warnings summary ===============================
+ai-service/.venv/lib/python3.12/site-packages/starlette/formparsers.py:12
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/starlette/formparsers.py:12: PendingDeprecationWarning: Please use `import python_multipart` instead.
+    import multipart
+
+ai-service/.venv/lib/python3.12/site-packages/starlette/testclient.py:41
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/starlette/testclient.py:41: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    [], typing.ContextManager[anyio.abc.BlockingPortal]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/final-audit/member1-live-retest/ai-focused.xml -
+======================== 7 passed, 2 warnings in 0.58s =========================

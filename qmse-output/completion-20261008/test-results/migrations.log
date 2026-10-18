@@ -1,0 +1,17 @@
+Build started...
+Build succeeded.
+Applying migration '20260922093339_InitialCreate'.
+Applying migration '20260922132300_FixAuditLogUserId'.
+Applying migration '20260927120000_AddLawyerRecommendationWorkflows'.
+Applying migration '20260929051536_SyncCurrentDatabaseSchema'.
+Applying migration '20261003065251_AddMissingCurrentSchemaColumns'.
+Applying migration '20261003090000_FixLegacyUserRoleIds'.
+Applying migration '20261003233848_AddWorkforceHiringIntelligence'.
+Applying migration '20261003235618_AllowUnlinkedLawyerProfiles'.
+Applying migration '20261004061310_AddWorkforcePlanningSettings'.
+Applying migration '20261004080145_AddRecurringLawyerScheduling'.
+Applying migration '20261004095244_BackfillMissingLawyerSchedules'.
+Applying migration '20261004151111_AddFrontDeskMatchingIntake'.
+Applying migration '20261004165105_AddLawyerInitialPasswordChange'.
+Applying migration '20261006120000_PrepareDeploymentStorage'.
+Done.

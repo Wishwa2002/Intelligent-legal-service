@@ -1,0 +1,105 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 113112948990,
+      "run_id": 37716153264,
+      "workflow_name": "Backend CI",
+      "head_branch": "feature/appointment-scheduling-enhancements",
+      "run_url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/runs/37716153264",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOT8Emv88AAAAaVg6g_g",
+      "head_sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/jobs/113112948990",
+      "html_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37716153264/job/113112948990",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-08T02:05:27Z",
+      "started_at": "2026-10-08T02:05:30Z",
+      "completed_at": "2026-10-08T02:06:37Z",
+      "name": "build-and-test",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-08T02:05:31Z",
+          "completed_at": "2026-10-08T02:05:31Z"
+        },
+        {
+          "name": "Checkout repository",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-08T02:05:31Z",
+          "completed_at": "2026-10-08T02:05:35Z"
+        },
+        {
+          "name": "Setup .NET",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-08T02:05:35Z",
+          "completed_at": "2026-10-08T02:05:36Z"
+        },
+        {
+          "name": "Restore dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-08T02:05:36Z",
+          "completed_at": "2026-10-08T02:05:54Z"
+        },
+        {
+          "name": "Build solution",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-08T02:05:54Z",
+          "completed_at": "2026-10-08T02:06:08Z"
+        },
+        {
+          "name": "Run tests",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 6,
+          "started_at": "2026-10-08T02:06:08Z",
+          "completed_at": "2026-10-08T02:06:35Z"
+        },
+        {
+          "name": "Post Setup .NET",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 11,
+          "started_at": "2026-10-08T02:06:35Z",
+          "completed_at": "2026-10-08T02:06:35Z"
+        },
+        {
+          "name": "Post Checkout repository",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 12,
+          "started_at": "2026-10-08T02:06:35Z",
+          "completed_at": "2026-10-08T02:06:35Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 13,
+          "started_at": "2026-10-08T02:06:35Z",
+          "completed_at": "2026-10-08T02:06:35Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/check-runs/113112948990",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000085,
+      "runner_name": "GitHub Actions 1000000085",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

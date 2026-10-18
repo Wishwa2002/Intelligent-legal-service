@@ -1,0 +1,12 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.15, pytest-8.2.2, pluggy-1.6.0
+rootdir: /Users/jeyam/Downloads/Intelligent-legal-service/ai-service
+plugins: asyncio-0.23.7, langsmith-0.14.3, anyio-4.15.1
+asyncio: mode=Mode.STRICT
+collected 1 item
+
+tests/test_final_audit_contract.py {'case': 'TC-C3-05', 'required': ['NIC Copy', 'Prior Title Deed Copy', 'Survey Plan', 'Sale Agreement Draft'], 'provided': ['NIC Copy', 'Survey Plan', 'Sale Agreement Draft'], 'actual': {'status': 'INCOMPLETE', 'required_documents': ['NIC Copy', 'Prior Title Deed Copy', 'Survey Plan', 'Sale Agreement Draft'], 'provided_documents': ['NIC Copy', 'Survey Plan', 'Sale Agreement Draft'], 'missing_documents': ['Prior Title Deed Copy'], 'case_id': None, 'service_type': None}, 'percent': 75.0, 'scope': 'real deterministic completeness logic, not Gemini'}
+.
+
+- generated xml file: /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/final-audit/debug/evidence/accepted-ai.xml -
+============================== 1 passed in 0.55s ===============================

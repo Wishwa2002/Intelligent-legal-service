@@ -1,0 +1,14 @@
+{
+  "command": [
+    "npm",
+    "run",
+    "test:member1"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T12:28:49.877155+00:00",
+  "ended_utc": "2026-10-08T12:28:50.791304+00:00",
+  "duration_seconds": 0.914,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/regression-node-full.log"
+}

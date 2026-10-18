@@ -1,0 +1,2 @@
+SQL: SELECT row_to_json(t) FROM (SELECT * FROM "LegalServices" WHERE "LegalServiceId"=2)t
+{"LegalServiceId":2,"ServiceName":"Synthetic History Fee Service","Description":"Synthetic","Category":"Corporate & Commercial Law","CreatedAt":"2026-10-08T16:16:24.273695+05:30","UpdatedAt":"2026-10-08T16:16:24.290697+05:30"}

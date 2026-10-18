@@ -1,0 +1,114 @@
+{
+  "backend": {
+    "total": 313,
+    "passed": 310,
+    "failed": 1,
+    "skipped": 2,
+    "coverage_line_rate": 0.23,
+    "coverage_branch_rate": 0.4891,
+    "coverage_file": "qmse-output/evidence/backend/e95ff97b-fff2-40aa-993d-8317a0ac8565/coverage.cobertura.xml",
+    "functional_note": "Includes one skipped scanner/load fixture host. Exclude it from functional totals.",
+    "execution": {
+      "name": "backend-final",
+      "command": [
+        "dotnet",
+        "test",
+        "backend/LegalService.Tests/LegalService.Tests.csproj",
+        "--no-restore",
+        "--logger",
+        "trx;LogFileName=backend-final.trx",
+        "--results-directory",
+        "qmse-output/evidence/backend",
+        "--collect",
+        "XPlat Code Coverage"
+      ],
+      "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+      "started_utc": "2026-10-08T02:56:37.658493+00:00",
+      "ended_utc": "2026-10-08T02:56:59.294897+00:00",
+      "duration_seconds": 21.636,
+      "exit_code": 1,
+      "timed_out": false,
+      "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+      "log": "qmse-output/test-results/backend-final.log"
+    }
+  },
+  "frontend_node": {
+    "total": 19,
+    "passed": 19,
+    "failed": 0,
+    "skipped": 0,
+    "execution": {
+      "name": "frontend-node",
+      "command": [
+        "npm",
+        "run",
+        "test:member1"
+      ],
+      "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+      "started_utc": "2026-10-08T02:42:14.472866+00:00",
+      "ended_utc": "2026-10-08T02:42:15.642670+00:00",
+      "duration_seconds": 1.17,
+      "exit_code": 0,
+      "timed_out": false,
+      "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+      "log": "qmse-output/test-results/frontend-node.log"
+    }
+  },
+  "playwright": {
+    "total": 112,
+    "passed": 109,
+    "failed": 0,
+    "skipped": 3,
+    "spec_files": 14,
+    "duration_seconds": 68.24331,
+    "execution": {
+      "name": "playwright-local",
+      "command": [
+        "npm",
+        "test",
+        "--",
+        "--reporter=json,html",
+        "--output=../qmse-output/evidence/e2e/artifacts"
+      ],
+      "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+      "started_utc": "2026-10-08T02:42:40.784892+00:00",
+      "ended_utc": "2026-10-08T02:43:49.591866+00:00",
+      "duration_seconds": 68.806,
+      "exit_code": 0,
+      "timed_out": false,
+      "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+      "log": "qmse-output/test-results/playwright-local.log"
+    }
+  },
+  "ai": {
+    "total": 98,
+    "passed": 98,
+    "failed": 0,
+    "skipped": 0,
+    "duration_seconds": 1.833,
+    "mode": "deterministic and mocked; synthetic initialization key; no live Gemini",
+    "execution": {
+      "name": "ai-final",
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "pytest",
+        "tests",
+        "-q",
+        "--junitxml=../qmse-output/evidence/ai/pytest-final.xml"
+      ],
+      "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/ai-service",
+      "started_utc": "2026-10-08T02:47:35.905055+00:00",
+      "ended_utc": "2026-10-08T02:47:38.363381+00:00",
+      "duration_seconds": 2.458,
+      "exit_code": 0,
+      "timed_out": false,
+      "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+      "log": "qmse-output/test-results/ai-final.log"
+    }
+  },
+  "mobile": {
+    "status": "BLOCKED",
+    "reason": "SDK resolution in progress; update after mobile execution"
+  }
+}

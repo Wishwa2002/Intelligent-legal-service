@@ -1,0 +1,38 @@
+[
+  {
+    "id": "14-upload-retest",
+    "source": "test-results/completion-20261008-upload-retest.log",
+    "needle": "Passed LegalService.Tests.QmseDocumentTests.Qmse_DEF12",
+    "height": 560,
+    "captured_utc": "2026-10-08T05:26:47.185Z",
+    "source_sha256": "ce6a5fda7894df232def89eef326c3781418c2c1f60096ac39520f232763a4ca",
+    "method": "Actual unmodified saved output in Chromium; browser wrapping/font adjusted for readability"
+  },
+  {
+    "id": "18-k6-postgres",
+    "source": "completion-20261008/evidence/k6-postgres-summary.json",
+    "needle": "\"http_req_failed\"",
+    "height": 700,
+    "captured_utc": "2026-10-08T05:26:47.277Z",
+    "source_sha256": "fb665c87bd6222f257b42fc81bf2701aec6d5e70bbeaca8afc1634eb1c46093f",
+    "method": "Actual unmodified saved output in Chromium; browser wrapping/font adjusted for readability"
+  },
+  {
+    "id": "19-zap-postgres",
+    "source": "completion-20261008/evidence/zap-postgres.html",
+    "html": true,
+    "height": 720,
+    "captured_utc": "2026-10-08T05:26:47.386Z",
+    "source_sha256": "ad573139ca24837f64f08833e95f69d2d38684ad89cf1fb838de9a9caf875f11",
+    "method": "Actual unmodified saved output in Chromium; browser wrapping/font adjusted for readability"
+  },
+  {
+    "id": "20-backend-final",
+    "source": "test-results/completion-20261008-backend-final-verified.log",
+    "needle": "Passed!",
+    "height": 330,
+    "captured_utc": "2026-10-08T05:26:47.469Z",
+    "source_sha256": "759f7e49db5ebdac0899ce463b5e39945f5fdf5ad17a38eaacc8080f7512e703",
+    "method": "Actual unmodified saved output in Chromium; browser wrapping/font adjusted for readability"
+  }
+]

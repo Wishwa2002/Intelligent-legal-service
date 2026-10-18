@@ -1,0 +1,15 @@
+{
+  "name": "security",
+  "command": [
+    "python3",
+    "qmse-output/evidence/security/passive_scan.py"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T02:54:12.068079+00:00",
+  "ended_utc": "2026-10-08T02:54:14.505536+00:00",
+  "duration_seconds": 2.437,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/security.log"
+}

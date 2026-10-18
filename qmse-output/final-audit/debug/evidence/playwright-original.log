@@ -1,0 +1,507 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node@22/22.23.2_1/bin/node",
+      "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "final-audit.playwright.config.ts",
+      "--reporter=json"
+    ],
+    "configFile": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/final-audit.playwright.config.ts",
+    "rootDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "final-audit-replay.spec.ts"
+        ],
+        "timeout": 20000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "final-audit-replay.spec.ts",
+      "file": "final-audit-replay.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "TC-FE-01 lawyer name fee and Book button",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5595,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/25,?000/)\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText(/25,?000/) with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByText(/25,?000/)\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/25,?000/)\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText(/25,?000/) with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByText(/25,?000/)\u001b[22m\n\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:13:229\n    at run (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:9:192)",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                      "column": 229,
+                      "line": 13
+                    },
+                    "snippet": "  11 | test.beforeEach(async({page})=>{page.setDefaultTimeout(5000);});\n  12 | async function catalogue(page:Page,fail=false){await staff(page);await page.route(/^https?:\\/\\/[^/]+\\/api\\//,async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p==='/api/lawyers/search'){if(fail)return r.fulfill({status:500,json:{message:'Synthetic catalogue outage'}});body={items:[{lawyerId:'lawyer-1',name:'Kavinda Silva',email:'synthetic@example.test',experience:10,licenseNumber:'SYNTHETIC',qualification:'Attorney',status:'Active',specializations:[],fee:25000}],page:1,pageSize:10,totalItems:1,totalPages:1,totalLawyers:1};}await r.fulfill({json:body});});await page.goto('/admin/lawyer-services/lawyers');}\n> 13 | test('TC-FE-01 lawyer name fee and Book button',async({page})=>run('TC-FE-01',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByText(/25,?000/)).toBeVisible({timeout:1500});await expect(page.getByRole('button',{name:/book/i})).toBeVisible();return {name:true,fee:true,book:true};},'Historical standalone LawyerCard absent; actual catalogue rendered with explicit UI fixture. Original fee/book expectation preserved.'));\n     |                                                                                                                                                                                                                                     ^\n  14 | test('TC-C106 availability toggle without reload',async({page})=>run('TC-C106',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByRole('switch')).toBeVisible({timeout:1500});return {availabilityToggle:true};},'Current directory uses an availability date filter and Edit/Delete actions; historical card toggle is not present.'));\n  15 | test('TC-FE-05 500 error and retry',async({page})=>run('TC-FE-05',page,async()=>{await catalogue(page,true);await expect(page.getByRole('alert')).toBeVisible();await page.getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('alert')).toBeVisible();return {errorAlert:true,retryClickable:true,noncrashing:true};},'Explicit HTTP 500 network fixture; actual React error/retry state, not live backend availability.'));\n  16 | test('TC-FE-03 protected clerk redirect preserves return URL',async({page})=>run('TC-FE-03',page,async()=>{await page.goto('/clerk/cases');await expect(page).toHaveURL(/\\/login/);expect(new URL(page.url()).searchParams.has('redirect')).toBe(true);return {url:page.url()};},'No token present; actual protected route executes. Historical redirect query requirement preserved.'));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                        "column": 229,
+                        "line": 13
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/25,?000/)\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText(/25,?000/) with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByText(/25,?000/)\u001b[22m\n\n\n  11 | test.beforeEach(async({page})=>{page.setDefaultTimeout(5000);});\n  12 | async function catalogue(page:Page,fail=false){await staff(page);await page.route(/^https?:\\/\\/[^/]+\\/api\\//,async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p==='/api/lawyers/search'){if(fail)return r.fulfill({status:500,json:{message:'Synthetic catalogue outage'}});body={items:[{lawyerId:'lawyer-1',name:'Kavinda Silva',email:'synthetic@example.test',experience:10,licenseNumber:'SYNTHETIC',qualification:'Attorney',status:'Active',specializations:[],fee:25000}],page:1,pageSize:10,totalItems:1,totalPages:1,totalLawyers:1};}await r.fulfill({json:body});});await page.goto('/admin/lawyer-services/lawyers');}\n> 13 | test('TC-FE-01 lawyer name fee and Book button',async({page})=>run('TC-FE-01',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByText(/25,?000/)).toBeVisible({timeout:1500});await expect(page.getByRole('button',{name:/book/i})).toBeVisible();return {name:true,fee:true,book:true};},'Historical standalone LawyerCard absent; actual catalogue rendered with explicit UI fixture. Original fee/book expectation preserved.'));\n     |                                                                                                                                                                                                                                     ^\n  14 | test('TC-C106 availability toggle without reload',async({page})=>run('TC-C106',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByRole('switch')).toBeVisible({timeout:1500});return {availabilityToggle:true};},'Current directory uses an availability date filter and Edit/Delete actions; historical card toggle is not present.'));\n  15 | test('TC-FE-05 500 error and retry',async({page})=>run('TC-FE-05',page,async()=>{await catalogue(page,true);await expect(page.getByRole('alert')).toBeVisible();await page.getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('alert')).toBeVisible();return {errorAlert:true,retryClickable:true,noncrashing:true};},'Explicit HTTP 500 network fixture; actual React error/retry state, not live backend availability.'));\n  16 | test('TC-FE-03 protected clerk redirect preserves return URL',async({page})=>run('TC-FE-03',page,async()=>{await page.goto('/clerk/cases');await expect(page).toHaveURL(/\\/login/);expect(new URL(page.url()).searchParams.has('redirect')).toBe(true);return {url:page.url()};},'No token present; actual protected route executes. Historical redirect query requirement preserved.'));\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:13:229\n    at run (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:9:192)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:21:37.962Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/final-audit-replay-TC-FE-01-lawyer-name-fee-and-Book-button/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                    "column": 229,
+                    "line": 13
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-c975eadca81753a73262",
+          "file": "final-audit-replay.spec.ts",
+          "line": 13,
+          "column": 1
+        },
+        {
+          "title": "TC-C106 availability toggle without reload",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 3007,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('switch')\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('switch') with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByRole('switch')\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('switch')\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('switch') with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByRole('switch')\u001b[22m\n\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:14:229\n    at run (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:9:192)",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                      "column": 229,
+                      "line": 14
+                    },
+                    "snippet": "  12 | async function catalogue(page:Page,fail=false){await staff(page);await page.route(/^https?:\\/\\/[^/]+\\/api\\//,async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p==='/api/lawyers/search'){if(fail)return r.fulfill({status:500,json:{message:'Synthetic catalogue outage'}});body={items:[{lawyerId:'lawyer-1',name:'Kavinda Silva',email:'synthetic@example.test',experience:10,licenseNumber:'SYNTHETIC',qualification:'Attorney',status:'Active',specializations:[],fee:25000}],page:1,pageSize:10,totalItems:1,totalPages:1,totalLawyers:1};}await r.fulfill({json:body});});await page.goto('/admin/lawyer-services/lawyers');}\n  13 | test('TC-FE-01 lawyer name fee and Book button',async({page})=>run('TC-FE-01',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByText(/25,?000/)).toBeVisible({timeout:1500});await expect(page.getByRole('button',{name:/book/i})).toBeVisible();return {name:true,fee:true,book:true};},'Historical standalone LawyerCard absent; actual catalogue rendered with explicit UI fixture. Original fee/book expectation preserved.'));\n> 14 | test('TC-C106 availability toggle without reload',async({page})=>run('TC-C106',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByRole('switch')).toBeVisible({timeout:1500});return {availabilityToggle:true};},'Current directory uses an availability date filter and Edit/Delete actions; historical card toggle is not present.'));\n     |                                                                                                                                                                                                                                     ^\n  15 | test('TC-FE-05 500 error and retry',async({page})=>run('TC-FE-05',page,async()=>{await catalogue(page,true);await expect(page.getByRole('alert')).toBeVisible();await page.getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('alert')).toBeVisible();return {errorAlert:true,retryClickable:true,noncrashing:true};},'Explicit HTTP 500 network fixture; actual React error/retry state, not live backend availability.'));\n  16 | test('TC-FE-03 protected clerk redirect preserves return URL',async({page})=>run('TC-FE-03',page,async()=>{await page.goto('/clerk/cases');await expect(page).toHaveURL(/\\/login/);expect(new URL(page.url()).searchParams.has('redirect')).toBe(true);return {url:page.url()};},'No token present; actual protected route executes. Historical redirect query requirement preserved.'));\n  17 | test('TC-FE-04 real Axios interceptor header',async({page})=>run('TC-FE-04',page,async()=>{await page.goto('/login');let headerPresent=false;await page.route('**/api/servicerequests',async r=>{headerPresent=r.request().headers()['authorization']==='Bearer synthetic-ui-only-token';await r.fulfill({json:[]});});await page.evaluate(async()=>{localStorage.setItem('token','synthetic-ui-only-token');const {apiClient}=await import('/src/api/apiClient.ts' as string);await apiClient.get('/api/servicerequests');});expect(headerPresent).toBe(true);return {authorizationBearerMatched:true};},'Actual API client module/interceptor; synthetic token and explicit request capture. This verifies header injection only, not that historical route exists.'));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                        "column": 229,
+                        "line": 14
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('switch')\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('switch') with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByRole('switch')\u001b[22m\n\n\n  12 | async function catalogue(page:Page,fail=false){await staff(page);await page.route(/^https?:\\/\\/[^/]+\\/api\\//,async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p==='/api/lawyers/search'){if(fail)return r.fulfill({status:500,json:{message:'Synthetic catalogue outage'}});body={items:[{lawyerId:'lawyer-1',name:'Kavinda Silva',email:'synthetic@example.test',experience:10,licenseNumber:'SYNTHETIC',qualification:'Attorney',status:'Active',specializations:[],fee:25000}],page:1,pageSize:10,totalItems:1,totalPages:1,totalLawyers:1};}await r.fulfill({json:body});});await page.goto('/admin/lawyer-services/lawyers');}\n  13 | test('TC-FE-01 lawyer name fee and Book button',async({page})=>run('TC-FE-01',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByText(/25,?000/)).toBeVisible({timeout:1500});await expect(page.getByRole('button',{name:/book/i})).toBeVisible();return {name:true,fee:true,book:true};},'Historical standalone LawyerCard absent; actual catalogue rendered with explicit UI fixture. Original fee/book expectation preserved.'));\n> 14 | test('TC-C106 availability toggle without reload',async({page})=>run('TC-C106',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByRole('switch')).toBeVisible({timeout:1500});return {availabilityToggle:true};},'Current directory uses an availability date filter and Edit/Delete actions; historical card toggle is not present.'));\n     |                                                                                                                                                                                                                                     ^\n  15 | test('TC-FE-05 500 error and retry',async({page})=>run('TC-FE-05',page,async()=>{await catalogue(page,true);await expect(page.getByRole('alert')).toBeVisible();await page.getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('alert')).toBeVisible();return {errorAlert:true,retryClickable:true,noncrashing:true};},'Explicit HTTP 500 network fixture; actual React error/retry state, not live backend availability.'));\n  16 | test('TC-FE-03 protected clerk redirect preserves return URL',async({page})=>run('TC-FE-03',page,async()=>{await page.goto('/clerk/cases');await expect(page).toHaveURL(/\\/login/);expect(new URL(page.url()).searchParams.has('redirect')).toBe(true);return {url:page.url()};},'No token present; actual protected route executes. Historical redirect query requirement preserved.'));\n  17 | test('TC-FE-04 real Axios interceptor header',async({page})=>run('TC-FE-04',page,async()=>{await page.goto('/login');let headerPresent=false;await page.route('**/api/servicerequests',async r=>{headerPresent=r.request().headers()['authorization']==='Bearer synthetic-ui-only-token';await r.fulfill({json:[]});});await page.evaluate(async()=>{localStorage.setItem('token','synthetic-ui-only-token');const {apiClient}=await import('/src/api/apiClient.ts' as string);await apiClient.get('/api/servicerequests');});expect(headerPresent).toBe(true);return {authorizationBearerMatched:true};},'Actual API client module/interceptor; synthetic token and explicit request capture. This verifies header injection only, not that historical route exists.'));\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:14:229\n    at run (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:9:192)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:21:43.973Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/final-audit-replay-TC-C106-84ba4-ility-toggle-without-reload/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                    "column": 229,
+                    "line": 14
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-628271c32e45c4f2d4a9",
+          "file": "final-audit-replay.spec.ts",
+          "line": 14,
+          "column": 1
+        },
+        {
+          "title": "TC-FE-05 500 error and retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1995,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:21:47.288Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-60f5486fb1874e2a56ef",
+          "file": "final-audit-replay.spec.ts",
+          "line": 15,
+          "column": 1
+        },
+        {
+          "title": "TC-FE-03 protected clerk redirect preserves return URL",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 1265,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:16:237\n    at run (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:9:192)",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                      "column": 237,
+                      "line": 16
+                    },
+                    "snippet": "  14 | test('TC-C106 availability toggle without reload',async({page})=>run('TC-C106',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByRole('switch')).toBeVisible({timeout:1500});return {availabilityToggle:true};},'Current directory uses an availability date filter and Edit/Delete actions; historical card toggle is not present.'));\n  15 | test('TC-FE-05 500 error and retry',async({page})=>run('TC-FE-05',page,async()=>{await catalogue(page,true);await expect(page.getByRole('alert')).toBeVisible();await page.getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('alert')).toBeVisible();return {errorAlert:true,retryClickable:true,noncrashing:true};},'Explicit HTTP 500 network fixture; actual React error/retry state, not live backend availability.'));\n> 16 | test('TC-FE-03 protected clerk redirect preserves return URL',async({page})=>run('TC-FE-03',page,async()=>{await page.goto('/clerk/cases');await expect(page).toHaveURL(/\\/login/);expect(new URL(page.url()).searchParams.has('redirect')).toBe(true);return {url:page.url()};},'No token present; actual protected route executes. Historical redirect query requirement preserved.'));\n     |                                                                                                                                                                                                                                             ^\n  17 | test('TC-FE-04 real Axios interceptor header',async({page})=>run('TC-FE-04',page,async()=>{await page.goto('/login');let headerPresent=false;await page.route('**/api/servicerequests',async r=>{headerPresent=r.request().headers()['authorization']==='Bearer synthetic-ui-only-token';await r.fulfill({json:[]});});await page.evaluate(async()=>{localStorage.setItem('token','synthetic-ui-only-token');const {apiClient}=await import('/src/api/apiClient.ts' as string);await apiClient.get('/api/servicerequests');});expect(headerPresent).toBe(true);return {authorizationBearerMatched:true};},'Actual API client module/interceptor; synthetic token and explicit request capture. This verifies header injection only, not that historical route exists.'));\n  18 | async function appointment(page:Page){await staff(page);const result={clientId:42,workflowId:'historical-ui',status:'AWAITING_APPROVAL',date:null,userRequirement:'Land ownership dispute',parsedRequirement:{categoryId:1,categoryName:'Property'},recommendations:[{lawyerId:'lawyer-1',fullName:'Synthetic Practitioner',score:10,yearsExperience:10,practiceArea:'Property',reason:'Recorded UI fixture'}],warnings:[],trace:[]};await page.route(/^https?:\\/\\/[^/]+\\/api\\//,async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p.endsWith('/historical-ui'))body=result;if(p.endsWith('/available-slots'))body={date:'2030-01-14',workingDay:true,appointmentDurationMinutes:30,timeZone:'Asia/Colombo',availableSlots:[{slotId:'slot-historical',start:'10:00:00',end:'10:30:00'}]};if(p.endsWith('/approve'))body={...result,status:'ACTION_COMPLETED',approvedLawyerId:'lawyer-1',appointmentId:'appointment-historical'};if(p.endsWith('/appointments/appointment-historical'))body={appointmentId:'appointment-historical',lawyerName:'Synthetic Practitioner',customerName:'Existing Customer',date:'2030-01-14',startTime:'10:00:00',endTime:'10:30:00'};await r.fulfill({json:body});});await frontDeskFixture(page,()=>result);await page.goto('/admin/lawyer-matching?workflow=historical-ui');await page.getByRole('button',{name:'Select Lawyer',exact:true}).click();await page.getByRole('button',{name:'Continue to Appointment'}).click();}\n  19 | test('TC-FE-02 no-slot submission and inline error',async({page})=>run('TC-FE-02',page,async()=>{await appointment(page);await expect(page.getByRole('button',{name:'Approve & Create Appointment'})).toBeDisabled();await expect(page.getByRole('alert').filter({hasText:/slot|date/i})).toBeVisible({timeout:1500});return {blocked:true,inlineError:true};},'Actual current booking form uses disabled approval and instructional hints; historical inline error retained. UI fixtures only.'));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                        "column": 237,
+                        "line": 16
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n  14 | test('TC-C106 availability toggle without reload',async({page})=>run('TC-C106',page,async()=>{await catalogue(page);await expect(page.getByText('Kavinda Silva',{exact:true})).toBeVisible();await expect(page.getByRole('switch')).toBeVisible({timeout:1500});return {availabilityToggle:true};},'Current directory uses an availability date filter and Edit/Delete actions; historical card toggle is not present.'));\n  15 | test('TC-FE-05 500 error and retry',async({page})=>run('TC-FE-05',page,async()=>{await catalogue(page,true);await expect(page.getByRole('alert')).toBeVisible();await page.getByRole('button',{name:'Retry',exact:true}).click();await expect(page.getByRole('alert')).toBeVisible();return {errorAlert:true,retryClickable:true,noncrashing:true};},'Explicit HTTP 500 network fixture; actual React error/retry state, not live backend availability.'));\n> 16 | test('TC-FE-03 protected clerk redirect preserves return URL',async({page})=>run('TC-FE-03',page,async()=>{await page.goto('/clerk/cases');await expect(page).toHaveURL(/\\/login/);expect(new URL(page.url()).searchParams.has('redirect')).toBe(true);return {url:page.url()};},'No token present; actual protected route executes. Historical redirect query requirement preserved.'));\n     |                                                                                                                                                                                                                                             ^\n  17 | test('TC-FE-04 real Axios interceptor header',async({page})=>run('TC-FE-04',page,async()=>{await page.goto('/login');let headerPresent=false;await page.route('**/api/servicerequests',async r=>{headerPresent=r.request().headers()['authorization']==='Bearer synthetic-ui-only-token';await r.fulfill({json:[]});});await page.evaluate(async()=>{localStorage.setItem('token','synthetic-ui-only-token');const {apiClient}=await import('/src/api/apiClient.ts' as string);await apiClient.get('/api/servicerequests');});expect(headerPresent).toBe(true);return {authorizationBearerMatched:true};},'Actual API client module/interceptor; synthetic token and explicit request capture. This verifies header injection only, not that historical route exists.'));\n  18 | async function appointment(page:Page){await staff(page);const result={clientId:42,workflowId:'historical-ui',status:'AWAITING_APPROVAL',date:null,userRequirement:'Land ownership dispute',parsedRequirement:{categoryId:1,categoryName:'Property'},recommendations:[{lawyerId:'lawyer-1',fullName:'Synthetic Practitioner',score:10,yearsExperience:10,practiceArea:'Property',reason:'Recorded UI fixture'}],warnings:[],trace:[]};await page.route(/^https?:\\/\\/[^/]+\\/api\\//,async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p.endsWith('/historical-ui'))body=result;if(p.endsWith('/available-slots'))body={date:'2030-01-14',workingDay:true,appointmentDurationMinutes:30,timeZone:'Asia/Colombo',availableSlots:[{slotId:'slot-historical',start:'10:00:00',end:'10:30:00'}]};if(p.endsWith('/approve'))body={...result,status:'ACTION_COMPLETED',approvedLawyerId:'lawyer-1',appointmentId:'appointment-historical'};if(p.endsWith('/appointments/appointment-historical'))body={appointmentId:'appointment-historical',lawyerName:'Synthetic Practitioner',customerName:'Existing Customer',date:'2030-01-14',startTime:'10:00:00',endTime:'10:30:00'};await r.fulfill({json:body});});await frontDeskFixture(page,()=>result);await page.goto('/admin/lawyer-matching?workflow=historical-ui');await page.getByRole('button',{name:'Select Lawyer',exact:true}).click();await page.getByRole('button',{name:'Continue to Appointment'}).click();}\n  19 | test('TC-FE-02 no-slot submission and inline error',async({page})=>run('TC-FE-02',page,async()=>{await appointment(page);await expect(page.getByRole('button',{name:'Approve & Create Appointment'})).toBeDisabled();await expect(page.getByRole('alert').filter({hasText:/slot|date/i})).toBeVisible({timeout:1500});return {blocked:true,inlineError:true};},'Actual current booking form uses disabled approval and instructional hints; historical inline error retained. UI fixtures only.'));\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:16:237\n    at run (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:9:192)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:21:49.365Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/final-audit-replay-TC-FE-0-972e4-direct-preserves-return-URL/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                    "column": 237,
+                    "line": 16
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-4dbd6dc0cae1d6baaf42",
+          "file": "final-audit-replay.spec.ts",
+          "line": 16,
+          "column": 1
+        },
+        {
+          "title": "TC-FE-04 real Axios interceptor header",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1155,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:21:50.904Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-f09f9a4afe1098835b0f",
+          "file": "final-audit-replay.spec.ts",
+          "line": 17,
+          "column": 1
+        },
+        {
+          "title": "TC-FE-02 no-slot submission and inline error",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 2849,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert').filter({ hasText: /slot|date/i })\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert').filter({ hasText: /slot|date/i }) with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert').filter({ hasText: /slot|date/i })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert').filter({ hasText: /slot|date/i })\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert').filter({ hasText: /slot|date/i }) with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert').filter({ hasText: /slot|date/i })\u001b[22m\n\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:19:283\n    at run (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:9:192)",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                      "column": 283,
+                      "line": 19
+                    },
+                    "snippet": "  17 | test('TC-FE-04 real Axios interceptor header',async({page})=>run('TC-FE-04',page,async()=>{await page.goto('/login');let headerPresent=false;await page.route('**/api/servicerequests',async r=>{headerPresent=r.request().headers()['authorization']==='Bearer synthetic-ui-only-token';await r.fulfill({json:[]});});await page.evaluate(async()=>{localStorage.setItem('token','synthetic-ui-only-token');const {apiClient}=await import('/src/api/apiClient.ts' as string);await apiClient.get('/api/servicerequests');});expect(headerPresent).toBe(true);return {authorizationBearerMatched:true};},'Actual API client module/interceptor; synthetic token and explicit request capture. This verifies header injection only, not that historical route exists.'));\n  18 | async function appointment(page:Page){await staff(page);const result={clientId:42,workflowId:'historical-ui',status:'AWAITING_APPROVAL',date:null,userRequirement:'Land ownership dispute',parsedRequirement:{categoryId:1,categoryName:'Property'},recommendations:[{lawyerId:'lawyer-1',fullName:'Synthetic Practitioner',score:10,yearsExperience:10,practiceArea:'Property',reason:'Recorded UI fixture'}],warnings:[],trace:[]};await page.route(/^https?:\\/\\/[^/]+\\/api\\//,async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p.endsWith('/historical-ui'))body=result;if(p.endsWith('/available-slots'))body={date:'2030-01-14',workingDay:true,appointmentDurationMinutes:30,timeZone:'Asia/Colombo',availableSlots:[{slotId:'slot-historical',start:'10:00:00',end:'10:30:00'}]};if(p.endsWith('/approve'))body={...result,status:'ACTION_COMPLETED',approvedLawyerId:'lawyer-1',appointmentId:'appointment-historical'};if(p.endsWith('/appointments/appointment-historical'))body={appointmentId:'appointment-historical',lawyerName:'Synthetic Practitioner',customerName:'Existing Customer',date:'2030-01-14',startTime:'10:00:00',endTime:'10:30:00'};await r.fulfill({json:body});});await frontDeskFixture(page,()=>result);await page.goto('/admin/lawyer-matching?workflow=historical-ui');await page.getByRole('button',{name:'Select Lawyer',exact:true}).click();await page.getByRole('button',{name:'Continue to Appointment'}).click();}\n> 19 | test('TC-FE-02 no-slot submission and inline error',async({page})=>run('TC-FE-02',page,async()=>{await appointment(page);await expect(page.getByRole('button',{name:'Approve & Create Appointment'})).toBeDisabled();await expect(page.getByRole('alert').filter({hasText:/slot|date/i})).toBeVisible({timeout:1500});return {blocked:true,inlineError:true};},'Actual current booking form uses disabled approval and instructional hints; historical inline error retained. UI fixtures only.'));\n     |                                                                                                                                                                                                                                                                                           ^\n  20 | test('TC-C2-06 select lawyer slot confirm success banner',async({page})=>run('TC-C2-06',page,async()=>{await appointment(page);await page.getByLabel('Appointment date',{exact:true}).fill('2030-01-14');await page.getByLabel('Available slot',{exact:true}).selectOption('slot-historical');await expect(page.getByRole('button',{name:'Approve & Create Appointment'})).toBeEnabled();await page.getByRole('button',{name:'Approve & Create Appointment'}).click();await expect(page.getByRole('heading',{name:'Appointment Created',exact:true})).toBeVisible();return {selectedLawyer:true,selectedSlot:true,approvalClicked:true,successBanner:true};},'Current named approval control replaces historical Confirm label. Actual React workflow UI with explicit mocked API responses; no database or live AI proof.'));\n  21 | test('TC-C2-04 actual careers page published Senior Counsel',async({page})=>run('TC-C2-04',page,async()=>{const career=JSON.parse(fs.readFileSync('/private/tmp/qmse-final-debug-control/career.json','utf8'));expect(career.created).toBe(201);await page.goto('/careers');await expect(page.getByText('Senior Counsel',{exact:true})).toBeVisible();return {api201:true,actualPublicPageVisible:true};},'Real local API and isolated PostgreSQL career fixture; no API interception.'));\n  22 | test('TC-C4-06 real login token and logout',async({page})=>run('TC-C4-06',page,async()=>{const {password}=JSON.parse(fs.readFileSync('/private/tmp/qmse-final-debug-control/settings.json','utf8'));await page.goto('/login');await page.locator('#email').fill('qmse-history-admin@example.test');await page.locator('#password').fill(password);await page.getByRole('button',{name:'Sign In',exact:true}).click();await expect(page).not.toHaveURL(/\\/login$/);expect(await page.evaluate(()=>!!localStorage.getItem('token'))).toBe(true);const logout=page.getByRole('button',{name:/logout/i}).first();await logout.click();await expect(page).toHaveURL(/\\/login$/);expect(await page.evaluate(()=>localStorage.getItem('token'))).toBeNull();return {loginSuccessful:true,tokenStored:true,logoutClicked:true,tokenCleared:true,url:page.url()};},'Actual React login/logout and API-backed authentication against fresh PostgreSQL. Credentials/JWT omitted.'));"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                        "column": 283,
+                        "line": 19
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert').filter({ hasText: /slot|date/i })\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert').filter({ hasText: /slot|date/i }) with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert').filter({ hasText: /slot|date/i })\u001b[22m\n\n\n  17 | test('TC-FE-04 real Axios interceptor header',async({page})=>run('TC-FE-04',page,async()=>{await page.goto('/login');let headerPresent=false;await page.route('**/api/servicerequests',async r=>{headerPresent=r.request().headers()['authorization']==='Bearer synthetic-ui-only-token';await r.fulfill({json:[]});});await page.evaluate(async()=>{localStorage.setItem('token','synthetic-ui-only-token');const {apiClient}=await import('/src/api/apiClient.ts' as string);await apiClient.get('/api/servicerequests');});expect(headerPresent).toBe(true);return {authorizationBearerMatched:true};},'Actual API client module/interceptor; synthetic token and explicit request capture. This verifies header injection only, not that historical route exists.'));\n  18 | async function appointment(page:Page){await staff(page);const result={clientId:42,workflowId:'historical-ui',status:'AWAITING_APPROVAL',date:null,userRequirement:'Land ownership dispute',parsedRequirement:{categoryId:1,categoryName:'Property'},recommendations:[{lawyerId:'lawyer-1',fullName:'Synthetic Practitioner',score:10,yearsExperience:10,practiceArea:'Property',reason:'Recorded UI fixture'}],warnings:[],trace:[]};await page.route(/^https?:\\/\\/[^/]+\\/api\\//,async r=>{const p=new URL(r.request().url()).pathname;let body:any=[];if(p.endsWith('/summary'))body={activeLawyers:1,totalLawyers:1,practiceAreas:1,legalServices:1,coverage:[]};if(p.endsWith('/historical-ui'))body=result;if(p.endsWith('/available-slots'))body={date:'2030-01-14',workingDay:true,appointmentDurationMinutes:30,timeZone:'Asia/Colombo',availableSlots:[{slotId:'slot-historical',start:'10:00:00',end:'10:30:00'}]};if(p.endsWith('/approve'))body={...result,status:'ACTION_COMPLETED',approvedLawyerId:'lawyer-1',appointmentId:'appointment-historical'};if(p.endsWith('/appointments/appointment-historical'))body={appointmentId:'appointment-historical',lawyerName:'Synthetic Practitioner',customerName:'Existing Customer',date:'2030-01-14',startTime:'10:00:00',endTime:'10:30:00'};await r.fulfill({json:body});});await frontDeskFixture(page,()=>result);await page.goto('/admin/lawyer-matching?workflow=historical-ui');await page.getByRole('button',{name:'Select Lawyer',exact:true}).click();await page.getByRole('button',{name:'Continue to Appointment'}).click();}\n> 19 | test('TC-FE-02 no-slot submission and inline error',async({page})=>run('TC-FE-02',page,async()=>{await appointment(page);await expect(page.getByRole('button',{name:'Approve & Create Appointment'})).toBeDisabled();await expect(page.getByRole('alert').filter({hasText:/slot|date/i})).toBeVisible({timeout:1500});return {blocked:true,inlineError:true};},'Actual current booking form uses disabled approval and instructional hints; historical inline error retained. UI fixtures only.'));\n     |                                                                                                                                                                                                                                                                                           ^\n  20 | test('TC-C2-06 select lawyer slot confirm success banner',async({page})=>run('TC-C2-06',page,async()=>{await appointment(page);await page.getByLabel('Appointment date',{exact:true}).fill('2030-01-14');await page.getByLabel('Available slot',{exact:true}).selectOption('slot-historical');await expect(page.getByRole('button',{name:'Approve & Create Appointment'})).toBeEnabled();await page.getByRole('button',{name:'Approve & Create Appointment'}).click();await expect(page.getByRole('heading',{name:'Appointment Created',exact:true})).toBeVisible();return {selectedLawyer:true,selectedSlot:true,approvalClicked:true,successBanner:true};},'Current named approval control replaces historical Confirm label. Actual React workflow UI with explicit mocked API responses; no database or live AI proof.'));\n  21 | test('TC-C2-04 actual careers page published Senior Counsel',async({page})=>run('TC-C2-04',page,async()=>{const career=JSON.parse(fs.readFileSync('/private/tmp/qmse-final-debug-control/career.json','utf8'));expect(career.created).toBe(201);await page.goto('/careers');await expect(page.getByText('Senior Counsel',{exact:true})).toBeVisible();return {api201:true,actualPublicPageVisible:true};},'Real local API and isolated PostgreSQL career fixture; no API interception.'));\n  22 | test('TC-C4-06 real login token and logout',async({page})=>run('TC-C4-06',page,async()=>{const {password}=JSON.parse(fs.readFileSync('/private/tmp/qmse-final-debug-control/settings.json','utf8'));await page.goto('/login');await page.locator('#email').fill('qmse-history-admin@example.test');await page.locator('#password').fill(password);await page.getByRole('button',{name:'Sign In',exact:true}).click();await expect(page).not.toHaveURL(/\\/login$/);expect(await page.evaluate(()=>!!localStorage.getItem('token'))).toBe(true);const logout=page.getByRole('button',{name:/logout/i}).first();await logout.click();await expect(page).toHaveURL(/\\/login$/);expect(await page.evaluate(()=>localStorage.getItem('token'))).toBeNull();return {loginSuccessful:true,tokenStored:true,logoutClicked:true,tokenCleared:true,url:page.url()};},'Actual React login/logout and API-backed authentication against fresh PostgreSQL. Credentials/JWT omitted.'));\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:19:283\n    at run (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts:9:192)"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:21:52.157Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/final-audit-replay-TC-FE-0-2e1fe-submission-and-inline-error/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/final-audit-replay.spec.ts",
+                    "column": 283,
+                    "line": 19
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-120351586bb24ae9035d",
+          "file": "final-audit-replay.spec.ts",
+          "line": 19,
+          "column": 1
+        },
+        {
+          "title": "TC-C2-06 select lawyer slot confirm success banner",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3041,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:21:55.239Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-f68f10bfc751f0316863",
+          "file": "final-audit-replay.spec.ts",
+          "line": 20,
+          "column": 1
+        },
+        {
+          "title": "TC-C2-04 actual careers page published Senior Counsel",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4521,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:21:58.368Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-4d29c248bd81bb9b7b14",
+          "file": "final-audit-replay.spec.ts",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "TC-C4-06 real login token and logout",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 20000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1435,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:22:02.895Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "286961102b1558ea1c25-e9b99dbb25b2c4af80f2",
+          "file": "final-audit-replay.spec.ts",
+          "line": 22,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T12:21:37.709Z",
+    "duration": 26645.853000000003,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 4,
+    "flaky": 0
+  }
+}

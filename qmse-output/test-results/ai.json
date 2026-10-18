@@ -1,0 +1,19 @@
+{
+  "name": "ai",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "tests",
+    "-q",
+    "--junitxml=../qmse-output/evidence/ai/pytest.xml"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/ai-service",
+  "started_utc": "2026-10-08T02:42:15.627173+00:00",
+  "ended_utc": "2026-10-08T02:42:19.306728+00:00",
+  "duration_seconds": 3.679,
+  "exit_code": 1,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/ai.log"
+}

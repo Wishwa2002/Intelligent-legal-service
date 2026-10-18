@@ -1,0 +1,739 @@
+[
+  {
+    "at": "2026-10-08T04:58:49.959Z",
+    "method": "GET",
+    "url": "/api/documentation-requests?customerId=17",
+    "status": 200,
+    "output": [
+      {
+        "requestId": 12,
+        "customerId": 17,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791435515534@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Affidavit & Notary Services",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:58:42.334778Z",
+        "updatedAt": "2026-10-08T04:58:42.334778Z",
+        "documentFiles": [],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "reuploadNote": null
+      }
+    ],
+    "via": "actual Flutter UI"
+  },
+  {
+    "at": "2026-10-08T04:58:50.913Z",
+    "method": "GET",
+    "url": "/api/documentation-requests/12",
+    "status": 200,
+    "output": {
+      "requestId": 12,
+      "customerId": 17,
+      "customerName": "Synthetic QMSE Workflow Customer",
+      "customerEmail": "workflow-1791435515534@example.test",
+      "serviceId": 2,
+      "serviceName": "Affidavit & Notary Services",
+      "documentType": "Affidavit & Notary Services",
+      "status": "PENDING",
+      "assignedClerkId": null,
+      "assignedClerkName": null,
+      "createdAt": "2026-10-08T04:58:42.334778Z",
+      "updatedAt": "2026-10-08T04:58:42.334778Z",
+      "documentFiles": [],
+      "requiredDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "missingDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "reuploadNote": null
+    },
+    "via": "actual Flutter UI"
+  },
+  {
+    "at": "2026-10-08T04:58:52.207Z",
+    "method": "POST",
+    "url": "/api/documentation-requests/12/files",
+    "status": 201,
+    "output": {
+      "fileId": 12,
+      "requestId": 12,
+      "fileName": "NIC_Copy.pdf",
+      "contentType": "application/pdf",
+      "fileSize": 2475,
+      "documentStatus": "Received",
+      "rejectReason": null,
+      "uploadDate": "2026-10-08T04:58:52.148101Z"
+    },
+    "via": "actual Flutter UI"
+  },
+  {
+    "at": "2026-10-08T04:58:52.255Z",
+    "method": "GET",
+    "url": "/api/documentation-requests/12",
+    "status": 200,
+    "output": {
+      "requestId": 12,
+      "customerId": 17,
+      "customerName": "Synthetic QMSE Workflow Customer",
+      "customerEmail": "workflow-1791435515534@example.test",
+      "serviceId": 2,
+      "serviceName": "Affidavit & Notary Services",
+      "documentType": "Affidavit & Notary Services",
+      "status": "UNDER_REVIEW",
+      "assignedClerkId": null,
+      "assignedClerkName": null,
+      "createdAt": "2026-10-08T04:58:42.334778Z",
+      "updatedAt": "2026-10-08T04:58:52.148197Z",
+      "documentFiles": [
+        {
+          "fileId": 12,
+          "requestId": 12,
+          "fileName": "NIC_Copy.pdf",
+          "contentType": "application/pdf",
+          "fileSize": 2475,
+          "documentStatus": "Received",
+          "rejectReason": null,
+          "uploadDate": "2026-10-08T04:58:52.148101Z"
+        }
+      ],
+      "requiredDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "missingDocuments": [
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "reuploadNote": null
+    },
+    "via": "actual Flutter UI"
+  },
+  {
+    "at": "2026-10-08T04:58:52.934Z",
+    "method": "POST",
+    "url": "/api/auth/login",
+    "status": 200,
+    "input": "[REDACTED LOGIN]",
+    "output": {
+      "token": "[REDACTED]",
+      "userId": 1,
+      "lawyerId": null,
+      "clerkId": null,
+      "name": "System Administrator",
+      "email": "qmse-admin@example.test",
+      "role": "Admin",
+      "department": null,
+      "contact": null,
+      "mustChangePassword": false,
+      "message": "Login successful"
+    },
+    "via": "real API"
+  },
+  {
+    "at": "2026-10-08T04:58:52.937Z",
+    "method": "POST",
+    "url": "/api/documentation-requests/12/sample-file?sampleName=Completed_Affidavit_Draft.pdf",
+    "status": 201,
+    "input": null,
+    "output": {
+      "fileId": 13,
+      "requestId": 12,
+      "fileName": "Completed_Affidavit_Draft.pdf",
+      "contentType": "application/pdf",
+      "fileSize": 2702,
+      "documentStatus": "Received",
+      "rejectReason": null,
+      "uploadDate": "2026-10-08T04:58:52.936924Z"
+    },
+    "via": "real API"
+  },
+  {
+    "at": "2026-10-08T04:58:52.941Z",
+    "method": "POST",
+    "url": "/api/documentation-requests/12/sample-file?sampleName=Witness_Details.pdf",
+    "status": 201,
+    "input": null,
+    "output": {
+      "fileId": 14,
+      "requestId": 12,
+      "fileName": "Witness_Details.pdf",
+      "contentType": "application/pdf",
+      "fileSize": 2490,
+      "documentStatus": "Received",
+      "rejectReason": null,
+      "uploadDate": "2026-10-08T04:58:52.940809Z"
+    },
+    "via": "real API"
+  },
+  {
+    "at": "2026-10-08T04:58:52.949Z",
+    "method": "GET",
+    "url": "/api/documentation-requests/12",
+    "status": 200,
+    "input": null,
+    "output": {
+      "requestId": 12,
+      "customerId": 17,
+      "customerName": "Synthetic QMSE Workflow Customer",
+      "customerEmail": "workflow-1791435515534@example.test",
+      "serviceId": 2,
+      "serviceName": "Affidavit & Notary Services",
+      "documentType": "Affidavit & Notary Services",
+      "status": "UNDER_REVIEW",
+      "assignedClerkId": null,
+      "assignedClerkName": null,
+      "createdAt": "2026-10-08T04:58:42.334778Z",
+      "updatedAt": "2026-10-08T04:58:52.148197Z",
+      "documentFiles": [
+        {
+          "fileId": 12,
+          "requestId": 12,
+          "fileName": "NIC_Copy.pdf",
+          "contentType": "application/pdf",
+          "fileSize": 2475,
+          "documentStatus": "Received",
+          "rejectReason": null,
+          "uploadDate": "2026-10-08T04:58:52.148101Z"
+        },
+        {
+          "fileId": 13,
+          "requestId": 12,
+          "fileName": "Completed_Affidavit_Draft.pdf",
+          "contentType": "application/pdf",
+          "fileSize": 2702,
+          "documentStatus": "Received",
+          "rejectReason": null,
+          "uploadDate": "2026-10-08T04:58:52.936924Z"
+        },
+        {
+          "fileId": 14,
+          "requestId": 12,
+          "fileName": "Witness_Details.pdf",
+          "contentType": "application/pdf",
+          "fileSize": 2490,
+          "documentStatus": "Received",
+          "rejectReason": null,
+          "uploadDate": "2026-10-08T04:58:52.940809Z"
+        }
+      ],
+      "requiredDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "missingDocuments": [],
+      "reuploadNote": null
+    },
+    "via": "real API"
+  },
+  {
+    "at": "2026-10-08T04:58:52.955Z",
+    "method": "POST",
+    "url": "/clerk/recommend",
+    "status": 200,
+    "input": {
+      "case_id": "12",
+      "service_type": "AFFIDAVIT"
+    },
+    "output": {
+      "case_id": "12",
+      "service_type": "AFFIDAVIT",
+      "requires_human_approval": true,
+      "recommendations": [
+        {
+          "clerk_id": "CLK-001",
+          "name": "Senior Legal Clerk",
+          "score": 0.66,
+          "reasons": [
+            "Low active workload (0 requests)",
+            "Experienced in legal documentation (3 yrs)"
+          ]
+        }
+      ]
+    },
+    "via": "real FastAPI"
+  },
+  {
+    "at": "2026-10-08T04:58:52.958Z",
+    "method": "GET",
+    "url": "/api/clerks",
+    "status": 200,
+    "input": null,
+    "output": [
+      {
+        "clerkId": 1,
+        "fullName": "Senior Legal Clerk",
+        "email": "qmse-clerk@example.test",
+        "contact": "+94 11 234 5678",
+        "department": "Legal Documentation & Conveyancing",
+        "isActive": true,
+        "activeAssignmentsCount": 0,
+        "createdAt": "2026-10-08T04:31:53.727612Z",
+        "updatedAt": "2026-10-08T04:31:53.727623Z"
+      }
+    ],
+    "via": "real API"
+  },
+  {
+    "at": "2026-10-08T04:58:52.984Z",
+    "method": "POST",
+    "url": "/api/documentation-requests/12/assign-clerk",
+    "status": 200,
+    "input": {
+      "clerkId": 1
+    },
+    "output": {
+      "requestId": 12,
+      "customerId": 17,
+      "customerName": "Synthetic QMSE Workflow Customer",
+      "customerEmail": "workflow-1791435515534@example.test",
+      "serviceId": 2,
+      "serviceName": "Affidavit & Notary Services",
+      "documentType": "Affidavit & Notary Services",
+      "status": "ASSIGNED",
+      "assignedClerkId": 1,
+      "assignedClerkName": "Senior Legal Clerk",
+      "createdAt": "2026-10-08T04:58:42.334778Z",
+      "updatedAt": "2026-10-08T04:58:52.967972Z",
+      "documentFiles": [
+        {
+          "fileId": 12,
+          "requestId": 12,
+          "fileName": "NIC_Copy.pdf",
+          "contentType": "application/pdf",
+          "fileSize": 2475,
+          "documentStatus": "Received",
+          "rejectReason": null,
+          "uploadDate": "2026-10-08T04:58:52.148101Z"
+        },
+        {
+          "fileId": 13,
+          "requestId": 12,
+          "fileName": "Completed_Affidavit_Draft.pdf",
+          "contentType": "application/pdf",
+          "fileSize": 2702,
+          "documentStatus": "Received",
+          "rejectReason": null,
+          "uploadDate": "2026-10-08T04:58:52.936924Z"
+        },
+        {
+          "fileId": 14,
+          "requestId": 12,
+          "fileName": "Witness_Details.pdf",
+          "contentType": "application/pdf",
+          "fileSize": 2490,
+          "documentStatus": "Received",
+          "rejectReason": null,
+          "uploadDate": "2026-10-08T04:58:52.940809Z"
+        }
+      ],
+      "requiredDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "missingDocuments": [],
+      "reuploadNote": null
+    },
+    "via": "real API"
+  },
+  {
+    "at": "2026-10-08T04:58:54.069Z",
+    "via": "actual React UI",
+    "method": "GET",
+    "url": "/api/documentation-requests",
+    "status": 200,
+    "output": [
+      {
+        "requestId": 12,
+        "customerId": 17,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791435515534@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Affidavit & Notary Services",
+        "status": "ASSIGNED",
+        "assignedClerkId": 1,
+        "assignedClerkName": "Senior Legal Clerk",
+        "createdAt": "2026-10-08T04:58:42.334778Z",
+        "updatedAt": "2026-10-08T04:58:52.967972Z",
+        "documentFiles": [
+          {
+            "fileId": 13,
+            "requestId": 12,
+            "fileName": "Completed_Affidavit_Draft.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2702,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:58:52.936924Z"
+          },
+          {
+            "fileId": 14,
+            "requestId": 12,
+            "fileName": "Witness_Details.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2490,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:58:52.940809Z"
+          },
+          {
+            "fileId": 12,
+            "requestId": 12,
+            "fileName": "NIC_Copy.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2475,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:58:52.148101Z"
+          }
+        ],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 11,
+        "customerId": 16,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791435263029@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Affidavit & Notary Services",
+        "status": "UNDER_REVIEW",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:54:30.203426Z",
+        "updatedAt": "2026-10-08T04:56:26.15327Z",
+        "documentFiles": [
+          {
+            "fileId": 9,
+            "requestId": 11,
+            "fileName": "NIC_Copy.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2475,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:56:26.152174Z"
+          },
+          {
+            "fileId": 10,
+            "requestId": 11,
+            "fileName": "Completed_Affidavit_Draft.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2702,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:56:26.802801Z"
+          },
+          {
+            "fileId": 11,
+            "requestId": 11,
+            "fileName": "Witness_Details.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2490,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:56:26.813012Z"
+          }
+        ],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 9,
+        "customerId": 15,
+        "customerName": "Synthetic API Customer",
+        "customerEmail": "qmse-api-1791435066168378000@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Synthetic API Filing",
+        "status": "UNDER_REVIEW",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:51:06.408517Z",
+        "updatedAt": "2026-10-08T04:51:06.433646Z",
+        "documentFiles": [
+          {
+            "fileId": 6,
+            "requestId": 9,
+            "fileName": "NIC_Copy.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2475,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:51:06.433585Z"
+          },
+          {
+            "fileId": 7,
+            "requestId": 9,
+            "fileName": "Completed_Affidavit_Draft.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2702,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:51:06.440872Z"
+          }
+        ],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "Witness Details"
+        ],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 8,
+        "customerId": 11,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791434663886@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "QMSE isolated document workflow",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:44:30.934609Z",
+        "updatedAt": "2026-10-08T04:44:30.934609Z",
+        "documentFiles": [
+          {
+            "fileId": 5,
+            "requestId": 8,
+            "fileName": "Witness_Details.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2490,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:50:08.593807Z"
+          },
+          {
+            "fileId": 4,
+            "requestId": 8,
+            "fileName": "Completed_Affidavit_Draft.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2702,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:50:08.58645Z"
+          }
+        ],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "NIC"
+        ],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 6,
+        "customerId": 13,
+        "customerName": "Synthetic API Customer",
+        "customerEmail": "qmse-api-1791434668081512000@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Synthetic API Filing",
+        "status": "UNDER_REVIEW",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:44:28.354206Z",
+        "updatedAt": "2026-10-08T04:44:28.530397Z",
+        "documentFiles": [
+          {
+            "fileId": 1,
+            "requestId": 6,
+            "fileName": "NIC_Copy.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2475,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:44:28.52527Z"
+          },
+          {
+            "fileId": 2,
+            "requestId": 6,
+            "fileName": "Completed_Affidavit_Draft.pdf",
+            "contentType": "application/pdf",
+            "fileSize": 2702,
+            "documentStatus": "Received",
+            "rejectReason": null,
+            "uploadDate": "2026-10-08T04:44:28.543479Z"
+          }
+        ],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "Witness Details"
+        ],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 5,
+        "customerId": 8,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791434593055@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Affidavit & Notary Services",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:43:20.106202Z",
+        "updatedAt": "2026-10-08T04:43:20.106202Z",
+        "documentFiles": [],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 4,
+        "customerId": 7,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791434486554@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Affidavit & Notary Services",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:41:33.279927Z",
+        "updatedAt": "2026-10-08T04:41:33.279927Z",
+        "documentFiles": [],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 3,
+        "customerId": 6,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791434421110@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Affidavit & Notary Services",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:40:28.011822Z",
+        "updatedAt": "2026-10-08T04:40:28.011822Z",
+        "documentFiles": [],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 2,
+        "customerId": 5,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791434216258@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Affidavit & Notary Services",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:37:03.392964Z",
+        "updatedAt": "2026-10-08T04:37:03.392964Z",
+        "documentFiles": [],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "reuploadNote": null
+      },
+      {
+        "requestId": 1,
+        "customerId": 4,
+        "customerName": "Synthetic QMSE Workflow Customer",
+        "customerEmail": "workflow-1791434132840@example.test",
+        "serviceId": 2,
+        "serviceName": "Affidavit & Notary Services",
+        "documentType": "Affidavit & Notary Services",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T04:35:40.02186Z",
+        "updatedAt": "2026-10-08T04:35:40.021882Z",
+        "documentFiles": [],
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "missingDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ],
+        "reuploadNote": null
+      }
+    ]
+  }
+]

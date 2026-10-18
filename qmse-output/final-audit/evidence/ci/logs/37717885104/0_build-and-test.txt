@@ -1,0 +1,195 @@
+﻿2026-10-08T02:26:38.9162485Z Current runner version: '2.337.0'
+2026-10-08T02:26:38.9187395Z ##[group]Runner Image Provisioner
+2026-10-08T02:26:38.9188354Z Hosted Compute Agent
+2026-10-08T02:26:38.9188981Z Version: 20261002.596
+2026-10-08T02:26:38.9189650Z Commit: c3d12f3313a95f25162a1503be624f3b0617f8c0
+2026-10-08T02:26:38.9190436Z Build Date: 2026-10-02T22:28:27Z
+2026-10-08T02:26:38.9191394Z Worker ID: {e15ad04e-ded8-40d3-84e0-a94ca51aa35e}
+2026-10-08T02:26:38.9192122Z Region: westus
+2026-10-08T02:26:38.9192751Z Cloud: Azure
+2026-10-08T02:26:38.9193322Z ##[endgroup]
+2026-10-08T02:26:38.9194857Z ##[group]Operating System
+2026-10-08T02:26:38.9195532Z Ubuntu
+2026-10-08T02:26:38.9196084Z 24.04.5
+2026-10-08T02:26:38.9196653Z LTS
+2026-10-08T02:26:38.9197207Z ##[endgroup]
+2026-10-08T02:26:38.9197786Z ##[group]Runner Image
+2026-10-08T02:26:38.9198401Z Image: ubuntu-24.04
+2026-10-08T02:26:38.9198965Z Version: 20261004.327.1
+2026-10-08T02:26:38.9200271Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261004.327/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-08T02:26:38.9202111Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261004.327
+2026-10-08T02:26:38.9203097Z ##[endgroup]
+2026-10-08T02:26:38.9204318Z ##[group]GITHUB_TOKEN Permissions
+2026-10-08T02:26:38.9206255Z Contents: read
+2026-10-08T02:26:38.9206878Z Metadata: read
+2026-10-08T02:26:38.9207556Z Packages: read
+2026-10-08T02:26:38.9208121Z ##[endgroup]
+2026-10-08T02:26:38.9210297Z Secret source: Actions
+2026-10-08T02:26:38.9211577Z Cache mode: write
+2026-10-08T02:26:38.9212278Z Prepare workflow directory
+2026-10-08T02:26:38.9619657Z Prepare all required actions
+2026-10-08T02:26:38.9671778Z Getting action download info
+2026-10-08T02:26:39.3360063Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-08T02:26:39.4415043Z Download action repository 'actions/setup-node@v4' (SHA:49933ea5288caeca8642d1e84afbd3f7d6820020)
+2026-10-08T02:26:39.6256163Z Complete job name: build-and-test
+2026-10-08T02:26:39.7024531Z ##[group]Run actions/checkout@v4
+2026-10-08T02:26:39.7025631Z with:
+2026-10-08T02:26:39.7026178Z   repository: Wishwa2002/Intelligent-legal-service
+2026-10-08T02:26:39.7030430Z   token: ***
+2026-10-08T02:26:39.7030875Z   ssh-strict: true
+2026-10-08T02:26:39.7031664Z   ssh-user: git
+2026-10-08T02:26:39.7032124Z   persist-credentials: true
+2026-10-08T02:26:39.7032616Z   clean: true
+2026-10-08T02:26:39.7033069Z   sparse-checkout-cone-mode: true
+2026-10-08T02:26:39.7033595Z   fetch-depth: 1
+2026-10-08T02:26:39.7034027Z   fetch-tags: false
+2026-10-08T02:26:39.7034479Z   show-progress: true
+2026-10-08T02:26:39.7034927Z   lfs: false
+2026-10-08T02:26:39.7035340Z   submodules: false
+2026-10-08T02:26:39.7035794Z   set-safe-directory: true
+2026-10-08T02:26:39.7036303Z   allow-unsafe-pr-checkout: false
+2026-10-08T02:26:39.7037125Z ##[endgroup]
+2026-10-08T02:26:39.8068859Z Syncing repository: Wishwa2002/Intelligent-legal-service
+2026-10-08T02:26:39.8071835Z ##[group]Getting Git version info
+2026-10-08T02:26:39.8073422Z Working directory is '/home/runner/work/Intelligent-legal-service/Intelligent-legal-service'
+2026-10-08T02:26:39.8075459Z [command]/usr/bin/git version
+2026-10-08T02:26:39.8152250Z git version 2.55.0
+2026-10-08T02:26:39.8175701Z ##[endgroup]
+2026-10-08T02:26:39.8193465Z Temporarily overriding HOME='/home/runner/work/_temp/22881d55-ec00-48b3-b55d-301bbd4ca7c8' before making global git config changes
+2026-10-08T02:26:39.8196169Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:26:39.8200162Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-08T02:26:39.8260893Z Deleting the contents of '/home/runner/work/Intelligent-legal-service/Intelligent-legal-service'
+2026-10-08T02:26:39.8265300Z ##[group]Initializing the repository
+2026-10-08T02:26:39.8270242Z [command]/usr/bin/git init /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-08T02:26:39.8403451Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-08T02:26:39.8405483Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-08T02:26:39.8407303Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-08T02:26:39.8409027Z hint: call:
+2026-10-08T02:26:39.8410054Z hint:
+2026-10-08T02:26:39.8411278Z hint: 	git config --global init.defaultBranch <name>
+2026-10-08T02:26:39.8412567Z hint:
+2026-10-08T02:26:39.8413735Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-08T02:26:39.8415555Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-08T02:26:39.8416965Z hint:
+2026-10-08T02:26:39.8417813Z hint: 	git branch -m <name>
+2026-10-08T02:26:39.8418794Z hint:
+2026-10-08T02:26:39.8420112Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-08T02:26:39.8422739Z Initialized empty Git repository in /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git/
+2026-10-08T02:26:39.8427155Z [command]/usr/bin/git remote add origin https://github.com/Wishwa2002/Intelligent-legal-service
+2026-10-08T02:26:39.8474848Z ##[endgroup]
+2026-10-08T02:26:39.8476226Z ##[group]Disabling automatic garbage collection
+2026-10-08T02:26:39.8478283Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-08T02:26:39.8512830Z ##[endgroup]
+2026-10-08T02:26:39.8514184Z ##[group]Setting up auth
+2026-10-08T02:26:39.8520008Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:26:39.8559190Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:26:39.9000215Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:26:39.9050526Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T02:26:39.9266607Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T02:26:39.9303571Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T02:26:39.9529088Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-08T02:26:39.9568817Z ##[endgroup]
+2026-10-08T02:26:39.9569794Z ##[group]Fetching the repository
+2026-10-08T02:26:39.9579304Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +695c20c889e83cc9156dd3220da084e711d5ba98:refs/remotes/pull/34/merge
+2026-10-08T02:26:43.5213777Z From https://github.com/Wishwa2002/Intelligent-legal-service
+2026-10-08T02:26:43.5216604Z  * [new ref]         695c20c889e83cc9156dd3220da084e711d5ba98 -> pull/34/merge
+2026-10-08T02:26:43.5222105Z ##[endgroup]
+2026-10-08T02:26:43.5224311Z ##[group]Determining the checkout info
+2026-10-08T02:26:43.5226866Z ##[endgroup]
+2026-10-08T02:26:43.5230252Z [command]/usr/bin/git sparse-checkout disable
+2026-10-08T02:26:43.5294448Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-08T02:26:43.5329702Z ##[group]Checking out the ref
+2026-10-08T02:26:43.5332749Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/34/merge
+2026-10-08T02:26:43.7761435Z Note: switching to 'refs/remotes/pull/34/merge'.
+2026-10-08T02:26:43.7762096Z 
+2026-10-08T02:26:43.7762567Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-08T02:26:43.7763714Z changes and commit them, and you can discard any commits you make in this
+2026-10-08T02:26:43.7764395Z state without impacting any branches by switching back to a branch.
+2026-10-08T02:26:43.7764748Z 
+2026-10-08T02:26:43.7765059Z If you want to create a new branch to retain commits you create, you may
+2026-10-08T02:26:43.7765848Z do so (now or later) by using -c with the switch command. Example:
+2026-10-08T02:26:43.7766139Z 
+2026-10-08T02:26:43.7766275Z   git switch -c <new-branch-name>
+2026-10-08T02:26:43.7766485Z 
+2026-10-08T02:26:43.7766633Z Or undo this operation with:
+2026-10-08T02:26:43.7766854Z 
+2026-10-08T02:26:43.7766971Z   git switch -
+2026-10-08T02:26:43.7767147Z 
+2026-10-08T02:26:43.7768297Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-08T02:26:43.7768933Z 
+2026-10-08T02:26:43.7769352Z HEAD is now at 695c20c Merge fb471202376f4684dafa5fdcda7f20f046b2e606 into 54aecccc780e99ee0bded70338277bccbfac76cd
+2026-10-08T02:26:43.7781043Z ##[endgroup]
+2026-10-08T02:26:43.7830269Z [command]/usr/bin/git log -1 --format=%H
+2026-10-08T02:26:43.7858075Z 695c20c889e83cc9156dd3220da084e711d5ba98
+2026-10-08T02:26:43.8124905Z ##[group]Run actions/setup-node@v4
+2026-10-08T02:26:43.8125281Z with:
+2026-10-08T02:26:43.8125571Z   node-version: 22
+2026-10-08T02:26:43.8189821Z   cache: npm
+2026-10-08T02:26:43.8190205Z   cache-dependency-path: frontend/package-lock.json
+2026-10-08T02:26:43.8190623Z   always-auth: false
+2026-10-08T02:26:43.8190924Z   check-latest: false
+2026-10-08T02:26:43.8194036Z   token: ***
+2026-10-08T02:26:43.8194293Z ##[endgroup]
+2026-10-08T02:26:43.9633602Z Found in cache @ /opt/hostedtoolcache/node/22.23.3/x64
+2026-10-08T02:26:43.9637233Z (node:2279) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-08T02:26:43.9638336Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-08T02:26:43.9640104Z ##[group]Environment details
+2026-10-08T02:26:44.4093970Z node: v22.23.3
+2026-10-08T02:26:44.4094531Z npm: 10.9.9
+2026-10-08T02:26:44.4094817Z yarn: 1.22.22
+2026-10-08T02:26:44.4095903Z ##[endgroup]
+2026-10-08T02:26:44.4118363Z [command]/opt/hostedtoolcache/node/22.23.3/x64/bin/npm config get cache
+2026-10-08T02:26:44.5260688Z /home/runner/.npm
+2026-10-08T02:26:44.7875055Z Cache hit for: node-cache-Linux-x64-npm-a7ffe2e7f23ca262ceb0e7fb9161b14c9c4f6c6c7a037c88de22ea02f77fff2b
+2026-10-08T02:26:44.7986712Z (node:2279) [DEP0169] DeprecationWarning: `url.parse()` behavior is not standardized and prone to errors that have security implications. Use the WHATWG URL API instead. CVEs are not issued for `url.parse()` vulnerabilities.
+2026-10-08T02:26:46.0795062Z Received 4194304 of 58928731 (7.1%), 4.0 MBs/sec
+2026-10-08T02:26:46.6857138Z Received 58928731 of 58928731 (100.0%), 35.0 MBs/sec
+2026-10-08T02:26:46.6858341Z Cache Size: ~56 MB (58928731 B)
+2026-10-08T02:26:46.6937881Z [command]/usr/bin/tar -xf /home/runner/work/_temp/91e5fe70-8ded-4f32-8984-27fdc2fec0b4/cache.tzst -P -C /home/runner/work/Intelligent-legal-service/Intelligent-legal-service --use-compress-program unzstd
+2026-10-08T02:26:46.8293189Z Cache restored successfully
+2026-10-08T02:26:46.8330248Z Cache restored from key: node-cache-Linux-x64-npm-a7ffe2e7f23ca262ceb0e7fb9161b14c9c4f6c6c7a037c88de22ea02f77fff2b
+2026-10-08T02:26:46.8514974Z ##[group]Run npm ci
+2026-10-08T02:26:46.8515306Z [36;1mnpm ci[0m
+2026-10-08T02:26:46.8823263Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:26:46.8823672Z ##[endgroup]
+2026-10-08T02:26:51.9613838Z 
+2026-10-08T02:26:51.9620616Z added 202 packages, and audited 203 packages in 5s
+2026-10-08T02:26:51.9621538Z 
+2026-10-08T02:26:51.9622046Z 55 packages are looking for funding
+2026-10-08T02:26:51.9622420Z   run `npm fund` for details
+2026-10-08T02:26:51.9676551Z 
+2026-10-08T02:26:51.9677073Z 3 high severity vulnerabilities
+2026-10-08T02:26:51.9677468Z 
+2026-10-08T02:26:51.9677737Z To address all issues, run:
+2026-10-08T02:26:51.9678285Z   npm audit fix
+2026-10-08T02:26:51.9678542Z 
+2026-10-08T02:26:51.9678802Z Run `npm audit` for details.
+2026-10-08T02:26:52.0332683Z ##[group]Run npm run build
+2026-10-08T02:26:52.0333007Z [36;1mnpm run build[0m
+2026-10-08T02:26:52.0401432Z shell: /usr/bin/bash -e {0}
+2026-10-08T02:26:52.0401753Z ##[endgroup]
+2026-10-08T02:26:52.1401227Z 
+2026-10-08T02:26:52.1401668Z > frontend@0.0.0 build
+2026-10-08T02:26:52.1402538Z > tsc -b && vite build
+2026-10-08T02:26:52.1402768Z 
+2026-10-08T02:26:58.7686706Z ##[error]src/components/common/OurValuesServicesSection.tsx(2,10): error TS6133: 'ArrowRight' is declared but its value is never read.
+2026-10-08T02:26:58.7701453Z ##[error]src/components/common/OurValuesServicesSection.tsx(2,22): error TS6133: 'Scale' is declared but its value is never read.
+2026-10-08T02:26:58.7724100Z ##[error]src/components/common/OurValuesServicesSection.tsx(3,1): error TS6133: 'Link' is declared but its value is never read.
+2026-10-08T02:26:58.7728750Z ##[error]src/pages/public/ServicesPublicPage.tsx(16,3): error TS6133: 'Briefcase' is declared but its value is never read.
+2026-10-08T02:26:59.3792671Z ##[error]Process completed with exit code 2.
+2026-10-08T02:26:59.4009747Z Post job cleanup.
+2026-10-08T02:26:59.4976666Z [command]/usr/bin/git version
+2026-10-08T02:26:59.5027642Z git version 2.55.0
+2026-10-08T02:26:59.5093161Z Temporarily overriding HOME='/home/runner/work/_temp/afef26f4-1429-4904-b84f-536dd8842446' before making global git config changes
+2026-10-08T02:26:59.5102427Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-08T02:26:59.5104178Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-08T02:26:59.5138255Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-08T02:26:59.5182372Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-08T02:26:59.5460795Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-08T02:26:59.5495102Z http.https://github.com/.extraheader
+2026-10-08T02:26:59.5512873Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-08T02:26:59.5572987Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-08T02:26:59.5964618Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-08T02:26:59.5997290Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-08T02:26:59.6544009Z Cleaning up orphan processes
+2026-10-08T02:26:59.6852273Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

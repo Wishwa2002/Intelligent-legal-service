@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-08T11:36:25.978576+00:00",
+  "requested_supervisor_stop": true,
+  "requested_replacement_api_stop": true,
+  "static_server_stops": [
+    {
+      "pid": 12531,
+      "owned_command": "/opt/homebrew/Cellar/python@3.14/3.14.4_1/Frameworks/Python.framework/Versions/3.14/Resources/Python.app/Contents/MacOS/Python -m http.server 55548 --bind 127.0.0.1 --directory mobile/build/web",
+      "signal": "SIGTERM"
+    }
+  ],
+  "all_owned_ports_closed": {
+    "55543": true,
+    "55544": true,
+    "55546": true,
+    "55547": true,
+    "55548": true
+  },
+  "confirmed_stopped": true
+}

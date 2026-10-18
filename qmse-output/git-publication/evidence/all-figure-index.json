@@ -1,0 +1,275 @@
+{
+  "scope": "Current report has 30 figures. Original dated indexes remain historical. Figure 6.2 is before-fix failure; 6.14 is verified retest. Figure 6.13 is deployment-history CI, not published-head CI. Current caption/provenance is authoritative for revision scope.",
+  "figures": [
+    {
+      "figure": "6.1",
+      "title": "xUnit execution totals",
+      "execution_date": "2026-10-08 02:56:37 UTC",
+      "source": "test-results/backend-final.log; evidence/backend/backend-final.trx",
+      "image": "evidence/visual/01-xunit-result.png",
+      "interpretation": "313 total: 310 passed, 1 failed, 2 skipped. Exit code 1. Skips include live-provider transport and the evidence-host harness."
+    },
+    {
+      "figure": "6.2",
+      "title": "DEF-12: spoofed PDF rejection fails",
+      "execution_date": "2026-10-08 02:56:37 UTC",
+      "source": "test-results/backend-final.log; evidence/backend/backend-final.trx",
+      "image": "evidence/visual/02-spoofed-pdf-failure.png",
+      "interpretation": "Expected ArgumentException was not thrown for 32 inert ASCII bytes beginning MZ, supplied as sample.pdf/application/pdf. DEF-12 remains OPEN; no successful remediation retest exists."
+    },
+    {
+      "figure": "6.3",
+      "title": "React project: Node test output",
+      "execution_date": "2026-10-08 02:42:14 UTC",
+      "source": "test-results/frontend-node.log; test-results/frontend-node.json",
+      "image": "evidence/visual/03-node-result.png",
+      "interpretation": "The actual npm run test:member1 execution passed all 19 subtests. These are Node routing/helper checks, not React Testing Library component tests."
+    },
+    {
+      "figure": "6.4",
+      "title": "Flutter machine runner: successful completion",
+      "execution_date": "2026-10-08 03:15:24 UTC",
+      "source": "test-results/mobile-minimal.log; evidence/mobile/flutter-events.jsonl",
+      "image": "evidence/visual/04-flutter-result.png",
+      "interpretation": "Visible final widget cases succeed and the runner reports success=true. The full machine stream contains 49 visible unit/widget tests across six files; no device or integrated workflow is inferred."
+    },
+    {
+      "figure": "6.5",
+      "title": "Playwright HTML execution report",
+      "execution_date": "2026-10-08 02:42:40 UTC",
+      "source": "evidence/e2e/playwright-report/index.html; evidence/e2e/playwright.json",
+      "image": "evidence/visual/05-playwright-report.png",
+      "interpretation": "109 passed and three skipped, across 14 specification files (112 cases). The report All tab excludes skipped cases. Most tests intercept API requests with mocks."
+    },
+    {
+      "figure": "6.6",
+      "title": "Actual React schedule editor under Playwright",
+      "execution_date": "2026-10-08 02:42:40 UTC (suite start)",
+      "source": "evidence/e2e/schedule-1280.png; evidence/e2e/playwright.json",
+      "image": "evidence/visual/06-react-schedule.png",
+      "interpretation": "Focused browser view of the preserved application screenshot. Weekly hours, duration and synthetic 2030 leave data are visible. API responses were mocked: this is UI evidence, not the blocked Flutter-to-clerk E2E workflow."
+    },
+    {
+      "figure": "6.7",
+      "title": "OWASP ZAP passive scan summary",
+      "execution_date": "2026-10-08 02:54:12 UTC",
+      "source": "evidence/security/zap-passive-report.html; evidence/security/scan-metadata.json",
+      "image": "evidence/visual/07-zap-summary.png",
+      "interpretation": "Six deliberate requests to isolated loopback HTTP; no active scan or spider. Two alert types: one Low and one Informational. Zero High/Medium alerts in this scope does not establish absence of vulnerabilities."
+    },
+    {
+      "figure": "6.8",
+      "title": "ZAP alert instances and missing-header detail",
+      "execution_date": "2026-10-08 02:54:12 UTC",
+      "source": "evidence/security/zap-passive-report.html; evidence/security/zap-alerts.json",
+      "image": "evidence/visual/08-zap-alert-details.png",
+      "interpretation": "The Low missing X-Content-Type-Options alert has three instances; authentication discovery has one Informational instance. Fixture headers differ from full production startup. The report false-positive count is not a manual disposition."
+    },
+    {
+      "figure": "6.9",
+      "title": "k6 controlled local execution completes",
+      "execution_date": "2026-10-08 02:52:15 UTC",
+      "source": "test-results/performance-final.log; test-results/performance-final.json",
+      "image": "evidence/visual/09-k6-execution.png",
+      "interpretation": "Actual output records completion of 20 iterations with two VUs over ten seconds. The fixture used EF InMemory and mocked AI; PostgreSQL and live Gemini performance were not measured."
+    },
+    {
+      "figure": "6.10",
+      "title": "k6 original machine metrics",
+      "execution_date": "2026-10-08 02:52:15 UTC",
+      "source": "evidence/performance/k6-summary.json; evidence/performance/k6-raw-final.json",
+      "image": "evidence/visual/10-k6-metrics.png",
+      "interpretation": "HTTP failure rate is 0 across 81 requests. Appointment-list p50 is 1.263 ms, p95 23.507 ms, average 3.473 ms. The rate metric fails=81 means 81 false samples for http_req_failed, not 81 failed requests."
+    },
+    {
+      "figure": "6.11",
+      "title": "Coverlet results displayed by ReportGenerator",
+      "execution_date": "2026-10-08 02:56:37 UTC (test run)",
+      "source": "evidence/backend/coverage-html/index.html; evidence/backend/e95ff97b-fff2-40aa-993d-8317a0ac8565/coverage.cobertura.xml",
+      "image": "evidence/visual/11-coverage.png",
+      "interpretation": "Line coverage is 23%. Coverlet XML root records 48.91% branches (1326/2711); ReportGenerator displays 48.7% (1293/2655) after its own aggregation. Both originals are retained; this rendering is not a new execution or coverage increase."
+    },
+    {
+      "figure": "6.12",
+      "title": "pytest deterministic and mocked AI suite",
+      "execution_date": "2026-10-08 02:47:35 UTC",
+      "source": "test-results/ai-final.log; evidence/ai/pytest-final.xml",
+      "image": "evidence/visual/12-ai-tests.png",
+      "interpretation": "98 passed, with nine warnings. Synthetic provider initialization and mocked/deterministic tests do not demonstrate live Gemini accuracy, Golden Case success or response latency."
+    },
+    {
+      "figure": "6.13",
+      "title": "GitHub Actions: historical Mobile CI success",
+      "execution_date": "2026-10-05 23:48:54 UTC (run created)",
+      "source": "https://github.com/Jeyamdev/legalease-ai/actions/runs/37390618065; evidence/ci/github-actions-runs.json",
+      "image": "evidence/visual/13-github-mobile-ci.png",
+      "interpretation": "The real GitHub page shows Success for base commit 8a9b8a2, duration 2m18s. It does not cover uncommitted local test additions; other recorded runs failed. Job logs require sign-in."
+    },
+    {
+      "figure": "6.14",
+      "title": "Upload validation: original assertion and regression retest",
+      "execution_date": "2026-10-08 05:02:41 UTC",
+      "source": "test-results/completion-20261008-upload-retest.log; completion-20261008/evidence/upload-retest.trx",
+      "image": "completion-20261008/evidence/visual/14-upload-retest.png",
+      "interpretation": "The unchanged original spoof-rejection assertion now passes. This focused execution contains 18 passing tests; genuine PDF/image uploads and the size boundary are also verified. Earlier failure remains Figure 6.2."
+    },
+    {
+      "figure": "6.15",
+      "title": "Real Flutter web submits a genuine bundled PDF",
+      "execution_date": "2026-10-08 04:58:52 UTC",
+      "source": "completion-20261008/evidence/integrated-final-http.json; completion-20261008/evidence/e2e-10-flutter-uploaded.png",
+      "image": "completion-20261008/evidence/e2e-10-flutter-uploaded.png",
+      "interpretation": "The real Flutter UI completed its multipart upload after the web-platform fix. The actual API returned 201 and stored the bytes in PostgreSQL; two remaining genuine attachments were supplied through the API."
+    },
+    {
+      "figure": "6.16",
+      "title": "Real React clerk performs human review",
+      "execution_date": "2026-10-08 05:01:55 UTC",
+      "source": "completion-20261008/evidence/integrated-completion-http.json; completion-20261008/evidence/e2e-13-react-completed.png",
+      "image": "completion-20261008/evidence/e2e-13-react-completed.png",
+      "interpretation": "React uses ClerkId rather than UserId to display the assigned case. The actual human-review status action returned 200 and changed request 12 to COMPLETED."
+    },
+    {
+      "figure": "6.17",
+      "title": "Flutter reads the completed result from the API",
+      "execution_date": "2026-10-08 05:02:00 UTC (workflow completed)",
+      "source": "completion-20261008/evidence/integrated-result.json; completion-20261008/evidence/integrated-final-database.log",
+      "image": "completion-20261008/evidence/e2e-14-flutter-completed.png",
+      "interpretation": "Flutter displays COMPLETED after fetching the real API. Independent SQL confirms request 12, clerk 1 and three binary attachments totalling 7,667 bytes. Actual FastAPI clerk ranking preceded explicit human assignment; Gemini was not used."
+    },
+    {
+      "figure": "6.18",
+      "title": "k6 retest against actual PostgreSQL-backed endpoints",
+      "execution_date": "2026-10-08 04:51:00 UTC",
+      "source": "completion-20261008/evidence/k6-postgres-summary.json; test-results/completion-20261008-k6-retest.log",
+      "image": "completion-20261008/evidence/visual/18-k6-postgres.png",
+      "interpretation": "Two virtual users over 15 seconds produced 120 requests and zero HTTP errors. Four measured p95 values are below 200 ms in this local synthetic scope. The pre-fix failing run and raw samples remain in the package."
+    },
+    {
+      "figure": "6.19",
+      "title": "Native expanded ZAP report after schema repair",
+      "execution_date": "2026-10-08 05:04:49 UTC",
+      "source": "completion-20261008/evidence/zap-postgres.html; completion-20261008/evidence/zap-postgres-metadata.json",
+      "image": "completion-20261008/evidence/visual/19-zap-postgres.png",
+      "interpretation": "Actual Staging API/PostgreSQL target; passive scanning plus finite manual probes. Nine Low missing-nosniff instances and one Informational alert remain. Scan completion is not proof of absence of vulnerabilities."
+    },
+    {
+      "figure": "6.20",
+      "title": "Final xUnit execution on the tested source",
+      "execution_date": "2026-10-08 05:10:33 UTC",
+      "source": "test-results/completion-20261008-backend-final-verified.log; completion-20261008/evidence/backend-final-verified.trx",
+      "image": "completion-20261008/evidence/visual/20-backend-final.png",
+      "interpretation": "328 total: 326 passed, zero failed, two skipped. Real PostgreSQL migration/rollback tests are included. Coverlet raw line coverage is 81.11%, affected by generated migrations; non-migration distinct source lines are 57.82%."
+    },
+    {
+      "figure": "6.21",
+      "title": "Official group repository overview",
+      "execution_date": "2026-10-08T08:51:42.266Z",
+      "source": "git-publication/evidence/official-overview.png; https://github.com/Wishwa2002/Intelligent-legal-service",
+      "image": "git-publication/evidence/official-overview.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "main",
+      "sha": "59337bba0227aa07e18e60f697bd758db327f0bd",
+      "interpretation": "The original group repository remains on its unchanged main revision. This overview establishes repository identity; the final tested implementation is on a separate branch."
+    },
+    {
+      "figure": "6.22",
+      "title": "Original main-branch development history",
+      "execution_date": "2026-10-08T08:52:53.376Z",
+      "source": "git-publication/evidence/original-main-history.png; https://github.com/Wishwa2002/Intelligent-legal-service/commits/main/",
+      "image": "git-publication/evidence/original-main-history.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "main",
+      "sha": "59337bba0227aa07e18e60f697bd758db327f0bd",
+      "interpretation": "Original dated main commits and author records are preserved. Main has 14 reachable commits under Wishwa and yhprasad-related author strings; other member records occur in incorporated develop/feature history."
+    },
+    {
+      "figure": "6.23",
+      "title": "Original lawyer-management development record",
+      "execution_date": "2026-10-08T08:53:55.801Z",
+      "source": "git-publication/evidence/member1-lawyer-development.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/b082f54",
+      "image": "git-publication/evidence/member1-lawyer-development.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "develop / tested-branch ancestry",
+      "sha": "b082f54790a0ea5f99db9b31df532d56433319c5",
+      "interpretation": "Recorded author Jeyamdev; lawyer/mobile/matching/workforce changes. Related specialization and recommendation commits are linked in Section 9.1. This is historical source evidence; personal effort requires confirmation."
+    },
+    {
+      "figure": "6.24",
+      "title": "Original appointment-management development record",
+      "execution_date": "2026-10-08T08:53:58.224Z",
+      "source": "git-publication/evidence/member2-appointments.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/d461a84",
+      "image": "git-publication/evidence/member2-appointments.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "develop / tested-branch ancestry",
+      "sha": "d461a8407971eeb7e2349f6ccf5cb8f6150a22be",
+      "interpretation": "Recorded author yhprasad (GitHub account yhprasadhew); appointment APIs, conflict detection and status transitions. Scheduling/careers records are in Section 9.2. This does not prove historical test execution."
+    },
+    {
+      "figure": "6.25",
+      "title": "Original document/clerk/AI development record",
+      "execution_date": "2026-10-08T08:54:27.109Z",
+      "source": "git-publication/evidence/member3-document-agent.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/a566efa",
+      "image": "git-publication/evidence/member3-document-agent.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "Document-&-Cleark / tested-branch ancestry",
+      "sha": "a566efa7951fa06505fe4c943014826f3b796170",
+      "interpretation": "Recorded author VTN02; document validation, mobile client and clerk management. Section 9.3 records related commits. Shared supervisor code appears in this history, so component assignment alone cannot establish ownership."
+    },
+    {
+      "figure": "6.26",
+      "title": "Original authentication and authorization record",
+      "execution_date": "2026-10-08T08:54:27.310Z",
+      "source": "git-publication/evidence/member4-authentication.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/43f6345",
+      "image": "git-publication/evidence/member4-authentication.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "feature/admin-auth / tested-branch ancestry",
+      "sha": "43f6345d8cdd3158e5ecf51d124dcfab869261c9",
+      "interpretation": "Recorded author Wishwa (GitHub account Wishwa2002); JWT/admin authorization and service-request changes. Section 9.4 records related security/service commits and qualifies consultation ownership."
+    },
+    {
+      "figure": "6.27",
+      "title": "Published final QMSE testing branch",
+      "execution_date": "2026-10-08T08:52:40.197Z",
+      "source": "git-publication/evidence/published-branch.png; https://github.com/Wishwa2002/Intelligent-legal-service/tree/se3110-qmse-testing",
+      "image": "git-publication/evidence/published-branch.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "se3110-qmse-testing",
+      "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+      "interpretation": "The branch selector identifies the published testing branch. This narrow capture retains asynchronous counter placeholders; the earlier genuine wide capture and native Git verification establish 83 commits beyond main and 97 reachable commits. The remote head matches the approved SHA. All 15 pre-existing branch tips were unchanged immediately after publication; eleven newer deployment-only commits were excluded."
+    },
+    {
+      "figure": "6.28",
+      "title": "Published tested source and replay-script commit",
+      "execution_date": "2026-10-08T09:21:02.853Z",
+      "source": "git-publication/evidence/published-tested-commit.png; https://github.com/Wishwa2002/Intelligent-legal-service/commit/05359214df52fa743b234e1d77e6671f57c14dea",
+      "image": "git-publication/evidence/published-tested-commit.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "se3110-qmse-testing",
+      "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+      "interpretation": "Actual published commit 0535921 has parent f360e4a. The nine-file replay-script addition preserves executed tooling. Recorded author is Jeyamdev; these Codex-assisted QMSE additions are not original student-development attribution."
+    },
+    {
+      "figure": "6.29",
+      "title": "Published testing-related commit history",
+      "execution_date": "2026-10-08T08:53:13.747Z",
+      "source": "git-publication/evidence/testing-history.png; https://github.com/Wishwa2002/Intelligent-legal-service/commits/se3110-qmse-testing/",
+      "image": "git-publication/evidence/testing-history.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "se3110-qmse-testing",
+      "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+      "interpretation": "The two new QMSE commits f360e4a and 0535921 sit above preserved development/deployment ancestry. Git authors and dates remain unchanged. Historical check icons belong to their own revisions, not the latest tested head."
+    },
+    {
+      "figure": "6.30",
+      "title": "GitHub Actions: no run for the published testing branch",
+      "execution_date": "2026-10-08T08:53:21.946Z",
+      "source": "git-publication/evidence/actions-for-tested-revision.png; https://github.com/Wishwa2002/Intelligent-legal-service/actions?query=branch%3Ase3110-qmse-testing",
+      "image": "git-publication/evidence/actions-for-tested-revision.png",
+      "repository": "Wishwa2002/Intelligent-legal-service",
+      "branch": "se3110-qmse-testing",
+      "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+      "interpretation": "Actual GitHub branch filter shows zero workflow results; read-only API queries also show zero for the exact SHA. Backend, frontend and mobile push filters permit only main/develop; no workflow_dispatch is declared. No CI pass is claimed. Managed workflow trigger settings are not established by source YAML."
+    }
+  ]
+}

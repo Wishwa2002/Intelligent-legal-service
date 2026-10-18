@@ -1,0 +1,19 @@
+Cloning into '/private/tmp/qmse-flutter-source'...
+Note: switching to '5fc346839b5d0eef006ed8404392afb4dfae428d'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+Updating files:  92% (14911/16074)Updating files:  93% (14949/16074)Updating files:  94% (15110/16074)Updating files:  95% (15271/16074)Updating files:  96% (15432/16074)Updating files:  97% (15592/16074)Updating files:  98% (15753/16074)Updating files:  99% (15914/16074)Updating files: 100% (16074/16074)Updating files: 100% (16074/16074), done.

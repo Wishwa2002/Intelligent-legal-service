@@ -1,0 +1,30 @@
+[
+  {
+    "step": "real-flutter-login",
+    "at": "2026-10-08T11:11:22.955Z",
+    "text": "LegalEase Platform 4-Member Integrated System\nServer Settings\nSynthetic\nINTEGRATED LEGAL HUB\nCUSTOMER\nWelcome, Synthetic\nSelect any module below to access counsel, documentation, consultations, or customer support services.\nProject Modules & Services\n4 Core Parts\nMEMBER 1 • COUNSEL Lawyer Services Advocate profiles, bar qualifications & practice areas\nMEMBER 3 • DOCUMENT SERVICES Document & Clerk Services 12 legal document services, clerk reviews & filings\nMEMBER 2 • SLOTS Booking & Consultation Afternoon slots, conflict validation & appointments\nMEMBER 4 • SUPPORT Customer Support Case tracking, hotline helpdesk & client support\nMy Requests Track clerk reviews\nCareers Legal & tech roles",
+    "evidence": "qmse-output/historical-resolution/evidence/real-flutter-login.png"
+  },
+  {
+    "step": "real-flutter-catalogue",
+    "at": "2026-10-08T11:11:23.831Z",
+    "text": "Back\n⚖️ Legal Ease\nCreate Manual Request\nServer Settings\nWHAT WE OFFER Legal Documentation Services Professional document review, legal drafting, and automated clerk assignment.\nCreate Request\nRequest This Service\nRequest This Service\nRequest This Service\nCommercial Lease Agreement Office and industrial property leases, rent review mechanisms, and fit-out covenants. Required Documents: Title Deed Copy Local Council Assessment Receipt Draft Commercial Lease NIC Copy\nDocument Agent",
+    "evidence": "qmse-output/historical-resolution/evidence/real-flutter-catalogue.png"
+  },
+  {
+    "case": "TC-E2E-01",
+    "exact_service_present": false,
+    "limitation": "Historical intake requires Deed of Transfer and two attachments; current catalogue service identities and sequential upload workflow must be reconciled."
+  },
+  {
+    "step": "real-react-clerk-cases",
+    "at": "2026-10-08T11:11:27.615Z",
+    "text": "⚖️\nLegalEase\nCLERK WORKSPACE\nLegal Operations & Case Review\n📋\nMy Assigned Cases\n0\nS\nSenior Legal Clerk\nCRK002\nLegal Documentation & Conveyancing\nSign Out\nLEGAL WORKSPACE\n•\nASSIGNED CASEWORK\nMy Assigned Cases\n\nWelcome back, Senior Legal Clerk (Legal Documentation & Conveyancing) • Monitor case progress, audit client documents, and update case statuses.\n\nSystem Online\nTOTAL ASSIGNED\n📋\n0\nAssigned to your queue\nIN PROGRESS / REVIEW\n⚖️\n0\nActive legal workflows\nCOMPLETED\n✓\n0\nSuccessfully closed cases\nMISSING DOCUMENTS\n⚠️\n0\nAwaiting customer uploads\n🔍\nShowing 0 of 0 cases\n🔄\nRefresh Queue\nAll Cases\n0\nAssigned\n0\nUnder Review\n0\nIn Progress\n0\nNeeds Docs\n0\nCompleted\n0\n📂\nNo Assigned Cases Found\n\nYou do not have any cases assigned to you currently. New assignments from admin approvals will appear here.\n\nLegalEase Intelligent Legal Services\n•\nClerk Operations Module\nConfidential Client Documentation System • Authorized Personnel Only",
+    "evidence": "qmse-output/historical-resolution/evidence/real-react-clerk-cases.png"
+  },
+  {
+    "case": "TC-E2E-06",
+    "approve_buttons": 0,
+    "limitation": "Historical Approve transition not inferred from Ready for work/Complete."
+  }
+]

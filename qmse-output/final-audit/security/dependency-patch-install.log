@@ -1,0 +1,27 @@
+Collecting python-multipart==0.0.31
+  Downloading python_multipart-0.0.31-py3-none-any.whl.metadata (2.1 kB)
+Collecting python-dotenv==1.2.2
+  Downloading python_dotenv-1.2.2-py3-none-any.whl.metadata (27 kB)
+WARNING: Cache entry deserialization failed, entry ignored
+WARNING: Cache entry deserialization failed, entry ignored
+Collecting pillow==12.3.0
+  Downloading pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl.metadata (9.1 kB)
+Downloading python_multipart-0.0.31-py3-none-any.whl (29 kB)
+Downloading python_dotenv-1.2.2-py3-none-any.whl (22 kB)
+Downloading pillow-12.3.0-cp312-cp312-macosx_11_0_arm64.whl (4.8 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 4.8/4.8 MB 618.5 kB/s  0:00:07
+Installing collected packages: python-multipart, python-dotenv, pillow
+  Attempting uninstall: python-multipart
+    Found existing installation: python-multipart 0.0.9
+    Uninstalling python-multipart-0.0.9:
+      Successfully uninstalled python-multipart-0.0.9
+  Attempting uninstall: python-dotenv
+    Found existing installation: python-dotenv 1.0.1
+    Uninstalling python-dotenv-1.0.1:
+      Successfully uninstalled python-dotenv-1.0.1
+  Attempting uninstall: pillow
+    Found existing installation: pillow 10.4.0
+    Uninstalling pillow-10.4.0:
+      Successfully uninstalled pillow-10.4.0
+
+Successfully installed pillow-12.3.0 python-dotenv-1.2.2 python-multipart-0.0.31

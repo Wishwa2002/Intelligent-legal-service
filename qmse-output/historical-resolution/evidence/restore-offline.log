@@ -1,0 +1,4 @@
+  Determining projects to restore...
+CSSM_ModuleLoad(): One or more parameters passed to a function were not valid.
+  Restored /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/LegalService.Tests.csproj (in 690 ms).
+  Restored /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/LegalService.API.csproj (in 690 ms).

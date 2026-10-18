@@ -1,0 +1,161 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="ec16083e-c331-4f46-b7b0-8bc9334aeea6" name="@Jegatheeswarans-MacBook-Air 2026-10-08 20:11:23" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-08T20:11:23.4560540+05:30" queuing="2026-10-08T20:11:23.4560540+05:30" start="2026-10-08T20:11:22.5203090+05:30" finish="2026-10-08T20:11:25.0470940+05:30" />
+  <TestSettings name="default" id="49e96ac5-06ae-4b9c-ad1a-a78854170b7e">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-08_20_11_23" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="1d7d851a-f671-4641-b244-b9756e52c697" testId="e5670254-eb6e-a15a-9292-fdbca4487c87" testName="LegalService.Tests.HistoricalCaseVerificationTests.TC_BK_01_PasswordHashAndVerification" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.9210862" startTime="2026-10-08T20:11:22.8593720+05:30" endTime="2026-10-08T20:11:23.7858230+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1d7d851a-f671-4641-b244-b9756e52c697">
+      <Output>
+        <StdOut>UTC=2026-10-08T14:41:23.7809710Z; hash length=60; cost marker=11; valid=True; wrong=False; full hash intentionally excluded.</StdOut>
+        <ErrorInfo>
+          <Message>Assert.Equal() Failure: Strings differ
+            ↓ (pos 1)
+Expected: "12"
+Actual:   "11"
+            ↑ (pos 1)</Message>
+          <StackTrace>   at LegalService.Tests.HistoricalCaseVerificationTests.TC_BK_01_PasswordHashAndVerification() in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/HistoricalCaseVerificationTests.cs:line 15
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+   at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="5907c16c-b71c-480f-b238-4f886b3d4f83" testId="065c2be8-34ce-c7f4-96c5-33c742474512" testName="LegalService.Tests.QmseDocumentTests.Qmse_PasswordHashRejectsWrongPasswordAndReportsCost" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.8746296" startTime="2026-10-08T20:11:22.8593560+05:30" endTime="2026-10-08T20:11:23.7358230+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5907c16c-b71c-480f-b238-4f886b3d4f83" />
+    <UnitTestResult executionId="2d5ec413-b5d0-4488-87eb-712d6ac40c8c" testId="7be8a9d0-41aa-85e2-5f3d-ab53f2e239f5" testName="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: &quot;missing&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0027574" startTime="2026-10-08T20:11:23.5714990+05:30" endTime="2026-10-08T20:11:23.6487640+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="2d5ec413-b5d0-4488-87eb-712d6ac40c8c" />
+    <UnitTestResult executionId="5377f8d5-d878-4dff-ab3d-640142bb1668" testId="0bc171f0-ea0a-ab49-af76-91ba94738ee0" testName="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: &quot;tampered&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0883612" startTime="2026-10-08T20:11:22.8588510+05:30" endTime="2026-10-08T20:11:23.4231720+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5377f8d5-d878-4dff-ab3d-640142bb1668" />
+    <UnitTestResult executionId="388fe20f-01e1-4fdd-b209-2da5f4789bc5" testId="75891156-65e1-e859-552d-5445439a75ff" testName="LegalService.Tests.DevelopmentAdminSeederTests.MissingCredentialsDoNotCreateAccount" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.4245857" startTime="2026-10-08T20:11:22.8593900+05:30" endTime="2026-10-08T20:11:23.2865750+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="388fe20f-01e1-4fdd-b209-2da5f4789bc5" />
+    <UnitTestResult executionId="e920dd0a-2441-4a19-80e0-0a4d29e92684" testId="90461305-41aa-3328-94d0-e9df5c69f44b" testName="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: &quot;invalid&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0046856" startTime="2026-10-08T20:11:23.5007120+05:30" endTime="2026-10-08T20:11:23.5713480+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e920dd0a-2441-4a19-80e0-0a4d29e92684" />
+    <UnitTestResult executionId="18e569b6-f730-41b0-938d-671d522aeb1e" testId="5625a97b-5489-b90e-8419-ab86dd522af3" testName="LegalService.Tests.DevelopmentAdminSeederTests.RefusesNonDevelopment(environment: &quot;Production&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0006956" startTime="2026-10-08T20:11:23.3427540+05:30" endTime="2026-10-08T20:11:23.3428320+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="18e569b6-f730-41b0-938d-671d522aeb1e" />
+    <UnitTestResult executionId="833e84fb-c30e-4a16-8af1-57950b22a66e" testId="6bba0b05-bfff-d0d3-e5f8-6a3d31211ef0" testName="LegalService.Tests.DevelopmentAdminSeederTests.CreatesNormalizedAdminWithNormalHasherAndIsIdempotentWithoutClerkConfiguration" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.5565977" startTime="2026-10-08T20:11:23.3431550+05:30" endTime="2026-10-08T20:11:23.8997340+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="833e84fb-c30e-4a16-8af1-57950b22a66e" />
+    <UnitTestResult executionId="bcad4af9-aece-4c2c-82b1-dfa80790b4c3" testId="48fa8f00-9bb8-5891-d932-ee318d25e1e9" testName="LegalService.Tests.PasswordCurrentContractTests.CurrentHashUsesCost11AndVerifiesCorrectPasswordOnly" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.8965295" startTime="2026-10-08T20:11:22.8593820+05:30" endTime="2026-10-08T20:11:23.7580350+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="bcad4af9-aece-4c2c-82b1-dfa80790b4c3">
+      <Output>
+        <StdOut>Current contract: cost 11; 60-character hash; correct password accepted; incorrect password rejected. No password or hash logged.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="3be300d4-ad75-456c-b74d-ea598d2ede3e" testId="16048cb3-5655-95f7-cf9f-b9a5224e3c98" testName="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: &quot;expired&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0094864" startTime="2026-10-08T20:11:23.4333180+05:30" endTime="2026-10-08T20:11:23.5004170+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="3be300d4-ad75-456c-b74d-ea598d2ede3e" />
+    <UnitTestResult executionId="ca12243c-dd7b-4d30-9114-1be1e6f304fe" testId="1d98bd8d-9b6b-bcbd-04b3-88f18a0f7cfe" testName="LegalService.Tests.DevelopmentAdminSeederTests.RefusesNonDevelopment(environment: &quot;Staging&quot;)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0002166" startTime="2026-10-08T20:11:23.3429090+05:30" endTime="2026-10-08T20:11:23.3430670+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ca12243c-dd7b-4d30-9114-1be1e6f304fe" />
+    <UnitTestResult executionId="cd01a5e4-da42-414c-8d3c-b2a3b13febd4" testId="7e40d25b-5d18-e040-a5ea-a148feb16151" testName="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_11_CustomerCannotApproveLawyerWorkflow" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0101435" startTime="2026-10-08T20:11:23.6493670+05:30" endTime="2026-10-08T20:11:23.7324230+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cd01a5e4-da42-414c-8d3c-b2a3b13febd4" />
+    <UnitTestResult executionId="d179ee1f-7b22-4f9c-ad29-f26cbd0a559b" testId="6b8c782d-9f17-c7d6-6022-20caa0adce40" testName="LegalService.Tests.PasswordCurrentContractTests.IndependentHashesHaveDistinctSaltsAndBothVerify" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.4648618" startTime="2026-10-08T20:11:24.5526140+05:30" endTime="2026-10-08T20:11:25.0164280+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d179ee1f-7b22-4f9c-ad29-f26cbd0a559b">
+      <Output>
+        <StdOut>Independent hashes differ and both verify; hash values omitted.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="82de6dce-9c24-4644-bdb5-048d9603a957" testId="a0f7e995-67bd-504e-362b-477f95d09b69" testName="LegalService.Tests.PasswordCurrentContractTests.VerificationAcceptsAnExistingCost12HashWithoutChangingDefault" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.7934071" startTime="2026-10-08T20:11:23.7582140+05:30" endTime="2026-10-08T20:11:24.5513070+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="82de6dce-9c24-4644-bdb5-048d9603a957">
+      <Output>
+        <StdOut>Existing cost-12 hash verification succeeds; default policy remains unchanged.</StdOut>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="e6db24f5-a0a5-4c83-a3f9-948d3c435bd4" testId="11b3cc03-1aa3-35e7-ac9c-7568aff26404" testName="LegalService.Tests.DevelopmentAdminSeederTests.ExistingCustomerIsNotPromotedOrReset" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0553243" startTime="2026-10-08T20:11:23.2903480+05:30" endTime="2026-10-08T20:11:23.3422060+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e6db24f5-a0a5-4c83-a3f9-948d3c435bd4" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LegalService.Tests.PasswordCurrentContractTests.VerificationAcceptsAnExistingCost12HashWithoutChangingDefault" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="a0f7e995-67bd-504e-362b-477f95d09b69">
+      <Execution id="82de6dce-9c24-4644-bdb5-048d9603a957" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.PasswordCurrentContractTests" name="VerificationAcceptsAnExistingCost12HashWithoutChangingDefault" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: &quot;missing&quot;)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="7be8a9d0-41aa-85e2-5f3d-ab53f2e239f5">
+      <Execution id="2d5ec413-b5d0-4488-87eb-712d6ac40c8c" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.LawyerManagementHttpTests" name="Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.DevelopmentAdminSeederTests.RefusesNonDevelopment(environment: &quot;Staging&quot;)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="1d98bd8d-9b6b-bcbd-04b3-88f18a0f7cfe">
+      <Execution id="ca12243c-dd7b-4d30-9114-1be1e6f304fe" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.DevelopmentAdminSeederTests" name="RefusesNonDevelopment" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseDocumentTests.Qmse_PasswordHashRejectsWrongPasswordAndReportsCost" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="065c2be8-34ce-c7f4-96c5-33c742474512">
+      <Execution id="5907c16c-b71c-480f-b238-4f886b3d4f83" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseDocumentTests" name="Qmse_PasswordHashRejectsWrongPasswordAndReportsCost" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.HistoricalCaseVerificationTests.TC_BK_01_PasswordHashAndVerification" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="e5670254-eb6e-a15a-9292-fdbca4487c87">
+      <Execution id="1d7d851a-f671-4641-b244-b9756e52c697" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.HistoricalCaseVerificationTests" name="TC_BK_01_PasswordHashAndVerification" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.DevelopmentAdminSeederTests.CreatesNormalizedAdminWithNormalHasherAndIsIdempotentWithoutClerkConfiguration" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="6bba0b05-bfff-d0d3-e5f8-6a3d31211ef0">
+      <Execution id="833e84fb-c30e-4a16-8af1-57950b22a66e" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.DevelopmentAdminSeederTests" name="CreatesNormalizedAdminWithNormalHasherAndIsIdempotentWithoutClerkConfiguration" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.PasswordCurrentContractTests.IndependentHashesHaveDistinctSaltsAndBothVerify" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="6b8c782d-9f17-c7d6-6022-20caa0adce40">
+      <Execution id="d179ee1f-7b22-4f9c-ad29-f26cbd0a559b" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.PasswordCurrentContractTests" name="IndependentHashesHaveDistinctSaltsAndBothVerify" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: &quot;expired&quot;)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="16048cb3-5655-95f7-cf9f-b9a5224e3c98">
+      <Execution id="3be300d4-ad75-456c-b74d-ea598d2ede3e" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.LawyerManagementHttpTests" name="Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.PasswordCurrentContractTests.CurrentHashUsesCost11AndVerifiesCorrectPasswordOnly" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="48fa8f00-9bb8-5891-d932-ee318d25e1e9">
+      <Execution id="bcad4af9-aece-4c2c-82b1-dfa80790b4c3" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.PasswordCurrentContractTests" name="CurrentHashUsesCost11AndVerifiesCorrectPasswordOnly" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: &quot;invalid&quot;)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="90461305-41aa-3328-94d0-e9df5c69f44b">
+      <Execution id="e920dd0a-2441-4a19-80e0-0a4d29e92684" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.LawyerManagementHttpTests" name="Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_11_CustomerCannotApproveLawyerWorkflow" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="7e40d25b-5d18-e040-a5ea-a148feb16151">
+      <Execution id="cd01a5e4-da42-414c-8d3c-b2a3b13febd4" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.LawyerManagementHttpTests" name="Qmse_TC_C4_11_CustomerCannotApproveLawyerWorkflow" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: &quot;tampered&quot;)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="0bc171f0-ea0a-ab49-af76-91ba94738ee0">
+      <Execution id="5377f8d5-d878-4dff-ab3d-640142bb1668" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.LawyerManagementHttpTests" name="Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.DevelopmentAdminSeederTests.MissingCredentialsDoNotCreateAccount" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="75891156-65e1-e859-552d-5445439a75ff">
+      <Execution id="388fe20f-01e1-4fdd-b209-2da5f4789bc5" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.DevelopmentAdminSeederTests" name="MissingCredentialsDoNotCreateAccount" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.DevelopmentAdminSeederTests.ExistingCustomerIsNotPromotedOrReset" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="11b3cc03-1aa3-35e7-ac9c-7568aff26404">
+      <Execution id="e6db24f5-a0a5-4c83-a3f9-948d3c435bd4" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.DevelopmentAdminSeederTests" name="ExistingCustomerIsNotPromotedOrReset" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.DevelopmentAdminSeederTests.RefusesNonDevelopment(environment: &quot;Production&quot;)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="5625a97b-5489-b90e-8419-ab86dd522af3">
+      <Execution id="18e569b6-f730-41b0-938d-671d522aeb1e" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.DevelopmentAdminSeederTests" name="RefusesNonDevelopment" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e5670254-eb6e-a15a-9292-fdbca4487c87" executionId="1d7d851a-f671-4641-b244-b9756e52c697" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="065c2be8-34ce-c7f4-96c5-33c742474512" executionId="5907c16c-b71c-480f-b238-4f886b3d4f83" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7be8a9d0-41aa-85e2-5f3d-ab53f2e239f5" executionId="2d5ec413-b5d0-4488-87eb-712d6ac40c8c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="0bc171f0-ea0a-ab49-af76-91ba94738ee0" executionId="5377f8d5-d878-4dff-ab3d-640142bb1668" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="75891156-65e1-e859-552d-5445439a75ff" executionId="388fe20f-01e1-4fdd-b209-2da5f4789bc5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="90461305-41aa-3328-94d0-e9df5c69f44b" executionId="e920dd0a-2441-4a19-80e0-0a4d29e92684" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5625a97b-5489-b90e-8419-ab86dd522af3" executionId="18e569b6-f730-41b0-938d-671d522aeb1e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6bba0b05-bfff-d0d3-e5f8-6a3d31211ef0" executionId="833e84fb-c30e-4a16-8af1-57950b22a66e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="48fa8f00-9bb8-5891-d932-ee318d25e1e9" executionId="bcad4af9-aece-4c2c-82b1-dfa80790b4c3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="16048cb3-5655-95f7-cf9f-b9a5224e3c98" executionId="3be300d4-ad75-456c-b74d-ea598d2ede3e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1d98bd8d-9b6b-bcbd-04b3-88f18a0f7cfe" executionId="ca12243c-dd7b-4d30-9114-1be1e6f304fe" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="7e40d25b-5d18-e040-a5ea-a148feb16151" executionId="cd01a5e4-da42-414c-8d3c-b2a3b13febd4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6b8c782d-9f17-c7d6-6022-20caa0adce40" executionId="d179ee1f-7b22-4f9c-ad29-f26cbd0a559b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="a0f7e995-67bd-504e-362b-477f95d09b69" executionId="82de6dce-9c24-4644-bdb5-048d9603a957" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="11b3cc03-1aa3-35e7-ac9c-7568aff26404" executionId="e6db24f5-a0a5-4c83-a3f9-948d3c435bd4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="15" executed="15" passed="14" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.29)
+[xUnit.net 00:00:00.04]   Discovering: LegalService.Tests
+[xUnit.net 00:00:00.08]   Discovered:  LegalService.Tests
+[xUnit.net 00:00:00.09]   Starting:    LegalService.Tests
+QMSE BCrypt prefix/cost: $2a$11$
+[xUnit.net 00:00:01.03]       Assert.Equal() Failure: Strings differ
+[xUnit.net 00:00:01.03]                   ↓ (pos 1)
+[xUnit.net 00:00:01.03]       Expected: "12"
+[xUnit.net 00:00:01.03]       Actual:   "11"
+[xUnit.net 00:00:01.03]                   ↑ (pos 1)
+[xUnit.net 00:00:01.03]       Stack Trace:
+[xUnit.net 00:00:01.03]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/HistoricalCaseVerificationTests.cs(15,0): at LegalService.Tests.HistoricalCaseVerificationTests.TC_BK_01_PasswordHashAndVerification()
+[xUnit.net 00:00:01.03]            at System.RuntimeMethodHandle.InvokeMethod(Object target, Void** arguments, Signature sig, Boolean isConstructor)
+[xUnit.net 00:00:01.03]            at System.Reflection.MethodBaseInvoker.InvokeWithNoArgs(Object obj, BindingFlags invokeAttr)
+[xUnit.net 00:00:01.03]       Output:
+[xUnit.net 00:00:01.03]         UTC=2026-10-08T14:41:23.7809710Z; hash length=60; cost marker=11; valid=True; wrong=False; full hash intentionally excluded.
+[xUnit.net 00:00:02.26]   Finished:    LegalService.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="Jegatheeswarans-MacBook-Air" outcome="Error" timestamp="2026-10-08T20:11:23.7868980+05:30">
+        <Text>[xUnit.net 00:00:01.03]     LegalService.Tests.HistoricalCaseVerificationTests.TC_BK_01_PasswordHashAndVerification [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

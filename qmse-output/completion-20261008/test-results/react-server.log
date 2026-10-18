@@ -1,0 +1,13 @@
+
+> frontend@0.0.0 dev
+> vite --host 127.0.0.1 --port 55447
+
+
+  VITE v8.2.2  ready in 385 ms
+
+  ➜  Local:   http://127.0.0.1:55447/
+10:27:18 AM [vite] (client) page reload playwright-report/index.html
+10:30:51 AM [vite] (client) hmr update /src/index.css, /src/pages/StaffLoginPage.tsx, /src/pages/admin/SignupPage.tsx, /src/pages/admin/ServiceRequestsAdminPage.tsx, /src/pages/lawyer/LawyerPasswordPage.tsx, /src/pages/clerk/ClerkCasesPage.tsx, /src/pages/lawyer/LawyerDashboardPage.tsx, /src/pages/customer/CustomerLoginPage.tsx, /src/routes/ProtectedRoutes.tsx, /src/components/layout/AdminLayout.tsx, /src/components/layout/ClerkLayout.tsx, /src/components/layout/LawyerLayout.tsx
+10:30:51 AM [vite] (client) hmr update /src/pages/clerk/ClerkCasesPage.tsx, /src/index.css
+10:30:54 AM [vite] (client) page reload playwright-report/index.html
+10:33:32 AM [vite] (client) page reload playwright-report/index.html

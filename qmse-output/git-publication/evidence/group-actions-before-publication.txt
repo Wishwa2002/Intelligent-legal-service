@@ -1,0 +1,144 @@
+Skip to content
+Navigation Menu
+Platform
+Solutions
+Resources
+Open Source
+Enterprise
+Pricing
+Search
+/
+Sign in
+Sign up
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Actions: Wishwa2002/Intelligent-legal-service
+Actions
+All workflows
+Backend CI
+CodeQL
+Dependabot Updates
+Frontend CI
+Mobile CI
+Management
+Caches
+Deployments
+All workflows
+Showing runs from all workflows
+73 workflow runs
+Workflow
+Event
+Status
+Branch
+Actor
+feat: appointment scheduling enhancements, public pages, and engineering documentation
+Backend CI #23: Pull request #34 opened by yhprasadhew
+	feature/appointment-scheduling-enhancements	
+ 1m 0s
+feat: appointment scheduling enhancements, public pages, and engineering documentation
+Mobile CI #18: Pull request #34 opened by yhprasadhew
+	feature/appointment-scheduling-enhancements	
+ 42s
+feat: appointment scheduling enhancements, public pages, and engineering documentation
+Frontend CI #20: Pull request #34 opened by yhprasadhew
+	feature/appointment-scheduling-enhancements	
+ 27s
+Feature/appointment scheduling enhancements
+Backend CI #22: Pull request #33 opened by yhprasadhew
+	feature/appointment-scheduling-enhancements	
+ 1m 11s
+Feature/appointment scheduling enhancements
+Mobile CI #17: Pull request #33 opened by yhprasadhew
+	feature/appointment-scheduling-enhancements	
+ 1m 14s
+Feature/appointment scheduling enhancements
+Frontend CI #19: Pull request #33 opened by yhprasadhew
+	feature/appointment-scheduling-enhancements	
+ 21s
+PR #33
+CodeQL #5: by yhprasadhew
+	refs/pull/33/head	
+ 2m 19s
+Final Merge: Develop to Main
+Frontend CI #18: Pull request #32 opened by Wishwa2002
+	develop	
+ 2m 47s
+Final Merge: Develop to Main
+Mobile CI #16: Pull request #32 opened by Wishwa2002
+	develop	
+ 1m 46s
+Final Merge: Develop to Main
+Backend CI #21: Pull request #32 opened by Wishwa2002
+	develop	
+ 59s
+PR #32
+CodeQL #4: by Wishwa2002
+	refs/pull/32/head	
+ 2m 31s
+Chore/deployment readiness
+Frontend CI #17: Pull request #31 synchronize by Jeyamdev
+	chore/deployment-readiness	
+ 6m 3s
+Chore/deployment readiness
+Mobile CI #15: Pull request #31 synchronize by Jeyamdev
+	chore/deployment-readiness	
+ 2m 6s
+Chore/deployment readiness
+Backend CI #20: Pull request #31 synchronize by Jeyamdev
+	chore/deployment-readiness	
+ 1m 16s
+PR #31
+CodeQL #3: by Jeyamdev
+	refs/pull/31/head	
+ 2m 21s
+Chore/deployment readiness
+Backend CI #19: Pull request #31 opened by Jeyamdev
+	chore/deployment-readiness	
+ 45s
+Chore/deployment readiness
+Frontend CI #16: Pull request #31 opened by Jeyamdev
+	chore/deployment-readiness	
+ 2m 57s
+Chore/deployment readiness
+Mobile CI #14: Pull request #31 opened by Jeyamdev
+	chore/deployment-readiness	
+ 1m 29s
+PR #31
+CodeQL #2: by Jeyamdev
+	refs/pull/31/head	
+ 2m 23s
+npm_and_yarn in /frontend for axios, axios, axios, axios, axios, axios, axios, axios, axios - Update #1609853245
+Dependabot Updates #7: by dependabot Bot
+	main	
+ 44s
+npm_and_yarn in /frontend for axios, axios, axios, axios, axios, axios, axios - Update #1609841767
+Dependabot Updates #6: by dependabot Bot
+	main	
+ 44s
+npm_and_yarn in /frontend for axios, axios, axios, axios, axios, axios - Update #1609776248
+Dependabot Updates #5: by dependabot Bot
+	main	
+ 46s
+npm_and_yarn in /frontend for axios, axios, axios, axios, axios, axios - Update #1609453592
+Dependabot Updates #4: by dependabot Bot
+	main	
+ 47s
+npm_and_yarn in /frontend for axios, axios, axios, axios - Update #1609408262
+Dependabot Updates #3: by dependabot Bot
+	main	
+ 49s
+npm_and_yarn in /frontend for axios, axios, axios - Update #1609407856
+Dependabot Updates #2: by dependabot Bot
+	main	
+ 47s
+Previous 1 2 3 Next

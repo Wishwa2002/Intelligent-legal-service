@@ -1,0 +1,23 @@
+{
+  "paragraphs": [
+    61,
+    340,
+    352,
+    353,
+    374,
+    438
+  ],
+  "tables": {
+    "15": [
+      4,
+      5
+    ],
+    "53": [
+      3
+    ]
+  },
+  "figures_preserved": 43,
+  "ledger_status_changes": 0,
+  "backup": "qmse-output/final-audit/member1-live-retest/report-before",
+  "prior_pdf_pages": 101
+}

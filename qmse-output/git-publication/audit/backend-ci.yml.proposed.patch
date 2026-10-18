@@ -1,0 +1,35 @@
+--- a/.github/workflows/backend-ci.yml
++++ b/.github/workflows/backend-ci.yml
+@@ -14,6 +14,7 @@
+     branches:
+       - develop
+       - main
++      - se3110-qmse-testing
+     paths:
+       - "backend/**"
+       - "LegalService.sln"
+@@ -22,6 +23,24 @@
+ jobs:
+   build-and-test:
+     runs-on: ubuntu-latest
++
++    services:
++      postgres:
++        image: postgres:18
++        env:
++          POSTGRES_USER: qmse_ci
++          POSTGRES_PASSWORD: synthetic-ci-only
++          POSTGRES_DB: qmse_ci
++        ports:
++          - 5432:5432
++        options: >-
++          --health-cmd "pg_isready -U qmse_ci"
++          --health-interval 5s
++          --health-timeout 5s
++          --health-retries 10
++
++    env:
++      MEMBER1_TEST_POSTGRES: Host=127.0.0.1;Port=5432;Database=qmse_ci;Username=qmse_ci;Password=synthetic-ci-only
+ 
+     steps:
+       - name: Checkout repository

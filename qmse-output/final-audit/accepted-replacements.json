@@ -1,0 +1,228 @@
+[
+  {
+    "test_id": "TC-BK-03",
+    "replacement_expected": "Current required LicenseNumber empty: HTTP400 with LicenseNumber field error; no row",
+    "observed": {
+      "http": 400,
+      "errors": {
+        "LicenseNumber": [
+          "The LicenseNumber field is required."
+        ]
+      },
+      "rows": "0"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.757914+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/accepted-http-extra.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-BK-06",
+    "replacement_expected": "Current specialization ID query returns the three Corporate lawyers",
+    "observed": {
+      "http": 200,
+      "count": 3
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.757962+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-DB-03",
+    "replacement_expected": "All fifteen checked-in migrations applied; 33 business tables plus migration history",
+    "observed": {
+      "migrations": 15,
+      "tables": 34
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.793775+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-C2-03",
+    "replacement_expected": "Current POST cancellation returns200/Cancelled and releases booked slot",
+    "observed": {
+      "http": 200,
+      "status": "Cancelled",
+      "isBooked": "f"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.827953+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-C3-02",
+    "replacement_expected": "Current per-request upload of genuine2MiB PDF returns201 and linked DB file",
+    "observed": {
+      "http": 201,
+      "file": {
+        "fileId": 1,
+        "requestId": 1,
+        "fileName": "synthetic.pdf",
+        "contentType": "application/pdf",
+        "fileSize": 2097152,
+        "documentStatus": "Received",
+        "rejectReason": null,
+        "uploadDate": "2026-10-08T12:19:36.386888Z"
+      },
+      "linked_rows": "1"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.845096+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-C3-03",
+    "replacement_expected": "Current per-request upload rejects14MiB at10MiB ceiling without new file row",
+    "observed": {
+      "http": 400,
+      "body": {
+        "statusCode": 400,
+        "message": "File size (14MB) exceeds the maximum allowed limit of 10MB.",
+        "timestamp": "2026-10-08T12:19:36.46093Z"
+      },
+      "file_rows_after": "1"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.862790+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-C3-06",
+    "replacement_expected": "Current PUT clerk complete DTO returns200 and Property department persists",
+    "observed": {
+      "http": 200,
+      "department": "Property"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.881667+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-E2E-02",
+    "replacement_expected": "Current201 response gives requestId as persisted request identifier; no independent tracking number claimed",
+    "observed": {
+      "http": 201,
+      "requestId": 2,
+      "databaseId": "2"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.899853+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-FE-01",
+    "replacement_expected": "Accepted current admin catalogue renders name, license and Edit action; tariffs/booking placement not certified.",
+    "observed": {
+      "name": true,
+      "license": true,
+      "edit": true,
+      "scope": "Accepted admin directory contract; tariffs/booking placement still pending",
+      "pageErrors": []
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:37:46.626Z",
+    "evidence": [
+      "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-01.png",
+      "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log"
+    ],
+    "scope": "Historical standalone LawyerCard absent; actual catalogue rendered with explicit UI fixture. Original fee/book failure remains in archived historical evidence; accepted current catalogue test. User-accepted current UI contract."
+  },
+  {
+    "test_id": "TC-FE-03",
+    "replacement_expected": "Accepted current unauthenticated clerk route redirects to /login; return-URL feature not required by this revision.",
+    "observed": {
+      "url": "http://127.0.0.1:55547/login",
+      "pageErrors": []
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:37:48.987Z",
+    "evidence": [
+      "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-03.png",
+      "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log"
+    ],
+    "scope": "No token present; actual protected route executes. Historical return-URL expectation remains archived; current redirect accepted. User-accepted current UI contract."
+  },
+  {
+    "test_id": "TC-FE-02",
+    "replacement_expected": "Accepted current no-date/no-slot form disables approval and slot control and displays selection guidance.",
+    "observed": {
+      "blocked": true,
+      "guidanceVisible": true,
+      "slotDisabled": true,
+      "pageErrors": []
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:37:50.755Z",
+    "evidence": [
+      "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-02.png",
+      "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log"
+    ],
+    "scope": "Actual current booking form uses disabled approval and instructional hints; historical inline-error failure retained separately; current guidance contract accepted. UI fixtures only. User-accepted current UI contract."
+  },
+  {
+    "test_id": "TC-MOB-02",
+    "replacement_expected": "Accepted current Lawyer card shows name, experience and license, without a rating field.",
+    "observed": "Sunil Fernando, 10 yrs experience and SYNTHETIC license are found in actual Flutter widget rendering.",
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:25:16.980260+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/accepted-flutter-final.log"
+    ],
+    "scope": "Actual Flutter widget/mock HTTP; current UI revision accepted; no native-device or live API claim."
+  },
+  {
+    "test_id": "TC-MOB-03",
+    "replacement_expected": "Accepted current registration rejects abc with inline password error and zero network calls; no phone field or disabled-submit requirement.",
+    "observed": "Actual password validator message found; zero signup requests for abc; all four replacement/control tests pass.",
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:25:16.980260+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/accepted-flutter-final.log"
+    ],
+    "scope": "Actual Flutter widget/mock HTTP; current UI revision accepted; no native-device or live API claim."
+  },
+  {
+    "test_id": "TC-C3-05",
+    "replacement_expected": "Accepted current four-item Property Transfer checklist: three provided gives75% deterministic completeness; missing Prior Title Deed flagged.",
+    "observed": "75%; missing Prior Title Deed; deterministic function, not live Gemini/OCR accuracy.",
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:54.211423+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/accepted-ai.log",
+      "qmse-output/final-audit/debug/evidence/accepted-ai.xml"
+    ],
+    "scope": "Explicit current four-item fixture. The incomplete original 50% fixture remains historical evidence, not retrospectively approved."
+  }
+]

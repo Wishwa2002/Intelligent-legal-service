@@ -1,0 +1,11 @@
+START UTC 2026-10-08T02:49:09.968848+00:00
+COMMAND ['dotnet', 'test', 'backend/LegalService.Tests/LegalService.Tests.csproj', '--no-build', '--no-restore', '--filter', 'FullyQualifiedName~Qmse_LocalEvidenceHost', '--logger', 'trx;LogFileName=evidence-host.trx', '--results-directory', 'qmse-output/evidence/backend']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service
+Test run for /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+Results File: /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/evidence/backend/evidence-host.trx
+
+Passed!  - Failed:     0, Passed:     1, Skipped:     0, Total:     1, Duration: 54 s - LegalService.Tests.dll (net8.0)

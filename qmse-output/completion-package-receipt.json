@@ -1,0 +1,20 @@
+{
+  "created_utc": "2026-10-08T09:30:57.584700+00:00",
+  "archive": "qmse-output/SE3110_GR42_Completed_Evidence_Package.zip",
+  "files": 1477,
+  "bytes": 104790887,
+  "sha256": "453ffcd487087da399d73db2387f78ba6a9951e7efb4bae33c8fb0772fe5a189",
+  "zip_integrity": "PASS",
+  "all_indexed_artifact_hashes_match_zip": true,
+  "final_reports_match_zip": true,
+  "previous_archives_preserved": {
+    "SE3110_GR42_Evidence_Package.zip": "e3b8ea14740a53674cd4c30c3a02ba9ec682b58f2c9c1c2eb74b4bf131530002",
+    "SE3110_GR42_Visual_Evidence_Package.zip": "e58e65d514b579ce9bb1547d9bcd7fd6cc7d8a6df1244a3061e4300d97586193",
+    "git-publication/backup-60-page/SE3110_GR42_PrePublication_Evidence_Package.zip": "f5c31a542ab46e902657410f4a3c04439235e332a81d8a72b7e96c70bbe149f0"
+  },
+  "pdf_pages": 78,
+  "figures": 30,
+  "published_sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "ci": "Zero observed runs; no pass claimed",
+  "exclusions": "Other ZIPs including preserved archives, render QA intermediates, SDK/runtime caches, dependencies, .env/private controls/browser state. No secret contents copied."
+}

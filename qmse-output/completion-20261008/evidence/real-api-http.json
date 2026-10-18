@@ -1,0 +1,634 @@
+[
+  {
+    "at": "2026-10-08T04:51:05.924928+00:00",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "inputs": {
+      "email": "qmse-admin@example.test",
+      "password": "[REDACTED]"
+    },
+    "status": 200,
+    "observed": {
+      "token": "[REDACTED]",
+      "userId": 1,
+      "lawyerId": null,
+      "clerkId": null,
+      "name": "System Administrator",
+      "email": "qmse-admin@example.test",
+      "role": "Admin",
+      "department": null,
+      "contact": null,
+      "mustChangePassword": "[REDACTED]",
+      "message": "Login successful"
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.035043+00:00",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "inputs": {
+      "email": "qmse-admin@example.test",
+      "password": "[REDACTED]"
+    },
+    "status": 401,
+    "observed": {
+      "message": "Invalid email or password."
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.039251+00:00",
+    "method": "GET",
+    "path": "/api/specializations",
+    "inputs": null,
+    "status": 200,
+    "observed": [
+      {
+        "specializationId": 1,
+        "name": "Criminal Law",
+        "description": "Defense and prosecutorial assistance in criminal litigation.",
+        "lawyerCount": 2,
+        "activeLawyerCount": 2,
+        "legalServiceCount": 1
+      },
+      {
+        "specializationId": 3,
+        "name": "Corporate & Commercial Law",
+        "description": "Business registration, corporate governance, commercial contracts, and compliance.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 1
+      },
+      {
+        "specializationId": 4,
+        "name": "Real Estate & Property Law",
+        "description": "Land registry, real estate transactions, leases, partition actions, and title disputes.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      },
+      {
+        "specializationId": 5,
+        "name": "Labour & Employment Law",
+        "description": "Employment contracts, workplace disputes, labour tribunal advocacy, and severance.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      },
+      {
+        "specializationId": 6,
+        "name": "Tax Law",
+        "description": "Direct and indirect taxation, corporate tax planning, revenue appeals, and audits.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      },
+      {
+        "specializationId": 7,
+        "name": "QMSE Cyber Law",
+        "description": "Synthetic local area",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      },
+      {
+        "specializationId": 8,
+        "name": "QMSE Cyber Law 1791434667938713000",
+        "description": "Synthetic local area",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      }
+    ]
+  },
+  {
+    "at": "2026-10-08T04:51:06.043711+00:00",
+    "method": "POST",
+    "path": "/api/specializations",
+    "inputs": {
+      "name": "QMSE Cyber Law 1791435066039441000",
+      "description": "Synthetic local area"
+    },
+    "status": 201,
+    "observed": {
+      "specializationId": 9,
+      "name": "QMSE Cyber Law 1791435066039441000",
+      "description": "Synthetic local area"
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.152850+00:00",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic QMSE Lawyer",
+      "email": "qmse-lawyer-1791435066043881000@example.test",
+      "experience": 12,
+      "licenseNumber": "QMSE-1791435066043881000",
+      "specializationId": 1,
+      "qualification": "Synthetic fixture"
+    },
+    "status": 201,
+    "observed": {
+      "lawyerId": "2c9b7711-82eb-4ddb-afda-7e18302ef985",
+      "name": "Synthetic QMSE Lawyer",
+      "email": "qmse-lawyer-1791435066043881000@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic fixture",
+      "experience": 12,
+      "licenseNumber": "QMSE-1791435066043881000",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 1,
+          "name": "Criminal Law",
+          "description": "Defense and prosecutorial assistance in criminal litigation."
+        }
+      ]
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.157306+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/search?page=1&pageSize=10&specializationId=1",
+    "inputs": null,
+    "status": 200,
+    "observed": {
+      "items": [
+        {
+          "lawyerId": "2c9b7711-82eb-4ddb-afda-7e18302ef985",
+          "name": "Synthetic QMSE Lawyer",
+          "email": "qmse-lawyer-1791435066043881000@example.test",
+          "phoneNumber": "",
+          "qualification": "Synthetic fixture",
+          "experience": 12,
+          "licenseNumber": "QMSE-1791435066043881000",
+          "profileDescription": "",
+          "status": "Active",
+          "specializations": [
+            {
+              "specializationId": 1,
+              "name": "Criminal Law",
+              "description": "Defense and prosecutorial assistance in criminal litigation."
+            }
+          ]
+        },
+        {
+          "lawyerId": "d2cee339-3f66-495c-84b2-ed952c490123",
+          "name": "Synthetic QMSE Lawyer",
+          "email": "qmse-lawyer-1791434667945731000@example.test",
+          "phoneNumber": "",
+          "qualification": "Synthetic fixture",
+          "experience": 12,
+          "licenseNumber": "QMSE-1791434667945733000",
+          "profileDescription": "",
+          "status": "Active",
+          "specializations": [
+            {
+              "specializationId": 1,
+              "name": "Criminal Law",
+              "description": "Defense and prosecutorial assistance in criminal litigation."
+            }
+          ]
+        },
+        {
+          "lawyerId": "fd6386c4-4e80-4430-9dfd-15855cc6bd94",
+          "name": "Synthetic QMSE Lawyer",
+          "email": "qmse-lawyer@example.test",
+          "phoneNumber": "",
+          "qualification": "Synthetic fixture",
+          "experience": 12,
+          "licenseNumber": "QMSE-COMPLETION-01",
+          "profileDescription": "",
+          "status": "Active",
+          "specializations": [
+            {
+              "specializationId": 1,
+              "name": "Criminal Law",
+              "description": "Defense and prosecutorial assistance in criminal litigation."
+            }
+          ]
+        }
+      ],
+      "page": 1,
+      "pageSize": 10,
+      "totalItems": 3,
+      "totalPages": 1,
+      "totalLawyers": 3
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.161356+00:00",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic QMSE Lawyer",
+      "email": "qmse-lawyer-1791435066043881000@example.test",
+      "experience": 12,
+      "licenseNumber": "QMSE-1791435066043881000",
+      "specializationId": 1,
+      "qualification": "Synthetic fixture"
+    },
+    "status": 409,
+    "observed": {
+      "message": "A lawyer with email 'qmse-lawyer-1791435066043881000@example.test' already exists in the system."
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.164720+00:00",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic QMSE Lawyer",
+      "email": "qmse-lawyer-1791435066043881000@example.test",
+      "experience": 12,
+      "licenseNumber": "QMSE-1791435066043881000",
+      "specializationId": 1,
+      "qualification": "Synthetic fixture"
+    },
+    "status": 401,
+    "observed": ""
+  },
+  {
+    "at": "2026-10-08T04:51:06.168180+00:00",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic QMSE Lawyer",
+      "email": "qmse-lawyer-1791435066043881000@example.test",
+      "experience": 12,
+      "licenseNumber": "QMSE-1791435066043881000",
+      "specializationId": 1,
+      "qualification": "Synthetic fixture"
+    },
+    "status": 401,
+    "observed": ""
+  },
+  {
+    "at": "2026-10-08T04:51:06.277786+00:00",
+    "method": "POST",
+    "path": "/api/auth/signup",
+    "inputs": {
+      "fullName": "Synthetic API Customer",
+      "email": "qmse-api-1791435066168378000@example.test",
+      "password": "[REDACTED]",
+      "role": "Customer"
+    },
+    "status": 200,
+    "observed": {
+      "message": "Customer registered successfully",
+      "userId": 15,
+      "name": "Synthetic API Customer",
+      "email": "qmse-api-1791435066168378000@example.test",
+      "role": "Customer",
+      "lawyerId": null
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.383851+00:00",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "inputs": {
+      "email": "qmse-api-1791435066168378000@example.test",
+      "password": "[REDACTED]"
+    },
+    "status": 200,
+    "observed": {
+      "token": "[REDACTED]",
+      "userId": 15,
+      "lawyerId": null,
+      "clerkId": null,
+      "name": "Synthetic API Customer",
+      "email": "qmse-api-1791435066168378000@example.test",
+      "role": "Customer",
+      "department": null,
+      "contact": null,
+      "mustChangePassword": "[REDACTED]",
+      "message": "Login successful"
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.388000+00:00",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic QMSE Lawyer",
+      "email": "qmse-lawyer-1791435066043881000@example.test",
+      "experience": 12,
+      "licenseNumber": "QMSE-1791435066043881000",
+      "specializationId": 1,
+      "qualification": "Synthetic fixture"
+    },
+    "status": 403,
+    "observed": ""
+  },
+  {
+    "at": "2026-10-08T04:51:06.391537+00:00",
+    "method": "POST",
+    "path": "/api/careers",
+    "inputs": {
+      "title": "Synthetic vacancy"
+    },
+    "status": 403,
+    "observed": ""
+  },
+  {
+    "at": "2026-10-08T04:51:06.396314+00:00",
+    "method": "POST",
+    "path": "/api/service-requests?customerId=15",
+    "inputs": {
+      "title": "Synthetic Civil Request",
+      "description": "Synthetic tenant enquiry",
+      "requestType": "Civil",
+      "priority": "Low"
+    },
+    "status": 201,
+    "observed": {
+      "serviceRequestId": "190ae824-18d8-48ac-bd66-2819c98eb598",
+      "customerId": 15,
+      "customerName": "Synthetic API Customer",
+      "customerEmail": "qmse-api-1791435066168378000@example.test",
+      "title": "Synthetic Civil Request",
+      "description": "Synthetic tenant enquiry",
+      "requestType": "Civil",
+      "priority": "Low",
+      "status": "Submitted",
+      "createdAt": "2026-10-08T04:51:06.395168Z",
+      "updatedAt": "2026-10-08T04:51:06.395168Z",
+      "isEditable": true,
+      "isCancellable": true
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.400119+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/search?search=%27%20OR%201%3D1%3B%20DROP%20TABLE%20Lawyers%3B--",
+    "inputs": null,
+    "status": 200,
+    "observed": []
+  },
+  {
+    "at": "2026-10-08T04:51:06.404096+00:00",
+    "method": "GET",
+    "path": "/api/documentation-services",
+    "inputs": null,
+    "status": 200,
+    "observed": [
+      {
+        "serviceId": 2,
+        "name": "Affidavit & Notary Services",
+        "description": "Drafting affidavits and arranging official notarization.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC",
+          "Completed Affidavit Draft",
+          "Witness Details"
+        ]
+      },
+      {
+        "serviceId": 9,
+        "name": "Bail Application & Criminal Representation",
+        "description": "Magistrate & High Court bail filings, police B-report review, and surety documentation.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC of Accused",
+          "Police B Report",
+          "Affidavit of Sureties",
+          "Surety Asset Proof"
+        ]
+      },
+      {
+        "serviceId": 6,
+        "name": "Business & Corporate Registration",
+        "description": "Company incorporation (Pvt Ltd), sole proprietorship, and partnership registration with ROC.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC Copy",
+          "Form 1 / Form 18",
+          "Articles of Association",
+          "Address Proof"
+        ]
+      },
+      {
+        "serviceId": 14,
+        "name": "Commercial Lease Agreement",
+        "description": "Office and industrial property leases, rent review mechanisms, and fit-out covenants.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Title Deed Copy",
+          "Local Council Assessment Receipt",
+          "Draft Commercial Lease",
+          "NIC Copy"
+        ]
+      },
+      {
+        "serviceId": 1,
+        "name": "Contract Review & Amendment",
+        "description": "Reviewing lease/sales agreements and drafting amendments.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Original Contract",
+          "Amendment Request Letter",
+          "NIC Copy"
+        ]
+      },
+      {
+        "serviceId": 11,
+        "name": "Contract Vetting & Corporate NDA Drafting",
+        "description": "Commercial contracts, confidentiality agreements, dispute indemnity, and termination clauses.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Commercial Agreement Draft",
+          "Business Registration",
+          "NIC Copy"
+        ]
+      },
+      {
+        "serviceId": 8,
+        "name": "Last Will and Testament",
+        "description": "Estate planning, testamentary dispositions, executor appointment, and notarial attestation.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC of Testator",
+          "Schedule of Assets & Deeds",
+          "Draft Will Agreement",
+          "Beneficiary Details"
+        ]
+      },
+      {
+        "serviceId": 13,
+        "name": "Mutual Divorce & Custody Settlement",
+        "description": "Divorce by mutual consent, maintenance agreements, custody orders, and asset dissolution.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Marriage Certificate",
+          "Custody & Settlement Agreement",
+          "NIC of Parties",
+          "Child Birth Certificates"
+        ]
+      },
+      {
+        "serviceId": 7,
+        "name": "Power of Attorney",
+        "description": "General and Special Power of Attorney drafting, principal authorization, and notarial execution.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC of Grantor",
+          "NIC of Grantee",
+          "Scope of Authority Document",
+          "Deed / Asset Proof"
+        ]
+      },
+      {
+        "serviceId": 3,
+        "name": "Power of Attorney Drafting",
+        "description": "Drafting General or Special Power of Attorney documents.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC of Grantor",
+          "NIC of Grantee",
+          "Scope of Authority Document"
+        ]
+      },
+      {
+        "serviceId": 4,
+        "name": "Property Transfer",
+        "description": "Land registry deed conveyance, title verification, and official ownership transfer.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC Copy",
+          "Prior Title Deed Copy",
+          "Survey Plan",
+          "Sale Agreement Draft"
+        ]
+      },
+      {
+        "serviceId": 5,
+        "name": "Rental & Lease Agreement",
+        "description": "Residential and commercial tenancy agreements, covenant clauses, and stamp duty calculation.",
+        "isActive": true,
+        "requiredDocuments": [
+          "NIC Copy",
+          "Title Deed / Ownership Proof",
+          "Tenancy Agreement Draft"
+        ]
+      },
+      {
+        "serviceId": 12,
+        "name": "Testamentary & Probate Court Application",
+        "description": "Probate petitioning, letters of administration, estate accounting, and court representation.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Death Certificate",
+          "Original Last Will",
+          "Estate Asset Inventory",
+          "NIC of Applicant"
+        ]
+      },
+      {
+        "serviceId": 10,
+        "name": "Title Search & Pedigree Due Diligence",
+        "description": "Comprehensive 40-year land registry search, encumbrance verification, and title report issuance.",
+        "isActive": true,
+        "requiredDocuments": [
+          "Prior Title Deed Copy",
+          "Survey Plan",
+          "Land Registry Extract Request",
+          "NIC Copy"
+        ]
+      }
+    ]
+  },
+  {
+    "at": "2026-10-08T04:51:06.416770+00:00",
+    "method": "POST",
+    "path": "/api/documentation-requests?customerId=15",
+    "inputs": {
+      "serviceId": 2,
+      "documentType": "Synthetic API Filing"
+    },
+    "status": 201,
+    "observed": {
+      "requestId": 9,
+      "customerId": 15,
+      "customerName": "Synthetic API Customer",
+      "customerEmail": "qmse-api-1791435066168378000@example.test",
+      "serviceId": 2,
+      "serviceName": "Affidavit & Notary Services",
+      "documentType": "Synthetic API Filing",
+      "status": "PENDING",
+      "assignedClerkId": null,
+      "assignedClerkName": null,
+      "createdAt": "2026-10-08T04:51:06.408517Z",
+      "updatedAt": "2026-10-08T04:51:06.408517Z",
+      "documentFiles": [],
+      "requiredDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "missingDocuments": [
+        "NIC",
+        "Completed Affidavit Draft",
+        "Witness Details"
+      ],
+      "reuploadNote": null
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.423271+00:00",
+    "method": "POST",
+    "path": "/api/documentation-requests/9/files",
+    "inputs": null,
+    "status": 400,
+    "observed": {
+      "statusCode": 400,
+      "message": "Uploaded content is not a PDF document.",
+      "timestamp": "2026-10-08T04:51:06.42291Z"
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.427361+00:00",
+    "method": "PUT",
+    "path": "/api/documentation-requests/9/status",
+    "inputs": {
+      "status": "COMPLETED"
+    },
+    "status": 403,
+    "observed": ""
+  },
+  {
+    "at": "2026-10-08T04:51:06.434786+00:00",
+    "method": "POST",
+    "path": "/api/documentation-requests/9/files",
+    "inputs": null,
+    "status": 201,
+    "observed": {
+      "fileId": 6,
+      "requestId": 9,
+      "fileName": "NIC_Copy.pdf",
+      "contentType": "application/pdf",
+      "fileSize": 2475,
+      "documentStatus": "Received",
+      "rejectReason": null,
+      "uploadDate": "2026-10-08T04:51:06.433585Z"
+    }
+  },
+  {
+    "at": "2026-10-08T04:51:06.441417+00:00",
+    "method": "POST",
+    "path": "/api/documentation-requests/9/files",
+    "inputs": null,
+    "status": 201,
+    "observed": {
+      "fileId": 7,
+      "requestId": 9,
+      "fileName": "Completed_Affidavit_Draft.pdf",
+      "contentType": "application/pdf",
+      "fileSize": 2702,
+      "documentStatus": "Received",
+      "rejectReason": null,
+      "uploadDate": "2026-10-08T04:51:06.440872Z"
+    }
+  }
+]

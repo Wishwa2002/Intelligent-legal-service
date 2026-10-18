@@ -1,0 +1,96 @@
+Skip to content
+Navigation Menu
+Sign in
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Commits
+Branch selector
+main
+User selector
+All users
+Datepicker
+All time
+Commit history
+Commits on Aug 25, 2026
+Merge pull request #6 from Wishwa2002/feature/database-setup
+Wishwa2002
+authored
+59337bb
+feat(database): implement complete legal platform schema, seeds, and ADRs
+yhprasadhew
+committed
+2e2f764
+Commits on Aug 23, 2026
+Merge pull request #4 from Wishwa2002/feature/frontend-setup
+Wishwa2002
+authored
+a960887
+feat(frontend): add public landing page and common components
+Wishwa2002
+committed
+7db2817
+Commits on Aug 22, 2026
+Merge pull request #3 from Wishwa2002/feature/frontend-setup
+Wishwa2002
+authored
+6f78d19
+Setup React TypeScript Tailwind frontend structure
+Wishwa2002
+committed
+91d9628
+Commits on Aug 19, 2026
+Merge pull request #2 from Wishwa2002/feature/authentication
+Wishwa2002
+authored
+0fce3fd
+Implement user registration and role assignment
+Wishwa2002
+committed
+56f4bbd
+Merge pull request #1 from Wishwa2002/develop
+yhprasadhew
+authored
+3e0403f
+Commits on Aug 18, 2026
+Add complete project folder structure
+Wishwa2002
+committed
+3beb4c6
+Complete merge of remote develop branch
+Wishwa2002
+committed
+043336b
+Merge GitHub develop branch with local project
+Wishwa2002
+committed
+5505716
+Initial project structure and ASP.NET Core setup
+Wishwa2002
+committed
+c0ea645
+Initial commit
+Wishwa2002
+authored
+59e413c
+Footer
+© 2026 GitHub, Inc.
+Footer navigation
+Terms
+Privacy
+Security
+Status
+Community
+Docs
+Contact
+Manage cookies
+Do not share my personal information

@@ -1,0 +1,144 @@
+[
+  {
+    "test_id": "TC-BK-03",
+    "replacement_expected": "Current required LicenseNumber empty: HTTP400 with LicenseNumber field error; no row",
+    "observed": {
+      "http": 400,
+      "errors": {
+        "LicenseNumber": [
+          "The LicenseNumber field is required."
+        ]
+      },
+      "rows": "0"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.757914+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/accepted-http-extra.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-BK-06",
+    "replacement_expected": "Current specialization ID query returns the three Corporate lawyers",
+    "observed": {
+      "http": 200,
+      "count": 3
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.757962+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-DB-03",
+    "replacement_expected": "All fifteen checked-in migrations applied; 33 business tables plus migration history",
+    "observed": {
+      "migrations": 15,
+      "tables": 34
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.793775+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-C2-03",
+    "replacement_expected": "Current POST cancellation returns200/Cancelled and releases booked slot",
+    "observed": {
+      "http": 200,
+      "status": "Cancelled",
+      "isBooked": "f"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.827953+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-C3-02",
+    "replacement_expected": "Current per-request upload of genuine2MiB PDF returns201 and linked DB file",
+    "observed": {
+      "http": 201,
+      "file": {
+        "fileId": 1,
+        "requestId": 1,
+        "fileName": "synthetic.pdf",
+        "contentType": "application/pdf",
+        "fileSize": 2097152,
+        "documentStatus": "Received",
+        "rejectReason": null,
+        "uploadDate": "2026-10-08T12:19:36.386888Z"
+      },
+      "linked_rows": "1"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.845096+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-C3-03",
+    "replacement_expected": "Current per-request upload rejects14MiB at10MiB ceiling without new file row",
+    "observed": {
+      "http": 400,
+      "body": {
+        "statusCode": 400,
+        "message": "File size (14MB) exceeds the maximum allowed limit of 10MB.",
+        "timestamp": "2026-10-08T12:19:36.46093Z"
+      },
+      "file_rows_after": "1"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.862790+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-C3-06",
+    "replacement_expected": "Current PUT clerk complete DTO returns200 and Property department persists",
+    "observed": {
+      "http": 200,
+      "department": "Property"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.881667+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  },
+  {
+    "test_id": "TC-E2E-02",
+    "replacement_expected": "Current201 response gives requestId as persisted request identifier; no independent tracking number claimed",
+    "observed": {
+      "http": 201,
+      "requestId": 2,
+      "databaseId": "2"
+    },
+    "status": "VERIFIED/PASS",
+    "executed_utc": "2026-10-08T12:23:19.899853+00:00",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/historical-http.json",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "scope": "Accepted current API/schema contract; original failure retained; actual PostgreSQL/API, synthetic data"
+  }
+]

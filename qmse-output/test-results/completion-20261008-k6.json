@@ -1,0 +1,18 @@
+{
+  "name": "completion-20261008-k6",
+  "command": [
+    "/private/tmp/qmse-k6/k6-v2.3.0-macos-arm64/k6",
+    "run",
+    "--out",
+    "json=qmse-output/completion-20261008/evidence/k6-postgres-raw.json",
+    "qmse-output/completion-20261008/audit/postgres-smoke.k6.js"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T04:45:43.690156+00:00",
+  "ended_utc": "2026-10-08T04:46:00.466962+00:00",
+  "duration_seconds": 16.777,
+  "exit_code": 99,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-k6.log"
+}

@@ -1,0 +1,12 @@
+START UTC 2026-10-08T02:45:50.410693+00:00
+COMMAND ['.venv/bin/python', '-m', 'pytest', 'tests/test_qmse_boundaries.py', '-q', '--junitxml=../qmse-output/evidence/ai/qmse-boundaries.xml']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service/ai-service
+..........                                                               [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:41
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/starlette/testclient.py:41: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    [], typing.ContextManager[anyio.abc.BlockingPortal]
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/evidence/ai/qmse-boundaries.xml -
+10 passed, 1 warning in 0.36s

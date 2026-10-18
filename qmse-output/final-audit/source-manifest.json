@@ -1,0 +1,243 @@
+{
+  "head": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "branch": "docs/se3110-qmse-testing",
+  "captured_utc": "2026-10-08T14:12:52.838057+00:00",
+  "overlay_sha256": "06683e1b675c85a503e8d7a5d36095962711864a0306a96c79d2b781ae44a97d",
+  "status": "Uncommitted, unpublished local AI-assisted source overlay",
+  "changed_source_files": [
+    {
+      "path": "ai-service/requirements-member1.txt",
+      "sha256": "c74e0687e226569728d596ba37582443e1d876efe774f1d65779f3cbafcfffb5",
+      "bytes": 124,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/ai-service/requirements-member1.txt"
+    },
+    {
+      "path": "ai-service/requirements-qmse-tested.lock.txt",
+      "sha256": "926cffbbd8ef6efdb6d096ef4ca8f90f97951213dc2cbfaa10ddd12ff13356ef",
+      "bytes": 2578,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/ai-service/requirements-qmse-tested.lock.txt"
+    },
+    {
+      "path": "ai-service/requirements.txt",
+      "sha256": "ac08456e90993f956a50c2cdd88190d4483a91cef55f05a785a9d1149cd0bcda",
+      "bytes": 983,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/ai-service/requirements.txt"
+    },
+    {
+      "path": "ai-service/tests/test_final_audit_contract.py",
+      "sha256": "35618bf26e922303231b3cc093ea9e3a4f7feb9851e4d976e378245da384d572",
+      "bytes": 1171,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/ai-service/tests/test_final_audit_contract.py"
+    },
+    {
+      "path": "ai-service/tests/test_historical_acceptance.py",
+      "sha256": "d41dbd4902e072c4783be026f6ab2f4ed5fbe810a0ac8ccda58047d0e876dff1",
+      "bytes": 3220,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/ai-service/tests/test_historical_acceptance.py"
+    },
+    {
+      "path": "ai-service/tests/test_provider_resilience_final.py",
+      "sha256": "ae2166629de57feea8be703dc7d67bfa6906a0b9a2e7146cac64c362d666f435",
+      "bytes": 2556,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/ai-service/tests/test_provider_resilience_final.py"
+    },
+    {
+      "path": "backend/LegalService.API/Middleware/SecurityHeadersMiddleware.cs",
+      "sha256": "f0fa3cc24eecd803b2a1b4f466f79fb73533761c2a3f2a7bab3692376e0ff73f",
+      "bytes": 481,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.API/Middleware/SecurityHeadersMiddleware.cs"
+    },
+    {
+      "path": "backend/LegalService.API/Program.cs",
+      "sha256": "a8910453118dbf5189282867d09c41bef5398d8214a67bd341ac12b78aecf989",
+      "bytes": 15139,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.API/Program.cs"
+    },
+    {
+      "path": "backend/LegalService.API/Services/AppointmentService.cs",
+      "sha256": "0cec133b09d2e3eb1f55bdd38a63e45b47d0a84cdf3cdcdfc0fa01170177a902",
+      "bytes": 22097,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.API/Services/AppointmentService.cs"
+    },
+    {
+      "path": "backend/LegalService.API/Services/DocumentAndClerk/DocumentFileService.cs",
+      "sha256": "a29b21704af3ce5bc370a7a8e0b4e4f7508120252423a823124bf2ffb623027f",
+      "bytes": 14571,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.API/Services/DocumentAndClerk/DocumentFileService.cs"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Scheduling/ProposedCancellationPolicy.cs",
+      "sha256": "7bb7e9a8ec0008954d741f3e1766c2922fd4b84edac013d52f3f39525168da42",
+      "bytes": 706,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.API/Services/Scheduling/ProposedCancellationPolicy.cs"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Workforce/WorkforceAnalysisService.cs",
+      "sha256": "781ce42837f698f793ef612c72f318c54a42fe9aa7f2057b2d98abc4022b1d7d",
+      "bytes": 6809,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.API/Services/Workforce/WorkforceAnalysisService.cs"
+    },
+    {
+      "path": "backend/LegalService.API/Services/Workforce/WorkforceSettingsService.cs",
+      "sha256": "7e739e3134260d267131f90425f8088c6574a340c4c148c642abdc5d418e5e03",
+      "bytes": 3593,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.API/Services/Workforce/WorkforceSettingsService.cs"
+    },
+    {
+      "path": "backend/LegalService.Tests/HistoricalCaseVerificationTests.cs",
+      "sha256": "9faab0522e8790529c3f68f4ee7d2bb314bd190cd0a6a281d76aa01040f62f07",
+      "bytes": 4603,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.Tests/HistoricalCaseVerificationTests.cs"
+    },
+    {
+      "path": "backend/LegalService.Tests/RecommendationTransportTests.cs",
+      "sha256": "f2325fa23104e79e3789e6021bfd37c9c59a2fa11219a2e6bb39d428c53c2df2",
+      "bytes": 3847,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.Tests/RecommendationTransportTests.cs"
+    },
+    {
+      "path": "backend/LegalService.Tests/RequirementsDecisionTests.cs",
+      "sha256": "9a8650bab1018b44f0a0c7360a32c17a1a94c0677c2564f7730eaba882f299c3",
+      "bytes": 10076,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.Tests/RequirementsDecisionTests.cs"
+    },
+    {
+      "path": "backend/LegalService.Tests/SecurityHeaderTests.cs",
+      "sha256": "59af1b19304e25e6c361e551e17c1a401ac1ce31605731cea32eb921bf3de2bf",
+      "bytes": 1754,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.Tests/SecurityHeaderTests.cs"
+    },
+    {
+      "path": "backend/LegalService.Tests/final_audit_contract_replay.py",
+      "sha256": "2c922469ebd00a03f9c2e2160683e2ecbe228d61c646e5e8e11c9542f57eff51",
+      "bytes": 5307,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.Tests/final_audit_contract_replay.py"
+    },
+    {
+      "path": "backend/LegalService.Tests/historical_api_replay.py",
+      "sha256": "3015ae5252a1f2e6934fc20d21cec8caa438e2714b2cdc0d8d6b8454deee649f",
+      "bytes": 15882,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/backend/LegalService.Tests/historical_api_replay.py"
+    },
+    {
+      "path": "frontend/final-audit-baseline.playwright.config.ts",
+      "sha256": "d3c1f90f0b5d11558ee8e1ac8b7ca6b2bb774db0c75aa5e6e91ac9c386841b08",
+      "bytes": 352,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/final-audit-baseline.playwright.config.ts"
+    },
+    {
+      "path": "frontend/final-audit-contract.playwright.config.ts",
+      "sha256": "040182a27fce3887567ce1b1dfabf25173952c8338d377067e0cf79ef6fbfef8",
+      "bytes": 231,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/final-audit-contract.playwright.config.ts"
+    },
+    {
+      "path": "frontend/final-audit.playwright.config.ts",
+      "sha256": "801d8cd8e7d8fd66a083b6b987739850b26a6293ab8b031e3081ec558593c726",
+      "bytes": 229,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/final-audit.playwright.config.ts"
+    },
+    {
+      "path": "frontend/historical.playwright.config.ts",
+      "sha256": "be1ed7204dcc5e4f064ff554ec74f4525e09b66838175e232f62dd9fa3c52a4b",
+      "bytes": 232,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/historical.playwright.config.ts"
+    },
+    {
+      "path": "frontend/requirements-boundaries.playwright.config.ts",
+      "sha256": "7c8d3fa00ec12f9785813162520ff88e1c143ea570ebe06f5a5451a0f1ace61c",
+      "bytes": 220,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/requirements-boundaries.playwright.config.ts"
+    },
+    {
+      "path": "frontend/src/hooks/useRecommendationWorkflow.ts",
+      "sha256": "1ef8a261f9847e5b93329fa0999d3d54ac20ec121be6395afe9bfdec96203f49",
+      "bytes": 13655,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/src/hooks/useRecommendationWorkflow.ts"
+    },
+    {
+      "path": "frontend/tests/final-audit-contract.spec.ts",
+      "sha256": "2d95dd5278949bb3a1bf6a7c395e17c036a1ce10d21b4a9417d8a0847130a328",
+      "bytes": 9715,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/tests/final-audit-contract.spec.ts"
+    },
+    {
+      "path": "frontend/tests/final-audit-replay.spec.ts",
+      "sha256": "947a37e7b0ee3520a8a111f6aa7e2879f92060d8f3bcf9a9120cf9fe86d0f426",
+      "bytes": 9308,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/tests/final-audit-replay.spec.ts"
+    },
+    {
+      "path": "frontend/tests/historical-acceptance.spec.ts",
+      "sha256": "1ee6b571711445fce0e20955e4da8613f045aaf3370c324cf4feb6b46da8af0a",
+      "bytes": 9312,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/tests/historical-acceptance.spec.ts"
+    },
+    {
+      "path": "frontend/tests/requirements-boundaries.spec.ts",
+      "sha256": "b52554f869c494e3f730ba152701f260a58b122c6cedb80a9bc09c7cba2845b3",
+      "bytes": 1652,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/frontend/tests/requirements-boundaries.spec.ts"
+    },
+    {
+      "path": "mobile/lib/screens/appointments/my_appointments_screen.dart",
+      "sha256": "d0a40c025e84d9d6c75da4286fb761a96b3b4e58e6bc15a59ec6ba34eeccbe0f",
+      "bytes": 26196,
+      "tracked_modified": true,
+      "snapshot": "qmse-output/final-audit/source-snapshot/mobile/lib/screens/appointments/my_appointments_screen.dart"
+    },
+    {
+      "path": "mobile/test/final_audit_contract_test.dart",
+      "sha256": "67981376fbf43c55dc22295f25fe1803f8a667b9fc4b561143b4a2501cf6456e",
+      "bytes": 3645,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/mobile/test/final_audit_contract_test.dart"
+    },
+    {
+      "path": "mobile/test/historical_cases_test.dart",
+      "sha256": "e0c95e485ab07d888da1bc424880752376ee6ebe66768c31479d4a40e7a516af",
+      "bytes": 4159,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/mobile/test/historical_cases_test.dart"
+    },
+    {
+      "path": "mobile/test/proposed_cancellation_test.dart",
+      "sha256": "db5296ceeead85da67528deacee5794a7b45f5cbe1d4ae84f0808976ca71be5f",
+      "bytes": 1644,
+      "tracked_modified": false,
+      "snapshot": "qmse-output/final-audit/source-snapshot/mobile/test/proposed_cancellation_test.dart"
+    }
+  ],
+  "patch_sha256": "3cb0e1e756d46282976f9437ec6cc9972cac50dbb714744481a5b2614bcfc2a5",
+  "production_data_modified": false,
+  "provider_calls": 0
+}

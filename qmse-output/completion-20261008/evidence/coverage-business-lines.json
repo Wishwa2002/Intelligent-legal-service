@@ -1,0 +1,14 @@
+{
+  "before": {
+    "covered": 4082,
+    "valid": 7105,
+    "percent": 57.45,
+    "method": "Distinct filename+line pairs; exclude Migrations/ only; no source filtering changes to raw coverage"
+  },
+  "after": {
+    "covered": 4136,
+    "valid": 7153,
+    "percent": 57.82,
+    "method": "Distinct filename+line pairs; exclude Migrations/ only; no source filtering changes to raw coverage"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-s",
+    "tests",
+    "--junitxml=../qmse-output/final-audit/debug/evidence/regression-ai-final.xml"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/ai-service",
+  "started_utc": "2026-10-08T12:30:59.456383+00:00",
+  "ended_utc": "2026-10-08T12:31:01.651046+00:00",
+  "duration_seconds": 2.195,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/regression-ai-final.log"
+}

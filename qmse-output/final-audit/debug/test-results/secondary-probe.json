@@ -1,0 +1,13 @@
+{
+  "command": [
+    "ai-service/.venv/bin/python",
+    "qmse-output/final-audit/debug/audit/probe_secondary.py"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T12:29:35.269737+00:00",
+  "ended_utc": "2026-10-08T12:29:35.937135+00:00",
+  "duration_seconds": 0.667,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/secondary-probe.log"
+}

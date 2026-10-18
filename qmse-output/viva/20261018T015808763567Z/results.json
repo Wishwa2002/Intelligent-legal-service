@@ -1,0 +1,44 @@
+{
+  "created_utc": "20261018T015808763567Z",
+  "ai_assistance": "Codex-assisted; personal execution must be demonstrated by each member",
+  "scope": "Fresh rehearsal evidence; does not overwrite historical acceptance ledger",
+  "excluded_historical_cases": [],
+  "results": [
+    {
+      "name": "c1",
+      "exit_code": 0,
+      "seconds": 8.049,
+      "command": [
+        "dotnet",
+        "test",
+        "backend/LegalService.Tests/LegalService.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~LawyerManagementHttpTests&FullyQualifiedName!~Qmse_LocalEvidenceHost",
+        "--logger",
+        "trx;LogFileName=c1.trx",
+        "--results-directory",
+        "/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/qmse-output/viva/20261018T015808763567Z"
+      ],
+      "log": "qmse-output/viva/20261018T015808763567Z/c1.log",
+      "native_counts": {
+        "total": "68",
+        "executed": "68",
+        "passed": "68",
+        "failed": "0",
+        "error": "0",
+        "timeout": "0",
+        "aborted": "0",
+        "inconclusive": "0",
+        "passedButRunAborted": "0",
+        "notRunnable": "0",
+        "notExecuted": "0",
+        "disconnected": "0",
+        "warning": "0",
+        "completed": "0",
+        "inProgress": "0",
+        "pending": "0"
+      }
+    }
+  ]
+}

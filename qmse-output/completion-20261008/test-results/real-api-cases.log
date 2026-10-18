@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/completion-20261008/audit/real_api_cases.py", line 35, in <module>
+    _,services=call('GET','/api/documentation-services');sid=services[0]['serviceId']
+                                                             ~~~~~~~~^^^
+IndexError: string index out of range

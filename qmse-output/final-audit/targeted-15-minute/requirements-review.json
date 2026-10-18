@@ -1,0 +1,15 @@
+{
+  "reference": "SE3090_LegalEase_AI_Full_Report.docx Version 3.0",
+  "bcrypt_excerpt": [
+    "Password Security: BCrypt hashing with 12 salt rounds; zero plaintext password storage.",
+    "JWT HMAC-SHA256, RBAC authorization, BCrypt hashing, OWASP sanitization, prompt injection defense, CORS",
+    "JWT authentication with HMAC-SHA256; BCrypt hashing; RBAC for 4 roles; token refresh; session controls.",
+    "BCrypt hashing with high salt rounds; HMAC-SHA256 signed JWT tokens; strict CORS policy enforcement.",
+    "Verify BCrypt password hashing & salt generation",
+    "POST /api/auth/login (BCrypt Verify + JWT)",
+    "Authenticates staff/clients via BCrypt; issues signed HMAC-SHA256 JWT tokens.",
+    "Staff login with valid BCrypt credentials"
+  ],
+  "approval_status": "Formal approval not independently confirmed; user previously requires group confirmation for all material rules. No later group approval recorded.",
+  "decision": "Retain implemented cost 11; preserve cost-12 historical assertion. Add separate current-contract regression without changing application behaviour."
+}

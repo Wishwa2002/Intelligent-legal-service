@@ -1,0 +1,17 @@
+{
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "-s",
+    "tests/test_final_audit_contract.py",
+    "--junitxml=../qmse-output/final-audit/debug/evidence/accepted-ai.xml"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/ai-service",
+  "started_utc": "2026-10-08T12:23:54.211423+00:00",
+  "ended_utc": "2026-10-08T12:23:55.260519+00:00",
+  "duration_seconds": 1.049,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/accepted-ai.log"
+}

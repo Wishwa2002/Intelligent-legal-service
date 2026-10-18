@@ -1,0 +1,194 @@
+Skip to content
+Navigation Menu
+Sign in
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Intelligent-legal-service
+Public
+Notifications
+Fork0
+ (0)
+Star1
+ (1)
+se3110-qmse-testing
+Go to file
+Code
+ 
+ 
+Latest commit
+ 
+History
+Folders and files
+Name	Last commit message	Last commit date
+
+.github/workflows
+	
+Fix Mobile CI missing env asset
+	
+
+
+ai-service
+	
+Fix validated uploads and integrated clerk workflow; add QMSE regress…
+	
+
+
+backend
+	
+Fix validated uploads and integrated clerk workflow; add QMSE regress…
+	
+
+
+database
+	
+Keep develop lawyer management with integrated recommendations
+	
+
+
+deployment
+	
+Add complete project folder structure
+	
+
+
+docs
+	
+chore(deployment): prepare application for cloud deployment
+	
+
+
+frontend
+	
+Fix validated uploads and integrated clerk workflow; add QMSE regress…
+	
+
+
+mobile
+	
+Fix validated uploads and integrated clerk workflow; add QMSE regress…
+	
+
+
+qmse-output
+	
+Preserve executed isolated QMSE workflow, security and performance sc…
+	
+
+
+scripts
+	
+feat(member1): integrate lawyer mobile, matching, and workforce refin…
+	
+
+
+.dockerignore
+	
+fix(deployment): resolve deployment verification issues
+	
+
+
+.gitignore
+	
+chore(deployment): prepare application for cloud deployment
+	
+
+
+LICENSE
+	
+Merge GitHub develop branch with local project
+	
+
+
+LegalService.sln
+	
+feat(member1): add recurring scheduling and workforce intelligence
+	
+
+
+avvoinspired.md
+	
+feat(frontend): integrate lucide-react logo, careers nav link, and he…
+	
+
+
+run-mobile.bat
+	
+feat: implement lawyer category management and intelligent agentic sc…
+	
+
+
+run-mobile.ps1
+	
+feat: implement lawyer category management and intelligent agentic sc…
+	
+
+
+seed_careers.py
+	
+chore(deployment): prepare application for cloud deployment
+	
+
+
+start.bat
+	
+feat: implement lawyer category management and intelligent agentic sc…
+	
+
+
+start.ps1
+	
+feat: implement lawyer category management and intelligent agentic sc…
+	
+Repository files navigation
+License
+MIT License
+
+Copyright (c) 2026  Wishwa Wijayananda
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+About
+
+**Intelligent Legal Service & Case Management System** — A full-stack legal services platform built with ASP.NET Core Web API, PostgreSQL, React, Flutter, and Agentic AI for lawyer discovery, appointment management, document workflows, customer requests, AI-assisted recommendations, and human-approved automated workflows.
+
+License
+Activity
+Stars
+1 star
+Watchers
+0 watching
+Forks
+0 forks
+Report repository
+Releases
+Packages
+Used by
+Contributors
+Languages
+ 

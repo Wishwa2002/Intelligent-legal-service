@@ -1,0 +1,16 @@
+{
+  "key_detected": true,
+  "key_source": "ai-service/.env",
+  "shell_override_removed": true,
+  "google_api_key_cleared": true,
+  "dotenv_secondary_loading_disabled": true,
+  "model": "gemini-3.8-flash",
+  "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent",
+  "model_reference": "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+  "max_live_requests": 3,
+  "classifier_outer_attempts": 1,
+  "sdk_attempts": 1,
+  "provider_timeout_ms": 20000,
+  "database": "qmse_c1_retest_20261008",
+  "production_access": false
+}

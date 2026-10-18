@@ -1,0 +1,13 @@
+# Provider diagnosis and Golden Case limits
+
+No new live Gemini requests in this final audit. Prior cumulative live calls remain two: one504 and one503 (7.324s for the recorded503). Redacted evidence does not establish the provider's exact cause. Model/keypresence is recorded without values in debug/evidence/provider-configuration.json; the configured model isgemini-3.8-flash. Its availability for this account was not verified through a paid/providerAPIcall. Member/providerowner should confirm an available model and grant a new explicitbudget before retrying.
+
+Actual internal-only recommendationservice startup and authentication nowwork. Missinginternalkey401; configured internalkey with deliberatelyemptyGeminikey produces safe503 before SDK generation;healthremains200. Workforcedrafting uses backendthirtydayfacts and fails safely when no providerkey is configured. No browser-selected model identities are trusted.
+
+ExistingGeminiClassifier limits three transient retries,20s pertry, exponentialbackoff, and skips rapidretry for longquota retryhints. Recommendationgraph total40s; hiringgraph35s; backendHTTP45s. Whole-workflowdeadline may end before allSDKretryattempts complete, so this is a bounded availability strategy, not a guaranteed retry-success policy. Errorstage/status metadata is whitelisted, raw providerexceptions omitted from clienterrors. Failure does not create appointments or bypass humanapproval.
+
+Six meaningful deterministic tests were added:503/504 eachthreeattempts;timeoutthreeattempts;malformedJSON,unexpectedfield and wrongtype output failwithout transientretry. Backend504mapping added and verifiesFAILEDworkflow,zeroappointments,noapprovalcall and secret-safe diagnostics. Final114deterministicAItestsPASS;backend365cases362PASS1FAIL2SKIP. Originalcost12 andcoldTLS assertionsremainfailures. Testscover recommendation, scheduling, documentverification, consultation retrieval, toolallowlists, injectiondefense and approvalgates; they cannotprove live legalcorrectness.
+
+The four existingGoldenCase inputs/expectedfields and acceptancecriteria are preserved in golden-case-evaluation-template.json/.md. Actual liveoutputs remain null where unavailable. Reviewerapproval ispending; no expert-labelled legalanswer was invented. Checklist: confirm expectedfields/scenario identity,approve checklist and legalrubric,record model/latency/tokens/cost,review relevance/disclaimer/safety,verify persistence/approvalgate and record reviewer/date. All12fullblockedcases remainBLOCKED.
+
+[Google's official troubleshooting guidance](https://ai.google.dev/gemini-api/docs/troubleshooting) describes503 as serviceunavailability; this general guidance does not identify this recordedfailure's specificcause.

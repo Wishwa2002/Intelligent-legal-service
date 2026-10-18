@@ -1,0 +1,5 @@
+{
+  "observed_utc": "2026-10-08T09:18:58.170Z",
+  "error": "page.goto: Timeout 60000ms exceeded.\nCall log:\n\u001b[2m  - navigating to \"https://github.com/Wishwa2002/Intelligent-legal-service\", waiting until \"domcontentloaded\"\u001b[22m\n",
+  "scope": "Existing prior genuine capture preserved"
+}

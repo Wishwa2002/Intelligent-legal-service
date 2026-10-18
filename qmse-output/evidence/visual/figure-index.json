@@ -1,0 +1,106 @@
+[
+  {
+    "figure": "6.1",
+    "title": "xUnit execution totals",
+    "execution_date": "2026-10-08 02:56:37 UTC",
+    "source": "test-results/backend-final.log; evidence/backend/backend-final.trx",
+    "image": "evidence/visual/01-xunit-result.png",
+    "interpretation": "313 total: 310 passed, 1 failed, 2 skipped. Exit code 1. Skips include live-provider transport and the evidence-host harness."
+  },
+  {
+    "figure": "6.2",
+    "title": "DEF-12: spoofed PDF rejection fails",
+    "execution_date": "2026-10-08 02:56:37 UTC",
+    "source": "test-results/backend-final.log; evidence/backend/backend-final.trx",
+    "image": "evidence/visual/02-spoofed-pdf-failure.png",
+    "interpretation": "Expected ArgumentException was not thrown for 32 inert ASCII bytes beginning MZ, supplied as sample.pdf/application/pdf. DEF-12 remains OPEN; no successful remediation retest exists."
+  },
+  {
+    "figure": "6.3",
+    "title": "React project: Node test output",
+    "execution_date": "2026-10-08 02:42:14 UTC",
+    "source": "test-results/frontend-node.log; test-results/frontend-node.json",
+    "image": "evidence/visual/03-node-result.png",
+    "interpretation": "The actual npm run test:member1 execution passed all 19 subtests. These are Node routing/helper checks, not React Testing Library component tests."
+  },
+  {
+    "figure": "6.4",
+    "title": "Flutter machine runner: successful completion",
+    "execution_date": "2026-10-08 03:15:24 UTC",
+    "source": "test-results/mobile-minimal.log; evidence/mobile/flutter-events.jsonl",
+    "image": "evidence/visual/04-flutter-result.png",
+    "interpretation": "Visible final widget cases succeed and the runner reports success=true. The full machine stream contains 49 visible unit/widget tests across six files; no device or integrated workflow is inferred."
+  },
+  {
+    "figure": "6.5",
+    "title": "Playwright HTML execution report",
+    "execution_date": "2026-10-08 02:42:40 UTC",
+    "source": "evidence/e2e/playwright-report/index.html; evidence/e2e/playwright.json",
+    "image": "evidence/visual/05-playwright-report.png",
+    "interpretation": "109 passed and three skipped, across 14 specification files (112 cases). The report All tab excludes skipped cases. Most tests intercept API requests with mocks."
+  },
+  {
+    "figure": "6.6",
+    "title": "Actual React schedule editor under Playwright",
+    "execution_date": "2026-10-08 02:42:40 UTC (suite start)",
+    "source": "evidence/e2e/schedule-1280.png; evidence/e2e/playwright.json",
+    "image": "evidence/visual/06-react-schedule.png",
+    "interpretation": "Focused browser view of the preserved application screenshot. Weekly hours, duration and synthetic 2030 leave data are visible. API responses were mocked: this is UI evidence, not the blocked Flutter-to-clerk E2E workflow."
+  },
+  {
+    "figure": "6.7",
+    "title": "OWASP ZAP passive scan summary",
+    "execution_date": "2026-10-08 02:54:12 UTC",
+    "source": "evidence/security/zap-passive-report.html; evidence/security/scan-metadata.json",
+    "image": "evidence/visual/07-zap-summary.png",
+    "interpretation": "Six deliberate requests to isolated loopback HTTP; no active scan or spider. Two alert types: one Low and one Informational. Zero High/Medium alerts in this scope does not establish absence of vulnerabilities."
+  },
+  {
+    "figure": "6.8",
+    "title": "ZAP alert instances and missing-header detail",
+    "execution_date": "2026-10-08 02:54:12 UTC",
+    "source": "evidence/security/zap-passive-report.html; evidence/security/zap-alerts.json",
+    "image": "evidence/visual/08-zap-alert-details.png",
+    "interpretation": "The Low missing X-Content-Type-Options alert has three instances; authentication discovery has one Informational instance. Fixture headers differ from full production startup. The report false-positive count is not a manual disposition."
+  },
+  {
+    "figure": "6.9",
+    "title": "k6 controlled local execution completes",
+    "execution_date": "2026-10-08 02:52:15 UTC",
+    "source": "test-results/performance-final.log; test-results/performance-final.json",
+    "image": "evidence/visual/09-k6-execution.png",
+    "interpretation": "Actual output records completion of 20 iterations with two VUs over ten seconds. The fixture used EF InMemory and mocked AI; PostgreSQL and live Gemini performance were not measured."
+  },
+  {
+    "figure": "6.10",
+    "title": "k6 original machine metrics",
+    "execution_date": "2026-10-08 02:52:15 UTC",
+    "source": "evidence/performance/k6-summary.json; evidence/performance/k6-raw-final.json",
+    "image": "evidence/visual/10-k6-metrics.png",
+    "interpretation": "HTTP failure rate is 0 across 81 requests. Appointment-list p50 is 1.263 ms, p95 23.507 ms, average 3.473 ms. The rate metric fails=81 means 81 false samples for http_req_failed, not 81 failed requests."
+  },
+  {
+    "figure": "6.11",
+    "title": "Coverlet results displayed by ReportGenerator",
+    "execution_date": "2026-10-08 02:56:37 UTC (test run)",
+    "source": "evidence/backend/coverage-html/index.html; evidence/backend/e95ff97b-fff2-40aa-993d-8317a0ac8565/coverage.cobertura.xml",
+    "image": "evidence/visual/11-coverage.png",
+    "interpretation": "Line coverage is 23%. Coverlet XML root records 48.91% branches (1326/2711); ReportGenerator displays 48.7% (1293/2655) after its own aggregation. Both originals are retained; this rendering is not a new execution or coverage increase."
+  },
+  {
+    "figure": "6.12",
+    "title": "pytest deterministic and mocked AI suite",
+    "execution_date": "2026-10-08 02:47:35 UTC",
+    "source": "test-results/ai-final.log; evidence/ai/pytest-final.xml",
+    "image": "evidence/visual/12-ai-tests.png",
+    "interpretation": "98 passed, with nine warnings. Synthetic provider initialization and mocked/deterministic tests do not demonstrate live Gemini accuracy, Golden Case success or response latency."
+  },
+  {
+    "figure": "6.13",
+    "title": "GitHub Actions: historical Mobile CI success",
+    "execution_date": "2026-10-05 23:48:54 UTC (run created)",
+    "source": "https://github.com/Jeyamdev/legalease-ai/actions/runs/37390618065; evidence/ci/github-actions-runs.json",
+    "image": "evidence/visual/13-github-mobile-ci.png",
+    "interpretation": "The real GitHub page shows Success for base commit 8a9b8a2, duration 2m18s. It does not cover uncommitted local test additions; other recorded runs failed. Job logs require sign-in."
+  }
+]

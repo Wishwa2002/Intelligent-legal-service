@@ -1,0 +1,25 @@
+{
+  "execution_date": "2026-10-08T12:23:19.712660+00:00",
+  "method": "POST",
+  "path": "/api/lawyers",
+  "inputs": {
+    "name": "Synthetic Missing License",
+    "email": "qmse-empty-license-final@example.test",
+    "experience": 5,
+    "licenseNumber": "",
+    "qualification": "Synthetic",
+    "specializationId": 1
+  },
+  "status": 400,
+  "observed": {
+    "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+    "title": "One or more validation errors occurred.",
+    "status": 400,
+    "errors": {
+      "LicenseNumber": [
+        "The LicenseNumber field is required."
+      ]
+    },
+    "traceId": "00-9acee1b3b1f2b2f9fa210e9807065e10-3520ef0c22333ad9-00"
+  }
+}

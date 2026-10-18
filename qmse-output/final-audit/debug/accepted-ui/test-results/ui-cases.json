@@ -1,0 +1,296 @@
+[
+  {
+    "test_id": "TC-FE-01",
+    "expected": "Name, fee and book button in DOM",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "name": true,
+      "license": true,
+      "edit": true,
+      "scope": "Accepted admin directory contract; tariffs/booking placement still pending",
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:24:01.195Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Historical standalone LawyerCard absent; actual catalogue rendered with explicit UI fixture. Original fee/book expectation preserved.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-01.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-05",
+    "expected": "Non-crashing alert; page usable",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "errorAlert": true,
+      "retryClickable": true,
+      "noncrashing": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:24:04.549Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Explicit HTTP 500 network fixture; actual React error/retry state, not live backend availability.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-05.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-03",
+    "expected": "Redirect to /login?redirect=...",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "url": "http://127.0.0.1:55547/login",
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:24:06.343Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "No token present; actual protected route executes. Historical redirect query requirement preserved.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-03.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-04",
+    "expected": "Authorization: Bearer header present",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "authorizationBearerMatched": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:24:07.258Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Actual API client module/interceptor; synthetic token and explicit request capture. This verifies header injection only, not that historical route exists.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-04.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-02",
+    "expected": "Submission blocked; inline error",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "blocked": true,
+      "guidanceVisible": true,
+      "slotDisabled": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:24:09.239Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Actual current booking form uses disabled approval and instructional hints; historical inline error retained. UI fixtures only.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-02.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-C2-06",
+    "expected": "Slot selected; success banner",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "selectedLawyer": true,
+      "selectedSlot": true,
+      "approvalClicked": true,
+      "successBanner": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:24:11.836Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Current named approval control replaces historical Confirm label. Actual React workflow UI with explicit mocked API responses; no database or live AI proof.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-C2-06.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-C2-04",
+    "expected": "HTTP 201; visible on careers page",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "api201": true,
+      "actualPublicPageVisible": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:24:14.980Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Real local API and isolated PostgreSQL career fixture; no API interception.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-C2-04.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-C4-06",
+    "expected": "Token cleared; redirect to /login",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "loginSuccessful": true,
+      "tokenStored": true,
+      "logoutClicked": true,
+      "tokenCleared": true,
+      "url": "http://127.0.0.1:55547/login",
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:24:16.756Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Actual React login/logout and API-backed authentication against fresh PostgreSQL. Credentials/JWT omitted.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-C4-06.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-01",
+    "original_expected": "Name, fee and book button in DOM",
+    "expected": "Current directory name/license/Edit",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "name": true,
+      "license": true,
+      "edit": true,
+      "scope": "Accepted admin directory contract; tariffs/booking placement still pending",
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:37:46.626Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Historical standalone LawyerCard absent; actual catalogue rendered with explicit UI fixture. Original fee/book failure remains in archived historical evidence; accepted current catalogue test.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-01.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-05",
+    "original_expected": "Non-crashing alert; page usable",
+    "expected": "Non-crashing alert; page usable",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "errorAlert": true,
+      "retryClickable": true,
+      "noncrashing": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:37:48.278Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Explicit HTTP 500 network fixture; actual React error/retry state, not live backend availability.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-05.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-03",
+    "original_expected": "Redirect to /login?redirect=...",
+    "expected": "Unauthenticated clerk route redirects to /login",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "url": "http://127.0.0.1:55547/login",
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:37:48.987Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "No token present; actual protected route executes. Historical return-URL expectation remains archived; current redirect accepted.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-03.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-04",
+    "original_expected": "Authorization: Bearer header present",
+    "expected": "Authorization: Bearer header present",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "authorizationBearerMatched": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:37:49.656Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Actual API client module/interceptor; synthetic token and explicit request capture. This verifies header injection only, not that historical route exists.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-04.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-FE-02",
+    "original_expected": "Submission blocked; inline error",
+    "expected": "Disabled approval/slot with visible guidance",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "blocked": true,
+      "guidanceVisible": true,
+      "slotDisabled": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:37:50.755Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Actual current booking form uses disabled approval and instructional hints; historical inline-error failure retained separately; current guidance contract accepted. UI fixtures only.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-FE-02.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-C2-06",
+    "original_expected": "Slot selected; success banner",
+    "expected": "Slot selected; success banner",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "selectedLawyer": true,
+      "selectedSlot": true,
+      "approvalClicked": true,
+      "successBanner": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:37:51.898Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Current named approval control replaces historical Confirm label. Actual React workflow UI with explicit mocked API responses; no database or live AI proof.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-C2-06.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-C2-04",
+    "original_expected": "HTTP 201; visible on careers page",
+    "expected": "HTTP 201; visible on careers page",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "api201": true,
+      "actualPublicPageVisible": true,
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:37:53.320Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Real local API and isolated PostgreSQL career fixture; no API interception.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-C2-04.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  },
+  {
+    "test_id": "TC-C4-06",
+    "original_expected": "Token cleared; redirect to /login",
+    "expected": "Token cleared; redirect to /login",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "loginSuccessful": true,
+      "tokenStored": true,
+      "logoutClicked": true,
+      "tokenCleared": true,
+      "url": "http://127.0.0.1:55547/login",
+      "pageErrors": []
+    },
+    "execution_date": "2026-10-08T12:37:54.379Z",
+    "environment": "Actual React/Vite/Chromium on loopback",
+    "limitations": "Actual React login/logout and API-backed authentication against fresh PostgreSQL. Credentials/JWT omitted.",
+    "evidence": [
+      "qmse-output/final-audit/debug/evidence/TC-C4-06.png",
+      "qmse-output/final-audit/debug/evidence/playwright-historical.json"
+    ]
+  }
+]

@@ -1,0 +1,10 @@
+--- a/.github/workflows/mobile-ci.yml
++++ b/.github/workflows/mobile-ci.yml
+@@ -13,6 +13,7 @@
+     branches:
+       - develop
+       - main
++      - se3110-qmse-testing
+     paths:
+       - "mobile/**"
+       - ".github/workflows/mobile-ci.yml"

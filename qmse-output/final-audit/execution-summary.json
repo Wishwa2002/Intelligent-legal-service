@@ -1,0 +1,85 @@
+{
+  "case_totals": {
+    "VERIFIED/FAIL": 16,
+    "VERIFIED/PASS": 49,
+    "BLOCKED": 12
+  },
+  "original_failures": 30,
+  "passing_accepted_replacements": 14,
+  "original_failures_remaining": 16,
+  "failed_to_blocked": 0,
+  "original_blocked": 12,
+  "fully_unblocked": 0,
+  "still_blocked": 12,
+  "local_prerequisites_resolved": [
+    "Separate recommendation/drafting service startup/internal authentication",
+    "Copied runner Playwright module path",
+    "Current route/DTO/widget replacement fixtures"
+  ],
+  "confirmed_product_defects_fixed": 1,
+  "baseline_607_pass_5_skip": "Preserved dated baseline; not proof of final work tree",
+  "prior_23_native_12_pass_11_fail": "Preserved dated population; no overlap sums",
+  "final_regression": {
+    "backend": {
+      "total": 365,
+      "passed": 362,
+      "failed": 1,
+      "skipped": 2,
+      "evidence": "qmse-output/final-audit/debug/evidence/issue6-backend-complete.trx",
+      "bootstrap": "Startup already executed separately; no repeated fixture reset",
+      "remaining_failure": "Historical BCryptcost12 versus11",
+      "tls_variability": "Final nativeTLSassertion passes; priorcold585.067msfailure retained. No code/performancefix or stablecoldtargetproof inferred."
+    },
+    "node": {
+      "passed": 19,
+      "failed": 0
+    },
+    "flutter": {
+      "total": 60,
+      "passed": 60,
+      "failed": 0,
+      "evidence": "qmse-output/final-audit/debug/evidence/issue5-flutter-final.log"
+    },
+    "ai": {
+      "total": 114,
+      "passed": 114,
+      "failed": 0,
+      "evidence": "qmse-output/final-audit/debug/evidence/issue6-ai-patched-final.xml"
+    },
+    "playwright_baseline": {
+      "passed": 111,
+      "failed": 0,
+      "skipped": 3,
+      "evidence": "qmse-output/final-audit/debug/evidence/issue5-react-final.log"
+    },
+    "playwright_replacements_and_controls": {
+      "passed": 8,
+      "failed": 0
+    },
+    "http_sql_replacements": {
+      "passed": 8,
+      "failed": 0
+    }
+  },
+  "do_not_sum": "These runs overlap earlier populations and one another. Full suite reruns are reported by tool, not accumulated as unique acceptance cases.",
+  "provider_calls_this_phase": 0,
+  "historical_provider_calls": 2,
+  "source_head": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "authorship": "Local AI-assisted tests/config/documentation; no personal execution attribution; no push/deploy.",
+  "new_rule_tests": {
+    "total": 70,
+    "passed": 70,
+    "failed": 0,
+    "skipped": 0,
+    "evidence": "qmse-output/final-audit/debug/evidence/issue5-retest.trx",
+    "scope": "70 targeted tests including 27 new requirement-decision cases; overlaps full backend"
+  },
+  "recommendation_ui_boundaries": {
+    "passed": 8,
+    "failed": 0,
+    "evidence": "qmse-output/final-audit/debug/evidence/issue5-playwright-confirmed.log"
+  },
+  "security_configuration_fixes": 1,
+  "application_changes": "Local filesystem orphan cleanup; nosniff middleware; default-disabled cancellation/headroom/batch proposals; Flutter capability agreement; client length guard; three targeted AI dependency security patches",
+  "new_requirement_decision_tests": 29
+}

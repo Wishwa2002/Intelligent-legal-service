@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/private/tmp/qmse-flutter-source/bin/cache/dart-sdk/bin/dart",
+    "/private/tmp/qmse-flutter-source/bin/cache/flutter_tools.snapshot",
+    "test",
+    "--no-pub",
+    "--machine",
+    "test/historical_cases_test.dart"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/mobile",
+  "started_utc": "2026-10-08T10:47:57.429532+00:00",
+  "ended_utc": "2026-10-08T10:47:59.656230+00:00",
+  "duration_seconds": 2.227,
+  "exit_code": 1,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/historical-resolution/evidence/flutter-historical.log"
+}

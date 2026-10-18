@@ -1,0 +1,23 @@
+{
+  "name": "completion-20261008-backend-final-verified",
+  "command": [
+    "dotnet",
+    "test",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=backend-final-verified.trx",
+    "--results-directory",
+    "qmse-output/completion-20261008/evidence",
+    "--collect",
+    "XPlat Code Coverage"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T05:10:33.614062+00:00",
+  "ended_utc": "2026-10-08T05:10:59.563968+00:00",
+  "duration_seconds": 25.949,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-backend-final-verified.log"
+}

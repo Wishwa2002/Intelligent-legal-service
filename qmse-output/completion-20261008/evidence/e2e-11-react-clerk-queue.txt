@@ -1,0 +1,61 @@
+⚖️
+LegalEase
+CLERK WORKSPACE
+Legal Operations & Case Review
+📋
+My Assigned Cases
+0
+S
+Senior Legal Clerk
+CRK002
+Legal Documentation & Conveyancing
+Sign Out
+LEGAL WORKSPACE
+•
+ASSIGNED CASEWORK
+My Assigned Cases
+
+Welcome back, Senior Legal Clerk (Legal Documentation & Conveyancing) • Monitor case progress, audit client documents, and update case statuses.
+
+System Online
+TOTAL ASSIGNED
+📋
+0
+Assigned to your queue
+IN PROGRESS / REVIEW
+⚖️
+0
+Active legal workflows
+COMPLETED
+✓
+0
+Successfully closed cases
+MISSING DOCUMENTS
+⚠️
+0
+Awaiting customer uploads
+🔍
+Showing 0 of 0 cases
+🔄
+Refresh Queue
+All Cases
+0
+Assigned
+0
+Under Review
+0
+In Progress
+0
+Needs Docs
+0
+Completed
+0
+📂
+No Assigned Cases Found
+
+You do not have any cases assigned to you currently. New assignments from admin approvals will appear here.
+
+LegalEase Intelligent Legal Services
+•
+Clerk Operations Module
+Confidential Client Documentation System • Authorized Personnel Only

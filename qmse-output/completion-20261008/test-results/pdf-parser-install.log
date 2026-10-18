@@ -1,0 +1,35 @@
+  Determining projects to restore...
+  Writing /var/folders/jk/bvq6bx9n4jx9nsswfwvhmbnm0000gn/T/tmpIpNPyj.tmp
+info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/local/share/dotnet/sdk/8.0.423/trustedroots/codesignctl.pem'.
+info : X.509 certificate chain validation will use the fallback certificate bundle at '/usr/local/share/dotnet/sdk/8.0.423/trustedroots/timestampctl.pem'.
+info : Adding PackageReference for package 'PdfPig' into project 'backend/LegalService.API/LegalService.API.csproj'.
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/index.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/index.json 683ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.0.1-alpha-001/0.1.8-alpha-20230326-58b33.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.0.1-alpha-001/0.1.8-alpha-20230326-58b33.json 289ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.8-alpha-20230327-2daba/0.1.9-alpha-20240612-d2cae.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.8-alpha-20230327-2daba/0.1.9-alpha-20240612-d2cae.json 670ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.9-alpha-20240625-dc933/0.1.11-alpha-20250528-5b566.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.9-alpha-20240625-dc933/0.1.11-alpha-20250528-5b566.json 565ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.11-alpha-20250529-2b54a/0.1.13-alpha-20251124-ce563.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.11-alpha-20250529-2b54a/0.1.13-alpha-20251124-ce563.json 822ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.13-alpha-20251203-c70b3/0.1.16-alpha-202608220026-a7bb3.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.13-alpha-20251203-c70b3/0.1.16-alpha-202608220026-a7bb3.json 767ms
+info :   GET https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.16/0.1.17-alpha-202610070034-bdbc5.json
+info :   OK https://api.nuget.org/v3/registration5-gz-semver2/pdfpig/page/0.1.16/0.1.17-alpha-202610070034-bdbc5.json 559ms
+info : Restoring packages for /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/LegalService.API.csproj...
+info :   GET https://api.nuget.org/v3-flatcontainer/pdfpig/index.json
+info :   OK https://api.nuget.org/v3-flatcontainer/pdfpig/index.json 1664ms
+info :   GET https://api.nuget.org/v3-flatcontainer/pdfpig/0.1.16/pdfpig.0.1.16.nupkg
+info :   OK https://api.nuget.org/v3-flatcontainer/pdfpig/0.1.16/pdfpig.0.1.16.nupkg 416ms
+info : Installed PdfPig 0.1.16 from https://api.nuget.org/v3/index.json to /Users/jeyam/.nuget/packages/pdfpig/0.1.16 with content hash qQcbsNMYVY+K5ELptax2S8thNMk0+rSQq3H/KdYj3LLcko8yTCz8y5KIvsKxIyAuTN0ZYNnfsZkM+0EvxTwHVA==.
+info :   GET https://api.nuget.org/v3/vulnerabilities/index.json
+info :   OK https://api.nuget.org/v3/vulnerabilities/index.json 282ms
+info :   GET https://api.nuget.org/v3-vulnerabilities/2026.10.06.23.47.38/vulnerability.base.json
+info :   GET https://api.nuget.org/v3-vulnerabilities/2026.10.06.23.47.38/2026.10.07.23.47.44/vulnerability.update.json
+info :   OK https://api.nuget.org/v3-vulnerabilities/2026.10.06.23.47.38/vulnerability.base.json 287ms
+info :   OK https://api.nuget.org/v3-vulnerabilities/2026.10.06.23.47.38/2026.10.07.23.47.44/vulnerability.update.json 490ms
+info : Package 'PdfPig' is compatible with all the specified frameworks in project 'backend/LegalService.API/LegalService.API.csproj'.
+info : PackageReference for package 'PdfPig' version '0.1.16' added to file '/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/LegalService.API.csproj'.
+info : Writing assets file to disk. Path: /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/obj/project.assets.json
+log  : Restored /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/LegalService.API.csproj (in 5.08 sec).

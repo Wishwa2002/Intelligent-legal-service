@@ -1,0 +1,1 @@
+[(200, 'http://127.0.0.1:55543/api/auth/login'), (200, 'http://127.0.0.1:55545/health'), (401, 'http://127.0.0.1:55545/lawyer-recommendations'), (503, 'http://127.0.0.1:55545/lawyer-recommendations'), (200, 'http://127.0.0.1:55545/health'), (200, 'http://127.0.0.1:55543/api/workforce-analysis'), (503, 'http://127.0.0.1:55543/api/workforce-analysis/suggestions')]

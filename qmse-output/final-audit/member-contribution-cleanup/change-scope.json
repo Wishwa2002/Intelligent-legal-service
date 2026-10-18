@@ -1,0 +1,13 @@
+{
+  "changed_sections": [
+    "2.6",
+    "9.1\u20139.4",
+    "10",
+    "Appendix A rows15/17"
+  ],
+  "ledger_sha256_before": "2d6bd788c583fdb6d1d14a75ab2bf8b3c272715ba72e5801633acd11acd40ca6",
+  "no_application_changes": true,
+  "no_new_tests": true,
+  "original_figures": 43,
+  "historical_ai_disclosures_retained": true
+}

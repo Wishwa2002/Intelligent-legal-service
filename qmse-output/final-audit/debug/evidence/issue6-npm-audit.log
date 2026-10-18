@@ -1,0 +1,10 @@
+npm warn audit request to https://registry.npmjs.org/-/npm/v1/security/audits/quick failed, reason: unable to verify the first certificate
+npm error audit endpoint returned an error
+{
+  "message": "request to https://registry.npmjs.org/-/npm/v1/security/audits/quick failed, reason: unable to verify the first certificate",
+  "error": {
+    "summary": "",
+    "detail": ""
+  }
+}
+npm error A complete log of this run can be found in: /Users/jeyam/.npm/_logs/2026-10-08T13_00_55_918Z-debug-0.log

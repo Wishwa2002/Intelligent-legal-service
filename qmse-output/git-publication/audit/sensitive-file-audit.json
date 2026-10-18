@@ -1,0 +1,256 @@
+{
+  "checked_utc": "2026-10-08T08:31:09.112570+00:00",
+  "head": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "tracked_files": 1159,
+  "scanned_blobs": 996,
+  "scope": "HEAD tree plus blobs newly reachable relative to cached origin refs; main tip matches fresh GitHub API; scan is heuristic, not guarantee",
+  "findings": [
+    {
+      "path": "ai-service/.env.example",
+      "blob": "6201701eeead6bd3d32f06c280414ed9363733b1",
+      "kind": "Credential-like assignment: manual review",
+      "line": 16,
+      "fingerprint": "3b2cea677957",
+      "disposition": "Template placeholders; not configured credentials"
+    },
+    {
+      "path": "ai-service/app/services/gemini_service.py",
+      "blob": "9fccea50dae46cbdf430ec4c8b8ef99b2eb7de6a",
+      "kind": "Credential-like assignment: manual review",
+      "line": 35,
+      "fingerprint": "addadcfddff4",
+      "disposition": "Source identifier/configuration lookup/UI prose; heuristic false positive"
+    },
+    {
+      "path": "backend/LegalService.API/.env.example",
+      "blob": "33f25ad8dd445dc62eae6cf9ea5c94385e98f77a",
+      "kind": "Credential-like assignment: manual review",
+      "line": 2,
+      "fingerprint": "7e87aeda4c1a",
+      "disposition": "Template placeholders; not configured credentials"
+    },
+    {
+      "path": "backend/LegalService.API/.env.example",
+      "blob": "33f25ad8dd445dc62eae6cf9ea5c94385e98f77a",
+      "kind": "Credential-like assignment: manual review",
+      "line": 10,
+      "fingerprint": "3b2cea677957",
+      "disposition": "Template placeholders; not configured credentials"
+    },
+    {
+      "path": "backend/LegalService.API/.env.example",
+      "blob": "33f25ad8dd445dc62eae6cf9ea5c94385e98f77a",
+      "kind": "Credential-like assignment: manual review",
+      "line": 14,
+      "fingerprint": "7e87aeda4c1a",
+      "disposition": "Template placeholders; not configured credentials"
+    },
+    {
+      "path": "backend/LegalService.API/.env.example",
+      "blob": "33f25ad8dd445dc62eae6cf9ea5c94385e98f77a",
+      "kind": "Credential-like assignment: manual review",
+      "line": 16,
+      "fingerprint": "7e87aeda4c1a",
+      "disposition": "Template placeholders; not configured credentials"
+    },
+    {
+      "path": "backend/LegalService.API/.env.example",
+      "blob": "33f25ad8dd445dc62eae6cf9ea5c94385e98f77a",
+      "kind": "Credential-like assignment: manual review",
+      "line": 22,
+      "fingerprint": "7e87aeda4c1a",
+      "disposition": "Template placeholders; not configured credentials"
+    },
+    {
+      "path": "backend/LegalService.API/Data/DemoLawyerSeeder.cs",
+      "blob": "087438d83e3f913117f5784756d9fbd061354b09",
+      "kind": "Credential-like assignment: manual review",
+      "line": 10,
+      "fingerprint": "10756d7fec1b",
+      "disposition": "Explicit public synthetic demo password; not a production secret; seeded only through opt-in demo configuration"
+    },
+    {
+      "path": "backend/LegalService.API/Services/EmailNotificationService.cs",
+      "blob": "3d183ca52b430033a60be24b796df539cb139378",
+      "kind": "Credential-like assignment: manual review",
+      "line": 41,
+      "fingerprint": "6f0697850d6a",
+      "disposition": "Source identifier/configuration lookup/UI prose; heuristic false positive"
+    },
+    {
+      "path": "backend/LegalService.API/Services/EmailNotificationService.cs",
+      "blob": "3d183ca52b430033a60be24b796df539cb139378",
+      "kind": "Credential-like assignment: manual review",
+      "line": 128,
+      "fingerprint": "6f0697850d6a",
+      "disposition": "Source identifier/configuration lookup/UI prose; heuristic false positive"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerMobileHttpTests.cs",
+      "blob": "b90a32addce8024fe99df511bee2061fbe7bb24f",
+      "kind": "Credential-like assignment: manual review",
+      "line": 47,
+      "fingerprint": "a24e7b81a252",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerMobileHttpTests.cs",
+      "blob": "b90a32addce8024fe99df511bee2061fbe7bb24f",
+      "kind": "Credential-like assignment: manual review",
+      "line": 217,
+      "fingerprint": "07e013778ebc",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerMobileHttpTests.cs",
+      "blob": "b90a32addce8024fe99df511bee2061fbe7bb24f",
+      "kind": "Credential-like assignment: manual review",
+      "line": 217,
+      "fingerprint": "07e013778ebc",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerMobileHttpTests.cs",
+      "blob": "b90a32addce8024fe99df511bee2061fbe7bb24f",
+      "kind": "Credential-like assignment: manual review",
+      "line": 219,
+      "fingerprint": "07e013778ebc",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    },
+    {
+      "path": "backend/LegalService.Tests/LawyerMobileHttpTests.cs",
+      "blob": "b90a32addce8024fe99df511bee2061fbe7bb24f",
+      "kind": "Credential-like assignment: manual review",
+      "line": 219,
+      "fingerprint": "07e013778ebc",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    },
+    {
+      "path": "docs/lawyer-mobile-ui-refinement.md",
+      "blob": "b5e4240ff8215ef75ac203d98e4369a5dbc8704f",
+      "kind": "Credential-like assignment: manual review",
+      "line": 171,
+      "fingerprint": "9c49e2bceb8e",
+      "disposition": "Source identifier/configuration lookup/UI prose; heuristic false positive"
+    },
+    {
+      "path": "frontend/src/pages/admin/document_and_clerk/ClerksPage.tsx",
+      "blob": "f8425fc7c20a88f26dd7ec3fd9e9a1ff9e8252c0",
+      "kind": "Credential-like assignment: manual review",
+      "line": 299,
+      "fingerprint": "68862c732c42",
+      "disposition": "Source identifier/configuration lookup/UI prose; heuristic false positive"
+    },
+    {
+      "path": "frontend/tests/lawyer-password.spec.ts",
+      "blob": "866e1ca4c2b203c5ab9ad006f4b60b7f4a445341",
+      "kind": "Credential-like assignment: manual review",
+      "line": 11,
+      "fingerprint": "a24e7b81a252",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    },
+    {
+      "path": "frontend/tests/lawyer-password.spec.ts",
+      "blob": "866e1ca4c2b203c5ab9ad006f4b60b7f4a445341",
+      "kind": "Credential-like assignment: manual review",
+      "line": 11,
+      "fingerprint": "07e013778ebc",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    },
+    {
+      "path": "frontend/tests/lawyer-password.spec.ts",
+      "blob": "866e1ca4c2b203c5ab9ad006f4b60b7f4a445341",
+      "kind": "Credential-like assignment: manual review",
+      "line": 11,
+      "fingerprint": "07e013778ebc",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    },
+    {
+      "path": "mobile/android/app/build.gradle.kts",
+      "blob": "24c7d9248b6d965303ff2b4f2197f7f99aec45eb",
+      "kind": "Credential-like assignment: manual review",
+      "line": 8,
+      "fingerprint": "e9ef39fffec5",
+      "disposition": "Source identifier/configuration lookup/UI prose; heuristic false positive"
+    },
+    {
+      "path": "mobile/android/app/build.gradle.kts",
+      "blob": "24c7d9248b6d965303ff2b4f2197f7f99aec45eb",
+      "kind": "Credential-like assignment: manual review",
+      "line": 10,
+      "fingerprint": "e9ef39fffec5",
+      "disposition": "Source identifier/configuration lookup/UI prose; heuristic false positive"
+    },
+    {
+      "path": "mobile/lib/screens/appointments/lawyers_screen.dart",
+      "blob": "00a293d786aa683e517d14352bee95a472e076a7",
+      "kind": "Credential-like assignment: manual review",
+      "line": 306,
+      "fingerprint": "4167dd1fe808",
+      "disposition": "Source identifier/configuration lookup/UI prose; heuristic false positive"
+    },
+    {
+      "path": "mobile/test/lawyer_mobile_test.dart",
+      "blob": "75bb4f549ed285ac1aac0e2427f845411e52a538",
+      "kind": "Credential-like assignment: manual review",
+      "line": 89,
+      "fingerprint": "b2d35e59fe7e",
+      "disposition": "Synthetic regression fixture value or code expression; not a configured account secret"
+    }
+  ],
+  "large_tracked_over_5MiB": [],
+  "largest_tracked": [
+    {
+      "path": "frontend/public/careers/corporate_counsel.jpg",
+      "bytes": 848831,
+      "blob": "a1b7c4cb7662148d3b58842d06b2c0d2252427a2"
+    },
+    {
+      "path": "mobile/assets/careers/corporate_counsel.jpg",
+      "bytes": 848831,
+      "blob": "a1b7c4cb7662148d3b58842d06b2c0d2252427a2"
+    },
+    {
+      "path": "frontend/public/careers/litigation_associate.jpg",
+      "bytes": 784625,
+      "blob": "5f646ce1b2050a34f8ba50ac0250be65c9bfd417"
+    },
+    {
+      "path": "mobile/assets/careers/litigation_associate.jpg",
+      "bytes": 784625,
+      "blob": "5f646ce1b2050a34f8ba50ac0250be65c9bfd417"
+    },
+    {
+      "path": "frontend/public/careers/ai_legal_tech.jpg",
+      "bytes": 783871,
+      "blob": "57bc157ee71eb21d3de7ab9c90b03750eaa235d5"
+    },
+    {
+      "path": "mobile/assets/careers/ai_legal_tech.jpg",
+      "bytes": 783871,
+      "blob": "57bc157ee71eb21d3de7ab9c90b03750eaa235d5"
+    },
+    {
+      "path": "frontend/public/careers/legal_clerk.jpg",
+      "bytes": 738648,
+      "blob": "4e97b3c9e646d006d8aa9c021d6264e1a7ef9b03"
+    },
+    {
+      "path": "mobile/assets/careers/legal_clerk.jpg",
+      "bytes": 738648,
+      "blob": "4e97b3c9e646d006d8aa9c021d6264e1a7ef9b03"
+    },
+    {
+      "path": "docs/evidence/workforce-planning-live/careers-list-1440.png",
+      "bytes": 392144,
+      "blob": "6d4d2dc1bf14ec8e24f5a9421549aebed479e360"
+    },
+    {
+      "path": "frontend/public/home-hero.jpg",
+      "bytes": 308221,
+      "blob": "3b1f7d7ac6a542c7793fb71bdbdce2c811bad7e3"
+    }
+  ],
+  "manual_review_summary": "No provider keys, private keys, GitHub tokens, JWT values or matches to configured local secret values detected. Credential-like candidates reviewed as placeholders, synthetic demo/test inputs, or source expressions. Heuristic checks do not prove absence of all secrets.",
+  "large_historical_blobs_beyond_main_over_5MiB": []
+}

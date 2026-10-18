@@ -1,0 +1,14 @@
+[
+  {
+    "original_path": "docs/evidence/recurring-scheduling/schedule-1280.png",
+    "new_execution_capture": "qmse-output/final-audit/debug/evidence/regression-schedule-1280.png",
+    "restored_original_sha256": "fc6b92aa8e735ae9c3fa073ce9002ae439d7aa1b1a9bff0f5afe97f60b59fd5a",
+    "restored_from": "Unchanged HEAD; original working tree was clean for tracked files"
+  },
+  {
+    "original_path": "docs/evidence/recurring-scheduling/unsupported-progress.png",
+    "new_execution_capture": "qmse-output/final-audit/debug/evidence/regression-unsupported-progress.png",
+    "restored_original_sha256": "b63121f8f8ec04209c82a37765ca40d4bd6956ab2aa9b8393ff7ef0f36ba957d",
+    "restored_from": "Unchanged HEAD; original working tree was clean for tracked files"
+  }
+]

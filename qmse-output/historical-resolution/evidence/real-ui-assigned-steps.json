@@ -1,0 +1,36 @@
+[
+  {
+    "step": "real-flutter-login",
+    "at": "2026-10-08T11:13:14.872Z",
+    "text": "LegalEase Platform 4-Member Integrated System\nServer Settings\nSynthetic\nINTEGRATED LEGAL HUB\nCUSTOMER\nWelcome, Synthetic\nSelect any module below to access counsel, documentation, consultations, or customer support services.\nProject Modules & Services\n4 Core Parts\nMEMBER 1 • COUNSEL Lawyer Services Advocate profiles, bar qualifications & practice areas\nMEMBER 3 • DOCUMENT SERVICES Document & Clerk Services 12 legal document services, clerk reviews & filings\nMEMBER 2 • SLOTS Booking & Consultation Afternoon slots, conflict validation & appointments\nMEMBER 4 • SUPPORT Customer Support Case tracking, hotline helpdesk & client support\nMy Requests Track clerk reviews\nCareers Legal & tech roles",
+    "evidence": "qmse-output/historical-resolution/evidence/real-flutter-login.png"
+  },
+  {
+    "step": "real-flutter-catalogue",
+    "at": "2026-10-08T11:13:15.731Z",
+    "text": "Back\n⚖️ Legal Ease\nCreate Manual Request\nServer Settings\nWHAT WE OFFER Legal Documentation Services Professional document review, legal drafting, and automated clerk assignment.\nCreate Request\nRequest This Service\nRequest This Service\nRequest This Service\nCommercial Lease Agreement Office and industrial property leases, rent review mechanisms, and fit-out covenants. Required Documents: Title Deed Copy Local Council Assessment Receipt Draft Commercial Lease NIC Copy\nDocument Agent",
+    "evidence": "qmse-output/historical-resolution/evidence/real-flutter-catalogue.png"
+  },
+  {
+    "case": "TC-E2E-01",
+    "exact_service_present": false,
+    "limitation": "Historical intake requires Deed of Transfer and two attachments; current catalogue service identities and sequential upload workflow must be reconciled."
+  },
+  {
+    "step": "real-react-clerk-cases",
+    "at": "2026-10-08T11:13:18.745Z",
+    "text": "⚖️\nLegalEase\nCLERK WORKSPACE\nLegal Operations & Case Review\n📋\nMy Assigned Cases\n1\nS\nSenior Legal Clerk\nCRK002\nLegal Documentation & Conveyancing\nSign Out\nLEGAL WORKSPACE\n•\nASSIGNED CASEWORK\nMy Assigned Cases\n\nWelcome back, Senior Legal Clerk (Legal Documentation & Conveyancing) • Monitor case progress, audit client documents, and update case statuses.\n\nSystem Online\nTOTAL ASSIGNED\n📋\n1\nAssigned to your queue\nIN PROGRESS / REVIEW\n⚖️\n0\nActive legal workflows\nCOMPLETED\n✓\n0\nSuccessfully closed cases\nMISSING DOCUMENTS\n⚠️\n1\nAwaiting customer uploads\n🔍\nShowing 1 of 1 cases\n🔄\nRefresh Queue\nAll Cases\n1\nAssigned\n1\nUnder Review\n0\nIn Progress\n0\nNeeds Docs\n0\nCompleted\n0\nCASE ID\tCUSTOMER / CLIENT\tLEGAL SERVICE\tSUBMITTED\tDOCUMENTS\tSTATUS\tACTIONS\nDMT001\t\nS\nSynthetic History Customer\nqmse-history-customer@example.test\n\tContract Review & Amendment\t\nOct 8, 2026\n04:16 PM\n\t\n2 Missing\n\tAssigned\t\nReview Case\n→\nLegalEase Intelligent Legal Services\n•\nClerk Operations Module\nConfidential Client Documentation System • Authorized Personnel Only",
+    "evidence": "qmse-output/historical-resolution/evidence/real-react-clerk-cases.png"
+  },
+  {
+    "step": "real-react-clerk-review",
+    "at": "2026-10-08T11:13:19.692Z",
+    "text": "⚖️\nLegalEase\nCLERK WORKSPACE\nLegal Operations & Case Review\n📋\nMy Assigned Cases\n1\nS\nSenior Legal Clerk\nCRK002\nLegal Documentation & Conveyancing\nSign Out\nLEGAL WORKSPACE\n•\nASSIGNED CASEWORK\nMy Assigned Cases\n\nWelcome back, Senior Legal Clerk (Legal Documentation & Conveyancing) • Monitor case progress, audit client documents, and update case statuses.\n\nSystem Online\nTOTAL ASSIGNED\n📋\n1\nAssigned to your queue\nIN PROGRESS / REVIEW\n⚖️\n0\nActive legal workflows\nCOMPLETED\n✓\n0\nSuccessfully closed cases\nMISSING DOCUMENTS\n⚠️\n1\nAwaiting customer uploads\n🔍\nShowing 1 of 1 cases\n🔄\nRefresh Queue\nAll Cases\n1\nAssigned\n1\nUnder Review\n0\nIn Progress\n0\nNeeds Docs\n0\nCompleted\n0\nCASE ID\tCUSTOMER / CLIENT\tLEGAL SERVICE\tSUBMITTED\tDOCUMENTS\tSTATUS\tACTIONS\nDMT001\t\nS\nSynthetic History Customer\nqmse-history-customer@example.test\n\tContract Review & Amendment\t\nOct 8, 2026\n04:16 PM\n\t\n2 Missing\n\tAssigned\t\nReview Case\n→\n⚖️\nCase #1: Contract Review & Amendment\nDMT001\nClient: Synthetic History Customer (qmse-history-customer@example.test)\n✕\nCURRENT CASE STATUS\nAssigned\nUpdate Status:\nASSIGNED\nUNDER_REVIEW\nIN_PROGRESS\nREQUIRES_DOCUMENTS\nCOMPLETED\nREJECTED\nREQUIRED DOCUMENTS CHECKLIST\n⚠️ 2 Missing\n❌\nOriginal Contract\nMISSING\n📄\nAttach Sample\n📨\nAsk to upload this document\n❌\nAmendment Request Letter\nMISSING\n📄\nAttach Sample\n📨\nAsk to upload this document\n✅\nNIC Copy\nRECEIVED\n📄\nAttach Sample\n📨\nAsk to upload this document\nUPLOADED FILES (1)\n📄\nUse Sample Document\n📕\nsynthetic.pdf\n2048.0 KB • Uploaded 10/8/2026\nRECEIVED\n⬇️\nDownload\n⚠️\nAsk to re-upload\n💬\nCLIENT AI CONVERSATION HISTORY\n\nNo chat transcript available for this case.\n\nClose Case\nLegalEase Intelligent Legal Services\n•\nClerk Operations Module\nConfidential Client Documentation System • Authorized Personnel Only",
+    "evidence": "qmse-output/historical-resolution/evidence/real-react-clerk-review.png"
+  },
+  {
+    "case": "TC-E2E-06",
+    "approve_buttons": 0,
+    "limitation": "Historical Approve transition not inferred from Ready for work/Complete."
+  }
+]

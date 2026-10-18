@@ -1,0 +1,51 @@
+{
+  "source_sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "committed_fixes_and_script_matches": true,
+  "preserved_existing_artifacts": [
+    {
+      "path": "qmse-output/final-report/SE3110_Testing_Report_GR42_Final.docx",
+      "bytes": 3715081,
+      "sha256": "528d82324e9f8fbbb66b36ba49d7a6b7934e850db44932c32f6cc31ea09798a0"
+    },
+    {
+      "path": "qmse-output/final-report/SE3110_Testing_Report_GR42_Final.pdf",
+      "bytes": 4206583,
+      "sha256": "ecf4b25c45a7bbd07dd36dfd4a6a0e337f089bac6399d5d1dd7191d37c4271f3"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/backend-final-verified.trx",
+      "bytes": 481499,
+      "sha256": "b852adb30a1227606f9ebe3572758e3fca01265c8129587a2208dc209636330d"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/playwright-final.json",
+      "bytes": 128159,
+      "sha256": "dba83b6784fe43ccd767875b3d7829a0e7bc8a5397920c571a1cd524068858a6"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/ai-completion.xml",
+      "bytes": 13297,
+      "sha256": "38a853ca88b26ed01f5902ba8bba789de21b46301f0f31cdeeafe281ec307c82"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/integrated-result.json",
+      "bytes": 787,
+      "sha256": "928f20ddb1badb3718f894b0b7c45e62df97047dd3e27a9a37b3d589319581a2"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/k6-postgres-summary.json",
+      "bytes": 6552,
+      "sha256": "fb665c87bd6222f257b42fc81bf2701aec6d5e70bbeaca8afc1634eb1c46093f"
+    },
+    {
+      "path": "qmse-output/completion-20261008/evidence/zap-postgres.html",
+      "bytes": 32139,
+      "sha256": "ad573139ca24837f64f08833e95f69d2d38684ad89cf1fb838de9a9caf875f11"
+    },
+    {
+      "path": "qmse-output/SE3110_GR42_Completed_Evidence_Package.zip",
+      "bytes": 87108599,
+      "sha256": "f5c31a542ab46e902657410f4a3c04439235e332a81d8a72b7e96c70bbe149f0"
+    }
+  ]
+}

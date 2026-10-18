@@ -1,0 +1,99 @@
+8a9b8a2 2026-10-06 fix(mobile): satisfy Flutter analyzer lint rules
+6d982e6 2026-10-06 fix(deployment): resolve deployment verification issues
+b3fbbfb 2026-10-06 chore(deployment): prepare application for cloud deployment
+54aeccc 2026-10-05 Merge pull request #30 from Wishwa2002/feature/member1-lawyer-management
+0958d69 2026-10-05 Fix Mobile CI missing env asset
+b082f54 2026-10-05 feat(member1): integrate lawyer mobile, matching, and workforce refinements
+429a41b 2026-10-05 Bump axios in /frontend in the npm_and_yarn group across 1 directory
+0548fd5 2026-10-04 feat(member1): add recurring scheduling and workforce intelligence
+03d9327 2026-10-03 Merge pull request #28 from Wishwa2002/feature/member1-lawyer-management
+5269539 2026-10-03 fix(mobile): resolve Flutter analyzer issues
+ac62bb7 2026-10-03 fix(member1): persist lawyer user links and schema migrations
+fa1e43f 2026-10-03 fix(frontend): enable Playwright CI test script
+8419c4f 2026-10-03 Merge origin/develop into member1 lawyer management
+b431f3b 2026-10-03 chore: checkpoint member1 work before develop merge
+c5f82b3 2026-09-30 Merge pull request #27 from Wishwa2002/fix/unified-staff-auth
+ee78a38 2026-09-30 Fix flutter env configuration
+7cdbb89 2026-09-30 Fix flutter analyzer issues and improve authentication flow
+9579cee 2026-09-30 Fix authentication security, validation and health check flow
+4fccbf3 2026-09-29 Merge pull request #24 from Wishwa2002/fix/unified-staff-auth
+3ff0d2a 2026-09-29 Fix frontend auth tests and lawyer dashboard flows
+4dc9a15 2026-09-29 test: update lawyer management playwright tests for unified auth
+c90ff1a 2026-09-29 fix: resolve frontend build errors
+2d604fc 2026-09-29 fix(auth): unify staff authentication flow
+3f62f57 2026-09-29 Merge pull request #22 from Wishwa2002/feature/mobile-ci
+791afa7 2026-09-29 Add mobile CI workflow
+b5ad404 2026-09-29 Merge pull request #21 from Wishwa2002/feature/frontend-ci
+89db933 2026-09-29 Stabilize lawyer management Playwright test
+20e0b61 2026-09-28 Add frontend CI workflow
+e9b711a 2026-09-28 Merge pull request #20 from Wishwa2002/feature/cicd-setup
+d08dedd 2026-09-28 Add backend CI workflow
+fb2513c 2026-09-28 fix(auth): seed and support demo admin and clerk login accounts and credentials
+097ab39 2026-09-28 Complete Member 1 lawyer management requirements
+e596557 2026-09-28 Merge remote-tracking branch 'origin/develop' into feature/member1-lawyer-management
+1d6e7ae 2026-09-28 Add opt-in synthetic lawyer demo seeder
+74838ad 2026-09-27 Load local Gemini config and fix structured classification schema
+3a4ccd1 2026-09-27 Document reachable local service ports
+e77187a 2026-09-27 Add Gemini-grounded lawyer recommendation approval workflow
+d50b6b7 2026-09-27 Merge branch 'Document-&-Cleark' into develop
+44f3f25 2026-09-27 feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview
+0fa6592 2026-09-27 feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview
+dfc95af 2026-09-27 refactor(mobile): restore CommonAiScreen to bottom nav tab 1 and isolate Document Agent exclusively within Documents catalog
+587e892 2026-09-27 fix(backend): seed all 12 documentation services on startup so Document Agent operates correctly
+72676f1 2026-09-27 fix(mobile): ensure suggestion chips and upload action buttons render dynamically
+49ba881 2026-09-27 feat(mobile): restore Document Agent as primary AI assistant and link scheduling agent
+a2445c3 2026-09-27 Keep develop lawyer management with integrated recommendations
+f2c131c 2026-09-27 On feature/member1-lawyer-management: Backup before removing member1 implementation
+c3edd2b 2026-09-27 index on feature/member1-lawyer-management: b740028 Merge pull request #17 from Wishwa2002/feature/member1-lawyer-management
+b740028 2026-09-27 Merge pull request #17 from Wishwa2002/feature/member1-lawyer-management
+1189aa0 2026-09-27 Integrate member1 lawyer management with develop while preserving team routes
+7420000 2026-09-26 Merge pull request #16 from Wishwa2002/feature/booking_appointment_management
+2c0c4e5 2026-09-26 feat: implement lawyer category management and intelligent agentic scheduling assistant
+77be9ed 2026-09-26 Merge branch 'Document-&-Cleark' into develop
+d8d2dc8 2026-09-26 feat(document-clerk): update Document Agent branding, clean catalog view, and optimize network connection
+38c3cf8 2026-09-26 feat(mobile): integrate 4-member hub, common AI agent, unified requests, and document agent
+0075ed8 2026-09-26 Merge branch 'Document-&-Cleark' into develop
+7ee705f 2026-09-25 Merge branch 'develop' of https://github.com/Wishwa2002/Intelligent-legal-service into develop
+1dd0a4a 2026-09-25 Update AdminLayout component
+ff819c5 2026-09-23 Merge pull request #13 from Wishwa2002/feature/booking_appointment_management
+b59f686 2026-09-23 feat: add comprehensive sample documents for all 12 services and fix Swagger schema upload
+07af04e 2026-09-23 feat: complete Member 2 booking management, careers redesign, and mobile website parity
+4bec10d 2026-09-23 feat(auth): add one-click demo credentials and active session controls to staff login
+327bebf 2026-09-23 fix(auth): prevent auto-redirect loop on login page and add admin logout button
+241db17 2026-09-23 fix(frontend): resolve localhost IPv6 connection refused issue and persist auth token
+545c542 2026-09-23 fix(mobile): resolve FilePicker api compatibility and setup flutter configuration
+d461a84 2026-09-23 feat(appointments): implement booking APIs, conflict detection, and status transitions
+2ca3197 2026-09-23 fix(tests): align ServiceRequestServiceTests customer and admin IDs with int schema
+d3287c5 2026-09-23 Merge remote-tracking branch 'origin/develop' into feature/booking_appointment_management
+e17ec46 2026-09-23 feat(frontend): integrate lucide-react logo, careers nav link, and hero section showcase
+2bd2919 2026-09-22 Merge pull request #12 from Wishwa2002/feature/admin-auth
+43f6345 2026-09-22 Implement JWT authentication and admin authorization
+02213ab 2026-09-22 feat(ui): elevate admin portal aesthetics, live real-time clock, and smooth scroll behavior
+9eb92fe 2026-09-22 fix(layout): lock side navigation to viewport so it does not scroll with page content
+b5e9098 2026-09-22 feat: make Client Conversation History a collapsible drop-down accordion
+0b48617 2026-09-22 feat: add delete CRUD for clients, documentation requests, and document files with confirmation modals
+308fe1c 2026-09-22 feat: add admin sign out button in AdminLayout header and sidebar
+6064e48 2026-09-22 feat: add confirmation popup modal for activating and deactivating clerks
+a8614a1 2026-09-22 feat: send welcome credentials email when admin creates a new clerk
+41a76a4 2026-09-22 feat: add email notifications on status update and in-app request page notifications
+9309287 2026-09-19 feat: add customer service request management pages
+51e26c5 2026-09-17 Merge pull request #10 from Wishwa2002/Document-&-Cleark
+6b59d19 2026-09-14 feat: complete document and clerk workflows, AI validation agents, careers module, and client mobile features
+a502dcd 2026-09-14 feat(auth): add mobile client auth (login/register), web staff login portal, and backend auth endpoints
+907654a 2026-09-14 feat(auth): mobile client login, web staff portal login, and role-based route guards
+a566efa 2026-09-11 feat(document-clerk): implement Agentic AI document validation, mobile client, and clerk management
+59337bb 2026-08-25 Merge pull request #6 from Wishwa2002/feature/database-setup
+89fef31 2026-08-25 Merge pull request #7 from Wishwa2002/feature/database-setup
+2e2f764 2026-08-25 feat(database): implement complete legal platform schema, seeds, and ADRs
+a960887 2026-08-23 Merge pull request #4 from Wishwa2002/feature/frontend-setup
+7db2817 2026-08-23 feat(frontend): add public landing page and common components
+6f78d19 2026-08-22 Merge pull request #3 from Wishwa2002/feature/frontend-setup
+91d9628 2026-08-22 Setup React TypeScript Tailwind frontend structure
+0fce3fd 2026-08-19 Merge pull request #2 from Wishwa2002/feature/authentication
+56f4bbd 2026-08-19 Implement user registration and role assignment
+3e0403f 2026-08-19 Merge pull request #1 from Wishwa2002/develop
+3beb4c6 2026-08-19 Add complete project folder structure
+043336b 2026-08-19 Complete merge of remote develop branch
+5505716 2026-08-19 Merge GitHub develop branch with local project
+c0ea645 2026-08-19 Initial project structure and ASP.NET Core setup
+59e413c 2026-08-18 Initial commit

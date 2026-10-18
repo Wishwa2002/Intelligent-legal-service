@@ -1,0 +1,2192 @@
+[
+  {
+    "path": "qmse-output/audit/assignment-text.txt",
+    "bytes": 12765,
+    "sha256": "68b16b2eaafcbcac12ea9eb2a8f170f654fcb8c785ca8d95e220ab2936c4bf1d",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/backend-class-counts.json",
+    "bytes": 2249,
+    "sha256": "7a5e69a781505426dad9db3a06fca112f102316033c393d14cabda4a0ebb5254",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/build_evidence.py",
+    "bytes": 2627,
+    "sha256": "da1f8c588800325f074e25b8b6ee414f9a764653d3267e11387c227dcc946aec",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/case_records.py",
+    "bytes": 10221,
+    "sha256": "83a155506d91a5d8e7cc7aa26c8e474bc716d5ee399087fe745d18445e68eb2b",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/contribution-commit-checks.json",
+    "bytes": 3909,
+    "sha256": "5717ec25a8a8aadad10cb67135bc031cf9daf407f9cd58380541cd2051b0bb84",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/contribution-verification.md",
+    "bytes": 2771,
+    "sha256": "81e4da8e58351d8e6e754c3d6a8b702c02471a89b0ea29fe170627b7517a7203",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/credential-pattern-check.json",
+    "bytes": 170,
+    "sha256": "fbca8f018a4fe3959f553938e33b4d6491d83f9fb3d6f8b55edd5af77cc9f093",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/defect-verification.md",
+    "bytes": 6512,
+    "sha256": "97d188e25cfb10c3caeb26af80252c99d6e842055790f6c260815f31a04ba2ae",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/execution-plan.md",
+    "bytes": 2150,
+    "sha256": "2ddab4edbf7b3da01200daa251e66285e933e43ccc86a81ff9956bedb80c5be4",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/fill_toc.py",
+    "bytes": 1936,
+    "sha256": "339071faa9527603be9eb428079a5920cec5b5bd370b4ddb95f7bdcb43253a64",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/final-quality-check.json",
+    "bytes": 1050,
+    "sha256": "1cacd611f3ae99145605a77365d75c8bdbeba2523ca91e8fc515d874d6b454b0",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/finalize_package.py",
+    "bytes": 12176,
+    "sha256": "3a9daacb800c47b9720ef035236969ce4596dec0a905726b9c2e9da51acf54ce",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/index_evidence.py",
+    "bytes": 2656,
+    "sha256": "7570822163ff4e8382ceafb75b90eef19ca17d58bb05032c6eba8ad6291e2559",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/input-hashes.json",
+    "bytes": 248,
+    "sha256": "2ba00f3e2cd0ba942821fcf0c6c6fa243eec2f2bdcf7d6fce281b68305d8c6f8",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/input-integrity-final.json",
+    "bytes": 334,
+    "sha256": "bc48ec7a0e20e3f1f24e1f80085c14c71a028c01c66bb6f2f77c3c517f838eff",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/missing-report-references.json",
+    "bytes": 255,
+    "sha256": "11ddfa1200f968d9b22ee995fd66daf379053cdf938d214c56c14193b19ff9ae",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/original-report-blocks.json",
+    "bytes": 84696,
+    "sha256": "34eedf7b727d62ace923b6885f9f443fea11d6332cb697646d9be3dfa96b77c6",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/original-report-text.txt",
+    "bytes": 68252,
+    "sha256": "2d682f8589e2c215a590e4f7cd26d76eda3650e7e5c5a5b5cf003fa9991546e8",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": [
+      "TC-BK-01",
+      "TC-BK-02",
+      "TC-BK-03",
+      "TC-BK-04",
+      "TC-BK-05",
+      "TC-BK-06",
+      "TC-BK-07",
+      "TC-DB-01",
+      "TC-DB-02",
+      "TC-DB-03",
+      "TC-DB-04",
+      "TC-FE-01",
+      "TC-FE-02",
+      "TC-FE-03",
+      "TC-FE-04",
+      "TC-FE-05",
+      "TC-MOB-01",
+      "TC-MOB-02",
+      "TC-MOB-03",
+      "TC-MOB-04",
+      "TC-MOB-05",
+      "TC-E2E-01",
+      "TC-E2E-02",
+      "TC-E2E-03",
+      "TC-E2E-04",
+      "TC-E2E-05",
+      "TC-E2E-06",
+      "TC-E2E-07",
+      "TC-C101",
+      "TC-C102",
+      "TC-C103",
+      "TC-C104",
+      "TC-C105",
+      "TC-C106",
+      "TC-C2-01",
+      "TC-C2-02",
+      "TC-C2-03",
+      "TC-C2-04",
+      "TC-C2-05",
+      "TC-C2-06",
+      "TC-C2-07",
+      "TC-C2-08",
+      "TC-C3-01",
+      "TC-C3-02",
+      "TC-C3-03",
+      "TC-C3-04",
+      "TC-C3-05",
+      "TC-C3-06",
+      "TC-C3-08",
+      "TC-C4-01",
+      "TC-C4-02",
+      "TC-C4-03",
+      "TC-C4-04",
+      "TC-C4-05",
+      "TC-C4-06",
+      "TC-C4-07",
+      "TC-C4-08"
+    ]
+  },
+  {
+    "path": "qmse-output/audit/pdf2image-install.log",
+    "bytes": 495,
+    "sha256": "e882430ecc9513b8240a944ae6b63187274a619ac3ef30c14a2dd4aa9b21458d",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/poppler-install.log",
+    "bytes": 15028,
+    "sha256": "b3d622e7199c09a6f4bf7d2f296727a4bde82dafc207fe720c39cb2d60e4bfe6",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/recover_flutter_resource.py",
+    "bytes": 1188,
+    "sha256": "e6fd76d7736a053c1d02561569601fba71a6f4c212389541bcee71b86b6771ab",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/report-audit.md",
+    "bytes": 8464,
+    "sha256": "76f0b42ea7a979002bbf597efac1a59d19f39451c5abb827820ba45362bd3df7",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": [
+      "TC-C3-12",
+      "TC-C4-12"
+    ]
+  },
+  {
+    "path": "qmse-output/audit/repository-inventory.txt",
+    "bytes": 64164,
+    "sha256": "74cd1dd16d61b1af304d27ad578cc7f5780eae379b83a26c974562516f6fdce7",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/reproduction.md",
+    "bytes": 2546,
+    "sha256": "f2763c390cf5b1156aa6597a0b19aa7b5ee7f14255876d9e550da9510fa48efd",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/run_command.py",
+    "bytes": 1847,
+    "sha256": "1e915127cbc184f7f3a70fae0ec7b63521806f50d9f4a2011273f8ce296e11d5",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/snapshot.json",
+    "bytes": 178,
+    "sha256": "66ecbaf845fbe587812456a768fc4ebf52257c9d78e0d88089b15ba4ac78c6e5",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/summary-build.log",
+    "bytes": 3558,
+    "sha256": "0b7e02f1fadbd95085668a81a98daab4e3f6ccbfd865808ef74f37e0b4f23565",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/testing-changes.patch",
+    "bytes": 2111,
+    "sha256": "ff6cb0c2c96f5d6c820d285c12bbe284ccbe9d84ddd5ed25a85f401e9d1ec10f",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/toc-pages.json",
+    "bytes": 4494,
+    "sha256": "3ebbd154891cfa05b83daf87c994695ba759455829b279a529fb63307451f237",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/update_report.py",
+    "bytes": 37530,
+    "sha256": "13965072a99a8f12ee44b436554521407ca0554097de6aee3f08facf9c92f4ae",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/validate_final.py",
+    "bytes": 2823,
+    "sha256": "94cab149be459601418ac4119efa2b9bff6d4f1c418f99cff7e4039a724c98e0",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/write_audit.py",
+    "bytes": 8850,
+    "sha256": "26ab7f2ec8d3cffeb63ebd0c30de5036e4e79c9b767f90721051c7420f351370",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/write_summaries.py",
+    "bytes": 5625,
+    "sha256": "cff5cfa53202091c6a5636b511e025a0f3470ca504e6374444b098366cbba7fd",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/completion-summary.md",
+    "bytes": 4255,
+    "sha256": "483a3f1b770bd3a2d33ea16516ad6ea52d96ba72e72e044ebc99c6b3bfb07586",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ai/pytest-final.xml",
+    "bytes": 12718,
+    "sha256": "4bd93cd8320055479e2ea0f24859f1782abdb52aa9c1575ebf8ad92fd3f418eb",
+    "scope": "deterministic/mocked AI only; no live Gemini",
+    "test_ids": [
+      "TC-C107",
+      "TC-C111",
+      "TC-C113"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/ai/pytest.xml",
+    "bytes": 18023,
+    "sha256": "78bccefaa3c266c73345869f54c2334d846e809af34aa142edbb412475275d1b",
+    "scope": "deterministic/mocked AI only; no live Gemini",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ai/qmse-boundaries.xml",
+    "bytes": 1466,
+    "sha256": "2663f09ee99ceaf7e89e38b40a79807879c8079c2a304ba9b488e9fb9a996f6c",
+    "scope": "deterministic/mocked AI only; no live Gemini",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/055a6b3a-98fa-4397-9af6-edf41eab5027/coverage.cobertura.xml",
+    "bytes": 3820440,
+    "sha256": "071400c96c05560e055918b985cf832cbe22960f2ab7c15b25aec1954ed50eec",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/1178170f-97a3-484b-a8a9-6dca10783baf/coverage.cobertura.xml",
+    "bytes": 3820560,
+    "sha256": "e65697a84ab5d16da65c4f17fc8a006965087d73abc1d3376e0a7600c9e2f05a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/1e1eb10a-185d-424c-9a31-26175f90b44c/coverage.cobertura.xml",
+    "bytes": 3820560,
+    "sha256": "a13cd19e3332889c2131be872c8dc996be2709b6ec0bcf23e241120e459ffb71",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/287d8764-31d6-4add-b1ac-f53e96b36bbb/coverage.cobertura.xml",
+    "bytes": 3820562,
+    "sha256": "e2f46e1db16c0d599586b8e6ea16c783aa895a2a7ee4e5e4ce707f56da3cf644",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/5b867df7-395b-4044-8b55-3d2faad46dab/coverage.cobertura.xml",
+    "bytes": 3820434,
+    "sha256": "0e7c668fa1a28db69ef63e6ed0dcacd98157a2608cd83a0a73656a72eb071fb6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_14_02/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820286,
+    "sha256": "1324f3ef7ceb2040b6948895bbe10a2142486a260df8c5b57107ae4a2a7a7ab6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_15_58/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820434,
+    "sha256": "0e7c668fa1a28db69ef63e6ed0dcacd98157a2608cd83a0a73656a72eb071fb6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_17_42/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820440,
+    "sha256": "071400c96c05560e055918b985cf832cbe22960f2ab7c15b25aec1954ed50eec",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_18_39/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820560,
+    "sha256": "e65697a84ab5d16da65c4f17fc8a006965087d73abc1d3376e0a7600c9e2f05a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_20_07/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820560,
+    "sha256": "a13cd19e3332889c2131be872c8dc996be2709b6ec0bcf23e241120e459ffb71",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_24_54/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820562,
+    "sha256": "e2f46e1db16c0d599586b8e6ea16c783aa895a2a7ee4e5e4ce707f56da3cf644",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_26_40/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820616,
+    "sha256": "c69f08831dc926dc50a8160e43017b08e3660b6870376e16a036f1a13136124c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/backend-final.trx",
+    "bytes": 460493,
+    "sha256": "4e8ea50aee9a88ccadaa116579ba2665996cf77a9de2fa1d2ea51873c751d32e",
+    "scope": "execution/support artifact",
+    "test_ids": [
+      "TC-C108",
+      "TC-C109",
+      "TC-C110",
+      "TC-C112",
+      "TC-C2-09",
+      "TC-C2-10",
+      "TC-C2-11",
+      "TC-C2-12",
+      "TC-C3-07",
+      "TC-C3-09",
+      "TC-C3-10",
+      "TC-C3-11",
+      "TC-C4-09",
+      "TC-C4-10",
+      "TC-C4-11",
+      "TC-SEC-01",
+      "TC-SEC-03",
+      "TC-SEC-07",
+      "DEF-02",
+      "DEF-09",
+      "DEF-12",
+      "DEF-13",
+      "DEF-15 (partial)"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/backend/backend-local.trx",
+    "bytes": 421341,
+    "sha256": "06e2fbc968f01d9b90a858b57ce219c518febee04ac1d2521f4810caf36f97ae",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/backend-qmse.trx",
+    "bytes": 444922,
+    "sha256": "02b153f3c590951d7536501b313c2ec134952c2e185722754650eba31d8778f7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/backend.trx",
+    "bytes": 3373,
+    "sha256": "902fb84e77be8d50ff9a9aa92a09f4b4c53722e3ebe5d4d09eae96eb4020840d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/e95ff97b-fff2-40aa-993d-8317a0ac8565/coverage.cobertura.xml",
+    "bytes": 3820616,
+    "sha256": "c69f08831dc926dc50a8160e43017b08e3660b6870376e16a036f1a13136124c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/evidence-host-final.trx",
+    "bytes": 2891,
+    "sha256": "95972b10a1d5968952353352ab28a808cda5a1c060809c32835dd6ab35a7a0c2",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/evidence-host.trx",
+    "bytes": 2891,
+    "sha256": "5fcfaa389e7a9bb22d4bb16617a3a4a0211276b523ca5e15a9f3838693501507",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/f6c18ab0-8860-43a1-848f-14c1e7d5d68e/coverage.cobertura.xml",
+    "bytes": 3820286,
+    "sha256": "1324f3ef7ceb2040b6948895bbe10a2142486a260df8c5b57107ae4a2a7a7ab6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ci/commit-history.txt",
+    "bytes": 8508,
+    "sha256": "f9f99254fe36d01fde393602c9481635d31dc3bb1d49b04c4073951c1fe8b8eb",
+    "scope": "historical public CI metadata; current local additions not covered",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ci/github-actions-runs.json",
+    "bytes": 159237,
+    "sha256": "dcd50104b2c5af428ec0919a68498c9f7f94610e6d8070494000a7c70a369265",
+    "scope": "historical public CI metadata; current local additions not covered",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ci/requested-branch.json",
+    "bytes": 141,
+    "sha256": "205fc9b903779417ebc4bb1b535bac081624b18c3dc529bf3879d42e9c0ee3d2",
+    "scope": "historical public CI metadata; current local additions not covered",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ci/workflow-inventory.txt",
+    "bytes": 99,
+    "sha256": "13c74f0664f69388c4e5cc4a38ea1f173b1babe736c116b6b1ee744f9a5e00e8",
+    "scope": "historical public CI metadata; current local additions not covered",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/database/initdb.log",
+    "bytes": 892,
+    "sha256": "b5e7037a6a67189dd4510a97c1a3d1b52464c8d739038f212ff2eddbd1cd232c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/database/start.log",
+    "bytes": 52,
+    "sha256": "66afd0411ccc09366e99fdd99b85f21899c8d2d064f5835126859618802153ad",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/.last-run.json",
+    "bytes": 45,
+    "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/admin-workflow-navigation--03b44-keeps-active-state-at-320px/matching-320.png",
+    "bytes": 58710,
+    "sha256": "a411734db13769cdf39b7c05a2327603abac725d252cea57018abf58450b9936",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/admin-workflow-navigation--a4993-keeps-active-state-at-390px/matching-390.png",
+    "bytes": 63418,
+    "sha256": "40a585f853b2026093245d4a845086187a348fcd2eed6b3dae90f89e706c31ee",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-1024px/client-intake-1024.png",
+    "bytes": 132439,
+    "sha256": "a3aac60aca0aed198187f7c58f900112d2ce9672a258d61b8ce37c6bb33c7ab4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-1024px/client-registration-1024.png",
+    "bytes": 126260,
+    "sha256": "06569856a8f2dd0f7e989c22458329359fb05e61a649fa2057535dc062a08dfe",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-1440px/client-intake-1440.png",
+    "bytes": 136473,
+    "sha256": "652bc16608d2603523008615ba18f52de3a062522e742229fb069ad0c4560dae",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-1440px/client-registration-1440.png",
+    "bytes": 129186,
+    "sha256": "c240b9103375550fee682a0987c8482c3c954937f64769f5cde65d97dd9b1de0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-320px/client-intake-320.png",
+    "bytes": 63821,
+    "sha256": "ded7cc849eaba70cf21ddadbd056bf254576cb89b150841ad66ff33cf85d7f69",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-320px/client-registration-320.png",
+    "bytes": 61245,
+    "sha256": "854802e97e7d0196fd01529d26b294b504183ad7a225009d9f5eadcbe09d6717",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-375px/client-intake-375.png",
+    "bytes": 67411,
+    "sha256": "1ba5f1502bb006553c348ecc55a5264db127dd336ce2a3a031b84b3eb81af2ea",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-375px/client-registration-375.png",
+    "bytes": 65218,
+    "sha256": "70c807e6e98103455f5ebc275af9084a56d76c694d4d31ef4cf3282ae85ba815",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-768px/client-intake-768.png",
+    "bytes": 128191,
+    "sha256": "bbf89fcf1545a8e52e2c4866f395f3bf4cdd055bf3d11e61df43e70d1c597305",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-768px/client-registration-768.png",
+    "bytes": 123865,
+    "sha256": "88ab265ab3261e0fc6a5dfea6fce2a9627cbe8605ab3f0ab2376afce122fabed",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-1024.png",
+    "bytes": 136213,
+    "sha256": "3a86b29746a666b7f10719e03d07482389ede6c34d045e20fcc8348c7174738d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-1440.png",
+    "bytes": 165017,
+    "sha256": "2e8d12308380e8d023539061de20934a945ad7ad29cf496c2ddc6ca5568274c8",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-320.png",
+    "bytes": 57149,
+    "sha256": "9905a0d7bae5a6e0a43f908150e026ac1e511f21a9e7c212217fcc7b50068c78",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-390.png",
+    "bytes": 71508,
+    "sha256": "7094ea45a19ffab1b2af0587223ff2be98b70b7bc400ac902b20728ac172e877",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-768.png",
+    "bytes": 132589,
+    "sha256": "ba05b0fee6b74f728b30d48c7273d195e5df0b3255fbb34522db87b9385e330d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-1024.png",
+    "bytes": 141740,
+    "sha256": "9ab0c0493c8c9f7ddacedfcc7aa84f6c2fdbe4dbebbe7830cee8ef474aa8f9b1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-1440.png",
+    "bytes": 171103,
+    "sha256": "96bf55c8a8ad24ee6e3168beafbf383a46efa5373230e835a5d4cd5c460714bf",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-320.png",
+    "bytes": 56032,
+    "sha256": "936157aa5f3968ea94deb4d6b26d53cbfad397cc6e377b9fa407bb6eed137163",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-390.png",
+    "bytes": 70430,
+    "sha256": "8d321cca0be0c328e6d2413dd5b683f3529a480e63f960dc9980f9def33fbb1b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-768.png",
+    "bytes": 137200,
+    "sha256": "7f978e77ba7ed17c6ecca0fcee72a66d48669cae574e72744b2f7c184db88d62",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-1024.png",
+    "bytes": 149787,
+    "sha256": "20814d9e2e744bca3832bf60bf20fe1fff619efbc4f1e4b8babdd49aff64c563",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-1440.png",
+    "bytes": 158614,
+    "sha256": "73bf17ef5581cee7e50119d72e7035bbaa6881731da3790d1e2460cb50cf1c13",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-320.png",
+    "bytes": 57380,
+    "sha256": "f40b019bbcda90396b01404153407fd44a7173df25e772344535218f77f91341",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-390.png",
+    "bytes": 71894,
+    "sha256": "cfa324fe961f2321c0b80e344259311eb1a9eec4ad2ff0f1ad1909d8baa37207",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-768.png",
+    "bytes": 133701,
+    "sha256": "93cdc463886f1f18f23f4be733ac1a7497189476a27988c84476672bf6734d6a",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-1024.png",
+    "bytes": 140225,
+    "sha256": "e7134426d01bedccb67eb933896c53c9ce9391fef7a018d5405fbfdee063590b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-1440.png",
+    "bytes": 148969,
+    "sha256": "a6ef95e13455a4eb076d6b38ab0c9f87dc81e5f4aaad54d64576063e991515bc",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-320.png",
+    "bytes": 57237,
+    "sha256": "a5d81ae9df8dea9d64e1cadb24805a7719319d7d90fb5f5b56b69c3aa4702893",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-390.png",
+    "bytes": 74158,
+    "sha256": "f8483281edb490ae9452cc57c6709bb0678d811bb1a9943292d7dc08b968c0dd",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-768.png",
+    "bytes": 136759,
+    "sha256": "05371a71e4c50cd8fca156aaf514e9f40cb4d9cd17260cc3e45db07877b11dfc",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-1024.png",
+    "bytes": 154794,
+    "sha256": "38170a0236a2cd1ac10c850e41fe2f8ba3a3515462fb895e3ac8ab4e48e6794b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-1440.png",
+    "bytes": 164710,
+    "sha256": "9a4d891c7fd07d5ccd9f1549235248ff3feb92230e3dd63b70d20e76c3bd0e8e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-320.png",
+    "bytes": 57791,
+    "sha256": "f143d9e0c3cce601e3270fa25262c5db1ea643e6151d8ef1498812fe736f0af0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-390.png",
+    "bytes": 80108,
+    "sha256": "50e9d17f922d3588c700ef256e81ca094fded0dac4cd87778c157224f35dc6d0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-768.png",
+    "bytes": 137544,
+    "sha256": "9f645372883bec7a11aa6e36b18eae066131ba76223825c1d99a2a5af66ea831",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-424ed-d-access-and-reduced-motion/appointment-375.png",
+    "bytes": 69349,
+    "sha256": "63e4853c09740fa42f03e7bdbd46493f51cc8696420105b021e12024bc00e05e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-424ed-d-access-and-reduced-motion/matches-375.png",
+    "bytes": 73929,
+    "sha256": "fcd7c5d4a3b40d3be49bf1402704d6b4a947e4522a5ef32b46a091eb8955ad19",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-424ed-d-access-and-reduced-motion/progress-375.png",
+    "bytes": 86309,
+    "sha256": "38bb53b793a04e6b0480b2303c80e5d1dafba175b9925606b7e6508e97c500f0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-424ed-d-access-and-reduced-motion/review-375.png",
+    "bytes": 68460,
+    "sha256": "29363edcafb978a9e7fe81cab763cdddd20948e66a9f7eb704bf0112f3f81f66",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-464da-d-access-and-reduced-motion/appointment-768.png",
+    "bytes": 138440,
+    "sha256": "6afb93defc019a7c428f7ae766f60915b553f5e2cf88f740310cde52f3911d01",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-464da-d-access-and-reduced-motion/matches-768.png",
+    "bytes": 132506,
+    "sha256": "c844021073d5a5ef8cc25e1e55074e2508be0268e96a6236e37e1889d737c6f2",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-464da-d-access-and-reduced-motion/progress-768.png",
+    "bytes": 147384,
+    "sha256": "02b9a868c01175bab99e0359b26a7d7a8577a98f327fa9dfe44b7eb68e2f6b6b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-464da-d-access-and-reduced-motion/review-768.png",
+    "bytes": 144278,
+    "sha256": "fcbab04524e2fe6e8c43a8f962ba565b2769a499ebe5da34316c93b628279047",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-65908-d-access-and-reduced-motion/appointment-1024.png",
+    "bytes": 151231,
+    "sha256": "bff59cc32f2e09cb052f21541ca4a86ce68d3b382eeb3bde6bf2eddd382ffc69",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-65908-d-access-and-reduced-motion/matches-1024.png",
+    "bytes": 156277,
+    "sha256": "30acab594152ee344baa2067a63986362e1303223331888b0dacbe1c4ab4a8f7",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-65908-d-access-and-reduced-motion/progress-1024.png",
+    "bytes": 177380,
+    "sha256": "9b49e5e6e2cd4c21e65f79f2bc03c41f7cc4f125018615588ce73f74e39c0d6e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-65908-d-access-and-reduced-motion/review-1024.png",
+    "bytes": 154390,
+    "sha256": "8dcff41e0a5a347e41b2a943f4ae16d5d567cc1a8ef0830c39115d0621420181",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-86d4a-d-access-and-reduced-motion/appointment-1440.png",
+    "bytes": 151429,
+    "sha256": "af5e0ddd08b63108a305a01d80c5195ffb23e00eca0dd23ad367e033f65a267c",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-86d4a-d-access-and-reduced-motion/matches-1440.png",
+    "bytes": 159942,
+    "sha256": "7773c76c93dfa01b5f147c53dc57700d192b0696546d5eec5d307085599fd7bb",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-86d4a-d-access-and-reduced-motion/progress-1440.png",
+    "bytes": 179062,
+    "sha256": "90e5f4c29235152873629ce37e6275bdea8e3167793e599fe9cb39a1f477b38a",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-86d4a-d-access-and-reduced-motion/review-1440.png",
+    "bytes": 157100,
+    "sha256": "15815da3068917b2ac7433c0c569f1ffe4932d5c4af7403cb244a6b1d99d0db0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-89a2c-d-access-and-reduced-motion/appointment-320.png",
+    "bytes": 63425,
+    "sha256": "ccc9763fd91adee9966431e7c902e7182539872f4163e4c52585eab903ecd65d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-89a2c-d-access-and-reduced-motion/matches-320.png",
+    "bytes": 66014,
+    "sha256": "bc866a711a88bef2d8ac4df0fd0f318ac26e064a8f3328c43d474a93bf52c03b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-89a2c-d-access-and-reduced-motion/progress-320.png",
+    "bytes": 82222,
+    "sha256": "8a4c0031dc33ad4d1608e0c81e309d2baf8090d8f9783eff42b78efae9874bb5",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-89a2c-d-access-and-reduced-motion/review-320.png",
+    "bytes": 63580,
+    "sha256": "3764df3acabafe6b2643c2d477d92b131900e365217de5b1d83aaf080039de92",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-healthy-r-cbc03-and-offers-no-hiring-action/healthy-desktop.png",
+    "bytes": 111197,
+    "sha256": "5e30b49998695f07994a067a71c595ed4993f6a74c2e4ee5eb0ba8af94a38076",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-proposal--236cf-ion-and-Careers-integration/completed-desktop.png",
+    "bytes": 140532,
+    "sha256": "87ba8d70561d534fc36be873d214cc5aa050a8e554a7a5d5d27d22e02d06e49b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-proposal--236cf-ion-and-Careers-integration/proposal-desktop.png",
+    "bytes": 145045,
+    "sha256": "5d113aec1f949cde73c8a018cc0a648bc8570a1cca4fe4c94eee48478e92312a",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-1024.png",
+    "bytes": 145814,
+    "sha256": "efa20d9a536cee144dc61abc7406a9741691f153b5eab9f83dde5358afbe3251",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-1440.png",
+    "bytes": 161228,
+    "sha256": "9126299c15ac545c580d96c9a2ec173f49ffd71fce903b56cc410a8267be4bdf",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-320.png",
+    "bytes": 65860,
+    "sha256": "3efac3edbb5296ab8998299ae940cc1148c7ac0b525e9babd1bc95b6f8418254",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-390.png",
+    "bytes": 78734,
+    "sha256": "51c604b916458ec5e9db3bc00255569d0ce3338173325ee94a44a2b9c862b6e6",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-768.png",
+    "bytes": 134892,
+    "sha256": "2db0d6442b61a4121d4e4cc6928d4c2c8101facb4f241fdaa5ba0dae2961af84",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-1024.png",
+    "bytes": 170259,
+    "sha256": "6934a14c357f095ee123aa4ef57f899bf65fa613020ce8f664b5f6f53eecc9f4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-1440.png",
+    "bytes": 192257,
+    "sha256": "b6c2d244f1c72af6cdcf451e40c317974cceb2a0dddd7092300f7142cd9ca4b4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-320.png",
+    "bytes": 71259,
+    "sha256": "74cf240a5107c605a6e189e327f403b83c5ab00c48ba5aaaa2649748d7974c2b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-390.png",
+    "bytes": 87965,
+    "sha256": "4bf5ba87083028b27d76f5c835c23b6cbdc81f6c3c6a0c070b5fe722bc4b17db",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-768.png",
+    "bytes": 150762,
+    "sha256": "6a51085b3096bfe51554fd160b9afcf8f8e7741bc3d6376f1b14c5a9abf9d631",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-1024.png",
+    "bytes": 170259,
+    "sha256": "6934a14c357f095ee123aa4ef57f899bf65fa613020ce8f664b5f6f53eecc9f4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-1440.png",
+    "bytes": 192257,
+    "sha256": "b6c2d244f1c72af6cdcf451e40c317974cceb2a0dddd7092300f7142cd9ca4b4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-320.png",
+    "bytes": 71259,
+    "sha256": "74cf240a5107c605a6e189e327f403b83c5ab00c48ba5aaaa2649748d7974c2b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-390.png",
+    "bytes": 87965,
+    "sha256": "4bf5ba87083028b27d76f5c835c23b6cbdc81f6c3c6a0c070b5fe722bc4b17db",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-768.png",
+    "bytes": 150762,
+    "sha256": "6a51085b3096bfe51554fd160b9afcf8f8e7741bc3d6376f1b14c5a9abf9d631",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-1024.png",
+    "bytes": 163673,
+    "sha256": "e5acc6ecda058316674355c4b6e6a4f6e06f8005254521ac1c57c5e8a044c905",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-1440.png",
+    "bytes": 176126,
+    "sha256": "ba1001e77f318fbc031ea743ec224a7a4e885bc5e817fed5f174cbb1d4d5fea9",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-320.png",
+    "bytes": 67175,
+    "sha256": "9064cabe0f5e50eb9382bc6a7b4329e0eb87f1f0d09a1188667cd6ccb90057b3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-390.png",
+    "bytes": 89378,
+    "sha256": "81f5852e982995a1fb909427c0a98a8cee4a4ca1be5177be085821a39242ec71",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-768.png",
+    "bytes": 152147,
+    "sha256": "f74ce4c576c4e58575a37f722101c2b70d6109a61afa3fb0877c5030bd5b7402",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-1024.png",
+    "bytes": 185442,
+    "sha256": "a6e90451668ee3ab9fb6e455dffe261856507f86bcc2daef535b8e8167f991d9",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-1440.png",
+    "bytes": 205849,
+    "sha256": "7cc3cbf9daac12334950a17f216b03cfdd52b95ce64dc0a4e483e7b3f2c5e47f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-320.png",
+    "bytes": 84257,
+    "sha256": "e814111350471fbcc26ee6246b42ed97574c5924711cb78d2dd1367453c4ef43",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-390.png",
+    "bytes": 101819,
+    "sha256": "6518262fd44a0a35aebe9b4727f665fc39583c067f052b0236165c3f0604336f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-768.png",
+    "bytes": 167184,
+    "sha256": "b4c24d8c9383348cd5a32ea845881dc4d138063e974c58ed7a8329dbb286836d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-1024.png",
+    "bytes": 187208,
+    "sha256": "e6c523a49fa947346c13b6dfe9b2e8f9c61ebfe253fb4e0eb44d4ba52efe059d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-1440.png",
+    "bytes": 194944,
+    "sha256": "f9b117eb2f766c88b73e95901165847c1fe9cbd6c9826f6b83c77a2439754768",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-320.png",
+    "bytes": 94157,
+    "sha256": "8438c3e1e2e59f3c26776f4713d83f4edb5674d8f0ee15e68f874920b4c32209",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-390.png",
+    "bytes": 111163,
+    "sha256": "83095d4f0fd4ecbc788119425fceff337c2ff4f9742feb6e78fe099ec7a6c5f7",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-768.png",
+    "bytes": 172469,
+    "sha256": "af4f2578768e6c44536a9da7af5a9ec5d681dabb67c8baeb99a9ff39f23f0834",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-1024.png",
+    "bytes": 173451,
+    "sha256": "bdaaab86842e2afd1efda3610da846ce5f1a31dec9be106cf2d6eb6291d5f87f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-1440.png",
+    "bytes": 175169,
+    "sha256": "88dbf353db7f9035128dfb6f11ecea1d4d942edce85f8c26f9ef46421c834d21",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-320.png",
+    "bytes": 87787,
+    "sha256": "2486c2a9162f62e0aa27a5964e9a5616386b477adb0c9692ca1e3118e5ada829",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-390.png",
+    "bytes": 108848,
+    "sha256": "257752c52789844c83e11f8c35505df6fb4e33819924be23ab9b8e25b48a0b14",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-768.png",
+    "bytes": 171842,
+    "sha256": "6b05cc69418a20e9ec6cd2c05028b98f62e25f78a9a985b53c55720feb09d6de",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-1024.png",
+    "bytes": 171498,
+    "sha256": "58031337788563cb96f6168ded596ae752d82cdc41462d20c86d585ac26c8fc3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-1440.png",
+    "bytes": 186143,
+    "sha256": "d4dbc45d6f78cbcc29f9b85fd0ba4ca62eba162cc9ca36a939e9cc639e2c565f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-320.png",
+    "bytes": 86430,
+    "sha256": "182ebf97ed050f53a8fc9ffedee991444828f3f3ffcf6adbfe514a8659f0b95b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-390.png",
+    "bytes": 91702,
+    "sha256": "14aa840c2b97dda36620030e66a348b98a5b0c96838df8753bbb0cb5a6299bfb",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-768.png",
+    "bytes": 160670,
+    "sha256": "6b1c862dec0ceac4e02c71f3a66daa5dbf43daad12a9f9917ac2b80c1ea343f1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-1024.png",
+    "bytes": 179054,
+    "sha256": "57bce4b0103d2fab69600205b0b7a5d706d555ce82330d382b3a6b7dfc6b3a24",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-1440.png",
+    "bytes": 193817,
+    "sha256": "dd2c98383ceaf80504ffbf33ef1bb720377d7dfc4413e3bead420660712ba170",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-320.png",
+    "bytes": 91401,
+    "sha256": "b72459d08964ece91468357cea8250494b0417b3700fd1642b1edd94929f2127",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-390.png",
+    "bytes": 97552,
+    "sha256": "5fb8e23e2d44584a3a4769b1936d0a361be7f6e0b480b8ca55fb0c24b02c5d4f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-768.png",
+    "bytes": 168963,
+    "sha256": "48045afefbb1e52c2adbd3af548649ee26a2ec8a0bddb0def77c30c9492b58ff",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-1024.png",
+    "bytes": 192366,
+    "sha256": "85dba08c6a9aa7057466b3d21ae4de4ef3194bc44b6e3960c481f2339c9b30fb",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-1440.png",
+    "bytes": 203008,
+    "sha256": "a4f56f601f62310ab8e358430f22b50f429ed69277896c831c3c0458d65d5106",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-320.png",
+    "bytes": 83624,
+    "sha256": "c1220f694a85b409d1d9f0e112da185e8bcc2f1fda3ccd52baee654da4dbe84f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-390.png",
+    "bytes": 114697,
+    "sha256": "4725a73eeb4ce74ae4f897f692cd79239f8be5101d002e38b45c72af707e3654",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-768.png",
+    "bytes": 174655,
+    "sha256": "52bdee0a93126465e2942d91a2d28c8cde0e031d1b2ac7a5d36f8a5b35c21771",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-1024.png",
+    "bytes": 186957,
+    "sha256": "d8378cb0e2cbb09863b0cc8c4fb82172b6cc878a3e8448c53c8b7cdae340979c",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-1440.png",
+    "bytes": 203206,
+    "sha256": "cd9bc7a65404b11ab7ac6997bcd6abf83babb9118d8828214432dd3ee69a993e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-320.png",
+    "bytes": 80892,
+    "sha256": "3e937fce0a64c7425b6ca18129a24e60619dbf6aece46dc0f47b7b7322b1a940",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-390.png",
+    "bytes": 100088,
+    "sha256": "652eb6720057dda19fa6b3e8a6c70b0fd320f0b662a42fdfb8efa014c35a517d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-768.png",
+    "bytes": 163806,
+    "sha256": "201629ca580378ece7b8b3440fe916f2a5feede3c72e0d2cc9a7cbf7176c95f9",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-1024.png",
+    "bytes": 207509,
+    "sha256": "fafa089ce723dc4411bc2393b4c1058975ae3bf52d6db02463699107239fe90b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-1440.png",
+    "bytes": 234759,
+    "sha256": "186d5e8d7fb257c27bf44677aac02324fdb2fd7ce1d6678b888321c998945fce",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-320.png",
+    "bytes": 94949,
+    "sha256": "3bb456a8470e9d1bfd14812871bfb3eae191a40f7ffab46fdc051748887e2aac",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-390.png",
+    "bytes": 106802,
+    "sha256": "d88fc58513ba51afe5e91c99157e419a0888cd8f5367272b574bca7d17395d75",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-768.png",
+    "bytes": 174284,
+    "sha256": "66f9d8d4e178b49cc3d1195a35d096f1be1109dd3296c4e2242f7d576ac16ed8",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-1024.png",
+    "bytes": 73355,
+    "sha256": "bd1bbf376c9b913755189ad6621fd735eb9d88df07506e0addb2f863607467f0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-1440.png",
+    "bytes": 73004,
+    "sha256": "6e7d5f89e520805070550e2fdde93a87a81c0c05c9539cbd83466bcf7fcb5d2e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-320.png",
+    "bytes": 68324,
+    "sha256": "5ace729fcd2cbfe6124181e276a7db696149ab28ef1dc3ef05d965ac7c499fd3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-390.png",
+    "bytes": 69579,
+    "sha256": "d453c4d49053a12148c1e5dabe563f3e9ea98af1bcd13470c9c479ba5db3eb07",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-768.png",
+    "bytes": 69866,
+    "sha256": "c01b6b286646f21e3451cf49e7685d2448d9c636f4f32ada51f7496675d3167f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-1024.png",
+    "bytes": 176323,
+    "sha256": "db5b89f3e6ad26effa06f061d31c6cb6771249f51cdbbd21ad1d02f36604d326",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-1440.png",
+    "bytes": 179002,
+    "sha256": "2345f3f68b64e12d7ba8eac49b2e43e71187f3e0463c4c37fbbd65ee94556f00",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-320.png",
+    "bytes": 88227,
+    "sha256": "7a458f3897e9c57ac2666f97cef2ed6f9bab7be376f22bdd2e7a2c2e9151e39e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-390.png",
+    "bytes": 104607,
+    "sha256": "34249107092def20899b8a607b66cad8f553806b47353b88a4a3d5a3cb8b1cf6",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-768.png",
+    "bytes": 174664,
+    "sha256": "dd7f0aba3013c1ea96fdf7d69d697369570b62564f4e587542f019084a70d079",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-1024.png",
+    "bytes": 189219,
+    "sha256": "da86c0e73a912116a5b35e31f07ddfed69d81b8bd5f47a973c6c4f9307b38c2d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-1440.png",
+    "bytes": 206703,
+    "sha256": "523d5dc5ab66abb82a058192f39f05c2e3cbd08a5d281e609270d87322a5aa97",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-320.png",
+    "bytes": 89100,
+    "sha256": "77767d4e5c0c96bebf1a70f0ab6161b6a42b0a359b3fc20f2233e0d5e922ff89",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-390.png",
+    "bytes": 109387,
+    "sha256": "0e80060d1ea5734a67479dabc74104ed95cd7dd47a469e246f22fe2f83d09de1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-768.png",
+    "bytes": 175337,
+    "sha256": "e2ee4dca8d8ca74492eb613553fa6995bb2ef1e1afe74d10b2af7559fbee9cea",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-1024.png",
+    "bytes": 207590,
+    "sha256": "3dcede98506073b3be0ef563b91004c24bed60a585ca20f1a467a8dcf3908da1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-1440.png",
+    "bytes": 234756,
+    "sha256": "91e922e75b9a37953fd04686d985c42a48f2863983ccf325fb957cb4ac8b233b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-320.png",
+    "bytes": 89672,
+    "sha256": "f18d46a16f143c1fea7479aa5f34a336ab72f215c6390f2424defc8d09f6523c",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-390.png",
+    "bytes": 114435,
+    "sha256": "029750df2a579cef6304e352a13c0d16f68b8c88efd39f812fa3fc81fdb5bf18",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-768.png",
+    "bytes": 178494,
+    "sha256": "361360a3f037a1527107a38f432237f9108b87932ef9aa690ccc590a0a318f32",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-1024.png",
+    "bytes": 196029,
+    "sha256": "f0e7f973b6dc63ac5f8e2d7d70fa1ba87df025b493ccbb02d3bc75c914e2266d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-1440.png",
+    "bytes": 230596,
+    "sha256": "9e1b44e2a9047fbb74e88cae9a5fd9d5462ab4ff36b53210484a466682630305",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-320.png",
+    "bytes": 86640,
+    "sha256": "09193debd28cc5eb7a54cd6aaad8b21a77d90dd6394384573f2cf91abe4a4130",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-390.png",
+    "bytes": 100217,
+    "sha256": "8523786a6b2fbbc3ac6030d4cfaf7158d418fdec6833d55dc035d85e672db9c3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-768.png",
+    "bytes": 160436,
+    "sha256": "bbcd98687bb66b5a2456f3ed8e0e9d0484ce5ece844560a5b1cfdbf0bf1d17b3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-1024.png",
+    "bytes": 76847,
+    "sha256": "58c5ae16ed9638efb37071ce1ced4aef21dc1d84a0b4309f4e012dece33da1ba",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-1440.png",
+    "bytes": 76130,
+    "sha256": "ccfa7af8b72d546d65bc5fa798578bfd2ddfabeda6f480dff33e5af65756d4ae",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-320.png",
+    "bytes": 72493,
+    "sha256": "072ef8d8a18ff2cf325418564fb3a5dea49171167756835bb07e7444672b953d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-390.png",
+    "bytes": 71496,
+    "sha256": "06d41d9e7543eabe615bfa45d402904ff9e6acf0fbbac49fbc244fb0b9da5ee8",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-768.png",
+    "bytes": 72017,
+    "sha256": "b26398331460d136cde8d637726d97d1aec572bb0162c5ff323630315e782461",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-1024.png",
+    "bytes": 184799,
+    "sha256": "6a2f74add4431a42a729f434423f043837a6f3e5edf731c039dc4cdf461ac298",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-1440.png",
+    "bytes": 203762,
+    "sha256": "3f85af327ebf48d57b1378ba05466633ec5899569faac16d98ec483a3b2f4441",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-320.png",
+    "bytes": 82705,
+    "sha256": "8329d6a925af114de905d74724792d17e4242900f0b2daf891e8be3eff06a074",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-390.png",
+    "bytes": 101132,
+    "sha256": "02af72b8bfcdf35bf19b1c708d2a9d42c0f3d446518f7b4b1a271c3af04714a8",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-768.png",
+    "bytes": 165852,
+    "sha256": "5d4fbc5fed7331b632886a4ef743a5465af4b4569aabcf2f6aff1ca5cc76907e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-1024.png",
+    "bytes": 144921,
+    "sha256": "248d0a6d097126fab1408a635810a3b3738d545facb77629f24d74893fdda66c",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-1440.png",
+    "bytes": 192400,
+    "sha256": "d694a3bf9a03995d2c21314e7a6457fd8db02a48266fe375fb39fd95a5d3a54a",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-320.png",
+    "bytes": 64200,
+    "sha256": "1c61ec8ba990fbb8c9c3d4d2076610c40a12ab64b6908a0816fc99075c39cea1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-390.png",
+    "bytes": 70834,
+    "sha256": "51b4b6b635d4b5d3f6f18316bfe4f345727a6db918d789a53f06f70fd43906cf",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-768.png",
+    "bytes": 129464,
+    "sha256": "994fb9518632e383f4779331d30edad12654914fb8586847b55fc7693c3a2651",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/playwright-report/index.html",
+    "bytes": 690183,
+    "sha256": "ad9cbc825f7196db7803d207dcc1411e03886d0928b3febfcf346f716090f48f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/playwright.json",
+    "bytes": 125839,
+    "sha256": "89ce235ce1aef4388c259e3469e8cf6c13875b9737b4e50a3b81fb76fcec2197",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/schedule-1280.png",
+    "bytes": 199421,
+    "sha256": "fdd545e34df0548c4d1c2a9951fd7208beb3c7a72fd54ec3c2f9ee51b1cedbe6",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/unsupported-progress.png",
+    "bytes": 132069,
+    "sha256": "89215c03e8d6034bda9088fdc5ae5cb728d5db34a1343f920a6251bab152d057",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/mobile/flutter-events.jsonl",
+    "bytes": 30487,
+    "sha256": "c6f251aa37fe41cefe351fbda257aa7a7b480464318fb728de8d5fb33c655608",
+    "scope": "Flutter unit/widget machine events; no device/live-API evidence",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/mobile/resource-recovery.log",
+    "bytes": 106,
+    "sha256": "6e96128fc351ccc852dc41cd57f08d9cab07ac214f5a3475c04b6aa8c5a52cad",
+    "scope": "Flutter unit/widget machine events; no device/live-API evidence",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/mobile/sdk-install.log",
+    "bytes": 988,
+    "sha256": "8516fe47cacb6bbd0b4f4a1b16228a25788302f0295bb05466735d7d33a45f02",
+    "scope": "Flutter unit/widget machine events; no device/live-API evidence",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/performance/k6-raw-final.json",
+    "bytes": 334573,
+    "sha256": "05f207a194e1860ac51280844c73e6a93e4620dd6380249644ad19843cbd9b56",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/performance/k6-raw.json",
+    "bytes": 4835,
+    "sha256": "7bc944d86c5a48980806e0966ce01f28b0827d4cc74ca23206a1d4906ce00652",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/performance/k6-summary.json",
+    "bytes": 6428,
+    "sha256": "b5d01b42f4664a837221283d4de6c9f996fbb6f89138b0318871e3e87d857f39",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": [
+      "PERF-01",
+      "PERF-05 (mock only)",
+      "PERF-LOCAL-02",
+      "PERF-LOCAL-03"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/performance/local-smoke.k6.js",
+    "bytes": 1918,
+    "sha256": "e9d479a10f5087910c0cd4b673d0296020048aaa5fb678fe559bc5656ae580a5",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/performance/performance-report.md",
+    "bytes": 2101,
+    "sha256": "5e1f2e2313e90bb065dbb0d862b25a69d85756388f62bc95df1ecb6e15933cde",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/passive_scan.py",
+    "bytes": 2493,
+    "sha256": "c3dad530b112f57adaa7d8afffc83deada32014b08f6a3b919b41420691c1cd7",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/scan-metadata.json",
+    "bytes": 2356,
+    "sha256": "9741a62c4fa64c067664bd9af292a217fcd775fdfaf396b35ab0d62d3e8daf30",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": [
+      "TC-SEC-05",
+      "TC-SEC-06"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/security/security-report.md",
+    "bytes": 2699,
+    "sha256": "ce87ae3e4e99e9fe71f4537d117c497f7534b644506ae161a7067aad85b80889",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-alerts.json",
+    "bytes": 8848,
+    "sha256": "b99827a8f9d6743b8040e8b637a6c4891ca0a87ac59d67ec4c5d84f9e9d6b897",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-daemon-final.log",
+    "bytes": 30696,
+    "sha256": "2f7e26f868e31c4f46d45c2b73b211a9fbd0a63299962bac8415031cdf0ae7f5",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-daemon-ready.log",
+    "bytes": 30887,
+    "sha256": "faa50782b357c8b892ca6c12eea39880510538e6857f7bda99931e29619a6353",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-daemon.log",
+    "bytes": 30453,
+    "sha256": "521f3c8ce59d26e3ce0c89d675b9006b2043a19524eb6a1a36c23127bcfad5a3",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-passive-report.html",
+    "bytes": 29407,
+    "sha256": "b5ea9b44708e346198f6fca2c8ac5cc786f643ede7cedd0c31d129443a171e12",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-passive-report.xml",
+    "bytes": 8328,
+    "sha256": "c0ff6caa6293760f73e1425b29aab0938f0dee66755fe82afda96ce954f425af",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-startup-threads.log",
+    "bytes": 47184,
+    "sha256": "a4df3fbd27f6862211f69417b1aa35975919cb465d1c0a7394555272e4cdb8a2",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/final-report/SE3110_Testing_Report_GR42_Final.docx",
+    "bytes": 116855,
+    "sha256": "c39d2df60c16e5774bbd9e2541baf37c4ef51477015ce2b14e5cded9ef4d4cc2",
+    "scope": "final academic artifact; qualified results",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/final-report/SE3110_Testing_Report_GR42_Final.pdf",
+    "bytes": 1292613,
+    "sha256": "ffcca7d540903447ffeac5e6b8d3ef3b5a8ecc97cf70ce89771b5f8fa83915ca",
+    "scope": "final academic artifact; qualified results",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai-final.json",
+    "bytes": 549,
+    "sha256": "c26fb6b874c8f6289a29b4e3522260c468e0310434c92b8009f5f62cb2b4ca60",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai-final.log",
+    "bytes": 2908,
+    "sha256": "6ca40a83bcc5f1892d5b9306825eb9b8f3b4f63f7bb957faa0ea2e51c9597616",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai-qmse.json",
+    "bytes": 574,
+    "sha256": "0887a3148cfc998b8c2c28658db126040af718cd85993b702ad8af0bf0ec17bc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai-qmse.log",
+    "bytes": 992,
+    "sha256": "235af7c5f65073bf36b33c97214e2e5383cac566ad71d2c506f49eb543680a05",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai.json",
+    "bytes": 531,
+    "sha256": "47dd14cb7bf76f835cccc94e1695b1cbec65d4579b9838a7e671c64ade0fa627",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai.log",
+    "bytes": 8940,
+    "sha256": "8b3d55111615e6bfab9e86f9f807ff8fa22a5e41e7969811fd207fcf3c8b6517",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-cases.json",
+    "bytes": 205729,
+    "sha256": "429e871dcd1738ef284406df2cca88258ad71a31ee33da2f31dbc5b20a178157",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-final.json",
+    "bytes": 686,
+    "sha256": "03ff60f44772cdffd7491224f21a1a85e82042073a907a9a13ae61734fc2bde1",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-final.log",
+    "bytes": 2494,
+    "sha256": "b8379c1b2f576aa7c318a5850775c2d2b2b64b2ca77fc232d29ccf9b9d79c0bf",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-local.json",
+    "bytes": 686,
+    "sha256": "c4031b6b7ec2367613b233031e9da195518793340d3eea087a7c6b4c839b4089",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-local.log",
+    "bytes": 1609,
+    "sha256": "779c7d5e7c9a825fe6d67901d535e2c207b9865f8a07512959e5a3162b2cea55",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-qmse.json",
+    "bytes": 683,
+    "sha256": "8f5aeab4ec975ce01686478b4dc32d6fd7050db9bde788a460615cbd7091c644",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-qmse.log",
+    "bytes": 2360,
+    "sha256": "484d29748fdcf2368c88356b11d90ae0e4c8497a6cd89dac99be4fbe4db3e4ce",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend.json",
+    "bytes": 668,
+    "sha256": "3389fa546dedd529fe9845a5eb5a66c22c7e98988be43e6acc9c104674ed68c8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend.log",
+    "bytes": 4324,
+    "sha256": "ca313fc45c9e88826b50bcaa1e18b81a11c9fc1342fcb5c2f361a3746e907326",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/case-verification.json",
+    "bytes": 58101,
+    "sha256": "f79323a21d01bc59bca468974531db443b11043a12af26177d1bf674ec3828ea",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/evidence-host-final.json",
+    "bytes": 744,
+    "sha256": "ddb51d4fa80e05cc0cd75b0ae38141da4e9fcc763b961eb4fa776d0d8132e2e6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/evidence-host-final.log",
+    "bytes": 895,
+    "sha256": "01ce9bf72b98d9151366ab58ee86c1670b39aef051ca6ea7bb5caa8162efbdfc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/evidence-host.json",
+    "bytes": 725,
+    "sha256": "e9ea15e89099cd2b9c3ce17ad072e227df3ccf14898d8d45b6aec0e8deb9d18c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/evidence-host.log",
+    "bytes": 884,
+    "sha256": "6279d3aa30b94488de6808fe1685fc110a6082e6b76811468a2e9e45036287e9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/frontend-node.json",
+    "bytes": 465,
+    "sha256": "b98500756216240771f80e249dfaf3a64eed52496bc126fa8bce139145858c3f",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/frontend-node.log",
+    "bytes": 4419,
+    "sha256": "5ca82e670936e5581a44cdd09b886282fef8b95ca7d67b6c1fbdb5a75eb9b243",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-dependencies.json",
+    "bytes": 615,
+    "sha256": "b6a0bb443d68f59dfa72f5b9729754628b077bf44c06764efe40605bac3f52e6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-dependencies.log",
+    "bytes": 813,
+    "sha256": "3d654d3faa16ba70716739fde7615efc6403250cd365f248d24d4ded65ed6db7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-final.json",
+    "bytes": 608,
+    "sha256": "861477d5fb6d9e00730f55355ea62fd060b8cb4cf4a25144c4e18512e62139e6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-final.log",
+    "bytes": 296,
+    "sha256": "669504864bd2ed1d56292aba9aed7bbf2fccf5f15b81b94e0adcacd11d6c892b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-minimal.json",
+    "bytes": 612,
+    "sha256": "0f68b595c4c48bf5eefdfd493cd8e0fda2f9b0de541a8a9f8eb314da4e5d6b08",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-minimal.log",
+    "bytes": 28864,
+    "sha256": "d6ccd20fee2888e0679516e91aed0c718abce59b1178d9142e2f34aa0b8ea336",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-pub-direct.json",
+    "bytes": 537,
+    "sha256": "b1328fafbd1a8691c8a3230bb502fd467c2a9a6350aafc7dab95545232e36557",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-pub-direct.log",
+    "bytes": 462,
+    "sha256": "2aaa83a73ce4b1adecf75f57b661529f0a5a7a539e17975de2399a6b0f9881a3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile.json",
+    "bytes": 594,
+    "sha256": "3349252b44eecc4097bcfed278f813b64b0ec42f34d087141a0049a3c8ac335d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile.log",
+    "bytes": 8665,
+    "sha256": "8b626263285566d56aae4306e01caa2c3159ccd597e674dcd0a6a23ab750a803",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/performance-final.json",
+    "bytes": 622,
+    "sha256": "851feaf548b7e1e730c23e3489d729ca5c2167fd2859de5714e99cb92d5d245e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/performance-final.log",
+    "bytes": 1922,
+    "sha256": "2e5d3e710dec623eedeecb98f686663723c6f374157c2dd5ced0d7fcc754acbb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/performance.json",
+    "bytes": 605,
+    "sha256": "940439923543678faf80ba7f1f0cc006056901ccb99eba4d3b5e0e713038fd22",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/performance.log",
+    "bytes": 1097,
+    "sha256": "cdd3f3def92cbc81780e55252a1a62fdf78a65f90ba9f208cc5b72de4812f66b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/playwright-local.json",
+    "bytes": 546,
+    "sha256": "a386a2aed6f6ce45834829754779d64d2783152e90cd89f83ae136f46b07a526",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/playwright-local.log",
+    "bytes": 126159,
+    "sha256": "1196dae405a5ae65e51e8178a7eda371a569524fa2e9d9d19c92d86d06bfae34",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/playwright.json",
+    "bytes": 533,
+    "sha256": "75546e9085db9cee375b1d148afeee8a10a1d722ca3e90a6dc335c4772a7f8b9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/playwright.log",
+    "bytes": 2432,
+    "sha256": "5a98a33162d3481e8b5895f2ff6e2a82ca7dfefbbc6f2e79ee9bfae58ec7d049",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/security.json",
+    "bytes": 473,
+    "sha256": "a8e29e6425a1dbc79df932d9b8cce063522bc5534823465c2c822c0abbb8fb6c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/security.log",
+    "bytes": 2016,
+    "sha256": "b5ea8f8f382ecef8553e5da8cadb6b96b6a2a97a0dafd8a50479fa7a32a6c93a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/summary.json",
+    "bytes": 4472,
+    "sha256": "35659e29bc3e9c2cafaf071be63eaad327cd1931f498ce23bd3747d35b66f928",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-execution-summary.md",
+    "bytes": 2374,
+    "sha256": "38d9d9b965aab7c204a2cbb482cd8dc173ee0ced933876c7f7bdb231879e3081",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/ai-service/tests/test_qmse_boundaries.py",
+    "bytes": 2279,
+    "sha256": "3294003889db0e2880502ed98d080d66279e0041ddb0bc155df5e31c72fe8246",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/LawyerManagementHttpTests.cs",
+    "bytes": 62511,
+    "sha256": "3042b6ec7ce100cfc26c8f6f92fdbd4b90253813674dabf9290a8cd155ade5a8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/LawyerMobileHttpTests.cs",
+    "bytes": 23682,
+    "sha256": "83e3ff43c58dbdba2ca2309bfdc663c0f13bc55258b66b0645aa7ba91283cdfc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/QmseAppointmentTests.cs",
+    "bytes": 1825,
+    "sha256": "6437a56534f48bcef774526de924111c078effc6c2e86f2e2b56298111ae6dd4",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/QmseDocumentTests.cs",
+    "bytes": 3410,
+    "sha256": "b6caf712faa1d96a4529cf22ac7317c3e2f8576d86245691b1416ab130273321",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/QmseHttpTests.cs",
+    "bytes": 5757,
+    "sha256": "b7bfb14750604172e0301f13a3b811af4b035147bdbdaee051442ab4d529b643",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/QmseRegistrationTests.cs",
+    "bytes": 870,
+    "sha256": "f04b2e51913e90299eaee820a9ceaf3dbc35a1d87579732954113645ec8f6dd9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  }
+]

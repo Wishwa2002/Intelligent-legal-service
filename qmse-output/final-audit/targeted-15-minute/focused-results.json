@@ -1,0 +1,121 @@
+{
+  "execution": "focused authentication only; not a full backend rerun",
+  "exit_code": 1,
+  "counts": {
+    "Failed": 1,
+    "Passed": 14
+  },
+  "tests": [
+    {
+      "name": "LegalService.Tests.HistoricalCaseVerificationTests.TC_BK_01_PasswordHashAndVerification",
+      "outcome": "Failed",
+      "start_time": "2026-10-08T20:11:22.8593720+05:30",
+      "end_time": "2026-10-08T20:11:23.7858230+05:30",
+      "duration": "00:00:00.9210862"
+    },
+    {
+      "name": "LegalService.Tests.QmseDocumentTests.Qmse_PasswordHashRejectsWrongPasswordAndReportsCost",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:22.8593560+05:30",
+      "end_time": "2026-10-08T20:11:23.7358230+05:30",
+      "duration": "00:00:00.8746296"
+    },
+    {
+      "name": "LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: \"missing\")",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.5714990+05:30",
+      "end_time": "2026-10-08T20:11:23.6487640+05:30",
+      "duration": "00:00:00.0027574"
+    },
+    {
+      "name": "LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: \"tampered\")",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:22.8588510+05:30",
+      "end_time": "2026-10-08T20:11:23.4231720+05:30",
+      "duration": "00:00:00.0883612"
+    },
+    {
+      "name": "LegalService.Tests.DevelopmentAdminSeederTests.MissingCredentialsDoNotCreateAccount",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:22.8593900+05:30",
+      "end_time": "2026-10-08T20:11:23.2865750+05:30",
+      "duration": "00:00:00.4245857"
+    },
+    {
+      "name": "LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: \"invalid\")",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.5007120+05:30",
+      "end_time": "2026-10-08T20:11:23.5713480+05:30",
+      "duration": "00:00:00.0046856"
+    },
+    {
+      "name": "LegalService.Tests.DevelopmentAdminSeederTests.RefusesNonDevelopment(environment: \"Production\")",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.3427540+05:30",
+      "end_time": "2026-10-08T20:11:23.3428320+05:30",
+      "duration": "00:00:00.0006956"
+    },
+    {
+      "name": "LegalService.Tests.DevelopmentAdminSeederTests.CreatesNormalizedAdminWithNormalHasherAndIsIdempotentWithoutClerkConfiguration",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.3431550+05:30",
+      "end_time": "2026-10-08T20:11:23.8997340+05:30",
+      "duration": "00:00:00.5565977"
+    },
+    {
+      "name": "LegalService.Tests.PasswordCurrentContractTests.CurrentHashUsesCost11AndVerifiesCorrectPasswordOnly",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:22.8593820+05:30",
+      "end_time": "2026-10-08T20:11:23.7580350+05:30",
+      "duration": "00:00:00.8965295"
+    },
+    {
+      "name": "LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: \"expired\")",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.4333180+05:30",
+      "end_time": "2026-10-08T20:11:23.5004170+05:30",
+      "duration": "00:00:00.0094864"
+    },
+    {
+      "name": "LegalService.Tests.DevelopmentAdminSeederTests.RefusesNonDevelopment(environment: \"Staging\")",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.3429090+05:30",
+      "end_time": "2026-10-08T20:11:23.3430670+05:30",
+      "duration": "00:00:00.0002166"
+    },
+    {
+      "name": "LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_11_CustomerCannotApproveLawyerWorkflow",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.6493670+05:30",
+      "end_time": "2026-10-08T20:11:23.7324230+05:30",
+      "duration": "00:00:00.0101435"
+    },
+    {
+      "name": "LegalService.Tests.PasswordCurrentContractTests.IndependentHashesHaveDistinctSaltsAndBothVerify",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:24.5526140+05:30",
+      "end_time": "2026-10-08T20:11:25.0164280+05:30",
+      "duration": "00:00:00.4648618"
+    },
+    {
+      "name": "LegalService.Tests.PasswordCurrentContractTests.VerificationAcceptsAnExistingCost12HashWithoutChangingDefault",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.7582140+05:30",
+      "end_time": "2026-10-08T20:11:24.5513070+05:30",
+      "duration": "00:00:00.7934071"
+    },
+    {
+      "name": "LegalService.Tests.DevelopmentAdminSeederTests.ExistingCustomerIsNotPromotedOrReset",
+      "outcome": "Passed",
+      "start_time": "2026-10-08T20:11:23.2903480+05:30",
+      "end_time": "2026-10-08T20:11:23.3422060+05:30",
+      "duration": "00:00:00.0553243"
+    }
+  ],
+  "application_code_changed": false,
+  "historical_cost12_assertion_preserved": true,
+  "ledger_unchanged": "49 PASS / 16 FAIL / 12 BLOCKED",
+  "previous_full_backend_unchanged": "365 total, 362 PASS / 1 FAIL / 2 SKIPPED",
+  "new_tests": 3,
+  "source_file": "backend/LegalService.Tests/PasswordCurrentContractTests.cs"
+}

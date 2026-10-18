@@ -1,0 +1,38 @@
+{
+  "inspected_at": "2026-10-08T12:33:01.946850+00:00",
+  "configuration": [
+    {
+      "file": "ai-service/.env",
+      "exists": true,
+      "key_presence": {
+        "GEMINI_API_KEY": true,
+        "GOOGLE_API_KEY": false
+      },
+      "model": "gemini-3.8-flash"
+    },
+    {
+      "file": "backend/LegalService.API/.env",
+      "exists": true,
+      "key_presence": {
+        "GEMINI_API_KEY": false,
+        "GOOGLE_API_KEY": false
+      },
+      "model": null
+    },
+    {
+      "file": ".env",
+      "exists": false,
+      "key_presence": {
+        "GEMINI_API_KEY": false,
+        "GOOGLE_API_KEY": false
+      },
+      "model": null
+    }
+  ],
+  "default_model": "gemini-3.8-flash",
+  "provider_calls_this_phase": 0,
+  "cumulative_prior_calls": 2,
+  "prior_error": 503,
+  "prior_error_detail_limitation": "Raw earlier exception deliberately omitted; exact overload/auth/model cause cannot be recovered from redacted code alone.",
+  "credential_values_in_output": false
+}

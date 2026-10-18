@@ -1,0 +1,13 @@
+{
+  "created_utc": "2026-10-08T07:54:30.718856+00:00",
+  "archive": "qmse-output/SE3110_GR42_Completed_Evidence_Package.zip",
+  "files": 1367,
+  "bytes": 87108599,
+  "sha256": "f5c31a542ab46e902657410f4a3c04439235e332a81d8a72b7e96c70bbe149f0",
+  "zip_integrity": "PASS",
+  "previous_archives_preserved": {
+    "SE3110_GR42_Evidence_Package.zip": "e3b8ea14740a53674cd4c30c3a02ba9ec682b58f2c9c1c2eb74b4bf131530002",
+    "SE3110_GR42_Visual_Evidence_Package.zip": "e58e65d514b579ce9bb1547d9bcd7fd6cc7d8a6df1244a3061e4300d97586193"
+  },
+  "exclusions": "Other ZIPs, render QA intermediates, SDK/runtime caches, __pycache__, .DS_Store. Private credentials/browser state never included."
+}

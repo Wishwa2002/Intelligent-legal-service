@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="84a46668-d0bc-4975-ad7c-9fa2cf60653d" name="@Jegatheeswarans-MacBook-Air 2026-10-08 09:56:57" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-08T09:56:57.2048940+05:30" queuing="2026-10-08T09:56:57.2048940+05:30" start="2026-10-08T09:56:56.4975090+05:30" finish="2026-10-08T09:56:57.2070530+05:30" />
+  <TestSettings name="default" id="51002932-82a5-42b5-a8de-6d7b489535e8">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-08_09_56_57" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="430b55cf-ef19-4067-bb44-bbee2fc27662" testId="0c66a60d-b9ac-697c-47dd-75ea67ae62c1" testName="LegalService.Tests.QmseDocumentTests.Qmse_DEF12_SpoofedPdfMustBeRejected" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.3374556" startTime="2026-10-08T09:56:56.8035160+05:30" endTime="2026-10-08T09:56:57.1474570+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="430b55cf-ef19-4067-bb44-bbee2fc27662">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Throws() Failure: No exception was thrown
+Expected: typeof(System.ArgumentException)</Message>
+          <StackTrace>   at LegalService.Tests.QmseDocumentTests.Qmse_DEF12_SpoofedPdfMustBeRejected() in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/QmseDocumentTests.cs:line 28
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LegalService.Tests.QmseDocumentTests.Qmse_DEF12_SpoofedPdfMustBeRejected" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="0c66a60d-b9ac-697c-47dd-75ea67ae62c1">
+      <Execution id="430b55cf-ef19-4067-bb44-bbee2fc27662" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseDocumentTests" name="Qmse_DEF12_SpoofedPdfMustBeRejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="0c66a60d-b9ac-697c-47dd-75ea67ae62c1" executionId="430b55cf-ef19-4067-bb44-bbee2fc27662" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="1" executed="1" passed="0" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.29)
+[xUnit.net 00:00:00.05]   Discovering: LegalService.Tests
+[xUnit.net 00:00:00.08]   Discovered:  LegalService.Tests
+[xUnit.net 00:00:00.09]   Starting:    LegalService.Tests
+[xUnit.net 00:00:00.44]       Assert.Throws() Failure: No exception was thrown
+[xUnit.net 00:00:00.44]       Expected: typeof(System.ArgumentException)
+[xUnit.net 00:00:00.44]       Stack Trace:
+[xUnit.net 00:00:00.44]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/QmseDocumentTests.cs(28,0): at LegalService.Tests.QmseDocumentTests.Qmse_DEF12_SpoofedPdfMustBeRejected()
+[xUnit.net 00:00:00.44]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:00.45]   Finished:    LegalService.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="Jegatheeswarans-MacBook-Air" outcome="Error" timestamp="2026-10-08T09:56:57.1486650+05:30">
+        <Text>[xUnit.net 00:00:00.44]     LegalService.Tests.QmseDocumentTests.Qmse_DEF12_SpoofedPdfMustBeRejected [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

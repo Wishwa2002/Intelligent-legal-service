@@ -1,0 +1,8 @@
+2026-10-06T04:44:41.0140000Z Evaluating test.if
+2026-10-06T04:44:41.0140000Z Evaluating: success()
+2026-10-06T04:44:41.0140000Z Result: true
+2026-10-06T04:44:41.0150000Z Requested labels: ubuntu-latest
+2026-10-06T04:44:41.0150000Z Job defined at: Wishwa2002/Intelligent-legal-service/.github/workflows/mobile-ci.yml@refs/pull/32/merge
+2026-10-06T04:44:41.0150000Z Waiting for a runner to pick up this job...
+2026-10-06T04:44:41.3730000Z Job is about to start running on the hosted runner: GitHub Actions 1000000078
+2026-10-06T04:44:41.3720000Z Job is waiting for a hosted runner to come online.

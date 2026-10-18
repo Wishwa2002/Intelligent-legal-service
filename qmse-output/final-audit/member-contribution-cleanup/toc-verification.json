@@ -1,0 +1,272 @@
+[
+  {
+    "heading": "1. Introduction",
+    "before": "3",
+    "after": 3
+  },
+  {
+    "heading": "1.1 Purpose of this report",
+    "before": "3",
+    "after": 3
+  },
+  {
+    "heading": "1.2 System under test",
+    "before": "3",
+    "after": 3
+  },
+  {
+    "heading": "1.3 Quality risks identified",
+    "before": "3",
+    "after": 3
+  },
+  {
+    "heading": "2. Test Plan",
+    "before": "5",
+    "after": 5
+  },
+  {
+    "heading": "2.1 Objectives",
+    "before": "5",
+    "after": 5
+  },
+  {
+    "heading": "2.2 Scope",
+    "before": "5",
+    "after": 5
+  },
+  {
+    "heading": "2.3 Testing areas, tools and techniques",
+    "before": "5",
+    "after": 5
+  },
+  {
+    "heading": "2.4 Test environment",
+    "before": "6",
+    "after": 6
+  },
+  {
+    "heading": "2.5 Entry and exit criteria",
+    "before": "6",
+    "after": 6
+  },
+  {
+    "heading": "2.6 Responsibilities",
+    "before": "7",
+    "after": 7
+  },
+  {
+    "heading": "2.7 Schedule",
+    "before": "7",
+    "after": 7
+  },
+  {
+    "heading": "3. Test Case Document",
+    "before": "8",
+    "after": 8
+  },
+  {
+    "heading": "3.1 Backend / API tests (xUnit, isolated Kestrel HTTP fixtures)",
+    "before": "8",
+    "after": 8
+  },
+  {
+    "heading": "3.2 Database tests (xUnit + PostgreSQL + EF Core)",
+    "before": "9",
+    "after": 9
+  },
+  {
+    "heading": "3.3 React web tests (Node runner, Playwright)",
+    "before": "10",
+    "after": 10
+  },
+  {
+    "heading": "3.4 Flutter mobile tests (flutter_test)",
+    "before": "11",
+    "after": 11
+  },
+  {
+    "heading": "3.5 Integrated end-to-end workflow: Flutter, API, PostgreSQL, AI, React",
+    "before": "12",
+    "after": 12
+  },
+  {
+    "heading": "3.6 Component 1 test cases (Jeyashankar J)",
+    "before": "15",
+    "after": 15
+  },
+  {
+    "heading": "3.7 Component 2 test cases (Buddhika P. Y. H): appointments, careers, scheduling agent",
+    "before": "17",
+    "after": 17
+  },
+  {
+    "heading": "3.8 Component 3 test cases (Vithusan V): documentation, clerks, verification agent",
+    "before": "19",
+    "after": 19
+  },
+  {
+    "heading": "3.9 Component 4 test cases (Wijayananda W. J. W): authentication, service requests, consultation agent",
+    "before": "22",
+    "after": 22
+  },
+  {
+    "heading": "3.10 Agentic AI evaluation (Golden Cases)",
+    "before": "24",
+    "after": 24
+  },
+  {
+    "heading": "3.11 Security tests",
+    "before": "25",
+    "after": 25
+  },
+  {
+    "heading": "3.12 Performance tests against NFR-01",
+    "before": "27",
+    "after": 27
+  },
+  {
+    "heading": "4. Test Execution Summary",
+    "before": "28",
+    "after": 28
+  },
+  {
+    "heading": "4.1 Automated suite results",
+    "before": "28",
+    "after": 28
+  },
+  {
+    "heading": "4.2 Test cases documented in this report",
+    "before": "29",
+    "after": 29
+  },
+  {
+    "heading": "4.3 Requirement coverage",
+    "before": "30",
+    "after": 30
+  },
+  {
+    "heading": "4.4 Conclusion of execution",
+    "before": "31",
+    "after": 31
+  },
+  {
+    "heading": "5. Defect / Bug Report",
+    "before": "31",
+    "after": 31
+  },
+  {
+    "heading": "5.1 Defect summary",
+    "before": "37",
+    "after": 37
+  },
+  {
+    "heading": "6. Tool-Generated Evidence",
+    "before": "37",
+    "after": 37
+  },
+  {
+    "heading": "7. Non-Functional Test Analysis",
+    "before": "79",
+    "after": 79
+  },
+  {
+    "heading": "7.1 Performance",
+    "before": "79",
+    "after": 79
+  },
+  {
+    "heading": "7.2 Security",
+    "before": "80",
+    "after": 80
+  },
+  {
+    "heading": "7.3 Reliability and recovery",
+    "before": "80",
+    "after": 80
+  },
+  {
+    "heading": "7.4 Usability and compatibility",
+    "before": "80",
+    "after": 80
+  },
+  {
+    "heading": "8. Agentic AI Testing and Evaluation",
+    "before": "80",
+    "after": 80
+  },
+  {
+    "heading": "9. Individual Testing Contributions",
+    "before": "81",
+    "after": 81
+  },
+  {
+    "heading": "9.1 Jeyashankar J (IT24103900), C1",
+    "before": "82",
+    "after": 82
+  },
+  {
+    "heading": "9.2 Buddhika P. Y. H (IT24103041), C2",
+    "before": "85",
+    "after": 84
+  },
+  {
+    "heading": "9.3 Vithusan V (IT24100360), C3",
+    "before": "88",
+    "after": 86
+  },
+  {
+    "heading": "9.4 Wijayananda W. J. W (Team Leader) (IT24102275), C4",
+    "before": "91",
+    "after": 89
+  },
+  {
+    "heading": "10. Group Contribution Matrix",
+    "before": "93",
+    "after": 92
+  },
+  {
+    "heading": "11. Conclusion and Recommendations",
+    "before": "94",
+    "after": 92
+  },
+  {
+    "heading": "12. AI Usage Declaration (CLEAR Framework)",
+    "before": "95",
+    "after": 93
+  },
+  {
+    "heading": "13. References",
+    "before": "95",
+    "after": 94
+  },
+  {
+    "heading": "Appendix A: Specification Compliance Checklist",
+    "before": "96",
+    "after": 95
+  },
+  {
+    "heading": "Appendix B: Reproduction Guide",
+    "before": "98",
+    "after": 97
+  },
+  {
+    "heading": "B.1 Prerequisites",
+    "before": "98",
+    "after": 97
+  },
+  {
+    "heading": "B.2 Start the system",
+    "before": "99",
+    "after": 98
+  },
+  {
+    "heading": "B.3 Run the test suites",
+    "before": "100",
+    "after": 99
+  },
+  {
+    "heading": "B.4 Test accounts",
+    "before": "101",
+    "after": 100
+  }
+]

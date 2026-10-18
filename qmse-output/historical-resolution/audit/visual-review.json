@@ -1,0 +1,10 @@
+{
+  "reviewed_at": "2026-10-08T11:54:02.144719+00:00",
+  "pdf": "qmse-output/historical-resolution/final-report/SE3110_Testing_Report_GR42_Historical_Verification.pdf",
+  "sha256": "0fdad08fc1c41594a666165d610ac2c2869add699cad467bfa0a38797237b559",
+  "pages": 89,
+  "figures": 36,
+  "method": "All 89 rendered pages inspected in 15 six-page contact sheets; critical pages 26,63,66,68,69,70 additionally inspected at readable full-page scale. After final wording edits, pixel-hash comparison identified only page 69 changed; that page was rendered and inspected again. Final contact sheets regenerated.",
+  "no_blank_pages_or_clipped_content_observed": true,
+  "automated_checks_passed": 209
+}

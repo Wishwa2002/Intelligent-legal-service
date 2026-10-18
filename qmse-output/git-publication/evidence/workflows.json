@@ -1,0 +1,65 @@
+{
+  "total_count": 5,
+  "workflows": [
+    {
+      "id": 369361255,
+      "node_id": "W_kwDOT8Emv84WBAFn",
+      "name": "Backend CI",
+      "path": ".github/workflows/backend-ci.yml",
+      "state": "active",
+      "created_at": "2026-09-28T17:36:35.000Z",
+      "updated_at": "2026-09-28T17:36:35.000Z",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/workflows/369361255",
+      "html_url": "https://github.com/Wishwa2002/Intelligent-legal-service/blob/main/.github/workflows/backend-ci.yml",
+      "badge_url": "https://github.com/Wishwa2002/Intelligent-legal-service/workflows/Backend%20CI/badge.svg"
+    },
+    {
+      "id": 369385584,
+      "node_id": "W_kwDOT8Emv84WBGBw",
+      "name": "Frontend CI",
+      "path": ".github/workflows/frontend-ci.yml",
+      "state": "active",
+      "created_at": "2026-09-28T18:07:56.000Z",
+      "updated_at": "2026-09-28T18:07:56.000Z",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/workflows/369385584",
+      "html_url": "https://github.com/Wishwa2002/Intelligent-legal-service/blob/main/.github/workflows/frontend-ci.yml",
+      "badge_url": "https://github.com/Wishwa2002/Intelligent-legal-service/workflows/Frontend%20CI/badge.svg"
+    },
+    {
+      "id": 369440127,
+      "node_id": "W_kwDOT8Emv84WBTV_",
+      "name": "Mobile CI",
+      "path": ".github/workflows/mobile-ci.yml",
+      "state": "active",
+      "created_at": "2026-09-28T19:16:41.000Z",
+      "updated_at": "2026-09-28T19:16:41.000Z",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/workflows/369440127",
+      "html_url": "https://github.com/Wishwa2002/Intelligent-legal-service/blob/main/.github/workflows/mobile-ci.yml",
+      "badge_url": "https://github.com/Wishwa2002/Intelligent-legal-service/workflows/Mobile%20CI/badge.svg"
+    },
+    {
+      "id": 375009863,
+      "node_id": "W_kwDOT8Emv84WWjJH",
+      "name": "Dependabot Updates",
+      "path": "dynamic/dependabot/dependabot-updates",
+      "state": "active",
+      "created_at": "2026-10-05T02:12:44.000Z",
+      "updated_at": "2026-10-05T02:12:44.000Z",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/workflows/375009863",
+      "html_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/workflows/dependabot/dependabot-updates",
+      "badge_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/workflows/dependabot/dependabot-updates/badge.svg"
+    },
+    {
+      "id": 369465506,
+      "node_id": "W_kwDOT8Emv84WBZii",
+      "name": "CodeQL",
+      "path": "dynamic/github-code-scanning/codeql",
+      "state": "active",
+      "created_at": "2026-09-28T19:33:19.000Z",
+      "updated_at": "2026-09-28T19:33:19.000Z",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/workflows/369465506",
+      "html_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/workflows/github-code-scanning/codeql",
+      "badge_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/workflows/github-code-scanning/codeql/badge.svg"
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "authorised_cap": 8,
+  "cumulative_attempted_calls": 2,
+  "retries": "disabled; attempts=1",
+  "results": [
+    {
+      "case": "historical-provider-availability",
+      "status": "BLOCKED",
+      "started_utc": "2026-10-08T11:10:01.559261+00:00",
+      "model": "gemini-3.8-flash",
+      "latency_seconds": 7.324239541019779,
+      "error_type": "ServerError",
+      "code": 503,
+      "reason": "Provider rejected or unavailable; raw exception omitted to protect credentials"
+    }
+  ]
+}

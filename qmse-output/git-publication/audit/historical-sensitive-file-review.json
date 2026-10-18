@@ -1,0 +1,9 @@
+[
+  {
+    "path_redacted": "postgresqlneondb_owner[OMITTED].txt",
+    "blob": "2cdc273dc09a42849255186adb46c10a53b66620",
+    "contains_postgres_connection": true,
+    "scope": "Existing public main history; already present before approved push; no content copied into evidence",
+    "action": "Member should review and rotate any historical credentials; no history rewrite authorised"
+  }
+]

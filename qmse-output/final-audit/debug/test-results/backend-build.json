@@ -1,0 +1,15 @@
+{
+  "command": [
+    "dotnet",
+    "build",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--no-restore"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T12:15:51.856784+00:00",
+  "ended_utc": "2026-10-08T12:15:52.705954+00:00",
+  "duration_seconds": 0.849,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/backend-build.log"
+}

@@ -1,0 +1,23 @@
+{
+  "checked_utc": "2026-10-08T09:27:57.938151+00:00",
+  "proposals": [
+    {
+      "path": "qmse-output/git-publication/audit/backend-ci.yml.proposed.patch",
+      "apply_check_exit_code": 0,
+      "stderr": "",
+      "status": "PROPOSAL ONLY; not applied, executed, committed or published"
+    },
+    {
+      "path": "qmse-output/git-publication/audit/frontend-ci.yml.proposed.patch",
+      "apply_check_exit_code": 0,
+      "stderr": "",
+      "status": "PROPOSAL ONLY; not applied, executed, committed or published"
+    },
+    {
+      "path": "qmse-output/git-publication/audit/mobile-ci.yml.proposed.patch",
+      "apply_check_exit_code": 0,
+      "stderr": "",
+      "status": "PROPOSAL ONLY; not applied, executed, committed or published"
+    }
+  ]
+}

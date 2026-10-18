@@ -1,0 +1,135 @@
+{
+  "generatedAt": "2026-10-08T10:46:24.32796Z",
+  "recentWindowDays": 30,
+  "futureWindowDays": 30,
+  "practiceAreas": [
+    {
+      "practiceAreaId": 3,
+      "practiceAreaName": "Corporate & Commercial Law",
+      "activeLawyerCount": 4,
+      "legalServiceCount": 2,
+      "recentDemandCount": 0,
+      "recentAppointmentCount": 1,
+      "futureAvailableSlotCount": 231,
+      "openCareerOpeningCount": 1,
+      "status": "HEALTHY",
+      "reasons": [
+        "CAPACITY_WITHIN_CONFIGURED_RULES",
+        "RECRUITMENT_ALREADY_ACTIVE"
+      ],
+      "openings": [
+        {
+          "careerId": 1,
+          "jobTitle": "Senior Counsel"
+        }
+      ],
+      "planningRules": {
+        "minimumActiveLawyers": 0,
+        "targetActiveLawyers": 0,
+        "minimumFutureSlots": 0,
+        "highDemandThreshold": 5,
+        "watchCapacityRatio": 0.75,
+        "source": "DEFAULT"
+      }
+    },
+    {
+      "practiceAreaId": 1,
+      "practiceAreaName": "Criminal Law",
+      "activeLawyerCount": 0,
+      "legalServiceCount": 1,
+      "recentDemandCount": 0,
+      "recentAppointmentCount": 0,
+      "futureAvailableSlotCount": 0,
+      "openCareerOpeningCount": 0,
+      "status": "NO_ACTIVE_LAWYERS",
+      "reasons": [
+        "NO_ACTIVE_LAWYERS"
+      ],
+      "openings": [],
+      "planningRules": {
+        "minimumActiveLawyers": 0,
+        "targetActiveLawyers": 0,
+        "minimumFutureSlots": 0,
+        "highDemandThreshold": 5,
+        "watchCapacityRatio": 0.75,
+        "source": "DEFAULT"
+      }
+    },
+    {
+      "practiceAreaId": 5,
+      "practiceAreaName": "Labour & Employment Law",
+      "activeLawyerCount": 0,
+      "legalServiceCount": 0,
+      "recentDemandCount": 0,
+      "recentAppointmentCount": 0,
+      "futureAvailableSlotCount": 0,
+      "openCareerOpeningCount": 0,
+      "status": "NO_ACTIVE_LAWYERS",
+      "reasons": [
+        "NO_ACTIVE_LAWYERS"
+      ],
+      "openings": [],
+      "planningRules": {
+        "minimumActiveLawyers": 0,
+        "targetActiveLawyers": 0,
+        "minimumFutureSlots": 0,
+        "highDemandThreshold": 5,
+        "watchCapacityRatio": 0.75,
+        "source": "DEFAULT"
+      }
+    },
+    {
+      "practiceAreaId": 4,
+      "practiceAreaName": "Real Estate & Property Law",
+      "activeLawyerCount": 2,
+      "legalServiceCount": 0,
+      "recentDemandCount": 0,
+      "recentAppointmentCount": 0,
+      "futureAvailableSlotCount": 0,
+      "openCareerOpeningCount": 0,
+      "status": "WATCH",
+      "reasons": [
+        "LOW_FUTURE_CAPACITY"
+      ],
+      "openings": [],
+      "planningRules": {
+        "minimumActiveLawyers": 0,
+        "targetActiveLawyers": 0,
+        "minimumFutureSlots": 0,
+        "highDemandThreshold": 5,
+        "watchCapacityRatio": 0.75,
+        "source": "DEFAULT"
+      }
+    },
+    {
+      "practiceAreaId": 6,
+      "practiceAreaName": "Tax Law",
+      "activeLawyerCount": 0,
+      "legalServiceCount": 0,
+      "recentDemandCount": 0,
+      "recentAppointmentCount": 0,
+      "futureAvailableSlotCount": 0,
+      "openCareerOpeningCount": 0,
+      "status": "NO_ACTIVE_LAWYERS",
+      "reasons": [
+        "NO_ACTIVE_LAWYERS"
+      ],
+      "openings": [],
+      "planningRules": {
+        "minimumActiveLawyers": 0,
+        "targetActiveLawyers": 0,
+        "minimumFutureSlots": 0,
+        "highDemandThreshold": 5,
+        "watchCapacityRatio": 0.75,
+        "source": "DEFAULT"
+      }
+    }
+  ],
+  "unmappedCareerOpeningCount": 0,
+  "limitations": [
+    "Requests are Admin recommendation workflows, not unique customer cases. Appointments are counted by creation date; current single-area membership maps them to an area.",
+    "Requests and appointments may overlap; assessment uses their maximum, not their sum. This is a capacity signal, not a forecast or proof that hiring is required.",
+    "Service-specific demand cannot be reliably identified in the existing persisted data.",
+    "Careers has no open/closed field: every existing Career record is treated as open. Unlinked postings require human review."
+  ]
+}

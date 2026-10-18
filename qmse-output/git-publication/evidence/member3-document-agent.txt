@@ -1,0 +1,1024 @@
+Skip to content
+Navigation Menu
+Sign in
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Commit a566efa
+Browse files
+VTN02
+committed
+feat(document-clerk): implement Agentic AI document validation, mobile client, and clerk management
+Document-&-Cleark(#10)+
+chore/deployment-readiness(#31, #10)+
+develop(#32, #10)+
+feature/admin-auth(#10)+
+feature/appointment-scheduling-enhancements(#33, #34, #10)+
+feature/booking_appointment_management(#15, #10)+
+feature/member1-lawyer-management(#10)+
+fix/auth-security-improvements(#10)+
+fix/unified-staff-auth(#10)+
+se3110-qmse-testing(#10)
+1 parent 
+59337bb
+ commit 
+a566efa
+
+363 files changed
+
++26,673
+-91
+Lines changed: 26673 additions & 91 deletions
+File tree
+.gitignore
+ai-service
+.env.example
+README.md
+app
+__init__.py
+agents
+__init__.py
+clerk_recommendation.py
+document_analysis.py
+document_validation.py
+supervisor.py
+api
+__init__.py
+routes
+__init__.py
+agent.py
+config
+__init__.py
+settings.py
+graph
+__init__.py
+routing.py
+state.py
+workflow.py
+logging
+__init__.py
+audit.py
+main.py
+prompts
+__init__.py
+clerk.py
+document_analysis.py
+supervisor.py
+validation.py
+schemas
+__init__.py
+agent.py
+approval.py
+clerk.py
+document.py
+security
+__init__.py
+injection_defense.py
+tool_permissions.py
+services
+__init__.py
+backend_client.py
+document_service.py
+templates
+tools
+sample_documents
+scripts
+tests
+backend
+LegalService.API
+AgentIntegration
+Controllers
+DocumentAndClerk
+DTOs
+Agent
+DocumentAndClerk
+Requests
+Responses
+Requests
+Responses
+Data
+Interfaces
+DocumentAndClerk
+Middleware
+Migrations
+Models/Entities
+Properties
+Services
+DocumentAndClerk
+Storage/Uploads/Documentation
+10
+11
+13
+1
+29
+33
+3
+42
+4
+5
+6
+7
+8
+9
+LegalService.Tests
+frontend/src
+api
+document_and_clerk
+components
+common
+layout
+pages/admin
+document_and_clerk
+mobile
+android
+app
+src
+main
+kotlin/com/legalease/legal_service_app
+res
+drawable-v21
+drawable
+mipmap-hdpi
+mipmap-mdpi
+mipmap-xhdpi
+mipmap-xxhdpi
+mipmap-xxxhdpi
+values-night
+values
+profile
+gradle/wrapper
+assets/sample_documents
+ios
+Flutter
+Runner.xcodeproj
+project.xcworkspace
+xcshareddata
+xcshareddata/xcschemes
+Runner.xcworkspace
+xcshareddata
+RunnerTests
+Runner
+Assets.xcassets
+AppIcon.appiconset
+LaunchImage.imageset
+Base.lproj
+lib
+auth
+config
+models
+screens
+auth
+careers
+chat
+document_and_clerk
+requests
+services
+requests
+services
+services
+document_and_clerk
+widgets
+linux
+flutter
+runner
+macos
+Flutter
+Runner.xcodeproj
+project.xcworkspace/xcshareddata
+xcshareddata/xcschemes
+Runner.xcworkspace
+xcshareddata
+RunnerTests
+Runner
+Assets.xcassets/AppIcon.appiconset
+Base.lproj
+Configs
+scripts
+test
+web
+icons
+windows
+flutter
+runner
+resources
+Some content is hidden
+Large Commits have some content hidden by default. Use the searchbox below for content that may be hidden.
+ 
+‎.gitignore‎
++38
+Lines changed: 38 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -482,3 +482,41 @@ $RECYCLE.BIN/
+
+482	482	
+
+
+
+483	483	
+# Vim temporary swap files
+
+484	484	
+*.swp
+
+	485	
++
+
+	486	
++
+# Python
+
+	487	
++
+__pycache__/
+
+	488	
++
+*.py[cod]
+
+	489	
++
+*$py.class
+
+	490	
++
+*.so
+
+	491	
++
+.Python
+
+	492	
++
+env/
+
+	493	
++
+venv/
+
+	494	
++
+ENV/
+
+	495	
++
+.venv/
+
+	496	
++
+.pytest_cache/
+
+	497	
++
+ai-service/data/sessions/*.json
+
+	498	
++
+ai-service/scratch/
+
+	499	
++
+*.env
+
+	500	
++
+!*.env.example
+
+	501	
++
+
+	502	
++
+# Node / Frontend
+
+	503	
++
+node_modules/
+
+	504	
++
+frontend/dist/
+
+	505	
++
+frontend/build/
+
+	506	
++
+.npm
+
+	507	
++
+*.log
+
+	508	
++
+
+	509	
++
+# Flutter / Dart
+
+	510	
++
+.dart_tool/
+
+	511	
++
+mobile/build/
+
+	512	
++
+mobile/.flutter-plugins
+
+	513	
++
+mobile/.flutter-plugins-dependencies
+
+	514	
++
+mobile/.packages
+
+	515	
++
+mobile/.pub-cache/
+
+	516	
++
+mobile/.pub/
+
+	517	
++
+
+	518	
++
+# Credentials & Database dumps
+
+	519	
++
+*.txt
+
+	520	
++
+!requirements.txt
+
+	521	
++
+!README*.txt
+
+	522	
++
+!license*.txt
+‎ai-service/.env.example‎
++33
+Lines changed: 33 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,33 @@
+
+	1	
++
+# ============================================================
+
+	2	
++
+# AI Service — Environment Configuration
+
+	3	
++
+# Copy this file to .env and fill in your values.
+
+	4	
++
+# NEVER commit .env to version control.
+
+	5	
++
+# NEVER print or log any of these values.
+
+	6	
++
+# ============================================================
+
+	7	
++
+
+	8	
++
+# ---- Gemini API ----
+
+	9	
++
+GEMINI_API_KEY=your_gemini_api_key_here
+
+	10	
++
+# Model name is configurable — never hardcoded anywhere in the codebase.
+
+	11	
++
+GEMINI_MODEL=gemini-2.5-flash
+
+	12	
++
+
+	13	
++
+# ---- ASP.NET Core Backend ----
+
+	14	
++
+BACKEND_API_URL=http://localhost:5000
+
+	15	
++
+# Shared secret for requests FROM the backend TO this AI service.
+
+	16	
++
+AI_SERVICE_API_KEY=
+
+	17	
++
+
+	18	
++
+# ---- Document Processing ----
+
+	19	
++
+OCR_ENABLED=true
+
+	20	
++
+MAX_DOCUMENT_SIZE_MB=10
+
+	21	
++
+
+	22	
++
+# ---- Confidence Thresholds (enforced in Python, not by Gemini) ----
+
+	23	
++
+# >= HIGH  → auto-accept, continue workflow
+
+	24	
++
+HIGH_CONFIDENCE_THRESHOLD=0.90
+
+	25	
++
+# >= MEDIUM and < HIGH → accept but flag for human review
+
+	26	
++
+MEDIUM_CONFIDENCE_THRESHOLD=0.70
+
+	27	
++
+# < MEDIUM → reject, ask client to re-upload with specific reason
+
+	28	
++
+
+	29	
++
+# ---- Safety Limits ----
+
+	30	
++
+# Max times a client can re-upload the same document before forced human review
+
+	31	
++
+MAX_REUPLOAD_ATTEMPTS_PER_DOCUMENT=3
+
+	32	
++
+# Max total agent node executions per workflow run before forced pause
+
+	33	
++
+MAX_TOTAL_AGENT_ITERATIONS=10
+‎ai-service/README.md‎
++133
+Lines changed: 133 additions & 0 deletions
+Original file line number	Diff line number	Diff line change
+@@ -0,0 +1,133 @@
+
+	1	
++
+# AI Service — Documentation & Clerk Agentic Workflow
+
+	2	
++
+
+	3	
++
+A **stateful, resumable, multi-step agentic AI service** built with **FastAPI + LangGraph + Gemini**.
+
+	4	
++
+
+	5	
++
+Part of the **Intelligent Legal Service Platform** (SE3090 Group Project).
+
+	6	
++
+
+	7	
++
+---
+
+	8	
++
+
+	9	
++
+## What This Service Does
+
+	10	
++
+
+	11	
++
+This AI service drives the full documentation submission and clerk assignment workflow:
+
+	12	
++
+
+	13	
++
+1. **Identifies** the legal service the client needs (rental agreement, business registration, etc.)
+
+	14	
++
+2. **Checks** what documents are required (always fetched from the backend — never invented)
+
+	15	
++
+3. **Analyzes** each uploaded document using OCR + Gemini
+
+	16	
++
+4. **Validates** documents against confidence thresholds (enforced in Python, not by Gemini)
+
+	17	
++
+5. **Re-asks** the client with specific reasons when a document fails (up to 3 attempts)
+
+	18	
++
+6. **Presents a summary** of all verified documents before proceeding
+
+	19	
++
+7. **Recommends** a clerk (Gemini explains, admin decides — AI never assigns)
+
+	20	
++
+8. **Re-plans** if an admin rejects the recommendation
+
+	21	
++
+9. **Completes** the workflow once admin approves
+
+	22	
++
+10. **Handles off-topic messages** with polite redirects (workflow state never changes)
+
+	23	
++
+
+	24	
++
+---
+
+	25	
++
+
+	26	
++
+## Quick Start
+
+	27	
++
+
+	28	
++
+```bash
+
+	29	
++
+# 1. Install dependencies
+
+	30	
++
+pip install -r requirements.txt
+
+	31	
++
+
+	32	
++
+# 2. Copy env template and fill in your values
+
+	33	
++
+cp .env.example .env
+
+	34	
++
+# Edit .env: add GEMINI_API_KEY, GEMINI_MODEL, BACKEND_API_URL
+
+	35	
++
+
+	36	
++
+# 3. Install Tesseract OCR (for image documents)
+
+	37	
++
+# Windows: https://github.com/UB-Mannheim/tesseract/wiki
+
+	38	
++
+# Linux: sudo apt install tesseract-ocr
+
+	39	
++
+
+	40	
++
+# 4. Run the service
+
+	41	
++
+uvicorn app.main:app --reload --port 8001
+
+	42	
++
+
+	43	
++
+# 5. Health check
+
+	44	
++
+curl http://localhost:8001/health
+
+	45	
++
+```
+
+	46	
++
+
+	47	
++
+---
+
+	48	
++
+
+	49	
++
+## Key Endpoints
+
+	50	
++
+
+	51	
++
+| Method | Path | Description |
+
+	52	
++
+|--------|------|-------------|
+
+	53	
++
+| `GET` | `/health` | Liveness probe — returns model name |
+
+	54	
++
+| `POST` | `/api/agent/chat/session` | Start a new client session |
+
+	55	
++
+| `POST` | `/api/agent/chat/{id}/message` | Send message or notify of file upload |
+
+	56	
++
+| `GET` | `/api/agent/chat/{id}/status` | Get current workflow status |
+
+	57	
++
+| `POST` | `/api/agent/documentation/analyze` | Programmatic workflow trigger |
+
+	58	
++
+| `POST` | `/api/agent/workflows/{id}/approve` | Admin approve/reject clerk |
+
+	59	
++
+| `GET` | `/api/agent/workflows/{id}` | Get workflow state |
+
+	60	
++
+| `GET` | `/api/agent/workflows/{id}/summary` | Get execution summary + audit log |
+
+	61	
++
+
+	62	
++
+---
+
+	63	
++
+
+	64	
++
+## Folder Structure
+
+	65	
++
+
+	66	
++
+```
+
+	67	
++
+app/
+
+	68	
++
+├── config/settings.py          ← All thresholds and config (single source of truth)
+
+	69	
++
+├── api/routes/agent.py         ← All FastAPI endpoints
+
+	70	
++
+├── agents/
+
+	71	
++
+│   ├── supervisor.py           ← Orchestrator, off-topic detection
+
+	72	
++
+│   ├── document_analysis.py    ← Analyze node
+
+	73	
++
+│   ├── document_validation.py  ← Validate/accept/reject + summary nodes
+
+	74	
++
+│   └── clerk_recommendation.py ← Recommend + replan nodes
+
+	75	
++
+├── graph/
+
+	76	
++
+│   ├── state.py                ← AgentState TypedDict
+
+	77	
++
+│   ├── workflow.py             ← LangGraph StateGraph + session store
+
+	78	
++
+│   └── routing.py              ← Deterministic Python routing (not LLM)
+
+	79	
++
+├── tools/                      ← Backend API wrappers (tools called by agents)
+
+	80	
++
+├── services/
+
+	81	
++
+│   ├── backend_client.py       ← Single HTTPX client for ASP.NET backend
+
+	82	
++
+│   ├── gemini_service.py       ← Gemini structured output calls
+
+	83	
++
+│   ├── document_service.py     ← PDF/OCR extraction pipeline
+
+	84	
++
+│   └── ocr_service.py          ← Tesseract wrapper
+
+	85	
++
+├── schemas/                    ← Pydantic models
+
+	86	
++
+├── prompts/                    ← System prompts for each agent
+
+	87	
++
+├── security/
+
+	88	
++
+│   ├── injection_defense.py    ← Sanitizes document text before Gemini
+
+	89	
++
+│   └── tool_permissions.py     ← Per-node tool allowlists
+
+	90	
++
+└── logging/audit.py            ← Structured audit log writer
+
+	91	
++
+tests/
+
+	92	
++
+├── test_documents.py           ← Document analysis/validation loop tests
+
+	93	
++
+└── test_security.py            ← Injection defense + allowlist tests
+
+	94	
++
+```
+
+	95	
++
+
+	96	
++
+---
+
+	97	
++
+
+	98	
++
+## Confidence Thresholds
+
+	99	
++
+
+	100	
++
+| Threshold | Value | Outcome |
+
+	101	
++
+|-----------|-------|---------|
+
+	102	
++
+| `HIGH_CONFIDENCE_THRESHOLD` | 0.90 | Auto-accept, continue workflow |
+
+	103	
++
+| `MEDIUM_CONFIDENCE_THRESHOLD` | 0.70 | Accept but flag for clerk review |
+
+	104	
++
+| Below medium | < 0.70 | Reject, ask client to re-upload |
+
+	105	
++
+| `MAX_REUPLOAD_ATTEMPTS_PER_DOCUMENT` | 3 | Exceed → escalate to human review |
+
+	106	
++
+
+	107	
++
+All thresholds live in `.env` and are loaded via `settings.py`.
+
+	108	
++
+**Gemini cannot override these** — all threshold comparisons are Python `>=` operators.
+
+	109	
++
+
+	110	
++
+---
+
+	111	
++
+
+	112	
++
+## Security Rules
+
+	113	
++
+
+	114	
++
+- Document content is **always sanitized** before reaching Gemini (injection defense)
+
+	115	
++
+- Each agent node has a **fixed tool allowlist** — out-of-scope calls raise `PermissionError`
+
+	116	
++
+- The AI **never assigns a clerk** — only recommends. Backend performs assignment after admin approval.
+
+	117	
++
+- The AI **never invents required documents** — always fetched from the backend service config.
+
+	118	
++
+- Secrets are **never logged or included in Gemini prompts**.
+
+	119	
++
+
+	120	
++
+---
+
+	121	
++
+
+	122	
++
+## Running Tests
+
+	123	
++
+
+	124	
++
+```bash
+
+	125	
++
+cd ai-service
+
+	126	
++
+pytest tests/ -v
+
+	127	
++
+```
+
+	128	
++
+
+	129	
++
+---
+
+	130	
++
+
+	131	
++
+## Environment Variables
+
+	132	
++
+
+	133	
++
+See [`.env.example`](.env.example) for all required variables.
+‎ai-service/.gitkeep‎  ‎ai-service/app/__init__.py‎
+ai-service/.gitkeep renamed to ai-service/app/__init__.py
+File renamed without changes.
+0 commit comments
+Comments
+0
+ (0)
+Please sign in to comment.
+6 files remain

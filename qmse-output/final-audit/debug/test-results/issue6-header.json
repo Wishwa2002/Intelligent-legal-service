@@ -1,0 +1,20 @@
+{
+  "command": [
+    "dotnet",
+    "test",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--filter",
+    "FullyQualifiedName~SecurityHeaderTests",
+    "--logger",
+    "trx;LogFileName=issue6-header.trx",
+    "--results-directory",
+    "qmse-output/final-audit/debug/evidence"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T13:00:25.863202+00:00",
+  "ended_utc": "2026-10-08T13:00:29.556990+00:00",
+  "duration_seconds": 3.694,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/issue6-header.log"
+}

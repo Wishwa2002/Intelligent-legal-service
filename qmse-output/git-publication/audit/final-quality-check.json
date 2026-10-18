@@ -1,0 +1,348 @@
+{
+  "checked_utc": "2026-10-08T09:28:31.987979+00:00",
+  "all_checks_passed": true,
+  "pdf_pages": 78,
+  "figures": 30,
+  "preserved_figures": 20,
+  "tables": 71,
+  "toc_targets": 54,
+  "test_case_totals": {
+    "HISTORICAL/UNVERIFIED": 49,
+    "VERIFIED": 23,
+    "FAILED": 3,
+    "BLOCKED": 2
+  },
+  "figure_pages": [
+    {
+      "figure": "6.1",
+      "page": 31
+    },
+    {
+      "figure": "6.2",
+      "page": 31
+    },
+    {
+      "figure": "6.3",
+      "page": 32
+    },
+    {
+      "figure": "6.4",
+      "page": 33
+    },
+    {
+      "figure": "6.5",
+      "page": 34
+    },
+    {
+      "figure": "6.6",
+      "page": 35
+    },
+    {
+      "figure": "6.7",
+      "page": 36
+    },
+    {
+      "figure": "6.8",
+      "page": 37
+    },
+    {
+      "figure": "6.9",
+      "page": 38
+    },
+    {
+      "figure": "6.10",
+      "page": 38
+    },
+    {
+      "figure": "6.11",
+      "page": 39
+    },
+    {
+      "figure": "6.12",
+      "page": 40
+    },
+    {
+      "figure": "6.13",
+      "page": 40
+    },
+    {
+      "figure": "6.14",
+      "page": 41
+    },
+    {
+      "figure": "6.15",
+      "page": 42
+    },
+    {
+      "figure": "6.16",
+      "page": 43
+    },
+    {
+      "figure": "6.17",
+      "page": 44
+    },
+    {
+      "figure": "6.18",
+      "page": 45
+    },
+    {
+      "figure": "6.19",
+      "page": 46
+    },
+    {
+      "figure": "6.20",
+      "page": 47
+    },
+    {
+      "figure": "6.21",
+      "page": 48
+    },
+    {
+      "figure": "6.22",
+      "page": 49
+    },
+    {
+      "figure": "6.23",
+      "page": 50
+    },
+    {
+      "figure": "6.24",
+      "page": 51
+    },
+    {
+      "figure": "6.25",
+      "page": 52
+    },
+    {
+      "figure": "6.26",
+      "page": 53
+    },
+    {
+      "figure": "6.27",
+      "page": 54
+    },
+    {
+      "figure": "6.28",
+      "page": 55
+    },
+    {
+      "figure": "6.29",
+      "page": 56
+    },
+    {
+      "figure": "6.30",
+      "page": 57
+    }
+  ],
+  "secret_files_scanned": 939,
+  "checks": {
+    "docx_opens": true,
+    "tables_sections_preserved": true,
+    "section_layout_unchanged": true,
+    "cover_students_unchanged": true,
+    "test_table_unchanged_10": true,
+    "test_table_unchanged_11": true,
+    "test_table_unchanged_12": true,
+    "test_table_unchanged_13": true,
+    "test_table_unchanged_14": true,
+    "test_table_unchanged_15": true,
+    "test_table_unchanged_16": true,
+    "test_table_unchanged_17": true,
+    "test_table_unchanged_18": true,
+    "test_table_unchanged_19": true,
+    "test_table_unchanged_20": true,
+    "test_table_unchanged_21": true,
+    "test_table_unchanged_22": true,
+    "test_table_unchanged_23": true,
+    "test_table_unchanged_24": true,
+    "test_table_unchanged_25": true,
+    "component_summary_unchanged": true,
+    "all_20_previous_images_preserved": true,
+    "30_genuine_figures": true,
+    "unique_figure_numbers": true,
+    "unique_caption_6.1": true,
+    "image_on_caption_page_6.1": true,
+    "figure_image_exists_6.1": true,
+    "figure_source_exists_test-results/backend-final.log": true,
+    "figure_source_exists_evidence/backend/backend-final.trx": true,
+    "unique_caption_6.2": true,
+    "image_on_caption_page_6.2": true,
+    "figure_image_exists_6.2": true,
+    "unique_caption_6.3": true,
+    "image_on_caption_page_6.3": true,
+    "figure_image_exists_6.3": true,
+    "figure_source_exists_test-results/frontend-node.log": true,
+    "figure_source_exists_test-results/frontend-node.json": true,
+    "unique_caption_6.4": true,
+    "image_on_caption_page_6.4": true,
+    "figure_image_exists_6.4": true,
+    "figure_source_exists_test-results/mobile-minimal.log": true,
+    "figure_source_exists_evidence/mobile/flutter-events.jsonl": true,
+    "unique_caption_6.5": true,
+    "image_on_caption_page_6.5": true,
+    "figure_image_exists_6.5": true,
+    "figure_source_exists_evidence/e2e/playwright-report/index.html": true,
+    "figure_source_exists_evidence/e2e/playwright.json": true,
+    "unique_caption_6.6": true,
+    "image_on_caption_page_6.6": true,
+    "figure_image_exists_6.6": true,
+    "figure_source_exists_evidence/e2e/schedule-1280.png": true,
+    "unique_caption_6.7": true,
+    "image_on_caption_page_6.7": true,
+    "figure_image_exists_6.7": true,
+    "figure_source_exists_evidence/security/zap-passive-report.html": true,
+    "figure_source_exists_evidence/security/scan-metadata.json": true,
+    "unique_caption_6.8": true,
+    "image_on_caption_page_6.8": true,
+    "figure_image_exists_6.8": true,
+    "figure_source_exists_evidence/security/zap-alerts.json": true,
+    "unique_caption_6.9": true,
+    "image_on_caption_page_6.9": true,
+    "figure_image_exists_6.9": true,
+    "figure_source_exists_test-results/performance-final.log": true,
+    "figure_source_exists_test-results/performance-final.json": true,
+    "unique_caption_6.10": true,
+    "image_on_caption_page_6.10": true,
+    "figure_image_exists_6.10": true,
+    "figure_source_exists_evidence/performance/k6-summary.json": true,
+    "figure_source_exists_evidence/performance/k6-raw-final.json": true,
+    "unique_caption_6.11": true,
+    "image_on_caption_page_6.11": true,
+    "figure_image_exists_6.11": true,
+    "figure_source_exists_evidence/backend/coverage-html/index.html": true,
+    "figure_source_exists_evidence/backend/e95ff97b-fff2-40aa-993d-8317a0ac8565/coverage.cobertura.xml": true,
+    "unique_caption_6.12": true,
+    "image_on_caption_page_6.12": true,
+    "figure_image_exists_6.12": true,
+    "figure_source_exists_test-results/ai-final.log": true,
+    "figure_source_exists_evidence/ai/pytest-final.xml": true,
+    "unique_caption_6.13": true,
+    "image_on_caption_page_6.13": true,
+    "figure_image_exists_6.13": true,
+    "figure_source_exists_evidence/ci/github-actions-runs.json": true,
+    "unique_caption_6.14": true,
+    "image_on_caption_page_6.14": true,
+    "figure_image_exists_6.14": true,
+    "figure_source_exists_test-results/completion-20261008-upload-retest.log": true,
+    "figure_source_exists_completion-20261008/evidence/upload-retest.trx": true,
+    "unique_caption_6.15": true,
+    "image_on_caption_page_6.15": true,
+    "figure_image_exists_6.15": true,
+    "figure_source_exists_completion-20261008/evidence/integrated-final-http.json": true,
+    "figure_source_exists_completion-20261008/evidence/e2e-10-flutter-uploaded.png": true,
+    "unique_caption_6.16": true,
+    "image_on_caption_page_6.16": true,
+    "figure_image_exists_6.16": true,
+    "figure_source_exists_completion-20261008/evidence/integrated-completion-http.json": true,
+    "figure_source_exists_completion-20261008/evidence/e2e-13-react-completed.png": true,
+    "unique_caption_6.17": true,
+    "image_on_caption_page_6.17": true,
+    "figure_image_exists_6.17": true,
+    "figure_source_exists_completion-20261008/evidence/integrated-result.json": true,
+    "figure_source_exists_completion-20261008/evidence/integrated-final-database.log": true,
+    "unique_caption_6.18": true,
+    "image_on_caption_page_6.18": true,
+    "figure_image_exists_6.18": true,
+    "figure_source_exists_completion-20261008/evidence/k6-postgres-summary.json": true,
+    "figure_source_exists_test-results/completion-20261008-k6-retest.log": true,
+    "unique_caption_6.19": true,
+    "image_on_caption_page_6.19": true,
+    "figure_image_exists_6.19": true,
+    "figure_source_exists_completion-20261008/evidence/zap-postgres.html": true,
+    "figure_source_exists_completion-20261008/evidence/zap-postgres-metadata.json": true,
+    "unique_caption_6.20": true,
+    "image_on_caption_page_6.20": true,
+    "figure_image_exists_6.20": true,
+    "figure_source_exists_test-results/completion-20261008-backend-final-verified.log": true,
+    "figure_source_exists_completion-20261008/evidence/backend-final-verified.trx": true,
+    "unique_caption_6.21": true,
+    "image_on_caption_page_6.21": true,
+    "figure_image_exists_6.21": true,
+    "figure_source_exists_git-publication/evidence/official-overview.png": true,
+    "unique_caption_6.22": true,
+    "image_on_caption_page_6.22": true,
+    "figure_image_exists_6.22": true,
+    "figure_source_exists_git-publication/evidence/original-main-history.png": true,
+    "unique_caption_6.23": true,
+    "image_on_caption_page_6.23": true,
+    "figure_image_exists_6.23": true,
+    "figure_source_exists_git-publication/evidence/member1-lawyer-development.png": true,
+    "unique_caption_6.24": true,
+    "image_on_caption_page_6.24": true,
+    "figure_image_exists_6.24": true,
+    "figure_source_exists_git-publication/evidence/member2-appointments.png": true,
+    "unique_caption_6.25": true,
+    "image_on_caption_page_6.25": true,
+    "figure_image_exists_6.25": true,
+    "figure_source_exists_git-publication/evidence/member3-document-agent.png": true,
+    "unique_caption_6.26": true,
+    "image_on_caption_page_6.26": true,
+    "figure_image_exists_6.26": true,
+    "figure_source_exists_git-publication/evidence/member4-authentication.png": true,
+    "unique_caption_6.27": true,
+    "image_on_caption_page_6.27": true,
+    "figure_image_exists_6.27": true,
+    "figure_source_exists_git-publication/evidence/published-branch.png": true,
+    "unique_caption_6.28": true,
+    "image_on_caption_page_6.28": true,
+    "figure_image_exists_6.28": true,
+    "figure_source_exists_git-publication/evidence/published-tested-commit.png": true,
+    "unique_caption_6.29": true,
+    "image_on_caption_page_6.29": true,
+    "figure_image_exists_6.29": true,
+    "figure_source_exists_git-publication/evidence/testing-history.png": true,
+    "unique_caption_6.30": true,
+    "image_on_caption_page_6.30": true,
+    "figure_image_exists_6.30": true,
+    "figure_source_exists_git-publication/evidence/actions-for-tested-revision.png": true,
+    "30_pdf_image_placements": true,
+    "images_inside_pages": true,
+    "footer_page_numbers": true,
+    "no_blank_pages": true,
+    "no_outdated_unpushed_claim": true,
+    "all_four_member_sections": true,
+    "original_unchanged_SE3110_Testing_Report_GR42.docx": true,
+    "original_unchanged_SE3110 Assignment.pdf": true,
+    "77_case_totals": true,
+    "case_evidence_qmse-output/audit/original-report-text.txt": true,
+    "case_evidence_qmse-output/completion-20261008/evidence/backend-final-verified.trx": true,
+    "case_evidence_qmse-output/completion-20261008/evidence/real-api-http.json": true,
+    "case_evidence_qmse-output/completion-20261008/evidence/specialization-database.log": true,
+    "case_evidence_qmse-output/completion-20261008/evidence/ai-completion.xml": true,
+    "case_evidence_qmse-output/completion-20261008/evidence/spoof-before.trx": true,
+    "case_evidence_qmse-output/completion-20261008/evidence/upload-retest.trx": true,
+    "case_evidence_qmse-output/completion-20261008/audit/requirements-traceability.md": true,
+    "case_evidence_qmse-output/completion-20261008/evidence/live-gemini.json": true,
+    "xunit_328_326_0_2": true,
+    "playwright_111_0_3": true,
+    "pytest_102": true,
+    "published_sha": true,
+    "83_commits_existing_tips_unchanged": true,
+    "reference_clone_authorship": true,
+    "no_CI_pass_claim": true,
+    "54_toc_targets": true,
+    "genuine_GitHub_official-overview": true,
+    "GitHub_capture_hash_official-overview": true,
+    "genuine_GitHub_published-branch": true,
+    "GitHub_capture_hash_published-branch": true,
+    "genuine_GitHub_original-main-history": true,
+    "GitHub_capture_hash_original-main-history": true,
+    "genuine_GitHub_published-tested-commit": true,
+    "GitHub_capture_hash_published-tested-commit": true,
+    "genuine_GitHub_testing-history": true,
+    "GitHub_capture_hash_testing-history": true,
+    "genuine_GitHub_actions-for-tested-revision": true,
+    "GitHub_capture_hash_actions-for-tested-revision": true,
+    "genuine_GitHub_member1-lawyer-development": true,
+    "GitHub_capture_hash_member1-lawyer-development": true,
+    "genuine_GitHub_member2-appointments": true,
+    "GitHub_capture_hash_member2-appointments": true,
+    "genuine_GitHub_member3-document-agent": true,
+    "GitHub_capture_hash_member3-document-agent": true,
+    "genuine_GitHub_member4-authentication": true,
+    "GitHub_capture_hash_member4-authentication": true,
+    "private_values_excluded": true
+  },
+  "visual_review": "COMPLETED: all 78 pages inspected; see visual-review.json",
+  "final_pdf_sha256": "5c02bd034f33dd348f48fc890c5459d4ecbd9559748c99214806cf9ed52bcd5b"
+}

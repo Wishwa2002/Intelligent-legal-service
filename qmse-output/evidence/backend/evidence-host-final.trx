@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="79443e8e-acb6-41c0-8660-34384038bb31" name="@Jegatheeswarans-MacBook-Air 2026-10-08 08:27:27" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-08T08:27:27.5025450+05:30" queuing="2026-10-08T08:27:27.5025450+05:30" start="2026-10-08T08:21:26.3225360+05:30" finish="2026-10-08T08:27:27.5049370+05:30" />
+  <TestSettings name="default" id="7c59dabd-f11e-4825-88f6-53ce64e138ff">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-08_08_27_27" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="d9122ba6-a29f-4674-9577-01cc35a6fa6f" testId="e870e2ca-12d4-d180-6dab-cea74b7cfc27" testName="LegalService.Tests.LawyerManagementHttpTests.Qmse_LocalEvidenceHost" computerName="Jegatheeswarans-MacBook-Air" duration="00:06:00.2710851" startTime="2026-10-08T08:21:26.6317950+05:30" endTime="2026-10-08T08:27:27.4455860+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="d9122ba6-a29f-4674-9577-01cc35a6fa6f" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LegalService.Tests.LawyerManagementHttpTests.Qmse_LocalEvidenceHost" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="e870e2ca-12d4-d180-6dab-cea74b7cfc27">
+      <Execution id="d9122ba6-a29f-4674-9577-01cc35a6fa6f" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.LawyerManagementHttpTests" name="Qmse_LocalEvidenceHost" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e870e2ca-12d4-d180-6dab-cea74b7cfc27" executionId="d9122ba6-a29f-4674-9577-01cc35a6fa6f" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.29)
+[xUnit.net 00:00:00.04]   Discovering: LegalService.Tests
+[xUnit.net 00:00:00.07]   Discovered:  LegalService.Tests
+[xUnit.net 00:00:00.08]   Starting:    LegalService.Tests
+[xUnit.net 00:06:00.89]   Finished:    LegalService.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>

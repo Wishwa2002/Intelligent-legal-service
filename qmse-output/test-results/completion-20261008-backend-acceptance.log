@@ -1,0 +1,20 @@
+START UTC 2026-10-08T04:59:18.381257+00:00
+COMMAND ['dotnet', 'test', 'backend/LegalService.Tests/LegalService.Tests.csproj', '--no-restore', '--logger', 'trx;LogFileName=backend-acceptance.trx', '--results-directory', 'qmse-output/completion-20261008/evidence', '--collect', 'XPlat Code Coverage']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service
+  LegalService.API -> /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/bin/Debug/net8.0/LegalService.API.dll
+  LegalService.Tests -> /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll
+Test run for /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll (.NETCoreApp,Version=v8.0)
+VSTest version 17.11.1 (arm64)
+
+Starting test execution, please wait...
+A total of 1 test files matched the specified pattern.
+[xUnit.net 00:00:00.12]     LegalService.Tests.RecommendationLiveTransportTests.ActualAspNetRecommendationClientPasses8002AuthenticationAndPersistsOnlyIsolatedWorkflow [SKIP]
+  Skipped LegalService.Tests.RecommendationLiveTransportTests.ActualAspNetRecommendationClientPasses8002AuthenticationAndPersistsOnlyIsolatedWorkflow [1 ms]
+[xUnit.net 00:00:05.38]     LegalService.Tests.LawyerManagementHttpTests.Qmse_LocalEvidenceHost [SKIP]
+  Skipped LegalService.Tests.LawyerManagementHttpTests.Qmse_LocalEvidenceHost [1 ms]
+Results File: /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/completion-20261008/evidence/backend-acceptance.trx
+
+Passed!  - Failed:     0, Passed:   324, Skipped:     2, Total:   326, Duration: 19 s - LegalService.Tests.dll (net8.0)
+
+Attachments:
+  /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/completion-20261008/evidence/c789f3a2-113f-4d9b-8db4-5ab1b54dcb25/coverage.cobertura.xml

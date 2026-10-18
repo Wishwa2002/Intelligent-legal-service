@@ -1,0 +1,37 @@
+Skip to content
+Navigation Menu
+Sign in
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Actions: Wishwa2002/Intelligent-legal-service
+Actions
+All workflows
+Backend CI
+CodeQL
+Dependabot Updates
+Frontend CI
+Mobile CI
+Management
+Caches
+Deployments
+All workflows
+Showing runs from all workflows
+0 workflow run results
+Workflow
+Event
+Status
+Branch
+Actor
+No results matched your search.
+
+You could search all workflow runs or try different filters.

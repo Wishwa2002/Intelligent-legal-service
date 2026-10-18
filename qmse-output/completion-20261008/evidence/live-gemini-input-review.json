@@ -1,0 +1,13 @@
+{
+  "scope": "Supplemental input/provenance; original live-gemini.json preserved unchanged",
+  "source": "completion-20261008/audit/live_gemini.py",
+  "executed_case": "GC-01",
+  "exact_synthetic_input": "Classify only, no legal advice. Catalog: 1 Real Estate & Property Law; 2 Criminal Law; 3 Corporate Law. Synthetic inquiry: Find a property lawyer to handle partition action in Colombo. Return JSON categoryId, categoryName, location, supported. Do not invent lawyers or scores.",
+  "expected": "Schema-valid JSON classifying property inquiry against supplied catalogue; no invented lawyers/scores",
+  "actual": "No response body returned; provider ServerError 504",
+  "score": "NOT SCORED / BLOCKED",
+  "token_usage": null,
+  "estimated_cost": null,
+  "reason": "Usage/tariff unavailable on failed response",
+  "live_evidence": "qmse-output/completion-20261008/evidence/live-gemini.json"
+}

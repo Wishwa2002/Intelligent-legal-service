@@ -1,0 +1,13 @@
+
+> frontend@0.0.0 dev
+> vite --host 127.0.0.1 --port 55547 --strictPort --mode test
+
+
+  VITE v8.2.2   test   ready in 301 ms
+
+  ➜  Local:   http://127.0.0.1:55547/
+6:26:54 PM [vite] (client) hmr update /src/index.css, /src/components/lawyers/LawyerRecommendations.tsx
+6:29:15 PM [vite] (client) hmr update /src/index.css
+6:29:15 PM [vite] (client) hmr update /src/index.css
+6:29:24 PM [vite] (client) hmr update /src/index.css
+6:36:40 PM [vite] (client) hmr update /src/index.css

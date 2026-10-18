@@ -1,0 +1,17 @@
+{
+  "command": [
+    "/Users/jeyam/.dotnet/tools/dotnet-ef",
+    "database",
+    "update",
+    "--project",
+    "backend/LegalService.API/LegalService.API.csproj",
+    "--no-build"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T10:41:27.575781+00:00",
+  "ended_utc": "2026-10-08T10:41:29.031918+00:00",
+  "duration_seconds": 1.456,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/historical-resolution/evidence/migrate.log"
+}

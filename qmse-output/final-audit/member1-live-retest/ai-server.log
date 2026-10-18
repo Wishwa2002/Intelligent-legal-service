@@ -1,0 +1,16 @@
+INFO:     Started server process [24556]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:55545 (Press CTRL+C to quit)
+INFO:     127.0.0.1:62864 - "GET /health HTTP/1.1" 200 OK
+Gemini failure stage=provider status=503 exceptionType=ServerError attempt=1 retrySeconds=None
+Recommendation failure stage=classification providerStatus=None status=503 correlationId=428faec1-67e4-463a-84c4-361114931be7
+INFO:     127.0.0.1:62920 - "POST /lawyer-recommendations HTTP/1.1" 503 Service Unavailable
+Hiring Gemini failure stage=provider providerStatus=503 exceptionType=ServerError retrySeconds=None
+Hiring failure stage=provider providerStatus=503 status=503
+INFO:     127.0.0.1:62927 - "POST /hiring-suggestions HTTP/1.1" 503 Service Unavailable
+INFO:     127.0.0.1:62955 - "GET /health HTTP/1.1" 200 OK
+INFO:     Shutting down
+INFO:     Waiting for application shutdown.
+INFO:     Application shutdown complete.
+INFO:     Finished server process [24556]

@@ -1,0 +1,12 @@
+[
+  "AuthSecurityTests.cs",
+  "LegalServicesController.cs",
+  "SpecializationsController.cs",
+  "Tests.cs",
+  "admin-workflownavigation.spec.ts",
+  "backend.yml",
+  "derivedbooking.spec.ts",
+  "frontend.yml",
+  "lawyermanagement.spec.ts",
+  "mobile.yml"
+]

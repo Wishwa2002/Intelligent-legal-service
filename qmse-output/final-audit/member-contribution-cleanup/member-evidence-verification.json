@@ -1,0 +1,264 @@
+[
+  {
+    "name": "Jeyashankar J",
+    "id": "IT24103900",
+    "component": "C1",
+    "start": 357,
+    "tables": [
+      48,
+      49,
+      50,
+      51,
+      52,
+      53
+    ],
+    "role": "Lawyer management, specializations, legal services, lawyer recommendation AI and workforce intelligence. C1 supplies catalogue and lawyer data supporting booking; shared report preparation is a group activity.",
+    "development": "Recorded lawyer/catalogue development appears in 097ab397 and e77187ad; 0548fd56 adds recurring scheduling and workforce intelligence; b082f547 integrates lawyer mobile and matching refinements. The records use Jeyamdev and Jegatheeswaran Jeyashankar. Changed files include LawyersController.cs, LegalCatalogController.cs, RecommendationService.cs and lawyer_recommendation/agent.py. The later QMSE commits f360e4a/05359214 are AI-assisted testing additions, not evidence of independent student execution.",
+    "sources": [
+      "backend/LegalService.API/Controllers/LawyersController.cs",
+      "backend/LegalService.API/Controllers/LegalCatalogController.cs",
+      "backend/LegalService.API/Services/Lawyers/RecommendationService.cs",
+      "backend/LegalService.API/Services/Workforce/WorkforceAnalysisService.cs",
+      "ai-service/lawyer_recommendation/agent.py"
+    ],
+    "tests": [
+      "backend/LegalService.Tests/LawyerManagementHttpTests.cs",
+      "backend/LegalService.Tests/Member1RecommendationTests.cs",
+      "backend/LegalService.Tests/WorkforceHiringTests.cs",
+      "ai-service/tests/test_qmse_boundaries.py"
+    ],
+    "results": "C1: 7 PASS / 4 FAIL / 2 BLOCKED. C103 service-price, C106 availability-toggle, C107 historical length and C112 headroom expectations remain FAIL. On 8 October 2026 the updated-key live recommendation and hiring-draft calls returned real Gemini 503 high-demand errors after 4.049 s and 6.697 s; C104/C105 remain BLOCKED. Isolated PostgreSQL checks verify 20 recent demand records, two active property lawyers and 16 future slots. Focused backend 29 PASS and deterministic AI 7 PASS include C113; they overlap earlier suites. No >90% legal accuracy or predictive forecast is claimed.",
+    "defects": "Historical DEF-01\u201304 cover free-text/invented win rates, lawyer-user persistence, analyzer and mobile CI configuration. ac62bb76 records the lawyer-user/schema correction; 0958d693 records the mobile CI asset correction. Current validation/transport tests and the C113 retest are verified evidence; commit messages alone do not certify those original retests. Historical pricing, toggle and threshold discrepancies remain unchanged.",
+    "tools": "xUnit controller/service tests; isolated Kestrel and PostgreSQL for routing, JWT and persistence; Playwright for React; pytest for deterministic AI schema, ranking and failure recovery. Experience ranking is 0\u201370 points, not legal accuracy.",
+    "native": [
+      "qmse-output/final-audit/member1-live-retest/backend-results/c1-focused.trx",
+      "qmse-output/final-audit/member1-live-retest/ai-focused.xml",
+      "qmse-output/final-audit/member1-live-retest/provider-native.json",
+      "qmse-output/final-audit/member1-live-retest/workforce-calculation.json"
+    ],
+    "screens": [
+      "qmse-output/git-publication/evidence/member1-lawyer-development.png"
+    ],
+    "ci": "Historical successful Backend/Frontend/Mobile runs at 54aecccc: 37415146816 / 37415147442 / 37415146862. The actor is Wishwa2002, not evidence of Jeyashankar operating tests. C1-associated Mobile CI failure at 6d982e60 and success at 8a9b8a24 are retained in the shared audit; they do not certify the final QMSE revision.",
+    "demo": "Qmse_TC_C108_DuplicateLicenseReturns409WithoutInsertion",
+    "explain": "Demonstrate duplicate-license rejection (409, no duplicate row); explain C113 safe timeout recovery and why the two genuine provider 503s cannot establish live acceptance. No further live calls are authorised by this guide.",
+    "count": "1 recorded PASS",
+    "counts": {
+      "PASS": 7,
+      "FAIL": 4,
+      "BLOCKED": 2
+    },
+    "test_ids": [
+      "TC-C101",
+      "TC-C102",
+      "TC-C103",
+      "TC-C104",
+      "TC-C105",
+      "TC-C106",
+      "TC-C107",
+      "TC-C108",
+      "TC-C109",
+      "TC-C110",
+      "TC-C111",
+      "TC-C112",
+      "TC-C113"
+    ],
+    "reproduction_command": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --filter 'FullyQualifiedName~Qmse_TC_C108_DuplicateLicenseReturns409WithoutInsertion' --logger 'trx;LogFileName=c1-member-reproduction.trx' --results-directory qmse-output/member-reproduction"
+  },
+  {
+    "name": "Buddhika P. Y. H",
+    "id": "IT24103041",
+    "component": "C2",
+    "start": 376,
+    "tables": [
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ],
+    "role": "Appointments, availability, scheduling, careers and scheduling AI. C2 owns component test planning for booking conflicts, cancellation and timezone handling; C1 catalogue and C4 identity controls support the workflow.",
+    "development": "The yhprasad records d461a840 and 07af04ef change booking APIs, AppointmentServiceTests.cs, careers pages and mobile appointment tests. 2c0c4e5c adds scheduling-agent integration and classifier/slot-resolver paths. The original main-history record 2e2f764e, also yhprasad, adds database schema, seeds and ADRs. Recorded changes in 327bebf3/241db172 address login redirect and localhost/token handling; these are cross-component contributions, not exclusive C2 ownership.",
+    "sources": [
+      "backend/LegalService.API/Controllers/AppointmentsController.cs",
+      "backend/LegalService.API/Services/AppointmentService.cs",
+      "backend/LegalService.API/Controllers/CareersController.cs",
+      "ai-service/app/agents/scheduling/classifier.py"
+    ],
+    "tests": [
+      "backend/LegalService.Tests/AppointmentServiceTests.cs",
+      "backend/LegalService.Tests/QmseAppointmentTests.cs",
+      "backend/LegalService.Tests/CareerServiceTests.cs",
+      "frontend/tests/derived-booking.spec.ts",
+      "mobile/test/appointment_test.dart"
+    ],
+    "results": "C2: 9 PASS / 2 FAIL / 1 BLOCKED. C2-01 immediate Confirmed and C2-09 historical cancellation notice expectations remain FAIL; C2-05 full scheduling-AI acceptance remains BLOCKED. Verified current-contract cancellation uses POST, returns Cancelled and releases the slot. Concurrent booking, working-hours rejection and AI-independent booking have execution evidence. The proposed 24-hour rule is tested but disabled by default; it is not an approved original requirement.",
+    "defects": "Historical DEF-08\u201311 cover timezone, careers authorization, redirects and localhost/token handling. Existing HTTP/SQL evidence confirms the accepted cancellation-route replacement; timezone evidence records real Chromium/API comparisons. The AI-assisted local canCancel capability/UI correction is documented separately from yhprasad development. Historical failed expectations and before/after evidence are retained.",
+    "tools": "xUnit for booking and careers; real isolated PostgreSQL for overlap/concurrency and persistence; Playwright for booking and careers UI; Flutter tests for appointment widgets. Relative-date helper tests are narrower than live scheduling-agent acceptance.",
+    "native": [
+      "qmse-output/final-audit/debug/evidence/regression-backend-postgres.trx",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json",
+      "qmse-output/historical-resolution/evidence/timezone-conflict.json"
+    ],
+    "screens": [
+      "qmse-output/git-publication/evidence/member2-appointments.png",
+      "qmse-output/historical-resolution/evidence/TC-C2-04.png",
+      "qmse-output/historical-resolution/evidence/TC-C2-06.png"
+    ],
+    "ci": "Shared successful Backend/Frontend/Mobile runs at 8a9b8a24: 37386601103 / 37386601420 / 37386601104. The actor is Jeyamdev. The yhprasad fb471202 scheduling-branch failures are preserved but excluded from the tested baseline; no successful retest of that excluded revision is inferred.",
+    "demo": "QmseAppointmentTests",
+    "explain": "Demonstrate booking outside working hours and direct booking without AI; explain historical PUT cancellation versus the accepted POST contract, slot release and the disabled proposed notice rule.",
+    "count": "6 recorded PASS",
+    "counts": {
+      "FAIL": 2,
+      "PASS": 9,
+      "BLOCKED": 1
+    },
+    "test_ids": [
+      "TC-C2-01",
+      "TC-C2-02",
+      "TC-C2-03",
+      "TC-C2-04",
+      "TC-C2-05",
+      "TC-C2-06",
+      "TC-C2-07",
+      "TC-C2-08",
+      "TC-C2-09",
+      "TC-C2-10",
+      "TC-C2-11",
+      "TC-C2-12"
+    ],
+    "reproduction_command": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --filter 'FullyQualifiedName~QmseAppointmentTests' --logger 'trx;LogFileName=c2-member-reproduction.trx' --results-directory qmse-output/member-reproduction"
+  },
+  {
+    "name": "Vithusan V",
+    "id": "IT24100360",
+    "component": "C3",
+    "start": 395,
+    "tables": [
+      60,
+      61,
+      62,
+      63,
+      64,
+      65
+    ],
+    "role": "Documentation requests, uploads, clerks and document verification AI. C3 leads document-workflow test planning; integrated E2E remains shared across mobile, API, database, AI and React.",
+    "development": "VTN02 record a566efa7 contains document validation/analysis, clerk management, document service tests and mobile/client integration. 587e8924 changes documentation-service seeding; 44f3f25a and 0fa65928 are distinct commits for manual request/checklist UI. Their matching subjects do not make them one commit. The same recorded history includes supervisor.py: consultation implementation is therefore shared/cross-component evidence, not automatically attributable to C4.",
+    "sources": [
+      "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentationRequestsController.cs",
+      "backend/LegalService.API/Controllers/DocumentAndClerk/ClerksController.cs",
+      "backend/LegalService.API/Services/DocumentAndClerk/DocumentFileService.cs",
+      "ai-service/app/agents/document_validation.py"
+    ],
+    "tests": [
+      "backend/LegalService.Tests/DocumentationRequestServiceTests.cs",
+      "backend/LegalService.Tests/ClerkServiceTests.cs",
+      "backend/LegalService.Tests/QmseUploadRegressionTests.cs",
+      "backend/LegalService.Tests/QmseDocumentPostgresTests.cs",
+      "ai-service/tests/test_documents.py"
+    ],
+    "results": "C3: 8 PASS / 2 FAIL / 2 BLOCKED. Of six historical failures, C3-02/03/05/06 have passing accepted current-contract replacements; C3-01 service/checklist identity and C3-04 Approved transition remain FAIL. C3-08 OCR and C3-12 full atomic workflow remain BLOCKED. The genuine spoofed-PDF failure and passing validation retest are preserved. Development file-orphan cleanup is fixed and retested on PostgreSQL; the proposed service batch remains disabled and has no HTTP/UI batch route.",
+    "defects": "DEF-12 is supported by original spoof-before.trx and upload-retest.trx; the later parser/content validation and upload regressions are verified AI-assisted local work. Real PostgreSQL evidence supports file-orphan cleanup, not an atomic request-plus-three-upload HTTP workflow. DEF-13 seeding has source evidence at 587e8924; DEF-14 live/OCR acceptance remains qualified. These fixes are not personally attributed to Vithusan without operator evidence.",
+    "tools": "xUnit for lifecycle, clerk and upload validation; isolated PostgreSQL for persistence/rollback and fault injection; real multipart HTTP and Flutter/React workflow evidence; deterministic Python completeness checks. Completeness arithmetic is not live legal/OCR accuracy.",
+    "native": [
+      "qmse-output/completion-20261008/evidence/spoof-before.trx",
+      "qmse-output/completion-20261008/evidence/upload-retest.trx",
+      "qmse-output/final-audit/debug/evidence/regression-backend-postgres.trx",
+      "qmse-output/final-audit/debug/evidence/accepted-api.json"
+    ],
+    "screens": [
+      "qmse-output/git-publication/evidence/member3-document-agent.png",
+      "qmse-output/historical-resolution/evidence/real-flutter-catalogue.png",
+      "qmse-output/historical-resolution/evidence/real-react-clerk-review.png"
+    ],
+    "ci": "The retained shared successful runs at 54aecccc cover backend, frontend and mobile. No selected CI run independently establishes VTN02 as the individual test operator. Existing document/E2E and spoof failure/retest figures provide component evidence.",
+    "demo": "QmseUploadRegressionTests",
+    "explain": "Demonstrate genuine PDF acceptance and spoof/mismatched MIME rejection without persistence. Explain the original spoof failure, parser fix and retest; distinguish per-attachment rollback from the still-blocked original multi-request atomic workflow.",
+    "count": "12 recorded PASS",
+    "counts": {
+      "FAIL": 2,
+      "PASS": 8,
+      "BLOCKED": 2
+    },
+    "test_ids": [
+      "TC-C3-01",
+      "TC-C3-02",
+      "TC-C3-03",
+      "TC-C3-04",
+      "TC-C3-05",
+      "TC-C3-06",
+      "TC-C3-07",
+      "TC-C3-08",
+      "TC-C3-09",
+      "TC-C3-10",
+      "TC-C3-11",
+      "TC-C3-12"
+    ],
+    "reproduction_command": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --filter 'FullyQualifiedName~QmseUploadRegressionTests' --logger 'trx;LogFileName=c3-member-reproduction.trx' --results-directory qmse-output/member-reproduction"
+  },
+  {
+    "name": "Wijayananda W. J. W (Team Leader)",
+    "id": "IT24102275",
+    "component": "C4",
+    "start": 414,
+    "tables": [
+      66,
+      67,
+      68,
+      69,
+      70,
+      71
+    ],
+    "role": "Authentication, JWT/RBAC, service requests, consultation AI and security test planning. C4 supports identity/permissions for the other components. Consultation responsibility does not establish exclusive authorship of shared AI code.",
+    "development": "Original main record 56f4bbd4 under Wishwa adds registration/roles. 43f6345d changes JWT authentication and Admin authorization; 93092871 adds service-request pages and ServiceRequestServiceTests.cs; 9579cee6 changes authentication validation/health flow. 4dc9a150/3ff0d2a0 update frontend tests. Consultation supervisor history also records VTN02 (a566efa7/6b59d19); that code is not credited solely to Wijayananda.",
+    "sources": [
+      "backend/LegalService.API/Authentication/Services/JwtService.cs",
+      "backend/LegalService.API/Controllers/AuthController.cs",
+      "backend/LegalService.API/Controllers/ServiceRequestsController.cs",
+      "ai-service/app/retrieval/hybrid_service.py"
+    ],
+    "tests": [
+      "backend/LegalService.Tests/ServiceRequestServiceTests.cs",
+      "backend/LegalService.Tests/QmseHttpTests.cs",
+      "backend/LegalService.Tests/QmseRegistrationTests.cs",
+      "frontend/tests/auth.spec.ts",
+      "ai-service/tests/test_security.py"
+    ],
+    "results": "C4: 8 PASS / 0 FAIL / 4 BLOCKED. JWT/RBAC, service requests, duplicate registration and browser logout have matching execution evidence. C4-04 prompt-injection refusal, C4-05 legal relevance, C4-08 ranking accuracy and C4-12 universal disclaimer remain full-acceptance blockers. Raw retrieval and deterministic sanitizer/provider-resilience tests do not prove live generated legal advice. The shared BCrypt cost-12 discrepancy remains separate from the C4 component count.",
+    "defects": "Historical DEF-05/15 are linked to authentication source and present regression evidence; original personal retesting is not inferred. The local nosniff correction has four backend header regressions and same-six-path ZAP evidence (three missing-header instances to zero). Credential rotation remains unconfirmed; dependency findings and blocked live AI acceptance are unchanged. New QMSE security changes are Codex-assisted.",
+    "tools": "xUnit isolated JWT/RBAC and service-request fixtures; Playwright login/logout and route guards; local passive ZAP; deterministic Python injection/schema/provider-failure checks. AuthSecurityTests.cs is an absent historical reference, so its claimed ten tests are not attributed or counted.",
+    "native": [
+      "qmse-output/final-audit/debug/evidence/regression-backend-postgres.trx",
+      "qmse-output/final-audit/security/zap-after-metadata.json",
+      "qmse-output/final-audit/targeted-15-minute/focused-authentication.trx"
+    ],
+    "screens": [
+      "qmse-output/git-publication/evidence/member4-authentication.png"
+    ],
+    "ci": "Shared historical success at 54aecccc records actor Wishwa2002, which is workflow-trigger metadata rather than personal execution. Existing evidence records no run for published QMSE SHA 05359214: source push filters allow main/develop and no manual workflow_dispatch. Historical successes do not certify the local overlay.",
+    "demo": "Qmse_TC_C4_09",
+    "explain": "Demonstrate missing, invalid, expired and tampered JWT rejection (401). Explain why the nosniff retest is a limited passive-scan result and why retrieval output cannot establish a universal generated-answer disclaimer.",
+    "count": "4 recorded PASS",
+    "counts": {
+      "PASS": 8,
+      "BLOCKED": 4
+    },
+    "test_ids": [
+      "TC-C4-01",
+      "TC-C4-02",
+      "TC-C4-03",
+      "TC-C4-04",
+      "TC-C4-05",
+      "TC-C4-06",
+      "TC-C4-07",
+      "TC-C4-08",
+      "TC-C4-09",
+      "TC-C4-10",
+      "TC-C4-11",
+      "TC-C4-12"
+    ],
+    "reproduction_command": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --filter 'FullyQualifiedName~Qmse_TC_C4_09' --logger 'trx;LogFileName=c4-member-reproduction.trx' --results-directory qmse-output/member-reproduction"
+  }
+]

@@ -1,0 +1,23 @@
+{
+  "name": "completion-20261008-migration-regression",
+  "command": [
+    "dotnet",
+    "test",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~QmseMigrationRegression",
+    "--logger",
+    "trx;LogFileName=migration-regression.trx",
+    "--results-directory",
+    "qmse-output/completion-20261008/evidence"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T04:48:22.060234+00:00",
+  "ended_utc": "2026-10-08T04:48:25.469013+00:00",
+  "duration_seconds": 3.409,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-migration-regression.log"
+}

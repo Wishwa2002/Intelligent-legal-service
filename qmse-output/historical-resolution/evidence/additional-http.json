@@ -1,0 +1,38 @@
+[
+  {
+    "at": "2026-10-08T11:12:12.989634+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/ai/scheduling/classify",
+    "inputs": {
+      "message": "Book for tomorrow at 10 AM"
+    },
+    "http": 404,
+    "actual": "",
+    "latency_ms": 2.414542017504573
+  },
+  {
+    "at": "2026-10-08T11:12:12.991513+00:00",
+    "target": "http://127.0.0.1:55544",
+    "method": "POST",
+    "path": "/api/ai/scheduling/classify",
+    "inputs": {
+      "message": "Book for tomorrow at 10 AM"
+    },
+    "http": 404,
+    "actual": "{\"detail\":\"Not Found\"}",
+    "latency_ms": 0.9987080120481551
+  },
+  {
+    "at": "2026-10-08T11:12:13.064138+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/workforce-analysis/suggestions",
+    "inputs": {
+      "practiceAreaId": 4
+    },
+    "http": 503,
+    "actual": "{\"title\":\"AI hiring assistance is temporarily unavailable.\",\"status\":503,\"traceId\":\"0HNP55JGDKC35:00000003\",\"conflicts\":null}",
+    "latency_ms": 72.63154099928215
+  }
+]

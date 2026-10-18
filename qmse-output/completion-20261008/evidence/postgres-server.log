@@ -1,0 +1,997 @@
+2026-10-08 09:58:19.727 +0530 [97686] LOG:  starting PostgreSQL 18.3 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit
+2026-10-08 09:58:19.728 +0530 [97686] LOG:  listening on IPv4 address "127.0.0.1", port 55446
+2026-10-08 09:58:19.728 +0530 [97686] LOG:  listening on Unix socket "/tmp/.s.PGSQL.55446"
+2026-10-08 09:58:19.730 +0530 [97692] LOG:  database system was shut down at 2026-10-08 09:58:19 +0530
+2026-10-08 09:58:19.731 +0530 [97686] LOG:  database system is ready to accept connections
+2026-10-08 10:01:20.310 +0530 [97904] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:01:20.310 +0530 [97904] DETAIL:  Key ("LawyerId", "DayOfWeek")=(6979f163-3ab9-48a6-9096-face3b378946, 1) already exists.
+2026-10-08 10:01:20.310 +0530 [97904] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:01:20.406 +0530 [97904] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:20.406 +0530 [97911] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:20.437 +0530 [97913] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:01:20.437 +0530 [97913] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:01:20.437 +0530 [97913] HINT:  The transaction might succeed if retried.
+2026-10-08 10:01:20.437 +0530 [97913] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:01:20.441 +0530 [97912] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:01:20.441 +0530 [97912] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:01:20.441 +0530 [97912] HINT:  The transaction might succeed if retried.
+2026-10-08 10:01:20.441 +0530 [97912] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:01:20.462 +0530 [97893] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:20.463 +0530 [97912] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:20.488 +0530 [97902] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:20.488 +0530 [97913] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:20.511 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:20.518 +0530 [97894] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:20.806 +0530 [97916] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:20.839 +0530 [97690] LOG:  checkpoint complete: wrote 4528 buffers (27.6%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 3 recycled; write=0.270 s, sync=0.055 s, total=0.329 s; sync files=1943, longest=0.002 s, average=0.001 s; distance=43533 kB, estimate=43533 kB; lsn=0/435CE88, redo lsn=0/420E520
+2026-10-08 10:01:20.840 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:20.850 +0530 [97690] LOG:  checkpoint complete: wrote 186 buffers (1.1%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.006 s, total=0.010 s; sync files=40, longest=0.003 s, average=0.001 s; distance=1338 kB, estimate=39313 kB; lsn=0/435D6F0, redo lsn=0/435CF00
+2026-10-08 10:01:20.851 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:20.853 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=1, longest=0.001 s, average=0.001 s; distance=2 kB, estimate=35382 kB; lsn=0/435D7D8, redo lsn=0/435D768
+2026-10-08 10:01:21.424 +0530 [97920] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:01:21.424 +0530 [97920] DETAIL:  Key ("LawyerId", "DayOfWeek")=(b5426748-57d0-4277-8f7c-4a684859d59b, 1) already exists.
+2026-10-08 10:01:21.424 +0530 [97920] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:01:21.462 +0530 [97920] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.462 +0530 [97925] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.471 +0530 [97903] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.473 +0530 [97919] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:01:21.473 +0530 [97919] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:01:21.473 +0530 [97919] HINT:  The transaction might succeed if retried.
+2026-10-08 10:01:21.473 +0530 [97919] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:01:21.480 +0530 [97919] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.480 +0530 [97926] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.507 +0530 [97906] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.508 +0530 [97924] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.516 +0530 [97927] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:01:21.516 +0530 [97927] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:01:21.516 +0530 [97927] HINT:  The transaction might succeed if retried.
+2026-10-08 10:01:21.516 +0530 [97927] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:01:21.520 +0530 [97927] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.520 +0530 [97923] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:21.563 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:21.623 +0530 [97690] LOG:  checkpoint complete: wrote 1900 buffers (11.6%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.059 s, sync=0.001 s, total=0.060 s; sync files=8, longest=0.001 s, average=0.001 s; distance=22438 kB, estimate=34088 kB; lsn=0/5948070, redo lsn=0/5947218
+2026-10-08 10:01:21.624 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:21.625 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=1, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=30679 kB; lsn=0/5948158, redo lsn=0/59480E8
+2026-10-08 10:01:22.192 +0530 [97929] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:22.203 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:22.260 +0530 [97690] LOG:  checkpoint complete: wrote 1056 buffers (6.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.044 s, sync=0.014 s, total=0.058 s; sync files=478, longest=0.001 s, average=0.001 s; distance=10932 kB, estimate=28705 kB; lsn=0/63F54A0, redo lsn=0/63F5448
+2026-10-08 10:01:22.487 +0530 [97933] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:22.554 +0530 [97931] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:22.588 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:22.591 +0530 [97690] LOG:  checkpoint complete: wrote 92 buffers (0.6%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.003 s; sync files=47, longest=0.001 s, average=0.001 s; distance=5738 kB, estimate=26408 kB; lsn=0/698FF10, redo lsn=0/698FEB8
+2026-10-08 10:01:22.591 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:22.592 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=1, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=23767 kB; lsn=0/6990B88, redo lsn=0/6990B28
+2026-10-08 10:01:23.271 +0530 [97935] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:23.372 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:23.374 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5482 kB, estimate=21939 kB; lsn=0/6EEB450, redo lsn=0/6EEB3F8
+2026-10-08 10:01:23.962 +0530 [97937] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:24.064 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:24.066 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5482 kB, estimate=20293 kB; lsn=0/7445D78, redo lsn=0/7445D20
+2026-10-08 10:01:24.696 +0530 [97939] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:24.798 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:24.800 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5482 kB, estimate=18812 kB; lsn=0/79A07A0, redo lsn=0/79A0748
+2026-10-08 10:01:25.492 +0530 [97941] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:25.593 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:25.596 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5482 kB, estimate=17479 kB; lsn=0/7EFB290, redo lsn=0/7EFB238
+2026-10-08 10:01:26.343 +0530 [97944] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:26.444 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:26.446 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5484 kB, estimate=16280 kB; lsn=0/84562B8, redo lsn=0/8456260
+2026-10-08 10:01:27.142 +0530 [97946] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:27.243 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:27.245 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5483 kB, estimate=15200 kB; lsn=0/89B0F80, redo lsn=0/89B0F28
+2026-10-08 10:01:27.849 +0530 [97948] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:27.951 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:27.952 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5483 kB, estimate=14228 kB; lsn=0/8F0BD40, redo lsn=0/8F0BCE8
+2026-10-08 10:01:28.572 +0530 [97950] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:28.673 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:28.675 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5483 kB, estimate=13354 kB; lsn=0/9466C08, redo lsn=0/9466BB0
+2026-10-08 10:01:29.257 +0530 [97952] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:29.359 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:29.360 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5484 kB, estimate=12567 kB; lsn=0/99C1CE0, redo lsn=0/99C1C88
+2026-10-08 10:01:30.437 +0530 [97954] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:30.539 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:30.540 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5484 kB, estimate=11858 kB; lsn=0/9F1CF08, redo lsn=0/9F1CEB0
+2026-10-08 10:01:30.988 +0530 [97958] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:31.090 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:31.092 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5484 kB, estimate=11221 kB; lsn=0/A4780F8, redo lsn=0/A4780A0
+2026-10-08 10:01:31.551 +0530 [97960] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:31.652 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:31.653 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5484 kB, estimate=10647 kB; lsn=0/A9D3348, redo lsn=0/A9D32F0
+2026-10-08 10:01:32.134 +0530 [97962] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:32.235 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:32.236 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5487 kB, estimate=10131 kB; lsn=0/AF2EFA0, redo lsn=0/AF2EF48
+2026-10-08 10:01:32.670 +0530 [97964] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:32.772 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:32.773 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5485 kB, estimate=9667 kB; lsn=0/B48A490, redo lsn=0/B48A438
+2026-10-08 10:01:33.217 +0530 [97966] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:33.317 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:33.319 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5485 kB, estimate=9248 kB; lsn=0/B9E59B0, redo lsn=0/B9E5958
+2026-10-08 10:01:33.918 +0530 [97968] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:34.019 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:34.020 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5485 kB, estimate=8872 kB; lsn=0/BF41148, redo lsn=0/BF410F0
+2026-10-08 10:01:34.577 +0530 [97970] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:34.679 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:34.681 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5486 kB, estimate=8533 kB; lsn=0/C49C9B8, redo lsn=0/C49C960
+2026-10-08 10:01:35.120 +0530 [97972] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:35.221 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:35.222 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5489 kB, estimate=8229 kB; lsn=0/C9F8F60, redo lsn=0/C9F8F08
+2026-10-08 10:01:35.668 +0530 [97974] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:35.770 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:35.771 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5486 kB, estimate=7955 kB; lsn=0/CF54848, redo lsn=0/CF547F0
+2026-10-08 10:01:36.208 +0530 [97976] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:36.310 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:36.311 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5486 kB, estimate=7708 kB; lsn=0/D4B0258, redo lsn=0/D4B0200
+2026-10-08 10:01:36.874 +0530 [97978] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:36.975 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:36.976 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5489 kB, estimate=7486 kB; lsn=0/DA0C970, redo lsn=0/DA0C918
+2026-10-08 10:01:37.370 +0530 [97980] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:37.472 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:37.473 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5488 kB, estimate=7286 kB; lsn=0/DF68C88, redo lsn=0/DF68C30
+2026-10-08 10:01:37.918 +0530 [97982] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:38.019 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:38.020 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5487 kB, estimate=7106 kB; lsn=0/E4C4AB0, redo lsn=0/E4C4A58
+2026-10-08 10:01:38.450 +0530 [97984] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:38.552 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:38.553 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5488 kB, estimate=6944 kB; lsn=0/EA20BE0, redo lsn=0/EA20B88
+2026-10-08 10:01:39.055 +0530 [97986] FATAL:  terminating connection due to administrator command
+2026-10-08 10:01:39.157 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:01:39.158 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5487 kB, estimate=6799 kB; lsn=0/EF7CAF8, redo lsn=0/EF7CAA0
+2026-10-08 10:06:39.162 +0530 [97690] LOG:  checkpoint starting: time
+2026-10-08 10:06:48.343 +0530 [97690] LOG:  checkpoint complete: wrote 90 buffers (0.5%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=9.177 s, sync=0.002 s, total=9.182 s; sync files=46, longest=0.001 s, average=0.001 s; distance=363 kB, estimate=6155 kB; lsn=0/EFD7B10, redo lsn=0/EFD7A80
+2026-10-08 10:11:39.346 +0530 [97690] LOG:  checkpoint starting: time
+2026-10-08 10:11:40.877 +0530 [97690] LOG:  checkpoint complete: wrote 15 buffers (0.1%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.527 s, sync=0.002 s, total=1.532 s; sync files=16, longest=0.001 s, average=0.001 s; distance=10 kB, estimate=5541 kB; lsn=0/EFDA6B8, redo lsn=0/EFDA660
+2026-10-08 10:14:28.636 +0530 [98714] ERROR:  null value in column "FileName" of relation "DocumentFiles" violates not-null constraint
+2026-10-08 10:14:28.636 +0530 [98714] DETAIL:  Failing row contains (3, -9999, null, null, null, null, Received, null, null, null, null, null).
+2026-10-08 10:14:28.636 +0530 [98714] STATEMENT:  BEGIN; INSERT INTO "DocumentationRequests" ("CustomerId","ServiceId","DocumentType","Status","CreatedAt") VALUES (9999,1,'QMSE_ROLLBACK_PROBE','PENDING',now()); INSERT INTO "DocumentFiles" ("RequestId") VALUES (-9999); ROLLBACK; SELECT count(*) AS orphan_requests FROM "DocumentationRequests" WHERE "DocumentType"='QMSE_ROLLBACK_PROBE';
+2026-10-08 10:15:43.817 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:43.817 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:43.817 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:43.817 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:44.890 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:44.890 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:44.890 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:44.890 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:45.944 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:45.944 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:45.944 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:45.944 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:46.976 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:46.976 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:46.976 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:46.976 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:48.006 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:48.006 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:48.008 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:48.008 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:49.032 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:49.032 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:49.038 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:49.038 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:49.097 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:49.097 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:50.047 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:50.047 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:50.050 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:50.050 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:51.064 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:51.064 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:51.066 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:51.066 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:52.093 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:52.093 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:52.095 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:52.095 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:53.125 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:53.125 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:53.128 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:53.128 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:54.157 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:54.157 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:54.160 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:54.160 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:55.189 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:55.189 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:55.191 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:55.191 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:56.227 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:56.227 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:56.229 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:56.229 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:57.257 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:57.257 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:57.259 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:57.259 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:58.281 +0530 [98636] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:58.281 +0530 [98636] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:15:58.284 +0530 [98754] ERROR:  column a.ConsultationType does not exist at character 50
+2026-10-08 10:15:58.284 +0530 [98754] STATEMENT:  SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", l."LawyerId", l."CreatedAt", l."DefaultAppointmentDurationMinutes", l."Email", l."Experience", l."LicenseNumber", l."Name", l."PhoneNumber", l."ProfileDescription", l."Qualification", l."Status", l."UpdatedAt", l."UserId", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l0."AvailabilityId", l0."Date", l0."EndTime", l0."LawyerId", l0."StartTime"
+	FROM "Appointments" AS a
+	INNER JOIN "Lawyers" AS l ON a."LawyerId" = l."LawyerId"
+	INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+	INNER JOIN "LawyerAvailabilities" AS l0 ON a0."AvailabilityId" = l0."AvailabilityId"
+	ORDER BY a."CreatedAt" DESC
+2026-10-08 10:16:39.882 +0530 [97690] LOG:  checkpoint starting: time
+2026-10-08 10:16:47.677 +0530 [97690] LOG:  checkpoint complete: wrote 77 buffers (0.5%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=7.790 s, sync=0.003 s, total=7.796 s; sync files=57, longest=0.001 s, average=0.001 s; distance=81 kB, estimate=4995 kB; lsn=0/EFEED10, redo lsn=0/EFEEC80
+2026-10-08 10:18:25.320 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:18:25.329 +0530 [97690] LOG:  checkpoint complete: wrote 36 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.008 s, sync=0.001 s, total=0.010 s; sync files=25, longest=0.001 s, average=0.001 s; distance=5688 kB, estimate=5688 kB; lsn=0/F57CF70, redo lsn=0/F57CF18
+2026-10-08 10:21:06.464 +0530 [99055] ERROR:  null value in column "FileName" of relation "DocumentFiles" violates not-null constraint
+2026-10-08 10:21:06.464 +0530 [99055] DETAIL:  Failing row contains (8, -9999, null, null, null, null, Received, null, null, null, null, null).
+2026-10-08 10:21:06.464 +0530 [99055] STATEMENT:  BEGIN; INSERT INTO "DocumentationRequests" ("CustomerId","ServiceId","DocumentType","Status","CreatedAt") VALUES (9999,1,'QMSE_ROLLBACK_PROBE','PENDING',now()); INSERT INTO "DocumentFiles" ("RequestId") VALUES (-9999); ROLLBACK; SELECT count(*) AS orphan_requests FROM "DocumentationRequests" WHERE "DocumentType"='QMSE_ROLLBACK_PROBE';
+2026-10-08 10:23:25.334 +0530 [97690] LOG:  checkpoint starting: time
+2026-10-08 10:23:30.737 +0530 [97690] LOG:  checkpoint complete: wrote 53 buffers (0.3%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=5.398 s, sync=0.002 s, total=5.404 s; sync files=53, longest=0.001 s, average=0.001 s; distance=81 kB, estimate=5127 kB; lsn=0/F591678, redo lsn=0/F591620
+2026-10-08 10:23:44.738 +0530 [99285] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:23:44.738 +0530 [99285] DETAIL:  Key ("LawyerId", "DayOfWeek")=(98c36715-0f14-4959-b6be-8a50705b5d4c, 1) already exists.
+2026-10-08 10:23:44.738 +0530 [99285] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:23:44.870 +0530 [99285] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:44.870 +0530 [99303] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:44.892 +0530 [99286] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:44.917 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:45.056 +0530 [99284] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.174 +0530 [97690] LOG:  checkpoint complete: wrote 5289 buffers (32.3%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.216 s, sync=0.040 s, total=0.257 s; sync files=2511, longest=0.001 s, average=0.001 s; distance=37631 kB, estimate=37631 kB; lsn=0/1206E848, redo lsn=0/11A512B0
+2026-10-08 10:23:45.175 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:45.226 +0530 [97690] LOG:  checkpoint complete: wrote 1249 buffers (7.6%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.039 s, sync=0.010 s, total=0.051 s; sync files=388, longest=0.001 s, average=0.001 s; distance=6261 kB, estimate=34494 kB; lsn=0/1206EA38, redo lsn=0/1206E8C0
+2026-10-08 10:23:45.364 +0530 [99312] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:23:45.364 +0530 [99312] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:23:45.364 +0530 [99312] HINT:  The transaction might succeed if retried.
+2026-10-08 10:23:45.364 +0530 [99312] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:23:45.403 +0530 [99299] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.403 +0530 [99312] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.434 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:45.492 +0530 [99295] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.524 +0530 [97690] LOG:  checkpoint complete: wrote 2399 buffers (14.6%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.062 s, sync=0.028 s, total=0.090 s; sync files=1190, longest=0.001 s, average=0.001 s; distance=12279 kB, estimate=32272 kB; lsn=0/12DF2750, redo lsn=0/12C6C650
+2026-10-08 10:23:45.531 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:45.552 +0530 [97690] LOG:  checkpoint complete: wrote 315 buffers (1.9%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.005 s, total=0.021 s; sync files=212, longest=0.001 s, average=0.001 s; distance=1572 kB, estimate=29202 kB; lsn=0/12E30CB0, redo lsn=0/12DF58A0
+2026-10-08 10:23:45.729 +0530 [99314] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.746 +0530 [99315] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:23:45.746 +0530 [99315] DETAIL:  Key ("LawyerId", "DayOfWeek")=(1839f0d7-9c36-48ae-8739-b0f734200a87, 1) already exists.
+2026-10-08 10:23:45.746 +0530 [99315] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:23:45.748 +0530 [99318] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:23:45.748 +0530 [99318] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:23:45.748 +0530 [99318] HINT:  The transaction might succeed if retried.
+2026-10-08 10:23:45.748 +0530 [99318] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:23:45.759 +0530 [99310] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.759 +0530 [99318] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.807 +0530 [99315] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.807 +0530 [99319] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:45.830 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:45.922 +0530 [97690] LOG:  checkpoint complete: wrote 2124 buffers (13.0%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.080 s, sync=0.013 s, total=0.093 s; sync files=957, longest=0.001 s, average=0.001 s; distance=10697 kB, estimate=27352 kB; lsn=0/13A803A0, redo lsn=0/13867E28
+2026-10-08 10:23:45.924 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:45.943 +0530 [97690] LOG:  checkpoint complete: wrote 311 buffers (1.9%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.009 s, total=0.019 s; sync files=139, longest=0.003 s, average=0.001 s; distance=2145 kB, estimate=24831 kB; lsn=0/13ABCC78, redo lsn=0/13A80418
+2026-10-08 10:23:45.943 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:45.946 +0530 [97690] LOG:  checkpoint complete: wrote 41 buffers (0.3%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.003 s; sync files=45, longest=0.001 s, average=0.001 s; distance=244 kB, estimate=22372 kB; lsn=0/13ADBCC8, redo lsn=0/13ABD560
+2026-10-08 10:23:45.996 +0530 [99323] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:23:45.996 +0530 [99323] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:23:45.996 +0530 [99323] HINT:  The transaction might succeed if retried.
+2026-10-08 10:23:45.996 +0530 [99323] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:23:46.001 +0530 [99323] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:46.001 +0530 [99324] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:46.103 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:46.145 +0530 [97690] LOG:  checkpoint complete: wrote 1030 buffers (6.3%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.031 s, sync=0.011 s, total=0.043 s; sync files=452, longest=0.001 s, average=0.001 s; distance=4967 kB, estimate=20632 kB; lsn=0/14084980, redo lsn=0/13F97368
+2026-10-08 10:23:46.173 +0530 [99328] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:46.183 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:46.189 +0530 [97690] LOG:  checkpoint complete: wrote 154 buffers (0.9%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.002 s, sync=0.004 s, total=0.006 s; sync files=156, longest=0.001 s, average=0.001 s; distance=1276 kB, estimate=18696 kB; lsn=0/14105F78, redo lsn=0/140D64A8
+2026-10-08 10:23:46.225 +0530 [99329] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:23:46.225 +0530 [99329] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:23:46.225 +0530 [99329] HINT:  The transaction might succeed if retried.
+2026-10-08 10:23:46.225 +0530 [99329] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:23:46.228 +0530 [99329] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:46.228 +0530 [99327] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:46.329 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:46.330 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=2, longest=0.001 s, average=0.001 s; distance=277 kB, estimate=16854 kB; lsn=0/1411B910, redo lsn=0/1411B8B8
+2026-10-08 10:23:46.500 +0530 [99331] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:46.529 +0530 [99332] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:46.601 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:46.604 +0530 [97690] LOG:  checkpoint complete: wrote 92 buffers (0.6%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.003 s; sync files=47, longest=0.001 s, average=0.001 s; distance=5692 kB, estimate=15738 kB; lsn=0/146AAA08, redo lsn=0/146AA9B0
+2026-10-08 10:23:46.604 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:46.605 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=1, longest=0.001 s, average=0.001 s; distance=3 kB, estimate=14164 kB; lsn=0/146AB708, redo lsn=0/146AB6A8
+2026-10-08 10:23:46.767 +0530 [99335] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:46.868 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:46.915 +0530 [97690] LOG:  checkpoint complete: wrote 993 buffers (6.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.038 s, sync=0.009 s, total=0.047 s; sync files=478, longest=0.001 s, average=0.001 s; distance=10109 kB, estimate=13759 kB; lsn=0/1517C1C8, redo lsn=0/1508AAD0
+2026-10-08 10:23:47.358 +0530 [99337] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:47.459 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:47.464 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.005 s; sync files=2, longest=0.001 s, average=0.001 s; distance=1024 kB, estimate=12485 kB; lsn=0/1518AEB8, redo lsn=0/1518AE60
+2026-10-08 10:23:48.296 +0530 [99339] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:48.397 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:48.398 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=11780 kB; lsn=0/156D9F38, redo lsn=0/156D9EE0
+2026-10-08 10:23:49.548 +0530 [99347] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:49.651 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:49.652 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=11146 kB; lsn=0/15C290B0, redo lsn=0/15C29058
+2026-10-08 10:23:50.386 +0530 [99359] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:50.488 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:50.489 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=10575 kB; lsn=0/16178368, redo lsn=0/16178310
+2026-10-08 10:23:51.459 +0530 [99362] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:51.562 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:51.702 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.141 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=10061 kB; lsn=0/166C7AB8, redo lsn=0/166C7A60
+2026-10-08 10:23:52.543 +0530 [99386] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:52.646 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:52.646 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=9599 kB; lsn=0/16C16F00, redo lsn=0/16C16EA8
+2026-10-08 10:23:53.307 +0530 [99414] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:53.409 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:53.411 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=9183 kB; lsn=0/17166438, redo lsn=0/171663E0
+2026-10-08 10:23:54.014 +0530 [99432] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:54.116 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:54.117 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=8808 kB; lsn=0/176B5A40, redo lsn=0/176B59E8
+2026-10-08 10:23:54.699 +0530 [99442] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:54.801 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:54.803 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=8471 kB; lsn=0/17C052A0, redo lsn=0/17C05248
+2026-10-08 10:23:56.358 +0530 [99451] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:56.460 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:56.462 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=8168 kB; lsn=0/18154C08, redo lsn=0/18154BB0
+2026-10-08 10:23:57.064 +0530 [99456] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:57.165 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:57.166 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=7895 kB; lsn=0/186A4518, redo lsn=0/186A44C0
+2026-10-08 10:23:57.601 +0530 [99464] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:57.703 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:57.705 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=7649 kB; lsn=0/18BF3ED0, redo lsn=0/18BF3E78
+2026-10-08 10:23:58.134 +0530 [99466] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:58.236 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:58.238 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5440 kB, estimate=7428 kB; lsn=0/191442A0, redo lsn=0/19144248
+2026-10-08 10:23:58.636 +0530 [99469] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:58.738 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:58.739 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=7229 kB; lsn=0/19693ED0, redo lsn=0/19693E78
+2026-10-08 10:23:59.146 +0530 [99471] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:59.247 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:59.248 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=7050 kB; lsn=0/19BE3B58, redo lsn=0/19BE3B00
+2026-10-08 10:23:59.751 +0530 [99473] FATAL:  terminating connection due to administrator command
+2026-10-08 10:23:59.854 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:23:59.855 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=6889 kB; lsn=0/1A133A30, redo lsn=0/1A1339D8
+2026-10-08 10:24:00.374 +0530 [99476] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:00.477 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:00.480 +0530 [97690] LOG:  checkpoint complete: wrote 19 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.003 s; sync files=11, longest=0.001 s, average=0.001 s; distance=5557 kB, estimate=6756 kB; lsn=0/1A6A11E0, redo lsn=0/1A6A1188
+2026-10-08 10:24:00.869 +0530 [99478] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:00.972 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:00.973 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5432 kB, estimate=6624 kB; lsn=0/1ABEF540, redo lsn=0/1ABEF4E8
+2026-10-08 10:24:01.385 +0530 [99480] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:01.488 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:01.489 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5429 kB, estimate=6504 kB; lsn=0/1B13CBE8, redo lsn=0/1B13CB90
+2026-10-08 10:24:01.883 +0530 [99482] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:01.986 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:01.987 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5429 kB, estimate=6397 kB; lsn=0/1B68A398, redo lsn=0/1B68A340
+2026-10-08 10:24:02.487 +0530 [99484] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:02.590 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:02.591 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5433 kB, estimate=6300 kB; lsn=0/1BBD8858, redo lsn=0/1BBD8800
+2026-10-08 10:24:02.983 +0530 [99486] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:03.086 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:03.087 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5432 kB, estimate=6213 kB; lsn=0/1C126948, redo lsn=0/1C1268F0
+2026-10-08 10:24:03.499 +0530 [99488] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:03.601 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:03.602 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=6135 kB; lsn=0/1C6745B0, redo lsn=0/1C674558
+2026-10-08 10:24:04.010 +0530 [99490] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:04.113 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:04.114 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=6065 kB; lsn=0/1CBC2508, redo lsn=0/1CBC24B0
+2026-10-08 10:24:04.604 +0530 [99492] FATAL:  terminating connection due to administrator command
+2026-10-08 10:24:04.706 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:24:04.708 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=6001 kB; lsn=0/1D110278, redo lsn=0/1D110220
+2026-10-08 10:29:04.713 +0530 [97690] LOG:  checkpoint starting: time
+2026-10-08 10:29:07.360 +0530 [97690] LOG:  checkpoint complete: wrote 26 buffers (0.2%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=2.642 s, sync=0.002 s, total=2.647 s; sync files=26, longest=0.001 s, average=0.001 s; distance=48 kB, estimate=5406 kB; lsn=0/1D11C300, redo lsn=0/1D11C2A8
+2026-10-08 10:29:22.850 +0530 [282] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:29:22.850 +0530 [282] DETAIL:  Key ("LawyerId", "DayOfWeek")=(fbf54aaa-5c4e-4646-81dc-2f063e2c3dd5, 1) already exists.
+2026-10-08 10:29:22.850 +0530 [282] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:29:22.913 +0530 [282] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:22.913 +0530 [310] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:22.940 +0530 [284] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:22.979 +0530 [287] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:29:22.979 +0530 [287] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:29:22.979 +0530 [287] HINT:  The transaction might succeed if retried.
+2026-10-08 10:29:22.979 +0530 [287] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:29:23.013 +0530 [287] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.013 +0530 [317] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.015 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:23.015 +0530 [295] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.051 +0530 [318] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:29:23.051 +0530 [318] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:29:23.051 +0530 [318] HINT:  The transaction might succeed if retried.
+2026-10-08 10:29:23.051 +0530 [318] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:29:23.062 +0530 [318] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.062 +0530 [304] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.187 +0530 [97690] LOG:  checkpoint complete: wrote 4690 buffers (28.6%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.137 s, sync=0.035 s, total=0.173 s; sync files=1589, longest=0.001 s, average=0.001 s; distance=43529 kB, estimate=43529 kB; lsn=0/1FC5CA38, redo lsn=0/1FB9E6F8
+2026-10-08 10:29:23.189 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:23.192 +0530 [97690] LOG:  checkpoint complete: wrote 67 buffers (0.4%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.003 s; sync files=40, longest=0.001 s, average=0.001 s; distance=760 kB, estimate=39252 kB; lsn=0/1FC5CB18, redo lsn=0/1FC5CAB0
+2026-10-08 10:29:23.471 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:23.520 +0530 [330] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.581 +0530 [340] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:29:23.581 +0530 [340] DETAIL:  Key ("LawyerId", "DayOfWeek")=(78afb15e-0f7e-4654-b188-e556ba560cbb, 1) already exists.
+2026-10-08 10:29:23.581 +0530 [340] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:29:23.606 +0530 [340] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.606 +0530 [344] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.610 +0530 [342] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.610 +0530 [343] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:29:23.610 +0530 [343] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:29:23.610 +0530 [343] HINT:  The transaction might succeed if retried.
+2026-10-08 10:29:23.610 +0530 [343] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:29:23.618 +0530 [336] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.618 +0530 [343] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.632 +0530 [345] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:29:23.632 +0530 [345] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:29:23.632 +0530 [345] HINT:  The transaction might succeed if retried.
+2026-10-08 10:29:23.632 +0530 [345] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:29:23.638 +0530 [334] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.638 +0530 [345] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:23.708 +0530 [97690] LOG:  checkpoint complete: wrote 4032 buffers (24.6%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.212 s, sync=0.025 s, total=0.238 s; sync files=1916, longest=0.001 s, average=0.001 s; distance=19830 kB, estimate=37310 kB; lsn=0/21347C38, redo lsn=0/20FBA598
+2026-10-08 10:29:23.711 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:23.712 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 5 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=3638 kB, estimate=33942 kB; lsn=0/21349098, redo lsn=0/21347EB0
+2026-10-08 10:29:23.712 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:23.717 +0530 [97690] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.005 s; sync files=0, longest=0.000 s, average=0.000 s; distance=4 kB, estimate=30549 kB; lsn=0/21349180, redo lsn=0/21349110
+2026-10-08 10:29:24.019 +0530 [347] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:24.035 +0530 [349] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:24.121 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:24.140 +0530 [97690] LOG:  checkpoint complete: wrote 390 buffers (2.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.016 s, sync=0.004 s, total=0.020 s; sync files=4, longest=0.003 s, average=0.001 s; distance=5691 kB, estimate=28063 kB; lsn=0/218D90E0, redo lsn=0/218D7F78
+2026-10-08 10:29:24.142 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:24.143 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=1, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=25257 kB; lsn=0/218D91B8, redo lsn=0/218D9158
+2026-10-08 10:29:24.361 +0530 [356] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:24.397 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:24.439 +0530 [97690] LOG:  checkpoint complete: wrote 1056 buffers (6.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.033 s, sync=0.009 s, total=0.042 s; sync files=478, longest=0.001 s, average=0.001 s; distance=10835 kB, estimate=23815 kB; lsn=0/2236DF68, redo lsn=0/2236DF10
+2026-10-08 10:29:24.838 +0530 [361] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:24.940 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:24.941 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.002 s; sync files=2, longest=0.001 s, average=0.001 s; distance=272 kB, estimate=21460 kB; lsn=0/223B21D0, redo lsn=0/223B2178
+2026-10-08 10:29:25.564 +0530 [363] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:25.665 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:25.666 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=19858 kB; lsn=0/22900CE0, redo lsn=0/22900C88
+2026-10-08 10:29:26.369 +0530 [374] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:26.470 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:26.471 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=18416 kB; lsn=0/22E4F8D0, redo lsn=0/22E4F878
+2026-10-08 10:29:27.134 +0530 [379] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:27.235 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:27.237 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5435 kB, estimate=17117 kB; lsn=0/2339E5D0, redo lsn=0/2339E578
+2026-10-08 10:29:27.837 +0530 [381] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:27.939 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:27.940 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5435 kB, estimate=15949 kB; lsn=0/238ED390, redo lsn=0/238ED338
+2026-10-08 10:29:28.718 +0530 [383] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:28.819 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:28.820 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=14898 kB; lsn=0/23E3C670, redo lsn=0/23E3C618
+2026-10-08 10:29:29.438 +0530 [387] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:29.540 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:29.541 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5435 kB, estimate=13952 kB; lsn=0/2438B610, redo lsn=0/2438B5B8
+2026-10-08 10:29:30.158 +0530 [389] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:30.260 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:30.261 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=13100 kB; lsn=0/248DA6A8, redo lsn=0/248DA650
+2026-10-08 10:29:30.760 +0530 [392] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:30.861 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:30.862 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=12334 kB; lsn=0/24E29828, redo lsn=0/24E297D0
+2026-10-08 10:29:31.285 +0530 [394] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:31.387 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:31.388 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=11644 kB; lsn=0/25378BE0, redo lsn=0/25378B88
+2026-10-08 10:29:32.379 +0530 [396] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:32.480 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:32.482 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=11023 kB; lsn=0/258C8088, redo lsn=0/258C8030
+2026-10-08 10:29:32.889 +0530 [398] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:32.991 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:32.992 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=10465 kB; lsn=0/25E174E0, redo lsn=0/25E17488
+2026-10-08 10:29:33.401 +0530 [400] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:33.503 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:33.504 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=9962 kB; lsn=0/26366A08, redo lsn=0/263669B0
+2026-10-08 10:29:33.944 +0530 [402] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:34.046 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:34.047 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=9510 kB; lsn=0/268B6908, redo lsn=0/268B68B0
+2026-10-08 10:29:34.476 +0530 [404] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:34.578 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:34.579 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=9102 kB; lsn=0/26E06090, redo lsn=0/26E06038
+2026-10-08 10:29:35.044 +0530 [406] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:35.145 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:35.146 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=8736 kB; lsn=0/27355860, redo lsn=0/27355808
+2026-10-08 10:29:35.767 +0530 [416] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:35.868 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:35.869 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=8406 kB; lsn=0/278A5260, redo lsn=0/278A5208
+2026-10-08 10:29:36.402 +0530 [421] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:36.503 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:36.504 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=8109 kB; lsn=0/27DF4D58, redo lsn=0/27DF4D00
+2026-10-08 10:29:36.890 +0530 [432] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:36.992 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:36.994 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5442 kB, estimate=7842 kB; lsn=0/283455E0, redo lsn=0/28345588
+2026-10-08 10:29:37.380 +0530 [434] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:37.482 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:37.483 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=7602 kB; lsn=0/28895158, redo lsn=0/28895100
+2026-10-08 10:29:37.869 +0530 [439] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:37.971 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:37.972 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=7386 kB; lsn=0/28DE4DE8, redo lsn=0/28DE4D90
+2026-10-08 10:29:38.487 +0530 [441] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:38.589 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:38.591 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5442 kB, estimate=7191 kB; lsn=0/29335848, redo lsn=0/293357F0
+2026-10-08 10:29:38.996 +0530 [443] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:39.097 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:39.098 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5435 kB, estimate=7016 kB; lsn=0/29884528, redo lsn=0/298844D0
+2026-10-08 10:29:39.498 +0530 [446] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:39.600 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:39.601 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5433 kB, estimate=6857 kB; lsn=0/29DD2CE8, redo lsn=0/29DD2C90
+2026-10-08 10:29:40.037 +0530 [448] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:40.139 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:40.140 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=6716 kB; lsn=0/2A322630, redo lsn=0/2A3225D8
+2026-10-08 10:29:40.637 +0530 [451] FATAL:  terminating connection due to administrator command
+2026-10-08 10:29:40.739 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:29:40.740 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=6587 kB; lsn=0/2A870EE8, redo lsn=0/2A870E90
+2026-10-08 10:34:11.890 +0530 [1434] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:11.962 +0530 [1433] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:34:11.962 +0530 [1433] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:34:11.962 +0530 [1433] HINT:  The transaction might succeed if retried.
+2026-10-08 10:34:11.962 +0530 [1433] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:34:11.991 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:11.997 +0530 [1436] ERROR:  duplicate key value violates unique constraint "PK_DocumentationServices"
+2026-10-08 10:34:11.997 +0530 [1436] DETAIL:  Key ("ServiceId")=(1) already exists.
+2026-10-08 10:34:11.997 +0530 [1436] STATEMENT:  INSERT INTO "DocumentationServices" ("ServiceId", "CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6)
+	RETURNING "IsActive"
+2026-10-08 10:34:12.016 +0530 [1455] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.028 +0530 [1453] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.090 +0530 [1458] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:34:12.090 +0530 [1458] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:34:12.090 +0530 [1458] HINT:  The transaction might succeed if retried.
+2026-10-08 10:34:12.090 +0530 [1458] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:34:12.103 +0530 [1458] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.103 +0530 [1454] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.187 +0530 [1459] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.189 +0530 [97690] LOG:  checkpoint complete: wrote 4142 buffers (25.3%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.175 s, sync=0.023 s, total=0.198 s; sync files=1453, longest=0.001 s, average=0.001 s; distance=38198 kB, estimate=38198 kB; lsn=0/2D381F48, redo lsn=0/2CDBE7A8
+2026-10-08 10:34:12.196 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:12.228 +0530 [97690] LOG:  checkpoint complete: wrote 1076 buffers (6.6%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.027 s, sync=0.005 s, total=0.032 s; sync files=334, longest=0.001 s, average=0.001 s; distance=5950 kB, estimate=34973 kB; lsn=0/2D48B1C8, redo lsn=0/2D38E1D0
+2026-10-08 10:34:12.228 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:12.266 +0530 [97690] LOG:  checkpoint complete: wrote 320 buffers (2.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.022 s, sync=0.016 s, total=0.038 s; sync files=207, longest=0.001 s, average=0.001 s; distance=1451 kB, estimate=31621 kB; lsn=0/2D72B3A8, redo lsn=0/2D4F9100
+2026-10-08 10:34:12.306 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:12.382 +0530 [97690] LOG:  checkpoint complete: wrote 667 buffers (4.1%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.035 s, sync=0.038 s, total=0.077 s; sync files=422, longest=0.003 s, average=0.001 s; distance=2952 kB, estimate=28754 kB; lsn=0/2E22E740, redo lsn=0/2D7DB428
+2026-10-08 10:34:12.743 +0530 [1469] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.777 +0530 [1476] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:34:12.777 +0530 [1476] DETAIL:  Key ("LawyerId", "DayOfWeek")=(b8e1f5fb-f5f8-401a-9038-4757a8dd6df9, 1) already exists.
+2026-10-08 10:34:12.777 +0530 [1476] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:34:12.800 +0530 [1476] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.800 +0530 [1492] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.803 +0530 [1493] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:34:12.803 +0530 [1493] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:34:12.803 +0530 [1493] HINT:  The transaction might succeed if retried.
+2026-10-08 10:34:12.803 +0530 [1493] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:34:12.807 +0530 [1491] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:34:12.807 +0530 [1491] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:34:12.807 +0530 [1491] HINT:  The transaction might succeed if retried.
+2026-10-08 10:34:12.807 +0530 [1491] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:34:12.808 +0530 [1477] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.808 +0530 [1493] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.811 +0530 [1478] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.811 +0530 [1491] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:12.823 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:12.896 +0530 [97690] LOG:  checkpoint complete: wrote 2182 buffers (13.3%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.053 s, sync=0.020 s, total=0.074 s; sync files=1019, longest=0.001 s, average=0.001 s; distance=29115 kB, estimate=29115 kB; lsn=0/2F4D7068, redo lsn=0/2F44A230
+2026-10-08 10:34:12.993 +0530 [1484] ERROR:  duplicate key value violates unique constraint "PK_DocumentationServices"
+2026-10-08 10:34:12.993 +0530 [1484] DETAIL:  Key ("ServiceId")=(1) already exists.
+2026-10-08 10:34:12.993 +0530 [1484] STATEMENT:  INSERT INTO "DocumentationServices" ("ServiceId", "CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6)
+	RETURNING "IsActive"
+2026-10-08 10:34:12.999 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:13.069 +0530 [1498] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:13.079 +0530 [97690] LOG:  checkpoint complete: wrote 1956 buffers (11.9%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.064 s, sync=0.017 s, total=0.081 s; sync files=681, longest=0.001 s, average=0.001 s; distance=9622 kB, estimate=27166 kB; lsn=0/2FF30E18, redo lsn=0/2FDAFDF0
+2026-10-08 10:34:13.084 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:13.099 +0530 [97690] LOG:  checkpoint complete: wrote 243 buffers (1.5%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.009 s, sync=0.006 s, total=0.016 s; sync files=220, longest=0.001 s, average=0.001 s; distance=1702 kB, estimate=24619 kB; lsn=0/30011028, redo lsn=0/2FF59660
+2026-10-08 10:34:13.163 +0530 [1497] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:34:13.163 +0530 [1497] DETAIL:  Key ("LawyerId", "DayOfWeek")=(360654d8-2987-4242-8fe8-835d72605207, 1) already exists.
+2026-10-08 10:34:13.163 +0530 [1497] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:34:13.170 +0530 [1496] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:13.176 +0530 [1497] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:13.176 +0530 [1499] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:13.271 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:13.277 +0530 [97690] LOG:  checkpoint complete: wrote 179 buffers (1.1%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.003 s, sync=0.004 s, total=0.007 s; sync files=150, longest=0.001 s, average=0.001 s; distance=1809 kB, estimate=22338 kB; lsn=0/3011DE78, redo lsn=0/3011DE20
+2026-10-08 10:34:13.278 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:13.279 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=1, longest=0.001 s, average=0.001 s; distance=4 kB, estimate=20105 kB; lsn=0/3011EFC8, redo lsn=0/3011EF68
+2026-10-08 10:34:13.408 +0530 [1503] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:13.429 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:13.436 +0530 [1502] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:13.465 +0530 [97690] LOG:  checkpoint complete: wrote 1056 buffers (6.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.030 s, sync=0.006 s, total=0.037 s; sync files=478, longest=0.001 s, average=0.001 s; distance=5690 kB, estimate=18663 kB; lsn=0/306C6340, redo lsn=0/306AD7C8
+2026-10-08 10:34:13.466 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:13.467 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=2, longest=0.001 s, average=0.001 s; distance=103 kB, estimate=16807 kB; lsn=0/306C7508, redo lsn=0/306C74A8
+2026-10-08 10:34:14.182 +0530 [1506] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:14.283 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:14.284 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=15670 kB; lsn=0/30C16DD8, redo lsn=0/30C16D80
+2026-10-08 10:34:14.939 +0530 [1508] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:15.041 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:15.046 +0530 [97690] LOG:  checkpoint complete: wrote 7 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.006 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5472 kB, estimate=14650 kB; lsn=0/3116EF20, redo lsn=0/3116EEC8
+2026-10-08 10:34:15.681 +0530 [1511] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:15.783 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:15.784 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5429 kB, estimate=13728 kB; lsn=0/316BC568, redo lsn=0/316BC510
+2026-10-08 10:34:16.531 +0530 [1513] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:16.632 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:16.633 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5429 kB, estimate=12898 kB; lsn=0/31C09C88, redo lsn=0/31C09C30
+2026-10-08 10:34:17.296 +0530 [1515] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:17.398 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:17.399 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=12152 kB; lsn=0/321578E8, redo lsn=0/32157890
+2026-10-08 10:34:17.990 +0530 [1517] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:18.092 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:18.093 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5430 kB, estimate=11479 kB; lsn=0/326A51F0, redo lsn=0/326A5198
+2026-10-08 10:34:18.651 +0530 [1519] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:18.752 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:18.754 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5430 kB, estimate=10875 kB; lsn=0/32BF2BD8, redo lsn=0/32BF2B80
+2026-10-08 10:34:19.314 +0530 [1521] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:19.416 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:19.417 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5430 kB, estimate=10330 kB; lsn=0/331406C0, redo lsn=0/33140668
+2026-10-08 10:34:19.991 +0530 [1524] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:20.093 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:20.094 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=9840 kB; lsn=0/3368E3B8, redo lsn=0/3368E360
+2026-10-08 10:34:21.661 +0530 [1526] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:21.762 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:21.763 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=9399 kB; lsn=0/33BDC1C0, redo lsn=0/33BDC168
+2026-10-08 10:34:22.312 +0530 [1528] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:22.413 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:22.414 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=9002 kB; lsn=0/34129F78, redo lsn=0/34129F20
+2026-10-08 10:34:22.958 +0530 [1530] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:23.059 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:23.061 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=8645 kB; lsn=0/34677DF0, redo lsn=0/34677D98
+2026-10-08 10:34:23.666 +0530 [1532] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:23.768 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:23.769 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=8324 kB; lsn=0/34BC6658, redo lsn=0/34BC6600
+2026-10-08 10:34:24.169 +0530 [1535] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:24.270 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:24.272 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5432 kB, estimate=8035 kB; lsn=0/35114750, redo lsn=0/351146F8
+2026-10-08 10:34:24.662 +0530 [1537] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:24.764 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:24.765 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5432 kB, estimate=7775 kB; lsn=0/35662870, redo lsn=0/35662818
+2026-10-08 10:34:25.265 +0530 [1539] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:25.367 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:25.368 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5432 kB, estimate=7540 kB; lsn=0/35BB0C08, redo lsn=0/35BB0BB0
+2026-10-08 10:34:25.865 +0530 [1541] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:25.967 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:25.968 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5433 kB, estimate=7330 kB; lsn=0/360FF060, redo lsn=0/360FF008
+2026-10-08 10:34:26.383 +0530 [1545] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:26.485 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:26.486 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=7140 kB; lsn=0/3664E238, redo lsn=0/3664E1E0
+2026-10-08 10:34:26.879 +0530 [1547] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:26.981 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:26.982 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5433 kB, estimate=6969 kB; lsn=0/36B9C6F8, redo lsn=0/36B9C6A0
+2026-10-08 10:34:27.369 +0530 [1549] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:27.471 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:27.472 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5433 kB, estimate=6816 kB; lsn=0/370EACF8, redo lsn=0/370EACA0
+2026-10-08 10:34:27.979 +0530 [1551] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:28.081 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:28.082 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=6678 kB; lsn=0/37639FE8, redo lsn=0/37639F90
+2026-10-08 10:34:28.470 +0530 [1553] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:28.571 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:28.572 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5435 kB, estimate=6554 kB; lsn=0/37B88F00, redo lsn=0/37B88EA8
+2026-10-08 10:34:28.968 +0530 [1555] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:29.069 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:29.071 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=6442 kB; lsn=0/380D78F8, redo lsn=0/380D78A0
+2026-10-08 10:34:29.517 +0530 [1557] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:29.618 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:29.619 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5435 kB, estimate=6341 kB; lsn=0/38626600, redo lsn=0/386265A8
+2026-10-08 10:34:30.143 +0530 [1571] FATAL:  terminating connection due to administrator command
+2026-10-08 10:34:30.244 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:34:30.245 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=6251 kB; lsn=0/38B75F48, redo lsn=0/38B75EF0
+2026-10-08 10:39:30.249 +0530 [97690] LOG:  checkpoint starting: time
+2026-10-08 10:39:30.457 +0530 [97690] LOG:  checkpoint complete: wrote 2 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.204 s, sync=0.001 s, total=0.209 s; sync files=3, longest=0.001 s, average=0.001 s; distance=5 kB, estimate=5626 kB; lsn=0/38B774C0, redo lsn=0/38B77468
+2026-10-08 10:40:38.444 +0530 [1923] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:40:38.444 +0530 [1923] DETAIL:  Key ("LawyerId", "DayOfWeek")=(643ebe84-d4e7-4910-bdc3-09693a8c5415, 1) already exists.
+2026-10-08 10:40:38.444 +0530 [1923] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:40:38.540 +0530 [1923] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:38.540 +0530 [1940] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:38.598 +0530 [1918] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:38.631 +0530 [1942] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:40:38.631 +0530 [1942] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:40:38.631 +0530 [1942] HINT:  The transaction might succeed if retried.
+2026-10-08 10:40:38.631 +0530 [1942] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:40:38.642 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:38.681 +0530 [1942] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:38.681 +0530 [1922] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:38.704 +0530 [1921] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:38.886 +0530 [1920] ERROR:  Synthetic attachment commit failure
+2026-10-08 10:40:38.886 +0530 [1920] CONTEXT:  PL/pgSQL function qmse_fail_attach() line 2 at RAISE
+2026-10-08 10:40:38.886 +0530 [1920] STATEMENT:  INSERT INTO "DocumentFiles" ("ContentType", "CreatedAt", "DocumentStatus", "FileContents", "FileName", "FilePath", "FileSize", "RejectReason", "RequestId", "UpdatedAt", "UploadDate")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+	RETURNING "FileId"
+2026-10-08 10:40:38.896 +0530 [97690] LOG:  checkpoint complete: wrote 5843 buffers (35.7%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 3 recycled; write=0.215 s, sync=0.037 s, total=0.254 s; sync files=1956, longest=0.002 s, average=0.001 s; distance=43582 kB, estimate=43582 kB; lsn=0/3B6FCCB0, redo lsn=0/3B607040
+2026-10-08 10:40:38.899 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:38.906 +0530 [97690] LOG:  checkpoint complete: wrote 102 buffers (0.6%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.004 s, total=0.007 s; sync files=54, longest=0.002 s, average=0.001 s; distance=983 kB, estimate=39323 kB; lsn=0/3B700EF8, redo lsn=0/3B6FCE28
+2026-10-08 10:40:39.369 +0530 [1957] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-08 10:40:39.369 +0530 [1957] DETAIL:  Key ("LawyerId", "DayOfWeek")=(b1b75c19-61c7-4441-9a87-fdef31e030f0, 1) already exists.
+2026-10-08 10:40:39.369 +0530 [1957] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-08 10:40:39.421 +0530 [1957] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.421 +0530 [1966] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.422 +0530 [1959] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.437 +0530 [1967] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:40:39.437 +0530 [1967] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-08 10:40:39.437 +0530 [1967] HINT:  The transaction might succeed if retried.
+2026-10-08 10:40:39.437 +0530 [1967] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-08 10:40:39.470 +0530 [1961] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.471 +0530 [1967] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.471 +0530 [1956] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.476 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:39.504 +0530 [1972] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.612 +0530 [97690] LOG:  checkpoint complete: wrote 3414 buffers (20.8%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.116 s, sync=0.019 s, total=0.136 s; sync files=946, longest=0.001 s, average=0.001 s; distance=26740 kB, estimate=38064 kB; lsn=0/3D2D2BB0, redo lsn=0/3D119F60
+2026-10-08 10:40:39.614 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:39.619 +0530 [1971] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.622 +0530 [97690] LOG:  checkpoint complete: wrote 232 buffers (1.4%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.004 s, total=0.009 s; sync files=152, longest=0.001 s, average=0.001 s; distance=1768 kB, estimate=34435 kB; lsn=0/3D2E54E0, redo lsn=0/3D2D42E0
+2026-10-08 10:40:39.623 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:39.624 +0530 [97690] LOG:  checkpoint complete: wrote 14 buffers (0.1%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=15, longest=0.001 s, average=0.001 s; distance=74 kB, estimate=30999 kB; lsn=0/3D2E7788, redo lsn=0/3D2E6EC0
+2026-10-08 10:40:39.798 +0530 [1973] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:40:39.798 +0530 [1973] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:40:39.798 +0530 [1973] HINT:  The transaction might succeed if retried.
+2026-10-08 10:40:39.798 +0530 [1973] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:40:39.850 +0530 [1973] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.850 +0530 [1981] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.887 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:39.910 +0530 [1980] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:39.947 +0530 [97690] LOG:  checkpoint complete: wrote 1611 buffers (9.8%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.051 s, sync=0.009 s, total=0.060 s; sync files=478, longest=0.001 s, average=0.001 s; distance=10507 kB, estimate=28949 kB; lsn=0/3DE89480, redo lsn=0/3DD29B00
+2026-10-08 10:40:39.948 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:39.951 +0530 [97690] LOG:  checkpoint complete: wrote 124 buffers (0.8%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.002 s, total=0.004 s; sync files=57, longest=0.001 s, average=0.001 s; distance=1406 kB, estimate=26195 kB; lsn=0/3DE89558, redo lsn=0/3DE894F8
+2026-10-08 10:40:40.140 +0530 [1988] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:40.158 +0530 [1986] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-08 10:40:40.158 +0530 [1986] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-08 10:40:40.158 +0530 [1986] HINT:  The transaction might succeed if retried.
+2026-10-08 10:40:40.158 +0530 [1986] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-08 10:40:40.161 +0530 [1986] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:40.161 +0530 [1991] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:40.241 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:40.262 +0530 [97690] LOG:  checkpoint complete: wrote 676 buffers (4.1%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.021 s, sync=0.001 s, total=0.022 s; sync files=8, longest=0.001 s, average=0.001 s; distance=10922 kB, estimate=24668 kB; lsn=0/3E935AB0, redo lsn=0/3E933EA8
+2026-10-08 10:40:40.263 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:40.264 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=1, longest=0.001 s, average=0.001 s; distance=7 kB, estimate=22202 kB; lsn=0/3E935B88, redo lsn=0/3E935B28
+2026-10-08 10:40:40.367 +0530 [1983] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:40.468 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:40.470 +0530 [97690] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=2, longest=0.001 s, average=0.001 s; distance=275 kB, estimate=20009 kB; lsn=0/3E97A800, redo lsn=0/3E97A7A8
+2026-10-08 10:40:41.201 +0530 [1993] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:41.303 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:41.304 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=18552 kB; lsn=0/3EECA268, redo lsn=0/3EECA210
+2026-10-08 10:40:41.892 +0530 [1995] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:41.993 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:41.994 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=17241 kB; lsn=0/3F419DD8, redo lsn=0/3F419D80
+2026-10-08 10:40:42.677 +0530 [1997] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:42.779 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:42.780 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=16060 kB; lsn=0/3F969A10, redo lsn=0/3F9699B8
+2026-10-08 10:40:43.449 +0530 [1999] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:43.550 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:43.552 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=14998 kB; lsn=0/3FEB97C8, redo lsn=0/3FEB9770
+2026-10-08 10:40:44.227 +0530 [2001] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:44.329 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:44.330 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=14042 kB; lsn=0/40408138, redo lsn=0/404080E0
+2026-10-08 10:40:45.181 +0530 [2003] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:45.282 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:45.283 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5433 kB, estimate=13181 kB; lsn=0/40956790, redo lsn=0/40956738
+2026-10-08 10:40:45.937 +0530 [2006] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:46.062 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:46.240 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.033 s, sync=0.004 s, total=0.178 s; sync files=4, longest=0.004 s, average=0.001 s; distance=5433 kB, estimate=12406 kB; lsn=0/40EA4E90, redo lsn=0/40EA4E38
+2026-10-08 10:40:47.272 +0530 [2015] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:47.374 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:47.375 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=11709 kB; lsn=0/413F3690, redo lsn=0/413F3638
+2026-10-08 10:40:47.968 +0530 [2017] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:48.070 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:48.071 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=11081 kB; lsn=0/419420B8, redo lsn=0/41942060
+2026-10-08 10:40:49.646 +0530 [2019] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:49.747 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:49.748 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=10517 kB; lsn=0/41E90BD8, redo lsn=0/41E90B80
+2026-10-08 10:40:50.325 +0530 [2022] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:50.426 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:50.427 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=10008 kB; lsn=0/423DF6C0, redo lsn=0/423DF668
+2026-10-08 10:40:50.993 +0530 [2027] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:51.095 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:51.096 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5434 kB, estimate=9551 kB; lsn=0/4292E268, redo lsn=0/4292E210
+2026-10-08 10:40:52.022 +0530 [2031] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:52.123 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:52.124 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=9140 kB; lsn=0/42E7D7D0, redo lsn=0/42E7D778
+2026-10-08 10:40:52.528 +0530 [2033] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:52.629 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:52.630 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5435 kB, estimate=8769 kB; lsn=0/433CC630, redo lsn=0/433CC5D8
+2026-10-08 10:40:53.023 +0530 [2035] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:53.124 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:53.125 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5435 kB, estimate=8436 kB; lsn=0/4391B490, redo lsn=0/4391B438
+2026-10-08 10:40:53.635 +0530 [2037] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:53.737 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:53.738 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=8136 kB; lsn=0/43E6A520, redo lsn=0/43E6A4C8
+2026-10-08 10:40:54.235 +0530 [2039] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:54.337 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:54.338 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=7866 kB; lsn=0/443B9690, redo lsn=0/443B9638
+2026-10-08 10:40:54.803 +0530 [2041] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:54.905 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:54.906 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=7623 kB; lsn=0/44909560, redo lsn=0/44909508
+2026-10-08 10:40:55.318 +0530 [2043] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:55.419 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:55.421 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=7404 kB; lsn=0/44E58758, redo lsn=0/44E58700
+2026-10-08 10:40:55.896 +0530 [2045] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:55.998 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:55.999 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5436 kB, estimate=7208 kB; lsn=0/453A7A70, redo lsn=0/453A7A18
+2026-10-08 10:40:56.498 +0530 [2047] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:56.600 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:56.601 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5440 kB, estimate=7031 kB; lsn=0/458F7A88, redo lsn=0/458F7A30
+2026-10-08 10:40:56.988 +0530 [2049] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:57.089 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:57.090 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5439 kB, estimate=6872 kB; lsn=0/45E476B8, redo lsn=0/45E47660
+2026-10-08 10:40:57.494 +0530 [2051] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:57.596 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:57.597 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=6728 kB; lsn=0/46396DE0, redo lsn=0/46396D88
+2026-10-08 10:40:57.998 +0530 [2057] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:58.100 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:58.101 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5438 kB, estimate=6599 kB; lsn=0/468E6800, redo lsn=0/468E67A8
+2026-10-08 10:40:58.601 +0530 [2060] FATAL:  terminating connection due to administrator command
+2026-10-08 10:40:58.703 +0530 [97690] LOG:  checkpoint starting: immediate force wait
+2026-10-08 10:40:58.704 +0530 [97690] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5437 kB, estimate=6483 kB; lsn=0/46E35FF0, redo lsn=0/46E35F98
+2026-10-08 10:45:58.707 +0530 [97690] LOG:  checkpoint starting: time
+2026-10-08 10:45:59.934 +0530 [97690] LOG:  checkpoint complete: wrote 12 buffers (0.1%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=1.221 s, sync=0.002 s, total=1.228 s; sync files=10, longest=0.001 s, average=0.001 s; distance=58 kB, estimate=5840 kB; lsn=0/46E44868, redo lsn=0/46E44810
+2026-10-08 10:48:54.813 +0530 [2470] ERROR:  syntax error at or near ";" at character 67
+2026-10-08 10:48:54.813 +0530 [2470] STATEMENT:  SELECT "Id", "Name" FROM "Specializations" WHERE "Name" LIKE QMSE%;
+2026-10-08 10:49:10.574 +0530 [2484] ERROR:  column "Id" does not exist at character 8
+2026-10-08 10:49:10.574 +0530 [2484] STATEMENT:  SELECT "Id", "Name" FROM "Specializations";
+2026-10-08 10:53:53.430 +0530 [97686] LOG:  received fast shutdown request
+2026-10-08 10:53:53.431 +0530 [97686] LOG:  aborting any active transactions
+2026-10-08 10:53:53.432 +0530 [97686] LOG:  background worker "logical replication launcher" (PID 97695) exited with exit code 1
+2026-10-08 10:53:53.432 +0530 [97690] LOG:  shutting down
+2026-10-08 10:53:53.432 +0530 [97690] LOG:  checkpoint starting: shutdown immediate
+2026-10-08 10:53:53.434 +0530 [97690] LOG:  checkpoint complete: wrote 0 buffers (0.0%), wrote 0 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=0, longest=0.000 s, average=0.000 s; distance=0 kB, estimate=5256 kB; lsn=0/46E44918, redo lsn=0/46E44918
+2026-10-08 10:53:53.439 +0530 [97686] LOG:  database system is shut down

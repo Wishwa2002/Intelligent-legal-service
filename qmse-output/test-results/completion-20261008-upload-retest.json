@@ -1,0 +1,26 @@
+{
+  "name": "completion-20261008-upload-retest",
+  "command": [
+    "dotnet",
+    "test",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--no-build",
+    "--no-restore",
+    "--filter",
+    "FullyQualifiedName~QmseDocumentTests|FullyQualifiedName~QmseUploadRegressionTests",
+    "--verbosity",
+    "normal",
+    "--logger",
+    "trx;LogFileName=upload-retest.trx",
+    "--results-directory",
+    "qmse-output/completion-20261008/evidence"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T05:02:41.484462+00:00",
+  "ended_utc": "2026-10-08T05:02:45.242507+00:00",
+  "duration_seconds": 3.758,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-upload-retest.log"
+}

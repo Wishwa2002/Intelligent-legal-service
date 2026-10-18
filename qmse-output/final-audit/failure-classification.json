@@ -1,0 +1,1059 @@
+{
+  "counts": {
+    "B": 18,
+    "C": 10,
+    "UNDETERMINED": 2
+  },
+  "approval_basis": "No independent formal approval of V3 established. A is reserved for approved requirements, so a documented specification discrepancy alone is B. C means historical interface is unavailable in this tested revision; retirement approval still needed.",
+  "cases": [
+    {
+      "test_id": "TC-BK-01",
+      "component": "BK",
+      "expected_result": "Hash length >= 60; VerifyPassword returns true",
+      "observed_result": "Hash length 60, valid password true, wrong password false. Actual BCrypt cost is 11; explicit historical cost-12 precondition assertion fails. Cost-12 product approval has not been established. Earlier functional-only pass is preserved.",
+      "original_source_of_expectation": "SE3110 historical report case TC-BK-01; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Authentication/Services/PasswordService.cs",
+        "qmse-output/historical-resolution/evidence/password.trx",
+        "qmse-output/historical-resolution/evidence/password-cost.trx",
+        "qmse-output/historical-resolution/evidence/password-cost.log"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "PasswordService uses BCrypt default cost 11; functional checks pass. V3 Section 14 explicitly states 12, but approval/version authority is unconfirmed.",
+      "recommended_action": "Confirm cost 12; if approved make work factor explicit and rerun hash/verification/security tests.",
+      "assigned_component_responsibility": "Shared: propose Wijayananda authentication/Jeyashankar lawyer APIs/Buddhika scheduling (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "V3 Section 14 BCrypt cost 12",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/password.trx",
+        "qmse-output/historical-resolution/evidence/password-cost.trx",
+        "qmse-output/historical-resolution/evidence/password-cost.log"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-BK-03",
+      "component": "BK",
+      "expected_result": "HTTP 400 with field error",
+      "observed_result": {
+        "http": 201,
+        "body": {
+          "lawyerId": "69356139-46a9-4719-b438-4ef11c73f32e",
+          "name": "Synthetic Empty Bar",
+          "email": "qmse-history-empty-bar@example.test",
+          "phoneNumber": "",
+          "qualification": "Synthetic",
+          "experience": 5,
+          "licenseNumber": "QMSE-BAR-CONTROL",
+          "profileDescription": "",
+          "status": "Active",
+          "specializations": [
+            {
+              "specializationId": 3,
+              "name": "Corporate & Commercial Law",
+              "description": "Business registration, corporate governance, commercial contracts, and compliance."
+            }
+          ]
+        }
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-BK-03; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/DTOs/Requests/CreateLawyerRequest.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "BarNumber is not a field of the current create DTO; LicenseNumber is required and its empty-field control returns 400.",
+      "recommended_action": "Retain obsolete BarNumber failure; replacement tests need acceptance of the current LicenseNumber contract.",
+      "assigned_component_responsibility": "Shared: propose Wijayananda authentication/Jeyashankar lawyer APIs/Buddhika scheduling (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Confirm renamed BarNumber/LicenseNumber API contract",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/accepted-http-extra.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-BK-04",
+      "component": "BK",
+      "expected_result": "HTTP 200 + JWT with sub, email, role",
+      "observed_result": {
+        "http": 200,
+        "claim_names": [
+          "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+          "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+          "http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
+          "exp",
+          "iss",
+          "aud"
+        ]
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-BK-04; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Authentication/Services/JwtService.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "JWT is valid with role/name/email URI claims; historical sub and plain email claim names differ from V3 Section 14.",
+      "recommended_action": "Approve compatibility claim contract before adding aliases; preserve URI claims used by authorization.",
+      "assigned_component_responsibility": "Shared: propose Wijayananda authentication/Jeyashankar lawyer APIs/Buddhika scheduling (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "V3 Section 14 sub/email/role claim names",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-BK-06",
+      "component": "BK",
+      "expected_result": "HTTP 200, array of 3",
+      "observed_result": {
+        "http": 200,
+        "count": 5
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-BK-06; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Controllers/LawyersController.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "specializationId is unbound; implemented specialization accepts name/ID and control returns three.",
+      "recommended_action": "Use current query parameter only after contract acceptance; retain original ignored-query result.",
+      "assigned_component_responsibility": "Shared: propose Wijayananda authentication/Jeyashankar lawyer APIs/Buddhika scheduling (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Confirm current specialization query contract",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-BK-07",
+      "component": "BK",
+      "expected_result": "HTTP 200 with normalised ISO timestamps",
+      "observed_result": "Historical POST /api/ai/scheduling/classify returns 404 on both actual ASP.NET API and FastAPI. No normalized timestamp returned.",
+      "original_source_of_expectation": "SE3110 historical report case TC-BK-07; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "ai-service/app/main.py",
+        "qmse-output/historical-resolution/evidence/additional-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "Historical bridge classifier route returns 404 on both services; current scheduling is session-based.",
+      "recommended_action": "Replace route-level scenario with current agent contract; full provider response remains separately blocked.",
+      "assigned_component_responsibility": "Shared: propose Wijayananda authentication/Jeyashankar lawyer APIs/Buddhika scheduling (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Confirm current scheduling API revision",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/additional-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-DB-01",
+      "component": "DB",
+      "expected_result": "true; connected in < 200 ms",
+      "observed_result": "Actual EF CanConnectAsync true with SSL Mode=Require; first connection 349.529 ms exceeds historical <200 ms target. One cold connection, not API p95/load performance.",
+      "original_source_of_expectation": "SE3110 historical report case TC-DB-01; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.Tests/HistoricalCaseVerificationTests.cs",
+        "qmse-output/historical-resolution/evidence/postgres-setup.trx",
+        "qmse-output/historical-resolution/evidence/postgres-setup.log"
+      ],
+      "failure_classification": "UNDETERMINED",
+      "classification_label": "Undetermined",
+      "justification": "One isolated cold TLS connection took 349.529 ms. Original target was Neon connection, while NFR-01 defines API p95; root cause cannot be assigned from one different-host observation.",
+      "recommended_action": "Confirm environment and connection metric; rerun controlled cold/warm measurements after approving scope, without accessing production.",
+      "assigned_component_responsibility": "Shared: propose Buddhika constraints/Jeyashankar migrations/Vithusan data integrity (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Approve isolated-host connection threshold versus API p95",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/postgres-setup.trx",
+        "qmse-output/historical-resolution/evidence/postgres-setup.log",
+        "qmse-output/final-audit/debug/evidence/postgres-original.trx",
+        "qmse-output/final-audit/debug/evidence/regression-backend-postgres.trx"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-DB-03",
+      "component": "DB",
+      "expected_result": "All applied; 11 tables created",
+      "observed_result": {
+        "tables": 34,
+        "table_names": [
+          "AgentSessionStates",
+          "AgentSteps",
+          "AgentWorkflows",
+          "AppointmentStatusHistories",
+          "Appointments",
+          "ApprovalDecisions",
+          "AuditLogs",
+          "AvailabilitySlots",
+          "Careers",
+          "Clerks",
+          "DocumentFiles",
+          "DocumentationRequests",
+          "DocumentationServices",
+          "ExecutionSummaries",
+          "HiringSuggestionWorkflows",
+          "JobApplications",
+          "LawyerAvailabilities",
+          "LawyerLegalServices",
+          "LawyerRecommendationWorkflows",
+          "LawyerSpecializations",
+          "LawyerUnavailabilities",
+          "LawyerWorkingSchedules",
+          "Lawyers",
+          "LegalServices",
+          "PracticeAreaWorkforceSettings",
+          "Roles",
+          "ServiceRequests",
+          "Specializations",
+          "ToolExecutions",
+          "UserRoles",
+          "Users",
+          "ValidationResults",
+          "WorkforceDemoStates",
+          "__EFMigrationsHistory"
+        ],
+        "applied_migrations": [
+          "20260922093339_InitialCreate",
+          "20260922132300_FixAuditLogUserId",
+          "20260927120000_AddLawyerRecommendationWorkflows",
+          "20260929051536_SyncCurrentDatabaseSchema",
+          "20261003065251_AddMissingCurrentSchemaColumns",
+          "20261003090000_FixLegacyUserRoleIds",
+          "20261003233848_AddWorkforceHiringIntelligence",
+          "20261003235618_AllowUnlinkedLawyerProfiles",
+          "20261004061310_AddWorkforcePlanningSettings",
+          "20261004080145_AddRecurringLawyerScheduling",
+          "20261004095244_BackfillMissingLawyerSchedules",
+          "20261004151111_AddFrontDeskMatchingIntake",
+          "20261004165105_AddLawyerInitialPasswordChange",
+          "20261006120000_PrepareDeploymentStorage",
+          "20261008110000_CompleteAppointmentSchema"
+        ]
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-DB-03; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Migrations",
+        "qmse-output/historical-resolution/evidence/migrate.log",
+        "qmse-output/historical-resolution/evidence/migration-tables.log",
+        "qmse-output/historical-resolution/evidence/migration-history.log"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "Historical fixed eleven-table schema is obsolete; current fifteen EF migrations create 33 business tables plus history.",
+      "recommended_action": "Use migration completeness and relationships as current acceptance; preserve historical table-count failure.",
+      "assigned_component_responsibility": "Shared: propose Buddhika constraints/Jeyashankar migrations/Vithusan data integrity (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Confirm current schema baseline instead of fixed eleven tables",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/migrate.log",
+        "qmse-output/historical-resolution/evidence/migration-tables.log",
+        "qmse-output/historical-resolution/evidence/migration-history.log"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-FE-01",
+      "component": "FE",
+      "expected_result": "Name, fee and book button in DOM",
+      "observed_result": {
+        "failure": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText(/25,?000/)\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText(/25,?000/) with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByText(/25,?000/)\u001b[22m\n",
+        "pageErrors": []
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-FE-01; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "frontend/tests/historical-acceptance.spec.ts",
+        "qmse-output/historical-resolution/evidence/TC-FE-01.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Current catalogue card lacks fee/book elements; V3 FR-05 describes billable tariffs but UI placement/current catalogue responsibilities are unresolved.",
+      "recommended_action": "Confirm tariff model and booking entry point before UI/business changes.",
+      "assigned_component_responsibility": "Shared: propose Jeyashankar lawyer UI/Buddhika booking/Wijayananda auth (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "FR-05 fee display and booking UI placement",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-01.png",
+        "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log",
+        "qmse-output/historical-resolution/evidence/TC-FE-01.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-FE-02",
+      "component": "FE",
+      "expected_result": "Submission blocked; inline error",
+      "observed_result": {
+        "failure": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('alert').filter({ hasText: /slot|date/i })\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('alert').filter({ hasText: /slot|date/i }) with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByRole('alert').filter({ hasText: /slot|date/i })\u001b[22m\n",
+        "pageErrors": []
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-FE-02; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "frontend/tests/historical-acceptance.spec.ts",
+        "qmse-output/historical-resolution/evidence/TC-FE-02.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json",
+        "qmse-output/historical-resolution/evidence/playwright-no-slot.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "No-slot approval is disabled but historical inline error/alert is absent; final semantic rerun confirms this after correcting setup.",
+      "recommended_action": "Confirm whether guidance plus disabled approval satisfies UX contract; add explicit inline error only if required.",
+      "assigned_component_responsibility": "Shared: propose Jeyashankar lawyer UI/Buddhika booking/Wijayananda auth (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Inline validation feedback requirement",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-02.png",
+        "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log",
+        "qmse-output/historical-resolution/evidence/TC-FE-02.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json",
+        "qmse-output/historical-resolution/evidence/playwright-no-slot.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-FE-03",
+      "component": "FE",
+      "expected_result": "Redirect to /login?redirect=...",
+      "observed_result": {
+        "failure": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+        "pageErrors": []
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-FE-03; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "frontend/src/routes/ProtectedRoutes.tsx",
+        "qmse-output/historical-resolution/evidence/TC-FE-03.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Unauthenticated user reaches login; historical return-URL query is absent. V3 route guarding does not establish exact redirect query.",
+      "recommended_action": "Confirm return-to-origin UX; keep authentication protection result separate.",
+      "assigned_component_responsibility": "Shared: propose Jeyashankar lawyer UI/Buddhika booking/Wijayananda auth (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Login return URL semantics",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/accepted-ui/evidence/TC-FE-03.png",
+        "qmse-output/final-audit/debug/evidence/accepted-playwright-final.log",
+        "qmse-output/historical-resolution/evidence/TC-FE-03.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-MOB-02",
+      "component": "MOB",
+      "expected_result": "Name and rating found",
+      "observed_result": "Name renders; historical star/rating assertion fails because current model/card displays experience and license, with no rating field.",
+      "original_source_of_expectation": "SE3110 historical report case TC-MOB-02; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "mobile/test/historical_cases_test.dart",
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Current card/model renders experience/license, not rating. Historical model differs; no approved rating field identified.",
+      "recommended_action": "Confirm rating provenance/schema before adding fabricated ratings.",
+      "assigned_component_responsibility": "Shared: propose Jeyashankar lawyer models/UI/Wijayananda registration/storage (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Lawyer rating field/UI approval",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/accepted-flutter-final.log",
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-MOB-03",
+      "component": "MOB",
+      "expected_result": "Inline errors; button disabled",
+      "observed_result": "Password abc yields inline validation and no API request. Submit remains enabled; no Phone field exists for historical 123 input. Historical disabled-button/phone design differs.",
+      "original_source_of_expectation": "SE3110 historical report case TC-MOB-03; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "mobile/test/historical_cases_test.dart",
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Existing validation blocks invalid password network calls; button remains enabled and phone field is absent.",
+      "recommended_action": "Confirm required signup fields and disabled-button UX; do not fabricate a phone input.",
+      "assigned_component_responsibility": "Shared: propose Jeyashankar lawyer models/UI/Wijayananda registration/storage (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Signup phone and enabled/disabled UX",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/accepted-flutter-final.log",
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-MOB-05",
+      "component": "MOB",
+      "expected_result": "Token read back unchanged",
+      "observed_result": "Current ApiClient token roundtrip passes under auth_token in SharedPreferences; historical jwt key reads null. Secure-storage mechanism is not the implementation tested.",
+      "original_source_of_expectation": "SE3110 historical report case TC-MOB-05; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "mobile/lib/services/api_client.dart",
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Token roundtrip succeeds under SharedPreferences auth_token; V3 secure-storage narrative and historical jwt key differ.",
+      "recommended_action": "Confirm encrypted storage/platform contract; migrate only with platform regression coverage.",
+      "assigned_component_responsibility": "Shared: propose Jeyashankar lawyer models/UI/Wijayananda registration/storage (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "V3 secure token storage / key migration",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-E2E-02",
+      "component": "E2E",
+      "expected_result": "HTTP 201 + tracking number",
+      "observed_result": {
+        "http": 201,
+        "response": {
+          "requestId": 2,
+          "customerId": 3,
+          "customerName": "Synthetic History Customer",
+          "customerEmail": "qmse-history-customer@example.test",
+          "serviceId": 1,
+          "serviceName": "Contract Review & Amendment",
+          "documentType": "Deed of Transfer",
+          "status": "PENDING",
+          "assignedClerkId": null,
+          "assignedClerkName": null,
+          "createdAt": "2026-10-08T10:46:25.407193Z",
+          "updatedAt": "2026-10-08T10:46:25.407193Z",
+          "documentFiles": [],
+          "requiredDocuments": [
+            "Original Contract",
+            "Amendment Request Letter",
+            "NIC Copy"
+          ],
+          "missingDocuments": [
+            "Original Contract",
+            "Amendment Request Letter",
+            "NIC Copy"
+          ],
+          "reuploadNote": null
+        }
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-E2E-02; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentationRequestsController.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Request creation returns 201/requestId, not a separate tracking number. Whether requestId is sufficient tracking is unresolved.",
+      "recommended_action": "Confirm tracking identifier presentation, not a new invented field.",
+      "assigned_component_responsibility": "Shared: propose Vithusan document workflow with all four integration roles (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "RequestId versus tracking number acceptance",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-E2E-03",
+      "component": "E2E",
+      "expected_result": "Row with status PendingChecklist",
+      "observed_result": {
+        "database_row": {
+          "RequestId": 2,
+          "Status": "PENDING",
+          "CustomerId": 3,
+          "ServiceId": 1
+        }
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-E2E-03; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Services/DocumentAndClerk/DocumentationRequestService.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Actual persisted status PENDING differs from PendingChecklist; V3 workflow labels differ from current enum.",
+      "recommended_action": "Confirm canonical state mapping before migration or UI aliases.",
+      "assigned_component_responsibility": "Shared: propose Vithusan document workflow with all four integration roles (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Documentation status contract",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-E2E-04",
+      "component": "E2E",
+      "expected_result": "HTTP 200 + ChecklistResult",
+      "observed_result": {
+        "http": 404,
+        "response": {
+          "detail": "Not Found"
+        }
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-E2E-04; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "ai-service/app/main.py",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "Historical FastAPI checklist endpoint returns 404; current agent/session API is different.",
+      "recommended_action": "Accept current endpoint revision and design replacement invocation, preserving live-provider limits.",
+      "assigned_component_responsibility": "Shared: propose Vithusan document workflow with all four integration roles (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Document agent API revision",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-E2E-06",
+      "component": "E2E",
+      "expected_result": "HTTP 200; clerk ID stamped",
+      "observed_result": "Actual synthetic request assigned by API, uploaded 2 MiB PDF visible in real clerk review. Current transitions are ASSIGNED, UNDER_REVIEW, IN_PROGRESS, REQUIRES_DOCUMENTS, COMPLETED, REJECTED; no Approve button/Approved transition. Historical approval action could not produce HTTP 200/clerk stamp.",
+      "original_source_of_expectation": "SE3110 historical report case TC-E2E-06; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentationRequestsController.cs",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+        "qmse-output/historical-resolution/evidence/real-react-clerk-review.png"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Actual clerk review/assignment works; available transitions lack literal Approve/Approved. FR-13 describes approval, so COMPLETED equivalence needs confirmation.",
+      "recommended_action": "Confirm whether COMPLETED legally represents approval and required audit identity; do not force rows.",
+      "assigned_component_responsibility": "Shared: propose Vithusan document workflow with all four integration roles (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "FR-13 approval/audit-state mapping",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+        "qmse-output/historical-resolution/evidence/real-react-clerk-review.png"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C103",
+      "component": "C103",
+      "expected_result": "HTTP 200, fee updated",
+      "observed_result": {
+        "http": 200,
+        "response": {
+          "legalServiceId": 2,
+          "serviceName": "Synthetic History Fee Service",
+          "description": "Synthetic",
+          "category": "Corporate & Commercial Law",
+          "lawyerCount": 4
+        },
+        "database_row": {
+          "LegalServiceId": 2,
+          "ServiceName": "Synthetic History Fee Service",
+          "Description": "Synthetic",
+          "Category": "Corporate & Commercial Law",
+          "CreatedAt": "2026-10-08T16:16:24.273695+05:30",
+          "UpdatedAt": "2026-10-08T16:16:24.290697+05:30"
+        }
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C103; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.Tests/historical_api_replay.py",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Price is ignored, absent from model/DB; V3 FR-05 and component tariff description explicitly differ. Approval remains unresolved.",
+      "recommended_action": "Obtain tariff units/duration/approval; then implement coherent model/migration/API/UI rather than just adding a response field.",
+      "assigned_component_responsibility": "Jeyashankar (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "FR-05 approved fee and duration model",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C106",
+      "component": "C106",
+      "expected_result": "Badge updates without reload",
+      "observed_result": {
+        "failure": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('switch')\nExpected: visible\nTimeout: 1500ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('switch') with timeout 1500ms\u001b[22m\n\u001b[2m  - waiting for getByRole('switch')\u001b[22m\n",
+        "pageErrors": []
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C106; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "frontend/tests/historical-acceptance.spec.ts",
+        "qmse-output/historical-resolution/evidence/TC-C106.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Historical catalogue availability switch absent. FR-03 active status exists but is not automatically appointment availability.",
+      "recommended_action": "Confirm actor/page and distinction between active status and bookable availability.",
+      "assigned_component_responsibility": "Jeyashankar (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "FR-03 active status versus availability toggle",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C106.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C107",
+      "component": "C107",
+      "expected_result": "9 and 1001 rejected (HTTP 422); 10 and 1000 accepted",
+      "observed_result": "Current schema accepts 3\u20134000, including 9 and 1001; rejects 2/4001. Original reported boundary conflicts.",
+      "original_source_of_expectation": "SE3110 historical report case TC-C107; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "ai-service/lawyer_recommendation/app/schemas.py",
+        "qmse-output/completion-20261008/evidence/ai-completion.xml"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Current schema 3\u20134000 differs from report 10\u20131000; V3 contains no explicit approved ten-thousand boundary.",
+      "recommended_action": "Confirm query length; preserve existing documented bounds.",
+      "assigned_component_responsibility": "Shared; confirmation pending",
+      "requirement_requiring_approval": "3\u20134000 versus 10\u20131000 query boundary",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/completion-20261008/evidence/ai-completion.xml"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C112",
+      "component": "C112",
+      "expected_result": "Hiring proposal drafted only below 20%",
+      "observed_result": "All assess WATCH; no below-20% automatic drafting trigger in current rules.",
+      "original_source_of_expectation": "SE3110 historical report case TC-C112; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Services/Workforce/WorkforceAnalysisService.cs",
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "V3 Stage 6 says below 20% headroom, later implemented configurable WATCH/CONCERN rules differ.",
+      "recommended_action": "Confirm authoritative workforce revision; keep configurable/human-gated rules until then.",
+      "assigned_component_responsibility": "Shared; confirmation pending",
+      "requirement_requiring_approval": "V3 Stage 6 threshold versus configurable settings",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C2-01",
+      "component": "C2",
+      "expected_result": "HTTP 201 Created, status Confirmed",
+      "observed_result": {
+        "http": 201,
+        "appointment": {
+          "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+          "customerId": "00000000-0000-0000-0000-000000000003",
+          "customerName": "Synthetic History Customer",
+          "customerEmail": "",
+          "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+          "lawyerName": "Lawyer Counsel",
+          "lawyerLicense": "",
+          "slotId": "e9bdafe3-0e85-48df-a7b5-3d6eaf3bd3c1",
+          "date": "2026-10-12",
+          "startTime": "11:00:00",
+          "endTime": "12:00:00",
+          "status": "Requested",
+          "description": null,
+          "appointmentSource": null,
+          "consultationType": "Online",
+          "legalServiceCategory": null,
+          "createdAt": "2026-10-08T10:46:24.145194Z",
+          "updatedAt": "2026-10-08T10:46:24.145194Z",
+          "canConfirm": true,
+          "canCancel": true,
+          "canReschedule": true,
+          "canComplete": false,
+          "history": [
+            {
+              "historyId": "c3b85a41-b4bf-4115-96a1-2add212955e3",
+              "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+              "previousStatus": "None",
+              "newStatus": "Requested",
+              "changedDate": "2026-10-08T10:46:24.145194Z"
+            }
+          ]
+        }
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C2-01; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Services/AppointmentService.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Creation produces Requested, with later confirm transition; historical immediate Confirmed differs.",
+      "recommended_action": "Confirm pending request/approval lifecycle instead of bypassing confirmation.",
+      "assigned_component_responsibility": "Buddhika (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Immediate Confirmed versus Requested/approval",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C2-03",
+      "component": "C2",
+      "expected_result": "HTTP 200; status Cancelled",
+      "observed_result": {
+        "http": 405,
+        "body": ""
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C2-03; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Controllers/AppointmentsController.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "Historical PUT cancellation returns 405; actual POST cancel returns 200 and releases slot.",
+      "recommended_action": "Accept current HTTP verb for replacement regression, preserve PUT failure.",
+      "assigned_component_responsibility": "Buddhika (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Cancellation verb contract",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C2-09",
+      "component": "C2",
+      "expected_result": "First rejected; second accepted",
+      "observed_result": "All cancellations succeed, status Cancelled and slot freed. Original under-24-hour rejection expectation fails.",
+      "original_source_of_expectation": "SE3110 historical report case TC-C2-09; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Services/AppointmentService.cs",
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "All 1439/1440/1441-minute cancellations succeed. Earlier traceability said no rule, but V3 component endpoint table explicitly mentions 24-hour business notice. Formal authority/version conflict remains.",
+      "recommended_action": "Ask whether that V3 statement is approved; no new restriction introduced.",
+      "assigned_component_responsibility": "Shared; confirmation pending",
+      "requirement_requiring_approval": "V3 component 2 24-hour cancellation notice",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C3-01",
+      "component": "C3",
+      "expected_result": "HTTP 201 + 4 checklist items",
+      "observed_result": {
+        "http": 201,
+        "request": {
+          "requestId": 1,
+          "customerId": 3,
+          "customerName": "Synthetic History Customer",
+          "customerEmail": "qmse-history-customer@example.test",
+          "serviceId": 1,
+          "serviceName": "Contract Review & Amendment",
+          "documentType": "Deed of Transfer",
+          "status": "PENDING",
+          "assignedClerkId": null,
+          "assignedClerkName": null,
+          "createdAt": "2026-10-08T10:46:24.379627Z",
+          "updatedAt": "2026-10-08T10:46:24.379637Z",
+          "documentFiles": [],
+          "requiredDocuments": [
+            "Original Contract",
+            "Amendment Request Letter",
+            "NIC Copy"
+          ],
+          "missingDocuments": [
+            "Original Contract",
+            "Amendment Request Letter",
+            "NIC Copy"
+          ],
+          "reuploadNote": null
+        },
+        "requiredDocuments": [
+          "Original Contract",
+          "Amendment Request Letter",
+          "NIC Copy"
+        ]
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C3-01; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Data/DbInitializer.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "B",
+      "classification_label": "Historical expectation mismatch",
+      "justification": "Seeded service 1 is Contract Review with three prerequisites, not historical Deed/four; current request semantics are genuine.",
+      "recommended_action": "Confirm service identifiers and exact statutory fixture before asserting checklist count.",
+      "assigned_component_responsibility": "Vithusan (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "FR-11 service identity and bundle mapping",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C3-02",
+      "component": "C3",
+      "expected_result": "HTTP 200; file linked to request",
+      "observed_result": {
+        "http": 404,
+        "response": ""
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C3-02; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentFilesController.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "Historical POST /api/document-files absent; current per-request upload returns 201, links real PDF.",
+      "recommended_action": "Accept current route and Created status for replacement upload/link verification.",
+      "assigned_component_responsibility": "Vithusan (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Current per-request upload route and 201 contract",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C3-03",
+      "component": "C3",
+      "expected_result": "HTTP 400 with size error",
+      "observed_result": {
+        "historical_http": 404,
+        "current_route_http": 400,
+        "current_response": {
+          "statusCode": 400,
+          "message": "File size (14MB) exceeds the maximum allowed limit of 10MB.",
+          "timestamp": "2026-10-08T10:46:24.686435Z"
+        }
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C3-03; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Services/DocumentAndClerk/DocumentFileService.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "Old upload route returns 404; same 14 MiB on current route is 400 with no added row. Size rule is enforced.",
+      "recommended_action": "Retain old-route failure; use existing current-route size/no-mutation control after contract acceptance.",
+      "assigned_component_responsibility": "Vithusan (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Current per-request upload route",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C3-04",
+      "component": "C3",
+      "expected_result": "HTTP 200; status Approved",
+      "observed_result": {
+        "http": 404,
+        "response": ""
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C3-04; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Controllers/DocumentAndClerk/DocumentationRequestsController.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "Historical approval subroute returns 404. Current status-update endpoint exists; literal Approved workflow remains unresolved separately.",
+      "recommended_action": "Retire obsolete subroute scenario only after current contract acceptance; do not infer approval equivalence.",
+      "assigned_component_responsibility": "Vithusan (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Approve endpoint replacement; status mapping also pending",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/FAIL",
+      "new_execution_result": "Reproduced old discrepancy or recorded current-contract subcriteria; authoritative business rules remain unapproved.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C3-05",
+      "component": "C3",
+      "expected_result": "Completeness 50%; deed flagged",
+      "observed_result": "Actual completeness function flags missing Prior Title Deed. With the current four-item Property Transfer checklist and the other three supplied, completeness is 75%, not historical 50%.",
+      "original_source_of_expectation": "SE3110 historical report case TC-C3-05; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "ai-service/app/agents/completeness.py",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log"
+      ],
+      "failure_classification": "UNDETERMINED",
+      "classification_label": "Undetermined",
+      "justification": "Current four-item bundle with three provided yields 75% and flags deed. Historical input says only without Title Deed, not full supplied set/weights. Cannot prove an arithmetic defect or invalid original fixture.",
+      "recommended_action": "Recover exact original checklist/provided documents and scoring definition before changing 50% expectation.",
+      "assigned_component_responsibility": "Vithusan (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Original completeness denominator, weights and full fixture",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/accepted-ai.log",
+        "qmse-output/final-audit/debug/evidence/accepted-ai.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log"
+      ],
+      "original_failure_preserved": true
+    },
+    {
+      "test_id": "TC-C3-06",
+      "component": "C3",
+      "expected_result": "HTTP 200; department updated",
+      "observed_result": {
+        "http": 404,
+        "response": ""
+      },
+      "original_source_of_expectation": "SE3110 historical report case TC-C3-06; original preconditions/inputs retained in historical-resolution ledger; available SE3090 Version 3.0 is a reference with approval unconfirmed",
+      "current_implementation_evidence": [
+        "backend/LegalService.API/Controllers/DocumentAndClerk/ClerksController.cs",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "failure_classification": "C",
+      "classification_label": "Obsolete historical scenario",
+      "justification": "Department subroute absent; PUT clerk with contact/department updates correctly.",
+      "recommended_action": "Accept current complete update DTO/route for replacement scenario.",
+      "assigned_component_responsibility": "Vithusan (historical assignment/proposal; personal authorship unconfirmed)",
+      "requirement_requiring_approval": "Current clerk update route/required Contact",
+      "original_status": "VERIFIED/FAIL",
+      "final_status": "VERIFIED/PASS",
+      "new_execution_result": "Executed replacement after user explicitly accepted current API/UI contracts; original FAIL is retained. No application business rule changed.",
+      "authorship": "AI-assisted audit; component assignment does not prove personal execution",
+      "retest_evidence": [
+        "qmse-output/final-audit/debug/evidence/historical-http.json",
+        "qmse-output/final-audit/debug/evidence/accepted-api.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ],
+      "original_failure_preserved": true
+    }
+  ]
+}

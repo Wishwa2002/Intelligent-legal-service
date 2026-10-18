@@ -1,0 +1,45 @@
+{
+  "checked_utc": "2026-10-08T14:20:12.914188+00:00",
+  "case_counts": {
+    "VERIFIED/FAIL": 16,
+    "VERIFIED/PASS": 49,
+    "BLOCKED": 12
+  },
+  "case_count": 77,
+  "original_failure_classification": {
+    "B": 18,
+    "C": 10,
+    "UNDETERMINED": 2
+  },
+  "original_blocked_count": 12,
+  "original_failures_resolved_with_executed_accepted_replacements": 14,
+  "failed_to_blocked": 0,
+  "all_case_evidence_files_exist": true,
+  "input_hashes_unchanged": true,
+  "source_overlay_files": 33,
+  "source_overlay_sha256": "06683e1b675c85a503e8d7a5d36095962711864a0306a96c79d2b781ae44a97d",
+  "source_and_snapshot_hashes_match": true,
+  "backend_trx_outcomes": {
+    "Passed": 362,
+    "NotExecuted": 2,
+    "Failed": 1
+  },
+  "backend_remaining_failure": [
+    "LegalService.Tests.HistoricalCaseVerificationTests.TC_BK_01_PasswordHashAndVerification"
+  ],
+  "ai_xml_testcases": 114,
+  "flutter_nonhidden_testDone_success": 60,
+  "playwright_baseline": "111 PASS / 3 SKIPPED",
+  "separate_browser_runs": "8 accepted controls; 8 query boundaries; overlap not summed",
+  "figures": 43,
+  "all_36_original_image_blobs_preserved": true,
+  "pdf_pages": 101,
+  "blank_body_pages": [],
+  "page_numbers_match_physical_pages": true,
+  "text_outside_page_bounds": [],
+  "docx_sha256": "4f1bbbfa3f91176fd728ca69f8ad02b1be72a58ac28b16464119a4286135aae9",
+  "pdf_sha256": "e65f4167c61f94ef7199511ed02ee5d9ebfa49b2d1ffc9f859c77cc58e290816",
+  "provider_calls_this_phase": 0,
+  "no_commit_push_deploy": true,
+  "visual_review": "See visual-review-final.json; programmatic checks do not substitute for visual QA"
+}

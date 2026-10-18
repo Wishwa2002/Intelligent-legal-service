@@ -1,0 +1,4059 @@
+[
+  {
+    "path": "qmse-output/.DS_Store",
+    "bytes": 8196,
+    "sha256": "d29008c278a648cc0371ea30d42ed95b0eec92598b9e9fed8dc1df8eb14a6bab",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/add_visual_evidence.py",
+    "bytes": 8313,
+    "sha256": "d039619fecbda0654898f9be18e1debaf8c897d8fde9d1b03f80aeca46ad9acb",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/assignment-text.txt",
+    "bytes": 12765,
+    "sha256": "68b16b2eaafcbcac12ea9eb2a8f170f654fcb8c785ca8d95e220ab2936c4bf1d",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/backend-class-counts.json",
+    "bytes": 2249,
+    "sha256": "7a5e69a781505426dad9db3a06fca112f102316033c393d14cabda4a0ebb5254",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/build_evidence.py",
+    "bytes": 2627,
+    "sha256": "da1f8c588800325f074e25b8b6ee414f9a764653d3267e11387c227dcc946aec",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/capture_visual_evidence.cjs",
+    "bytes": 6388,
+    "sha256": "10d2570bba52d48e5dbb49d4129d9f317d3e4c5c606a8c69d5fcf8ebb820cced",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/case_records.py",
+    "bytes": 10221,
+    "sha256": "83a155506d91a5d8e7cc7aa26c8e474bc716d5ee399087fe745d18445e68eb2b",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/contribution-commit-checks.json",
+    "bytes": 3909,
+    "sha256": "5717ec25a8a8aadad10cb67135bc031cf9daf407f9cd58380541cd2051b0bb84",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/contribution-verification.md",
+    "bytes": 2771,
+    "sha256": "81e4da8e58351d8e6e754c3d6a8b702c02471a89b0ea29fe170627b7517a7203",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/credential-pattern-check.json",
+    "bytes": 170,
+    "sha256": "fbca8f018a4fe3959f553938e33b4d6491d83f9fb3d6f8b55edd5af77cc9f093",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/defect-verification.md",
+    "bytes": 6512,
+    "sha256": "97d188e25cfb10c3caeb26af80252c99d6e842055790f6c260815f31a04ba2ae",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/execution-plan.md",
+    "bytes": 2150,
+    "sha256": "2ddab4edbf7b3da01200daa251e66285e933e43ccc86a81ff9956bedb80c5be4",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/fill_toc.py",
+    "bytes": 1936,
+    "sha256": "339071faa9527603be9eb428079a5920cec5b5bd370b4ddb95f7bdcb43253a64",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/fill_visual_toc.py",
+    "bytes": 1944,
+    "sha256": "92c629956734cb24a5c265ed5626b9c905fb83a6facf1cea1fb15c62446f874b",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/final-quality-check.json",
+    "bytes": 1050,
+    "sha256": "1cacd611f3ae99145605a77365d75c8bdbeba2523ca91e8fc515d874d6b454b0",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/finalize_package.py",
+    "bytes": 12176,
+    "sha256": "3a9daacb800c47b9720ef035236969ce4596dec0a905726b9c2e9da51acf54ce",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/index_evidence.py",
+    "bytes": 2656,
+    "sha256": "7570822163ff4e8382ceafb75b90eef19ca17d58bb05032c6eba8ad6291e2559",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/index_visual_evidence.py",
+    "bytes": 2921,
+    "sha256": "c1bd661804c9a342192197ebd76cc56336cc0deda45df6a994c83fa7f5fd4a0e",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/input-hashes.json",
+    "bytes": 248,
+    "sha256": "2ba00f3e2cd0ba942821fcf0c6c6fa243eec2f2bdcf7d6fce281b68305d8c6f8",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/input-integrity-final.json",
+    "bytes": 334,
+    "sha256": "bc48ec7a0e20e3f1f24e1f80085c14c71a028c01c66bb6f2f77c3c517f838eff",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/missing-report-references.json",
+    "bytes": 255,
+    "sha256": "11ddfa1200f968d9b22ee995fd66daf379053cdf938d214c56c14193b19ff9ae",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/original-report-blocks.json",
+    "bytes": 84696,
+    "sha256": "34eedf7b727d62ace923b6885f9f443fea11d6332cb697646d9be3dfa96b77c6",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/original-report-text.txt",
+    "bytes": 68252,
+    "sha256": "2d682f8589e2c215a590e4f7cd26d76eda3650e7e5c5a5b5cf003fa9991546e8",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": [
+      "TC-BK-01",
+      "TC-BK-02",
+      "TC-BK-03",
+      "TC-BK-04",
+      "TC-BK-05",
+      "TC-BK-06",
+      "TC-BK-07",
+      "TC-DB-01",
+      "TC-DB-02",
+      "TC-DB-03",
+      "TC-DB-04",
+      "TC-FE-01",
+      "TC-FE-02",
+      "TC-FE-03",
+      "TC-FE-04",
+      "TC-FE-05",
+      "TC-MOB-01",
+      "TC-MOB-02",
+      "TC-MOB-03",
+      "TC-MOB-04",
+      "TC-MOB-05",
+      "TC-E2E-01",
+      "TC-E2E-02",
+      "TC-E2E-03",
+      "TC-E2E-04",
+      "TC-E2E-05",
+      "TC-E2E-06",
+      "TC-E2E-07",
+      "TC-C101",
+      "TC-C102",
+      "TC-C103",
+      "TC-C104",
+      "TC-C105",
+      "TC-C106",
+      "TC-C2-01",
+      "TC-C2-02",
+      "TC-C2-03",
+      "TC-C2-04",
+      "TC-C2-05",
+      "TC-C2-06",
+      "TC-C2-07",
+      "TC-C2-08",
+      "TC-C3-01",
+      "TC-C3-02",
+      "TC-C3-03",
+      "TC-C3-04",
+      "TC-C3-05",
+      "TC-C3-06",
+      "TC-C3-08",
+      "TC-C4-01",
+      "TC-C4-02",
+      "TC-C4-03",
+      "TC-C4-04",
+      "TC-C4-05",
+      "TC-C4-06",
+      "TC-C4-07",
+      "TC-C4-08"
+    ]
+  },
+  {
+    "path": "qmse-output/audit/package_visual_evidence.py",
+    "bytes": 1661,
+    "sha256": "fc0f491ba00788d117aad05ca32726a57df9ae5dfb90e3f5b03f6665eb3c9708",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/pdf2image-install.log",
+    "bytes": 495,
+    "sha256": "e882430ecc9513b8240a944ae6b63187274a619ac3ef30c14a2dd4aa9b21458d",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/poppler-install.log",
+    "bytes": 15028,
+    "sha256": "b3d622e7199c09a6f4bf7d2f296727a4bde82dafc207fe720c39cb2d60e4bfe6",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/recover_flutter_resource.py",
+    "bytes": 1188,
+    "sha256": "e6fd76d7736a053c1d02561569601fba71a6f4c212389541bcee71b86b6771ab",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/report-audit.md",
+    "bytes": 8464,
+    "sha256": "76f0b42ea7a979002bbf597efac1a59d19f39451c5abb827820ba45362bd3df7",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": [
+      "TC-C3-12",
+      "TC-C4-12"
+    ]
+  },
+  {
+    "path": "qmse-output/audit/repository-inventory.txt",
+    "bytes": 64164,
+    "sha256": "74cd1dd16d61b1af304d27ad578cc7f5780eae379b83a26c974562516f6fdce7",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/reproduction.md",
+    "bytes": 2546,
+    "sha256": "f2763c390cf5b1156aa6597a0b19aa7b5ee7f14255876d9e550da9510fa48efd",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/run_command.py",
+    "bytes": 1847,
+    "sha256": "1e915127cbc184f7f3a70fae0ec7b63521806f50d9f4a2011273f8ce296e11d5",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/snapshot.json",
+    "bytes": 178,
+    "sha256": "66ecbaf845fbe587812456a768fc4ebf52257c9d78e0d88089b15ba4ac78c6e5",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/summary-build.log",
+    "bytes": 3558,
+    "sha256": "0b7e02f1fadbd95085668a81a98daab4e3f6ccbfd865808ef74f37e0b4f23565",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/testing-changes.patch",
+    "bytes": 2111,
+    "sha256": "ff6cb0c2c96f5d6c820d285c12bbe284ccbe9d84ddd5ed25a85f401e9d1ec10f",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/toc-pages-visual.json",
+    "bytes": 4494,
+    "sha256": "98c4bc9310bc4ed098dcab4ba82b1f6d6e1e5447fb1b89151c90065ef9e44043",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/toc-pages.json",
+    "bytes": 4494,
+    "sha256": "3ebbd154891cfa05b83daf87c994695ba759455829b279a529fb63307451f237",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/update_report.py",
+    "bytes": 37530,
+    "sha256": "13965072a99a8f12ee44b436554521407ca0554097de6aee3f08facf9c92f4ae",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/validate_final.py",
+    "bytes": 2823,
+    "sha256": "94cab149be459601418ac4119efa2b9bff6d4f1c418f99cff7e4039a724c98e0",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/validate_visual_final.py",
+    "bytes": 4104,
+    "sha256": "bb69fb5ca261723d2d8c21a8a28625f7205fb1ea57fe7e549e77592313ef0d76",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/visual-artifact-review.json",
+    "bytes": 82618,
+    "sha256": "cdf82547fc0aeca103e69cd8bed83f79968248448efd2251d2b7964d2b4a9ed0",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/visual-quality-check.json",
+    "bytes": 41459,
+    "sha256": "1f6c0d760c889f3ee33a5dc7c374be742ecbf47c6d52ecdf53c2d0f38f3d23f5",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/visual-sensitive-pattern-check.json",
+    "bytes": 272,
+    "sha256": "aa286509eddc6f96fea57a0829fb8f5a6a4215d6bee629da888feb2c254b232b",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/write_audit.py",
+    "bytes": 8850,
+    "sha256": "26ab7f2ec8d3cffeb63ebd0c30de5036e4e79c9b767f90721051c7420f351370",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/audit/write_summaries.py",
+    "bytes": 5625,
+    "sha256": "cff5cfa53202091c6a5636b511e025a0f3470ca504e6374444b098366cbba7fd",
+    "scope": "audit/provenance; not proof of successful execution",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/completion-summary.md",
+    "bytes": 4255,
+    "sha256": "483a3f1b770bd3a2d33ea16516ad6ea52d96ba72e72e044ebc99c6b3bfb07586",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ai/pytest-final.xml",
+    "bytes": 12718,
+    "sha256": "4bd93cd8320055479e2ea0f24859f1782abdb52aa9c1575ebf8ad92fd3f418eb",
+    "scope": "deterministic/mocked AI only; no live Gemini",
+    "test_ids": [
+      "TC-C107",
+      "TC-C111",
+      "TC-C113"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/ai/pytest.xml",
+    "bytes": 18023,
+    "sha256": "78bccefaa3c266c73345869f54c2334d846e809af34aa142edbb412475275d1b",
+    "scope": "deterministic/mocked AI only; no live Gemini",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ai/qmse-boundaries.xml",
+    "bytes": 1466,
+    "sha256": "2663f09ee99ceaf7e89e38b40a79807879c8079c2a304ba9b488e9fb9a996f6c",
+    "scope": "deterministic/mocked AI only; no live Gemini",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/055a6b3a-98fa-4397-9af6-edf41eab5027/coverage.cobertura.xml",
+    "bytes": 3820440,
+    "sha256": "071400c96c05560e055918b985cf832cbe22960f2ab7c15b25aec1954ed50eec",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/1178170f-97a3-484b-a8a9-6dca10783baf/coverage.cobertura.xml",
+    "bytes": 3820560,
+    "sha256": "e65697a84ab5d16da65c4f17fc8a006965087d73abc1d3376e0a7600c9e2f05a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/1e1eb10a-185d-424c-9a31-26175f90b44c/coverage.cobertura.xml",
+    "bytes": 3820560,
+    "sha256": "a13cd19e3332889c2131be872c8dc996be2709b6ec0bcf23e241120e459ffb71",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/287d8764-31d6-4add-b1ac-f53e96b36bbb/coverage.cobertura.xml",
+    "bytes": 3820562,
+    "sha256": "e2f46e1db16c0d599586b8e6ea16c783aa895a2a7ee4e5e4ce707f56da3cf644",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/5b867df7-395b-4044-8b55-3d2faad46dab/coverage.cobertura.xml",
+    "bytes": 3820434,
+    "sha256": "0e7c668fa1a28db69ef63e6ed0dcacd98157a2608cd83a0a73656a72eb071fb6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_14_02/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820286,
+    "sha256": "1324f3ef7ceb2040b6948895bbe10a2142486a260df8c5b57107ae4a2a7a7ab6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_15_58/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820434,
+    "sha256": "0e7c668fa1a28db69ef63e6ed0dcacd98157a2608cd83a0a73656a72eb071fb6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_17_42/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820440,
+    "sha256": "071400c96c05560e055918b985cf832cbe22960f2ab7c15b25aec1954ed50eec",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_18_39/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820560,
+    "sha256": "e65697a84ab5d16da65c4f17fc8a006965087d73abc1d3376e0a7600c9e2f05a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_20_07/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820560,
+    "sha256": "a13cd19e3332889c2131be872c8dc996be2709b6ec0bcf23e241120e459ffb71",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_24_54/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820562,
+    "sha256": "e2f46e1db16c0d599586b8e6ea16c783aa895a2a7ee4e5e4ce707f56da3cf644",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/_Jegatheeswarans-MacBook-Air_2026-10-08_08_26_40/In/Jegatheeswarans-MacBook-Air/coverage.cobertura.xml",
+    "bytes": 3820616,
+    "sha256": "c69f08831dc926dc50a8160e43017b08e3660b6870376e16a036f1a13136124c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/backend-final.trx",
+    "bytes": 460493,
+    "sha256": "4e8ea50aee9a88ccadaa116579ba2665996cf77a9de2fa1d2ea51873c751d32e",
+    "scope": "execution/support artifact",
+    "test_ids": [
+      "TC-C108",
+      "TC-C109",
+      "TC-C110",
+      "TC-C112",
+      "TC-C2-09",
+      "TC-C2-10",
+      "TC-C2-11",
+      "TC-C2-12",
+      "TC-C3-07",
+      "TC-C3-09",
+      "TC-C3-10",
+      "TC-C3-11",
+      "TC-C4-09",
+      "TC-C4-10",
+      "TC-C4-11",
+      "TC-SEC-01",
+      "TC-SEC-03",
+      "TC-SEC-07",
+      "DEF-02",
+      "DEF-09",
+      "DEF-12",
+      "DEF-13",
+      "DEF-15 (partial)"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/backend/backend-local.trx",
+    "bytes": 421341,
+    "sha256": "06e2fbc968f01d9b90a858b57ce219c518febee04ac1d2521f4810caf36f97ae",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/backend-qmse.trx",
+    "bytes": 444922,
+    "sha256": "02b153f3c590951d7536501b313c2ec134952c2e185722754650eba31d8778f7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/backend.trx",
+    "bytes": 3373,
+    "sha256": "902fb84e77be8d50ff9a9aa92a09f4b4c53722e3ebe5d4d09eae96eb4020840d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AddFrontDeskMatchingIntake.html",
+    "bytes": 797109,
+    "sha256": "b2f4b49d5392a155997610ffa17caf521fe17d26a96f01baded17b7ab74d8d95",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AddLawyerInitialPasswordChange.html",
+    "bytes": 762489,
+    "sha256": "d3f983332af380df316cd9e858de64ecc960a3b9f2cf539456fcd86ad3bb3eec",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AddLawyerRecommendationWorkflows.html",
+    "bytes": 24129,
+    "sha256": "7d936d9ea6388074ec85cd058bf42d9f039fccd9191b638555011b76de1d73a4",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AddMissingCurrentSchemaColumns.html",
+    "bytes": 683609,
+    "sha256": "ed2d8b4469e2c525f03aa576f54d1cf65b591e9290984ab4b26a1263f7618ef2",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AddRecurringLawyerScheduling.html",
+    "bytes": 798623,
+    "sha256": "0a3f9273195723e1e7e1a2685b61f22cfa1cfacdc45b990db2f39412eee14802",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AddWorkforceHiringIntelligence.html",
+    "bytes": 705410,
+    "sha256": "7bcf35c56247a9e2345d7767b1ae9c524f21b27af0df817feeea35b1be1425b0",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AddWorkforcePlanningSettings.html",
+    "bytes": 723640,
+    "sha256": "10b4f48cd8dde0a795612d0666cdf73c7d0864f4d35416568d376fad41c9a589",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AdminController.html",
+    "bytes": 14604,
+    "sha256": "e0972cd1ce5cca61db2e61c33cd05da863510378ff70dfb770fb74ee384f0864",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentAnalysisResponse.html",
+    "bytes": 32580,
+    "sha256": "17d8d23753d4f11b82413e533ca7442cab82c25a64cebe10006b9fffb4282b00",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentApprovalResponse.html",
+    "bytes": 32556,
+    "sha256": "c9f7e37c68abbc2de421fe8aca59b4e3fa13532e73a7d0425f67ed93ce9f770c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentChatController.html",
+    "bytes": 49656,
+    "sha256": "30396f1073c07cc7f55bd01721206208c7ad16ca8470ee485d1e072b13490f05",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentChatSessionStatusResponse.html",
+    "bytes": 48133,
+    "sha256": "6bbb84b5b99ead85f146a92780eef03b42c9cbe8d0d1adf12cfb22196ba97b0e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentController.html",
+    "bytes": 44053,
+    "sha256": "dbe8c56de6661b0f98ad36b0a6d3bc6cf4265d87001d955cc382b80f97b1407f",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentIntegrationService.html",
+    "bytes": 182441,
+    "sha256": "852b889dbf8978bc92a8485c6a1510d1dd0dbdd99f61ee365f01e5319133c723",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentSessionState.html",
+    "bytes": 9629,
+    "sha256": "36242450bc5f162d64308b8396d1fb5fef0e4dfab8e2fc029eb3371362ccae12",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentStep.html",
+    "bytes": 16892,
+    "sha256": "4f577de126b127723f3e02e2d19c42d630e916a47ddc895f149a493b4d0e839a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AgentWorkflow.html",
+    "bytes": 16059,
+    "sha256": "4119a98eb95453a1b7829139535c1aba53e409acd2af67f226b25bcf440c99bd",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AiStateController.html",
+    "bytes": 30601,
+    "sha256": "46ff1c781b5c00aded89dc901d1a149090f1f5625736ef039a14ef330740d42e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AllowUnlinkedLawyerProfiles.html",
+    "bytes": 669936,
+    "sha256": "0ea9b17244ff7d02513ee10c11888fe00e48236d0feea1a9cd7e867f5cce8f5d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ApiException.html",
+    "bytes": 17542,
+    "sha256": "0e41c43849f08dd6f42a05cd820a7805337a4d670bc22c161af8941b96cd7cd8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ApiExceptionHandler.html",
+    "bytes": 18513,
+    "sha256": "8f33c35d439057f74fc9ce151a1396b2e7262c4750a0e8ba5a6390ec70485117",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ApplicationDbContext.html",
+    "bytes": 275423,
+    "sha256": "c6b2f06258d713671352030fcf7944fed6d5c22b2da2f3e0fa454c34f63ed606",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ApplicationDbContextFactory.html",
+    "bytes": 14077,
+    "sha256": "2b3b244d1c7a763fb25e5753b6e7a8b006a7d06064b6e20857ca1e60e091b3b1",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ApplicationDbContextModelSnapshot.html",
+    "bytes": 759430,
+    "sha256": "b3ab4a6ef5d9ae46908ccdb3eb0d39e768da542c9622cf6264c92d7ae75abbb3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_Appointment.html",
+    "bytes": 19926,
+    "sha256": "e1a610b66da0740b75266e2f6f26634bf89b31d9c481bcfb13b0804f573017de",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentActionRequest.html",
+    "bytes": 30049,
+    "sha256": "f0deaf2220173fb1377933b47f0c8d3e53dad79cad6b71c20ab65d29e497549a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentConflict.html",
+    "bytes": 13669,
+    "sha256": "1f60eb883a92056d167c55552670d1d1e2ed621317abd3c892932d6672d74fce",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentDetailsResponse.html",
+    "bytes": 42840,
+    "sha256": "8eac19c9230bb5b6c0f78ca976a6775ae4c871b049dab6052a4cfbd5a5ee3ac3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentFacts.html",
+    "bytes": 56611,
+    "sha256": "8e3a8bfbe80a2fa68747c1e60b73f8d88bb37c60bcb7da5d53b16de468812514",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentHistoryResponse.html",
+    "bytes": 36287,
+    "sha256": "3b0fd6b073a448d4d23448da139f7a4ea5f15fdd680eb5020002631328a8a5bb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentResponse.html",
+    "bytes": 40251,
+    "sha256": "c35c27c75f6a6b8478af403aebf700ba47d8abf2f85e638002d3bff1c6933e84",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentService.html",
+    "bytes": 223310,
+    "sha256": "baea36891c8471090db0dadf77232603440c28c324aca449a31a715293478247",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentStatusHistory.html",
+    "bytes": 12594,
+    "sha256": "c4848817cff5faf7d009a7c2a99c20d9328dbf166b44bb636005a11caa5f418b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AppointmentsController.html",
+    "bytes": 123288,
+    "sha256": "21d0ec975a8d2413c28529350760a97eaa4e51462e11dbcf38506729e3659f6c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ApprovalDecision.html",
+    "bytes": 13903,
+    "sha256": "2f9b916f2371e8a2b198f8d8e67b79fbdb5fc48367fe983676daf9ad65f3b0c3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ApproveHiringRequest.html",
+    "bytes": 21860,
+    "sha256": "7657dd6c34dc2a42ccd4a4e14caf9b959a1cd1aff29c0a7fe8f891427bf3cbe6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ApproveRecommendationRequest.html",
+    "bytes": 198961,
+    "sha256": "b24c597a8415dcb870d00e8d3ed0b721bdb08a37d6283276a23ab9a0b5d2b8ef",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AssignClerkRequest.html",
+    "bytes": 17468,
+    "sha256": "72e084264837b114685a6b06e41f6aa1b63c6f59d2eb71030361a5c8c1c2a521",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AuditLog.html",
+    "bytes": 12291,
+    "sha256": "119ac9cfdb5421538e3a46a560362506932cddf6a249c0aa47ff896cc5bc0c21",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AuthController.html",
+    "bytes": 263790,
+    "sha256": "0b4629a67313426d25762384c76df9b716c4a2c63cb724d348afc2fa6ed2f471",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AvailabilityService.html",
+    "bytes": 64671,
+    "sha256": "48eeb000cb41ff5eec5cb52917acb1695c711faa3b263c27ed1ea871952f7c34",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AvailabilitySlot.html",
+    "bytes": 13199,
+    "sha256": "0622e200717f5e21ccce069fbbaa7e0c46ac4888c42be7045a4b1b9377e4a6c0",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AvailabilitySlotResponse.html",
+    "bytes": 36562,
+    "sha256": "9cc1889dde37a484af4acfaa81285bc93b364fc1baeed705b30f71647738563d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AvailabilitySnapshot.html",
+    "bytes": 61252,
+    "sha256": "c431674fd3859fe8203339540f9d3735431105af43d15d1184beb7fc8d1a5bac",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AvailableSlotsController.html",
+    "bytes": 17428,
+    "sha256": "a1cd23600be84b2073db7f545d3c01c6f12abcdfda82787ac86a0977cf2f711a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_AvailableSlotsResponse.html",
+    "bytes": 14051,
+    "sha256": "a1208ca06d4237cd376e748e1f0b31631ea89cd58a02728298dace2f0cabf85e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_BackfillMissingLawyerSchedules.html",
+    "bytes": 745710,
+    "sha256": "b7a0d86e2a7a7c3182222d4013a74b17a8bf7d080a821712fb2d845eb9d99cb3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_BookAppointmentRequest.html",
+    "bytes": 32672,
+    "sha256": "09e5e7171a08ef2ba435682c00997222eac96aa43eef8cfc76cc062e56e967b0",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CancelAppointmentRequest.html",
+    "bytes": 30053,
+    "sha256": "c1b8a2756b7fc9e59e69911e6112f34d2743680b9fc0828a948ede32714235f9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_Career.html",
+    "bytes": 14358,
+    "sha256": "3ac22dede8f1d612fb8eefdbea24718fa2f66b97b47a32ddafee696019dcc948",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CareerResponse.html",
+    "bytes": 15464,
+    "sha256": "1c0289295fd4b280b3b5766f04193b667661910e3fc22b527094119b3b4c53ab",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CareerService.html",
+    "bytes": 85428,
+    "sha256": "8a79dc8bcfd3c4659a1fd1d7ae61593db8844e3b89b9c164f13b78403dab5662",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CareersController.html",
+    "bytes": 38560,
+    "sha256": "9e01c7d89a8f7aaaecdb52a76498100c81d3fb6e359835219f881972aa7ffef7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ChangePasswordRequest.html",
+    "bytes": 13852,
+    "sha256": "0ca0c77688adb96a18c8f629961fe16b587712a7fc1e8c6295c86e7a8787478b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ChangeServiceRequestStatusRequest.html",
+    "bytes": 28221,
+    "sha256": "7dbed8ec12713cd6008946fafb443b1a606f492f2f53c24961be2ffa44007770",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CheckConflictRequest.html",
+    "bytes": 31453,
+    "sha256": "4c50cd3bebe3527cfeb90a3c28e3cb1f7689a3212895ce01d79733e4f726e15f",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_Clerk.html",
+    "bytes": 20271,
+    "sha256": "67d3c8c63c18671396f70991e910a0585a701629ed3170a420c83b8553128dbb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ClerkResponse.html",
+    "bytes": 14071,
+    "sha256": "7c74580a9b2abbaaaba50e3a3e1bb545d683ad7c3e648b2c497ccf22f77b196c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ClerkService.html",
+    "bytes": 155485,
+    "sha256": "af7555acdc59a6b5274100db2dca8e636b797904218da728a81d114a5a80ceb8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ClerksController.html",
+    "bytes": 48109,
+    "sha256": "26f8ef570b73eff9e627dfcb163712596642ed1e2990459ff34aa963886764c0",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ClientService.html",
+    "bytes": 30726,
+    "sha256": "248dd8d2b156b677d13b059b0404031defafea58b884c81a31d0894c328513ef",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ClientSummary.html",
+    "bytes": 10321,
+    "sha256": "284899dae96549d40234c503573117b75b0acab211f958d6e5a65266d5282515",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ClientsController.html",
+    "bytes": 73558,
+    "sha256": "9b79122310bc0127282804e728a1ee959da924c83682f8c784221fbac6dcfc1f",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ConflictCheckResponse.html",
+    "bytes": 35553,
+    "sha256": "4f2fc1dedb9b2c79c19a61c2831b12699f2e3fddabe1af0b0fd7d72dbfb8b954",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateAgentChatSessionRequest.html",
+    "bytes": 44527,
+    "sha256": "11fc2b4c831ca3a357c4c282f586eac7a0b5ee4f247e61106088ebaccada3d96",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateAgentChatSessionResponse.html",
+    "bytes": 46245,
+    "sha256": "4ca17a32bcf237fdcf305fe9f38753a639caf9237413117724bd81f54ec96123",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateCareerRequest.html",
+    "bytes": 20044,
+    "sha256": "8988f4ccf7e0651ac586e3fb2e771763781f9e5b6b130ea979bcb8278d73a66b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateClerkRequest.html",
+    "bytes": 26358,
+    "sha256": "b4d131cd7f499bba7e675ddff63b460192a5aff928adaf3efd6a3a5c1f5258c3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateDocumentationRequestRequest.html",
+    "bytes": 17896,
+    "sha256": "3c22302a3095829ffb8a1145e8d55b5bba267de4ac425e0ed6c3f797b0be15c5",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateDocumentationServiceRequest.html",
+    "bytes": 16618,
+    "sha256": "1e7fc946503ccead580284e67b5b4f86e7c18865d91cd1e51e7c64f3d9d897d8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateJobApplicationRequest.html",
+    "bytes": 19694,
+    "sha256": "9edcb353c950fe2aea7a4c16dcf21ce84fcbaebd3032ecbd1cf683da079877fa",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateLawyerRequest.html",
+    "bytes": 7367,
+    "sha256": "b5796742e089662fa727f256d74e8d03301d9b1cb2f07c0eeba8f8fc11a168f1",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateSchedulingSessionRequest.html",
+    "bytes": 12747,
+    "sha256": "5f4d39dc1f8039e3df622ce31f0bc7d363ac138b8e822c438191cd4d003ed069",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_CreateServiceRequestRequest.html",
+    "bytes": 28959,
+    "sha256": "c5c1bec530edf4292496763439641558dc5da70735a127494f16291878ae2b90",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DashboardCounts.html",
+    "bytes": 13046,
+    "sha256": "fe43e9b63e3d9dc011466f317ac094d8dc0ae3d42acf419f97e2fa613389ca05",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DbInitializer.html",
+    "bytes": 133466,
+    "sha256": "08319cf4fd9563ab698f6533650e67abeb13476fd75e362615cac14c0d4edf13",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DemoAreaReport.html",
+    "bytes": 183531,
+    "sha256": "f57afef5c19c052985213fe92429c9e060e1bedc017c97f501bfe7a84eb991b9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DemoDataReport.html",
+    "bytes": 184794,
+    "sha256": "0916100a6122cfc20b60ad1adc2167163f986f0fab29c035d0803a4b353dfeac",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DemoLawyerSeeder.html",
+    "bytes": 199891,
+    "sha256": "9f11ac7b4a9e4192cea0f85c8cf1868035d2f08101ea769b2c4954a5180266a7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DemoSeedResult.html",
+    "bytes": 183565,
+    "sha256": "a864f9cfec73e7e8e440f3adbf640cc6e32e3b694cab0af11e8491554eb3946a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DerivedSlot.html",
+    "bytes": 13623,
+    "sha256": "bfa28a08c6904816ca25e445d44956b9301424cb1fe811dcbfccda00b2d4f972",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DevelopmentAdminSeeder.html",
+    "bytes": 19676,
+    "sha256": "f85c9c4a7db0b27bb904a423e4a7b5764b13847a97cfab0a11a3ffd520f6df2e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentFile.html",
+    "bytes": 22210,
+    "sha256": "7b0ad50817725de1113779c3fe272da0c7a5daa59bb91991a85b263ddaf76fbb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentFileResponse.html",
+    "bytes": 13362,
+    "sha256": "e18455a6af0425f60cf15eefa0f2f7eb1f6806e715ddc03a51121bc529a69e0c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentFileService.html",
+    "bytes": 127167,
+    "sha256": "51b068d29fcea1fc62462258d285db4c469df2dc1b2647c6a5ecb3ef4db7cb42",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentFilesController.html",
+    "bytes": 70078,
+    "sha256": "12c6972a06e9cbe89906fa904de516b1002829e32751b5ff893f186a1b7e190b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentationRequest.html",
+    "bytes": 17548,
+    "sha256": "1e4e3d6a34e0bd24ef73db824f0c587bcf5b1547c2ec90a8de87bcf85e5c8f8c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentationRequestResponse.html",
+    "bytes": 20109,
+    "sha256": "08f350b23cb56b34a6e8439316196cf1aef89cc95b6d4788150560e03967b424",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentationRequestService.html",
+    "bytes": 216173,
+    "sha256": "3905172bea31565baa3374fef4815510ed1d8afdfa2ad4c26126421fff1c2c76",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentationRequestsController.html",
+    "bytes": 68704,
+    "sha256": "ff461a65482eeabb84d8588103bafadbdf88ea1e767167eb0097bd537cd54244",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentationService.html",
+    "bytes": 16845,
+    "sha256": "20a0ce01973c844ea0afa33f7459491527e669ac42e50491da6edf8b92b1bc09",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentationServiceResponse.html",
+    "bytes": 11200,
+    "sha256": "1019c9c4568aee73d67a9915fb08218a0a17637b2fa6214632fa5ec27c02e607",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentationServiceService.html",
+    "bytes": 58193,
+    "sha256": "cc51074cb70301e0ce84a66bdedb31929003ccfda25e333639a630c18b014073",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DocumentationServicesController.html",
+    "bytes": 40464,
+    "sha256": "442eaec07965b6a2a476376abef9130b979d9ca92f1ada601581154b9d23940b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_DuplicateClientException.html",
+    "bytes": 10838,
+    "sha256": "5f39bbe82be7b2807e33c24707d90ecd97466b23d8decf170b9d6767381e65ef",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_EmailNotificationService.html",
+    "bytes": 233316,
+    "sha256": "d69405743bef9d125e2105d5a51974e81fe117ceab859ad6baeb8dce2e0bd8d8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ExceptionMiddleware.html",
+    "bytes": 31095,
+    "sha256": "9e2a0d15e62167618c6d8c89f48bcde97eb802b08d8021b800c47a587495a1bb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ExecutionSummary.html",
+    "bytes": 11665,
+    "sha256": "114f803f4edc49ee2d0c118e963fd47d65ef7893481cd9f5013f8a989c4e1781",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_FixAuditLogUserId.html",
+    "bytes": 621570,
+    "sha256": "9c887a27ce829b74051b457d891a5715b41a47a8b874c7d14c037facb44d1b75",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_FixLegacyUserRoleIds.html",
+    "bytes": 25242,
+    "sha256": "a4a5a59f0002815b38051feae4e128153a868fb3db141babf2e0fcc9ea00c01b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_GenerateHiringRequest.html",
+    "bytes": 21127,
+    "sha256": "7458d5ef09591be08267e9cfd99dd845e6bc240ff95503a0894e19f9eb47c2bf",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_HealthController.html",
+    "bytes": 12167,
+    "sha256": "9866b78a005e456b53afa96e0e22ad9103dac9acc482996cb20c48738c1d7f91",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_HiringDraft.html",
+    "bytes": 22238,
+    "sha256": "1326e7a7c9d84b8baa38925106c3d6392d415937fb2fc003ffbfb89b0cba4497",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_HiringSuggestionService.html",
+    "bytes": 85601,
+    "sha256": "e9a1dbfffc2423a87427c4dc5bfc8e0fc185b2744ba6341160a6ea0916c8cc6e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_HiringSuggestionWorkflow.html",
+    "bytes": 16766,
+    "sha256": "a654afe98fc70a5d571d9e97b8129c67fa5564a3cd4e610b09378236d5d72222",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_HiringWorkflowResponse.html",
+    "bytes": 21464,
+    "sha256": "f96ed66157560b010eeb16a52865579a84879cba59fc4d26e29cfb7fef2456bc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_InitialCreate.html",
+    "bytes": 972747,
+    "sha256": "c73a5fec09831afb25a0b7da2c1109fdd07f6cc94a3b703c5490937c332c5a34",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_JobApplication.html",
+    "bytes": 13207,
+    "sha256": "f980ea3747b372d1f42538fa082ed291bea027073f28123fee8f79b165448b49",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_JobApplicationResponse.html",
+    "bytes": 15436,
+    "sha256": "83974b78c66429ac6df3c5ab3a2d9cf2d970226e593ced2f364432f8afdc37d7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_JobApplicationsController.html",
+    "bytes": 34180,
+    "sha256": "ef8a94081a33203e3940504636e08ab38a01fea3f2d95902fd34f686179dac4e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_JwtService.html",
+    "bytes": 31527,
+    "sha256": "2a55de24e6c21394902714ee64ad72071beb605f0fe3a4e4d4accbb36c9cd8ed",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_Lawyer.html",
+    "bytes": 28820,
+    "sha256": "8bfb5c6e31046ebe8804d8fbb2b3eb71a40e7b7a988a568fb39fd4748adf3db4",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerAccessFilter.html",
+    "bytes": 20111,
+    "sha256": "8aa87ce4b9a1e5b14731a35b1330379ac9052780e43b8133e1b704c1c33ccaa1",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerAvailability.html",
+    "bytes": 13597,
+    "sha256": "e7566ab5dbd23826ab1c1374f539fcb208d064a1a3d3e5f810f6b0ab5fc7be18",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerFacts.html",
+    "bytes": 56602,
+    "sha256": "1743e590ac39804aacf885a1183257892cdc8eda9238b153940e1095a27089cf",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerLegalService.html",
+    "bytes": 11420,
+    "sha256": "507f0593bcd304300128efe1c54bfbc1f69b0e66d2ae5025ddd2af4e5b878919",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerMeController.html",
+    "bytes": 73705,
+    "sha256": "56546d89ab7864d6c537e9c15ee4b624b27af4eafd6c456bc3cf876f8385838b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerProfileUpdateRequest.html",
+    "bytes": 13487,
+    "sha256": "c56633983b8675b685719d9edf5a0864d3d261372702cddc43053f982d5ca270",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerRecommendationWorkflow.html",
+    "bytes": 21566,
+    "sha256": "73f150931a318aba359af65e1483f582f5a840e19297be21b1e6148289eef8df",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerRecommendationsController.html",
+    "bytes": 24959,
+    "sha256": "b295fbf1f42efa99ac52231885465f12b42b408f2e47ba5f3c2c97c567e18474",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerScheduleBackfill.html",
+    "bytes": 20977,
+    "sha256": "0bb6579a6ac79a6d6fa47fed6e7bd4098aa3212b40c95c38328437c857f4c049",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerScheduleService.html",
+    "bytes": 41630,
+    "sha256": "75fc962ddff28d4af04ecc06d498aaf8d4fe86af0ddd82251fc0c863937f0ef7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerSchedulesController.html",
+    "bytes": 20080,
+    "sha256": "eda3a9b5458fc79296d9a745797840a3961d69a799d753840070da115f75ef0b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerServicesSummaryController.html",
+    "bytes": 28821,
+    "sha256": "6e296e0d933f8ea26d227db02dc6ba6fb4e206f02a9db08f8971c9c42715569b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerSpecialization.html",
+    "bytes": 10621,
+    "sha256": "9778ba7a7c8811f8d6a171fe4c9bf00da270d874c203e71985cf13ce072f131c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerUnavailability.html",
+    "bytes": 13564,
+    "sha256": "b95850572d15428b4d63e3d4585deb8e7e197b0ff4c66167d16c3a4600e2b8bb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyerWorkingSchedule.html",
+    "bytes": 13217,
+    "sha256": "53b7ac8b4be6bd0436b62cf2b50e9c9de602513aebc879f2353b188bad9e2565",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LawyersController.html",
+    "bytes": 219325,
+    "sha256": "43973cc44bb01d6395a86876a2d191bded12b45d2262470c38c19c086bac0e4e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LegalCatalogController.html",
+    "bytes": 105934,
+    "sha256": "f7c503cde230fc208a5f8f15996ffff9d46d7eea310d70ade1175196e7ac6ec6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LegalService.html",
+    "bytes": 14628,
+    "sha256": "bac1109fa36db22aee2dbbda1373b7b9257523503720d327f38d32e030e23f46",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LegalServiceRequest.html",
+    "bytes": 9684,
+    "sha256": "629264fcdb8c72ec99efc679d9d013947e8a69caf66ef3b97cd0ad0f70ac857c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LoginRequest.html",
+    "bytes": 8355,
+    "sha256": "2fc0acf386dce3def7703d6c4dbe648bdf1d02992a6ea42aeed00d6b15521ed4",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_LoginResponse.html",
+    "bytes": 9371,
+    "sha256": "8047e6e0400a30031a822f53bb78d22a8232bd45664c192be1fe414746f9d71b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_MyAppointment.html",
+    "bytes": 13424,
+    "sha256": "1355f2e8d5334681db273ed6fd6ad0fe4547ee5278e2f6ad54663211bfcb5e2c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_MyLawyerDashboard.html",
+    "bytes": 13056,
+    "sha256": "ad5473935bffc703939f2640fcd1ad34ca0b8391dcd6cea73d85ba821d372919",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_MyLawyerProfile.html",
+    "bytes": 13428,
+    "sha256": "45355c6012bf11641249d26b68590d8450d78ee7f3f1a8e7440fd8bdf2b934a6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ParsedLegalRequirement.html",
+    "bytes": 200106,
+    "sha256": "4ce077b390cfd703c5199821a912860dbf0e42e22db9e93d81c9c52ded402d99",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_PasswordService.html",
+    "bytes": 13576,
+    "sha256": "0aa05c72c04196f34a262101b3c549d4088320852a757854b6568dc237b6dde5",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_PracticeAreaWorkforceSetting.html",
+    "bytes": 16711,
+    "sha256": "68062340b6604b98baaa7a7dff5b6b040df427a5eb89bdd29afad9e2bd1a6bd5",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_PrepareDeploymentStorage.html",
+    "bytes": 19198,
+    "sha256": "5771fbb85bcfd3bc0f9fc6843eb6165046c87332119382d2897c24b98f94636b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_Program.html",
+    "bytes": 129382,
+    "sha256": "5a48919b6935f30f174f42383b9b1e047ffab4e2cea43d9351b48a809f340c8b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_Recommendation.html",
+    "bytes": 199697,
+    "sha256": "6d00eb5a8aa2625e5e4d3b5c026d0f9260e951427a94c398ff0018fad50a849c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RecommendationRequest.html",
+    "bytes": 199281,
+    "sha256": "b15920652f38b784529bf5920248b2a642337cd3df5fb05f73edd436a512b3a1",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RecommendationResponse.html",
+    "bytes": 199730,
+    "sha256": "938b55efbad506bb9ecd110937cdf6d3e6cd1aa109e8c8afd763306f1b4ba2f9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RecommendationService.html",
+    "bytes": 219133,
+    "sha256": "d67d383a91920532fa8cf6c45fed5c364f0a38f5da1d0bddf433f693ed992d7d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RecruitmentOpening.html",
+    "bytes": 20727,
+    "sha256": "7ca9626f55442c18af4b91344d2388ed1c3080b5331de62d1d79c7a0ca4c4d38",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RegisterClientRequest.html",
+    "bytes": 11047,
+    "sha256": "a14b0bc5f6152fadef3a5e8762da0946a047fcf02c71b4017c120de0687c06e0",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RegisterRequest.html",
+    "bytes": 18947,
+    "sha256": "fa2c899d2ba3dae3b9bc054574eb7adae4a7acb3bbc3e9899ea2c1e47bd7f16a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RequestAccess.html",
+    "bytes": 19719,
+    "sha256": "daa34966ee41181121720858371a39b2b7b29bd244f6db7079039e3bd0082e11",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RequestDocumentReuploadRequest.html",
+    "bytes": 18186,
+    "sha256": "49be1df56a0aabd124d72cdf955377ea38a0dbd5423ca9686d4fdf941a80600e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_RescheduleAppointmentRequest.html",
+    "bytes": 30412,
+    "sha256": "50223f208c72333b9aba52199eb53a9e05a48d6b950bf69b29ef8cf900a03a8b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_Role.html",
+    "bytes": 10317,
+    "sha256": "701c261873c9588eb80b094f8267adf83cb6d7f81cc61648eaed631780c8bf73",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SaveRecommendationReviewRequest.html",
+    "bytes": 200056,
+    "sha256": "0d321729d5067214a532f0dea4d9584777448d13ca2e07608e7cb775228c9996",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ScheduleRequest.html",
+    "bytes": 14043,
+    "sha256": "d11ffe46a1d4dbf30797bd515e2262741b333b75003a80119a045d24e14fbed1",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ScheduleResponse.html",
+    "bytes": 13635,
+    "sha256": "f1ba8044a6f23b1dfd5242511896fc32a71eccc11dbd8043d081774c003d1836",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SchedulingAgentController.html",
+    "bytes": 47382,
+    "sha256": "fa02b8605846b1935631c8d94d1109d1bbe3e5ce6973e67c0079ab59007c7ee1",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SendAgentChatMessageRequest.html",
+    "bytes": 45283,
+    "sha256": "9c50c2c1596bdc3799043eb024d2c8008ece3ceb8ae2fb0b1b5d113db783c3fc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SendAgentChatMessageResponse.html",
+    "bytes": 47396,
+    "sha256": "8b13d17a0b4b1ce2b2e66c1cbb63f23934f820652e625a7e89e6ef50cef219f3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SendSchedulingMessageRequest.html",
+    "bytes": 13533,
+    "sha256": "5423b91fbe16ca4392118c42ea41bdc39978d9ac43cb22dfeedef1c7117d1039",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ServiceRequest.html",
+    "bytes": 24840,
+    "sha256": "4f80826c28e0278d43400c7e8182a5ea2814bdc7a7374c2673813c51bc15adbc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ServiceRequestDetailsResponse.html",
+    "bytes": 26110,
+    "sha256": "a1b01361bc98f2cebc958deea51097532eb0e2ec5907193dd3ceb61b180d97c6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ServiceRequestResponse.html",
+    "bytes": 24601,
+    "sha256": "60336536b7b187120de59080cfe73cb65db65fae3c6fe407a9a4b9b09eed2c4f",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ServiceRequestService.html",
+    "bytes": 128378,
+    "sha256": "8c91405d7ee90170d0bbe72458fd4e4d0602814ef521e3dd165c7f33da9d6640",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ServiceRequestsController.html",
+    "bytes": 59673,
+    "sha256": "23971fcf8a66778115f508dc5bf4344efb954f87e780224a0b0b0ea39df33c54",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_Specialization.html",
+    "bytes": 11100,
+    "sha256": "c79046f7019cb1cd50b7ef7d5d11dd4c5c6c0cefae0dd3377e9932b2b357cf07",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SpecializationRequest.html",
+    "bytes": 9160,
+    "sha256": "fd0fdea6040c2aeddda8de79eb955c9f431e6003350e9bf36aba35c88f9c1b32",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SubmitAgentApprovalRequest.html",
+    "bytes": 30748,
+    "sha256": "135ff24daad76462f2bbad9c9a26e682b6780f34c57dd60697f260a72ceea312",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SyncCurrentDatabaseSchema.html",
+    "bytes": 587475,
+    "sha256": "c72a08d049e12123b81108a1794e6a4b5e89a3042f1cf226132e935cc4e66e41",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_SyntheticIdentityResult.html",
+    "bytes": 183236,
+    "sha256": "5848781bcf3e4d31f42af46125717dce8c37bfee0e609a13568e7ed9c3b8c9bf",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ToolExecution.html",
+    "bytes": 14881,
+    "sha256": "3e9f7538ea876f3855974e3e6b1509ee9e228c7a769da82c763efb66fdaeaa0d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_TriggerAgentAnalysisRequest.html",
+    "bytes": 30763,
+    "sha256": "838c121a99354528f1d06be3273607880c62a4cd02e9972a7a9722b3fc743358",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UnavailabilityRequest.html",
+    "bytes": 14751,
+    "sha256": "9112da88052dd0e23886a0d9002a38be51f2eceae98898d31627e517ad5e01a7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UnavailabilityResponse.html",
+    "bytes": 13631,
+    "sha256": "9cd7aba1949630d731ecc21db8737e8e153a8d72ab82e5c05eda11ff15b86c28",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UpdateAppointmentRequest.html",
+    "bytes": 30049,
+    "sha256": "bf4cf2952141f4414ac6006ba579c8655cd6313f0b55bada23abf1da6b4cf6b0",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UpdateCareerRequest.html",
+    "bytes": 20037,
+    "sha256": "daf2f2a5d00c05e182ed4d96734df21eca70ded4adbd62c60948a20a9145118e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UpdateClerkRequest.html",
+    "bytes": 25148,
+    "sha256": "aec9f3f7e1fcd99e86a09a69f7d2ceaa2261ea245434834d23c90bc12d86796c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UpdateDocumentationRequestStatusRequest.html",
+    "bytes": 17537,
+    "sha256": "11dc3694279ab978efedb32ecda352c51ceaae7b3c9381f43250b9ae96e34bea",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UpdateDocumentationServiceRequest.html",
+    "bytes": 16935,
+    "sha256": "57b9ac0e6f272a167f74c5fcb5b676b46e99e5e971e23f5eefa61fbd2169a45d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UpdateJobApplicationStatusRequest.html",
+    "bytes": 19323,
+    "sha256": "20aea62db351d60f5e92a83ed1f48f7d97e4ad52e805f0f022610e0f848fa4d7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UpdateLawyerRequest.html",
+    "bytes": 22313,
+    "sha256": "1197d27fec43ea234b74704cc6c38907b15ab859650bfff00fbe558231f6d8ec",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UpdateServiceRequestRequest.html",
+    "bytes": 28959,
+    "sha256": "9357dc802aa6623b9c3d2e6017dd2b58afe2b822c42b7ba77e22bc6725415831",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_User.html",
+    "bytes": 23673,
+    "sha256": "53e80c9c3cee07347d15e5e959ddde9311fcad33bdd2db887de7960bb100faf9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_UserRole.html",
+    "bytes": 10953,
+    "sha256": "05f1a6ab753674b4bf299187fe3f06925c50110e5d7e85211bdcf3fc06aa641a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_ValidationResult.html",
+    "bytes": 14206,
+    "sha256": "2b00e2fde147ee307a89f5c48b6950608513269d0d031a8bd095ad5669c06e0a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkflowEvent.html",
+    "bytes": 198585,
+    "sha256": "306f10b1ac98187093667c2e6eb7a95a7cde9b7cfb899bf85d45586e258d9e93",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceAnalysisController.html",
+    "bytes": 16611,
+    "sha256": "f09d3cec617deca60a93cb889ad4aeb34f017e45ebad56aef0aba6e04b222598",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceAnalysisService.html",
+    "bytes": 49236,
+    "sha256": "8e91318ab104f2ddb2c264d1fa46a2983d43dafa1af9c6b2627c15791e540bcc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceArea.html",
+    "bytes": 21544,
+    "sha256": "250b16cd87e113e7187a349179ae462f30940764a36c41d6738cd9fed4bcf7af",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceDemoEndpoints.html",
+    "bytes": 12362,
+    "sha256": "612a475b37e399ceef1363760f01631abcf7e59d6ca8aedb001a053c2ff0b970",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceDemoRequest.html",
+    "bytes": 17208,
+    "sha256": "6acc2d2bb26d8469f676fa790e3eeb07b195d1abde63aa8df57312af7f38b02e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceDemoResponse.html",
+    "bytes": 16830,
+    "sha256": "f4ab0cde4823489d815ad4d4d5f97601d9c8a214a010a305bd5a84881944e757",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceDemoService.html",
+    "bytes": 77698,
+    "sha256": "171aaaa8b659edbaff25804d3b1ee865b67345d2b88eaef24b4e2b11bbd852e5",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceDemoState.html",
+    "bytes": 13969,
+    "sha256": "371068c91e0be04c25de49d29cded53f0721f1009e4d7687351ce5a94638fd51",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceOptions.html",
+    "bytes": 46177,
+    "sha256": "aa24ce47b4fb24a0a9252770df10d0c6978b76979117c81ead694555191ad876",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforcePlanningRules.html",
+    "bytes": 17283,
+    "sha256": "7e206791aac07d6b23c3d9e275eb22d6dc7e3aeec557fa82b13aaa96b75627eb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceReport.html",
+    "bytes": 21115,
+    "sha256": "4ef143c04e3204b483c233bb5dcb9c99bb1dd071f0cbfdd4c4ecae2c34a6d928",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceSettingRequest.html",
+    "bytes": 19029,
+    "sha256": "41f3a32b9163702ccab06fe2c6fa1bfdfc8855ee98821f9436e98c1314ad57d8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceSettingResponse.html",
+    "bytes": 17668,
+    "sha256": "e283c6ce439ac4b3cdcfff37da24fbf806387e1bb2f3bc9f57ddc31437142256",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceSettingsController.html",
+    "bytes": 13281,
+    "sha256": "05c51671822b03e4c2292c31762e6812bf0dfb070507c27087a008653f1808c4",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkforceSettingsService.html",
+    "bytes": 27673,
+    "sha256": "3111fb6ee474669ea9b0f22a9cb17d91baf6fee62881a8b8e982b5fb6b036bf4",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/LegalService.API_WorkingDayDto.html",
+    "bytes": 13636,
+    "sha256": "cf7d39851f588a48ba2f1dbfd067b645fd7a23d429788854bd3e0832a95e9c1b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/class.js",
+    "bytes": 55541,
+    "sha256": "8c82ab01df29e3074837a30028915f085014198e9b59341ff75b8a3f6ed7c3ac",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_cog.svg",
+    "bytes": 1237,
+    "sha256": "159166c5fb96b9be3d1e120500e210a0c345a6cc739831cacfa3bb892ebd5a33",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_cog_dark.svg",
+    "bytes": 1252,
+    "sha256": "bdb3f4cb3e1af2321aed3ce4a500f2d117afa5c9bc143501146d6e9abc07f0b0",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_cube.svg",
+    "bytes": 377,
+    "sha256": "d74082b3b5ed6e3198d7869479ac0e08c4597a2e8380ca264d315280da7ae5e8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_cube_dark.svg",
+    "bytes": 391,
+    "sha256": "c07e612ee96f523656b6fb25f1c7fe40e10737ca4176a059a243b1bf739b041e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_fork.svg",
+    "bytes": 767,
+    "sha256": "bea9e306f130ebadf3e5beeff3e507a91482ce245bc3752915da378d94e7af32",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_fork_dark.svg",
+    "bytes": 728,
+    "sha256": "3abc507b91918354a1fdfacefb60a800c53eb8ba8160ced238fd15adbe3365fc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_info-circled.svg",
+    "bytes": 610,
+    "sha256": "314f183626f21145ea4c64a1dd344fbb2a9ac2ae0273bf6e4c068dec7d907d57",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_info-circled_dark.svg",
+    "bytes": 610,
+    "sha256": "314f183626f21145ea4c64a1dd344fbb2a9ac2ae0273bf6e4c068dec7d907d57",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_minus.svg",
+    "bytes": 261,
+    "sha256": "9979d38173098f245705e2dfca64b744775390b09a8c2e3fa8476dc96514f096",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_minus_dark.svg",
+    "bytes": 263,
+    "sha256": "45b3b4c0988bb1899d2c3003ec0da3c36d6a79ae77847a9340d7cdeb3a5c6eb3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_plus.svg",
+    "bytes": 354,
+    "sha256": "15bf09a86fea0fe37ebb810539aca6f6eef159e4b81d84bab16792b5413a1219",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_plus_dark.svg",
+    "bytes": 368,
+    "sha256": "1cc09985fff1d21fd3232ea727cba8bed49f35415284c0d8e9f9eaaee60f064d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_search-minus.svg",
+    "bytes": 623,
+    "sha256": "718dc9570915fb076b6c77b53edfdd363ac4e1a301723e745d3d5c3aca99b829",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_search-minus_dark.svg",
+    "bytes": 622,
+    "sha256": "3af1a0c71ea7bcd8014d50772b63f19b1532dc5d030faac8176b7669d4e62dc2",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_search-plus.svg",
+    "bytes": 752,
+    "sha256": "f322ef57008360451cfd9de6ec0cfae8be87c042b3678fb8ffe18bac6c6d559e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_search-plus_dark.svg",
+    "bytes": 751,
+    "sha256": "b632ce2723130fb9390dd38e3d9ba5565f77859dd8172e62e4c698192fe430ac",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_sponsor.svg",
+    "bytes": 404,
+    "sha256": "1afa53065d09632e007117d4270a74976af5fda8c8d266dd10329e9816b3accb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_star.svg",
+    "bytes": 407,
+    "sha256": "9ecd4c089180221110db7ee30984d573dc06955ea97d3dd8477f4cc383f61c73",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_star_dark.svg",
+    "bytes": 407,
+    "sha256": "5550d0b8c898a90761402188a37b6b95d85e04528a291631c076752b42a815c9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_up-dir.svg",
+    "bytes": 265,
+    "sha256": "caa3021b50269e2a3b27f646b618baa007293a8f1f028775b43bf1b6f1494f14",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_up-dir_active.svg",
+    "bytes": 265,
+    "sha256": "defa5c713c3fc80bad77ec526a92ef4ac951f2d2c2a43037aba233c94bf63a2c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_up-down-dir.svg",
+    "bytes": 469,
+    "sha256": "c93304225029c8358fc08367e48485c47ef8dafeecb1ee5691c3bf4d2a3cb1df",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_up-down-dir_dark.svg",
+    "bytes": 499,
+    "sha256": "27f205a5d8ba6aa7638d0aeeb83bc0cdcd29d7d210e8dce57f2e65ca0873aa43",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_wrench.svg",
+    "bytes": 551,
+    "sha256": "ec78a92fdef6c333df89cb31a406f75dd890326bc44cc33be8bea4ea5921312b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/icon_wrench_dark.svg",
+    "bytes": 565,
+    "sha256": "dc44e0e5fbba5b4028659ea56e0b2bd0c52bf99ae1d8ae8b67fdbc910195d131",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/index.htm",
+    "bytes": 122097,
+    "sha256": "0cb8b3102c9717f527f474db07285edd58f7749ce370338303dd9d53446df333",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/index.html",
+    "bytes": 122097,
+    "sha256": "0cb8b3102c9717f527f474db07285edd58f7749ce370338303dd9d53446df333",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/main.js",
+    "bytes": 516909,
+    "sha256": "e16f952aa0e09f3e26d141df0779562fdd47e3515e7ecf6f851043c01715cf82",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html/report.css",
+    "bytes": 67198,
+    "sha256": "9261f76c1a83c1a12343094ea14a5b74d7575473a40f0bb7714a8499a14593cb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/coverage-html-generation.log",
+    "bytes": 420,
+    "sha256": "4fa3123952edea6be476e88a4cd5d270e1558fe57e6e58e3aaebe435ca6d3779",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/e95ff97b-fff2-40aa-993d-8317a0ac8565/coverage.cobertura.xml",
+    "bytes": 3820616,
+    "sha256": "c69f08831dc926dc50a8160e43017b08e3660b6870376e16a036f1a13136124c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/evidence-host-final.trx",
+    "bytes": 2891,
+    "sha256": "95972b10a1d5968952353352ab28a808cda5a1c060809c32835dd6ab35a7a0c2",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/evidence-host.trx",
+    "bytes": 2891,
+    "sha256": "5fcfaa389e7a9bb22d4bb16617a3a4a0211276b523ca5e15a9f3838693501507",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/backend/f6c18ab0-8860-43a1-848f-14c1e7d5d68e/coverage.cobertura.xml",
+    "bytes": 3820286,
+    "sha256": "1324f3ef7ceb2040b6948895bbe10a2142486a260df8c5b57107ae4a2a7a7ab6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ci/commit-history.txt",
+    "bytes": 8508,
+    "sha256": "f9f99254fe36d01fde393602c9481635d31dc3bb1d49b04c4073951c1fe8b8eb",
+    "scope": "historical public CI metadata; current local additions not covered",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ci/github-actions-runs.json",
+    "bytes": 159237,
+    "sha256": "dcd50104b2c5af428ec0919a68498c9f7f94610e6d8070494000a7c70a369265",
+    "scope": "historical public CI metadata; current local additions not covered",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ci/requested-branch.json",
+    "bytes": 141,
+    "sha256": "205fc9b903779417ebc4bb1b535bac081624b18c3dc529bf3879d42e9c0ee3d2",
+    "scope": "historical public CI metadata; current local additions not covered",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/ci/workflow-inventory.txt",
+    "bytes": 99,
+    "sha256": "13c74f0664f69388c4e5cc4a38ea1f173b1babe736c116b6b1ee744f9a5e00e8",
+    "scope": "historical public CI metadata; current local additions not covered",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/database/initdb.log",
+    "bytes": 892,
+    "sha256": "b5e7037a6a67189dd4510a97c1a3d1b52464c8d739038f212ff2eddbd1cd232c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/database/start.log",
+    "bytes": 52,
+    "sha256": "66afd0411ccc09366e99fdd99b85f21899c8d2d064f5835126859618802153ad",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/.last-run.json",
+    "bytes": 45,
+    "sha256": "91d1c43004802cd49950d78eb11c8fa7d05da8ffffe219a8b13b2f561bc00903",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/admin-workflow-navigation--03b44-keeps-active-state-at-320px/matching-320.png",
+    "bytes": 58710,
+    "sha256": "a411734db13769cdf39b7c05a2327603abac725d252cea57018abf58450b9936",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/admin-workflow-navigation--a4993-keeps-active-state-at-390px/matching-390.png",
+    "bytes": 63418,
+    "sha256": "40a585f853b2026093245d4a845086187a348fcd2eed6b3dae90f89e706c31ee",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-1024px/client-intake-1024.png",
+    "bytes": 132439,
+    "sha256": "a3aac60aca0aed198187f7c58f900112d2ce9672a258d61b8ce37c6bb33c7ab4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-1024px/client-registration-1024.png",
+    "bytes": 126260,
+    "sha256": "06569856a8f2dd0f7e989c22458329359fb05e61a649fa2057535dc062a08dfe",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-1440px/client-intake-1440.png",
+    "bytes": 136473,
+    "sha256": "652bc16608d2603523008615ba18f52de3a062522e742229fb069ad0c4560dae",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-1440px/client-registration-1440.png",
+    "bytes": 129186,
+    "sha256": "c240b9103375550fee682a0987c8482c3c954937f64769f5cde65d97dd9b1de0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-320px/client-intake-320.png",
+    "bytes": 63821,
+    "sha256": "ded7cc849eaba70cf21ddadbd056bf254576cb89b150841ad66ff33cf85d7f69",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-320px/client-registration-320.png",
+    "bytes": 61245,
+    "sha256": "854802e97e7d0196fd01529d26b294b504183ad7a225009d9f5eadcbe09d6717",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-375px/client-intake-375.png",
+    "bytes": 67411,
+    "sha256": "1ba5f1502bb006553c348ecc55a5264db127dd336ce2a3a031b84b3eb81af2ea",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-375px/client-registration-375.png",
+    "bytes": 65218,
+    "sha256": "70c807e6e98103455f5ebc275af9084a56d76c694d4d31ef4cf3282ae85ba815",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-768px/client-intake-768.png",
+    "bytes": 128191,
+    "sha256": "bbf89fcf1545a8e52e2c4866f395f3bf4cdd055bf3d11e61df43e70d1c597305",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/frontdesk-matching-client-intake-and-registration-fit-768px/client-registration-768.png",
+    "bytes": 123865,
+    "sha256": "88ab265ab3261e0fc6a5dfea6fce2a9627cbe8605ab3f0ab2376afce122fabed",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-1024.png",
+    "bytes": 136213,
+    "sha256": "3a86b29746a666b7f10719e03d07482389ede6c34d045e20fcc8348c7174738d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-1440.png",
+    "bytes": 165017,
+    "sha256": "2e8d12308380e8d023539061de20934a945ad7ad29cf496c2ddc6ca5568274c8",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-320.png",
+    "bytes": 57149,
+    "sha256": "9905a0d7bae5a6e0a43f908150e026ac1e511f21a9e7c212217fcc7b50068c78",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-390.png",
+    "bytes": 71508,
+    "sha256": "7094ea45a19ffab1b2af0587223ff2be98b70b7bc400ac902b20728ac172e877",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/coverage-768.png",
+    "bytes": 132589,
+    "sha256": "ba05b0fee6b74f728b30d48c7273d195e5df0b3255fbb34522db87b9385e330d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-1024.png",
+    "bytes": 141740,
+    "sha256": "9ab0c0493c8c9f7ddacedfcc7aa84f6c2fdbe4dbebbe7830cee8ef474aa8f9b1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-1440.png",
+    "bytes": 171103,
+    "sha256": "96bf55c8a8ad24ee6e3168beafbf383a46efa5373230e835a5d4cd5c460714bf",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-320.png",
+    "bytes": 56032,
+    "sha256": "936157aa5f3968ea94deb4d6b26d53cbfad397cc6e377b9fa407bb6eed137163",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-390.png",
+    "bytes": 70430,
+    "sha256": "8d321cca0be0c328e6d2413dd5b683f3529a480e63f960dc9980f9def33fbb1b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/lawyers-768.png",
+    "bytes": 137200,
+    "sha256": "7f978e77ba7ed17c6ecca0fcee72a66d48669cae574e72744b2f7c184db88d62",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-1024.png",
+    "bytes": 149787,
+    "sha256": "20814d9e2e744bca3832bf60bf20fe1fff619efbc4f1e4b8babdd49aff64c563",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-1440.png",
+    "bytes": 158614,
+    "sha256": "73bf17ef5581cee7e50119d72e7035bbaa6881731da3790d1e2460cb50cf1c13",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-320.png",
+    "bytes": 57380,
+    "sha256": "f40b019bbcda90396b01404153407fd44a7173df25e772344535218f77f91341",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-390.png",
+    "bytes": 71894,
+    "sha256": "cfa324fe961f2321c0b80e344259311eb1a9eec4ad2ff0f1ad1909d8baa37207",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/legal-services-768.png",
+    "bytes": 133701,
+    "sha256": "93cdc463886f1f18f23f4be733ac1a7497189476a27988c84476672bf6734d6a",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-1024.png",
+    "bytes": 140225,
+    "sha256": "e7134426d01bedccb67eb933896c53c9ce9391fef7a018d5405fbfdee063590b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-1440.png",
+    "bytes": 148969,
+    "sha256": "a6ef95e13455a4eb076d6b38ab0c9f87dc81e5f4aaad54d64576063e991515bc",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-320.png",
+    "bytes": 57237,
+    "sha256": "a5d81ae9df8dea9d64e1cadb24805a7719319d7d90fb5f5b56b69c3aa4702893",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-390.png",
+    "bytes": 74158,
+    "sha256": "f8483281edb490ae9452cc57c6709bb0678d811bb1a9943292d7dc08b968c0dd",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/specializations-768.png",
+    "bytes": 136759,
+    "sha256": "05371a71e4c50cd8fca156aaf514e9f40cb4d9cd17260cc3e45db07877b11dfc",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-1024.png",
+    "bytes": 154794,
+    "sha256": "38170a0236a2cd1ac10c850e41fe2f8ba3a3515462fb895e3ac8ab4e48e6794b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-1440.png",
+    "bytes": 164710,
+    "sha256": "9a4d891c7fd07d5ccd9f1549235248ff3feb92230e3dd63b70d20e76c3bd0e8e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-320.png",
+    "bytes": 57791,
+    "sha256": "f143d9e0c3cce601e3270fa25262c5db1ea643e6151d8ef1498812fe736f0af0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-390.png",
+    "bytes": 80108,
+    "sha256": "50e9d17f922d3588c700ef256e81ca094fded0dac4cd87778c157224f35dc6d0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/member1-guardrails-all-fou-780b5-t-desktop-and-mobile-widths/workforce-hiring-768.png",
+    "bytes": 137544,
+    "sha256": "9f645372883bec7a11aa6e36b18eae066131ba76223825c1d99a2a5af66ea831",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-424ed-d-access-and-reduced-motion/appointment-375.png",
+    "bytes": 69349,
+    "sha256": "63e4853c09740fa42f03e7bdbd46493f51cc8696420105b021e12024bc00e05e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-424ed-d-access-and-reduced-motion/matches-375.png",
+    "bytes": 73929,
+    "sha256": "fcd7c5d4a3b40d3be49bf1402704d6b4a947e4522a5ef32b46a091eb8955ad19",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-424ed-d-access-and-reduced-motion/progress-375.png",
+    "bytes": 86309,
+    "sha256": "38bb53b793a04e6b0480b2303c80e5d1dafba175b9925606b7e6508e97c500f0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-424ed-d-access-and-reduced-motion/review-375.png",
+    "bytes": 68460,
+    "sha256": "29363edcafb978a9e7fe81cab763cdddd20948e66a9f7eb704bf0112f3f81f66",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-464da-d-access-and-reduced-motion/appointment-768.png",
+    "bytes": 138440,
+    "sha256": "6afb93defc019a7c428f7ae766f60915b553f5e2cf88f740310cde52f3911d01",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-464da-d-access-and-reduced-motion/matches-768.png",
+    "bytes": 132506,
+    "sha256": "c844021073d5a5ef8cc25e1e55074e2508be0268e96a6236e37e1889d737c6f2",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-464da-d-access-and-reduced-motion/progress-768.png",
+    "bytes": 147384,
+    "sha256": "02b9a868c01175bab99e0359b26a7d7a8577a98f327fa9dfe44b7eb68e2f6b6b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-464da-d-access-and-reduced-motion/review-768.png",
+    "bytes": 144278,
+    "sha256": "fcbab04524e2fe6e8c43a8f962ba565b2769a499ebe5da34316c93b628279047",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-65908-d-access-and-reduced-motion/appointment-1024.png",
+    "bytes": 151231,
+    "sha256": "bff59cc32f2e09cb052f21541ca4a86ce68d3b382eeb3bde6bf2eddd382ffc69",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-65908-d-access-and-reduced-motion/matches-1024.png",
+    "bytes": 156277,
+    "sha256": "30acab594152ee344baa2067a63986362e1303223331888b0dacbe1c4ab4a8f7",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-65908-d-access-and-reduced-motion/progress-1024.png",
+    "bytes": 177380,
+    "sha256": "9b49e5e6e2cd4c21e65f79f2bc03c41f7cc4f125018615588ce73f74e39c0d6e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-65908-d-access-and-reduced-motion/review-1024.png",
+    "bytes": 154390,
+    "sha256": "8dcff41e0a5a347e41b2a943f4ae16d5d567cc1a8ef0830c39115d0621420181",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-86d4a-d-access-and-reduced-motion/appointment-1440.png",
+    "bytes": 151429,
+    "sha256": "af5e0ddd08b63108a305a01d80c5195ffb23e00eca0dd23ad367e033f65a267c",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-86d4a-d-access-and-reduced-motion/matches-1440.png",
+    "bytes": 159942,
+    "sha256": "7773c76c93dfa01b5f147c53dc57700d192b0696546d5eec5d307085599fd7bb",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-86d4a-d-access-and-reduced-motion/progress-1440.png",
+    "bytes": 179062,
+    "sha256": "90e5f4c29235152873629ce37e6275bdea8e3167793e599fe9cb39a1f477b38a",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-86d4a-d-access-and-reduced-motion/review-1440.png",
+    "bytes": 157100,
+    "sha256": "15815da3068917b2ac7433c0c569f1ffe4932d5c4af7403cb244a6b1d99d0db0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-89a2c-d-access-and-reduced-motion/appointment-320.png",
+    "bytes": 63425,
+    "sha256": "ccc9763fd91adee9966431e7c902e7182539872f4163e4c52585eab903ecd65d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-89a2c-d-access-and-reduced-motion/matches-320.png",
+    "bytes": 66014,
+    "sha256": "bc866a711a88bef2d8ac4df0fd0f318ac26e064a8f3328c43d474a93bf52c03b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-89a2c-d-access-and-reduced-motion/progress-320.png",
+    "bytes": 82222,
+    "sha256": "8a4c0031dc33ad4d1608e0c81e309d2baf8090d8f9783eff42b78efae9874bb5",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/recommendation-workflow-gu-89a2c-d-access-and-reduced-motion/review-320.png",
+    "bytes": 63580,
+    "sha256": "3764df3acabafe6b2643c2d477d92b131900e365217de5b1d83aaf080039de92",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-healthy-r-cbc03-and-offers-no-hiring-action/healthy-desktop.png",
+    "bytes": 111197,
+    "sha256": "5e30b49998695f07994a067a71c595ed4993f6a74c2e4ee5eb0ba8af94a38076",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-proposal--236cf-ion-and-Careers-integration/completed-desktop.png",
+    "bytes": 140532,
+    "sha256": "87ba8d70561d534fc36be873d214cc5aa050a8e554a7a5d5d27d22e02d06e49b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-proposal--236cf-ion-and-Careers-integration/proposal-desktop.png",
+    "bytes": 145045,
+    "sha256": "5d113aec1f949cde73c8a018cc0a648bc8570a1cca4fe4c94eee48478e92312a",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-1024.png",
+    "bytes": 145814,
+    "sha256": "efa20d9a536cee144dc61abc7406a9741691f153b5eab9f83dde5358afbe3251",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-1440.png",
+    "bytes": 161228,
+    "sha256": "9126299c15ac545c580d96c9a2ec173f49ffd71fce903b56cc410a8267be4bdf",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-320.png",
+    "bytes": 65860,
+    "sha256": "3efac3edbb5296ab8998299ae940cc1148c7ac0b525e9babd1bc95b6f8418254",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-390.png",
+    "bytes": 78734,
+    "sha256": "51c604b916458ec5e9db3bc00255569d0ce3338173325ee94a44a2b9c862b6e6",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/approval-768.png",
+    "bytes": 134892,
+    "sha256": "2db0d6442b61a4121d4e4cc6928d4c2c8101facb4f241fdaa5ba0dae2961af84",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-1024.png",
+    "bytes": 170259,
+    "sha256": "6934a14c357f095ee123aa4ef57f899bf65fa613020ce8f664b5f6f53eecc9f4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-1440.png",
+    "bytes": 192257,
+    "sha256": "b6c2d244f1c72af6cdcf451e40c317974cceb2a0dddd7092300f7142cd9ca4b4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-320.png",
+    "bytes": 71259,
+    "sha256": "74cf240a5107c605a6e189e327f403b83c5ab00c48ba5aaaa2649748d7974c2b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-390.png",
+    "bytes": 87965,
+    "sha256": "4bf5ba87083028b27d76f5c835c23b6cbdc81f6c3c6a0c070b5fe722bc4b17db",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/progress-768.png",
+    "bytes": 150762,
+    "sha256": "6a51085b3096bfe51554fd160b9afcf8f8e7741bc3d6376f1b14c5a9abf9d631",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-1024.png",
+    "bytes": 170259,
+    "sha256": "6934a14c357f095ee123aa4ef57f899bf65fa613020ce8f664b5f6f53eecc9f4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-1440.png",
+    "bytes": 192257,
+    "sha256": "b6c2d244f1c72af6cdcf451e40c317974cceb2a0dddd7092300f7142cd9ca4b4",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-320.png",
+    "bytes": 71259,
+    "sha256": "74cf240a5107c605a6e189e327f403b83c5ab00c48ba5aaaa2649748d7974c2b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-390.png",
+    "bytes": 87965,
+    "sha256": "4bf5ba87083028b27d76f5c835c23b6cbdc81f6c3c6a0c070b5fe722bc4b17db",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/proposal-768.png",
+    "bytes": 150762,
+    "sha256": "6a51085b3096bfe51554fd160b9afcf8f8e7741bc3d6376f1b14c5a9abf9d631",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-1024.png",
+    "bytes": 163673,
+    "sha256": "e5acc6ecda058316674355c4b6e6a4f6e06f8005254521ac1c57c5e8a044c905",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-1440.png",
+    "bytes": 176126,
+    "sha256": "ba1001e77f318fbc031ea743ec224a7a4e885bc5e817fed5f174cbb1d4d5fea9",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-320.png",
+    "bytes": 67175,
+    "sha256": "9064cabe0f5e50eb9382bc6a7b4329e0eb87f1f0d09a1188667cd6ccb90057b3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-390.png",
+    "bytes": 89378,
+    "sha256": "81f5852e982995a1fb909427c0a98a8cee4a4ca1be5177be085821a39242ec71",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-responsiv-19b0e--motion-and-keyboard-access/ready-768.png",
+    "bytes": 152147,
+    "sha256": "f74ce4c576c4e58575a37f722101c2b70d6109a61afa3fb0877c5030bd5b7402",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-1024.png",
+    "bytes": 185442,
+    "sha256": "a6e90451668ee3ab9fb6e455dffe261856507f86bcc2daef535b8e8167f991d9",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-1440.png",
+    "bytes": 205849,
+    "sha256": "7cc3cbf9daac12334950a17f216b03cfdd52b95ce64dc0a4e483e7b3f2c5e47f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-320.png",
+    "bytes": 84257,
+    "sha256": "e814111350471fbcc26ee6246b42ed97574c5924711cb78d2dd1367453c4ef43",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-390.png",
+    "bytes": 101819,
+    "sha256": "6518262fd44a0a35aebe9b4727f665fc39583c067f052b0236165c3f0604336f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-capacity_concern-768.png",
+    "bytes": 167184,
+    "sha256": "b4c24d8c9383348cd5a32ea845881dc4d138063e974c58ed7a8329dbb286836d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-1024.png",
+    "bytes": 187208,
+    "sha256": "e6c523a49fa947346c13b6dfe9b2e8f9c61ebfe253fb4e0eb44d4ba52efe059d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-1440.png",
+    "bytes": 194944,
+    "sha256": "f9b117eb2f766c88b73e95901165847c1fe9cbd6c9826f6b83c77a2439754768",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-320.png",
+    "bytes": 94157,
+    "sha256": "8438c3e1e2e59f3c26776f4713d83f4edb5674d8f0ee15e68f874920b4c32209",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-390.png",
+    "bytes": 111163,
+    "sha256": "83095d4f0fd4ecbc788119425fceff337c2ff4f9742feb6e78fe099ec7a6c5f7",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-career-768.png",
+    "bytes": 172469,
+    "sha256": "af4f2578768e6c44536a9da7af5a9ec5d681dabb67c8baeb99a9ff39f23f0834",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-1024.png",
+    "bytes": 173451,
+    "sha256": "bdaaab86842e2afd1efda3610da846ce5f1a31dec9be106cf2d6eb6291d5f87f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-1440.png",
+    "bytes": 175169,
+    "sha256": "88dbf353db7f9035128dfb6f11ecea1d4d942edce85f8c26f9ef46421c834d21",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-320.png",
+    "bytes": 87787,
+    "sha256": "2486c2a9162f62e0aa27a5964e9a5616386b477adb0c9692ca1e3118e5ada829",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-390.png",
+    "bytes": 108848,
+    "sha256": "257752c52789844c83e11f8c35505df6fb4e33819924be23ab9b8e25b48a0b14",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-error-768.png",
+    "bytes": 171842,
+    "sha256": "6b05cc69418a20e9ec6cd2c05028b98f62e25f78a9a985b53c55720feb09d6de",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-1024.png",
+    "bytes": 171498,
+    "sha256": "58031337788563cb96f6168ded596ae752d82cdc41462d20c86d585ac26c8fc3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-1440.png",
+    "bytes": 186143,
+    "sha256": "d4dbc45d6f78cbcc29f9b85fd0ba4ca62eba162cc9ca36a939e9cc639e2c565f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-320.png",
+    "bytes": 86430,
+    "sha256": "182ebf97ed050f53a8fc9ffedee991444828f3f3ffcf6adbfe514a8659f0b95b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-390.png",
+    "bytes": 91702,
+    "sha256": "14aa840c2b97dda36620030e66a348b98a5b0c96838df8753bbb0cb5a6299bfb",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-evidence-768.png",
+    "bytes": 160670,
+    "sha256": "6b1c862dec0ceac4e02c71f3a66daa5dbf43daad12a9f9917ac2b80c1ea343f1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-1024.png",
+    "bytes": 179054,
+    "sha256": "57bce4b0103d2fab69600205b0b7a5d706d555ce82330d382b3a6b7dfc6b3a24",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-1440.png",
+    "bytes": 193817,
+    "sha256": "dd2c98383ceaf80504ffbf33ef1bb720377d7dfc4413e3bead420660712ba170",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-320.png",
+    "bytes": 91401,
+    "sha256": "b72459d08964ece91468357cea8250494b0417b3700fd1642b1edd94929f2127",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-390.png",
+    "bytes": 97552,
+    "sha256": "5fb8e23e2d44584a3a4769b1936d0a361be7f6e0b480b8ca55fb0c24b02c5d4f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-expanded-768.png",
+    "bytes": 168963,
+    "sha256": "48045afefbb1e52c2adbd3af548649ee26a2ec8a0bddb0def77c30c9492b58ff",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-1024.png",
+    "bytes": 192366,
+    "sha256": "85dba08c6a9aa7057466b3d21ae4de4ef3194bc44b6e3960c481f2339c9b30fb",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-1440.png",
+    "bytes": 203008,
+    "sha256": "a4f56f601f62310ab8e358430f22b50f429ed69277896c831c3c0458d65d5106",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-320.png",
+    "bytes": 83624,
+    "sha256": "c1220f694a85b409d1d9f0e112da185e8bcc2f1fda3ccd52baee654da4dbe84f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-390.png",
+    "bytes": 114697,
+    "sha256": "4725a73eeb4ce74ae4f897f692cd79239f8be5101d002e38b45c72af707e3654",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-healthy-768.png",
+    "bytes": 174655,
+    "sha256": "52bdee0a93126465e2942d91a2d28c8cde0e031d1b2ac7a5d36f8a5b35c21771",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-1024.png",
+    "bytes": 186957,
+    "sha256": "d8378cb0e2cbb09863b0cc8c4fb82172b6cc878a3e8448c53c8b7cdae340979c",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-1440.png",
+    "bytes": 203206,
+    "sha256": "cd9bc7a65404b11ab7ac6997bcd6abf83babb9118d8828214432dd3ee69a993e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-320.png",
+    "bytes": 80892,
+    "sha256": "3e937fce0a64c7425b6ca18129a24e60619dbf6aece46dc0f47b7b7322b1a940",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-390.png",
+    "bytes": 100088,
+    "sha256": "652eb6720057dda19fa6b3e8a6c70b0fd320f0b662a42fdfb8efa014c35a517d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-no_active_lawyers-768.png",
+    "bytes": 163806,
+    "sha256": "201629ca580378ece7b8b3440fe916f2a5feede3c72e0d2cc9a7cbf7176c95f9",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-1024.png",
+    "bytes": 207509,
+    "sha256": "fafa089ce723dc4411bc2393b4c1058975ae3bf52d6db02463699107239fe90b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-1440.png",
+    "bytes": 234759,
+    "sha256": "186d5e8d7fb257c27bf44677aac02324fdb2fd7ce1d6678b888321c998945fce",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-320.png",
+    "bytes": 94949,
+    "sha256": "3bb456a8470e9d1bfd14812871bfb3eae191a40f7ffab46fdc051748887e2aac",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-390.png",
+    "bytes": 106802,
+    "sha256": "d88fc58513ba51afe5e91c99157e419a0888cd8f5367272b574bca7d17395d75",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-768.png",
+    "bytes": 174284,
+    "sha256": "66f9d8d4e178b49cc3d1195a35d096f1be1109dd3296c4e2242f7d576ac16ed8",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-1024.png",
+    "bytes": 73355,
+    "sha256": "bd1bbf376c9b913755189ad6621fd735eb9d88df07506e0addb2f863607467f0",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-1440.png",
+    "bytes": 73004,
+    "sha256": "6e7d5f89e520805070550e2fdde93a87a81c0c05c9539cbd83466bcf7fcb5d2e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-320.png",
+    "bytes": 68324,
+    "sha256": "5ace729fcd2cbfe6124181e276a7db696149ab28ef1dc3ef05d965ac7c499fd3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-390.png",
+    "bytes": 69579,
+    "sha256": "d453c4d49053a12148c1e5dabe563f3e9ea98af1bcd13470c9c479ba5db3eb07",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-proposal-workspace-768.png",
+    "bytes": 69866,
+    "sha256": "c01b6b286646f21e3451cf49e7685d2448d9c636f4f32ada51f7496675d3167f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-1024.png",
+    "bytes": 176323,
+    "sha256": "db5b89f3e6ad26effa06f061d31c6cb6771249f51cdbbd21ad1d02f36604d326",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-1440.png",
+    "bytes": 179002,
+    "sha256": "2345f3f68b64e12d7ba8eac49b2e43e71187f3e0463c4c37fbbd65ee94556f00",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-320.png",
+    "bytes": 88227,
+    "sha256": "7a458f3897e9c57ac2666f97cef2ed6f9bab7be376f22bdd2e7a2c2e9151e39e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-390.png",
+    "bytes": 104607,
+    "sha256": "34249107092def20899b8a607b66cad8f553806b47353b88a4a3d5a3cb8b1cf6",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-ready-768.png",
+    "bytes": 174664,
+    "sha256": "dd7f0aba3013c1ea96fdf7d69d697369570b62564f4e587542f019084a70d079",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-1024.png",
+    "bytes": 189219,
+    "sha256": "da86c0e73a912116a5b35e31f07ddfed69d81b8bd5f47a973c6c4f9307b38c2d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-1440.png",
+    "bytes": 206703,
+    "sha256": "523d5dc5ab66abb82a058192f39f05c2e3cbd08a5d281e609270d87322a5aa97",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-320.png",
+    "bytes": 89100,
+    "sha256": "77767d4e5c0c96bebf1a70f0ab6161b6a42b0a359b3fc20f2233e0d5e922ff89",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-390.png",
+    "bytes": 109387,
+    "sha256": "0e80060d1ea5734a67479dabc74104ed95cd7dd47a469e246f22fe2f83d09de1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-recruitment-768.png",
+    "bytes": 175337,
+    "sha256": "e2ee4dca8d8ca74492eb613553fa6995bb2ef1e1afe74d10b2af7559fbee9cea",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-1024.png",
+    "bytes": 207590,
+    "sha256": "3dcede98506073b3be0ef563b91004c24bed60a585ca20f1a467a8dcf3908da1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-1440.png",
+    "bytes": 234756,
+    "sha256": "91e922e75b9a37953fd04686d985c42a48f2863983ccf325fb957cb4ac8b233b",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-320.png",
+    "bytes": 89672,
+    "sha256": "f18d46a16f143c1fea7479aa5f34a336ab72f215c6390f2424defc8d09f6523c",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-390.png",
+    "bytes": 114435,
+    "sha256": "029750df2a579cef6304e352a13c0d16f68b8c88efd39f812fa3fc81fdb5bf18",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-restored-768.png",
+    "bytes": 178494,
+    "sha256": "361360a3f037a1527107a38f432237f9108b87932ef9aa690ccc590a0a318f32",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-1024.png",
+    "bytes": 196029,
+    "sha256": "f0e7f973b6dc63ac5f8e2d7d70fa1ba87df025b493ccbb02d3bc75c914e2266d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-1440.png",
+    "bytes": 230596,
+    "sha256": "9e1b44e2a9047fbb74e88cae9a5fd9d5462ab4ff36b53210484a466682630305",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-320.png",
+    "bytes": 86640,
+    "sha256": "09193debd28cc5eb7a54cd6aaad8b21a77d90dd6394384573f2cf91abe4a4130",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-390.png",
+    "bytes": 100217,
+    "sha256": "8523786a6b2fbbc3ac6030d4cfaf7158d418fdec6833d55dc035d85e672db9c3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-768.png",
+    "bytes": 160436,
+    "sha256": "bbcd98687bb66b5a2456f3ed8e0e9d0484ce5ece844560a5b1cfdbf0bf1d17b3",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-1024.png",
+    "bytes": 76847,
+    "sha256": "58c5ae16ed9638efb37071ce1ced4aef21dc1d84a0b4309f4e012dece33da1ba",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-1440.png",
+    "bytes": 76130,
+    "sha256": "ccfa7af8b72d546d65bc5fa798578bfd2ddfabeda6f480dff33e5af65756d4ae",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-320.png",
+    "bytes": 72493,
+    "sha256": "072ef8d8a18ff2cf325418564fb3a5dea49171167756835bb07e7444672b953d",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-390.png",
+    "bytes": 71496,
+    "sha256": "06d41d9e7543eabe615bfa45d402904ff9e6acf0fbbac49fbc244fb0b9da5ee8",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-review-workspace-768.png",
+    "bytes": 72017,
+    "sha256": "b26398331460d136cde8d637726d97d1aec572bb0162c5ff323630315e782461",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-1024.png",
+    "bytes": 184799,
+    "sha256": "6a2f74add4431a42a729f434423f043837a6f3e5edf731c039dc4cdf461ac298",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-1440.png",
+    "bytes": 203762,
+    "sha256": "3f85af327ebf48d57b1378ba05466633ec5899569faac16d98ec483a3b2f4441",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-320.png",
+    "bytes": 82705,
+    "sha256": "8329d6a925af114de905d74724792d17e4242900f0b2daf891e8be3eff06a074",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-390.png",
+    "bytes": 101132,
+    "sha256": "02af72b8bfcdf35bf19b1c708d2a9d42c0f3d446518f7b4b1a271c3af04714a8",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-hiring-visual-re-a523c-tes-at-five-viewport-widths/refined-watch-768.png",
+    "bytes": 165852,
+    "sha256": "5d4fbc5fed7331b632886a4ef743a5465af4b4569aabcf2f6aff1ca5cc76907e",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-1024.png",
+    "bytes": 144921,
+    "sha256": "248d0a6d097126fab1408a635810a3b3738d545facb77629f24d74893fdda66c",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-1440.png",
+    "bytes": 192400,
+    "sha256": "d694a3bf9a03995d2c21314e7a6457fd8db02a48266fe375fb39fd95a5d3a54a",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-320.png",
+    "bytes": 64200,
+    "sha256": "1c61ec8ba990fbb8c9c3d4d2076610c40a12ab64b6908a0816fc99075c39cea1",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-390.png",
+    "bytes": 70834,
+    "sha256": "51b4b6b635d4b5d3f6f18316bfe4f345727a6db918d789a53f06f70fd43906cf",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/artifacts/workforce-settings-setting-c39d5-widths-with-keyboard-access/settings-768.png",
+    "bytes": 129464,
+    "sha256": "994fb9518632e383f4779331d30edad12654914fb8586847b55fc7693c3a2651",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/playwright-report/index.html",
+    "bytes": 690183,
+    "sha256": "ad9cbc825f7196db7803d207dcc1411e03886d0928b3febfcf346f716090f48f",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/playwright.json",
+    "bytes": 125839,
+    "sha256": "89ce235ce1aef4388c259e3469e8cf6c13875b9737b4e50a3b81fb76fcec2197",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/schedule-1280.png",
+    "bytes": 199421,
+    "sha256": "fdd545e34df0548c4d1c2a9951fd7208beb3c7a72fd54ec3c2f9ee51b1cedbe6",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/e2e/unsupported-progress.png",
+    "bytes": 132069,
+    "sha256": "89215c03e8d6034bda9088fdc5ae5cb728d5db34a1343f920a6251bab152d057",
+    "scope": "browser tests, mostly mocked API; no complete integrated workflow",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/mobile/flutter-events.jsonl",
+    "bytes": 30487,
+    "sha256": "c6f251aa37fe41cefe351fbda257aa7a7b480464318fb728de8d5fb33c655608",
+    "scope": "Flutter unit/widget machine events; no device/live-API evidence",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/mobile/resource-recovery.log",
+    "bytes": 106,
+    "sha256": "6e96128fc351ccc852dc41cd57f08d9cab07ac214f5a3475c04b6aa8c5a52cad",
+    "scope": "Flutter unit/widget machine events; no device/live-API evidence",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/mobile/sdk-install.log",
+    "bytes": 988,
+    "sha256": "8516fe47cacb6bbd0b4f4a1b16228a25788302f0295bb05466735d7d33a45f02",
+    "scope": "Flutter unit/widget machine events; no device/live-API evidence",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/performance/k6-raw-final.json",
+    "bytes": 334573,
+    "sha256": "05f207a194e1860ac51280844c73e6a93e4620dd6380249644ad19843cbd9b56",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/performance/k6-raw.json",
+    "bytes": 4835,
+    "sha256": "7bc944d86c5a48980806e0966ce01f28b0827d4cc74ca23206a1d4906ce00652",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/performance/k6-summary.json",
+    "bytes": 6428,
+    "sha256": "b5d01b42f4664a837221283d4de6c9f996fbb6f89138b0318871e3e87d857f39",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": [
+      "PERF-01",
+      "PERF-05 (mock only)",
+      "PERF-LOCAL-02",
+      "PERF-LOCAL-03"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/performance/local-smoke.k6.js",
+    "bytes": 1918,
+    "sha256": "e9d479a10f5087910c0cd4b673d0296020048aaa5fb678fe559bc5656ae580a5",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/performance/performance-report.md",
+    "bytes": 2101,
+    "sha256": "5e1f2e2313e90bb065dbb0d862b25a69d85756388f62bc95df1ecb6e15933cde",
+    "scope": "local InMemory/mock smoke load only",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/passive_scan.py",
+    "bytes": 2493,
+    "sha256": "c3dad530b112f57adaa7d8afffc83deada32014b08f6a3b919b41420691c1cd7",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/scan-metadata.json",
+    "bytes": 2356,
+    "sha256": "9741a62c4fa64c067664bd9af292a217fcd775fdfaf396b35ab0d62d3e8daf30",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": [
+      "TC-SEC-05",
+      "TC-SEC-06"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/security/security-report.md",
+    "bytes": 2699,
+    "sha256": "ce87ae3e4e99e9fe71f4537d117c497f7534b644506ae161a7067aad85b80889",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-alerts.json",
+    "bytes": 8848,
+    "sha256": "b99827a8f9d6743b8040e8b637a6c4891ca0a87ac59d67ec4c5d84f9e9d6b897",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-daemon-final.log",
+    "bytes": 30696,
+    "sha256": "2f7e26f868e31c4f46d45c2b73b211a9fbd0a63299962bac8415031cdf0ae7f5",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-daemon-ready.log",
+    "bytes": 30887,
+    "sha256": "faa50782b357c8b892ca6c12eea39880510538e6857f7bda99931e29619a6353",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-daemon.log",
+    "bytes": 30453,
+    "sha256": "521f3c8ce59d26e3ce0c89d675b9006b2043a19524eb6a1a36c23127bcfad5a3",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-passive-report.html",
+    "bytes": 29407,
+    "sha256": "b5ea9b44708e346198f6fca2c8ac5cc786f643ede7cedd0c31d129443a171e12",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-passive-report.xml",
+    "bytes": 8328,
+    "sha256": "c0ff6caa6293760f73e1425b29aab0938f0dee66755fe82afda96ce954f425af",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/security/zap-startup-threads.log",
+    "bytes": 47184,
+    "sha256": "a4df3fbd27f6862211f69417b1aa35975919cb465d1c0a7394555272e4cdb8a2",
+    "scope": "passive local fixture scan/probes; no production scan",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/visual/01-xunit-result.png",
+    "bytes": 104095,
+    "sha256": "3443409d08d84fc1a142db73cd948e25edb0afcb5276f1c832dd467af5682988",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.1"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/02-spoofed-pdf-failure.png",
+    "bytes": 237067,
+    "sha256": "e6624ef50287dd684188a78665c3156b1682bc530d6de56e0c279c3ddab9f907",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.2"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/03-node-result.png",
+    "bytes": 159377,
+    "sha256": "35f823b0326954a4bc148a7531cb09e569ed6ff6d13455bd0f273a6b20337ff0",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.3"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/04-flutter-result.png",
+    "bytes": 278451,
+    "sha256": "d347556c0f3bc239b486d7aef85198691cfe8ed151a1e0ba9e08f9816039aca4",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.4"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/05-playwright-report.png",
+    "bytes": 248283,
+    "sha256": "7d37059058ef21bc12b5ea0c270f7a8495ad3cb310ca68ed19a17d91200f1cd9",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.5"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/06-react-schedule.png",
+    "bytes": 281019,
+    "sha256": "3ccda198b014c48a49e7b7eab3542a8ec1c0c997e9df58a384f512659d80ee94",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.6"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/07-zap-summary.png",
+    "bytes": 167037,
+    "sha256": "6679f0076ac23ce6b87fe6131f94e5bce2ca769a74f074f572ac745c6e035759",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.7"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/08-zap-alert-details.png",
+    "bytes": 237301,
+    "sha256": "3ff5ee1dee442a3a3e14cbe805745ec2e08bd1a8dd2a75952a4ceacd2ec0cbd2",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.8"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/09-k6-execution.png",
+    "bytes": 98296,
+    "sha256": "40d16c81edcde7cb00a8772cc864ac2c2422edffdaf8f17249b675e3e1ec01ab",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.9"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/10-k6-metrics.png",
+    "bytes": 109660,
+    "sha256": "5495b3a972b7fda5f9d01b87141a451fb1fa26569b9b027d1c0a4ae4c6d3a31f",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.10"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/11-coverage.png",
+    "bytes": 320426,
+    "sha256": "c3674a53a596d1e132e79381074acc631cc6cbacfd8b136a379f36c26c08d51d",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.11"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/12-ai-tests.png",
+    "bytes": 153610,
+    "sha256": "b5061fce734f729597ecaa1f86f9acddb80b2d7348180828b1287de9c91f4858",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.12"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/13-github-mobile-ci-page.txt",
+    "bytes": 745,
+    "sha256": "3228aca4acf101d4ce3ffbb47c4d1941d2b11a557dcbf495a2caa39934614adc",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/visual/13-github-mobile-ci.png",
+    "bytes": 149312,
+    "sha256": "5a0b02af7ef747d9a44735514b83408ed9b87c148e8d1768629855b3aec2af1d",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": [
+      "Figure 6.13"
+    ]
+  },
+  {
+    "path": "qmse-output/evidence/visual/README.md",
+    "bytes": 4826,
+    "sha256": "02e06c5a4350a40ada07147314d8e1ce1643e267d3b0f37966218d7cdc4ca117",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/visual/capture-manifest.json",
+    "bytes": 9896,
+    "sha256": "1065f376565c2b9e7511954ccd21dce1fc4002f5caaacdc2c4bfb989f5691346",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/evidence/visual/figure-index.json",
+    "bytes": 6450,
+    "sha256": "3e4f29e14c4af348e40cb2bcc05c01c22704992570345065ecc3da7579e8ca00",
+    "scope": "genuine browser capture of source artifact; scope and dates in figure-index/capture-manifest",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/final-report/SE3110_Testing_Report_GR42_Final.docx",
+    "bytes": 2502673,
+    "sha256": "78f64a9df4390dd5f10b89343dda38f636924687fab63a0adaf35666ea10441d",
+    "scope": "final academic artifact; qualified results",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/final-report/SE3110_Testing_Report_GR42_Final.pdf",
+    "bytes": 3301668,
+    "sha256": "442e30fd3db1d0095c154b5ce24edf4d9aa3c9cba23a580faab60123dbf6064e",
+    "scope": "final academic artifact; qualified results",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/final-report/previous/SE3110_Testing_Report_GR42_Final.docx",
+    "bytes": 116855,
+    "sha256": "c39d2df60c16e5774bbd9e2541baf37c4ef51477015ce2b14e5cded9ef4d4cc2",
+    "scope": "final academic artifact; qualified results",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/final-report/previous/SE3110_Testing_Report_GR42_Final.pdf",
+    "bytes": 1292613,
+    "sha256": "ffcca7d540903447ffeac5e6b8d3ef3b5a8ecc97cf70ce89771b5f8fa83915ca",
+    "scope": "final academic artifact; qualified results",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai-final.json",
+    "bytes": 549,
+    "sha256": "c26fb6b874c8f6289a29b4e3522260c468e0310434c92b8009f5f62cb2b4ca60",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai-final.log",
+    "bytes": 2908,
+    "sha256": "6ca40a83bcc5f1892d5b9306825eb9b8f3b4f63f7bb957faa0ea2e51c9597616",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai-qmse.json",
+    "bytes": 574,
+    "sha256": "0887a3148cfc998b8c2c28658db126040af718cd85993b702ad8af0bf0ec17bc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai-qmse.log",
+    "bytes": 992,
+    "sha256": "235af7c5f65073bf36b33c97214e2e5383cac566ad71d2c506f49eb543680a05",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai.json",
+    "bytes": 531,
+    "sha256": "47dd14cb7bf76f835cccc94e1695b1cbec65d4579b9838a7e671c64ade0fa627",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/ai.log",
+    "bytes": 8940,
+    "sha256": "8b3d55111615e6bfab9e86f9f807ff8fa22a5e41e7969811fd207fcf3c8b6517",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-cases.json",
+    "bytes": 205729,
+    "sha256": "429e871dcd1738ef284406df2cca88258ad71a31ee33da2f31dbc5b20a178157",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-final.json",
+    "bytes": 686,
+    "sha256": "03ff60f44772cdffd7491224f21a1a85e82042073a907a9a13ae61734fc2bde1",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-final.log",
+    "bytes": 2494,
+    "sha256": "b8379c1b2f576aa7c318a5850775c2d2b2b64b2ca77fc232d29ccf9b9d79c0bf",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-local.json",
+    "bytes": 686,
+    "sha256": "c4031b6b7ec2367613b233031e9da195518793340d3eea087a7c6b4c839b4089",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-local.log",
+    "bytes": 1609,
+    "sha256": "779c7d5e7c9a825fe6d67901d535e2c207b9865f8a07512959e5a3162b2cea55",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-qmse.json",
+    "bytes": 683,
+    "sha256": "8f5aeab4ec975ce01686478b4dc32d6fd7050db9bde788a460615cbd7091c644",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend-qmse.log",
+    "bytes": 2360,
+    "sha256": "484d29748fdcf2368c88356b11d90ae0e4c8497a6cd89dac99be4fbe4db3e4ce",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend.json",
+    "bytes": 668,
+    "sha256": "3389fa546dedd529fe9845a5eb5a66c22c7e98988be43e6acc9c104674ed68c8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/backend.log",
+    "bytes": 4324,
+    "sha256": "ca313fc45c9e88826b50bcaa1e18b81a11c9fc1342fcb5c2f361a3746e907326",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/case-verification.json",
+    "bytes": 58101,
+    "sha256": "f79323a21d01bc59bca468974531db443b11043a12af26177d1bf674ec3828ea",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/evidence-host-final.json",
+    "bytes": 744,
+    "sha256": "ddb51d4fa80e05cc0cd75b0ae38141da4e9fcc763b961eb4fa776d0d8132e2e6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/evidence-host-final.log",
+    "bytes": 895,
+    "sha256": "01ce9bf72b98d9151366ab58ee86c1670b39aef051ca6ea7bb5caa8162efbdfc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/evidence-host.json",
+    "bytes": 725,
+    "sha256": "e9ea15e89099cd2b9c3ce17ad072e227df3ccf14898d8d45b6aec0e8deb9d18c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/evidence-host.log",
+    "bytes": 884,
+    "sha256": "6279d3aa30b94488de6808fe1685fc110a6082e6b76811468a2e9e45036287e9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/frontend-node.json",
+    "bytes": 465,
+    "sha256": "b98500756216240771f80e249dfaf3a64eed52496bc126fa8bce139145858c3f",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/frontend-node.log",
+    "bytes": 4419,
+    "sha256": "5ca82e670936e5581a44cdd09b886282fef8b95ca7d67b6c1fbdb5a75eb9b243",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-dependencies.json",
+    "bytes": 615,
+    "sha256": "b6a0bb443d68f59dfa72f5b9729754628b077bf44c06764efe40605bac3f52e6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-dependencies.log",
+    "bytes": 813,
+    "sha256": "3d654d3faa16ba70716739fde7615efc6403250cd365f248d24d4ded65ed6db7",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-final.json",
+    "bytes": 608,
+    "sha256": "861477d5fb6d9e00730f55355ea62fd060b8cb4cf4a25144c4e18512e62139e6",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-final.log",
+    "bytes": 296,
+    "sha256": "669504864bd2ed1d56292aba9aed7bbf2fccf5f15b81b94e0adcacd11d6c892b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-minimal.json",
+    "bytes": 612,
+    "sha256": "0f68b595c4c48bf5eefdfd493cd8e0fda2f9b0de541a8a9f8eb314da4e5d6b08",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-minimal.log",
+    "bytes": 28864,
+    "sha256": "d6ccd20fee2888e0679516e91aed0c718abce59b1178d9142e2f34aa0b8ea336",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-pub-direct.json",
+    "bytes": 537,
+    "sha256": "b1328fafbd1a8691c8a3230bb502fd467c2a9a6350aafc7dab95545232e36557",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile-pub-direct.log",
+    "bytes": 462,
+    "sha256": "2aaa83a73ce4b1adecf75f57b661529f0a5a7a539e17975de2399a6b0f9881a3",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile.json",
+    "bytes": 594,
+    "sha256": "3349252b44eecc4097bcfed278f813b64b0ec42f34d087141a0049a3c8ac335d",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/mobile.log",
+    "bytes": 8665,
+    "sha256": "8b626263285566d56aae4306e01caa2c3159ccd597e674dcd0a6a23ab750a803",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/performance-final.json",
+    "bytes": 622,
+    "sha256": "851feaf548b7e1e730c23e3489d729ca5c2167fd2859de5714e99cb92d5d245e",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/performance-final.log",
+    "bytes": 1922,
+    "sha256": "2e5d3e710dec623eedeecb98f686663723c6f374157c2dd5ced0d7fcc754acbb",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/performance.json",
+    "bytes": 605,
+    "sha256": "940439923543678faf80ba7f1f0cc006056901ccb99eba4d3b5e0e713038fd22",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/performance.log",
+    "bytes": 1097,
+    "sha256": "cdd3f3def92cbc81780e55252a1a62fdf78a65f90ba9f208cc5b72de4812f66b",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/playwright-local.json",
+    "bytes": 546,
+    "sha256": "a386a2aed6f6ce45834829754779d64d2783152e90cd89f83ae136f46b07a526",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/playwright-local.log",
+    "bytes": 126159,
+    "sha256": "1196dae405a5ae65e51e8178a7eda371a569524fa2e9d9d19c92d86d06bfae34",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/playwright.json",
+    "bytes": 533,
+    "sha256": "75546e9085db9cee375b1d148afeee8a10a1d722ca3e90a6dc335c4772a7f8b9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/playwright.log",
+    "bytes": 2432,
+    "sha256": "5a98a33162d3481e8b5895f2ff6e2a82ca7dfefbbc6f2e79ee9bfae58ec7d049",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/security.json",
+    "bytes": 473,
+    "sha256": "a8e29e6425a1dbc79df932d9b8cce063522bc5534823465c2c822c0abbb8fb6c",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/security.log",
+    "bytes": 2016,
+    "sha256": "b5ea8f8f382ecef8553e5da8cadb6b96b6a2a97a0dafd8a50479fa7a32a6c93a",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/summary.json",
+    "bytes": 4472,
+    "sha256": "35659e29bc3e9c2cafaf071be63eaad327cd1931f498ce23bd3747d35b66f928",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-execution-summary.md",
+    "bytes": 2374,
+    "sha256": "38d9d9b965aab7c204a2cbb482cd8dc173ee0ced933876c7f7bdb231879e3081",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/ai-service/tests/test_qmse_boundaries.py",
+    "bytes": 2279,
+    "sha256": "3294003889db0e2880502ed98d080d66279e0041ddb0bc155df5e31c72fe8246",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/LawyerManagementHttpTests.cs",
+    "bytes": 62511,
+    "sha256": "3042b6ec7ce100cfc26c8f6f92fdbd4b90253813674dabf9290a8cd155ade5a8",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/LawyerMobileHttpTests.cs",
+    "bytes": 23682,
+    "sha256": "83e3ff43c58dbdba2ca2309bfdc663c0f13bc55258b66b0645aa7ba91283cdfc",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/QmseAppointmentTests.cs",
+    "bytes": 1825,
+    "sha256": "6437a56534f48bcef774526de924111c078effc6c2e86f2e2b56298111ae6dd4",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/QmseDocumentTests.cs",
+    "bytes": 3410,
+    "sha256": "b6caf712faa1d96a4529cf22ac7317c3e2f8576d86245691b1416ab130273321",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/QmseHttpTests.cs",
+    "bytes": 5757,
+    "sha256": "b7bfb14750604172e0301f13a3b811af4b035147bdbdaee051442ab4d529b643",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/test-results/test-source/backend/LegalService.Tests/QmseRegistrationTests.cs",
+    "bytes": 870,
+    "sha256": "f04b2e51913e90299eaee820a9ceaf3dbc35a1d87579732954113645ec8f6dd9",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  },
+  {
+    "path": "qmse-output/visual-completion-summary.md",
+    "bytes": 2113,
+    "sha256": "7f360f928025aa0178f005be218bfe9e7d4b28317882c3943502ac8ce87a57ee",
+    "scope": "execution/support artifact",
+    "test_ids": []
+  }
+]

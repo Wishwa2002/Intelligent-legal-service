@@ -1,0 +1,19 @@
+{
+  "name": "completion-20261008-clerk-regression",
+  "command": [
+    "npm",
+    "test",
+    "--",
+    "qmse-clerk-identity.spec.ts",
+    "--reporter=json,html",
+    "--output=../qmse-output/completion-20261008/evidence/clerk-playwright-results"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T05:00:51.213705+00:00",
+  "ended_utc": "2026-10-08T05:00:54.762048+00:00",
+  "duration_seconds": 3.548,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-clerk-regression.log"
+}

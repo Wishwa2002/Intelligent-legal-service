@@ -1,0 +1,602 @@
+[
+  {
+    "location": "table 0 row 3 cell 0",
+    "before": "Repository",
+    "after": "Original group development repository"
+  },
+  {
+    "location": "table 0 row 3 cell 1",
+    "before": "https://github.com/Jeyamdev/legalease-ai",
+    "after": "https://github.com/Wishwa2002/Intelligent-legal-service"
+  },
+  {
+    "location": "cell",
+    "before": "Deployed system",
+    "after": "Final QMSE testing branch"
+  },
+  {
+    "location": "cell",
+    "before": "Web: https://legalease-ai-nu.vercel.app  |  API: https://legalease-api-mufi.onrender.com/swagger/index.html",
+    "after": "https://github.com/Wishwa2002/Intelligent-legal-service/tree/se3110-qmse-testing"
+  },
+  {
+    "location": "cell",
+    "before": "Deployed system",
+    "after": "Deployment repository"
+  },
+  {
+    "location": "cell",
+    "before": "Web: https://legalease-ai-nu.vercel.app  |  API: https://legalease-api-mufi.onrender.com/swagger/index.html",
+    "after": "https://github.com/Jeyamdev/legalease-ai"
+  },
+  {
+    "location": "paragraph",
+    "before": "Completion revision: 8 October 2026 (Asia/Colombo). Local docs/se3110-qmse-testing: tested fixes f360e4ac21f1; executed replay scripts 05359214df52. No push, deployment or submission; remote CI unverified. Available SE3090 Version 3.0 reference reviewed; formal approval unconfirmed. Original and prior 51-page reports preserved.",
+    "after": "Publication revision: 8 October 2026 (Asia/Colombo). Approved tested source 05359214df52, including fixes f360e4ac21f1, is published on Wishwa2002/Intelligent-legal-service, branch se3110-qmse-testing. Original development history is preserved; no deployment or submission occurred. GitHub CI did not trigger for this branch. Available SE3090 Version 3.0 reference reviewed; formal approval unconfirmed. Original, 51-page and pre-publication 60-page reports are preserved."
+  },
+  {
+    "location": "paragraph",
+    "before": "Keep automated scripts and evidence in the repository so every test can be reproduced and explained.",
+    "after": "Keep reusable automated test scripts in the published testing branch and retain native reports, screenshots and final documents in the separately supplied evidence package so results can be reproduced and explained."
+  },
+  {
+    "location": "table 6 row 6 cell 1",
+    "before": "Local docs/se3110-qmse-testing, f360e4ac21f1. No push/deploy; remote CI not available for this commit.",
+    "after": "Published Wishwa2002/Intelligent-legal-service / se3110-qmse-testing at 05359214df52fa743b234e1d77e6671f57c14dea. Local source branch: docs/se3110-qmse-testing. Identical tested code; CI not triggered."
+  },
+  {
+    "location": "cell",
+    "before": ".github/workflows/backend-ci.yml, frontend-ci.yml and mobile-ci.yml; branch/path filters; observed CI run metadata in evidence/ci.",
+    "after": ".github/workflows/backend-ci.yml, frontend-ci.yml and mobile-ci.yml have main/develop and component-path filters. Published testing SHA: zero observed runs; no manual dispatch. GitHub-managed CodeQL/Dependabot metadata is separately retained."
+  },
+  {
+    "location": "paragraph",
+    "before": "Original Figures 6.1\u20136.13 remain genuine dated evidence from the earlier verification phase. Their outputs are historical snapshots, not the latest totals. New Figures 6.14\u20136.20 document successful repairs and the real integrated workflow. Saved logs/native reports are displayed without changing their content; wrapping/font are adjusted for readability. Full sources and execution dates are retained. Paths are relative to qmse-output.",
+    "after": "Figures 6.1\u20136.13 remain genuine dated earlier-phase evidence. Figures 6.14\u20136.20 retain the verified fixes and real local workflow; new Figures 6.21\u20136.30 establish original group history, member commit records, publication and CI non-trigger. Historical deployment-repository images are preserved with provenance. Full native sources are included; GitHub screenshots prove repository observations, not successful test execution. Paths are relative to qmse-output."
+  },
+  {
+    "location": "paragraph",
+    "before": "Figure 6.13. GitHub Actions: historical Mobile CI success",
+    "after": "Figure 6.13. Deployment repository: historical Mobile CI success"
+  },
+  {
+    "location": "paragraph",
+    "before": "The real GitHub page shows Success for base commit 8a9b8a2, duration 2m18s. It does not cover uncommitted local test additions; other recorded runs failed. Job logs require sign-in.",
+    "after": "This preserved Jeyamdev/legalease-ai page shows historical Mobile CI Success for base commit 8a9b8a2, duration 2m18s; other historical runs failed. It does not cover later QMSE commits f360e4a/0535921 or prove group-branch CI success. Figure 6.30 records the published group-branch non-trigger."
+  },
+  {
+    "location": "cell",
+    "before": "evidence/ci/github-actions-runs.json; current local additions not covered",
+    "after": "evidence/ci/github-actions-runs.json; historical deployment/base revision only. Group publication CI: git-publication/evidence/ci-verification.json"
+  },
+  {
+    "location": "paragraph",
+    "before": "The original component assignments and member disclosures are retained. Actual source/test files and all 20 cited commits were checked; personal authorship, effort and responsibilities still require member confirmation. This task\u2019s AI-assisted executions cannot be attributed to an individual student without confirmation.",
+    "after": "The original component assignments and member disclosures are retained. Source/test files and 26 original member-associated commit records were checked in the original group repository, with author/date/path evidence and preserved ancestry. Personal ownership, effort and responsibilities still require member confirmation. The two new Codex-assisted QMSE commits are recorded separately and are not individual contribution proof."
+  },
+  {
+    "location": "cell",
+    "before": "ac62bb7",
+    "after": ""
+  },
+  {
+    "location": "cell",
+    "before": "2026-10-03",
+    "after": ""
+  },
+  {
+    "location": "cell",
+    "before": "fix(member1): persist lawyer user links and schema migrations",
+    "after": ""
+  },
+  {
+    "location": "table 48 row 1 cell 2",
+    "before": "Fix Mobile CI missing env asset",
+    "after": "Fix Mobile CI missing env asset\nRecorded author: Jeyamdev; 09:59:05+05:30."
+  },
+  {
+    "location": "table 48 row 2 cell 2",
+    "before": "feat(member1): integrate lawyer mobile, matching, and workforce refinements",
+    "after": "feat(member1): integrate lawyer mobile, matching, and workforce refinements\nRecorded author: Jeyamdev; 09:48:02+05:30."
+  },
+  {
+    "location": "table 48 row 3 cell 2",
+    "before": "feat(member1): add recurring scheduling and workforce intelligence",
+    "after": "feat(member1): add recurring scheduling and workforce intelligence\nRecorded author: Jeyamdev; 17:10:08+05:30."
+  },
+  {
+    "location": "table 48 row 4 cell 2",
+    "before": "fix(mobile): resolve Flutter analyzer issues",
+    "after": "fix(mobile): resolve Flutter analyzer issues\nRecorded author: Jeyamdev; 19:00:11+05:30."
+  },
+  {
+    "location": "table 48 row 5 cell 2",
+    "before": "fix(member1): persist lawyer user links and schema migrations",
+    "after": "fix(member1): persist lawyer user links and schema migrations\nRecorded author: Jeyamdev; 18:59:39+05:30."
+  },
+  {
+    "location": "table 48 row 6 cell 0",
+    "before": "",
+    "after": "e77187a"
+  },
+  {
+    "location": "table 48 row 6 cell 1",
+    "before": "",
+    "after": "2026-09-27"
+  },
+  {
+    "location": "table 48 row 6 cell 2",
+    "before": "",
+    "after": "Add Gemini-grounded lawyer recommendation approval workflow\nRecorded author: Jegatheeswaran Jeyashankar; 23:30:22+05:30."
+  },
+  {
+    "location": "table 48 row 7 cell 0",
+    "before": "",
+    "after": "097ab39"
+  },
+  {
+    "location": "table 48 row 7 cell 1",
+    "before": "",
+    "after": "2026-09-28"
+  },
+  {
+    "location": "table 48 row 7 cell 2",
+    "before": "",
+    "after": "Complete Member 1 lawyer management requirements\nRecorded author: Jeyamdev; 03:55:54+05:30."
+  },
+  {
+    "location": "cell",
+    "before": "241db17",
+    "after": ""
+  },
+  {
+    "location": "cell",
+    "before": "2026-09-23",
+    "after": ""
+  },
+  {
+    "location": "cell",
+    "before": "fix(frontend): resolve localhost IPv6 connection refused issue and persist auth token",
+    "after": ""
+  },
+  {
+    "location": "table 53 row 1 cell 2",
+    "before": "feat: implement lawyer category management and intelligent agentic scheduling assistant",
+    "after": "feat: implement lawyer category management and intelligent agentic scheduling assistant\nRecorded author: yhprasad; 16:12:35+05:30."
+  },
+  {
+    "location": "table 53 row 2 cell 2",
+    "before": "feat: complete Member 2 booking management, careers redesign, and mobile website parity",
+    "after": "feat: complete Member 2 booking management, careers redesign, and mobile website parity\nRecorded author: yhprasad; 07:02:00+05:30."
+  },
+  {
+    "location": "table 53 row 3 cell 2",
+    "before": "feat(auth): add one-click demo credentials and active session controls to staff login",
+    "after": "feat(auth): add one-click demo credentials and active session controls to staff login\nRecorded author: yhprasad; 03:14:27+05:30."
+  },
+  {
+    "location": "table 53 row 4 cell 2",
+    "before": "fix(auth): prevent auto-redirect loop on login page and add admin logout button",
+    "after": "fix(auth): prevent auto-redirect loop on login page and add admin logout button\nRecorded author: yhprasad; 03:06:20+05:30."
+  },
+  {
+    "location": "table 53 row 5 cell 2",
+    "before": "fix(frontend): resolve localhost IPv6 connection refused issue and persist auth token",
+    "after": "fix(frontend): resolve localhost IPv6 connection refused issue and persist auth token\nRecorded author: yhprasad; 03:02:02+05:30."
+  },
+  {
+    "location": "table 53 row 6 cell 0",
+    "before": "",
+    "after": "d461a84"
+  },
+  {
+    "location": "table 53 row 6 cell 1",
+    "before": "",
+    "after": "2026-09-23"
+  },
+  {
+    "location": "table 53 row 6 cell 2",
+    "before": "",
+    "after": "feat(appointments): implement booking APIs, conflict detection, and status transitions\nRecorded author: yhprasad; 02:32:18+05:30."
+  },
+  {
+    "location": "cell",
+    "before": "587e892",
+    "after": ""
+  },
+  {
+    "location": "cell",
+    "before": "2026-09-27",
+    "after": ""
+  },
+  {
+    "location": "cell",
+    "before": "fix(backend): seed all 12 documentation services on startup so Document Agent operates correctly",
+    "after": ""
+  },
+  {
+    "location": "table 58 row 1 cell 2",
+    "before": "fix(auth): seed and support demo admin and clerk login accounts and credentials",
+    "after": "fix(auth): seed and support demo admin and clerk login accounts and credentials\nRecorded author: VTN02; 11:30:16+05:30."
+  },
+  {
+    "location": "table 58 row 2 cell 2",
+    "before": "feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview",
+    "after": "feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview\nRecorded author: VTN02; 22:53:32+05:30."
+  },
+  {
+    "location": "table 58 row 3 cell 2",
+    "before": "feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview",
+    "after": "feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview\nRecorded author: VTN02; 22:53:32+05:30."
+  },
+  {
+    "location": "table 58 row 4 cell 2",
+    "before": "refactor(mobile): restore CommonAiScreen to bottom nav tab 1 and isolate Document Agent within Documents catalog",
+    "after": "refactor(mobile): restore CommonAiScreen to bottom nav tab 1 and isolate Document Agent exclusively within Documents catalog\nRecorded author: VTN02; 22:28:59+05:30."
+  },
+  {
+    "location": "table 58 row 5 cell 2",
+    "before": "fix(backend): seed all 12 documentation services on startup so Document Agent operates correctly",
+    "after": "fix(backend): seed all 12 documentation services on startup so Document Agent operates correctly\nRecorded author: VTN02; 22:17:35+05:30."
+  },
+  {
+    "location": "table 58 row 6 cell 0",
+    "before": "",
+    "after": "a566efa"
+  },
+  {
+    "location": "table 58 row 6 cell 1",
+    "before": "",
+    "after": "2026-09-11"
+  },
+  {
+    "location": "table 58 row 6 cell 2",
+    "before": "",
+    "after": "feat(document-clerk): implement Agentic AI document validation, mobile client, and clerk management\nRecorded author: VTN02; 17:58:17+05:30."
+  },
+  {
+    "location": "cell",
+    "before": "4dc9a15",
+    "after": ""
+  },
+  {
+    "location": "cell",
+    "before": "2026-09-29",
+    "after": ""
+  },
+  {
+    "location": "cell",
+    "before": "test: update lawyer management playwright tests for unified auth",
+    "after": ""
+  },
+  {
+    "location": "table 63 row 1 cell 2",
+    "before": "Fix flutter env configuration",
+    "after": "Fix flutter env configuration\nRecorded author: Wishwa; 22:20:25+05:30."
+  },
+  {
+    "location": "table 63 row 2 cell 2",
+    "before": "Fix flutter analyzer issues and improve authentication flow",
+    "after": "Fix flutter analyzer issues and improve authentication flow\nRecorded author: Wishwa; 22:07:15+05:30."
+  },
+  {
+    "location": "table 63 row 3 cell 2",
+    "before": "Fix authentication security, validation and health check flow",
+    "after": "Fix authentication security, validation and health check flow\nRecorded author: Wishwa; 21:35:56+05:30."
+  },
+  {
+    "location": "table 63 row 4 cell 2",
+    "before": "Fix frontend auth tests and lawyer dashboard flows",
+    "after": "Fix frontend auth tests and lawyer dashboard flows\nRecorded author: Wishwa; 20:19:14+05:30."
+  },
+  {
+    "location": "table 63 row 5 cell 2",
+    "before": "test: update lawyer management playwright tests for unified auth",
+    "after": "test: update lawyer management playwright tests for unified auth\nRecorded author: Wishwa; 19:50:40+05:30."
+  },
+  {
+    "location": "table 63 row 6 cell 0",
+    "before": "",
+    "after": "43f6345"
+  },
+  {
+    "location": "table 63 row 6 cell 1",
+    "before": "",
+    "after": "2026-09-22"
+  },
+  {
+    "location": "table 63 row 6 cell 2",
+    "before": "",
+    "after": "Implement JWT authentication and admin authorization\nRecorded author: Wishwa; 19:41:53+05:30."
+  },
+  {
+    "location": "table 63 row 7 cell 0",
+    "before": "",
+    "after": "9309287"
+  },
+  {
+    "location": "table 63 row 7 cell 1",
+    "before": "",
+    "after": "2026-09-19"
+  },
+  {
+    "location": "table 63 row 7 cell 2",
+    "before": "",
+    "after": "feat: add customer service request management pages\nRecorded author: Wishwa; 18:02:11+05:30."
+  },
+  {
+    "location": "cell",
+    "before": "Historical member-assigned claim; ownership confirmation pending: GitHub Actions: backend.yml, frontend.yml, mobile.yml run the suites on every push and pull request",
+    "after": "Historical responsibility claim; member confirmation pending. Actual source files are backend-ci.yml, frontend-ci.yml and mobile-ci.yml. Pushes to se3110-qmse-testing do not match main/develop filters; zero new-SHA runs observed. No every-push/pass claim is supported."
+  },
+  {
+    "location": "paragraph",
+    "before": "GitHub Actions workflows are filtered to main/develop and component paths. Public metadata contains successes and failures; no universal every-push/green-pipeline claim is supported.",
+    "after": "Published testing branch Actions check: zero runs for SHA 05359214df52fa743b234e1d77e6671f57c14dea and branch se3110-qmse-testing. The three committed source workflows allow push only to main/develop and none declares workflow_dispatch. Managed CodeQL/Dependabot have no observed run for this revision; their trigger settings are not established by source YAML. Separate unapplied CI proposals are retained for review."
+  },
+  {
+    "location": "cell",
+    "before": "Historical component assignment; personal testing work needs confirmation",
+    "after": "Group-repository development: 0958d69, b082f54, 0548fd5, 5269539, ac62bb7, e77187a, 097ab39. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted."
+  },
+  {
+    "location": "cell",
+    "before": "Historical component assignment; personal testing work needs confirmation",
+    "after": "Group-repository development: 2c0c4e5, 07af04e, 4bec10d, 327bebf, 241db17, d461a84. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted."
+  },
+  {
+    "location": "cell",
+    "before": "Historical component assignment; personal testing work needs confirmation",
+    "after": "Group-repository development: fb2513c, 44f3f25, 0fa6592, dfc95af, 587e892, a566efa. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted."
+  },
+  {
+    "location": "cell",
+    "before": "Historical component assignment; personal testing work needs confirmation; AuthSecurityTests.cs absent",
+    "after": "Group-repository development: ee78a38, 7cdbb89, 9579cee, 3ff0d2a, 4dc9a15, 43f6345, 9309287. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted."
+  },
+  {
+    "location": "paragraph",
+    "before": "The task repaired and retested four concrete defects, completed a real Flutter web \u2192 API \u2192 PostgreSQL/FastAPI \u2192 React \u2192 Flutter document workflow, and expanded PostgreSQL security/performance evidence. Final automated suites contain no failures; five cases are explicitly skipped across xUnit/Playwright. The report still contains three unresolved expectation conflicts, 49 historical/unverified cases and two blocked cases. Live Golden Case acceptance, native-device/accessibility validation, member confirmation and CI for the unpushed tested commit remain outstanding; assessment completeness is not claimed.",
+    "after": "The task repaired and retested four concrete defects, completed a real Flutter web \u2192 API \u2192 PostgreSQL/FastAPI \u2192 React \u2192 Flutter document workflow, and expanded PostgreSQL security/performance evidence. Final automated suites contain no failures; five cases are explicitly skipped across xUnit/Playwright. The report still contains three unresolved expectation conflicts, 49 historical/unverified cases and two blocked cases. Live Golden Case acceptance, native-device/accessibility validation, member confirmation and CI execution for the published tested commit remain outstanding; the published branch is verified, but assessment completeness is not claimed."
+  },
+  {
+    "location": "paragraph",
+    "before": "Resolve provider availability/model/budget configuration before further live Golden Cases. Obtain group-member confirmations and explicit push approval before verifying remote CI for the local tested commit; complete accessibility/manual demonstrations.",
+    "after": "Resolve provider availability/model/budget before further live Golden Cases. Obtain member contribution confirmations and complete native/accessibility/manual demonstrations. CI needs a separately approved configuration revision: current branch filters prevent execution, and no manual dispatch is declared. Publication of the verified SHA is complete; no approval for an additional SHA, deployment or submission is inferred."
+  },
+  {
+    "location": "cell",
+    "before": "Codex assisted tests, four fixes, local isolated executions and documentation. No production data, push, deployment or submission. New work is not attributed to students without confirmation.",
+    "after": "Codex assisted tests, four fixes, isolated local execution, repository audit, approved exact-SHA publication and this report revision. No production data was modified and no deployment or submission occurred. New work is not attributed to students without confirmation. Git author metadata is preserved; it is not proof of personal effort."
+  },
+  {
+    "location": "cell",
+    "before": "GitHub Actions mobile.yml",
+    "after": ".github/workflows/mobile-ci.yml (current path; historical defect reference)"
+  },
+  {
+    "location": "table 50 row 4 cell 1",
+    "before": "python -m uvicorn lawyer_recommendation.app:app --port 8002",
+    "after": "From repository root: cd ai-service\n.venv/bin/python -m uvicorn lawyer_recommendation.app:app --host 127.0.0.1 --port 8002"
+  },
+  {
+    "location": "table 55 row 4 cell 1",
+    "before": "python -m uvicorn app.main:app --port 8001",
+    "after": "From repository root: cd ai-service\n.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+  },
+  {
+    "location": "table 60 row 2 cell 1",
+    "before": "python -m uvicorn app.main:app --port 8001",
+    "after": "From repository root: cd ai-service\n.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+  },
+  {
+    "location": "paragraph",
+    "before": "SE3090 Assignment 1 Consolidated Report, Group 2026-SE-42, LegalEase AI.",
+    "after": "SE3090 LegalEase AI Full Report, Version 3.0 \u2014 Consolidated Final Verified Specification, Group 2026-SE-42. Available requirements reference; formal approval not independently confirmed."
+  },
+  {
+    "location": "cell",
+    "before": "Committed locally on docs/se3110-qmse-testing (f360e4ac21f1); no push.",
+    "after": "VERIFIED: reusable test source and scripts published at 05359214df52fa743b234e1d77e6671f57c14dea on group se3110-qmse-testing. Native logs/final report supplied separately; no runtime caches published."
+  },
+  {
+    "location": "cell",
+    "before": "20 cited commits exist; personal ownership requires confirmation",
+    "after": "VERIFIED publication/ancestry; 26 original member-associated commits with authors/dates/paths. Member effort confirmation remains pending. CI NOT TRIGGERED: main/develop branch filters, no manual dispatch."
+  },
+  {
+    "location": "table 69 row 1 cell 0",
+    "before": "Clone",
+    "after": "Clone and verify"
+  },
+  {
+    "location": "table 69 row 1 cell 1",
+    "before": "git clone https://github.com/Jeyamdev/legalease-ai",
+    "after": "git clone https://github.com/Wishwa2002/Intelligent-legal-service.git\ncd Intelligent-legal-service\ngit switch se3110-qmse-testing\ngit rev-parse HEAD\nExpected: 05359214df52fa743b234e1d77e6671f57c14dea"
+  },
+  {
+    "location": "table 69 row 2 cell 1",
+    "before": "cd ai-service && python -m uvicorn app.main:app --port 8001",
+    "after": "From repository root in a dedicated terminal:\ncd ai-service\npython -m venv .venv\n.venv/bin/python -m pip install -r requirements.txt\n.venv/bin/python -m uvicorn app.main:app --host 127.0.0.1 --port 8001"
+  },
+  {
+    "location": "table 69 row 3 cell 1",
+    "before": "python -m uvicorn lawyer_recommendation.app:app --port 8002",
+    "after": "From repository root in a separate terminal:\ncd ai-service\n.venv/bin/python -m uvicorn lawyer_recommendation.app:app --host 127.0.0.1 --port 8002\nLive provider credentials/usage approval required; offline tests use mocks."
+  },
+  {
+    "location": "table 69 row 4 cell 0",
+    "before": "Backend API (:5000)",
+    "after": "Backend API"
+  },
+  {
+    "location": "table 69 row 4 cell 1",
+    "before": "cd backend/LegalService.API && dotnet run --launch-profile http",
+    "after": "Configure only a fresh isolated PostgreSQL connection, generated local JWT/bridge keys and matching AI URLs. From root:\ndotnet restore LegalService.sln\ndotnet build LegalService.sln\ndotnet run --project backend/LegalService.API/LegalService.API.csproj --launch-profile http\nProfile binds 5000 and 5295; align clients explicitly. Never use a production connection."
+  },
+  {
+    "location": "table 69 row 5 cell 0",
+    "before": "React web (:5173)",
+    "after": "React web"
+  },
+  {
+    "location": "table 69 row 5 cell 1",
+    "before": "cd frontend && npm install && npm run dev",
+    "after": "From repository root:\ncd frontend\nnpm ci\nnpm run dev -- --host 127.0.0.1\nConfigure local VITE_API_URL outside version control."
+  },
+  {
+    "location": "cell",
+    "before": "React web",
+    "after": "Flutter application"
+  },
+  {
+    "location": "cell",
+    "before": "From repository root:\ncd frontend\nnpm ci\nnpm run dev -- --host 127.0.0.1\nConfigure local VITE_API_URL outside version control.",
+    "after": "From repository root:\ncd mobile\nflutter pub get\nConfigure ignored .env for the isolated BACKEND_URL.\nflutter run -d chrome\nFor recorded fixed-port web workflow: flutter build web --debug, then serve mobile/build/web at 55448; generated asset must target local API 55443."
+  },
+  {
+    "location": "table 70 row 1 cell 1",
+    "before": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --verbosity normal",
+    "after": "From repository root:\ndotnet test backend/LegalService.Tests/LegalService.Tests.csproj --logger \"trx;LogFileName=backend.trx\" --results-directory qmse-output/reproduction/backend\nFor relational tests set MEMBER1_TEST_POSTGRES and LAWYER_MOBILE_TEST_POSTGRES to a fresh loopback test cluster; fixture databases are created/dropped. Without them PostgreSQL tests can skip."
+  },
+  {
+    "location": "table 70 row 2 cell 0",
+    "before": "Backend with coverage",
+    "after": "Backend coverage"
+  },
+  {
+    "location": "table 70 row 2 cell 1",
+    "before": "dotnet test backend/LegalService.Tests --collect:\"XPlat Code Coverage\"",
+    "after": "dotnet test backend/LegalService.Tests/LegalService.Tests.csproj --collect:\"XPlat Code Coverage\" --results-directory qmse-output/reproduction/coverage"
+  },
+  {
+    "location": "table 70 row 3 cell 0",
+    "before": "React tests",
+    "after": "Node helper tests"
+  },
+  {
+    "location": "table 70 row 3 cell 1",
+    "before": "cd frontend && npm run test:member1",
+    "after": "cd frontend\nnpm ci\nnpm run test:member1"
+  },
+  {
+    "location": "table 70 row 4 cell 0",
+    "before": "Playwright E2E",
+    "after": "Playwright component UI"
+  },
+  {
+    "location": "table 70 row 4 cell 1",
+    "before": "cd frontend && npx playwright test && npx playwright show-report",
+    "after": "cd frontend\nnpx playwright install chromium\nnpm test -- --reporter=list,html\nnpx playwright show-report\nMost spec routes are mocked; this is separate from the real integrated workflow."
+  },
+  {
+    "location": "table 70 row 5 cell 0",
+    "before": "Flutter tests",
+    "after": "Flutter unit/widget"
+  },
+  {
+    "location": "table 70 row 5 cell 1",
+    "before": "cd mobile && flutter pub get && flutter test. Verified machine events: test-results/mobile-minimal.log; earlier setup attempts retained.",
+    "after": "cd mobile\nflutter pub get\nflutter test --machine\nRecorded final 49-pass output: test-results/completion-20261008-mobile.log; prior attempts preserved."
+  },
+  {
+    "location": "table 70 row 6 cell 1",
+    "before": "Use retained evidence/security/passive_scan.py with an isolated loopback fixture and local passive ZAP proxy.",
+    "after": "Prerequisite: ZAP and actual isolated API/PostgreSQL. Retained script: qmse-output/completion-20261008/audit/expanded_zap.py. Confirm its loopback ports and private control files; default recorded mode is passive plus finite manual probes, not automated active scanning."
+  },
+  {
+    "location": "table 70 row 7 cell 0",
+    "before": "Load test",
+    "after": "Controlled k6"
+  },
+  {
+    "location": "table 70 row 7 cell 1",
+    "before": "Use retained evidence/performance/local-smoke.k6.js with the local Qmse_LocalEvidenceHost; mock AI only.",
+    "after": "k6 run --summary-export=qmse-output/reproduction/k6-summary.json qmse-output/completion-20261008/audit/postgres-smoke.k6.js\nRequires private /private/tmp/qmse-completion-control/performance.json (local API URL, locally generated token and synthetic lawyerId); 2 VUs/15 s. Run in a fresh clone or adapt the hard-coded summary output path to preserve previous logs."
+  },
+  {
+    "location": "cell",
+    "before": "Controlled k6",
+    "after": "AI deterministic/mocked"
+  },
+  {
+    "location": "cell",
+    "before": "k6 run --summary-export=qmse-output/reproduction/k6-summary.json qmse-output/completion-20261008/audit/postgres-smoke.k6.js\nRequires private /private/tmp/qmse-completion-control/performance.json (local API URL, locally generated token and synthetic lawyerId); 2 VUs/15 s. Run in a fresh clone or adapt the hard-coded summary output path to preserve previous logs.",
+    "after": "cd ai-service\nGEMINI_API_KEY=qmse-synthetic-not-a-real-provider-key GOOGLE_API_KEY=qmse-synthetic-not-a-real-provider-key PYTHON_DOTENV_DISABLED=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 .venv/bin/python -m pytest tests -s --junitxml=../qmse-output/reproduction/ai.xml\nProvider calls remain disabled; do not claim live Gemini results."
+  },
+  {
+    "location": "cell",
+    "before": "AI deterministic/mocked",
+    "after": "Actual integrated workflow"
+  },
+  {
+    "location": "cell",
+    "before": "cd ai-service\nGEMINI_API_KEY=qmse-synthetic-not-a-real-provider-key GOOGLE_API_KEY=qmse-synthetic-not-a-real-provider-key PYTHON_DOTENV_DISABLED=1 HF_HUB_OFFLINE=1 TRANSFORMERS_OFFLINE=1 .venv/bin/python -m pytest tests -s --junitxml=../qmse-output/reproduction/ai.xml\nProvider calls remain disabled; do not claim live Gemini results.",
+    "after": "With fresh fixed-port services and private synthetic settings established, from root:\nnode frontend/tests/qmse-integration/integrated_workflow.cjs\nnode frontend/tests/qmse-integration/resume_workflow.cjs\nnode frontend/tests/qmse-integration/complete_review.cjs\nVerify integrated-result.json AND HTTP/SQL outputs, not intermediate exit codes."
+  },
+  {
+    "location": "paragraph",
+    "before": "Current real-workflow reproduction: frontend/tests/qmse-integration/README.md; retained setup/supervisor scripts in completion-20261008/audit. Use fresh loopback PostgreSQL and synthetic accounts, configure the generated Flutter web asset for the local API, then execute creation, upload/assignment and React/Flutter completion scripts in order. Private browser state/secrets remain outside the package.",
+    "after": "Recorded real-workflow setup and replay details are in frontend/tests/qmse-integration/README.md and git-publication/audit/reproduction-published.md. The committed supervisor uses macOS-specific runtime paths; adapt them to the assessor host. A clone contains reusable scripts, not local caches, private settings or the separately delivered native evidence. Build each service and use fresh isolated PostgreSQL fixtures before replay. The reference-assisted publication clone verified remote head and original commit metadata using audited local objects; no application rerun or independent full-object download is claimed. A first unassisted clone timed out and is retained."
+  },
+  {
+    "location": "cell",
+    "before": "Figs 6.18\u20136.19",
+    "after": "Figs 6.21\u20136.22"
+  },
+  {
+    "location": "cell",
+    "before": "Actual PostgreSQL k6 and expanded ZAP",
+    "after": "Original group repository and main history"
+  },
+  {
+    "location": "cell",
+    "before": "Native reports and raw metrics",
+    "after": "Genuine GitHub / unchanged original commits"
+  },
+  {
+    "location": "cell",
+    "before": "completion-20261008/evidence/k6-postgres-summary.json; zap-postgres.html",
+    "after": "git-publication/evidence/original-main-history.png; group-main-commits.json"
+  },
+  {
+    "location": "cell",
+    "before": "Figs 6.21\u20136.22",
+    "after": "Figs 6.23\u20136.26"
+  },
+  {
+    "location": "cell",
+    "before": "Original group repository and main history",
+    "after": "Member-associated original development records"
+  },
+  {
+    "location": "cell",
+    "before": "Genuine GitHub / unchanged original commits",
+    "after": "Recorded authors + paths; personal effort pending"
+  },
+  {
+    "location": "cell",
+    "before": "git-publication/evidence/original-main-history.png; group-main-commits.json",
+    "after": "git-publication/evidence/member-commit-evidence.json"
+  },
+  {
+    "location": "cell",
+    "before": "Figs 6.23\u20136.26",
+    "after": "Figs 6.27\u20136.30"
+  },
+  {
+    "location": "cell",
+    "before": "Member-associated original development records",
+    "after": "Published branch, source SHA, ancestry and Actions non-trigger"
+  },
+  {
+    "location": "cell",
+    "before": "Recorded authors + paths; personal effort pending",
+    "after": "Git remote/API/browser verification"
+  },
+  {
+    "location": "cell",
+    "before": "git-publication/evidence/member-commit-evidence.json",
+    "after": "git-publication/evidence/publication-verification.json; ci-verification.json; fresh-clone-verification.json"
+  }
+]

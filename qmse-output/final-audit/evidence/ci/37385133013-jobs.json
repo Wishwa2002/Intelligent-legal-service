@@ -1,0 +1,121 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 112016433275,
+      "run_id": 37385133013,
+      "workflow_name": "Mobile CI",
+      "head_branch": "chore/deployment-readiness",
+      "run_url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/runs/37385133013",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOT8Emv88AAAAaFLMgew",
+      "head_sha": "6d982e60aa65af54d39d0beac4f527abcd785820",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/jobs/112016433275",
+      "html_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37385133013/job/112016433275",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-05T22:51:59Z",
+      "started_at": "2026-10-05T22:52:05Z",
+      "completed_at": "2026-10-05T22:53:26Z",
+      "name": "test",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-05T22:52:06Z",
+          "completed_at": "2026-10-05T22:52:06Z"
+        },
+        {
+          "name": "Checkout repository",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-05T22:52:06Z",
+          "completed_at": "2026-10-05T22:52:09Z"
+        },
+        {
+          "name": "Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-05T22:52:09Z",
+          "completed_at": "2026-10-05T22:53:08Z"
+        },
+        {
+          "name": "Flutter version",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-05T22:53:08Z",
+          "completed_at": "2026-10-05T22:53:08Z"
+        },
+        {
+          "name": "Prepare mobile configuration",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 5,
+          "started_at": "2026-10-05T22:53:08Z",
+          "completed_at": "2026-10-05T22:53:08Z"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 6,
+          "started_at": "2026-10-05T22:53:08Z",
+          "completed_at": "2026-10-05T22:53:15Z"
+        },
+        {
+          "name": "Analyze",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 7,
+          "started_at": "2026-10-05T22:53:15Z",
+          "completed_at": "2026-10-05T22:53:24Z"
+        },
+        {
+          "name": "Run tests",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 8,
+          "started_at": "2026-10-05T22:53:24Z",
+          "completed_at": "2026-10-05T22:53:24Z"
+        },
+        {
+          "name": "Post Setup Flutter",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-05T22:53:24Z",
+          "completed_at": "2026-10-05T22:53:24Z"
+        },
+        {
+          "name": "Post Checkout repository",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 16,
+          "started_at": "2026-10-05T22:53:24Z",
+          "completed_at": "2026-10-05T22:53:25Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 17,
+          "started_at": "2026-10-05T22:53:25Z",
+          "completed_at": "2026-10-05T22:53:25Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/check-runs/112016433275",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000069,
+      "runner_name": "GitHub Actions 1000000069",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

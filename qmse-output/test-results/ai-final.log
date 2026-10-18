@@ -1,0 +1,37 @@
+START UTC 2026-10-08T02:47:35.905055+00:00
+COMMAND ['.venv/bin/python', '-m', 'pytest', 'tests', '-q', '--junitxml=../qmse-output/evidence/ai/pytest-final.xml']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service/ai-service
+........................................................................ [ 73%]
+..........................                                               [100%]
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:41
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/starlette/testclient.py:41: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    [], typing.ContextManager[anyio.abc.BlockingPortal]
+
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+tests/test_agent_comprehensive.py::test_03_image_ocr_processing
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/pytesseract/pytesseract.py:32: DeprecationWarning: 'pkgutil.find_loader' is deprecated and slated for removal in Python 3.14; use importlib.util.find_spec() instead
+    numpy_installed = find_loader('numpy') is not None
+
+tests/test_agent_comprehensive.py::test_03_image_ocr_processing
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/pytesseract/pytesseract.py:36: DeprecationWarning: 'pkgutil.find_loader' is deprecated and slated for removal in Python 3.14; use importlib.util.find_spec() instead
+    pandas_installed = find_loader('pandas') is not None
+
+tests/test_agent_comprehensive.py::test_08_chroma_retrieval
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/chromadb/api/types.py:945: DeprecationWarning: The class FastDeterministicEmbeddingFunction does not implement get_config(). This will be required in a future version.
+    or self.get_config() is NotImplemented
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/evidence/ai/pytest-final.xml -
+98 passed, 9 warnings in 1.83s
+sys:1: DeprecationWarning: builtin type swigvarlink has no __module__ attribute

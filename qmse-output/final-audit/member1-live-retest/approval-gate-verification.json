@@ -1,0 +1,9 @@
+{
+  "appointments": 0,
+  "careers": 0,
+  "hiringWorkflows": null,
+  "health_after_provider_failure": {
+    "55543": 200,
+    "55545": 200
+  }
+}

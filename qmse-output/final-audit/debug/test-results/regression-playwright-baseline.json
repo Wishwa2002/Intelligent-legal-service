@@ -1,0 +1,17 @@
+{
+  "command": [
+    "npx",
+    "playwright",
+    "test",
+    "--config",
+    "final-audit-baseline.playwright.config.ts",
+    "--reporter=json"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T12:31:04.271369+00:00",
+  "ended_utc": "2026-10-08T12:32:50.920036+00:00",
+  "duration_seconds": 106.646,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/regression-playwright-baseline.log"
+}

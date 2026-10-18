@@ -1,0 +1,45 @@
+{
+  "method": "POST",
+  "path": "/api/appointments",
+  "inputs": {
+    "lawyerId": "2ecc9be9-3c7f-4ab3-be61-9f2da38f54a0",
+    "slotId": "bf0e0bfb-842f-4799-3f4a-0b0048038403",
+    "customerId": "00000000-0000-0000-0000-000000000003"
+  },
+  "date": "2026-10-15",
+  "slot_start": "14:00",
+  "http": 201,
+  "response": {
+    "appointmentId": "73c8510d-6e4b-47fa-96f2-25d66c925090",
+    "customerId": "00000000-0000-0000-0000-000000000003",
+    "customerName": "Synthetic History Customer",
+    "customerEmail": "",
+    "lawyerId": "2ecc9be9-3c7f-4ab3-be61-9f2da38f54a0",
+    "lawyerName": "Lawyer Counsel",
+    "lawyerLicense": "",
+    "slotId": "60be52f5-b5a5-4719-a5b8-2d2ac7351b9b",
+    "date": "2026-10-15",
+    "startTime": "14:00:00",
+    "endTime": "15:00:00",
+    "status": "Requested",
+    "description": null,
+    "appointmentSource": null,
+    "consultationType": "Online",
+    "legalServiceCategory": null,
+    "createdAt": "2026-10-08T10:59:52.894382Z",
+    "updatedAt": "2026-10-08T10:59:52.894382Z",
+    "canConfirm": true,
+    "canCancel": true,
+    "canReschedule": true,
+    "canComplete": false,
+    "history": [
+      {
+        "historyId": "ff84ce39-807e-44fb-b77a-c32d9026a6e1",
+        "appointmentId": "73c8510d-6e4b-47fa-96f2-25d66c925090",
+        "previousStatus": "None",
+        "newStatus": "Requested",
+        "changedDate": "2026-10-08T10:59:52.894383Z"
+      }
+    ]
+  }
+}

@@ -1,0 +1,553 @@
+[
+  {
+    "test_id": "TC-BK-04",
+    "expected": "HTTP 200 + JWT with sub, email, role",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 200,
+      "claim_names": [
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier",
+        "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress",
+        "http://schemas.microsoft.com/ws/2008/06/identity/claims/role",
+        "exp",
+        "iss",
+        "aud"
+      ]
+    },
+    "execution_date": "2026-10-08T10:46:22.170524+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Synthetic isolated email replaces historical admin@legalease.lk; no JWT value is preserved.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-BK-05",
+    "expected": "HTTP 403, no data exposed",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "http": 403,
+      "body": ""
+    },
+    "execution_date": "2026-10-08T10:46:22.648682+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-BK-06",
+    "expected": "HTTP 200, array of 3",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 200,
+      "count": 5
+    },
+    "execution_date": "2026-10-08T10:46:23.769630+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Original parameter specializationId is not bound by controller; current specialization parameter tested separately, without changing expectation.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-BK-03",
+    "expected": "HTTP 400 with field error",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 201,
+      "body": {
+        "lawyerId": "69356139-46a9-4719-b438-4ef11c73f32e",
+        "name": "Synthetic Empty Bar",
+        "email": "qmse-history-empty-bar@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic",
+        "experience": 5,
+        "licenseNumber": "QMSE-BAR-CONTROL",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      }
+    },
+    "execution_date": "2026-10-08T10:46:23.968117+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Historical BarNumber field is not current LicenseNumber contract; current empty license validation is a separate control.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-BK-02",
+    "expected": "7 one-hour slots; 10:00 omitted",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "http": 200,
+      "slots": [
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b001c025802",
+          "availabilityId": "00000000-0000-0000-0000-000000000000",
+          "date": "2026-10-10",
+          "startTime": "09:00:00",
+          "endTime": "10:00:00",
+          "isBooked": false
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b009402d002",
+          "availabilityId": "00000000-0000-0000-0000-000000000000",
+          "date": "2026-10-10",
+          "startTime": "11:00:00",
+          "endTime": "12:00:00",
+          "isBooked": false
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b00d0020c03",
+          "availabilityId": "00000000-0000-0000-0000-000000000000",
+          "date": "2026-10-10",
+          "startTime": "12:00:00",
+          "endTime": "13:00:00",
+          "isBooked": false
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b000c034803",
+          "availabilityId": "00000000-0000-0000-0000-000000000000",
+          "date": "2026-10-10",
+          "startTime": "13:00:00",
+          "endTime": "14:00:00",
+          "isBooked": false
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b0048038403",
+          "availabilityId": "00000000-0000-0000-0000-000000000000",
+          "date": "2026-10-10",
+          "startTime": "14:00:00",
+          "endTime": "15:00:00",
+          "isBooked": false
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b008403c003",
+          "availabilityId": "00000000-0000-0000-0000-000000000000",
+          "date": "2026-10-10",
+          "startTime": "15:00:00",
+          "endTime": "16:00:00",
+          "isBooked": false
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b00c003fc03",
+          "availabilityId": "00000000-0000-0000-0000-000000000000",
+          "date": "2026-10-10",
+          "startTime": "16:00:00",
+          "endTime": "17:00:00",
+          "isBooked": false
+        }
+      ]
+    },
+    "execution_date": "2026-10-08T10:46:24.128432+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Historical lawyer integer ID maps to recorded synthetic UUID; actual service route and exact date/time used.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C2-01",
+    "expected": "HTTP 201 Created, status Confirmed",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 201,
+      "appointment": {
+        "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+        "customerId": "00000000-0000-0000-0000-000000000003",
+        "customerName": "Synthetic History Customer",
+        "customerEmail": "",
+        "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+        "lawyerName": "Lawyer Counsel",
+        "lawyerLicense": "",
+        "slotId": "e9bdafe3-0e85-48df-a7b5-3d6eaf3bd3c1",
+        "date": "2026-10-12",
+        "startTime": "11:00:00",
+        "endTime": "12:00:00",
+        "status": "Requested",
+        "description": null,
+        "appointmentSource": null,
+        "consultationType": "Online",
+        "legalServiceCategory": null,
+        "createdAt": "2026-10-08T10:46:24.145194Z",
+        "updatedAt": "2026-10-08T10:46:24.145194Z",
+        "canConfirm": true,
+        "canCancel": true,
+        "canReschedule": true,
+        "canComplete": false,
+        "history": [
+          {
+            "historyId": "c3b85a41-b4bf-4115-96a1-2add212955e3",
+            "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+            "previousStatus": "None",
+            "newStatus": "Requested",
+            "changedDate": "2026-10-08T10:46:24.145194Z"
+          }
+        ]
+      }
+    },
+    "execution_date": "2026-10-08T10:46:24.149687+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Original immediate Confirmed expectation retained; current request status may differ.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C2-02",
+    "expected": "Collision detected; HTTP 409 Conflict",
+    "status": "VERIFIED/PASS",
+    "observed": {
+      "http": 409,
+      "body": {
+        "title": "Selected slot is no longer available.",
+        "status": 409,
+        "traceId": "0HNP555I6FSEB:00000001",
+        "conflicts": null
+      }
+    },
+    "execution_date": "2026-10-08T10:46:24.168033+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C2-03",
+    "expected": "HTTP 200; status Cancelled",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 405,
+      "body": ""
+    },
+    "execution_date": "2026-10-08T10:46:24.191025+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Integer 42 maps to isolated UUID; current cancellation verb is POST, tested separately; historical PUT expectation not changed.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C103",
+    "expected": "HTTP 200, fee updated",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 200,
+      "response": {
+        "legalServiceId": 2,
+        "serviceName": "Synthetic History Fee Service",
+        "description": "Synthetic",
+        "category": "Corporate & Commercial Law",
+        "lawyerCount": 4
+      },
+      "database_row": {
+        "LegalServiceId": 2,
+        "ServiceName": "Synthetic History Fee Service",
+        "Description": "Synthetic",
+        "Category": "Corporate & Commercial Law",
+        "CreatedAt": "2026-10-08T16:16:24.273695+05:30",
+        "UpdatedAt": "2026-10-08T16:16:24.290697+05:30"
+      }
+    },
+    "execution_date": "2026-10-08T10:46:24.319051+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Price field absent from current schema; fee requirement/version discrepancy needs approval.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C3-01",
+    "expected": "HTTP 201 + 4 checklist items",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 201,
+      "request": {
+        "requestId": 1,
+        "customerId": 3,
+        "customerName": "Synthetic History Customer",
+        "customerEmail": "qmse-history-customer@example.test",
+        "serviceId": 1,
+        "serviceName": "Contract Review & Amendment",
+        "documentType": "Deed of Transfer",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T10:46:24.379627Z",
+        "updatedAt": "2026-10-08T10:46:24.379637Z",
+        "documentFiles": [],
+        "requiredDocuments": [
+          "Original Contract",
+          "Amendment Request Letter",
+          "NIC Copy"
+        ],
+        "missingDocuments": [
+          "Original Contract",
+          "Amendment Request Letter",
+          "NIC Copy"
+        ],
+        "reuploadNote": null
+      },
+      "requiredDocuments": [
+        "Original Contract",
+        "Amendment Request Letter",
+        "NIC Copy"
+      ]
+    },
+    "execution_date": "2026-10-08T10:46:24.428063+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Checklist belongs to fetched service catalogue, not embedded in created-request response; exact service 1 used.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C3-02",
+    "expected": "HTTP 200; file linked to request",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 404,
+      "response": ""
+    },
+    "execution_date": "2026-10-08T10:46:24.451371+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Historical upload route absent; current per-request route observed separately below and returns 201.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C3-03",
+    "expected": "HTTP 400 with size error",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "historical_http": 404,
+      "current_route_http": 400,
+      "current_response": {
+        "statusCode": 400,
+        "message": "File size (14MB) exceeds the maximum allowed limit of 10MB.",
+        "timestamp": "2026-10-08T10:46:24.686435Z"
+      }
+    },
+    "execution_date": "2026-10-08T10:46:24.693049+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Original route remains discrepant; real current route rejects 14 MiB with 400 and no file mutation.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C3-06",
+    "expected": "HTTP 200; department updated",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 404,
+      "response": ""
+    },
+    "execution_date": "2026-10-08T10:46:25.242971+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Historical department subroute absent; current PUT /api/clerks/3 requires Contact and Department.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-C3-04",
+    "expected": "HTTP 200; status Approved",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 404,
+      "response": ""
+    },
+    "execution_date": "2026-10-08T10:46:25.402657+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Historical approval route/status absent; no new business transition introduced.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-E2E-02",
+    "expected": "HTTP 201 + tracking number",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 201,
+      "response": {
+        "requestId": 2,
+        "customerId": 3,
+        "customerName": "Synthetic History Customer",
+        "customerEmail": "qmse-history-customer@example.test",
+        "serviceId": 1,
+        "serviceName": "Contract Review & Amendment",
+        "documentType": "Deed of Transfer",
+        "status": "PENDING",
+        "assignedClerkId": null,
+        "assignedClerkName": null,
+        "createdAt": "2026-10-08T10:46:25.407193Z",
+        "updatedAt": "2026-10-08T10:46:25.407193Z",
+        "documentFiles": [],
+        "requiredDocuments": [
+          "Original Contract",
+          "Amendment Request Letter",
+          "NIC Copy"
+        ],
+        "missingDocuments": [
+          "Original Contract",
+          "Amendment Request Letter",
+          "NIC Copy"
+        ],
+        "reuploadNote": null
+      }
+    },
+    "execution_date": "2026-10-08T10:46:25.411065+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "API step executed independently after synthetic intake; no full original integrated workflow claimed. Current API returns requestId, not tracking number.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-E2E-03",
+    "expected": "Row with status PendingChecklist",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "database_row": {
+        "RequestId": 2,
+        "Status": "PENDING",
+        "CustomerId": 3,
+        "ServiceId": 1
+      }
+    },
+    "execution_date": "2026-10-08T10:46:25.431030+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Fresh local PostgreSQL replaces production Neon; actual current status PENDING, not PendingChecklist. Native persistence verified, full historical expectation fails.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-E2E-04",
+    "expected": "HTTP 200 + ChecklistResult",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "http": 404,
+      "response": {
+        "detail": "Not Found"
+      }
+    },
+    "execution_date": "2026-10-08T10:46:25.436228+00:00",
+    "environment": "Actual ASP.NET Core API, fresh PostgreSQL 18/TLS/loopback; synthetic fixtures",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "limitations": "Historical FastAPI route absent; current agent-session routes are separate contracts.",
+    "steps": "Execute requests in historical_api_replay.py; see native ordered HTTP inputs/responses; role tokens redacted."
+  },
+  {
+    "test_id": "TC-DB-03",
+    "expected": "All applied; 11 tables created",
+    "status": "VERIFIED/FAIL",
+    "observed": {
+      "tables": 34,
+      "table_names": [
+        "AgentSessionStates",
+        "AgentSteps",
+        "AgentWorkflows",
+        "AppointmentStatusHistories",
+        "Appointments",
+        "ApprovalDecisions",
+        "AuditLogs",
+        "AvailabilitySlots",
+        "Careers",
+        "Clerks",
+        "DocumentFiles",
+        "DocumentationRequests",
+        "DocumentationServices",
+        "ExecutionSummaries",
+        "HiringSuggestionWorkflows",
+        "JobApplications",
+        "LawyerAvailabilities",
+        "LawyerLegalServices",
+        "LawyerRecommendationWorkflows",
+        "LawyerSpecializations",
+        "LawyerUnavailabilities",
+        "LawyerWorkingSchedules",
+        "Lawyers",
+        "LegalServices",
+        "PracticeAreaWorkforceSettings",
+        "Roles",
+        "ServiceRequests",
+        "Specializations",
+        "ToolExecutions",
+        "UserRoles",
+        "Users",
+        "ValidationResults",
+        "WorkforceDemoStates",
+        "__EFMigrationsHistory"
+      ],
+      "applied_migrations": [
+        "20260922093339_InitialCreate",
+        "20260922132300_FixAuditLogUserId",
+        "20260927120000_AddLawyerRecommendationWorkflows",
+        "20260929051536_SyncCurrentDatabaseSchema",
+        "20261003065251_AddMissingCurrentSchemaColumns",
+        "20261003090000_FixLegacyUserRoleIds",
+        "20261003233848_AddWorkforceHiringIntelligence",
+        "20261003235618_AllowUnlinkedLawyerProfiles",
+        "20261004061310_AddWorkforcePlanningSettings",
+        "20261004080145_AddRecurringLawyerScheduling",
+        "20261004095244_BackfillMissingLawyerSchedules",
+        "20261004151111_AddFrontDeskMatchingIntake",
+        "20261004165105_AddLawyerInitialPasswordChange",
+        "20261006120000_PrepareDeploymentStorage",
+        "20261008110000_CompleteAppointmentSchema"
+      ]
+    },
+    "execution_date": "2026-10-08T10:46:25.472420+00:00",
+    "environment": "Fresh migrated PostgreSQL 18/TLS/loopback",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/migrate.log",
+      "qmse-output/historical-resolution/evidence/migration-tables.log",
+      "qmse-output/historical-resolution/evidence/migration-history.log"
+    ],
+    "limitations": "All actual migrations applied; historical 11-table claim retained as discrepancy."
+  },
+  {
+    "test_id": "TC-DB-02",
+    "expected": "DbUpdateException, Postgres 23505",
+    "status": "VERIFIED/PASS",
+    "observed": "ERROR:  23505: duplicate key value violates unique constraint \"IX_Appointments_SlotId\"\nDETAIL:  Key (\"SlotId\")=(3e5524a1-c3be-4d17-82be-83e1f3527ca8) already exists.\nSCHEMA NAME:  public\nTABLE NAME:  Appointments\nCONSTRAINT NAME:  IX_Appointments_SlotId\nLOCATION:  _bt_check_unique, nbtinsert.c:673\n",
+    "execution_date": "2026-10-08T10:46:25.489724+00:00",
+    "environment": "Actual migrated PostgreSQL 18",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/duplicate-slot.log"
+    ],
+    "limitations": "Actual psql unique violation 23505; PostgreSQL constraint proven, EF DbUpdateException wrapper not yet exercised. Synthetic UUID/date replaces historical integer lawyer 2."
+  }
+]

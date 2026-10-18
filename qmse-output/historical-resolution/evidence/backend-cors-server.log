@@ -1,0 +1,499 @@
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Description", s."Name"
+      FROM "Specializations" AS s
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__adminEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__adminEmail_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__clerkEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__clerkEmail_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__clerkUser_UserId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId"
+      FROM "Clerks" AS c
+      WHERE c."UserId" = @__clerkUser_UserId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p1='?' (DbType = Int32), @p0='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      UPDATE "Clerks" SET "UpdatedAt" = @p0
+      WHERE "ClerkId" = @p1;
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55543
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Staging
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__email_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."IsActive"
+      ORDER BY d."Name"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__email_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__user_UserId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId"
+      FROM "Clerks" AS c
+      WHERE c."UserId" = @__user_UserId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT d."RequestId", d."ClerkId", d."CreatedAt", d."CustomerId", d."DocumentType", d."ReuploadNote", d."ServiceId", d."Status", d."UpdatedAt", d0."ServiceId", d0."CreatedAt", d0."Description", d0."IsActive", d0."Name", d0."RequiredDocuments", d0."UpdatedAt", c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId", d1."FileId", d1."ContentType", d1."CreatedAt", d1."DocumentStatus", d1."FileContents", d1."FileName", d1."FilePath", d1."FileSize", d1."RejectReason", d1."RequestId", d1."UpdatedAt", d1."UploadDate"
+      FROM "DocumentationRequests" AS d
+      INNER JOIN "DocumentationServices" AS d0 ON d."ServiceId" = d0."ServiceId"
+      LEFT JOIN "Clerks" AS c ON d."ClerkId" = c."ClerkId"
+      LEFT JOIN "DocumentFiles" AS d1 ON d."RequestId" = d1."RequestId"
+      ORDER BY d."CreatedAt" DESC, d."RequestId", d0."ServiceId", c."ClerkId"
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[100]
+      Start processing HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[100]
+      Sending HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[101]
+      Received HTTP response headers after 11.1868ms - 401
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[101]
+      End processing HTTP request after 14.4492ms - 401
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (16ms) [Parameters=[@__customerIds_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = ANY (@__customerIds_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT d."RequestId", d."ClerkId", d."CreatedAt", d."CustomerId", d."DocumentType", d."ReuploadNote", d."ServiceId", d."Status", d."UpdatedAt", d0."ServiceId", d0."CreatedAt", d0."Description", d0."IsActive", d0."Name", d0."RequiredDocuments", d0."UpdatedAt", c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId", d1."FileId", d1."ContentType", d1."CreatedAt", d1."DocumentStatus", d1."FileContents", d1."FileName", d1."FilePath", d1."FileSize", d1."RejectReason", d1."RequestId", d1."UpdatedAt", d1."UploadDate"
+      FROM "DocumentationRequests" AS d
+      INNER JOIN "DocumentationServices" AS d0 ON d."ServiceId" = d0."ServiceId"
+      LEFT JOIN "Clerks" AS c ON d."ClerkId" = c."ClerkId"
+      LEFT JOIN "DocumentFiles" AS d1 ON d."RequestId" = d1."RequestId"
+      ORDER BY d."CreatedAt" DESC, d."RequestId", d0."ServiceId", c."ClerkId"
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[100]
+      Start processing HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[100]
+      Sending HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[101]
+      Received HTTP response headers after 0.6549ms - 401
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[101]
+      End processing HTTP request after 0.6928ms - 401
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__customerIds_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = ANY (@__customerIds_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__email_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Name"
+      FROM "Specializations" AS s
+      ORDER BY s."Name"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."SpecializationId", l0."Status"
+      FROM "LawyerSpecializations" AS l
+      INNER JOIN "Lawyers" AS l0 ON l."LawyerId" = l0."LawyerId"
+      WHERE (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l1
+          WHERE l0."LawyerId" = l1."LawyerId") = 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."Category"
+      FROM "LegalServices" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__since_0='?' (DbType = DateTime), @__now_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      SELECT l."CategoryId" AS "Id", count(*)::int AS "Count"
+      FROM "LawyerRecommendationWorkflows" AS l
+      WHERE l."CreatedAt" >= @__since_0 AND l."CreatedAt" <= @__now_1 AND l."CategoryId" IS NOT NULL AND l."Status" IN ('AWAITING_APPROVAL', 'ACTION_COMPLETED', 'NO_MATCH')
+      GROUP BY l."CategoryId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__since_0='?' (DbType = DateTime), @__now_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      SELECT a."LawyerId" AS "Id", count(*)::int AS "Count"
+      FROM "Appointments" AS a
+      WHERE a."CreatedAt" >= @__since_0 AND a."CreatedAt" <= @__now_1 AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected'
+      GROUP BY a."LawyerId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__end_0='?' (DbType = DateTime2), @__start_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."StartDateTime" < @__end_0 AND l."EndDateTime" > @__start_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__from_0='?' (DbType = Date), @__until_1='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_0 AND l."Date" <= @__until_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."CareerId", c."JobTitle", c."PracticeAreaId"
+      FROM "Careers" AS c
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT p."Id", p."CreatedAt", p."HighDemandThreshold", p."MinimumActiveLawyers", p."MinimumFutureSlots", p."PracticeAreaId", p."TargetActiveLawyers", p."UpdatedAt", p."UpdatedBy", p."WatchCapacityRatio"
+      FROM "PracticeAreaWorkforceSettings" AS p
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__owner_0='?' (DbType = Int32), @__area_PracticeAreaId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT h."WorkflowId", h."AiDraftJson", h."ApprovedAt", h."ApprovedBy", h."ApprovedTitle", h."CareerOpeningId", h."CreatedAt", h."OwnerUserId", h."PracticeAreaId", h."ReviewedDraftJson", h."Status", h."SystemSnapshotJson", h."UpdatedAt"
+      FROM "HiringSuggestionWorkflows" AS h
+      WHERE h."OwnerUserId" = @__owner_0 AND h."PracticeAreaId" = @__area_PracticeAreaId_1 AND h."Status" = 'AWAITING_APPROVAL'
+      LIMIT 2
+info: System.Net.Http.HttpClient.HiringSuggestionService.LogicalHandler[100]
+      Start processing HTTP request POST http://127.0.0.1:55545/hiring-suggestions
+info: System.Net.Http.HttpClient.HiringSuggestionService.ClientHandler[100]
+      Sending HTTP request POST http://127.0.0.1:55545/hiring-suggestions
+fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+      LegalService.API.Infrastructure.ApiException: AI hiring assistance is temporarily unavailable.
+         at LegalService.API.Services.Workforce.HiringSuggestionService.GenerateAsync(GenerateHiringRequest request, Int32 owner, CancellationToken ct) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/Services/Workforce/HiringSuggestionService.cs:line 86
+         at LegalService.API.Controllers.WorkforceAnalysisController.Generate(GenerateHiringRequest request, CancellationToken ct) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/Controllers/WorkforceAnalysisController.cs:line 16
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__lawyerId_0='?' (DbType = Guid), @__date_1='?' (DbType = Date), @__end_2='?' (DbType = Time), @__start_3='?' (DbType = Time)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l."AvailabilityId", l."Date", l."EndTime", l."LawyerId", l."StartTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = @__lawyerId_0 AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" = @__date_1 AND a0."StartTime" < @__end_2 AND a0."EndTime" > @__start_3
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__lawyerId_0='?' (DbType = Guid), @__date_1='?' (DbType = Date), @__end_2='?' (DbType = Time), @__start_3='?' (DbType = Time)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."AppointmentSource", a."ConsultationType", a."CreatedAt", a."CustomerId", a."Description", a."LawyerId", a."LegalServiceCategory", a."SlotId", a."Status", a."UpdatedAt", a0."SlotId", a0."AvailabilityId", a0."EndTime", a0."IsBooked", a0."LawyerId", a0."StartTime", l."AvailabilityId", l."Date", l."EndTime", l."LawyerId", l."StartTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = @__lawyerId_0 AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" = @__date_1 AND a0."StartTime" < @__end_2 AND a0."EndTime" > @__start_3
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__email_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."IsActive"
+      ORDER BY d."Name"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__email_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId", d."RequestId", d."ClerkId", d."CreatedAt", d."CustomerId", d."DocumentType", d."ReuploadNote", d."ServiceId", d."Status", d."UpdatedAt"
+      FROM "Clerks" AS c
+      LEFT JOIN "DocumentationRequests" AS d ON c."ClerkId" = d."ClerkId"
+      ORDER BY c."Name", c."ClerkId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId"
+      FROM "Clerks" AS c
+      WHERE c."ClerkId" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__requestId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT t."RequestId", t."ClerkId", t."CreatedAt", t."CustomerId", t."DocumentType", t."ReuploadNote", t."ServiceId", t."Status", t."UpdatedAt", t."ServiceId0", t."CreatedAt0", t."Description", t."IsActive", t."Name", t."RequiredDocuments", t."UpdatedAt0", t."ClerkId0", t."Contact", t."CreatedAt1", t."Department", t."Email", t."IsActive0", t."Name0", t."UpdatedAt1", t."UserId", d1."FileId", d1."ContentType", d1."CreatedAt", d1."DocumentStatus", d1."FileContents", d1."FileName", d1."FilePath", d1."FileSize", d1."RejectReason", d1."RequestId", d1."UpdatedAt", d1."UploadDate"
+      FROM (
+          SELECT d."RequestId", d."ClerkId", d."CreatedAt", d."CustomerId", d."DocumentType", d."ReuploadNote", d."ServiceId", d."Status", d."UpdatedAt", d0."ServiceId" AS "ServiceId0", d0."CreatedAt" AS "CreatedAt0", d0."Description", d0."IsActive", d0."Name", d0."RequiredDocuments", d0."UpdatedAt" AS "UpdatedAt0", c."ClerkId" AS "ClerkId0", c."Contact", c."CreatedAt" AS "CreatedAt1", c."Department", c."Email", c."IsActive" AS "IsActive0", c."Name" AS "Name0", c."UpdatedAt" AS "UpdatedAt1", c."UserId"
+          FROM "DocumentationRequests" AS d
+          INNER JOIN "DocumentationServices" AS d0 ON d."ServiceId" = d0."ServiceId"
+          LEFT JOIN "Clerks" AS c ON d."ClerkId" = c."ClerkId"
+          WHERE d."RequestId" = @__requestId_0
+          LIMIT 1
+      ) AS t
+      LEFT JOIN "DocumentFiles" AS d1 ON t."RequestId" = d1."RequestId"
+      ORDER BY t."RequestId", t."ServiceId0", t."ClerkId0"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p3='?' (DbType = Int32), @p0='?' (DbType = Int32), @p1='?', @p2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      UPDATE "DocumentationRequests" SET "ClerkId" = @p0, "Status" = @p1, "UpdatedAt" = @p2
+      WHERE "RequestId" = @p3;
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__p_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__p_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__requestId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT t."RequestId", t."ClerkId", t."CreatedAt", t."CustomerId", t."DocumentType", t."ReuploadNote", t."ServiceId", t."Status", t."UpdatedAt", t."ServiceId0", t."CreatedAt0", t."Description", t."IsActive", t."Name", t."RequiredDocuments", t."UpdatedAt0", t."ClerkId0", t."Contact", t."CreatedAt1", t."Department", t."Email", t."IsActive0", t."Name0", t."UpdatedAt1", t."UserId", d1."FileId", d1."ContentType", d1."CreatedAt", d1."DocumentStatus", d1."FileContents", d1."FileName", d1."FilePath", d1."FileSize", d1."RejectReason", d1."RequestId", d1."UpdatedAt", d1."UploadDate"
+      FROM (
+          SELECT d."RequestId", d."ClerkId", d."CreatedAt", d."CustomerId", d."DocumentType", d."ReuploadNote", d."ServiceId", d."Status", d."UpdatedAt", d0."ServiceId" AS "ServiceId0", d0."CreatedAt" AS "CreatedAt0", d0."Description", d0."IsActive", d0."Name", d0."RequiredDocuments", d0."UpdatedAt" AS "UpdatedAt0", c."ClerkId" AS "ClerkId0", c."Contact", c."CreatedAt" AS "CreatedAt1", c."Department", c."Email", c."IsActive" AS "IsActive0", c."Name" AS "Name0", c."UpdatedAt" AS "UpdatedAt1", c."UserId"
+          FROM "DocumentationRequests" AS d
+          INNER JOIN "DocumentationServices" AS d0 ON d."ServiceId" = d0."ServiceId"
+          LEFT JOIN "Clerks" AS c ON d."ClerkId" = c."ClerkId"
+          WHERE d."RequestId" = @__requestId_0
+          LIMIT 1
+      ) AS t
+      LEFT JOIN "DocumentFiles" AS d1 ON t."RequestId" = d1."RequestId"
+      ORDER BY t."RequestId", t."ServiceId0", t."ClerkId0"
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[100]
+      Start processing HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[100]
+      Sending HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+warn: LegalService.API.Services.EmailNotificationService[0]
+      SMTP password is not configured; email was not sent.
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[101]
+      Received HTTP response headers after 2.5881ms - 401
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[101]
+      End processing HTTP request after 2.6439ms - 401
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__email_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__user_UserId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId"
+      FROM "Clerks" AS c
+      WHERE c."UserId" = @__user_UserId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT d."RequestId", d."ClerkId", d."CreatedAt", d."CustomerId", d."DocumentType", d."ReuploadNote", d."ServiceId", d."Status", d."UpdatedAt", d0."ServiceId", d0."CreatedAt", d0."Description", d0."IsActive", d0."Name", d0."RequiredDocuments", d0."UpdatedAt", c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId", d1."FileId", d1."ContentType", d1."CreatedAt", d1."DocumentStatus", d1."FileContents", d1."FileName", d1."FilePath", d1."FileSize", d1."RejectReason", d1."RequestId", d1."UpdatedAt", d1."UploadDate"
+      FROM "DocumentationRequests" AS d
+      INNER JOIN "DocumentationServices" AS d0 ON d."ServiceId" = d0."ServiceId"
+      LEFT JOIN "Clerks" AS c ON d."ClerkId" = c."ClerkId"
+      LEFT JOIN "DocumentFiles" AS d1 ON d."RequestId" = d1."RequestId"
+      ORDER BY d."CreatedAt" DESC, d."RequestId", d0."ServiceId", c."ClerkId"
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[100]
+      Start processing HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[100]
+      Sending HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[101]
+      Received HTTP response headers after 0.4322ms - 401
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[101]
+      End processing HTTP request after 0.4635ms - 401
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__customerIds_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = ANY (@__customerIds_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT d."RequestId", d."ClerkId", d."CreatedAt", d."CustomerId", d."DocumentType", d."ReuploadNote", d."ServiceId", d."Status", d."UpdatedAt", d0."ServiceId", d0."CreatedAt", d0."Description", d0."IsActive", d0."Name", d0."RequiredDocuments", d0."UpdatedAt", c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId", d1."FileId", d1."ContentType", d1."CreatedAt", d1."DocumentStatus", d1."FileContents", d1."FileName", d1."FilePath", d1."FileSize", d1."RejectReason", d1."RequestId", d1."UpdatedAt", d1."UploadDate"
+      FROM "DocumentationRequests" AS d
+      INNER JOIN "DocumentationServices" AS d0 ON d."ServiceId" = d0."ServiceId"
+      LEFT JOIN "Clerks" AS c ON d."ClerkId" = c."ClerkId"
+      LEFT JOIN "DocumentFiles" AS d1 ON d."RequestId" = d1."RequestId"
+      ORDER BY d."CreatedAt" DESC, d."RequestId", d0."ServiceId", c."ClerkId"
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[100]
+      Start processing HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[100]
+      Sending HTTP request GET http://127.0.0.1:55544/api/agent/requests/client-names
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[101]
+      Received HTTP response headers after 0.4753ms - 401
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[101]
+      End processing HTTP request after 0.5125ms - 401
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__customerIds_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = ANY (@__customerIds_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[100]
+      Start processing HTTP request GET http://127.0.0.1:55544/api/agent/request/1/status
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[100]
+      Sending HTTP request GET http://127.0.0.1:55544/api/agent/request/1/status
+info: System.Net.Http.HttpClient.IAgentIntegrationService.ClientHandler[101]
+      Received HTTP response headers after 0.604ms - 401
+info: System.Net.Http.HttpClient.IAgentIntegrationService.LogicalHandler[101]
+      End processing HTTP request after 0.6605ms - 401
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."CareerId", c."CreatedAt", c."Description", c."JobTitle", c."PracticeAreaId", c."UpdatedAt", j."ApplicationId", j."ApplicantName", j."CareerId", j."CreatedAt", j."Status", j."UpdatedAt"
+      FROM "Careers" AS c
+      LEFT JOIN "JobApplications" AS j ON c."CareerId" = j."CareerId"
+      ORDER BY c."JobTitle", c."CareerId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."CareerId", c."CreatedAt", c."Description", c."JobTitle", c."PracticeAreaId", c."UpdatedAt", j."ApplicationId", j."ApplicantName", j."CareerId", j."CreatedAt", j."Status", j."UpdatedAt"
+      FROM "Careers" AS c
+      LEFT JOIN "JobApplications" AS j ON c."CareerId" = j."CareerId"
+      ORDER BY c."JobTitle", c."CareerId"
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

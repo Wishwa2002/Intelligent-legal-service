@@ -1,0 +1,19 @@
+{
+  "command": [
+    "dotnet",
+    "list",
+    "backend/LegalService.API/LegalService.API.csproj",
+    "package",
+    "--vulnerable",
+    "--include-transitive",
+    "--format",
+    "json"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T13:00:55.252319+00:00",
+  "ended_utc": "2026-10-08T13:01:12.752078+00:00",
+  "duration_seconds": 17.503,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/issue6-dotnet-audit.log"
+}

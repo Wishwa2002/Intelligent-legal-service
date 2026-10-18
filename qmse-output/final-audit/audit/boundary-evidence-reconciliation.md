@@ -1,0 +1,5 @@
+# Boundary evidence reconciliation
+
+QC found the earlier log labelled issue5-playwright-verified.log contained 0 passed / 8 failed, not the previously claimed eight passes. That native output is preserved. Failure occurred in the post-submit getByLabel inputValue wait; the page snapshot still showed the textbox. The test now uses the accessible textbox role and checks maxlength truncation before submitting, retaining minimum/maximum attributes and HTTP-call assertions. No application behaviour or boundary expectation changed.
+
+The targeted rerun on 2026-10-08 at 14:12:27.175 UTC executed all eight cases: 8 passed, 0 failed, 0 skipped, duration 7.061183 seconds, exit code 0. Source: debug/evidence/issue5-playwright-confirmed.log (native Playwright JSON). HTTP fixtures are explicitly mocked and this is not live AI or full integration acceptance. The local Vite process was stopped afterwards. Only this test file changed after the other final suite runs; the other application sources remain as tested.

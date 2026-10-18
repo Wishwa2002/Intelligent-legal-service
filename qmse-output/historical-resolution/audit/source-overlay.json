@@ -1,0 +1,38 @@
+[
+  {
+    "source_path": "backend/LegalService.Tests/HistoricalCaseVerificationTests.cs",
+    "snapshot": "qmse-output/historical-resolution/source-snapshot/backend/LegalService.Tests/HistoricalCaseVerificationTests.cs",
+    "sha256": "9faab0522e8790529c3f68f4ee7d2bb314bd190cd0a6a281d76aa01040f62f07",
+    "authorship": "AI-assisted new local test overlay; not attributed personally, not committed/pushed."
+  },
+  {
+    "source_path": "backend/LegalService.Tests/historical_api_replay.py",
+    "snapshot": "qmse-output/historical-resolution/source-snapshot/backend/LegalService.Tests/historical_api_replay.py",
+    "sha256": "3015ae5252a1f2e6934fc20d21cec8caa438e2714b2cdc0d8d6b8454deee649f",
+    "authorship": "AI-assisted new local test overlay; not attributed personally, not committed/pushed."
+  },
+  {
+    "source_path": "frontend/tests/historical-acceptance.spec.ts",
+    "snapshot": "qmse-output/historical-resolution/source-snapshot/frontend/tests/historical-acceptance.spec.ts",
+    "sha256": "1ee6b571711445fce0e20955e4da8613f045aaf3370c324cf4feb6b46da8af0a",
+    "authorship": "AI-assisted new local test overlay; not attributed personally, not committed/pushed."
+  },
+  {
+    "source_path": "frontend/historical.playwright.config.ts",
+    "snapshot": "qmse-output/historical-resolution/source-snapshot/frontend/historical.playwright.config.ts",
+    "sha256": "be1ed7204dcc5e4f064ff554ec74f4525e09b66838175e232f62dd9fa3c52a4b",
+    "authorship": "AI-assisted new local test overlay; not attributed personally, not committed/pushed."
+  },
+  {
+    "source_path": "mobile/test/historical_cases_test.dart",
+    "snapshot": "qmse-output/historical-resolution/source-snapshot/mobile/test/historical_cases_test.dart",
+    "sha256": "9a5ad0fa8dd54c966c9fd88c5dda834754ad183a7ff5dea2c598618185a2116d",
+    "authorship": "AI-assisted new local test overlay; not attributed personally, not committed/pushed."
+  },
+  {
+    "source_path": "ai-service/tests/test_historical_acceptance.py",
+    "snapshot": "qmse-output/historical-resolution/source-snapshot/ai-service/tests/test_historical_acceptance.py",
+    "sha256": "efd570d06818bd4c673a90bfd2afaea6a90416ae022a1350592988df153ee53d",
+    "authorship": "AI-assisted new local test overlay; not attributed personally, not committed/pushed."
+  }
+]

@@ -1,0 +1,230 @@
+[
+  {
+    "test_id": "TC-E2E-01",
+    "categories": "Historical fixtures; changed intake",
+    "observed": "Real Flutter web customer login and catalogue executed. The historical Deed of Transfer/service-1 identity does not match the current seeded catalogue; current intake creates a request then uploads per-request files, rather than the described two-PDF creation multipart. Exact historical intake not completed.",
+    "required_to_unblock": "Confirm Deed/service-1 mapping and original two-PDF multipart fixture.",
+    "codex_local_resolution": "Partial local UI works; members confirm original workflow.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Original integrated scenario; separate real Affidavit workflow already verified.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/real-flutter-login.png",
+      "qmse-output/historical-resolution/evidence/real-flutter-catalogue.png",
+      "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+      "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "expected_behaviour": "Files validated; multipart POST built",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": "mobile/lib; backend/LegalService.API; ai-service/app; frontend/src",
+    "existing_automated_test": "frontend/tests/qmse-integration: existing alternate Affidavit workflow, not historical Deed acceptance; precise matching reviewed during execution",
+    "matching_automated_test": "audit/replay_assigned_ui.cjs"
+  },
+  {
+    "test_id": "TC-E2E-05",
+    "categories": "Gemini unavailable; historical bundle missing",
+    "observed": "No live Gemini four-document verification: configured provider returned 503. Current checklists differ from historical NIC/Title Deed/Survey Plan/Tax Receipt bundle; neither mocked outputs nor literal completeness counts prove four live document classifications.",
+    "required_to_unblock": "Available provider and new spending approval; approved four-document bundle.",
+    "codex_local_resolution": "Cannot resolve provider/fixture authority locally.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "AI task completion / original integration.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/live-gemini.json",
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "expected_behaviour": "Completeness 100%, 4 items verified",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": "mobile/lib; backend/LegalService.API; ai-service/app; frontend/src",
+    "existing_automated_test": "frontend/tests/qmse-integration: existing alternate Affidavit workflow, not historical Deed acceptance; precise matching reviewed during execution",
+    "matching_automated_test": "Current document agent; exact historical bundle/service mapping needs confirmation"
+  },
+  {
+    "test_id": "TC-E2E-07",
+    "categories": "Changed functionality; unapproved status mapping",
+    "observed": "Upstream original workflow cannot reach historical Approved: current API/request states and real clerk controls use ASSIGNED/COMPLETED. No Approved row was forced to manufacture mobile success. Full dependent mobile status display not executed.",
+    "required_to_unblock": "Approve COMPLETED versus Approved meaning before end-to-end sync acceptance.",
+    "codex_local_resolution": "Requires group/lecturer decision.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Original integrated end-state incomplete.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/real-react-clerk-review.png",
+      "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+      "qmse-output/historical-resolution/evidence/historical-http.json"
+    ],
+    "expected_behaviour": "Mobile dashboard shows Approved",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": "mobile/lib; backend/LegalService.API; ai-service/app; frontend/src",
+    "existing_automated_test": "frontend/tests/qmse-integration: existing alternate Affidavit workflow, not historical Deed acceptance; precise matching reviewed during execution",
+    "matching_automated_test": "mobile/lib/screens/document_and_clerk/requests/my_requests_screen.dart"
+  },
+  {
+    "test_id": "TC-C104",
+    "categories": "Gemini unavailable; ranking requirement unresolved",
+    "observed": "Current recommendation requires separate lawyer_recommendation service and a successful configured live model; provider availability probe returned 503. Historical top-three >90% scores are not current recorded-experience ranking acceptance. No ranking rule changed.",
+    "required_to_unblock": "Operational recommendation service, new live budget and approved top-three/>90% score criteria.",
+    "codex_local_resolution": "Service setup local; provider and scoring approval external.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Selected AI evaluation.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/live-gemini.json"
+    ],
+    "expected_behaviour": "Top 3 property attorneys, score > 90%",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "technical_prerequisite_progress": "Separate actualAIprocess/startup/internalauthresolved. Provider/experts/fullGoldenCase acceptance remainsBLOCKED; no newlivecalls.",
+    "current_implementation": "backend/LegalService.API/Controllers/LawyersController.cs; backend/LegalService.API/Services/Workforce; frontend/src/pages/lawyers",
+    "existing_automated_test": "LawyerManagementHttpTests; WorkforcePlanningTests; frontend/tests/lawyer-management.spec.ts; precise matching reviewed during execution",
+    "matching_automated_test": "ai-service/lawyer_recommendation/agent.py"
+  },
+  {
+    "test_id": "TC-C105",
+    "categories": "Separate drafting service unavailable; full forecast incomplete",
+    "observed": "Actual 30-day workforce snapshot HTTP 200 is preserved, but current hiring generation POST /api/workforce-analysis/suggestions returned 503 because the separate AI drafting service at 55545 was unavailable. A full 30-day influx/hiring forecast with live rationale was not executed.",
+    "required_to_unblock": "Run drafting service and newly authorised provider; approve forecast criteria.",
+    "codex_local_resolution": "Local service setup possible; live acceptance blocked.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Selected workforce/AI evaluation.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/workforce-snapshot.json",
+      "qmse-output/historical-resolution/evidence/additional-http.json",
+      "qmse-output/historical-resolution/evidence/live-gemini.json"
+    ],
+    "expected_behaviour": "Structured hiring advice with rationale",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "technical_prerequisite_progress": "Separate actualAIprocess/startup/internalauthresolved. Provider/experts/fullGoldenCase acceptance remainsBLOCKED; no newlivecalls.",
+    "current_implementation": "backend/LegalService.API/Controllers/LawyersController.cs; backend/LegalService.API/Services/Workforce; frontend/src/pages/lawyers",
+    "existing_automated_test": "LawyerManagementHttpTests; WorkforcePlanningTests; frontend/tests/lawyer-management.spec.ts; precise matching reviewed during execution",
+    "matching_automated_test": "backend/LegalService.API/Services/Workforce/HiringSuggestionService.cs"
+  },
+  {
+    "test_id": "TC-C2-05",
+    "categories": "Changed classifier; Gemini unavailable",
+    "observed": "Tomorrow-date helper passes for the exact message, but it does not extract the full 10 AM ISO timestamp. Historical classifier route is absent; current full scheduling service requires a successful configured provider, whose probe returned 503.",
+    "required_to_unblock": "Current scheduling session input/output acceptance and new live budget.",
+    "codex_local_resolution": "Date helper passes only; full timestamp blocked.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "AI structured output/task completion.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+      "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+      "qmse-output/historical-resolution/evidence/additional-http.json",
+      "qmse-output/historical-resolution/evidence/live-gemini.json"
+    ],
+    "expected_behaviour": "Correct ISO-8601 timestamp",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": "backend/LegalService.API/Controllers/AppointmentsController.cs; backend/LegalService.API/Services/AppointmentService.cs; ai-service/app; frontend/src",
+    "existing_automated_test": "AppointmentServiceTests; CareerServiceTests; QmseAppointmentTests; frontend/tests/derived-booking.spec.ts; precise matching reviewed during execution",
+    "matching_automated_test": "ai-service/tests/test_historical_acceptance.py::test_C2_05_tomorrow_date_helper_subcriterion"
+  },
+  {
+    "test_id": "TC-C3-08",
+    "categories": "Historical OCR fixtures missing; Gemini unavailable; confidence rule unapproved",
+    "observed": "Historical low-OCR <60% heuristic classification has no matching recorded image/confidence fixture. Current extraction feeds Gemini and rejects on safe error; full scanned-image classification/fallback acceptance remains blocked by unavailable live provider and unresolved OCR confidence contract. No mocked verdict is promoted to full PASS.",
+    "required_to_unblock": "Original labelled scan and confidence criterion, fallback approval, provider/new budget.",
+    "codex_local_resolution": "Cannot invent equivalent original fixture.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Selected AI failure/safe-failure coverage.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/live-gemini.json"
+    ],
+    "expected_behaviour": "Fallback heuristics used; no over-confident verdict",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": "backend/LegalService.API/Controllers/DocumentAndClerk; backend/LegalService.API/Services; ai-service/app/agents/document_validation.py",
+    "existing_automated_test": "DocumentationRequestServiceTests; ClerkServiceTests; QmseUploadRegressionTests; ai-service/tests/test_documents.py; precise matching reviewed during execution",
+    "matching_automated_test": "ai-service/app/services/document_and_clerk/document_service.py"
+  },
+  {
+    "test_id": "TC-C3-12",
+    "categories": "Atomic boundary unapproved",
+    "observed": "Real PostgreSQL per-attachment and explicit caller rollback tests pass. Existing HTTP request creation and individual uploads remain separate operations; no atomic three-file API established.",
+    "required_to_unblock": "Decide whether three separate HTTP uploads must share creation transaction.",
+    "codex_local_resolution": "Defined per-attachment/caller transaction tests already pass; new batch operation needs approval.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Required database transaction area has scoped genuine evidence.",
+    "evidence": [
+      "qmse-output/completion-20261008/evidence/backend-final-verified.trx",
+      "qmse-output/completion-20261008/audit/requirements-traceability.md",
+      "qmse-output/final-audit/debug/evidence/issue5-before.trx",
+      "qmse-output/final-audit/debug/evidence/issue5-retest.trx"
+    ],
+    "expected_behaviour": "0 orphaned rows",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "technical_prerequisite_progress": "Development orphan cleanup now fixed; proposed disabled servicebatch passes actualPostgresrollback/commit tests. Full historical request+threefilesHTTP/UIboundary remainsunimplemented/unapproved.",
+    "current_implementation": null,
+    "existing_automated_test": null,
+    "matching_automated_test": null
+  },
+  {
+    "test_id": "TC-C4-04",
+    "categories": "Gemini unavailable",
+    "observed": "Document-text injection isolation markers pass a deterministic subcriterion. That sanitizer is not the consultation/chat refusal. Full actual safe chat response is blocked by configured live-provider 503; refusal not inferred from code.",
+    "required_to_unblock": "Available chat provider/new budget; actual refusal response.",
+    "codex_local_resolution": "Sanitizer subcriterion local, not full chat acceptance.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Selected AI prompt-injection/safe-failure.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+      "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+      "qmse-output/historical-resolution/evidence/live-gemini.json"
+    ],
+    "expected_behaviour": "Injection pattern flagged; safe refusal",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": "backend/LegalService.API/Authentication; ai-service/app/agents/supervisor.py; frontend/src",
+    "existing_automated_test": "frontend/tests/auth.spec.ts; ai-service/tests/test_security.py; test_agent_comprehensive.py; precise matching reviewed during execution",
+    "matching_automated_test": "ai-service/tests/test_historical_acceptance.py::test_C4_04_document_injection_sanitization_subcriterion"
+  },
+  {
+    "test_id": "TC-C4-05",
+    "categories": "Gemini unavailable; expert relevance labels missing",
+    "observed": "Actual hybrid retrieval for the exact tenant query ran and raw corpus text lacked a disclaimer. The diagnostic disclaimer assertion failed, but retrieved text is not the final consultation output. Full Sri Lankan legal relevance and generated disclaimer acceptance are blocked by provider 503 and absent expert-approved relevance labels.",
+    "required_to_unblock": "Approved legal relevance labels, corpus and disclaimer; provider/new budget.",
+    "codex_local_resolution": "Hybrid retrieval local; final advice/relevance needs experts/provider.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "AI evaluation/evidence accuracy.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+      "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+      "qmse-output/historical-resolution/evidence/live-gemini.json"
+    ],
+    "expected_behaviour": "Relevant Sri Lankan law via RRF, with disclaimer",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": "backend/LegalService.API/Authentication; ai-service/app/agents/supervisor.py; frontend/src",
+    "existing_automated_test": "frontend/tests/auth.spec.ts; ai-service/tests/test_security.py; test_agent_comprehensive.py; precise matching reviewed during execution",
+    "matching_automated_test": "ai-service/tests/test_historical_acceptance.py::test_C4_05_actual_hybrid_tenant_query_with_disclaimer"
+  },
+  {
+    "test_id": "TC-C4-08",
+    "categories": "Expert labels missing; ranking revision unapproved",
+    "observed": "Synthetic RRF k=40 and k=60 comparison ran with identical ranking; current default is 60. Higher legal-query precision needs an approved relevance dataset and ground truth, which are absent. This helper comparison is not the full precision evaluation.",
+    "required_to_unblock": "Approve labelled queries/precision metric and k=40 versus60.",
+    "codex_local_resolution": "Synthetic RRF mechanics local; legal precision not proven.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Selected AI evaluation; no literal k target in assignment.",
+    "evidence": [
+      "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+      "qmse-output/historical-resolution/evidence/ai-retrieval.log"
+    ],
+    "expected_behaviour": "Higher precision on legal queries",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": "backend/LegalService.API/Authentication; ai-service/app/agents/supervisor.py; frontend/src",
+    "existing_automated_test": "frontend/tests/auth.spec.ts; ai-service/tests/test_security.py; test_agent_comprehensive.py; precise matching reviewed during execution",
+    "matching_automated_test": "ai-service/tests/test_historical_acceptance.py::test_C4_08_synthetic_rrf_comparison_subcriterion"
+  },
+  {
+    "test_id": "TC-C4-12",
+    "categories": "Provider unavailable; disclaimer contract unapproved",
+    "observed": "One authorised Gemini attempt returned provider 504; no live disclaimer response. Universal disclaimer enforcement absent from current response schema.",
+    "required_to_unblock": "Approve wording/enforcement, new bounded live budget.",
+    "codex_local_resolution": "Deterministic enforcement could follow approval; finite responses cannot prove universal claim.",
+    "member_or_lecturer_confirmation": "Member confirmation; lecturer if authoritative specification remains disputed",
+    "explicit_assignment_effect": "Selected AI guardrail/business-rule evaluation.",
+    "evidence": [
+      "qmse-output/completion-20261008/evidence/live-gemini.json",
+      "qmse-output/completion-20261008/audit/requirements-traceability.md"
+    ],
+    "expected_behaviour": "Every response ends with the non-privilege disclaimer",
+    "source_and_test_evidence": "See member-evidence-mapping.md",
+    "current_implementation": null,
+    "existing_automated_test": null,
+    "matching_automated_test": null
+  }
+]

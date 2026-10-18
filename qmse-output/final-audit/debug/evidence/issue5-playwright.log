@@ -1,0 +1,593 @@
+{
+  "config": {
+    "argv": [
+      "/opt/homebrew/Cellar/node@22/22.23.2_1/bin/node",
+      "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/node_modules/.bin/playwright",
+      "test",
+      "--config",
+      "requirements-boundaries.playwright.config.ts"
+    ],
+    "configFile": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/requirements-boundaries.playwright.config.ts",
+    "rootDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "requirements-boundaries.spec.ts"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "requirements-boundaries.spec.ts",
+      "file": "requirements-boundaries.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "existing recommendation length 2",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5325,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mfrontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n\n   at frontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:56:54.749Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/requirements-boundaries-existing-recommendation-length-2/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb550c75f8b5e261f1ad-2b384812ed088b4ac390",
+          "file": "requirements-boundaries.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "existing recommendation length 3",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 1,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5120,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mfrontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n\n   at frontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:57:00.481Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/requirements-boundaries-existing-recommendation-length-3/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb550c75f8b5e261f1ad-739a4f2d1f641855c3f1",
+          "file": "requirements-boundaries.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "existing recommendation length 9",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 2,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5117,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mfrontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n\n   at frontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:57:05.900Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/requirements-boundaries-existing-recommendation-length-9/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb550c75f8b5e261f1ad-7f9012a1008995c6fb4d",
+          "file": "requirements-boundaries.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "existing recommendation length 10",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 3,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5306,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mfrontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n\n   at frontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:57:12.073Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/requirements-boundaries-existing-recommendation-length-10/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb550c75f8b5e261f1ad-50ec8709fc6166a8ea38",
+          "file": "requirements-boundaries.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "existing recommendation length 1000",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 4,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5140,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mfrontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n\n   at frontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:57:17.790Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/requirements-boundaries-existing-recommendation-length-1000/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb550c75f8b5e261f1ad-4bd90693675b971f241b",
+          "file": "requirements-boundaries.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "existing recommendation length 1001",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 5,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5109,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mfrontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n\n   at frontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:57:23.259Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/requirements-boundaries-existing-recommendation-length-1001/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb550c75f8b5e261f1ad-fab0d18a2c5c0af765a1",
+          "file": "requirements-boundaries.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "existing recommendation length 4000",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 6,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5138,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mfrontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n\n   at frontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:57:28.684Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/requirements-boundaries-existing-recommendation-length-4000/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb550c75f8b5e261f1ad-de1267d99915cf781449",
+          "file": "requirements-boundaries.spec.ts",
+          "line": 5,
+          "column": 2
+        },
+        {
+          "title": "existing recommendation length 4001",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 7,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 5136,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89",
+                    "location": {
+                      "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                      "column": 24,
+                      "line": 20
+                    },
+                    "snippet": "\u001b[90m   at \u001b[39mfrontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                        "column": 24,
+                        "line": 20
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByRole('button', { name: 'Select client Existing Customer', exact: true })\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByRole('button', { name: 'Select client Existing Customer', exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByRole('button', { name: 'Select client Existing Customer', exact: true })\u001b[22m\n\n\n   at frontDeskFixture.ts:20\n\n  18 | export async function selectIntakeClient(page: Page) {\n  19 |   const select = page.getByRole('button', { name: 'Select client Existing Customer', exact: true });\n> 20 |   await expect(select).toBeVisible(); await select.click();\n     |                        ^\n  21 | }\n  22 |\n    at selectIntakeClient (/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts:20:24)\n    at /Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/requirements-boundaries.spec.ts:9:89"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-08T12:57:34.155Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/test-results/requirements-boundaries-existing-recommendation-length-4001/error-context.md"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend/tests/frontDeskFixture.ts",
+                    "column": 24,
+                    "line": 20
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "bb550c75f8b5e261f1ad-71c9a46d10db23435231",
+          "file": "requirements-boundaries.spec.ts",
+          "line": 5,
+          "column": 2
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-08T12:56:54.530Z",
+    "duration": 44867.091,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

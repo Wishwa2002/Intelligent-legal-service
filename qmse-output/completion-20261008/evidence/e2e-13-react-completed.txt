@@ -1,0 +1,141 @@
+⚖️
+LegalEase
+CLERK WORKSPACE
+Legal Operations & Case Review
+📋
+My Assigned Cases
+1
+S
+Senior Legal Clerk
+CRK002
+Legal Documentation & Conveyancing
+Sign Out
+LEGAL WORKSPACE
+•
+ASSIGNED CASEWORK
+My Assigned Cases
+
+Welcome back, Senior Legal Clerk (Legal Documentation & Conveyancing) • Monitor case progress, audit client documents, and update case statuses.
+
+System Online
+TOTAL ASSIGNED
+📋
+1
+Assigned to your queue
+IN PROGRESS / REVIEW
+⚖️
+0
+Active legal workflows
+COMPLETED
+✓
+1
+Successfully closed cases
+MISSING DOCUMENTS
+⚠️
+0
+Awaiting customer uploads
+🔍
+Showing 1 of 1 cases
+🔄
+Refresh Queue
+All Cases
+1
+Assigned
+0
+Under Review
+0
+In Progress
+0
+Needs Docs
+0
+Completed
+1
+CASE ID	CUSTOMER / CLIENT	LEGAL SERVICE	SUBMITTED	DOCUMENTS	STATUS	ACTIONS
+DMT012	
+S
+Synthetic QMSE Workflow Customer
+workflow-1791435515534@example.test
+	Affidavit & Notary Services	
+Oct 8, 2026
+10:28 AM
+	
+3 Provided
+	Completed	
+Review Case
+→
+⚖️
+Case #12: Affidavit & Notary Services
+DMT012
+Client: Synthetic QMSE Workflow Customer (workflow-1791435515534@example.test)
+✕
+✓
+Case #12 status updated to COMPLETED.
+CURRENT CASE STATUS
+Completed
+Update Status:
+ASSIGNED
+UNDER_REVIEW
+IN_PROGRESS
+REQUIRES_DOCUMENTS
+COMPLETED
+REJECTED
+REQUIRED DOCUMENTS CHECKLIST
+✓ All Documents Provided
+✅
+NIC
+RECEIVED
+📄
+Attach Sample
+📨
+Ask to upload this document
+✅
+Completed Affidavit Draft
+RECEIVED
+📄
+Attach Sample
+📨
+Ask to upload this document
+✅
+Witness Details
+RECEIVED
+📄
+Attach Sample
+📨
+Ask to upload this document
+UPLOADED FILES (3)
+📄
+Use Sample Document
+📕
+NIC_Copy.pdf
+2.4 KB • Uploaded 10/8/2026
+RECEIVED
+⬇️
+Download
+⚠️
+Ask to re-upload
+📕
+Completed_Affidavit_Draft.pdf
+2.6 KB • Uploaded 10/8/2026
+RECEIVED
+⬇️
+Download
+⚠️
+Ask to re-upload
+📕
+Witness_Details.pdf
+2.4 KB • Uploaded 10/8/2026
+RECEIVED
+⬇️
+Download
+⚠️
+Ask to re-upload
+💬
+CLIENT AI CONVERSATION HISTORY
+
+No chat transcript available for this case.
+
+Close Case
+LegalEase Intelligent Legal Services
+•
+Clerk Operations Module
+Confidential Client Documentation System • Authorized Personnel Only

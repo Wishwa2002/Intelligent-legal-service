@@ -1,0 +1,81 @@
+Skip to content
+Navigation Menu
+Platform
+Solutions
+Resources
+Open Source
+Enterprise
+Pricing
+Sign in
+Sign up
+Wishwa2002
+Intelligent-legal-service
+Repository navigation
+Code
+Issues
+Pull requests
+6
+ (6)
+Actions
+Projects
+Security and quality
+Insights
+Frontend CI
+feat: appointment scheduling enhancements, public pages, and engineering documentation #20
+Sign in to view logs
+Summary
+All jobs
+build-and-test
+Run details
+Usage
+Workflow file
+Triggered via pull request 
+yhprasadhew
+opened
+#34
+feature/appointment-scheduling-enhancements
+Status
+Failure
+Total duration
+27s
+Artifacts
+–
+frontend-ci.yml
+on: pull_request
+build-and-test
+24s
+
+Oh hello! Nice to see you.
+
+Made with ❤️ by humans.txt
+
+Annotations
+5 errors, 1 warning, and 1 notice
+build-and-test
+Process completed with exit code 2.
+
+
+build-and-test
+'Briefcase' is declared but its value is never read.
+
+
+build-and-test
+'Link' is declared but its value is never read.
+
+
+build-and-test
+'Scale' is declared but its value is never read.
+
+
+build-and-test
+'ArrowRight' is declared but its value is never read.
+
+
+build-and-test
+Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-node@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+Show more
+
+
+build-and-test
+"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Show more

@@ -1,0 +1,23 @@
+{
+  "name": "backend-local",
+  "command": [
+    "dotnet",
+    "test",
+    "backend/LegalService.Tests/LegalService.Tests.csproj",
+    "--no-restore",
+    "--logger",
+    "trx;LogFileName=backend-local.trx",
+    "--results-directory",
+    "qmse-output/evidence/backend",
+    "--collect",
+    "XPlat Code Coverage"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service",
+  "started_utc": "2026-10-08T02:43:59.017989+00:00",
+  "ended_utc": "2026-10-08T02:44:18.844779+00:00",
+  "duration_seconds": 19.826,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/backend-local.log"
+}

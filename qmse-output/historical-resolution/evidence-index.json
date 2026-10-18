@@ -1,0 +1,1424 @@
+{
+  "generated_at": "2026-10-08T11:55:16.450025+00:00",
+  "scope": "New phase index; original native evidence preserved in combined package; archive receipt stored alongside package to avoid self-reference",
+  "case_evidence": [
+    {
+      "test_id": "TC-BK-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/password.trx",
+        "qmse-output/historical-resolution/evidence/password-cost.trx",
+        "qmse-output/historical-resolution/evidence/password-cost.log"
+      ]
+    },
+    {
+      "test_id": "TC-BK-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-03",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-04",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-05",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-06",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-BK-07",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/additional-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-DB-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/postgres-setup.trx",
+        "qmse-output/historical-resolution/evidence/postgres-setup.log"
+      ]
+    },
+    {
+      "test_id": "TC-DB-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ef-duplicate.trx",
+        "qmse-output/historical-resolution/evidence/ef-duplicate.log",
+        "qmse-output/historical-resolution/evidence/duplicate-precondition.json"
+      ]
+    },
+    {
+      "test_id": "TC-DB-03",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/migrate.log",
+        "qmse-output/historical-resolution/evidence/migration-tables.log",
+        "qmse-output/historical-resolution/evidence/migration-history.log"
+      ]
+    },
+    {
+      "test_id": "TC-DB-04",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-FE-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-FE-01.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-FE-02",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-FE-02.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json",
+        "qmse-output/historical-resolution/evidence/playwright-no-slot.json"
+      ]
+    },
+    {
+      "test_id": "TC-FE-03",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-FE-03.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-FE-04",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-FE-04.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-FE-05",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-FE-05.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-01",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-02",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-03",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-04",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-MOB-05",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/flutter-historical-final.log"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-01",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/real-flutter-login.png",
+        "qmse-output/historical-resolution/evidence/real-flutter-catalogue.png",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-02",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-03",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-04",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-05",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/live-gemini.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-06",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+        "qmse-output/historical-resolution/evidence/real-react-clerk-review.png"
+      ]
+    },
+    {
+      "test_id": "TC-E2E-07",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/real-react-clerk-review.png",
+        "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C101",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C102",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json",
+        "qmse-output/completion-20261008/evidence/specialization-database.log"
+      ]
+    },
+    {
+      "test_id": "TC-C103",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C104",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C105",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/workforce-snapshot.json",
+        "qmse-output/historical-resolution/evidence/additional-http.json",
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C106",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C106.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-C107",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/ai-completion.xml"
+      ]
+    },
+    {
+      "test_id": "TC-C108",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C109",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C110",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C111",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/ai-completion.xml"
+      ]
+    },
+    {
+      "test_id": "TC-C112",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C113",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/ai-completion.xml"
+      ]
+    },
+    {
+      "test_id": "TC-C2-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-03",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-04",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C2-04.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-05",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+        "qmse-output/historical-resolution/evidence/additional-http.json",
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-06",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C2-06.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-07",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-08",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/timezone-conflict.json"
+      ]
+    },
+    {
+      "test_id": "TC-C2-09",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C2-10",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C2-11",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C2-12",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C3-01",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-02",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-03",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-04",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-05",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log"
+      ]
+    },
+    {
+      "test_id": "TC-C3-06",
+      "status": "VERIFIED/FAIL",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/historical-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-07",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/spoof-before.trx",
+        "qmse-output/completion-20261008/evidence/upload-retest.trx",
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-08",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C3-09",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C3-10",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C3-11",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C3-12",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx",
+        "qmse-output/completion-20261008/audit/requirements-traceability.md"
+      ]
+    },
+    {
+      "test_id": "TC-C4-01",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-02",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-03",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/real-api-http.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-04",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-05",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+        "qmse-output/historical-resolution/evidence/live-gemini.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-06",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/TC-C4-06.png",
+        "qmse-output/historical-resolution/evidence/playwright-historical.json"
+      ]
+    },
+    {
+      "test_id": "TC-C4-07",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C4-08",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+        "qmse-output/historical-resolution/evidence/ai-retrieval.log"
+      ]
+    },
+    {
+      "test_id": "TC-C4-09",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C4-10",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C4-11",
+      "status": "VERIFIED/PASS",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/backend-final-verified.trx"
+      ]
+    },
+    {
+      "test_id": "TC-C4-12",
+      "status": "BLOCKED",
+      "evidence": [
+        "qmse-output/completion-20261008/evidence/live-gemini.json",
+        "qmse-output/completion-20261008/audit/requirements-traceability.md"
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "qmse-output/historical-resolution/audit/49-case-inventory.json",
+      "bytes": 72451,
+      "sha256": "1c2afc86338fd12382592975724c52212f23f10e6669d2bbb91aa30646422295"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/49-case-inventory.md",
+      "bytes": 33833,
+      "sha256": "90852a8558bab355a0df890b888f06831e992070951934abe9144030dc165cd9"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/49-case-reviewed-inventory.json",
+      "bytes": 108308,
+      "sha256": "1a3b403b8c24d0d8d9d48b1bc08d7886660784f8788a7c9c1e4e0d4f5a3ace55"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/49-case-reviewed-inventory.md",
+      "bytes": 32967,
+      "sha256": "63055ac6fa92f3a4d928b501a7426f6bc3c31623d0fb1c78453baa6caf871ae5"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/additional_api.py",
+      "bytes": 1136,
+      "sha256": "eccf63587ff2ac35bf299467d96a9a5960eb3a59e5d6c28281b5e79515cb8ab4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/capture_career_card.cjs",
+      "bytes": 887,
+      "sha256": "f33ab889acda657f1de8f8a508d1046c35827cc33c61616b46b83fc47d5f2290"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/capture_native.cjs",
+      "bytes": 1575,
+      "sha256": "259e2e319bd87438b6b0c3b2e1feec092fde2670255ff51c84becb328d10a5d6"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/cleanup.json",
+      "bytes": 593,
+      "sha256": "0be38f2416dd267b647c28cadc5d5bc9b999bd56b4a61a21c9237c52c62445ed"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/document-change-log.json",
+      "bytes": 65442,
+      "sha256": "a80aae8e7a54440cdb0ccd51be169cecd5e1f24ec5183b9b875e2f1e4c0cf295"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/document-paragraphs.json",
+      "bytes": 67724,
+      "sha256": "0eeea6425a10fedf93e2c2b865421297777a298f0c0d8dc097b4f952b8fa053d"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/document-tables.json",
+      "bytes": 107034,
+      "sha256": "44ac44beb6eba94cd02847e30d902ee6ff2a6a238a09fd196d8f57e2bdbdba18"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/fill_toc.py",
+      "bytes": 2007,
+      "sha256": "c18ee400af50eb15c904f597744d210760d0dc7de056417a4ef25b431ce0db70"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/final-changed-pages.json",
+      "bytes": 12,
+      "sha256": "66493ab1a43fb25f5a722c0edf26dc14a4d5b494f471c1ab5c456d8a55615848"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/final-quality-check.json",
+      "bytes": 12771,
+      "sha256": "02403e5942fc1c80d12cf89e7d34bf22a10b3c0866861287e31d04e9ad34bb1a"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/finish_evidence.py",
+      "bytes": 8562,
+      "sha256": "15e83c824c04ea396e8bf7cfa4adf4ed6576efcf69ffa2b357398fe1f56f32a6"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/input-baseline.json",
+      "bytes": 931,
+      "sha256": "375c56e4b5b0f69137506580f1902eb8dd09fab6e4b7d19cfa9db5a5b53e5705"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/inventory.py",
+      "bytes": 6279,
+      "sha256": "423bd4eb05d83df6ad939d4f30dc5e98efb25c89f139e5ba8250572d0afd7e27"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/live_probe.py",
+      "bytes": 2776,
+      "sha256": "55ceada46f2e72b98dae37aea2f1425a9d7ab05c9c17c0cd4e18595eb768cb09"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/package_evidence.py",
+      "bytes": 2661,
+      "sha256": "ed5eb097c838a93a1cf48edc976d907b33eec28d34ed8b110d10b6de66a47200"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/pre-last-page-hashes.json",
+      "bytes": 6052,
+      "sha256": "045f1ef3cd8c00745edaa402b0975613dab4507540fd3c2239bdc812d4232109"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/pre-qualifier-page-hashes.json",
+      "bytes": 6052,
+      "sha256": "1fc2ad2831689476c6929f6ac0aab959f8cce8ecc3fdd63f1a21d76cc874c536"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/qualifier-changed-pages.json",
+      "bytes": 4,
+      "sha256": "38f4dadcf722e755691411270bf5f17f46127858a975cb5a99305a353c0f21a8"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/reconcile.py",
+      "bytes": 15457,
+      "sha256": "fcb75a3dca638bd5d1bf8d7e0c70eed0f9fdd69822bb1ac4a0d3eec5c85eba6d"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/render_contacts.py",
+      "bytes": 987,
+      "sha256": "7d7447d1253d37053e6a46267970f56219ccf254f0677fdadeb8b9da6abc5772"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/replay_assigned_ui.cjs",
+      "bytes": 4089,
+      "sha256": "ff2a8c7e706ad60a68e65297498f58caae3ac5ecca6e75e24b2fb853b5f1bfc6"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/replay_real_ui.cjs",
+      "bytes": 3063,
+      "sha256": "d548e92b151d7bab6413728f111a96e36613b597bc9e97947a8f9a9c44a3e7cd"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/reproduction.md",
+      "bytes": 6407,
+      "sha256": "7735b973877f92f69c1892d303abebe24f29500ac576e1d415d9e0a605beee43"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/requirements-and-final-audit.md",
+      "bytes": 2339,
+      "sha256": "07ec0a9baacc53921661015a1048f2dc43acc70bd0d7cd306e5b8440cf405ec5"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/restart_api.py",
+      "bytes": 1626,
+      "sha256": "7b081a256e51d10bed0e4e8a3fefe083b59b1a4d78c2659e542ad9704bfe6abc"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/revise_report.py",
+      "bytes": 23649,
+      "sha256": "27c25264ecdd85c2e571aa019c897e333810890704bc7bd8b0b88d477cc954bf"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/run_logged.py",
+      "bytes": 1202,
+      "sha256": "b42d7b654bf6cb1bc29265e64e751a9d2e4d81d954b1a94f8904ea830eb24b11"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/sensitive-check.json",
+      "bytes": 117,
+      "sha256": "5f7affef0e6d08c1aa4a42c9d4c525f7a912a480cd57473a50edc55013e435f5"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/shared-responsibility-proposal.md",
+      "bytes": 1589,
+      "sha256": "2c1a1c67cc5d37d45d1b635fac4069364fbab00fc8baceaae4cbc9b85a3ea708"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/source-overlay.json",
+      "bytes": 2296,
+      "sha256": "762229d1ae534aa5765453c40610521bae802ffa83b7c7536ec410d9908f6f10"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/start_isolated.py",
+      "bytes": 3335,
+      "sha256": "537c0140bad0513f40a2bd604839ee4960fb4a7ee22e458230d82036f503b126"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/timezone.cjs",
+      "bytes": 2085,
+      "sha256": "d6d569ad02b3580777834af1ab6b2c3867ce31e780b6e3050a705c66cb36e724"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/toc-pages.json",
+      "bytes": 4497,
+      "sha256": "bb341b17eabd6ef762f796f24c7d3e3610bc4726981f1f2eab4fe1cac7dd6e13"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/validate.py",
+      "bytes": 7110,
+      "sha256": "696e200f786277f9d7a75bb6f2eb23dc94ffe4a00b0825599b1f6565e337a42b"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/visual-contact-manifest.json",
+      "bytes": 8770,
+      "sha256": "35833b990ae4d566a9a2d5d2c2b53719296c34b71691712aa9557d1b587b3538"
+    },
+    {
+      "path": "qmse-output/historical-resolution/audit/visual-review.json",
+      "bytes": 692,
+      "sha256": "cdbffb4a5936d21c8877a9d8bd98bac098898a5bb26e6785f7e827bebcf1b5f6"
+    },
+    {
+      "path": "qmse-output/historical-resolution/completion-summary.md",
+      "bytes": 5027,
+      "sha256": "bda8250158c62422827bd2a31500816819552297a944c9aab9e6300b151a22e5"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-C106.png",
+      "bytes": 135957,
+      "sha256": "5fca8e72e5771324038dee01564a5fbc2da107a675e480e5f04c16dda766ee9e"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-C2-04.png",
+      "bytes": 1201675,
+      "sha256": "15519dafceeec7ee12048e265ef569a8a5f321b0b60b36530895ffd5d2eccc8f"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-C2-06.png",
+      "bytes": 111025,
+      "sha256": "5ed3c6672ea0f1ede56dae4e2957308bf26486a4ef58fc2779d67ff5c70ee8f4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-C4-06.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-01.png",
+      "bytes": 135951,
+      "sha256": "fc6c5f3516141e1094205077e6b9f74903144f9df399caa33316390a17f2c13a"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-02.png",
+      "bytes": 127688,
+      "sha256": "292abb89e8035131ebf4765a73bcc7a8a0ce549b0e83846d4a3a1a0e281d49c4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-03.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-04.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/TC-FE-05.png",
+      "bytes": 128771,
+      "sha256": "81755727e83b528630e37d79337576aa8e27af43336de350f9557d767b1a2f0d"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/additional-http.json",
+      "bytes": 1054,
+      "sha256": "298c75374fde031f8c7aea7664b47bc1a47d2e93fef93f15d900f369752570d6"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ai-historical.log",
+      "bytes": 3659,
+      "sha256": "673896ec058fe03e7620b14e5dca79dfddf1c795d5279bb9ce0c5081ce371984"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ai-historical.xml",
+      "bytes": 1745,
+      "sha256": "ed1f15a4622fece0ecbd13ac6654f958409083d7f635f44281e24cf672529744"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ai-retrieval.log",
+      "bytes": 10050,
+      "sha256": "57c94f301af9bbc4215ddae6aef0bbddff21ec9a29ace9ad9902bcde68ec6809"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ai-retrieval.xml",
+      "bytes": 3813,
+      "sha256": "7d55613ff106b4338ac2f48f091587973404fb36d98fc5e001a32f6a81061fc1"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ai-server.log",
+      "bytes": 2100,
+      "sha256": "0a1a37abe9870eb197dce8a6f2d9fa934d4c8d0c51a2fb709d012e85ea385ee6"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/backend-cors-server.log",
+      "bytes": 40205,
+      "sha256": "6d9797ab6f7e557257546fbd87a0005e6fab1c5403ebe39fe0dd5c63c4272e52"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/backend-server.log",
+      "bytes": 161252,
+      "sha256": "c54600594f26ba4c3adaff4254caa01d0c1c03cd313d70fc5261d431c6b8c01b"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/career-card-manifest.json",
+      "bytes": 210,
+      "sha256": "953d145e68881917926344b4000e3b61d1ec7d87aeffef8ef71d6d1843a4f3ca"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/career-card.png",
+      "bytes": 230604,
+      "sha256": "a7ed4a2cb036114f3d45b0c19cde7b93fb69eef9524353536f7c5146eebc052f"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/duplicate-precondition.json",
+      "bytes": 1404,
+      "sha256": "e6e8e3c315a14ce973e611452c05e280d3f64c9ae53240c2af033ce877ed3b63"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/duplicate-slot.log",
+      "bytes": 606,
+      "sha256": "c9704dbb767766d5722829ef212d16bd8197f0b5a0869ac7cf3a9903b262369b"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/e2e-database-state.log",
+      "bytes": 201,
+      "sha256": "4b479bb5e61f627e849730a4ba01f6a570cc87c038affbb834f4b3ec622847ae"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ef-duplicate.log",
+      "bytes": 803,
+      "sha256": "21347cf514dc70af307d73f1816caeaeb6de5a9842ade0232c89c7cb1cec8595"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/ef-duplicate.trx",
+      "bytes": 3319,
+      "sha256": "8ded201588638d9649d9bc568ef1c1c87772d86df0e37b31dbe45a0474daa81a"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/fee-database.json.log",
+      "bytes": 317,
+      "sha256": "67bc62e9a3888dbbc49e4cdbc541049382889502c919ab6971e71ffa2c7bf550"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/figure-index.json",
+      "bytes": 3363,
+      "sha256": "ae0d3d6ec6f160cd798b23676621a5ffd91d33160d7d3c29009982d5a71a9bbc"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/final-database-state.json",
+      "bytes": 92,
+      "sha256": "e38058ce793789961458c19b471bc513c20c3b12d593144da839cd96ad55d081"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/flutter-build.log",
+      "bytes": 381,
+      "sha256": "c37b5190b2b1c575159d00b4d83d2659ba0734e8ca153b198de8d368c1f4f53c"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/flutter-historical-final.log",
+      "bytes": 8252,
+      "sha256": "e47319f3a1b28078918390dec67e023fbf2b8f3237c2ef0e7e5e832f9647d665"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/flutter-historical-retry.log",
+      "bytes": 2470,
+      "sha256": "2066cdc19fc7c3845e631fcc66d00eedfbd04a0444d6820778371a3986d536a4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/flutter-historical.log",
+      "bytes": 9581,
+      "sha256": "bf5e43ff5e97f00c63768fe6600745621585882f467b6e6f20b4b60927efe123"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/group-branch-current.json",
+      "bytes": 267,
+      "sha256": "d17a8cc48c3a79288a92ab99d63d95a0e79a8587220a72745c9df31c49247fef"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/group-current-verification.json",
+      "bytes": 563,
+      "sha256": "d9239a0d4a1edf347567a5f50e97238de713ca0c5fe91cee1868e0f7c5c61bed"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/historical-api.log",
+      "bytes": 896,
+      "sha256": "4f22ae094c5db0c2c3c00f124a81cbe8a5c1ec957237cb2acc71f76cdb452c37"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/historical-http.json",
+      "bytes": 50782,
+      "sha256": "879a3febaf057b7e42121116198e9592c638c675d9d913dc2ba54fdc231f0383"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/jwt-claims-redacted.json",
+      "bytes": 334,
+      "sha256": "513433979a88aa5ed908c023b208403a0dda592c33cdeb096bd9584704aa2247"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/live-gemini.json",
+      "bytes": 493,
+      "sha256": "8b3a20f378e3d1db5a1cb65fdb4e716f97f75753838a72c305ebdf6b4170ad14"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/migrate.log",
+      "bytes": 961,
+      "sha256": "8657dfad1fe3cee9f8a9e37fd5b4020d57b044b19e7c216ece1a4ded6f2e8208"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/migration-history.log",
+      "bytes": 703,
+      "sha256": "7f4e42c10a86ea7aabf59aff4df7bc72e9386de07c4878eb4b7f972f9ef85fc8"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/migration-tables.log",
+      "bytes": 667,
+      "sha256": "bd54896e100c160b975dffefc38e85defa32449f1c8e5063a032208a8e5e2482"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/native-capture.json",
+      "bytes": 327,
+      "sha256": "af49de95be8bf7c37bc9b756e8e980a96daf832b02dbb0f4edadf53cef17e052"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/original-group-history.log",
+      "bytes": 1815,
+      "sha256": "48913d6c63e2f4293b4d602835be9fa48a82c078b87ebb9912cf2496d97a1c01"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password-cost-output.png",
+      "bytes": 240776,
+      "sha256": "e0f86600e4a460a2eda7cbb529d95b3e785e1ab66b2f1240a6de334b518a3f4c"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password-cost.log",
+      "bytes": 1774,
+      "sha256": "7ab4e56ca9c7899652edaf716a1c420b632c3fd86e7e02d78c96802d07662f71"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password-cost.trx",
+      "bytes": 5140,
+      "sha256": "d557bb081de6cd45fb565a25e3b8bff6beaf58c690f52c3a1bd2d1732bdbc8e1"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password-retry.log",
+      "bytes": 799,
+      "sha256": "c4ac0d36cec0d497424ba4efcae26f9a947ade4e51334ec2f2f49ef7ecceedb6"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password.log",
+      "bytes": 885,
+      "sha256": "91dc040da13dfe47e8753ffb8275188727e5cc02e052428a13f05afa91ce0c00"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/password.trx",
+      "bytes": 3152,
+      "sha256": "6610506f6fa18e0c55392d96437040e1d36a2243476c63879cd22699bf28c910"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-historical-final.log",
+      "bytes": 78719,
+      "sha256": "5a8b10907c7ba3d3a3c7f1748352f006248992af87da00e70179a70b7911dd0b"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-historical.json",
+      "bytes": 55253,
+      "sha256": "425e1fcc54b61e7426377b972788d3892b34da5fc2a19cfe3a69439223acbba8"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-historical.log",
+      "bytes": 5517,
+      "sha256": "492ceafc6282200c77ccdbd1578dfb04296ec408729c4948ce77aee3d83fcb7d"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-isolated.log",
+      "bytes": 81483,
+      "sha256": "c89073cea195a8ce63303e9430b57f25ce1d8c7660fd89020ae8d206ddf25101"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-no-slot.json",
+      "bytes": 16963,
+      "sha256": "1a6b13bd5b61a6189f7f3a422a3009a0f5d9d1b426801fef4c2099be986bcd1c"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-no-slot.log",
+      "bytes": 16964,
+      "sha256": "b455876fe33023a55afc0e4c93d98725f1ab71a46d1773033424df3bd950bdb4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/playwright-replay.log",
+      "bytes": 55254,
+      "sha256": "27234a4dd5bf40113c96bae7029a50aaa0120eaa722d6b625ff30553c468c6e3"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/postgres-setup.log",
+      "bytes": 1479,
+      "sha256": "80814dd95af17f3315b8a2fcc6577106d27bcbf1c3ccb80dc2af07b96f886196"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/postgres-setup.trx",
+      "bytes": 5934,
+      "sha256": "a9e51e6483b9637f3d9935eb9c6084a2e9f7188f29f9a3c535a15a3feecda841"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/TC-C106.png",
+      "bytes": 4254,
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/TC-C2-04.png",
+      "bytes": 962740,
+      "sha256": "bbbe65a04d9cdf69be76c98b0ba5615792eede423373c175d7c19ee280b6af67"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/TC-C4-06.png",
+      "bytes": 230202,
+      "sha256": "182a7466c3ae1b47c8bab554967e7cff4e90afbf41ef3da6dbab0155d064afd9"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/TC-FE-01.png",
+      "bytes": 4254,
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/TC-FE-03.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/TC-FE-04.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/TC-FE-05.png",
+      "bytes": 4254,
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-C106.png",
+      "bytes": 4254,
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-C2-04.png",
+      "bytes": 1201675,
+      "sha256": "15519dafceeec7ee12048e265ef569a8a5f321b0b60b36530895ffd5d2eccc8f"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-C2-06.png",
+      "bytes": 4254,
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-C4-06.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-FE-01.png",
+      "bytes": 4254,
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-FE-02.png",
+      "bytes": 4254,
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-FE-03.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-FE-04.png",
+      "bytes": 228661,
+      "sha256": "07a49b52e615b9dc233b25c174056d5f2ea2c356f7f8b745feef493f6a271034"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/isolated-TC-FE-05.png",
+      "bytes": 4254,
+      "sha256": "3878570f4a62a0d65f57cf1754e0269e56ec797f4e36e26b44c172eb6e800401"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/previous-ui-attempt/ui-cases.json",
+      "bytes": 6667,
+      "sha256": "73179e8c27e5ac8cd169bead63f005677f26db14b8d66fefd2941644b551fcd4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/react-server.log",
+      "bytes": 272,
+      "sha256": "b96256abffe9cf1f6c760e154fd1db5135fe0182ba13bebf89830dc0d2c0a73d"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-flutter-catalogue.png",
+      "bytes": 120936,
+      "sha256": "45da2fc4af45a569c885910ce7739e82cb0dcb1b2175a5ec91848178085c5890"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-flutter-catalogue.txt",
+      "bytes": 488,
+      "sha256": "26088732ce1667f30b651976c8f02eb340d7d8f471a91670c9d2180e1f76c6f4"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-flutter-login.png",
+      "bytes": 315812,
+      "sha256": "ed0d3842bea7656d4392a4943f0bb728646a1b0ad83051034cfee06201e5b145"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-flutter-login.txt",
+      "bytes": 704,
+      "sha256": "ecd4c71b50f3eb90550c3108173d12723e4544c7b8b40af879668d756f81a9a7"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-react-clerk-cases.png",
+      "bytes": 132499,
+      "sha256": "b8cdf38b11632693bc02cd08efe94c3d3123367371c223ef0ce8e4a283b2c67b"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-react-clerk-cases.txt",
+      "bytes": 1067,
+      "sha256": "1cfdb738148ee13b8821e9e85a439051861c524db37700fe71d3ec06a282b1ce"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-react-clerk-review.png",
+      "bytes": 174878,
+      "sha256": "b838171693938d456486ab729e791095ee992703be6b63b25cbdc317df98555c"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-react-clerk-review.txt",
+      "bytes": 1839,
+      "sha256": "2db366293d92748efff3eebd6e691f754521b2f7ddc10a457bcb9b77526d7530"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-ui-assigned-http.json",
+      "bytes": 7559,
+      "sha256": "ab236df7c17bca5858c74fbbe5c0e9a6fb4435aadc404f542468f9f51aef6e0e"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-ui-assigned-steps.json",
+      "bytes": 5484,
+      "sha256": "58377945a79128eea65902821a0efd825d6519ec1ebd0cc0134dd0d5f6592c25"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-ui-http.json",
+      "bytes": 6278,
+      "sha256": "19b53a9e7abd81e91d0382bdb1d73ac7096fb76372b0ae1c63774e1fcd5ee953"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/real-ui-steps.json",
+      "bytes": 3202,
+      "sha256": "7031b15d868f0077599fa5d410e66a781132414b54ffa633497d676e516b6d13"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/restore-offline.log",
+      "bytes": 364,
+      "sha256": "787d8d40ff4611b652055ef1cd8cddc575f3be106f97f29caf203c1124b22d4e"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/setup.json",
+      "bytes": 2702,
+      "sha256": "f10924f033546658121c15810b95cd5b440c3ccd323bddefb8d018a3d4e6945e"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/synthetic-two-mib.pdf",
+      "bytes": 2097152,
+      "sha256": "901e1f09ec2037a16bb7fc2527ecad96dcd4fe3198a6d739f3f7577ad6f3a344"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/timezone-conflict.json",
+      "bytes": 1606,
+      "sha256": "af881d337f8962f219cdfe06f58f18ddd88062811d644cd9aa710d6f81552a03"
+    },
+    {
+      "path": "qmse-output/historical-resolution/evidence/workforce-snapshot.json",
+      "bytes": 4045,
+      "sha256": "7625086095d61c08328081d7aa8daaee50dfab444a2c0a8b5c2ed895222f03a0"
+    },
+    {
+      "path": "qmse-output/historical-resolution/final-report/SE3110_Testing_Report_GR42_Historical_Verification.docx",
+      "bytes": 7431048,
+      "sha256": "565b1e067e102e093cf3189cb9bbafb7dadd2509df421e672b33b77f0f480a7a"
+    },
+    {
+      "path": "qmse-output/historical-resolution/final-report/SE3110_Testing_Report_GR42_Historical_Verification.pdf",
+      "bytes": 7575310,
+      "sha256": "0fdad08fc1c41594a666165d610ac2c2869add699cad467bfa0a38797237b559"
+    },
+    {
+      "path": "qmse-output/historical-resolution/source-snapshot/ai-service/tests/test_historical_acceptance.py",
+      "bytes": 3012,
+      "sha256": "efd570d06818bd4c673a90bfd2afaea6a90416ae022a1350592988df153ee53d"
+    },
+    {
+      "path": "qmse-output/historical-resolution/source-snapshot/backend/LegalService.Tests/HistoricalCaseVerificationTests.cs",
+      "bytes": 4603,
+      "sha256": "9faab0522e8790529c3f68f4ee7d2bb314bd190cd0a6a281d76aa01040f62f07"
+    },
+    {
+      "path": "qmse-output/historical-resolution/source-snapshot/backend/LegalService.Tests/historical_api_replay.py",
+      "bytes": 15882,
+      "sha256": "3015ae5252a1f2e6934fc20d21cec8caa438e2714b2cdc0d8d6b8454deee649f"
+    },
+    {
+      "path": "qmse-output/historical-resolution/source-snapshot/frontend/historical.playwright.config.ts",
+      "bytes": 232,
+      "sha256": "be1ed7204dcc5e4f064ff554ec74f4525e09b66838175e232f62dd9fa3c52a4b"
+    },
+    {
+      "path": "qmse-output/historical-resolution/source-snapshot/frontend/tests/historical-acceptance.spec.ts",
+      "bytes": 9312,
+      "sha256": "1ee6b571711445fce0e20955e4da8613f045aaf3370c324cf4feb6b46da8af0a"
+    },
+    {
+      "path": "qmse-output/historical-resolution/source-snapshot/mobile/test/historical_cases_test.dart",
+      "bytes": 4045,
+      "sha256": "9a5ad0fa8dd54c966c9fd88c5dda834754ad183a7ff5dea2c598618185a2116d"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/ai-historical.json",
+      "bytes": 582,
+      "sha256": "ffa1f73db7d75c49eb74eafe7624538e25aa504f25cbef7497485d4b14d46fb9"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/ai-retrieval.json",
+      "bytes": 581,
+      "sha256": "df77a609fb7aafa37ca7ca4092e2d79e811dfb13d20331ce968c504af1bd85a0"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/api-cases.json",
+      "bytes": 21680,
+      "sha256": "77df65cda41db691512c74f33849cb3468104d5317f17432a563d57978e6e813"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/case-verification.json",
+      "bytes": 134625,
+      "sha256": "2872636c910544ac24395e9877443b7a6528992fcec7302d64bf8af9a7d78ba9"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/ef-duplicate.json",
+      "bytes": 699,
+      "sha256": "f49e57c061838ef5cdd9b96461199fb59c78ca0c872ebc9b991b2dbcc0509c46"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/execution-summary.md",
+      "bytes": 26221,
+      "sha256": "35533af641e0fb1463da2a5592232269e088800c3a11005bc550c69774726081"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/flutter-build.json",
+      "bytes": 649,
+      "sha256": "388e98d008ce71b3d3a73fb8d7960eea99ae50868779d79434a20bc8b72a6a16"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/flutter-historical-final.json",
+      "bytes": 632,
+      "sha256": "4a79dac2af3fed2b78e3798794c0343ef8a92cf4cf9154d84aecb842cb4fac3b"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/flutter-historical-retry.json",
+      "bytes": 632,
+      "sha256": "17867601bead48405536c7f9d149f7ec6e6a17210b13b536c9ef7b3e2d69f4cb"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/flutter-historical.json",
+      "bytes": 626,
+      "sha256": "e13250693cba3f3bfdf2cec2eb19c2c86bdae637fa65f5760d031541385f479f"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/historical-api.json",
+      "bytes": 484,
+      "sha256": "d83ca086d487edd8c51df7e4589da9da83458eb86ef1d3ae69461ca9ad3346d7"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/migrate.json",
+      "bytes": 548,
+      "sha256": "04c3929ab44ae5badb434c8e71dde8aba7a602cbf18678462b6ec159b43360ee"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/new-case-verification.json",
+      "bytes": 94612,
+      "sha256": "e7bdfe9b339c63f34da9dc73ac8aeba8bc6b430435057cdbe23339338b78aaf0"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/password-cost.json",
+      "bytes": 703,
+      "sha256": "5690e7161078ea58368f08279a08e8b65b9c21ff44cb0a923bdf17600620f192"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/password-retry.json",
+      "bytes": 699,
+      "sha256": "ac3b8d6b6ff155cdad06f91c4f6b436e476c243d9d2f4d8e747f2202431059b3"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/password.json",
+      "bytes": 672,
+      "sha256": "04110ce98f232db34c36a87f8d904fb1a41fe0727c46ad44434850fc20d90745"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/playwright-historical-final.json",
+      "bytes": 532,
+      "sha256": "6bc912cf7b0f6f7e408c91ed30bbae5222027adc709aee00490194cbb0eab874"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/playwright-historical.json",
+      "bytes": 526,
+      "sha256": "114a2b591ef42664302b6413fa8eb992e6cad773e286fd4694941a5553ef0056"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/playwright-isolated.json",
+      "bytes": 501,
+      "sha256": "ce22e0e746fe32e3e8499c53c99676fb607564b2e8d750562212f4875f6051e0"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/playwright-no-slot.json",
+      "bytes": 529,
+      "sha256": "786ab891a531d4b0dd9b99175f1a91ebaaa4efd9ebdc85078bc27e7556499406"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/playwright-replay.json",
+      "bytes": 499,
+      "sha256": "7fb192c802b74ad79aae762ecb5f6dcc054c0108bad9b0b734c8370b3171e4ef"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/postgres-setup.json",
+      "bytes": 702,
+      "sha256": "e42c8cfe030052db493791affde68b9d52f2d2677b30f2315f903afbb0d69371"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/restore-offline.json",
+      "bytes": 563,
+      "sha256": "c3b716efb2e02e29a77882e06e8817d4552d278bfef2bda29b54e1d0b0cc1818"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/summary.json",
+      "bytes": 1206,
+      "sha256": "6334f096702e4ba1829a3ace2e89283ecdfedf3964ceeae9867fe888dd74dc6e"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/ui-cases-isolated-attempt.json",
+      "bytes": 7557,
+      "sha256": "76657955467cfc5e0265195c6b0e55d586414aa490166de66739d0d35be0bd38"
+    },
+    {
+      "path": "qmse-output/historical-resolution/test-results/ui-cases.json",
+      "bytes": 8489,
+      "sha256": "b7720f66d4427d694c9a790afa5084cff954f919b9e052f205a24fa6b3c24f1a"
+    }
+  ]
+}

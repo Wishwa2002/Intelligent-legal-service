@@ -1,0 +1,102 @@
+[
+  {
+    "reported_commit": "0958d69",
+    "exists": true,
+    "record": "0958d69|2026-10-05T09:59:05+05:30|Jeyamdev|Fix Mobile CI missing env asset"
+  },
+  {
+    "reported_commit": "b082f54",
+    "exists": true,
+    "record": "b082f54|2026-10-05T09:48:02+05:30|Jeyamdev|feat(member1): integrate lawyer mobile, matching, and workforce refinements"
+  },
+  {
+    "reported_commit": "0548fd5",
+    "exists": true,
+    "record": "0548fd5|2026-10-04T17:10:08+05:30|Jeyamdev|feat(member1): add recurring scheduling and workforce intelligence"
+  },
+  {
+    "reported_commit": "5269539",
+    "exists": true,
+    "record": "5269539|2026-10-03T19:00:11+05:30|Jeyamdev|fix(mobile): resolve Flutter analyzer issues"
+  },
+  {
+    "reported_commit": "ac62bb7",
+    "exists": true,
+    "record": "ac62bb7|2026-10-03T18:59:39+05:30|Jeyamdev|fix(member1): persist lawyer user links and schema migrations"
+  },
+  {
+    "reported_commit": "2c0c4e5",
+    "exists": true,
+    "record": "2c0c4e5|2026-09-26T16:12:35+05:30|yhprasad|feat: implement lawyer category management and intelligent agentic scheduling assistant"
+  },
+  {
+    "reported_commit": "07af04e",
+    "exists": true,
+    "record": "07af04e|2026-09-23T07:02:00+05:30|yhprasad|feat: complete Member 2 booking management, careers redesign, and mobile website parity"
+  },
+  {
+    "reported_commit": "4bec10d",
+    "exists": true,
+    "record": "4bec10d|2026-09-23T03:14:27+05:30|yhprasad|feat(auth): add one-click demo credentials and active session controls to staff login"
+  },
+  {
+    "reported_commit": "327bebf",
+    "exists": true,
+    "record": "327bebf|2026-09-23T03:06:20+05:30|yhprasad|fix(auth): prevent auto-redirect loop on login page and add admin logout button"
+  },
+  {
+    "reported_commit": "241db17",
+    "exists": true,
+    "record": "241db17|2026-09-23T03:02:02+05:30|yhprasad|fix(frontend): resolve localhost IPv6 connection refused issue and persist auth token"
+  },
+  {
+    "reported_commit": "fb2513c",
+    "exists": true,
+    "record": "fb2513c|2026-09-28T11:30:16+05:30|VTN02|fix(auth): seed and support demo admin and clerk login accounts and credentials"
+  },
+  {
+    "reported_commit": "44f3f25",
+    "exists": true,
+    "record": "44f3f25|2026-09-27T22:53:32+05:30|VTN02|feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview"
+  },
+  {
+    "reported_commit": "0fa6592",
+    "exists": true,
+    "record": "0fa6592|2026-09-27T22:53:32+05:30|VTN02|feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview"
+  },
+  {
+    "reported_commit": "dfc95af",
+    "exists": true,
+    "record": "dfc95af|2026-09-27T22:28:59+05:30|VTN02|refactor(mobile): restore CommonAiScreen to bottom nav tab 1 and isolate Document Agent exclusively within Documents catalog"
+  },
+  {
+    "reported_commit": "587e892",
+    "exists": true,
+    "record": "587e892|2026-09-27T22:17:35+05:30|VTN02|fix(backend): seed all 12 documentation services on startup so Document Agent operates correctly"
+  },
+  {
+    "reported_commit": "ee78a38",
+    "exists": true,
+    "record": "ee78a38|2026-09-30T22:20:25+05:30|Wishwa|Fix flutter env configuration"
+  },
+  {
+    "reported_commit": "7cdbb89",
+    "exists": true,
+    "record": "7cdbb89|2026-09-30T22:07:15+05:30|Wishwa|Fix flutter analyzer issues and improve authentication flow"
+  },
+  {
+    "reported_commit": "9579cee",
+    "exists": true,
+    "record": "9579cee|2026-09-30T21:35:56+05:30|Wishwa|Fix authentication security, validation and health check flow"
+  },
+  {
+    "reported_commit": "3ff0d2a",
+    "exists": true,
+    "record": "3ff0d2a|2026-09-29T20:19:14+05:30|Wishwa|Fix frontend auth tests and lawyer dashboard flows"
+  },
+  {
+    "reported_commit": "4dc9a15",
+    "exists": true,
+    "record": "4dc9a15|2026-09-29T19:50:40+05:30|Wishwa|test: update lawyer management playwright tests for unified auth"
+  }
+]

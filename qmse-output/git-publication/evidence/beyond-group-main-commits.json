@@ -1,0 +1,749 @@
+[
+  {
+    "sha": "05359214df52fa743b234e1d77e6671f57c14dea",
+    "author_date": "2026-10-08T11:00:40+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-08T11:00:40+05:30",
+    "committer": "Jeyamdev",
+    "subject": "Preserve executed isolated QMSE workflow, security and performance scripts"
+  },
+  {
+    "sha": "f360e4ac21f149ae5b90a125c57bf928982a9c53",
+    "author_date": "2026-10-08T10:42:35+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-08T10:42:35+05:30",
+    "committer": "Jeyamdev",
+    "subject": "Fix validated uploads and integrated clerk workflow; add QMSE regression evidence tests"
+  },
+  {
+    "sha": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+    "author_date": "2026-10-06T04:36:33+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-06T04:36:33+05:30",
+    "committer": "Jeyamdev",
+    "subject": "fix(mobile): satisfy Flutter analyzer lint rules"
+  },
+  {
+    "sha": "6d982e60aa65af54d39d0beac4f527abcd785820",
+    "author_date": "2026-10-06T03:57:54+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-06T03:57:54+05:30",
+    "committer": "Jeyamdev",
+    "subject": "fix(deployment): resolve deployment verification issues"
+  },
+  {
+    "sha": "b3fbbfb8c2c137244bf8ded165d63968b6b4a51f",
+    "author_date": "2026-10-06T03:30:10+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-06T03:30:10+05:30",
+    "committer": "Jeyamdev",
+    "subject": "chore(deployment): prepare application for cloud deployment"
+  },
+  {
+    "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+    "author_date": "2026-10-05T11:08:54+05:30",
+    "author": "Jeyashankar Jegatheeswaran",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-05T11:08:54+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #30 from Wishwa2002/feature/member1-lawyer-management"
+  },
+  {
+    "sha": "0958d693cba812bf493d38024bc8eb7a79ab4fb9",
+    "author_date": "2026-10-05T09:59:05+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-05T09:59:05+05:30",
+    "committer": "Jeyamdev",
+    "subject": "Fix Mobile CI missing env asset"
+  },
+  {
+    "sha": "b082f54790a0ea5f99db9b31df532d56433319c5",
+    "author_date": "2026-10-05T09:48:02+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-05T09:48:02+05:30",
+    "committer": "Jeyamdev",
+    "subject": "feat(member1): integrate lawyer mobile, matching, and workforce refinements"
+  },
+  {
+    "sha": "0548fd56382f97d2ff934ec031339347db825421",
+    "author_date": "2026-10-04T17:10:08+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-04T17:10:08+05:30",
+    "committer": "Jeyamdev",
+    "subject": "feat(member1): add recurring scheduling and workforce intelligence"
+  },
+  {
+    "sha": "03d93277a2c8cc7cfc6f1f8832d611cba2327773",
+    "author_date": "2026-10-03T20:38:29+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-10-03T20:38:29+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #28 from Wishwa2002/feature/member1-lawyer-management"
+  },
+  {
+    "sha": "5269539890d2654ab965f051a9ca04f26f27defc",
+    "author_date": "2026-10-03T19:00:11+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-03T19:00:11+05:30",
+    "committer": "Jeyamdev",
+    "subject": "fix(mobile): resolve Flutter analyzer issues"
+  },
+  {
+    "sha": "ac62bb76cb5ac2d796f5c61cb17aa379d990c397",
+    "author_date": "2026-10-03T18:59:39+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-03T18:59:39+05:30",
+    "committer": "Jeyamdev",
+    "subject": "fix(member1): persist lawyer user links and schema migrations"
+  },
+  {
+    "sha": "fa1e43f495234bba53c49ca568a277a8d3d940e3",
+    "author_date": "2026-10-03T18:47:13+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-03T18:47:13+05:30",
+    "committer": "Jeyamdev",
+    "subject": "fix(frontend): enable Playwright CI test script"
+  },
+  {
+    "sha": "8419c4f3ed3d06c2b5586d9afda0b81264f47255",
+    "author_date": "2026-10-03T07:33:28+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-03T07:33:28+05:30",
+    "committer": "Jeyamdev",
+    "subject": "Merge origin/develop into member1 lawyer management"
+  },
+  {
+    "sha": "b431f3bca0349bed60fe1c47f59ca506d1e36389",
+    "author_date": "2026-10-03T06:12:03+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-10-03T06:12:03+05:30",
+    "committer": "Jeyamdev",
+    "subject": "chore: checkpoint member1 work before develop merge"
+  },
+  {
+    "sha": "c5f82b305963a373b529d13e1dc45d30242752b6",
+    "author_date": "2026-09-30T22:22:36+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-09-30T22:22:36+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #27 from Wishwa2002/fix/unified-staff-auth"
+  },
+  {
+    "sha": "ee78a38117d40f77be9a55cb3d18ff778d097e20",
+    "author_date": "2026-09-30T22:20:25+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-30T22:20:25+05:30",
+    "committer": "Wishwa",
+    "subject": "Fix flutter env configuration"
+  },
+  {
+    "sha": "7cdbb89d93f342fc1297c3a14b04a15a34b51a02",
+    "author_date": "2026-09-30T22:07:15+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-30T22:07:15+05:30",
+    "committer": "Wishwa",
+    "subject": "Fix flutter analyzer issues and improve authentication flow"
+  },
+  {
+    "sha": "9579cee66b199a23ddd7f4ec0154795db6602057",
+    "author_date": "2026-09-30T21:35:56+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-30T21:35:56+05:30",
+    "committer": "Wishwa",
+    "subject": "Fix authentication security, validation and health check flow"
+  },
+  {
+    "sha": "4fccbf3c585ad76114058e25ea216f5c17f4274a",
+    "author_date": "2026-09-29T20:21:11+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-09-29T20:21:11+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #24 from Wishwa2002/fix/unified-staff-auth"
+  },
+  {
+    "sha": "3ff0d2a0d481a6a26aff316a59b0d6789f00bb43",
+    "author_date": "2026-09-29T20:19:14+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-29T20:19:14+05:30",
+    "committer": "Wishwa",
+    "subject": "Fix frontend auth tests and lawyer dashboard flows"
+  },
+  {
+    "sha": "4dc9a150ccbafc51838711fd4b800c799024a18d",
+    "author_date": "2026-09-29T19:50:40+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-29T19:50:40+05:30",
+    "committer": "Wishwa",
+    "subject": "test: update lawyer management playwright tests for unified auth"
+  },
+  {
+    "sha": "c90ff1ae77eb0443d6cd603ea20745991a7a856e",
+    "author_date": "2026-09-29T18:33:35+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-29T18:33:35+05:30",
+    "committer": "Wishwa",
+    "subject": "fix: resolve frontend build errors"
+  },
+  {
+    "sha": "2d604fc6d2dec254ab8e93f4a2cf67d5ac5e7c03",
+    "author_date": "2026-09-29T18:18:24+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-29T18:18:24+05:30",
+    "committer": "Wishwa",
+    "subject": "fix(auth): unify staff authentication flow"
+  },
+  {
+    "sha": "3f62f577a1f594b44cf6917936d82a5b89276765",
+    "author_date": "2026-09-29T00:48:50+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-09-29T00:48:50+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #22 from Wishwa2002/feature/mobile-ci"
+  },
+  {
+    "sha": "791afa7b9bb36e1d626eba380911f29628db6602",
+    "author_date": "2026-09-29T00:45:38+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-29T00:45:38+05:30",
+    "committer": "Wishwa",
+    "subject": "Add mobile CI workflow"
+  },
+  {
+    "sha": "b5ad40427a790d15c80e63e50a43cfb61b3f2ad7",
+    "author_date": "2026-09-29T00:40:10+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-09-29T00:40:10+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #21 from Wishwa2002/feature/frontend-ci"
+  },
+  {
+    "sha": "89db933f6ed51708a810fdd07e34357e703199b9",
+    "author_date": "2026-09-29T00:38:35+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-29T00:38:35+05:30",
+    "committer": "Wishwa",
+    "subject": "Stabilize lawyer management Playwright test"
+  },
+  {
+    "sha": "20e0b61c2559f1a60c3d60385f00dd553c04d778",
+    "author_date": "2026-09-28T23:36:22+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-28T23:36:22+05:30",
+    "committer": "Wishwa",
+    "subject": "Add frontend CI workflow"
+  },
+  {
+    "sha": "e9b711a64360dfa5249516bafc3a039aaf201ac1",
+    "author_date": "2026-09-28T23:08:28+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-09-28T23:08:28+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #20 from Wishwa2002/feature/cicd-setup"
+  },
+  {
+    "sha": "d08deddbb0a62487ecdc870333ddf536455c4318",
+    "author_date": "2026-09-28T23:04:36+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-28T23:04:36+05:30",
+    "committer": "Wishwa",
+    "subject": "Add backend CI workflow"
+  },
+  {
+    "sha": "fb2513ccdabf14efddb6af484bc6ce76dd382de7",
+    "author_date": "2026-09-28T11:30:16+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-28T11:30:16+05:30",
+    "committer": "VTN02",
+    "subject": "fix(auth): seed and support demo admin and clerk login accounts and credentials"
+  },
+  {
+    "sha": "097ab397aac062b9d78182b00980c1ac9d1c4148",
+    "author_date": "2026-09-28T03:55:54+05:30",
+    "author": "Jeyamdev",
+    "author_email": "186163689+Jeyamdev@users.noreply.github.com",
+    "committer_date": "2026-09-28T03:55:54+05:30",
+    "committer": "Jeyamdev",
+    "subject": "Complete Member 1 lawyer management requirements"
+  },
+  {
+    "sha": "e59655794daf3ccf9c151b0aef35bf9e4c0c77c6",
+    "author_date": "2026-09-28T00:36:15+05:30",
+    "author": "Jegatheeswaran Jeyashankar",
+    "author_email": "jeyam@Jegatheeswarans-MacBook-Air.local",
+    "committer_date": "2026-09-28T00:36:15+05:30",
+    "committer": "Jegatheeswaran Jeyashankar",
+    "subject": "Merge remote-tracking branch 'origin/develop' into feature/member1-lawyer-management"
+  },
+  {
+    "sha": "1d6e7aea88e79a9d5777accb29b831edc6c94c91",
+    "author_date": "2026-09-28T00:24:37+05:30",
+    "author": "Jegatheeswaran Jeyashankar",
+    "author_email": "jeyam@Jegatheeswarans-MacBook-Air.local",
+    "committer_date": "2026-09-28T00:24:37+05:30",
+    "committer": "Jegatheeswaran Jeyashankar",
+    "subject": "Add opt-in synthetic lawyer demo seeder"
+  },
+  {
+    "sha": "74838ad3e8c7ee6378d6a453e9076dde8a2bc931",
+    "author_date": "2026-09-27T23:51:49+05:30",
+    "author": "Jegatheeswaran Jeyashankar",
+    "author_email": "jeyam@Jegatheeswarans-MacBook-Air.local",
+    "committer_date": "2026-09-27T23:51:49+05:30",
+    "committer": "Jegatheeswaran Jeyashankar",
+    "subject": "Load local Gemini config and fix structured classification schema"
+  },
+  {
+    "sha": "3a4ccd13c4da457335331ff5269c3aab69f2a89a",
+    "author_date": "2026-09-27T23:32:08+05:30",
+    "author": "Jegatheeswaran Jeyashankar",
+    "author_email": "jeyam@Jegatheeswarans-MacBook-Air.local",
+    "committer_date": "2026-09-27T23:32:08+05:30",
+    "committer": "Jegatheeswaran Jeyashankar",
+    "subject": "Document reachable local service ports"
+  },
+  {
+    "sha": "e77187ad0298d8e2944856b9d62183adc14882d4",
+    "author_date": "2026-09-27T23:30:22+05:30",
+    "author": "Jegatheeswaran Jeyashankar",
+    "author_email": "jeyam@Jegatheeswarans-MacBook-Air.local",
+    "committer_date": "2026-09-27T23:30:22+05:30",
+    "committer": "Jegatheeswaran Jeyashankar",
+    "subject": "Add Gemini-grounded lawyer recommendation approval workflow"
+  },
+  {
+    "sha": "d50b6b747f115470d15d37c4a715eb7ea6e074b0",
+    "author_date": "2026-09-27T23:00:10+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-27T23:00:10+05:30",
+    "committer": "VTN02",
+    "subject": "Merge branch 'Document-&-Cleark' into develop"
+  },
+  {
+    "sha": "44f3f25ac0ac15162d0cee63844bafd532ad4820",
+    "author_date": "2026-09-27T22:53:32+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-27T22:54:44+05:30",
+    "committer": "VTN02",
+    "subject": "feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview"
+  },
+  {
+    "sha": "0fa659281d04e14cf054676985fcacf0e50baee3",
+    "author_date": "2026-09-27T22:53:32+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-27T22:53:32+05:30",
+    "committer": "VTN02",
+    "subject": "feat(document-clerk): add direct manual Create Request button with service dropdown and checklist preview"
+  },
+  {
+    "sha": "dfc95afca299cb55ce360badd2ffe9f4d9398db1",
+    "author_date": "2026-09-27T22:28:59+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-27T22:28:59+05:30",
+    "committer": "VTN02",
+    "subject": "refactor(mobile): restore CommonAiScreen to bottom nav tab 1 and isolate Document Agent exclusively within Documents catalog"
+  },
+  {
+    "sha": "587e89241ccdcc7e413d5bbaa9f90c98970e6da7",
+    "author_date": "2026-09-27T22:17:35+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-27T22:17:35+05:30",
+    "committer": "VTN02",
+    "subject": "fix(backend): seed all 12 documentation services on startup so Document Agent operates correctly"
+  },
+  {
+    "sha": "72676f147210f677582434e852db588f6d467298",
+    "author_date": "2026-09-27T21:37:28+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-27T21:37:28+05:30",
+    "committer": "VTN02",
+    "subject": "fix(mobile): ensure suggestion chips and upload action buttons render dynamically"
+  },
+  {
+    "sha": "49ba88105965ff22074a8f06e1a07be11883f866",
+    "author_date": "2026-09-27T21:25:44+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-27T21:25:44+05:30",
+    "committer": "VTN02",
+    "subject": "feat(mobile): restore Document Agent as primary AI assistant and link scheduling agent"
+  },
+  {
+    "sha": "a2445c3a9fe6ff5840926fbb8f594cf650684c7d",
+    "author_date": "2026-09-27T17:20:24+05:30",
+    "author": "Jegatheeswaran Jeyashankar",
+    "author_email": "jeyam@Jegatheeswarans-MacBook-Air.local",
+    "committer_date": "2026-09-27T17:20:24+05:30",
+    "committer": "Jegatheeswaran Jeyashankar",
+    "subject": "Keep develop lawyer management with integrated recommendations"
+  },
+  {
+    "sha": "b740028ebd26fbe1aeb14e3209791148e1ea446e",
+    "author_date": "2026-09-27T11:13:13+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-09-27T11:13:13+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #17 from Wishwa2002/feature/member1-lawyer-management"
+  },
+  {
+    "sha": "1189aa0e8334cc252c6b14c78e0915f73665fdf0",
+    "author_date": "2026-09-27T05:01:46+05:30",
+    "author": "Jegatheeswaran Jeyashankar",
+    "author_email": "jeyam@Jegatheeswarans-MacBook-Air.local",
+    "committer_date": "2026-09-27T05:01:46+05:30",
+    "committer": "Jegatheeswaran Jeyashankar",
+    "subject": "Integrate member1 lawyer management with develop while preserving team routes"
+  },
+  {
+    "sha": "74200003dd5fe7239909dc1311005f6c17d51056",
+    "author_date": "2026-09-26T16:19:38+05:30",
+    "author": "yh prasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-26T16:19:38+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #16 from Wishwa2002/feature/booking_appointment_management"
+  },
+  {
+    "sha": "2c0c4e5c20e63fb01bb64a5a4f8707ee2af79a21",
+    "author_date": "2026-09-26T16:12:35+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-26T16:12:35+05:30",
+    "committer": "yhprasad",
+    "subject": "feat: implement lawyer category management and intelligent agentic scheduling assistant"
+  },
+  {
+    "sha": "77be9ed31f573b913af680743a98036994bbdec6",
+    "author_date": "2026-09-26T11:40:09+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-26T11:40:09+05:30",
+    "committer": "VTN02",
+    "subject": "Merge branch 'Document-&-Cleark' into develop"
+  },
+  {
+    "sha": "d8d2dc8767c7d28637311f25d748b5238c485eb2",
+    "author_date": "2026-09-26T11:39:45+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-26T11:39:45+05:30",
+    "committer": "VTN02",
+    "subject": "feat(document-clerk): update Document Agent branding, clean catalog view, and optimize network connection"
+  },
+  {
+    "sha": "38c3cf84f8918f420f01f91931d4163dce911789",
+    "author_date": "2026-09-26T11:37:58+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-26T11:37:58+05:30",
+    "committer": "VTN02",
+    "subject": "feat(mobile): integrate 4-member hub, common AI agent, unified requests, and document agent"
+  },
+  {
+    "sha": "0075ed8f883f4f1a19913eb4c40e739f10e1f5be",
+    "author_date": "2026-09-26T10:17:58+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-26T10:17:58+05:30",
+    "committer": "VTN02",
+    "subject": "Merge branch 'Document-&-Cleark' into develop"
+  },
+  {
+    "sha": "7ee705fb1b6f780134d819a5e6d18050468e287a",
+    "author_date": "2026-09-25T14:48:34+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-25T14:48:34+05:30",
+    "committer": "Wishwa",
+    "subject": "Merge branch 'develop' of https://github.com/Wishwa2002/Intelligent-legal-service into develop"
+  },
+  {
+    "sha": "1dd0a4a50842b9906886c3b38b9a566a8dd68682",
+    "author_date": "2026-09-25T14:48:28+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-25T14:48:28+05:30",
+    "committer": "Wishwa",
+    "subject": "Update AdminLayout component"
+  },
+  {
+    "sha": "ff819c5a44a3793e8ef03400390ba25d1f73864b",
+    "author_date": "2026-09-23T18:46:36+05:30",
+    "author": "yh prasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T18:46:36+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #13 from Wishwa2002/feature/booking_appointment_management"
+  },
+  {
+    "sha": "b59f686be71fe316adec84ccac225ef8cd8cafae",
+    "author_date": "2026-09-23T13:08:46+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-23T13:08:46+05:30",
+    "committer": "VTN02",
+    "subject": "feat: add comprehensive sample documents for all 12 services and fix Swagger schema upload"
+  },
+  {
+    "sha": "07af04ef2f8e6ec5c81ff0bbc7297478426de534",
+    "author_date": "2026-09-23T07:02:00+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T07:02:00+05:30",
+    "committer": "yhprasad",
+    "subject": "feat: complete Member 2 booking management, careers redesign, and mobile website parity"
+  },
+  {
+    "sha": "4bec10d16f694a50adade0010baedfd691803920",
+    "author_date": "2026-09-23T03:14:27+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T03:14:27+05:30",
+    "committer": "yhprasad",
+    "subject": "feat(auth): add one-click demo credentials and active session controls to staff login"
+  },
+  {
+    "sha": "327bebf3aa26ba5fed62a57865ec07c547f0bbce",
+    "author_date": "2026-09-23T03:06:20+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T03:06:20+05:30",
+    "committer": "yhprasad",
+    "subject": "fix(auth): prevent auto-redirect loop on login page and add admin logout button"
+  },
+  {
+    "sha": "241db17236246fd2a7718b398728a82a5fe0f937",
+    "author_date": "2026-09-23T03:02:02+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T03:02:02+05:30",
+    "committer": "yhprasad",
+    "subject": "fix(frontend): resolve localhost IPv6 connection refused issue and persist auth token"
+  },
+  {
+    "sha": "545c542c24b74bcb899452b1ac253c05d246d07e",
+    "author_date": "2026-09-23T02:44:48+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T02:44:48+05:30",
+    "committer": "yhprasad",
+    "subject": "fix(mobile): resolve FilePicker api compatibility and setup flutter configuration"
+  },
+  {
+    "sha": "d461a8407971eeb7e2349f6ccf5cb8f6150a22be",
+    "author_date": "2026-09-23T02:32:18+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T02:32:18+05:30",
+    "committer": "yhprasad",
+    "subject": "feat(appointments): implement booking APIs, conflict detection, and status transitions"
+  },
+  {
+    "sha": "2ca3197c2bc9b45b9c7f1e5f5363c32205ad590c",
+    "author_date": "2026-09-23T02:18:35+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T02:18:35+05:30",
+    "committer": "yhprasad",
+    "subject": "fix(tests): align ServiceRequestServiceTests customer and admin IDs with int schema"
+  },
+  {
+    "sha": "d3287c5fabba7c43fc031867c750f0c828506e19",
+    "author_date": "2026-09-23T02:06:18+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T02:06:18+05:30",
+    "committer": "yhprasad",
+    "subject": "Merge remote-tracking branch 'origin/develop' into feature/booking_appointment_management"
+  },
+  {
+    "sha": "e17ec461e04ddbae0f4152199ff1cfeb9ad17a3a",
+    "author_date": "2026-09-23T02:05:36+05:30",
+    "author": "yhprasad",
+    "author_email": "yhprasadhew@gmail.com",
+    "committer_date": "2026-09-23T02:05:36+05:30",
+    "committer": "yhprasad",
+    "subject": "feat(frontend): integrate lucide-react logo, careers nav link, and hero section showcase"
+  },
+  {
+    "sha": "2bd291946c839879cb3ed6fe86cc5868c7fe54f8",
+    "author_date": "2026-09-22T19:45:28+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-09-22T19:45:28+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #12 from Wishwa2002/feature/admin-auth"
+  },
+  {
+    "sha": "43f6345d8cdd3158e5ecf51d124dcfab869261c9",
+    "author_date": "2026-09-22T19:41:53+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-22T19:41:53+05:30",
+    "committer": "Wishwa",
+    "subject": "Implement JWT authentication and admin authorization"
+  },
+  {
+    "sha": "02213abebbe2f8e980b5e116aef9781c40c6d1a6",
+    "author_date": "2026-09-22T13:24:15+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-22T13:24:15+05:30",
+    "committer": "VTN02",
+    "subject": "feat(ui): elevate admin portal aesthetics, live real-time clock, and smooth scroll behavior"
+  },
+  {
+    "sha": "9eb92fe125101573cb823e5375eaef84eb7bfcb7",
+    "author_date": "2026-09-22T13:11:24+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-22T13:11:24+05:30",
+    "committer": "VTN02",
+    "subject": "fix(layout): lock side navigation to viewport so it does not scroll with page content"
+  },
+  {
+    "sha": "b5e9098f866c6059e4cc76ab811eb8d8956f5d70",
+    "author_date": "2026-09-22T13:07:40+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-22T13:07:40+05:30",
+    "committer": "VTN02",
+    "subject": "feat: make Client Conversation History a collapsible drop-down accordion"
+  },
+  {
+    "sha": "0b48617477af8f455ee3ff42e46f77b5ddf87268",
+    "author_date": "2026-09-22T12:51:40+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-22T12:51:40+05:30",
+    "committer": "VTN02",
+    "subject": "feat: add delete CRUD for clients, documentation requests, and document files with confirmation modals"
+  },
+  {
+    "sha": "308fe1cb3e82bccc09bd6fc03d6ee213d4a69c6e",
+    "author_date": "2026-09-22T12:36:56+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-22T12:36:56+05:30",
+    "committer": "VTN02",
+    "subject": "feat: add admin sign out button in AdminLayout header and sidebar"
+  },
+  {
+    "sha": "6064e480359919290bfc1a03851f313555aa27c0",
+    "author_date": "2026-09-22T12:31:46+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-22T12:31:46+05:30",
+    "committer": "VTN02",
+    "subject": "feat: add confirmation popup modal for activating and deactivating clerks"
+  },
+  {
+    "sha": "a8614a17ceada8371dffa1b89da2695689bdec58",
+    "author_date": "2026-09-22T12:25:15+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-22T12:25:15+05:30",
+    "committer": "VTN02",
+    "subject": "feat: send welcome credentials email when admin creates a new clerk"
+  },
+  {
+    "sha": "41a76a4f86b620613b9eaa9080eb7a778a751df0",
+    "author_date": "2026-09-22T12:17:36+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-22T12:17:36+05:30",
+    "committer": "VTN02",
+    "subject": "feat: add email notifications on status update and in-app request page notifications"
+  },
+  {
+    "sha": "930928719904f021b7254a90e5d565c4b2bcb2ad",
+    "author_date": "2026-09-19T18:02:11+05:30",
+    "author": "Wishwa",
+    "author_email": "jananawishwa69@gmail.com",
+    "committer_date": "2026-09-19T18:02:11+05:30",
+    "committer": "Wishwa",
+    "subject": "feat: add customer service request management pages"
+  },
+  {
+    "sha": "51e26c58535681ae129c4e32df69799dec6b62a9",
+    "author_date": "2026-09-17T15:16:07+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-09-17T15:16:07+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #10 from Wishwa2002/Document-&-Cleark"
+  },
+  {
+    "sha": "6b59d1903f83b8257ac913a692bc156ca7caa096",
+    "author_date": "2026-09-14T21:10:31+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-14T21:10:31+05:30",
+    "committer": "VTN02",
+    "subject": "feat: complete document and clerk workflows, AI validation agents, careers module, and client mobile features"
+  },
+  {
+    "sha": "907654a648810baa1b5558d3f6ce481c634eb094",
+    "author_date": "2026-09-14T20:55:18+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-14T20:55:18+05:30",
+    "committer": "VTN02",
+    "subject": "feat(auth): mobile client login, web staff portal login, and role-based route guards"
+  },
+  {
+    "sha": "a566efa7951fa06505fe4c943014826f3b796170",
+    "author_date": "2026-09-11T17:58:17+05:30",
+    "author": "VTN02",
+    "author_email": "vijayakumarvithusan2912@gmail.com",
+    "committer_date": "2026-09-11T17:58:17+05:30",
+    "committer": "VTN02",
+    "subject": "feat(document-clerk): implement Agentic AI document validation, mobile client, and clerk management"
+  },
+  {
+    "sha": "89fef31b0feed5e69a1c72ac0eb061e5ac491340",
+    "author_date": "2026-08-25T19:02:38+05:30",
+    "author": "Wishwa Wijayananda",
+    "author_email": "125870317+Wishwa2002@users.noreply.github.com",
+    "committer_date": "2026-08-25T19:02:38+05:30",
+    "committer": "GitHub",
+    "subject": "Merge pull request #7 from Wishwa2002/feature/database-setup"
+  }
+]

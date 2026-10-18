@@ -1,0 +1,4 @@
+START UTC 2026-10-08T03:14:02.513501+00:00
+COMMAND ['/private/tmp/qmse-flutter-source/bin/cache/dart-sdk/bin/dart', '/private/tmp/qmse-flutter-source/bin/cache/flutter_tools.snapshot', 'test', '--no-pub', '--machine']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service/mobile
+[1/9] Flutter SDK

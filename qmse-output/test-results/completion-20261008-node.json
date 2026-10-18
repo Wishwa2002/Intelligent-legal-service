@@ -1,0 +1,16 @@
+{
+  "name": "completion-20261008-node",
+  "command": [
+    "npm",
+    "run",
+    "test:member1"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T04:54:29.541421+00:00",
+  "ended_utc": "2026-10-08T04:54:30.846684+00:00",
+  "duration_seconds": 1.305,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-node.log"
+}

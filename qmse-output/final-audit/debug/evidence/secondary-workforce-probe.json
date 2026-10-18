@@ -1,0 +1,224 @@
+[
+  {
+    "executed_utc": "2026-10-08T12:33:02.308237+00:00",
+    "method": "POST",
+    "url": "http://127.0.0.1:55543/api/auth/login",
+    "inputs": {
+      "email": "qmse-history-admin@example.test",
+      "password": "[REDACTED]"
+    },
+    "http": 200,
+    "observed": {
+      "userId": 1,
+      "lawyerId": null,
+      "clerkId": null,
+      "name": "System Administrator",
+      "email": "qmse-history-admin@example.test",
+      "role": "Admin",
+      "department": null,
+      "contact": null,
+      "message": "Login successful"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:33:02.313911+00:00",
+    "method": "GET",
+    "url": "http://127.0.0.1:55545/health",
+    "inputs": null,
+    "http": 200,
+    "observed": {
+      "status": "ok"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:33:02.317463+00:00",
+    "method": "POST",
+    "url": "http://127.0.0.1:55545/lawyer-recommendations",
+    "inputs": {
+      "requirement": "Synthetic property dispute"
+    },
+    "http": 401,
+    "observed": {
+      "detail": "Internal authentication required"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:33:02.323794+00:00",
+    "method": "POST",
+    "url": "http://127.0.0.1:55545/lawyer-recommendations",
+    "inputs": {
+      "requirement": "Synthetic property dispute"
+    },
+    "http": 503,
+    "observed": {
+      "detail": "Requirement understanding is temporarily unavailable"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:33:02.327528+00:00",
+    "method": "GET",
+    "url": "http://127.0.0.1:55545/health",
+    "inputs": null,
+    "http": 200,
+    "observed": {
+      "status": "ok"
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:33:02.338704+00:00",
+    "method": "GET",
+    "url": "http://127.0.0.1:55543/api/workforce-analysis",
+    "inputs": null,
+    "http": 200,
+    "observed": {
+      "generatedAt": "2026-10-08T12:33:02.333227Z",
+      "recentWindowDays": 30,
+      "futureWindowDays": 30,
+      "practiceAreas": [
+        {
+          "practiceAreaId": 3,
+          "practiceAreaName": "Corporate & Commercial Law",
+          "activeLawyerCount": 4,
+          "legalServiceCount": 2,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 2,
+          "futureAvailableSlotCount": 230,
+          "openCareerOpeningCount": 1,
+          "status": "HEALTHY",
+          "reasons": [
+            "CAPACITY_WITHIN_CONFIGURED_RULES",
+            "RECRUITMENT_ALREADY_ACTIVE"
+          ],
+          "openings": [
+            {
+              "careerId": 1,
+              "jobTitle": "Senior Counsel"
+            }
+          ],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 1,
+          "practiceAreaName": "Criminal Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 1,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 5,
+          "practiceAreaName": "Labour & Employment Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 4,
+          "practiceAreaName": "Real Estate & Property Law",
+          "activeLawyerCount": 2,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "WATCH",
+          "reasons": [
+            "LOW_FUTURE_CAPACITY"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 6,
+          "practiceAreaName": "Tax Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        }
+      ],
+      "unmappedCareerOpeningCount": 0,
+      "limitations": [
+        "Requests are Admin recommendation workflows, not unique customer cases. Appointments are counted by creation date; current single-area membership maps them to an area.",
+        "Requests and appointments may overlap; assessment uses their maximum, not their sum. This is a capacity signal, not a forecast or proof that hiring is required.",
+        "Service-specific demand cannot be reliably identified in the existing persisted data.",
+        "Careers has no open/closed field: every existing Career record is treated as open. Unlinked postings require human review."
+      ]
+    }
+  },
+  {
+    "executed_utc": "2026-10-08T12:33:02.384177+00:00",
+    "method": "POST",
+    "url": "http://127.0.0.1:55543/api/workforce-analysis/suggestions",
+    "inputs": {
+      "practiceAreaId": 1
+    },
+    "http": 503,
+    "observed": {
+      "title": "AI hiring assistance is temporarily unavailable.",
+      "status": 503,
+      "traceId": "0HNP56V80VHBP:00000001",
+      "conflicts": null
+    }
+  }
+]

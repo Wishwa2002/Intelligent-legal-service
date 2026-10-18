@@ -1,0 +1,74 @@
+{
+  "status": 503,
+  "response": {
+    "title": "Requirement understanding is temporarily unavailable.",
+    "status": 503,
+    "traceId": "0HNP59K1M59GK:00000007",
+    "conflicts": null
+  },
+  "expected_practice_area": {
+    "specializationId": 4,
+    "name": "Real Estate & Property Law",
+    "description": "Land registry, real estate transactions, leases, partition actions, and title disputes.",
+    "lawyerCount": 0,
+    "activeLawyerCount": 0,
+    "legalServiceCount": 0
+  },
+  "seeded_lawyers": [
+    {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "name": "Synthetic C1 Lawyer 1",
+      "email": "qmse-c1-lawyer1@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 18,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-1",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 4,
+          "name": "Real Estate & Property Law",
+          "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+        }
+      ]
+    },
+    {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "name": "Synthetic C1 Lawyer 2",
+      "email": "qmse-c1-lawyer2@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 7,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-2",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 4,
+          "name": "Real Estate & Property Law",
+          "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+        }
+      ]
+    },
+    {
+      "lawyerId": "e6d916e6-f34e-467c-9681-a406483ef4e9",
+      "name": "Synthetic C1 Lawyer 3",
+      "email": "qmse-c1-lawyer3@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 25,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-3",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 1,
+          "name": "Criminal Law",
+          "description": "Defense and prosecutorial assistance in criminal litigation."
+        }
+      ]
+    }
+  ],
+  "historical_acceptance": "BLOCKED: >90% expert-labelled accuracy is not established by one synthetic current-contract execution"
+}

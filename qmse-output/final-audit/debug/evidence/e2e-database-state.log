@@ -1,0 +1,2 @@
+SQL: SELECT row_to_json(t) FROM (SELECT "RequestId","Status","CustomerId","ServiceId" FROM "DocumentationRequests" WHERE "RequestId"=2)t
+{"RequestId":2,"Status":"PENDING","CustomerId":3,"ServiceId":1}

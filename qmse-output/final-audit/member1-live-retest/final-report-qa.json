@@ -1,0 +1,23 @@
+{
+  "pages": 101,
+  "figures": 43,
+  "changed_pages": [
+    15,
+    29,
+    79,
+    80,
+    81,
+    84,
+    94
+  ],
+  "changed_pages_visually_inspected": true,
+  "unchanged_pages_byte_identical_to_prior_reviewed_render": true,
+  "heading_page_locations_unchanged": true,
+  "table_of_contents_page_locations_retained": true,
+  "existing_media_preserved": true,
+  "no_new_clipping_observed": true,
+  "final_pdf_copied_from_verified_render": true,
+  "docx_sha256": "b3ab9f73b4fef3429be5be0665123bc3b00317873fb57706b86786a17c5f1c0a",
+  "pdf_sha256": "b6d70c56b0cd4fc7c4dad9dd59052bc2617438f9ff8e8c58de79465c994acdfc",
+  "other_member_ledger_entries_unchanged": true
+}

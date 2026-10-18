@@ -1,0 +1,41 @@
+{
+  "area": {
+    "practiceAreaId": 4,
+    "practiceAreaName": "Real Estate & Property Law",
+    "activeLawyerCount": 2,
+    "legalServiceCount": 0,
+    "recentDemandCount": 20,
+    "recentAppointmentCount": 0,
+    "futureAvailableSlotCount": 16,
+    "openCareerOpeningCount": 0,
+    "status": "CAPACITY_CONCERN",
+    "reasons": [
+      "HIGH_DEMAND_LOW_AVAILABILITY"
+    ],
+    "openings": [],
+    "planningRules": {
+      "minimumActiveLawyers": 0,
+      "targetActiveLawyers": 0,
+      "minimumFutureSlots": 0,
+      "highDemandThreshold": 5,
+      "watchCapacityRatio": 0.75,
+      "source": "DEFAULT"
+    }
+  },
+  "independent_slot_total": 16,
+  "checks": {
+    "active_lawyers": true,
+    "demand_window": true,
+    "future_capacity": true,
+    "no_appointments_created": true,
+    "no_careers_published": true,
+    "headroom_proposal_disabled": true
+  },
+  "limitations": [
+    "Requests are Admin recommendation workflows, not unique customer cases. Appointments are counted by creation date; current single-area membership maps them to an area.",
+    "Requests and appointments may overlap; assessment uses their maximum, not their sum. This is a capacity signal, not a forecast or proof that hiring is required.",
+    "Service-specific demand cannot be reliably identified in the existing persisted data.",
+    "Careers has no open/closed field: every existing Career record is treated as open. Unlinked postings require human review."
+  ],
+  "historical_acceptance": "BLOCKED: retrospective counts and capacity assessment are not a validated predictive 30-day forecast"
+}

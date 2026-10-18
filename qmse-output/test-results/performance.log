@@ -1,0 +1,22 @@
+START UTC 2026-10-08T02:51:48.952689+00:00
+COMMAND ['/private/tmp/qmse-k6/k6-v2.3.0-macos-arm64/k6', 'run', '--out', 'json=qmse-output/evidence/performance/k6-raw.json', 'qmse-output/evidence/performance/local-smoke.k6.js']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+
+     execution: local
+        script: qmse-output/evidence/performance/local-smoke.k6.js
+        output: json (qmse-output/evidence/performance/k6-raw.json)
+
+     scenarios: (100.00%) 1 scenario, 2 max VUs, 40s max duration (incl. graceful stop):
+              * default: 2 looping VUs for 10s (gracefulStop: 30s)
+
+
+Run       [ 100% ] setup()
+default   [   0% ]
+time="2026-10-08T08:21:49+05:30" level=error msg="TypeError: Cannot read property '0' of undefined\n\tat setup (file:///Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/evidence/performance/local-smoke.k6.js:9:116(18))\n" hint="script exception" source=stacktrace

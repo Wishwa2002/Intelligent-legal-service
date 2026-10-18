@@ -1,0 +1,1590 @@
+[
+  {
+    "started_utc": "2026-10-08T15:06:05.926991+00:00",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "request": "[Authentication fields omitted]",
+    "status": 200,
+    "duration_seconds": 0.17667404102394357,
+    "response": "[Authentication response omitted]"
+  },
+  {
+    "started_utc": "2026-10-08T15:06:06.110422+00:00",
+    "method": "POST",
+    "path": "/api/auth/signup",
+    "request": "[Authentication fields omitted]",
+    "status": 200,
+    "duration_seconds": 0.18298433301970363,
+    "response": "[Authentication response omitted]"
+  },
+  {
+    "started_utc": "2026-10-08T15:06:06.194043+00:00",
+    "method": "GET",
+    "path": "/api/specializations",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.025893874990288168,
+    "response": [
+      {
+        "specializationId": 1,
+        "name": "Criminal Law",
+        "description": "Defense and prosecutorial assistance in criminal litigation.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 1
+      },
+      {
+        "specializationId": 3,
+        "name": "Corporate & Commercial Law",
+        "description": "Business registration, corporate governance, commercial contracts, and compliance.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 1
+      },
+      {
+        "specializationId": 4,
+        "name": "Real Estate & Property Law",
+        "description": "Land registry, real estate transactions, leases, partition actions, and title disputes.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      },
+      {
+        "specializationId": 5,
+        "name": "Labour & Employment Law",
+        "description": "Employment contracts, workplace disputes, labour tribunal advocacy, and severance.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      },
+      {
+        "specializationId": 6,
+        "name": "Tax Law",
+        "description": "Direct and indirect taxation, corporate tax planning, revenue appeals, and audits.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      }
+    ]
+  },
+  {
+    "started_utc": "2026-10-08T15:06:06.369400+00:00",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "request": {
+      "name": "Synthetic C1 Lawyer 1",
+      "email": "qmse-c1-lawyer1@example.test",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 18,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-1",
+      "specializationId": 4,
+      "workingSchedule": {
+        "appointmentDurationMinutes": 60,
+        "days": [
+          {
+            "dayOfWeek": 0,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 1,
+            "isWorkingDay": true,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 2,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 3,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 4,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 5,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 6,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          }
+        ]
+      }
+    },
+    "status": 201,
+    "duration_seconds": 0.17503824998857453,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "name": "Synthetic C1 Lawyer 1",
+      "email": "qmse-c1-lawyer1@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 18,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-1",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 4,
+          "name": "Real Estate & Property Law",
+          "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+        }
+      ]
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:06.492959+00:00",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "request": {
+      "name": "Synthetic C1 Lawyer 2",
+      "email": "qmse-c1-lawyer2@example.test",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 7,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-2",
+      "specializationId": 4,
+      "workingSchedule": {
+        "appointmentDurationMinutes": 60,
+        "days": [
+          {
+            "dayOfWeek": 0,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 1,
+            "isWorkingDay": true,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 2,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 3,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 4,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 5,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 6,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          }
+        ]
+      }
+    },
+    "status": 201,
+    "duration_seconds": 0.12323383300099522,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "name": "Synthetic C1 Lawyer 2",
+      "email": "qmse-c1-lawyer2@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 7,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-2",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 4,
+          "name": "Real Estate & Property Law",
+          "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+        }
+      ]
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:06.606441+00:00",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "request": {
+      "name": "Synthetic C1 Lawyer 3",
+      "email": "qmse-c1-lawyer3@example.test",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 25,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-3",
+      "specializationId": 1,
+      "workingSchedule": {
+        "appointmentDurationMinutes": 60,
+        "days": [
+          {
+            "dayOfWeek": 0,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 1,
+            "isWorkingDay": true,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 2,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 3,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 4,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 5,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          },
+          {
+            "dayOfWeek": 6,
+            "isWorkingDay": false,
+            "startTime": "09:00:00",
+            "endTime": "11:00:00"
+          }
+        ]
+      }
+    },
+    "status": 201,
+    "duration_seconds": 0.11315787502098829,
+    "response": {
+      "lawyerId": "e6d916e6-f34e-467c-9681-a406483ef4e9",
+      "name": "Synthetic C1 Lawyer 3",
+      "email": "qmse-c1-lawyer3@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney-at-Law",
+      "experience": 25,
+      "licenseNumber": "QMSE-SYNTHETIC-C1-3",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 1,
+          "name": "Criminal Law",
+          "description": "Defense and prosecutorial assistance in criminal litigation."
+        }
+      ]
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.163424+00:00",
+    "method": "POST",
+    "path": "/api/lawyer-recommendations",
+    "request": {
+      "requirement": "Synthetic Sri Lankan scenario: a neighbour disputes the boundary of my residential land and title deed in Colombo. I need a lawyer specialising in Property Law for advice about the land boundary and title.",
+      "clientId": 3,
+      "date": "2026-10-12",
+      "limit": 3
+    },
+    "status": 503,
+    "duration_seconds": 4.556555500021204,
+    "response": {
+      "title": "Requirement understanding is temporarily unavailable.",
+      "status": 503,
+      "traceId": "0HNP59K1M59GK:00000007",
+      "conflicts": null
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.235989+00:00",
+    "method": "GET",
+    "path": "/api/workforce-analysis",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0461039170040749,
+    "response": {
+      "generatedAt": "2026-10-08T15:06:11.197279Z",
+      "recentWindowDays": 30,
+      "futureWindowDays": 30,
+      "practiceAreas": [
+        {
+          "practiceAreaId": 3,
+          "practiceAreaName": "Corporate & Commercial Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 1,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 1,
+          "practiceAreaName": "Criminal Law",
+          "activeLawyerCount": 1,
+          "legalServiceCount": 1,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 8,
+          "openCareerOpeningCount": 0,
+          "status": "HEALTHY",
+          "reasons": [
+            "CAPACITY_WITHIN_CONFIGURED_RULES"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 5,
+          "practiceAreaName": "Labour & Employment Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 4,
+          "practiceAreaName": "Real Estate & Property Law",
+          "activeLawyerCount": 2,
+          "legalServiceCount": 0,
+          "recentDemandCount": 20,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 16,
+          "openCareerOpeningCount": 0,
+          "status": "CAPACITY_CONCERN",
+          "reasons": [
+            "HIGH_DEMAND_LOW_AVAILABILITY"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 6,
+          "practiceAreaName": "Tax Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        }
+      ],
+      "unmappedCareerOpeningCount": 0,
+      "limitations": [
+        "Requests are Admin recommendation workflows, not unique customer cases. Appointments are counted by creation date; current single-area membership maps them to an area.",
+        "Requests and appointments may overlap; assessment uses their maximum, not their sum. This is a capacity signal, not a forecast or proof that hiring is required.",
+        "Service-specific demand cannot be reliably identified in the existing persisted data.",
+        "Careers has no open/closed field: every existing Career record is treated as open. Unlinked postings require human review."
+      ]
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.250551+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-08",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.013681208016350865,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-08",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.254819+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-09",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0038075000047683716,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-09",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.257250+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-10",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0020545420120470226,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-10",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.260252+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-11",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0026369160041213036,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-11",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.264655+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-12",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.003955667023546994,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-12",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "016614eb-bc45-84c1-3c4a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "016614eb-bc45-84c1-3c4a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.270904+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-13",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.005703459028154612,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-13",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.277208+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-14",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.005437624990008771,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-14",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.283238+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-15",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.005171500029973686,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-15",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.289893+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-16",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.005800459010060877,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-16",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.295439+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-17",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.004577417043037713,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-17",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.299187+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-18",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.003268625005148351,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-18",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.303835+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-19",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.004070041992235929,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-19",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "016614eb-bc45-84c1-434a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "016614eb-bc45-84c1-434a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.307118+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-20",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.002704958023969084,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-20",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.310897+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-21",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.003027708036825061,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-21",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.314175+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-22",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0026190000353381038,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-22",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.316923+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-23",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.002249124983791262,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-23",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.319333+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-24",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0019484999938867986,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-24",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.322096+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-25",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.002365874999668449,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-25",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.324950+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-26",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0023207920021377504,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-26",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "016614eb-bc45-84c1-4a4a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "016614eb-bc45-84c1-4a4a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.327556+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-27",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0021028330083936453,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-27",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.330029+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-28",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.002013999968767166,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-28",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.332624+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-29",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.002130375010892749,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-29",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.334933+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-30",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0018259590142406523,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-30",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.337234+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-10-31",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0018037499976344407,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-10-31",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.339646+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-11-01",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.001894499990157783,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-11-01",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.342139+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-11-02",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0020009169820696115,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-11-02",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "016614eb-bc45-84c1-514a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "016614eb-bc45-84c1-514a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.344649+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-11-03",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.001981500012334436,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-11-03",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.346823+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-11-04",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0017043339903466403,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-11-04",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.349352+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-11-05",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0019379170262254775,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-11-05",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.351809+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/f9748679-bfb4-4a67-865a-f7d929e81725/available-slots?date=2026-11-06",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0019374580006115139,
+    "response": {
+      "lawyerId": "f9748679-bfb4-4a67-865a-f7d929e81725",
+      "date": "2026-11-06",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.354177+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-08",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0018066249904222786,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-08",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.357362+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-09",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0026940000243484974,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-09",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.361982+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-10",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.003879083029460162,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-10",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.365305+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-11",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0026863329694606364,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-11",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.368175+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-12",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0022825830383226275,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-12",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "42405f82-d426-e2c9-3c4a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "42405f82-d426-e2c9-3c4a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.370491+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-13",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0018006250029429793,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-13",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.372810+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-14",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0018189160036854446,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-14",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.375278+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-15",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0016586249694228172,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-15",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.377897+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-16",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0021492079831659794,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-16",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.380224+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-17",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.001646874996367842,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-17",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.382776+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-18",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0018789999885484576,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-18",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.385285+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-19",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0018101250170730054,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-19",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "42405f82-d426-e2c9-434a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "42405f82-d426-e2c9-434a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.387593+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-20",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0016024590004235506,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-20",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.389733+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-21",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.001660916954278946,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-21",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.391934+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-22",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0015541249886155128,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-22",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.394127+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-23",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.001577374991029501,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-23",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.396225+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-24",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.001606375037226826,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-24",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.398414+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-25",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0015464579919353127,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-25",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.400831+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-26",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0017682500183582306,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-26",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "42405f82-d426-e2c9-4a4a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "42405f82-d426-e2c9-4a4a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.403644+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-27",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0021743749966844916,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-27",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.406110+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-28",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0017462499672546983,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-28",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.408366+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-29",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0015964580234140158,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-29",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.410664+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-30",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0015705000259913504,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-30",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.412929+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-10-31",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0015795829822309315,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-10-31",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.415395+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-11-01",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.001711666991468519,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-11-01",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.418241+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-11-02",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0020526250009424984,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-11-02",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "42405f82-d426-e2c9-514a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "42405f82-d426-e2c9-514a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.420691+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-11-03",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.00162341701798141,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-11-03",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.422980+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-11-04",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0015970419626682997,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-11-04",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.425182+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-11-05",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0014657920110039413,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-11-05",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:11.427523+00:00",
+    "method": "GET",
+    "path": "/api/lawyers/8a650d32-c2d5-4903-9706-b045bdf84b68/available-slots?date=2026-11-06",
+    "request": null,
+    "status": 200,
+    "duration_seconds": 0.0016168749425560236,
+    "response": {
+      "lawyerId": "8a650d32-c2d5-4903-9706-b045bdf84b68",
+      "date": "2026-11-06",
+      "workingDay": false,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [],
+      "reason": "NOT_WORKING_DAY",
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "started_utc": "2026-10-08T15:06:18.177127+00:00",
+    "method": "POST",
+    "path": "/api/workforce-analysis/suggestions",
+    "request": {
+      "practiceAreaId": 4
+    },
+    "status": 503,
+    "duration_seconds": 6.728746750042774,
+    "response": {
+      "title": "AI hiring assistance is temporarily unavailable.",
+      "status": 503,
+      "traceId": "0HNP59K1M59GK:00000045",
+      "conflicts": null
+    }
+  }
+]

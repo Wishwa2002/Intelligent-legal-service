@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Document-&-Cleark",
+    "commit": {
+      "sha": "44f3f25ac0ac15162d0cee63844bafd532ad4820",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/44f3f25ac0ac15162d0cee63844bafd532ad4820"
+    },
+    "protected": false
+  },
+  {
+    "name": "backup/old-main",
+    "commit": {
+      "sha": "59337bba0227aa07e18e60f697bd758db327f0bd",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/59337bba0227aa07e18e60f697bd758db327f0bd"
+    },
+    "protected": false
+  },
+  {
+    "name": "chore/deployment-readiness",
+    "commit": {
+      "sha": "8a9b8a24f5a567460f90e60b3b6675ed02230062",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/8a9b8a24f5a567460f90e60b3b6675ed02230062"
+    },
+    "protected": false
+  },
+  {
+    "name": "dependabot/npm_and_yarn/frontend/npm_and_yarn-19c47bcc88",
+    "commit": {
+      "sha": "429a41be4e53b830af1948ce59da5e7ee7294b76",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/429a41be4e53b830af1948ce59da5e7ee7294b76"
+    },
+    "protected": false
+  },
+  {
+    "name": "develop",
+    "commit": {
+      "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/54aecccc780e99ee0bded70338277bccbfac76cd"
+    },
+    "protected": false
+  },
+  {
+    "name": "feature/admin-auth",
+    "commit": {
+      "sha": "43f6345d8cdd3158e5ecf51d124dcfab869261c9",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/43f6345d8cdd3158e5ecf51d124dcfab869261c9"
+    },
+    "protected": false
+  },
+  {
+    "name": "feature/appointment-scheduling-enhancements",
+    "commit": {
+      "sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/fb471202376f4684dafa5fdcda7f20f046b2e606"
+    },
+    "protected": false
+  },
+  {
+    "name": "feature/auth-login",
+    "commit": {
+      "sha": "a502dcdbbce0481b8d0a51baec664d1286e70667",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/a502dcdbbce0481b8d0a51baec664d1286e70667"
+    },
+    "protected": false
+  },
+  {
+    "name": "feature/booking_appointment_management",
+    "commit": {
+      "sha": "2c0c4e5c20e63fb01bb64a5a4f8707ee2af79a21",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/2c0c4e5c20e63fb01bb64a5a4f8707ee2af79a21"
+    },
+    "protected": false
+  },
+  {
+    "name": "feature/booking-management",
+    "commit": {
+      "sha": "3beb4c6ddf881200747a42e0c85154a51fb69d6b",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/3beb4c6ddf881200747a42e0c85154a51fb69d6b"
+    },
+    "protected": false
+  },
+  {
+    "name": "feature/database-setup",
+    "commit": {
+      "sha": "2e2f764e18843b6832e7352ba64ea0848a3842b6",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/2e2f764e18843b6832e7352ba64ea0848a3842b6"
+    },
+    "protected": false
+  },
+  {
+    "name": "feature/member1-lawyer-management",
+    "commit": {
+      "sha": "54aecccc780e99ee0bded70338277bccbfac76cd",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/54aecccc780e99ee0bded70338277bccbfac76cd"
+    },
+    "protected": false
+  },
+  {
+    "name": "fix/auth-security-improvements",
+    "commit": {
+      "sha": "3ff0d2a0d481a6a26aff316a59b0d6789f00bb43",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/3ff0d2a0d481a6a26aff316a59b0d6789f00bb43"
+    },
+    "protected": false
+  },
+  {
+    "name": "fix/unified-staff-auth",
+    "commit": {
+      "sha": "ee78a38117d40f77be9a55cb3d18ff778d097e20",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/ee78a38117d40f77be9a55cb3d18ff778d097e20"
+    },
+    "protected": false
+  },
+  {
+    "name": "main",
+    "commit": {
+      "sha": "59337bba0227aa07e18e60f697bd758db327f0bd",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/commits/59337bba0227aa07e18e60f697bd758db327f0bd"
+    },
+    "protected": true
+  }
+]

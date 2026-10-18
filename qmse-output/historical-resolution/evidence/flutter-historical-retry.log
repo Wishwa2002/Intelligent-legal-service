@@ -1,0 +1,12 @@
+{"protocolVersion":"0.1.1","runnerVersion":null,"pid":12204,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"/Users/jeyam/Downloads/Intelligent-legal-service/mobile/test/historical_cases_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading /Users/jeyam/Downloads/Intelligent-legal-service/mobile/test/historical_cases_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":0}
+{"count":1,"time":2,"type":"allSuites"}
+test/historical_cases_test.dart:16:20: Error: The method 'testLoad' isn't defined for the type 'DotEnv'.
+ - 'DotEnv' is from 'package:flutter_dotenv/src/dotenv.dart' ('../../../.pub-cache/hosted/pub.dev/flutter_dotenv-6.0.1/lib/src/dotenv.dart').
+Try correcting the name to the name of an existing method, or defining a method named 'testLoad'.
+ setUp(() { dotenv.testLoad(fileInput: "BACKEND_URL=http://127.0.0.1:55543"); SharedPreferences.setMockInitialValues({}); ApiClient.client=MockClient((r) async { if(r.url.path.contains('specializations')) return http.Response('[]',200);if(r.url.path.endsWith('/1'))return http.Response(jsonEncode(sample),200);return http.Response(jsonEncode([sample]),200);}); });
+                   ^^^^^^^^
+{"testID":1,"error":"Failed to load \"/Users/jeyam/Downloads/Intelligent-legal-service/mobile/test/historical_cases_test.dart\":\nCompilation failed for testPath=/Users/jeyam/Downloads/Intelligent-legal-service/mobile/test/historical_cases_test.dart: test/historical_cases_test.dart:16:20: Error: The method 'testLoad' isn't defined for the type 'DotEnv'.\n - 'DotEnv' is from 'package:flutter_dotenv/src/dotenv.dart' ('../../../.pub-cache/hosted/pub.dev/flutter_dotenv-6.0.1/lib/src/dotenv.dart').\nTry correcting the name to the name of an existing method, or defining a method named 'testLoad'.\n setUp(() { dotenv.testLoad(fileInput: \"BACKEND_URL=http://127.0.0.1:55543\"); SharedPreferences.setMockInitialValues({}); ApiClient.client=MockClient((r) async { if(r.url.path.contains('specializations')) return http.Response('[]',200);if(r.url.path.endsWith('/1'))return http.Response(jsonEncode(sample),200);return http.Response(jsonEncode([sample]),200);}); });\n                   ^^^^^^^^\n.","stackTrace":"","isFailure":false,"type":"error","time":628}
+{"testID":1,"result":"error","skipped":false,"hidden":false,"type":"testDone","time":629}
+{"success":false,"type":"done","time":630}

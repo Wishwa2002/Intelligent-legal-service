@@ -1,0 +1,401 @@
+[
+  {
+    "test_id": "TC-BK-01",
+    "original_expected": "Hash length >= 60; VerifyPassword returns true",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.QmseDocumentTests.Qmse_PasswordHashRejectsWrongPasswordAndReportsCost",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-BK-02",
+    "original_expected": "7 one-hour slots; 10:00 omitted",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecurringSchedulingTests.InvalidSchedulesAreRejected(kind: \"duplicate\"); LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: \"Rescheduled\", count: 5); LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: \"Requested\", count: 5); LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"booking\"); LegalService.Tests.RecurringSchedulingTests.DurationControlsGeneration(duration: 15, count: 12)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-BK-03",
+    "original_expected": "HTTP 400 with field error",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerMobileHttpTests.ScheduleOwnershipValidationAndConflict; LegalService.Tests.QmseDocumentPostgresTests.ExplicitCallerTransactionRollsBackRequestWhenAttachmentValidationFails(isolated: True); LegalService.Tests.Member1RecommendationTests.ExternalRecommendationCannotBypassBackendValidation(scenario: \"inactive\", status: 409); LegalService.Tests.Member1RecommendationTests.ExternalRecommendationCannotBypassBackendValidation(scenario: \"invalid-area\", status: 422); LegalService.Tests.QmseUploadRegressionTests.EveryRepositorySamplePdfPassesValidation",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-BK-04",
+    "original_expected": "HTTP 200 + JWT with sub, email, role",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerMobileHttpTests.DisabledStatusBlocksLoginAndExistingToken(status: \"Pending\"); LegalService.Tests.LawyerMobileHttpTests.DisabledStatusBlocksLoginAndExistingToken(status: \"Inactive\")",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-BK-05",
+    "original_expected": "HTTP 403, no data exposed",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerManagementHttpTests.NonAdminsCannotManageLawyersOrSpecializations(role: \"Clerk\", status: 403); LegalService.Tests.LawyerManagementHttpTests.NonAdminsCannotManageLawyersOrSpecializations(role: \"Customer\", status: 403); LegalService.Tests.LawyerManagementHttpTests.NonAdminsCannotManageLawyersOrSpecializations(role: \"Lawyer\", status: 403); LegalService.Tests.LawyerManagementHttpTests.NonAdminsCannotManageLawyersOrSpecializations(role: null, status: 401)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-BK-06",
+    "original_expected": "HTTP 200, array of 3",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerManagementHttpTests.PagedDirectoryCombinesSearchSpecializationAndRecordedAvailability",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-BK-07",
+    "original_expected": "HTTP 200 with normalised ISO timestamps",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecommendationLiveTransportTests.ActualAspNetRecommendationClientPasses8002AuthenticationAndPersistsOnlyIsolatedWorkflow",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-DB-01",
+    "original_expected": "true; connected in < 200 ms",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"booking\"); LegalService.Tests.Member1PostgresTests.ConcurrentApprovalsCreateOnlyOneAppointmentAndReturnConflict(separateWorkflows: True); LegalService.Tests.WorkforcePlanningPostgresTests.MigrationAppliesAndRealProviderDemoIsReversible(_: True); LegalService.Tests.QmseDocumentPostgresTests.ExplicitCallerTransactionRollsBackRequestWhenAttachmentValidationFails(isolated: True); LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"leave\")",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-DB-02",
+    "original_expected": "DbUpdateException, Postgres 23505",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"booking\"); LegalService.Tests.Member1PostgresTests.ConcurrentApprovalsCreateOnlyOneAppointmentAndReturnConflict(separateWorkflows: True); LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"leave\"); LegalService.Tests.Member1PostgresTests.ConcurrentApprovalsCreateOnlyOneAppointmentAndReturnConflict(separateWorkflows: False); LegalService.Tests.WorkforcePostgresTests.RealProviderMigrationPreservesCareersAndConcurrentApprovalsCreateOneOpening(separateWorkflows: True)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-DB-03",
+    "original_expected": "All applied; 11 tables created",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerMobileHttpTests.PasswordMigrationIsAdditiveAndRequiresExistingLawyersToChange(_: 0); LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"booking\"); LegalService.Tests.WorkforcePlanningPostgresTests.MigrationAppliesAndRealProviderDemoIsReversible(_: True); LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"leave\"); LegalService.Tests.DeploymentMigrationTests.DeploymentStorageMigrationIsDiscoverableWithoutDatabaseConnection",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-DB-04",
+    "original_expected": "Full rollback; 0 orphaned rows",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.QmseDocumentPostgresTests.ExplicitCallerTransactionRollsBackRequestWhenAttachmentValidationFails(isolated: True); LegalService.Tests.QmseDocumentPostgresTests.AttachmentCommitFailureRollsBackFileAndRequestStatus(isolated: True)",
+    "final_status": "VERIFIED",
+    "decision": "Matching execution verified within explicitly recorded scope."
+  },
+  {
+    "test_id": "TC-FE-01",
+    "original_expected": "Name, fee and book button in DOM",
+    "corresponding_tests_or_artifacts": "frontend/tests; predominantly mocked UI",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-FE-02",
+    "original_expected": "Submission blocked; inline error",
+    "corresponding_tests_or_artifacts": "frontend/tests; predominantly mocked UI",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-FE-03",
+    "original_expected": "Redirect to /login?redirect=...",
+    "corresponding_tests_or_artifacts": "frontend/tests; predominantly mocked UI",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-FE-04",
+    "original_expected": "Authorization: Bearer header present",
+    "corresponding_tests_or_artifacts": "frontend/tests; predominantly mocked UI",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-FE-05",
+    "original_expected": "Non-crashing alert; page usable",
+    "corresponding_tests_or_artifacts": "frontend/tests; predominantly mocked UI",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-MOB-01",
+    "original_expected": "Model with correct types/values",
+    "corresponding_tests_or_artifacts": "mobile/test/appointment_test.dart",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-MOB-02",
+    "original_expected": "Name and rating found",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-MOB-03",
+    "original_expected": "Inline errors; button disabled",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-MOB-04",
+    "original_expected": "Details screen pushed; back pops",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-MOB-05",
+    "original_expected": "Token read back unchanged",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-E2E-01",
+    "original_expected": "Files validated; multipart POST built",
+    "corresponding_tests_or_artifacts": "Integrated HTTP/DB artifacts",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "A real alternate Affidavit workflow now passes; historical Deed/ChecklistResult/PendingChecklist/Approved sequence is not silently substituted."
+  },
+  {
+    "test_id": "TC-E2E-02",
+    "original_expected": "HTTP 201 + tracking number",
+    "corresponding_tests_or_artifacts": "Integrated HTTP/DB artifacts",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "A real alternate Affidavit workflow now passes; historical Deed/ChecklistResult/PendingChecklist/Approved sequence is not silently substituted."
+  },
+  {
+    "test_id": "TC-E2E-03",
+    "original_expected": "Row with status PendingChecklist",
+    "corresponding_tests_or_artifacts": "Integrated HTTP/DB artifacts",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "A real alternate Affidavit workflow now passes; historical Deed/ChecklistResult/PendingChecklist/Approved sequence is not silently substituted."
+  },
+  {
+    "test_id": "TC-E2E-04",
+    "original_expected": "HTTP 200 + ChecklistResult",
+    "corresponding_tests_or_artifacts": "Integrated HTTP/DB artifacts",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "A real alternate Affidavit workflow now passes; historical Deed/ChecklistResult/PendingChecklist/Approved sequence is not silently substituted."
+  },
+  {
+    "test_id": "TC-E2E-05",
+    "original_expected": "Completeness 100%, 4 items verified",
+    "corresponding_tests_or_artifacts": "Integrated HTTP/DB artifacts",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "A real alternate Affidavit workflow now passes; historical Deed/ChecklistResult/PendingChecklist/Approved sequence is not silently substituted."
+  },
+  {
+    "test_id": "TC-E2E-06",
+    "original_expected": "HTTP 200; clerk ID stamped",
+    "corresponding_tests_or_artifacts": "Integrated HTTP/DB artifacts",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "A real alternate Affidavit workflow now passes; historical Deed/ChecklistResult/PendingChecklist/Approved sequence is not silently substituted."
+  },
+  {
+    "test_id": "TC-E2E-07",
+    "original_expected": "Mobile dashboard shows Approved",
+    "corresponding_tests_or_artifacts": "Integrated HTTP/DB artifacts",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "A real alternate Affidavit workflow now passes; historical Deed/ChecklistResult/PendingChecklist/Approved sequence is not silently substituted."
+  },
+  {
+    "test_id": "TC-C101",
+    "original_expected": "HTTP 200, matching attorney array",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "VERIFIED",
+    "decision": "Matching execution verified within explicitly recorded scope."
+  },
+  {
+    "test_id": "TC-C102",
+    "original_expected": "HTTP 201, persisted",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "VERIFIED",
+    "decision": "Matching execution verified within explicitly recorded scope."
+  },
+  {
+    "test_id": "TC-C103",
+    "original_expected": "HTTP 200, fee updated",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecurringSchedulingTests.InvalidSchedulesAreRejected(kind: \"duplicate\"); LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 1, requests: 4, appointments: 0, slots: 20, expected: \"HEALTHY\"); LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: \"owner\", expected: 404); LegalService.Tests.WorkforcePlanningTests.InvalidSettingsRejectedByBackend(min: 4, target: 6, slots: 12, demand: 10, ratio: 0); LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: \"Rescheduled\", count: 5)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "No current catalogue Price update field found; historical fee expectation unsupported."
+  },
+  {
+    "test_id": "TC-C104",
+    "original_expected": "Top 3 property attorneys, score > 90%",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.FrontDeskMatchingTests.ClientMustExistBeforeAnyAiRequestOrWorkflow(clientId: 999); LegalService.Tests.FrontDeskMatchingTests.LegacyWorkflowAcceptsExplicitClientAndReviewWithoutRerunningAi; LegalService.Tests.FrontDeskMatchingTests.ClientMustExistBeforeAnyAiRequestOrWorkflow(clientId: null); LegalService.Tests.FrontDeskMatchingTests.HumanApprovalCreatesOneOrdinaryAppointmentWithSourceAndAudit; LegalService.Tests.FrontDeskMatchingTests.AppointmentReviewIsRequiredBeforeFinalApproval(stage: \"MATCHES\")",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Historical top-three >90% match scores not established; actual score is experience-based; provider attempt 504."
+  },
+  {
+    "test_id": "TC-C105",
+    "original_expected": "Structured hiring advice with rationale",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 1, requests: 4, appointments: 0, slots: 20, expected: \"HEALTHY\"); LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: \"owner\", expected: 404); LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: \"recruitment\", expected: 409); LegalService.Tests.WorkforceHiringTests.InvalidAiDraftIsNeverPersisted(scenario: \"extra\"); LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 0, requests: 0, appointments: 0, slots: 0, expected: \"NO_ACTIVE_LAWYERS\")",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Mock workforce generation/approval passes; historical forecast advice not reproduced against live Gemini."
+  },
+  {
+    "test_id": "TC-C106",
+    "original_expected": "Badge updates without reload",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecurringSchedulingTests.InvalidSchedulesAreRejected(kind: \"duplicate\"); LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: \"Rescheduled\", count: 5); LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: \"Requested\", count: 5); LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"booking\"); LegalService.Tests.RecurringSchedulingTests.DurationControlsGeneration(duration: 15, count: 12)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Historical availability toggle differs from current recurring schedule UI."
+  },
+  {
+    "test_id": "TC-C2-01",
+    "original_expected": "HTTP 201 Created, status Confirmed",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_ValidSlot_CreatesAppointmentAndMarksSlotBooked; LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_PersistsDescriptionAndConsultationType; LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_SlotAlreadyBooked_ThrowsInvalidOperationException; LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_SlotNotFound_ThrowsKeyNotFoundException; LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_OverlappingConflict_ThrowsInvalidOperationException",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Current booking creates Requested; separate confirmation transitions to Confirmed. Historical immediate Confirmed expectation conflicts."
+  },
+  {
+    "test_id": "TC-C2-02",
+    "original_expected": "Collision detected; HTTP 409 Conflict",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"booking\"); LegalService.Tests.Member1PostgresTests.ConcurrentApprovalsCreateOnlyOneAppointmentAndReturnConflict(separateWorkflows: True); LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"leave\"); LegalService.Tests.Member1PostgresTests.ConcurrentApprovalsCreateOnlyOneAppointmentAndReturnConflict(separateWorkflows: False); LegalService.Tests.WorkforcePostgresTests.RealProviderMigrationPreservesCareersAndConcurrentApprovalsCreateOneOpening(separateWorkflows: True)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-C2-03",
+    "original_expected": "HTTP 200; status Cancelled",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.AppointmentServiceTests.CancelAppointmentAsync_ReleasesAssociatedSlot",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Cancellation/release service tests pass; exact historical HTTP scenario not reproduced."
+  },
+  {
+    "test_id": "TC-C2-04",
+    "original_expected": "HTTP 201; visible on careers page",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.WorkforceHiringTests.GenerationPersistsRestoresAndNeverCallsCareersBeforeApproval; LegalService.Tests.CareerServiceTests.CreateApplicationAsync_AddsJobApplication; LegalService.Tests.WorkforceHiringTests.ApprovalUsesExistingCareerServiceExactlyOnceAndRestoresCompletion; LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: \"Clerk\", status: 403); LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: \"Customer\", status: 403)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-C2-05",
+    "original_expected": "Correct ISO-8601 timestamp",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecommendationLiveTransportTests.ActualAspNetRecommendationClientPasses8002AuthenticationAndPersistsOnlyIsolatedWorkflow",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "GC-02 live date parsing blocked after provider failure."
+  },
+  {
+    "test_id": "TC-C2-06",
+    "original_expected": "Slot selected; success banner",
+    "corresponding_tests_or_artifacts": "frontend/tests; predominantly mocked UI",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-C2-07",
+    "original_expected": "HTTP 403 Forbidden",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: \"Clerk\", status: 403); LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: \"Customer\", status: 403); LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: null, status: 401); LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: \"Lawyer\", status: 403)",
+    "final_status": "VERIFIED",
+    "decision": "Matching execution verified within explicitly recorded scope."
+  },
+  {
+    "test_id": "TC-C2-08",
+    "original_expected": "Same result in both zones",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.RecurringSchedulingTests.InvalidSchedulesAreRejected(kind: \"duplicate\"); LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: \"Rescheduled\", count: 5); LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: \"Requested\", count: 5); LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner(competing: \"booking\"); LegalService.Tests.RecurringSchedulingTests.DurationControlsGeneration(duration: 15, count: 12)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "No matching two-zone execution artifact establishes the historical UTC-drift retest."
+  },
+  {
+    "test_id": "TC-C3-01",
+    "original_expected": "HTTP 201 + 4 checklist items",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.DocumentationRequestServiceTests.CreateRequestAsync_WithValidData_CreatesDocumentationRequest",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-C3-02",
+    "original_expected": "HTTP 200; file linked to request",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: \"application/octet-stream\"); LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: \"application/pdf\"); LegalService.Tests.QmseUploadRegressionTests.GenuinePdfIsStoredAndDownloadsUnchanged(mime: \"\")",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Real valid uploads returned 201, linked stored bytes; historical expected HTTP 200 retained as contract discrepancy."
+  },
+  {
+    "test_id": "TC-C3-03",
+    "original_expected": "HTTP 400 with size error",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.QmseDocumentTests.Qmse_TC_C3_09_ExactTenMiBBoundary(length: 10485760, accepted: True); LegalService.Tests.QmseDocumentTests.Qmse_TC_C3_09_ExactTenMiBBoundary(length: 10485761, accepted: False)",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-C3-04",
+    "original_expected": "HTTP 200; status Approved",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.DocumentationRequestServiceTests.UpdateRequestStatusAsync_WithValidStatus_UpdatesRequestStatus",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Actual workflow completes with COMPLETED, not historical Approved; new integrated workflow verified separately."
+  },
+  {
+    "test_id": "TC-C3-05",
+    "original_expected": "Completeness 50%; deed flagged",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Deterministic checklist reports missing items, not the historical 50% completeness output."
+  },
+  {
+    "test_id": "TC-C3-06",
+    "original_expected": "HTTP 200; department updated",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.ClerkServiceTests.CreateClerkAsync_WithDuplicateEmail_ThrowsArgumentException; LegalService.Tests.ClerkServiceTests.CreateClerkAsync_WithValidData_CreatesClerk; LegalService.Tests.ClerkServiceTests.GetAllClerksAsync_ReturnsAllClerksWithCalculatedCounts",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-C3-08",
+    "original_expected": "Fallback heuristics used; no over-confident verdict",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C3_11_CustomerCannotApproveDocumentation; LegalService.Tests.QmseDocumentTests.Qmse_DEF12_SpoofedPdfMustBeRejected; LegalService.Tests.QmseDocumentPostgresTests.ExplicitCallerTransactionRollsBackRequestWhenAttachmentValidationFails(isolated: True); LegalService.Tests.QmseDocumentTests.Qmse_DEF13_SeedsTwelveServicesIdempotently; LegalService.Tests.DocumentationServiceServiceTests.CreateServiceAsync_SavesServiceAndSerializesDocs",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-C4-01",
+    "original_expected": "HTTP 200 + signed JWT",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerMobileHttpTests.DisabledStatusBlocksLoginAndExistingToken(status: \"Pending\"); LegalService.Tests.LawyerMobileHttpTests.DisabledStatusBlocksLoginAndExistingToken(status: \"Inactive\")",
+    "final_status": "VERIFIED",
+    "decision": "Matching execution verified within explicitly recorded scope."
+  },
+  {
+    "test_id": "TC-C4-02",
+    "original_expected": "HTTP 401; no token",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerMobileHttpTests.PasswordMigrationIsAdditiveAndRequiresExistingLawyersToChange(_: 0); LegalService.Tests.LawyerMobileHttpTests.AdminCreationRequiresPasswordChangeAndCreatesSchedule; LegalService.Tests.QmseDocumentTests.Qmse_PasswordHashRejectsWrongPasswordAndReportsCost; LegalService.Tests.LawyerMobileHttpTests.InitialPasswordGateAndSecurePasswordChange; LegalService.Tests.FrontDeskMatchingTests.QuickRegistrationUsesNormalClientStoreHashedPasswordAndDuplicateCheck",
+    "final_status": "VERIFIED",
+    "decision": "Matching execution verified within explicitly recorded scope."
+  },
+  {
+    "test_id": "TC-C4-03",
+    "original_expected": "HTTP 201, status Submitted",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.ServiceRequestServiceTests.CreateAsync_ValidRequest_ReturnsCreatedResponse",
+    "final_status": "VERIFIED",
+    "decision": "Matching execution verified within explicitly recorded scope."
+  },
+  {
+    "test_id": "TC-C4-04",
+    "original_expected": "Injection pattern flagged; safe refusal",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Sanitizer isolation passes; live safe-refusal output not obtained."
+  },
+  {
+    "test_id": "TC-C4-05",
+    "original_expected": "Relevant Sri Lankan law via RRF, with disclaimer",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Mock retrieval is not live Sri Lankan-law accuracy/disclaimer evidence."
+  },
+  {
+    "test_id": "TC-C4-06",
+    "original_expected": "Token cleared; redirect to /login",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "Exact historical inputs/outputs are not matched by available execution. Related automated checks remain narrower."
+  },
+  {
+    "test_id": "TC-C4-07",
+    "original_expected": "HTTP 401",
+    "corresponding_tests_or_artifacts": "LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: \"invalid\"); LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: \"missing\"); LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: \"expired\"); LegalService.Tests.LawyerManagementHttpTests.Qmse_TC_C4_09_JwtAuthenticationRejectsMissingInvalidExpiredAndTampered(kind: \"tampered\")",
+    "final_status": "VERIFIED",
+    "decision": "Matching execution verified within explicitly recorded scope."
+  },
+  {
+    "test_id": "TC-C4-08",
+    "original_expected": "Higher precision on legal queries",
+    "corresponding_tests_or_artifacts": "Existing mobile/AI suite has related scope; no exact acceptance mapping",
+    "final_status": "HISTORICAL/UNVERIFIED",
+    "decision": "No labelled comparison dataset establishes higher RRF precision."
+  }
+]

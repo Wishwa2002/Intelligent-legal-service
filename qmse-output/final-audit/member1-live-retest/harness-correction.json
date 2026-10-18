@@ -1,0 +1,6 @@
+{
+  "initial_error": "Evidence query referenced nonexistent WorkforceHiringWorkflows table",
+  "correct_current_table": "HiringSuggestionWorkflows",
+  "correction": "Corrected post-execution evidence query only; no live request repeated and no application logic changed",
+  "post_query_exit_code": 0
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "label": "before",
+    "source": "qmse-output/final-audit/security/zap-before.html",
+    "image": "qmse-output/final-audit/security/zap-before.png",
+    "captured_utc": "2026-10-08T13:13:51.055Z",
+    "method": "Unmodified native OWASP ZAP HTML report opened in Chromium"
+  },
+  {
+    "label": "after",
+    "source": "qmse-output/final-audit/security/zap-after.html",
+    "image": "qmse-output/final-audit/security/zap-after.png",
+    "captured_utc": "2026-10-08T13:13:51.164Z",
+    "method": "Unmodified native OWASP ZAP HTML report opened in Chromium"
+  }
+]

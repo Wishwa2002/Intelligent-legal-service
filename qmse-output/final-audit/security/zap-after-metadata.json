@@ -1,0 +1,54 @@
+{
+  "scan_type": "Passive only; six deliberate unauthenticated local GET requests; no spider or active scanner",
+  "version": "2.17.0",
+  "target": "http://127.0.0.1:55543",
+  "started_utc": "2026-10-08T13:07:59.878885+00:00",
+  "ended_utc": "2026-10-08T13:08:01.452065+00:00",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "nosniff": "nosniff",
+      "bytes": 15
+    },
+    {
+      "method": "GET",
+      "path": "/api/lawyers/search",
+      "status": 200,
+      "nosniff": "nosniff",
+      "bytes": 2728
+    },
+    {
+      "method": "GET",
+      "path": "/api/specializations",
+      "status": 200,
+      "nosniff": "nosniff",
+      "bytes": 1038
+    },
+    {
+      "method": "GET",
+      "path": "/api/appointments",
+      "status": 401,
+      "nosniff": "nosniff",
+      "bytes": 0
+    },
+    {
+      "method": "GET",
+      "path": "/api/documentation-requests",
+      "status": 401,
+      "nosniff": "nosniff",
+      "bytes": 0
+    },
+    {
+      "method": "GET",
+      "path": "/api/no-such-synthetic-route",
+      "status": 404,
+      "nosniff": "nosniff",
+      "bytes": 0
+    }
+  ],
+  "pending": 0,
+  "alert_count": 0,
+  "limitation": "Limited paths; no vulnerability-free claim; isolated PostgreSQL, synthetic fixtures, loopback HTTP; no credentials sent to proxy."
+}

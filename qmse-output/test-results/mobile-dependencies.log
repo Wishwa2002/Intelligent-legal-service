@@ -1,0 +1,11 @@
+START UTC 2026-10-08T03:04:12.795655+00:00
+COMMAND ['/private/tmp/qmse-flutter-source/bin/cache/dart-sdk/bin/dart', '/private/tmp/qmse-flutter-source/bin/cache/flutter_tools.snapshot', 'pub', 'get', '--offline']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service/mobile
+[1/11] Material Fonts                                              26.8s
+[2/11] Gradle Wrapper                                              701ms
+[3/11] Flutter SDK
+  ├─ [1/5] sky_engine                                              18.1s
+  ├─ [2/5] flutter_gpu                                           1,030ms
+  ├─ [3/5] flutter_patched_sdk                                     48.5s
+  ├─ [4/5] flutter_patched_sdk_product                             48.7s
+  └─ [5/5] darwin-arm64                                         

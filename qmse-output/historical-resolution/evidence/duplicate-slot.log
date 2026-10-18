@@ -1,0 +1,9 @@
+\set VERBOSITY verbose
+INSERT INTO "Appointments" ("AppointmentId","CustomerId","LawyerId","SlotId","Status","ConsultationType","CreatedAt") SELECT 'aa672dff-a8e5-4e3c-aff7-f84be0c8e2bb',"CustomerId","LawyerId","SlotId",'Requested','Online',now() FROM "Appointments" WHERE "Status" <> 'Cancelled' LIMIT 1;
+
+ERROR:  23505: duplicate key value violates unique constraint "IX_Appointments_SlotId"
+DETAIL:  Key ("SlotId")=(3e5524a1-c3be-4d17-82be-83e1f3527ca8) already exists.
+SCHEMA NAME:  public
+TABLE NAME:  Appointments
+CONSTRAINT NAME:  IX_Appointments_SlotId
+LOCATION:  _bt_check_unique, nbtinsert.c:673

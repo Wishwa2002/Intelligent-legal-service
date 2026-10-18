@@ -1,0 +1,2397 @@
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Description", s."Name"
+      FROM "Specializations" AS s
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Lawyers" AS l)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "LawyerRecommendationWorkflows" AS l)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "LegalServices" AS l
+          WHERE l."Category" = 'Family Law' AND (l."LegalServiceId" <> 2 OR l."ServiceName" <> 'Divorce & Custody Filing'))
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (3ms) [Parameters=[@__oldName_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT l."LegalServiceId", l."Category", l."CreatedAt", l."Description", l."ServiceName", l."UpdatedAt"
+      FROM "LegalServices" AS l
+      WHERE l."Category" = @__oldName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__oldName_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT l."LegalServiceId", l."Category", l."CreatedAt", l."Description", l."ServiceName", l."UpdatedAt"
+      FROM "LegalServices" AS l
+      WHERE l."Category" = @__oldName_0
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LegalServiceId", l."Category", l."CreatedAt", l."Description", l."ServiceName", l."UpdatedAt"
+      FROM "LegalServices" AS l
+      WHERE l."Category" = 'Family Law'
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Int32), @p2='?' (DbType = Int32), @p1='?', @p3='?' (DbType = Int32), @p6='?' (DbType = Int32), @p4='?', @p5='?', @p9='?' (DbType = Int32), @p7='?', @p8='?', @p10='?', @p11='?', @p12='?', @p13='?'], CommandType='Text', CommandTimeout='30']
+      DELETE FROM "LegalServices"
+      WHERE "LegalServiceId" = @p0;
+      UPDATE "LegalServices" SET "Category" = @p1
+      WHERE "LegalServiceId" = @p2;
+      DELETE FROM "Specializations"
+      WHERE "SpecializationId" = @p3;
+      UPDATE "Specializations" SET "Description" = @p4, "Name" = @p5
+      WHERE "SpecializationId" = @p6;
+      UPDATE "Specializations" SET "Description" = @p7, "Name" = @p8
+      WHERE "SpecializationId" = @p9;
+      INSERT INTO "Specializations" ("Description", "Name")
+      VALUES (@p10, @p11)
+      RETURNING "SpecializationId";
+      INSERT INTO "Specializations" ("Description", "Name")
+      VALUES (@p12, @p13)
+      RETURNING "SpecializationId";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__svc_Item1_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT d."ServiceId", d."CreatedAt", d."Description", d."IsActive", d."Name", d."RequiredDocuments", d."UpdatedAt"
+      FROM "DocumentationServices" AS d
+      WHERE d."Name" = @__svc_Item1_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?', @p3='?', @p4='?' (DbType = DateTime), @p5='?' (DbType = DateTime), @p6='?', @p7='?', @p8='?', @p9='?' (DbType = DateTime), @p10='?' (DbType = DateTime), @p11='?', @p12='?', @p13='?', @p14='?' (DbType = DateTime), @p15='?' (DbType = DateTime), @p16='?', @p17='?', @p18='?', @p19='?' (DbType = DateTime), @p20='?' (DbType = DateTime), @p21='?', @p22='?', @p23='?', @p24='?' (DbType = DateTime), @p25='?' (DbType = DateTime), @p26='?', @p27='?', @p28='?', @p29='?' (DbType = DateTime), @p30='?' (DbType = DateTime), @p31='?', @p32='?', @p33='?', @p34='?' (DbType = DateTime), @p35='?' (DbType = DateTime), @p36='?', @p37='?', @p38='?', @p39='?' (DbType = DateTime), @p40='?' (DbType = DateTime), @p41='?', @p42='?', @p43='?', @p44='?' (DbType = DateTime), @p45='?' (DbType = DateTime), @p46='?', @p47='?', @p48='?', @p49='?' (DbType = DateTime), @p50='?' (DbType = DateTime), @p51='?', @p52='?', @p53='?', @p54='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p5, @p6, @p7, @p8, @p9)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p10, @p11, @p12, @p13, @p14)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p15, @p16, @p17, @p18, @p19)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p20, @p21, @p22, @p23, @p24)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p25, @p26, @p27, @p28, @p29)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p30, @p31, @p32, @p33, @p34)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p35, @p36, @p37, @p38, @p39)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p40, @p41, @p42, @p43, @p44)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p45, @p46, @p47, @p48, @p49)
+      RETURNING "ServiceId", "IsActive";
+      INSERT INTO "DocumentationServices" ("CreatedAt", "Description", "Name", "RequiredDocuments", "UpdatedAt")
+      VALUES (@p50, @p51, @p52, @p53, @p54)
+      RETURNING "ServiceId", "IsActive";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__adminEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__adminEmail_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__clerkEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__clerkEmail_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?', @p5='?', @p6='?' (DbType = DateTime), @p7='?' (DbType = DateTime), @p8='?', @p9='?' (DbType = Boolean), @p10='?', @p11='?', @p12='?', @p13='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CreatedAt", "Email", "MustChangePassword", "Name", "PasswordHash", "Role", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+      RETURNING "UserId";
+      INSERT INTO "Users" ("CreatedAt", "Email", "MustChangePassword", "Name", "PasswordHash", "Role", "UpdatedAt")
+      VALUES (@p7, @p8, @p9, @p10, @p11, @p12, @p13)
+      RETURNING "UserId";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__clerkUser_UserId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId"
+      FROM "Clerks" AS c
+      WHERE c."UserId" = @__clerkUser_UserId_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__clerkEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT c."ClerkId", c."Contact", c."CreatedAt", c."Department", c."Email", c."IsActive", c."Name", c."UpdatedAt", c."UserId"
+      FROM "Clerks" AS c
+      WHERE c."Email" IS NOT NULL AND lower(c."Email") = @__clerkEmail_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?', @p1='?' (DbType = DateTime), @p2='?', @p3='?', @p4='?' (DbType = Boolean), @p5='?', @p6='?' (DbType = DateTime), @p7='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Clerks" ("Contact", "CreatedAt", "Department", "Email", "IsActive", "Name", "UpdatedAt", "UserId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7)
+      RETURNING "ClerkId";
+info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://127.0.0.1:55543
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+info: Microsoft.Hosting.Lifetime[0]
+      Hosting environment: Staging
+info: Microsoft.Hosting.Lifetime[0]
+      Content root path: /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API
+warn: Microsoft.AspNetCore.HttpsPolicy.HttpsRedirectionMiddleware[3]
+      Failed to determine the https port for redirect.
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__email_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__normalizedEmail_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__email_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE lower(u."Email") = @__email_0
+      LIMIT 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT r."Id", r."Name"
+      FROM "Roles" AS r
+      WHERE r."Name" = 'Customer'
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?', @p5='?', @p6='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CreatedAt", "Email", "MustChangePassword", "Name", "PasswordHash", "Role", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+      RETURNING "UserId";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "UserRoles" ("RoleId", "UserId")
+      VALUES (@p0, @p1);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId" AS "specializationId", s."Name" AS name, s."Description" AS description, (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l
+          WHERE s."SpecializationId" = l."SpecializationId") AS "lawyerCount", (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l0
+          INNER JOIN "Lawyers" AS l1 ON l0."LawyerId" = l1."LawyerId"
+          WHERE s."SpecializationId" = l0."SpecializationId" AND l1."Status" = 'Active' AND (
+              SELECT count(*)::int
+              FROM "LawyerSpecializations" AS l2
+              WHERE l1."LawyerId" = l2."LawyerId") = 1) AS "activeLawyerCount", (
+          SELECT count(*)::int
+          FROM "LegalServices" AS l3
+          WHERE lower(l3."Category") = lower(s."Name")) AS "legalServiceCount"
+      FROM "Specializations" AS s
+      ORDER BY s."SpecializationId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Lawyers" AS l
+          WHERE l."Email" IS NOT NULL AND lower(l."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedLicense_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Lawyers" AS l
+          WHERE upper(l."LicenseNumber") = @__normalizedLicense_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS u
+          WHERE lower(u."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Clerks" AS c
+          WHERE c."Email" IS NOT NULL AND lower(c."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__request_SpecializationId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Description", s."Name"
+      FROM "Specializations" AS s
+      WHERE s."SpecializationId" = @__request_SpecializationId_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?', @p5='?', @p6='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CreatedAt", "Email", "MustChangePassword", "Name", "PasswordHash", "Role", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+      RETURNING "UserId";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32), @p13='?' (DbType = Guid), @p14='?' (DbType = Int32), @p15='?' (DbType = Guid), @p16='?' (DbType = DateTime), @p17='?' (DbType = Int32), @p18='?' (DbType = Time), @p19='?' (DbType = Boolean), @p20='?' (DbType = Guid), @p21='?' (DbType = Time), @p22='?' (DbType = DateTime), @p23='?' (DbType = Guid), @p24='?' (DbType = DateTime), @p25='?' (DbType = Int32), @p26='?' (DbType = Time), @p27='?' (DbType = Boolean), @p28='?' (DbType = Guid), @p29='?' (DbType = Time), @p30='?' (DbType = DateTime), @p31='?' (DbType = Guid), @p32='?' (DbType = DateTime), @p33='?' (DbType = Int32), @p34='?' (DbType = Time), @p35='?' (DbType = Boolean), @p36='?' (DbType = Guid), @p37='?' (DbType = Time), @p38='?' (DbType = DateTime), @p39='?' (DbType = Guid), @p40='?' (DbType = DateTime), @p41='?' (DbType = Int32), @p42='?' (DbType = Time), @p43='?' (DbType = Boolean), @p44='?' (DbType = Guid), @p45='?' (DbType = Time), @p46='?' (DbType = DateTime), @p47='?' (DbType = Guid), @p48='?' (DbType = DateTime), @p49='?' (DbType = Int32), @p50='?' (DbType = Time), @p51='?' (DbType = Boolean), @p52='?' (DbType = Guid), @p53='?' (DbType = Time), @p54='?' (DbType = DateTime), @p55='?' (DbType = Guid), @p56='?' (DbType = DateTime), @p57='?' (DbType = Int32), @p58='?' (DbType = Time), @p59='?' (DbType = Boolean), @p60='?' (DbType = Guid), @p61='?' (DbType = Time), @p62='?' (DbType = DateTime), @p63='?' (DbType = Guid), @p64='?' (DbType = DateTime), @p65='?' (DbType = Int32), @p66='?' (DbType = Time), @p67='?' (DbType = Boolean), @p68='?' (DbType = Guid), @p69='?' (DbType = Time), @p70='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Lawyers" ("LawyerId", "CreatedAt", "DefaultAppointmentDurationMinutes", "Email", "Experience", "LicenseNumber", "Name", "PhoneNumber", "ProfileDescription", "Qualification", "Status", "UpdatedAt", "UserId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+      INSERT INTO "LawyerSpecializations" ("LawyerId", "SpecializationId")
+      VALUES (@p13, @p14);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p63, @p64, @p65, @p66, @p67, @p68, @p69, @p70);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Lawyers" AS l
+          WHERE l."Email" IS NOT NULL AND lower(l."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedLicense_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Lawyers" AS l
+          WHERE upper(l."LicenseNumber") = @__normalizedLicense_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS u
+          WHERE lower(u."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Clerks" AS c
+          WHERE c."Email" IS NOT NULL AND lower(c."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__request_SpecializationId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Description", s."Name"
+      FROM "Specializations" AS s
+      WHERE s."SpecializationId" = @__request_SpecializationId_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?', @p5='?', @p6='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CreatedAt", "Email", "MustChangePassword", "Name", "PasswordHash", "Role", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+      RETURNING "UserId";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32), @p13='?' (DbType = Guid), @p14='?' (DbType = Int32), @p15='?' (DbType = Guid), @p16='?' (DbType = DateTime), @p17='?' (DbType = Int32), @p18='?' (DbType = Time), @p19='?' (DbType = Boolean), @p20='?' (DbType = Guid), @p21='?' (DbType = Time), @p22='?' (DbType = DateTime), @p23='?' (DbType = Guid), @p24='?' (DbType = DateTime), @p25='?' (DbType = Int32), @p26='?' (DbType = Time), @p27='?' (DbType = Boolean), @p28='?' (DbType = Guid), @p29='?' (DbType = Time), @p30='?' (DbType = DateTime), @p31='?' (DbType = Guid), @p32='?' (DbType = DateTime), @p33='?' (DbType = Int32), @p34='?' (DbType = Time), @p35='?' (DbType = Boolean), @p36='?' (DbType = Guid), @p37='?' (DbType = Time), @p38='?' (DbType = DateTime), @p39='?' (DbType = Guid), @p40='?' (DbType = DateTime), @p41='?' (DbType = Int32), @p42='?' (DbType = Time), @p43='?' (DbType = Boolean), @p44='?' (DbType = Guid), @p45='?' (DbType = Time), @p46='?' (DbType = DateTime), @p47='?' (DbType = Guid), @p48='?' (DbType = DateTime), @p49='?' (DbType = Int32), @p50='?' (DbType = Time), @p51='?' (DbType = Boolean), @p52='?' (DbType = Guid), @p53='?' (DbType = Time), @p54='?' (DbType = DateTime), @p55='?' (DbType = Guid), @p56='?' (DbType = DateTime), @p57='?' (DbType = Int32), @p58='?' (DbType = Time), @p59='?' (DbType = Boolean), @p60='?' (DbType = Guid), @p61='?' (DbType = Time), @p62='?' (DbType = DateTime), @p63='?' (DbType = Guid), @p64='?' (DbType = DateTime), @p65='?' (DbType = Int32), @p66='?' (DbType = Time), @p67='?' (DbType = Boolean), @p68='?' (DbType = Guid), @p69='?' (DbType = Time), @p70='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Lawyers" ("LawyerId", "CreatedAt", "DefaultAppointmentDurationMinutes", "Email", "Experience", "LicenseNumber", "Name", "PhoneNumber", "ProfileDescription", "Qualification", "Status", "UpdatedAt", "UserId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+      INSERT INTO "LawyerSpecializations" ("LawyerId", "SpecializationId")
+      VALUES (@p13, @p14);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p63, @p64, @p65, @p66, @p67, @p68, @p69, @p70);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Lawyers" AS l
+          WHERE l."Email" IS NOT NULL AND lower(l."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedLicense_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Lawyers" AS l
+          WHERE upper(l."LicenseNumber") = @__normalizedLicense_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS u
+          WHERE lower(u."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?'], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Clerks" AS c
+          WHERE c."Email" IS NOT NULL AND lower(c."Email") = @__normalizedEmail_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__request_SpecializationId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Description", s."Name"
+      FROM "Specializations" AS s
+      WHERE s."SpecializationId" = @__request_SpecializationId_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?', @p2='?' (DbType = Boolean), @p3='?', @p4='?', @p5='?', @p6='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Users" ("CreatedAt", "Email", "MustChangePassword", "Name", "PasswordHash", "Role", "UpdatedAt")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6)
+      RETURNING "UserId";
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = DateTime), @p2='?' (DbType = Int32), @p3='?', @p4='?' (DbType = Int32), @p5='?', @p6='?', @p7='?', @p8='?', @p9='?', @p10='?', @p11='?' (DbType = DateTime), @p12='?' (DbType = Int32), @p13='?' (DbType = Guid), @p14='?' (DbType = Int32), @p15='?' (DbType = Guid), @p16='?' (DbType = DateTime), @p17='?' (DbType = Int32), @p18='?' (DbType = Time), @p19='?' (DbType = Boolean), @p20='?' (DbType = Guid), @p21='?' (DbType = Time), @p22='?' (DbType = DateTime), @p23='?' (DbType = Guid), @p24='?' (DbType = DateTime), @p25='?' (DbType = Int32), @p26='?' (DbType = Time), @p27='?' (DbType = Boolean), @p28='?' (DbType = Guid), @p29='?' (DbType = Time), @p30='?' (DbType = DateTime), @p31='?' (DbType = Guid), @p32='?' (DbType = DateTime), @p33='?' (DbType = Int32), @p34='?' (DbType = Time), @p35='?' (DbType = Boolean), @p36='?' (DbType = Guid), @p37='?' (DbType = Time), @p38='?' (DbType = DateTime), @p39='?' (DbType = Guid), @p40='?' (DbType = DateTime), @p41='?' (DbType = Int32), @p42='?' (DbType = Time), @p43='?' (DbType = Boolean), @p44='?' (DbType = Guid), @p45='?' (DbType = Time), @p46='?' (DbType = DateTime), @p47='?' (DbType = Guid), @p48='?' (DbType = DateTime), @p49='?' (DbType = Int32), @p50='?' (DbType = Time), @p51='?' (DbType = Boolean), @p52='?' (DbType = Guid), @p53='?' (DbType = Time), @p54='?' (DbType = DateTime), @p55='?' (DbType = Guid), @p56='?' (DbType = DateTime), @p57='?' (DbType = Int32), @p58='?' (DbType = Time), @p59='?' (DbType = Boolean), @p60='?' (DbType = Guid), @p61='?' (DbType = Time), @p62='?' (DbType = DateTime), @p63='?' (DbType = Guid), @p64='?' (DbType = DateTime), @p65='?' (DbType = Int32), @p66='?' (DbType = Time), @p67='?' (DbType = Boolean), @p68='?' (DbType = Guid), @p69='?' (DbType = Time), @p70='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "Lawyers" ("LawyerId", "CreatedAt", "DefaultAppointmentDurationMinutes", "Email", "Experience", "LicenseNumber", "Name", "PhoneNumber", "ProfileDescription", "Qualification", "Status", "UpdatedAt", "UserId")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12);
+      INSERT INTO "LawyerSpecializations" ("LawyerId", "SpecializationId")
+      VALUES (@p13, @p14);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p15, @p16, @p17, @p18, @p19, @p20, @p21, @p22);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p23, @p24, @p25, @p26, @p27, @p28, @p29, @p30);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p31, @p32, @p33, @p34, @p35, @p36, @p37, @p38);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p39, @p40, @p41, @p42, @p43, @p44, @p45, @p46);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p47, @p48, @p49, @p50, @p51, @p52, @p53, @p54);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p55, @p56, @p57, @p58, @p59, @p60, @p61, @p62);
+      INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+      VALUES (@p63, @p64, @p65, @p66, @p67, @p68, @p69, @p70);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__request_ClientId_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT EXISTS (
+          SELECT 1
+          FROM "Users" AS u
+          WHERE u."UserId" = @__request_ClientId_0 AND u."Role" = 'Customer')
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (4ms) [Parameters=[@p0='?' (DbType = Guid), @p1='?' (DbType = Guid), @p2='?' (DbType = Guid), @p3='?' (DbType = Object), @p4='?' (DbType = Date), @p5='?' (DbType = Int32), @p6='?' (DbType = Int32), @p7='?' (DbType = DateTime), @p8='?' (DbType = Int32), @p9='?' (DbType = Object), @p10='?' (DbType = Object), @p11='?' (DbType = Date), @p12='?', @p13='?' (DbType = Guid), @p14='?' (DbType = Guid), @p15='?', @p16='?' (DbType = DateTime), @p17='?', @p18='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      INSERT INTO "LawyerRecommendationWorkflows" ("WorkflowId", "AppointmentId", "ApprovedLawyerId", "AuditJson", "BookingDate", "CategoryId", "ClientId", "CreatedAt", "OwnerUserId", "ParsedRequirementJson", "RecommendationsJson", "RequestedDate", "ReviewStage", "SelectedLawyerId", "SelectedSlotId", "Status", "UpdatedAt", "UserRequirement", "WarningsJson")
+      VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17, @p18);
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId" AS id, s."Name" AS name, s."Description" AS description
+      FROM "Specializations" AS s
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LegalServiceId" AS id, l."ServiceName" AS name, l."Description" AS description, l."Category" AS category
+      FROM "LegalServices" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."Experience"
+      FROM "Lawyers" AS l
+      WHERE l."Status" = 'Active' AND (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l0
+          WHERE l."LawyerId" = l0."LawyerId") = 1 AND l."Experience" >= 0 AND l."Experience" <= 70
+      ORDER BY l."LawyerId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT t.id, t.name, l."LawyerId"
+      FROM "Lawyers" AS l
+      INNER JOIN (
+          SELECT l1."SpecializationId" AS id, s."Name" AS name, l1."LawyerId"
+          FROM "LawyerSpecializations" AS l1
+          INNER JOIN "Specializations" AS s ON l1."SpecializationId" = s."SpecializationId"
+      ) AS t ON l."LawyerId" = t."LawyerId"
+      WHERE l."Status" = 'Active' AND (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l0
+          WHERE l."LawyerId" = l0."LawyerId") = 1 AND l."Experience" >= 0 AND l."Experience" <= 70
+      ORDER BY l."LawyerId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (18ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: System.Net.Http.HttpClient.ILawyerRecommendationService.LogicalHandler[100]
+      Start processing HTTP request POST http://127.0.0.1:55545/lawyer-recommendations
+info: System.Net.Http.HttpClient.ILawyerRecommendationService.ClientHandler[100]
+      Sending HTTP request POST http://127.0.0.1:55545/lawyer-recommendations
+info: System.Net.Http.HttpClient.ILawyerRecommendationService.ClientHandler[101]
+      Received HTTP response headers after 4411.9433ms - 503
+info: System.Net.Http.HttpClient.ILawyerRecommendationService.LogicalHandler[101]
+      End processing HTTP request after 4419.2082ms - 503
+warn: LegalService.API.Services.Lawyers.RecommendationService[0]
+      Recommendation upstream failure Service=lawyer-recommendation Route=/lawyer-recommendations Status=503 Stage=classification_unavailable CorrelationId=428faec1-67e4-463a-84c4-361114931be7
+warn: LegalService.API.Services.Lawyers.RecommendationService[0]
+      Recommendation failure Stage=validation_or_upstream ExceptionType=ApiException CorrelationId=428faec1-67e4-463a-84c4-361114931be7
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (2ms) [Parameters=[@p3='?' (DbType = Guid), @p0='?' (DbType = Object), @p7='?' (DbType = Date), @p4='?' (DbType = Int32), @p5='?', @p8='?' (DbType = Guid), @p9='?' (DbType = Guid), @p1='?', @p6='?', @p2='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      UPDATE "LawyerRecommendationWorkflows" SET "AuditJson" = @p0, "Status" = @p1, "UpdatedAt" = @p2
+      WHERE "WorkflowId" = @p3 AND "BookingDate" IS NULL AND "ClientId" = @p4 AND "ReviewStage" = @p5 AND "SelectedLawyerId" IS NULL AND "SelectedSlotId" IS NULL AND "Status" = @p6;
+fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+      LegalService.API.Infrastructure.ApiException: Requirement understanding is temporarily unavailable.
+         at LegalService.API.Services.Lawyers.RecommendationService.RecommendAsync(RecommendationRequest request, Int32 userId, CancellationToken ct) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/Services/Lawyers/RecommendationService.cs:line 153
+         at LegalService.API.Services.Lawyers.RecommendationService.RecommendAsync(RecommendationRequest request, Int32 userId, CancellationToken ct) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/Services/Lawyers/RecommendationService.cs:line 281
+         at LegalService.API.Controllers.LawyerRecommendationsController.Recommend(RecommendationRequest request, CancellationToken ct) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/Controllers/LawyerRecommendationsController.cs:line 16
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Name"
+      FROM "Specializations" AS s
+      ORDER BY s."Name"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."SpecializationId", l0."Status"
+      FROM "LawyerSpecializations" AS l
+      INNER JOIN "Lawyers" AS l0 ON l."LawyerId" = l0."LawyerId"
+      WHERE (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l1
+          WHERE l0."LawyerId" = l1."LawyerId") = 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."Category"
+      FROM "LegalServices" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__since_0='?' (DbType = DateTime), @__now_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      SELECT l."CategoryId" AS "Id", count(*)::int AS "Count"
+      FROM "LawyerRecommendationWorkflows" AS l
+      WHERE l."CreatedAt" >= @__since_0 AND l."CreatedAt" <= @__now_1 AND l."CategoryId" IS NOT NULL AND l."Status" IN ('AWAITING_APPROVAL', 'ACTION_COMPLETED', 'NO_MATCH')
+      GROUP BY l."CategoryId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__since_0='?' (DbType = DateTime), @__now_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      SELECT a."LawyerId" AS "Id", count(*)::int AS "Count"
+      FROM "Appointments" AS a
+      WHERE a."CreatedAt" >= @__since_0 AND a."CreatedAt" <= @__now_1 AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected'
+      GROUP BY a."LawyerId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__end_0='?' (DbType = DateTime2), @__start_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."StartDateTime" < @__end_0 AND l."EndDateTime" > @__start_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__from_0='?' (DbType = Date), @__until_1='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_0 AND l."Date" <= @__until_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."CareerId", c."JobTitle", c."PracticeAreaId"
+      FROM "Careers" AS c
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT p."Id", p."CreatedAt", p."HighDemandThreshold", p."MinimumActiveLawyers", p."MinimumFutureSlots", p."PracticeAreaId", p."TargetActiveLawyers", p."UpdatedAt", p."UpdatedBy", p."WatchCapacityRatio"
+      FROM "PracticeAreaWorkforceSettings" AS p
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (1ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0)
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__end_1='?' (DbType = DateTime2), @__start_2='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."LawyerId" = ANY (@__ids_0) AND l."StartDateTime" < @__end_1 AND l."EndDateTime" > @__start_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__ids_0='?' (DbType = Object), @__from_1='?' (DbType = Date), @__until_2='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."LawyerId" = ANY (@__ids_0) AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_1 AND l."Date" <= @__until_2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT u."UserId", u."CreatedAt", u."Email", u."MustChangePassword", u."Name", u."PasswordHash", u."Role", u."UpdatedAt"
+      FROM "Users" AS u
+      WHERE u."UserId" = @__id_0
+      LIMIT 2
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT s."SpecializationId", s."Name"
+      FROM "Specializations" AS s
+      ORDER BY s."Name"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."SpecializationId", l0."Status"
+      FROM "LawyerSpecializations" AS l
+      INNER JOIN "Lawyers" AS l0 ON l."LawyerId" = l0."LawyerId"
+      WHERE (
+          SELECT count(*)::int
+          FROM "LawyerSpecializations" AS l1
+          WHERE l0."LawyerId" = l1."LawyerId") = 1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."Category"
+      FROM "LegalServices" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__since_0='?' (DbType = DateTime), @__now_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      SELECT l."CategoryId" AS "Id", count(*)::int AS "Count"
+      FROM "LawyerRecommendationWorkflows" AS l
+      WHERE l."CreatedAt" >= @__since_0 AND l."CreatedAt" <= @__now_1 AND l."CategoryId" IS NOT NULL AND l."Status" IN ('AWAITING_APPROVAL', 'ACTION_COMPLETED', 'NO_MATCH')
+      GROUP BY l."CategoryId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__since_0='?' (DbType = DateTime), @__now_1='?' (DbType = DateTime)], CommandType='Text', CommandTimeout='30']
+      SELECT a."LawyerId" AS "Id", count(*)::int AS "Count"
+      FROM "Appointments" AS a
+      WHERE a."CreatedAt" >= @__since_0 AND a."CreatedAt" <= @__now_1 AND a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected'
+      GROUP BY a."LawyerId"
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."LawyerId", l."Status", l."DefaultAppointmentDurationMinutes"
+      FROM "Lawyers" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."DayOfWeek", l."EndTime", l."IsWorkingDay", l."LawyerId", l."StartTime", l."UpdatedAt"
+      FROM "LawyerWorkingSchedules" AS l
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__end_0='?' (DbType = DateTime2), @__start_1='?' (DbType = DateTime2)], CommandType='Text', CommandTimeout='30']
+      SELECT l."Id", l."CreatedAt", l."EndDateTime", l."IsFullDay", l."LawyerId", l."Reason", l."StartDateTime", l."UpdatedAt"
+      FROM "LawyerUnavailabilities" AS l
+      WHERE l."StartDateTime" < @__end_0 AND l."EndDateTime" > @__start_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__from_0='?' (DbType = Date), @__until_1='?' (DbType = Date)], CommandType='Text', CommandTimeout='30']
+      SELECT a."AppointmentId", a."LawyerId", l."Date", a0."StartTime", a0."EndTime"
+      FROM "Appointments" AS a
+      INNER JOIN "AvailabilitySlots" AS a0 ON a."SlotId" = a0."SlotId"
+      INNER JOIN "LawyerAvailabilities" AS l ON a0."AvailabilityId" = l."AvailabilityId"
+      WHERE a."Status" <> 'Cancelled' AND a."Status" <> 'Rejected' AND l."Date" >= @__from_0 AND l."Date" <= @__until_1
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT c."CareerId", c."JobTitle", c."PracticeAreaId"
+      FROM "Careers" AS c
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+      SELECT p."Id", p."CreatedAt", p."HighDemandThreshold", p."MinimumActiveLawyers", p."MinimumFutureSlots", p."PracticeAreaId", p."TargetActiveLawyers", p."UpdatedAt", p."UpdatedBy", p."WatchCapacityRatio"
+      FROM "PracticeAreaWorkforceSettings" AS p
+info: Microsoft.EntityFrameworkCore.Database.Command[20101]
+      Executed DbCommand (0ms) [Parameters=[@__owner_0='?' (DbType = Int32), @__area_PracticeAreaId_1='?' (DbType = Int32)], CommandType='Text', CommandTimeout='30']
+      SELECT h."WorkflowId", h."AiDraftJson", h."ApprovedAt", h."ApprovedBy", h."ApprovedTitle", h."CareerOpeningId", h."CreatedAt", h."OwnerUserId", h."PracticeAreaId", h."ReviewedDraftJson", h."Status", h."SystemSnapshotJson", h."UpdatedAt"
+      FROM "HiringSuggestionWorkflows" AS h
+      WHERE h."OwnerUserId" = @__owner_0 AND h."PracticeAreaId" = @__area_PracticeAreaId_1 AND h."Status" = 'AWAITING_APPROVAL'
+      LIMIT 2
+info: System.Net.Http.HttpClient.HiringSuggestionService.LogicalHandler[100]
+      Start processing HTTP request POST http://127.0.0.1:55545/hiring-suggestions
+info: System.Net.Http.HttpClient.HiringSuggestionService.ClientHandler[100]
+      Sending HTTP request POST http://127.0.0.1:55545/hiring-suggestions
+info: System.Net.Http.HttpClient.HiringSuggestionService.ClientHandler[101]
+      Received HTTP response headers after 6712.7076ms - 503
+info: System.Net.Http.HttpClient.HiringSuggestionService.LogicalHandler[101]
+      End processing HTTP request after 6712.8495ms - 503
+fail: Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware[1]
+      An unhandled exception has occurred while executing the request.
+      LegalService.API.Infrastructure.ApiException: AI hiring assistance is temporarily unavailable.
+         at LegalService.API.Services.Workforce.HiringSuggestionService.GenerateAsync(GenerateHiringRequest request, Int32 owner, CancellationToken ct) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/Services/Workforce/HiringSuggestionService.cs:line 81
+         at LegalService.API.Controllers.WorkforceAnalysisController.Generate(GenerateHiringRequest request, CancellationToken ct) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.API/Controllers/WorkforceAnalysisController.cs:line 16
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+         at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+         at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddlewareImpl.<Invoke>g__Awaited|10_0(ExceptionHandlerMiddlewareImpl middleware, HttpContext context, Task task)
+info: Microsoft.Hosting.Lifetime[0]
+      Application is shutting down...

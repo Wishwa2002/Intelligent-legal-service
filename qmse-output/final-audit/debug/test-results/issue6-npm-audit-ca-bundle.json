@@ -1,0 +1,14 @@
+{
+  "command": [
+    "npm",
+    "audit",
+    "--json"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T13:03:00.016241+00:00",
+  "ended_utc": "2026-10-08T13:03:00.426064+00:00",
+  "duration_seconds": 0.41,
+  "exit_code": 1,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/issue6-npm-audit-ca-bundle.log"
+}

@@ -1,0 +1,94 @@
+{
+  "LegalService.Tests.QmseAppointmentTests": {
+    "Passed": 6
+  },
+  "LegalService.Tests.WorkforcePlanningTests": {
+    "Passed": 23
+  },
+  "LegalService.Tests.LawyerMobileHttpTests": {
+    "Passed": 27
+  },
+  "LegalService.Tests.LawyerScheduleBackfillTests": {
+    "Passed": 3
+  },
+  "LegalService.Tests.Member1RecommendationTests": {
+    "Passed": 21
+  },
+  "LegalService.Tests.LawyerManagementHttpTests": {
+    "Passed": 68,
+    "NotExecuted": 1
+  },
+  "LegalService.Tests.RecurringSchedulingTests": {
+    "Passed": 33
+  },
+  "LegalService.Tests.RecurringSchedulingPostgresTests": {
+    "Passed": 2
+  },
+  "LegalService.Tests.AppointmentServiceTests": {
+    "Passed": 15
+  },
+  "LegalService.Tests.WorkforceHiringTests": {
+    "Passed": 24
+  },
+  "LegalService.Tests.DemoLawyerSeederTests": {
+    "Passed": 6
+  },
+  "LegalService.Tests.ServiceRequestServiceTests": {
+    "Passed": 15
+  },
+  "LegalService.Tests.Member1PostgresTests": {
+    "Passed": 4
+  },
+  "LegalService.Tests.FrontDeskMatchingTests": {
+    "Passed": 13
+  },
+  "LegalService.Tests.DevelopmentAdminSeederTests": {
+    "Passed": 5
+  },
+  "LegalService.Tests.RecurringRecommendationTests": {
+    "Passed": 7
+  },
+  "LegalService.Tests.WorkforceDemoHttpTests": {
+    "Passed": 4
+  },
+  "LegalService.Tests.QmseDocumentTests": {
+    "Passed": 5,
+    "Failed": 1
+  },
+  "LegalService.Tests.LawyerRecommendationApprovalTests": {
+    "Passed": 2
+  },
+  "LegalService.Tests.RecommendationTransportTests": {
+    "Passed": 4
+  },
+  "LegalService.Tests.RecommendationServiceCatalogTests": {
+    "Passed": 7
+  },
+  "LegalService.Tests.FrontDeskMatchingPostgresTests": {
+    "Passed": 1
+  },
+  "LegalService.Tests.CareerServiceTests": {
+    "Passed": 3
+  },
+  "LegalService.Tests.DocumentationServiceServiceTests": {
+    "Passed": 2
+  },
+  "LegalService.Tests.DocumentationRequestServiceTests": {
+    "Passed": 3
+  },
+  "LegalService.Tests.RecommendationLiveTransportTests": {
+    "NotExecuted": 1
+  },
+  "LegalService.Tests.DeploymentMigrationTests": {
+    "Passed": 1
+  },
+  "LegalService.Tests.ClerkServiceTests": {
+    "Passed": 3
+  },
+  "LegalService.Tests.WorkforcePostgresTests": {
+    "Passed": 2
+  },
+  "LegalService.Tests.WorkforcePlanningPostgresTests": {
+    "Passed": 1
+  }
+}

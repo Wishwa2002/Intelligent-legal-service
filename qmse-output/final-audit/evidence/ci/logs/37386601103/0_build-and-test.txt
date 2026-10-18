@@ -1,0 +1,507 @@
+﻿2026-10-05T23:06:54.9804150Z Current runner version: '2.337.0'
+2026-10-05T23:06:54.9829955Z ##[group]Runner Image Provisioner
+2026-10-05T23:06:54.9830843Z Hosted Compute Agent
+2026-10-05T23:06:54.9831538Z Version: 20260901.588
+2026-10-05T23:06:54.9832201Z Commit: f88ec8081b781fac6c440065ac7ff9e710ce3d0b
+2026-10-05T23:06:54.9833033Z Build Date: 2026-09-01T19:56:44Z
+2026-10-05T23:06:54.9834071Z Worker ID: {dac8319b-9f01-48c9-a0a2-e18003313330}
+2026-10-05T23:06:54.9834923Z Azure Region: westus
+2026-10-05T23:06:54.9835648Z ##[endgroup]
+2026-10-05T23:06:54.9837195Z ##[group]Operating System
+2026-10-05T23:06:54.9837925Z Ubuntu
+2026-10-05T23:06:54.9838532Z 24.04.5
+2026-10-05T23:06:54.9839060Z LTS
+2026-10-05T23:06:54.9839674Z ##[endgroup]
+2026-10-05T23:06:54.9840351Z ##[group]Runner Image
+2026-10-05T23:06:54.9840974Z Image: ubuntu-24.04
+2026-10-05T23:06:54.9841672Z Version: 20260927.320.1
+2026-10-05T23:06:54.9843057Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20260927.320/images/ubuntu/Ubuntu2404-Readme.md
+2026-10-05T23:06:54.9845009Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20260927.320
+2026-10-05T23:06:54.9846041Z ##[endgroup]
+2026-10-05T23:06:54.9847495Z ##[group]GITHUB_TOKEN Permissions
+2026-10-05T23:06:54.9849521Z Contents: read
+2026-10-05T23:06:54.9850156Z Metadata: read
+2026-10-05T23:06:54.9850737Z Packages: read
+2026-10-05T23:06:54.9851410Z ##[endgroup]
+2026-10-05T23:06:54.9854041Z Secret source: Actions
+2026-10-05T23:06:54.9855198Z Cache mode: write
+2026-10-05T23:06:54.9855925Z Prepare workflow directory
+2026-10-05T23:06:55.0207037Z Prepare all required actions
+2026-10-05T23:06:55.0258453Z Getting action download info
+2026-10-05T23:06:55.4607896Z Download action repository 'actions/checkout@v4' (SHA:11d5960a326750d5838078e36cf38b85af677262)
+2026-10-05T23:06:55.5747559Z Download action repository 'actions/setup-dotnet@v4' (SHA:67a3573c9a986a3f9c594539f4ab511d57bb3ce9)
+2026-10-05T23:06:56.1822327Z Complete job name: build-and-test
+2026-10-05T23:06:56.2665279Z ##[group]Run actions/checkout@v4
+2026-10-05T23:06:56.2666443Z with:
+2026-10-05T23:06:56.2667051Z   repository: Wishwa2002/Intelligent-legal-service
+2026-10-05T23:06:56.2671436Z   token: ***
+2026-10-05T23:06:56.2671924Z   ssh-strict: true
+2026-10-05T23:06:56.2672480Z   ssh-user: git
+2026-10-05T23:06:56.2672984Z   persist-credentials: true
+2026-10-05T23:06:56.2673840Z   clean: true
+2026-10-05T23:06:56.2674365Z   sparse-checkout-cone-mode: true
+2026-10-05T23:06:56.2674956Z   fetch-depth: 1
+2026-10-05T23:06:56.2675453Z   fetch-tags: false
+2026-10-05T23:06:56.2675950Z   show-progress: true
+2026-10-05T23:06:56.2676458Z   lfs: false
+2026-10-05T23:06:56.2676943Z   submodules: false
+2026-10-05T23:06:56.2677471Z   set-safe-directory: true
+2026-10-05T23:06:56.2678041Z   allow-unsafe-pr-checkout: false
+2026-10-05T23:06:56.2679042Z ##[endgroup]
+2026-10-05T23:06:56.3769813Z Syncing repository: Wishwa2002/Intelligent-legal-service
+2026-10-05T23:06:56.3772989Z ##[group]Getting Git version info
+2026-10-05T23:06:56.3775090Z Working directory is '/home/runner/work/Intelligent-legal-service/Intelligent-legal-service'
+2026-10-05T23:06:56.3777528Z [command]/usr/bin/git version
+2026-10-05T23:06:56.3860373Z git version 2.55.0
+2026-10-05T23:06:56.3902903Z ##[endgroup]
+2026-10-05T23:06:56.3914134Z Temporarily overriding HOME='/home/runner/work/_temp/d4104aed-e34c-4b50-bdc3-c5db3e57b645' before making global git config changes
+2026-10-05T23:06:56.3917289Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-05T23:06:56.3920187Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-05T23:06:56.3983212Z Deleting the contents of '/home/runner/work/Intelligent-legal-service/Intelligent-legal-service'
+2026-10-05T23:06:56.3988421Z ##[group]Initializing the repository
+2026-10-05T23:06:56.3993995Z [command]/usr/bin/git init /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-05T23:06:56.4159113Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-10-05T23:06:56.4164326Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-10-05T23:06:56.4166493Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-10-05T23:06:56.4169661Z hint: call:
+2026-10-05T23:06:56.4170723Z hint:
+2026-10-05T23:06:56.4172177Z hint: 	git config --global init.defaultBranch <name>
+2026-10-05T23:06:56.4173792Z hint:
+2026-10-05T23:06:56.4175267Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-10-05T23:06:56.4176548Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-10-05T23:06:56.4177435Z hint:
+2026-10-05T23:06:56.4177922Z hint: 	git branch -m <name>
+2026-10-05T23:06:56.4178468Z hint:
+2026-10-05T23:06:56.4179171Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-10-05T23:06:56.4180606Z Initialized empty Git repository in /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/.git/
+2026-10-05T23:06:56.4185643Z [command]/usr/bin/git remote add origin https://github.com/Wishwa2002/Intelligent-legal-service
+2026-10-05T23:06:56.4253306Z ##[endgroup]
+2026-10-05T23:06:56.4255214Z ##[group]Disabling automatic garbage collection
+2026-10-05T23:06:56.4260104Z [command]/usr/bin/git config --local gc.auto 0
+2026-10-05T23:06:56.4298509Z ##[endgroup]
+2026-10-05T23:06:56.4300518Z ##[group]Setting up auth
+2026-10-05T23:06:56.4309606Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-05T23:06:56.4354085Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-05T23:06:56.4805546Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-05T23:06:56.4841829Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-05T23:06:56.5088844Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-05T23:06:56.5147126Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-05T23:06:56.5385958Z [command]/usr/bin/git config --local http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-10-05T23:06:56.5430125Z ##[endgroup]
+2026-10-05T23:06:56.5431620Z ##[group]Fetching the repository
+2026-10-05T23:06:56.5440509Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +3ad5b51acfe107b8639d24ba0e40356f02774480:refs/remotes/pull/31/merge
+2026-10-05T23:07:02.7113843Z From https://github.com/Wishwa2002/Intelligent-legal-service
+2026-10-05T23:07:02.7116802Z  * [new ref]         3ad5b51acfe107b8639d24ba0e40356f02774480 -> pull/31/merge
+2026-10-05T23:07:02.7121242Z ##[endgroup]
+2026-10-05T23:07:02.7122423Z ##[group]Determining the checkout info
+2026-10-05T23:07:02.7123756Z ##[endgroup]
+2026-10-05T23:07:02.7130008Z [command]/usr/bin/git sparse-checkout disable
+2026-10-05T23:07:02.7230422Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-10-05T23:07:02.7274288Z ##[group]Checking out the ref
+2026-10-05T23:07:02.7275239Z [command]/usr/bin/git checkout --progress --force refs/remotes/pull/31/merge
+2026-10-05T23:07:02.9524667Z Note: switching to 'refs/remotes/pull/31/merge'.
+2026-10-05T23:07:02.9525742Z 
+2026-10-05T23:07:02.9526317Z You are in 'detached HEAD' state. You can look around, make experimental
+2026-10-05T23:07:02.9527669Z changes and commit them, and you can discard any commits you make in this
+2026-10-05T23:07:02.9528879Z state without impacting any branches by switching back to a branch.
+2026-10-05T23:07:02.9529624Z 
+2026-10-05T23:07:02.9530220Z If you want to create a new branch to retain commits you create, you may
+2026-10-05T23:07:02.9531846Z do so (now or later) by using -c with the switch command. Example:
+2026-10-05T23:07:02.9532633Z 
+2026-10-05T23:07:02.9532937Z   git switch -c <new-branch-name>
+2026-10-05T23:07:02.9534711Z 
+2026-10-05T23:07:02.9535604Z Or undo this operation with:
+2026-10-05T23:07:02.9536095Z 
+2026-10-05T23:07:02.9536320Z   git switch -
+2026-10-05T23:07:02.9536631Z 
+2026-10-05T23:07:02.9537085Z Turn off this advice by setting config variable advice.detachedHead to false
+2026-10-05T23:07:02.9537768Z 
+2026-10-05T23:07:02.9538452Z HEAD is now at 3ad5b51 Merge 8a9b8a24f5a567460f90e60b3b6675ed02230062 into 59337bba0227aa07e18e60f697bd758db327f0bd
+2026-10-05T23:07:02.9547010Z ##[endgroup]
+2026-10-05T23:07:02.9606437Z [command]/usr/bin/git log -1 --format=%H
+2026-10-05T23:07:02.9636595Z 3ad5b51acfe107b8639d24ba0e40356f02774480
+2026-10-05T23:07:02.9906699Z ##[group]Run actions/setup-dotnet@v4
+2026-10-05T23:07:02.9907039Z with:
+2026-10-05T23:07:02.9907257Z   dotnet-version: 8.0.x
+2026-10-05T23:07:02.9907531Z   cache: false
+2026-10-05T23:07:02.9907732Z ##[endgroup]
+2026-10-05T23:07:03.1360225Z (node:2243) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-05T23:07:03.1361545Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-05T23:07:03.1390247Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --runtime dotnet --channel LTS
+2026-10-05T23:07:03.5708499Z dotnet-install: .NET Core Runtime with version '10.0.12' is already installed.
+2026-10-05T23:07:03.5772778Z [command]/home/runner/work/_actions/actions/setup-dotnet/v4/externals/install-dotnet.sh --skip-non-versioned-files --channel 8.0
+2026-10-05T23:07:03.8159661Z dotnet-install: .NET Core SDK with version '8.0.425' is already installed.
+2026-10-05T23:07:03.8333219Z ##[group]Run dotnet restore LegalService.sln
+2026-10-05T23:07:03.8334082Z [36;1mdotnet restore LegalService.sln[0m
+2026-10-05T23:07:03.8621485Z shell: /usr/bin/bash -e {0}
+2026-10-05T23:07:03.8621851Z env:
+2026-10-05T23:07:03.8622123Z   DOTNET_ROOT: /usr/share/dotnet
+2026-10-05T23:07:03.8622442Z ##[endgroup]
+2026-10-05T23:07:10.5527932Z   Determining projects to restore...
+2026-10-05T23:07:15.1522776Z   Restored /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/backend/LegalService.Tests/LegalService.Tests.csproj (in 3.55 sec).
+2026-10-05T23:07:15.1541413Z   Restored /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/backend/LegalService.API/LegalService.API.csproj (in 3.55 sec).
+2026-10-05T23:07:15.2132101Z ##[group]Run dotnet build LegalService.sln --configuration Release --no-restore
+2026-10-05T23:07:15.2132760Z [36;1mdotnet build LegalService.sln --configuration Release --no-restore[0m
+2026-10-05T23:07:15.2198088Z shell: /usr/bin/bash -e {0}
+2026-10-05T23:07:15.2198378Z env:
+2026-10-05T23:07:15.2198618Z   DOTNET_ROOT: /usr/share/dotnet
+2026-10-05T23:07:15.2198906Z ##[endgroup]
+2026-10-05T23:07:29.2417004Z   LegalService.API -> /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/backend/LegalService.API/bin/Release/net8.0/LegalService.API.dll
+2026-10-05T23:07:32.5315154Z   LegalService.Tests -> /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/backend/LegalService.Tests/bin/Release/net8.0/LegalService.Tests.dll
+2026-10-05T23:07:32.5750440Z 
+2026-10-05T23:07:32.5762854Z Build succeeded.
+2026-10-05T23:07:32.5763341Z     0 Warning(s)
+2026-10-05T23:07:32.5764016Z     0 Error(s)
+2026-10-05T23:07:32.5764213Z 
+2026-10-05T23:07:32.5766218Z Time Elapsed 00:00:17.05
+2026-10-05T23:07:32.6262042Z ##[group]Run dotnet test LegalService.sln --configuration Release --no-build --verbosity normal
+2026-10-05T23:07:32.6262849Z [36;1mdotnet test LegalService.sln --configuration Release --no-build --verbosity normal[0m
+2026-10-05T23:07:32.6326755Z shell: /usr/bin/bash -e {0}
+2026-10-05T23:07:32.6327039Z env:
+2026-10-05T23:07:32.6327253Z   DOTNET_ROOT: /usr/share/dotnet
+2026-10-05T23:07:32.6327729Z ##[endgroup]
+2026-10-05T23:07:32.9926174Z Build started 10/05/2026 23:07:32.
+2026-10-05T23:07:33.2855598Z      1>Project "/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/LegalService.sln" on node 1 (VSTest target(s)).
+2026-10-05T23:07:33.2856864Z      1>ValidateSolutionConfiguration:
+2026-10-05T23:07:33.2857493Z          Building solution configuration "Release|Any CPU".
+2026-10-05T23:07:33.9577845Z Test run for /home/runner/work/Intelligent-legal-service/Intelligent-legal-service/backend/LegalService.Tests/bin/Release/net8.0/LegalService.Tests.dll (.NETCoreApp,Version=v8.0)
+2026-10-05T23:07:34.5273738Z A total of 1 test files matched the specified pattern.
+2026-10-05T23:07:37.2785555Z [xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.31)
+2026-10-05T23:07:37.5345392Z [xUnit.net 00:00:00.27]   Discovering: LegalService.Tests
+2026-10-05T23:07:37.7542099Z [xUnit.net 00:00:00.49]   Discovered:  LegalService.Tests
+2026-10-05T23:07:37.8378603Z [xUnit.net 00:00:00.57]   Starting:    LegalService.Tests
+2026-10-05T23:07:37.8769002Z [xUnit.net 00:00:00.61]     LegalService.Tests.LawyerScheduleBackfillTests.DataMigrationAndRepeatedBackfillPreserveCustomSchedulesAndSupportEditing [SKIP]
+2026-10-05T23:07:37.8781313Z [xUnit.net 00:00:00.61]       Set MEMBER1_TEST_POSTGRES to a local PostgreSQL maintenance database; the test creates and removes its own database.
+2026-10-05T23:07:39.5245870Z   Skipped LegalService.Tests.LawyerScheduleBackfillTests.DataMigrationAndRepeatedBackfillPreserveCustomSchedulesAndSupportEditing [1 ms]
+2026-10-05T23:07:39.5270767Z   Passed LegalService.Tests.DeploymentMigrationTests.DeploymentStorageMigrationIsDiscoverableWithoutDatabaseConnection [1 s]
+2026-10-05T23:07:39.8125242Z   Passed LegalService.Tests.CareerServiceTests.CreateCareerAsync_AddsCareerAndReturnsDto [111 ms]
+2026-10-05T23:07:39.8154942Z   Passed LegalService.Tests.CareerServiceTests.CreateApplicationAsync_AddsJobApplication [66 ms]
+2026-10-05T23:07:39.8165063Z   Passed LegalService.Tests.CareerServiceTests.UpdateApplicationStatusAsync_UpdatesStatusSuccessfully [9 ms]
+2026-10-05T23:07:39.8173136Z   Passed LegalService.Tests.DevelopmentAdminSeederTests.MissingCredentialsDoNotCreateAccount [44 ms]
+2026-10-05T23:07:39.8176749Z   Passed LegalService.Tests.DevelopmentAdminSeederTests.ExistingCustomerIsNotPromotedOrReset [12 ms]
+2026-10-05T23:07:39.8178527Z   Passed LegalService.Tests.DevelopmentAdminSeederTests.RefusesNonDevelopment(environment: "Production") [1 ms]
+2026-10-05T23:07:39.8180266Z   Passed LegalService.Tests.DevelopmentAdminSeederTests.RefusesNonDevelopment(environment: "Staging") [< 1 ms]
+2026-10-05T23:07:39.8182166Z   Passed LegalService.Tests.LawyerScheduleBackfillTests.MissingScheduleReturnsExplicitEditableDefaultsWithoutWriting [1 s]
+2026-10-05T23:07:39.8185019Z [xUnit.net 00:00:02.54]     LegalService.Tests.WorkforcePostgresTests.RealProviderMigrationPreservesCareersAndConcurrentApprovalsCreateOneOpening [SKIP]
+2026-10-05T23:07:39.8187671Z [xUnit.net 00:00:02.54]       Set MEMBER1_TEST_POSTGRES to a local PostgreSQL maintenance database; the test creates and removes its own database.
+2026-10-05T23:07:40.0487973Z   Skipped LegalService.Tests.WorkforcePostgresTests.RealProviderMigrationPreservesCareersAndConcurrentApprovalsCreateOneOpening [1 ms]
+2026-10-05T23:07:40.0510241Z   Passed LegalService.Tests.RecommendationServiceCatalogTests.ServiceInterpretationIsRevalidatedAgainstRealCatalog(scenario: "unsupported-with-service") [2 s]
+2026-10-05T23:07:40.0514032Z   Passed LegalService.Tests.RecommendationServiceCatalogTests.ServiceInterpretationIsRevalidatedAgainstRealCatalog(scenario: "null") [73 ms]
+2026-10-05T23:07:40.0516825Z   Passed LegalService.Tests.RecommendationServiceCatalogTests.ServiceInterpretationIsRevalidatedAgainstRealCatalog(scenario: "invented-name") [14 ms]
+2026-10-05T23:07:40.0519473Z   Passed LegalService.Tests.RecommendationServiceCatalogTests.ServiceInterpretationIsRevalidatedAgainstRealCatalog(scenario: "unknown-id") [7 ms]
+2026-10-05T23:07:40.0522550Z   Passed LegalService.Tests.RecommendationServiceCatalogTests.ServiceInterpretationIsRevalidatedAgainstRealCatalog(scenario: "valid") [10 ms]
+2026-10-05T23:07:40.0525466Z   Passed LegalService.Tests.RecommendationServiceCatalogTests.ServiceInterpretationIsRevalidatedAgainstRealCatalog(scenario: "wrong-area") [6 ms]
+2026-10-05T23:07:40.0528144Z   Passed LegalService.Tests.RecommendationServiceCatalogTests.ServiceInterpretationIsRevalidatedAgainstRealCatalog(scenario: "unpaired") [6 ms]
+2026-10-05T23:07:40.9955714Z [xUnit.net 00:00:03.73]     LegalService.Tests.FrontDeskMatchingPostgresTests.AdditiveMigrationPreservesOldRecordsAndNormalAppointmentLifecycle [SKIP]
+2026-10-05T23:07:40.9990166Z [xUnit.net 00:00:03.73]       Set MEMBER1_TEST_POSTGRES to a local PostgreSQL maintenance database; the test creates and removes its own database.
+2026-10-05T23:07:41.0665473Z   Passed LegalService.Tests.DemoLawyerSeederTests.SeedsThirtyLawyersWithRecurringSchedulesAndAppointmentSnapshotsWithoutDuplicates [472 ms]
+2026-10-05T23:07:41.0689784Z   Passed LegalService.Tests.DemoLawyerSeederTests.RequiresAnExistingPracticeArea [7 ms]
+2026-10-05T23:07:41.0715030Z   Passed LegalService.Tests.DemoLawyerSeederTests.SchedulingOnlySeedPreservesEditedProfilesSchedulesAndIsIdempotent [116 ms]
+2026-10-05T23:07:41.0726723Z   Passed LegalService.Tests.DemoLawyerSeederTests.UsesOnlyExistingPracticeAreasAndPreservesAdminServiceData [314 ms]
+2026-10-05T23:07:41.0754886Z   Passed LegalService.Tests.DemoLawyerSeederTests.NormalizesOnlyLegacySyntheticIdentityTextAndPreservesManualEdits [130 ms]
+2026-10-05T23:07:41.0757030Z   Passed LegalService.Tests.DemoLawyerSeederTests.SchedulingSeedRecognizesLegacyMarkersWithoutRewritingStoredRecords [124 ms]
+2026-10-05T23:07:41.0759208Z   Skipped LegalService.Tests.FrontDeskMatchingPostgresTests.AdditiveMigrationPreservesOldRecordsAndNormalAppointmentLifecycle [1 ms]
+2026-10-05T23:07:41.0761937Z   Passed LegalService.Tests.RecommendationTransportTests.DedicatedClientSendsTrustedSnapshotAndMapsFailuresWithSafeDistinctDiagnostics(upstream: 422, expected: 422, stage: "validation") [60 ms]
+2026-10-05T23:07:41.0765932Z   Passed LegalService.Tests.RecommendationTransportTests.DedicatedClientSendsTrustedSnapshotAndMapsFailuresWithSafeDistinctDiagnostics(upstream: 401, expected: 503, stage: "internal_authentication") [6 ms]
+2026-10-05T23:07:41.1489860Z   Passed LegalService.Tests.RecommendationTransportTests.DedicatedClientSendsTrustedSnapshotAndMapsFailuresWithSafeDistinctDiagnostics(upstream: 503, expected: 503, stage: "classification_unavailable") [9 ms]
+2026-10-05T23:07:41.1515524Z   Passed LegalService.Tests.RecommendationTransportTests.DedicatedClientSendsTrustedSnapshotAndMapsFailuresWithSafeDistinctDiagnostics(upstream: 404, expected: 503, stage: "route") [4 ms]
+2026-10-05T23:07:41.1518088Z   Passed LegalService.Tests.FrontDeskMatchingTests.AiReceivesRequirementAndCatalogWithoutClientIdentity [10 ms]
+2026-10-05T23:07:41.1545263Z   Passed LegalService.Tests.DevelopmentAdminSeederTests.CreatesNormalizedAdminWithNormalHasherAndIsIdempotentWithoutClerkConfiguration [1 s]
+2026-10-05T23:07:41.1590908Z   Passed LegalService.Tests.LawyerRecommendationApprovalTests.CannotApproveLawyerOutsideSavedRecommendationSet [3 ms]
+2026-10-05T23:07:41.1592098Z   Passed LegalService.Tests.FrontDeskMatchingTests.AppointmentReviewIsRequiredBeforeFinalApproval(stage: "MATCHES") [44 ms]
+2026-10-05T23:07:41.1593194Z   Passed LegalService.Tests.FrontDeskMatchingTests.AppointmentReviewIsRequiredBeforeFinalApproval(stage: "REVIEW") [3 ms]
+2026-10-05T23:07:41.1595478Z   Passed LegalService.Tests.FrontDeskMatchingTests.RegistrationValidatesRequiredFields(email: "invalid", password: "password") [4 ms]
+2026-10-05T23:07:41.2415455Z   Passed LegalService.Tests.FrontDeskMatchingTests.RegistrationValidatesRequiredFields(email: "valid@example.test", password: "") [< 1 ms]
+2026-10-05T23:07:41.2464780Z   Passed LegalService.Tests.FrontDeskMatchingTests.ClientMustExistBeforeAnyAiRequestOrWorkflow(clientId: null) [16 ms]
+2026-10-05T23:07:41.2474910Z   Passed LegalService.Tests.FrontDeskMatchingTests.ClientMustExistBeforeAnyAiRequestOrWorkflow(clientId: 999) [16 ms]
+2026-10-05T23:07:41.2476942Z   Passed LegalService.Tests.FrontDeskMatchingTests.ClientMustExistBeforeAnyAiRequestOrWorkflow(clientId: -1) [2 ms]
+2026-10-05T23:07:41.2479245Z   Passed LegalService.Tests.LawyerRecommendationApprovalTests.RecommendedLawyerApprovalUsesExistingBookingServiceAndRecordsResult [82 ms]
+2026-10-05T23:07:41.2481574Z   Passed LegalService.Tests.FrontDeskMatchingTests.HumanApprovalCreatesOneOrdinaryAppointmentWithSourceAndAudit [49 ms]
+2026-10-05T23:07:41.2484413Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "wrong-lawyer", expectedStatus: 409) [27 ms]
+2026-10-05T23:07:41.2486790Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "past-slot", expectedStatus: 409) [5 ms]
+2026-10-05T23:07:41.2835643Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "not-recommended", expectedStatus: 400) [3 ms]
+2026-10-05T23:07:41.2865379Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "inactive", expectedStatus: 409) [3 ms]
+2026-10-05T23:07:41.2884949Z   Passed LegalService.Tests.FrontDeskMatchingTests.LegacyWorkflowAcceptsExplicitClientAndReviewWithoutRerunningAi [26 ms]
+2026-10-05T23:07:41.2898324Z   Passed LegalService.Tests.FrontDeskMatchingTests.ReviewPersistsAcrossNewContextAndClientChangeNeedsConfirmation [6 ms]
+2026-10-05T23:07:41.2944920Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "missing-customer", expectedStatus: 400) [20 ms]
+2026-10-05T23:07:41.2958768Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "missing-slot", expectedStatus: 409) [6 ms]
+2026-10-05T23:07:41.2974845Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "wrong-date", expectedStatus: 409) [6 ms]
+2026-10-05T23:07:41.3004689Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "completed", expectedStatus: 409) [2 ms]
+2026-10-05T23:07:41.3635502Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "invalid-duration", expectedStatus: 409) [4 ms]
+2026-10-05T23:07:41.3655019Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "booked", expectedStatus: 409) [8 ms]
+2026-10-05T23:07:41.3675018Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "not-customer", expectedStatus: 400) [6 ms]
+2026-10-05T23:07:41.3694759Z   Passed LegalService.Tests.Member1RecommendationTests.ApprovalRevalidatesEveryBusinessConstraint(scenario: "ambiguous-area", expectedStatus: 409) [8 ms]
+2026-10-05T23:07:41.3724440Z   Passed LegalService.Tests.Member1RecommendationTests.WorkflowOwnershipAndMissingWorkflowAreEnforced [4 ms]
+2026-10-05T23:07:41.3734835Z   Passed LegalService.Tests.Member1RecommendationTests.ExternalRecommendationCannotBypassBackendValidation(scenario: "forged-id", status: 409) [23 ms]
+2026-10-05T23:07:41.3754798Z   Passed LegalService.Tests.Member1RecommendationTests.ExternalRecommendationCannotBypassBackendValidation(scenario: "invalid-area", status: 422) [6 ms]
+2026-10-05T23:07:41.3785153Z   Passed LegalService.Tests.Member1RecommendationTests.ExternalRecommendationCannotBypassBackendValidation(scenario: "date-mismatch", status: 502) [5 ms]
+2026-10-05T23:07:41.3814716Z   Passed LegalService.Tests.Member1RecommendationTests.ExternalRecommendationCannotBypassBackendValidation(scenario: "duplicate-id", status: 502) [5 ms]
+2026-10-05T23:07:41.9655563Z [xUnit.net 00:00:04.70]     LegalService.Tests.WorkforcePlanningPostgresTests.MigrationAppliesAndRealProviderDemoIsReversible [SKIP]
+2026-10-05T23:07:41.9675237Z [xUnit.net 00:00:04.70]       Set MEMBER1_TEST_POSTGRES to a local PostgreSQL maintenance database; the test creates and removes its own database.
+2026-10-05T23:07:42.0109096Z   Passed LegalService.Tests.Member1RecommendationTests.ExternalRecommendationCannotBypassBackendValidation(scenario: "inactive", status: 409) [8 ms]
+2026-10-05T23:07:42.0135219Z   Passed LegalService.Tests.Member1RecommendationTests.RealBookingPersistsCompletedWorkflowAndCannotRunTwice(preferredDate: False) [40 ms]
+2026-10-05T23:07:42.0137549Z   Passed LegalService.Tests.Member1RecommendationTests.RealBookingPersistsCompletedWorkflowAndCannotRunTwice(preferredDate: True) [10 ms]
+2026-10-05T23:07:42.0165265Z   Passed LegalService.Tests.Member1RecommendationTests.RecommendationSnapshotsIgnoreLegacyLinksAndDisplayOnlyVerifiedProfilesAndPoints [19 ms]
+2026-10-05T23:07:42.0194849Z   Passed LegalService.Tests.ClerkServiceTests.CreateClerkAsync_WithDuplicateEmail_ThrowsArgumentException [436 ms]
+2026-10-05T23:07:42.0196461Z   Passed LegalService.Tests.ClerkServiceTests.CreateClerkAsync_WithValidData_CreatesClerk [69 ms]
+2026-10-05T23:07:42.0244896Z   Passed LegalService.Tests.ClerkServiceTests.GetAllClerksAsync_ReturnsAllClerksWithCalculatedCounts [18 ms]
+2026-10-05T23:07:42.0255053Z   Skipped LegalService.Tests.WorkforcePlanningPostgresTests.MigrationAppliesAndRealProviderDemoIsReversible [1 ms]
+2026-10-05T23:07:42.0285373Z   Passed LegalService.Tests.RecurringRecommendationTests.RecommendationDateGateUsesDerivedAvailabilityAndNoDateMakesNoClaim(scenario: "leave", expected: False) [43 ms]
+2026-10-05T23:07:42.0735599Z [xUnit.net 00:00:04.81]     LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner [SKIP]
+2026-10-05T23:07:42.0765198Z [xUnit.net 00:00:04.81]       Set MEMBER1_TEST_POSTGRES to a local PostgreSQL maintenance database; the test creates and removes its own database.
+2026-10-05T23:07:42.1325665Z   Passed LegalService.Tests.RecurringRecommendationTests.RecommendationDateGateUsesDerivedAvailabilityAndNoDateMakesNoClaim(scenario: "booked", expected: False) [9 ms]
+2026-10-05T23:07:42.1355256Z   Passed LegalService.Tests.RecurringRecommendationTests.RecommendationDateGateUsesDerivedAvailabilityAndNoDateMakesNoClaim(scenario: "off", expected: False) [6 ms]
+2026-10-05T23:07:42.1385330Z   Passed LegalService.Tests.RecurringRecommendationTests.RecommendationDateGateUsesDerivedAvailabilityAndNoDateMakesNoClaim(scenario: "working", expected: True) [8 ms]
+2026-10-05T23:07:42.1415443Z   Passed LegalService.Tests.RecurringRecommendationTests.RecommendationDateGateUsesDerivedAvailabilityAndNoDateMakesNoClaim(scenario: "no-date", expected: True) [7 ms]
+2026-10-05T23:07:42.1445071Z   Passed LegalService.Tests.RecurringRecommendationTests.TextInferredDateBeyondSnapshotUsesActualWorkingDayCapacity(booked: False) [17 ms]
+2026-10-05T23:07:42.1447506Z   Passed LegalService.Tests.RecurringRecommendationTests.TextInferredDateBeyondSnapshotUsesActualWorkingDayCapacity(booked: True) [11 ms]
+2026-10-05T23:07:42.1475092Z   Skipped LegalService.Tests.RecurringSchedulingPostgresTests.MigrationPreservesHistoryAndConcurrentMutationHasOneWinner [1 ms]
+2026-10-05T23:07:42.1504871Z   Passed LegalService.Tests.DocumentationServiceServiceTests.CreateServiceAsync_SavesServiceAndSerializesDocs [41 ms]
+2026-10-05T23:07:42.1524956Z   Passed LegalService.Tests.DocumentationServiceServiceTests.GetAllServicesAsync_ReturnsAllServicesWithParsedDocs [10 ms]
+2026-10-05T23:07:42.1565629Z [xUnit.net 00:00:04.86]     LegalService.Tests.Member1PostgresTests.ConcurrentApprovalsCreateOnlyOneAppointmentAndReturnConflict [SKIP]
+2026-10-05T23:07:42.1595037Z [xUnit.net 00:00:04.86]       Set MEMBER1_TEST_POSTGRES to a local PostgreSQL maintenance database; the test creates and removes its own database.
+2026-10-05T23:07:42.1596991Z [xUnit.net 00:00:04.86]     LegalService.Tests.Member1PostgresTests.DeleteLawyerSupportsOptionalAccountsAndRemovesSchedules [SKIP]
+2026-10-05T23:07:42.1618426Z [xUnit.net 00:00:04.86]       Set MEMBER1_TEST_POSTGRES to a local PostgreSQL maintenance database; the test creates and removes its own database.
+2026-10-05T23:07:42.2585439Z   Skipped LegalService.Tests.Member1PostgresTests.ConcurrentApprovalsCreateOnlyOneAppointmentAndReturnConflict [1 ms]
+2026-10-05T23:07:42.2587518Z   Skipped LegalService.Tests.Member1PostgresTests.DeleteLawyerSupportsOptionalAccountsAndRemovesSchedules [1 ms]
+2026-10-05T23:07:42.2589209Z   Passed LegalService.Tests.ServiceRequestServiceTests.GetByIdAsync_NonExistingId_ReturnsNull [15 ms]
+2026-10-05T23:07:42.2614756Z   Passed LegalService.Tests.ServiceRequestServiceTests.ChangeStatusAsync_ValidTransition_UpdatesStatus [63 ms]
+2026-10-05T23:07:42.2616297Z   Passed LegalService.Tests.ServiceRequestServiceTests.GetAllAsync_FilterByCustomerId_ReturnsOnlyCustomerRequests [19 ms]
+2026-10-05T23:07:42.2617810Z   Passed LegalService.Tests.ServiceRequestServiceTests.GetAllAsync_NoFilter_ReturnsAllRequests [8 ms]
+2026-10-05T23:07:42.2619236Z   Passed LegalService.Tests.ServiceRequestServiceTests.GetByIdAsync_ExistingId_ReturnsRequest [8 ms]
+2026-10-05T23:07:42.2620765Z   Passed LegalService.Tests.ServiceRequestServiceTests.CancelAsync_SubmittedRequest_SetsStatusCancelled [3 ms]
+2026-10-05T23:07:42.2622307Z   Passed LegalService.Tests.ServiceRequestServiceTests.UpdateAsync_WrongCustomer_ThrowsUnauthorizedException [3 ms]
+2026-10-05T23:07:42.3423898Z   Passed LegalService.Tests.ServiceRequestServiceTests.ChangeStatusAsync_InvalidTransition_ThrowsInvalidOperationException [6 ms]
+2026-10-05T23:07:42.3435068Z   Passed LegalService.Tests.ServiceRequestServiceTests.CancelAsync_ApprovedRequest_ThrowsInvalidOperationException [2 ms]
+2026-10-05T23:07:42.3437090Z   Passed LegalService.Tests.ServiceRequestServiceTests.UpdateAsync_SubmittedRequest_UpdatesSuccessfully [2 ms]
+2026-10-05T23:07:42.3438895Z   Passed LegalService.Tests.ServiceRequestServiceTests.CreateAsync_PersistsToDatabase [15 ms]
+2026-10-05T23:07:42.3440699Z   Passed LegalService.Tests.ServiceRequestServiceTests.GetAllAsync_FilterByStatus_ReturnsOnlyMatchingRequests [17 ms]
+2026-10-05T23:07:42.3442593Z   Passed LegalService.Tests.ServiceRequestServiceTests.CreateAsync_ValidRequest_ReturnsCreatedResponse [3 ms]
+2026-10-05T23:07:42.3444772Z   Passed LegalService.Tests.ServiceRequestServiceTests.UpdateAsync_ApprovedRequest_ThrowsInvalidOperationException [2 ms]
+2026-10-05T23:07:42.3446570Z   Passed LegalService.Tests.ServiceRequestServiceTests.ChangeStatusAsync_CreatesAuditLog [2 ms]
+2026-10-05T23:07:42.3448203Z   Passed LegalService.Tests.WorkforcePlanningTests.DemoRejectsNonDevelopment(env: "Production") [22 ms]
+2026-10-05T23:07:42.5960166Z   Passed LegalService.Tests.WorkforcePlanningTests.DemoRejectsNonDevelopment(env: "Staging") [23 ms]
+2026-10-05T23:07:42.6005119Z   Passed LegalService.Tests.WorkforcePlanningTests.InvalidSettingsRejectedByBackend(min: 4, target: 6, slots: 12, demand: -1, ratio: 0.75) [42 ms]
+2026-10-05T23:07:42.6035114Z   Passed LegalService.Tests.WorkforcePlanningTests.InvalidSettingsRejectedByBackend(min: 4, target: 3, slots: 12, demand: 10, ratio: 0.75) [9 ms]
+2026-10-05T23:07:42.6047299Z   Passed LegalService.Tests.WorkforcePlanningTests.InvalidSettingsRejectedByBackend(min: 4, target: 6, slots: -1, demand: 10, ratio: 0.75) [5 ms]
+2026-10-05T23:07:42.6065219Z   Passed LegalService.Tests.WorkforcePlanningTests.InvalidSettingsRejectedByBackend(min: 4, target: 6, slots: 12, demand: 10, ratio: 1.01) [5 ms]
+2026-10-05T23:07:42.6067553Z   Passed LegalService.Tests.WorkforcePlanningTests.InvalidSettingsRejectedByBackend(min: -1, target: 6, slots: 12, demand: 10, ratio: 0.75) [5 ms]
+2026-10-05T23:07:42.6070197Z   Passed LegalService.Tests.WorkforcePlanningTests.InvalidSettingsRejectedByBackend(min: 101, target: 200, slots: 12, demand: 10, ratio: 0.75) [5 ms]
+2026-10-05T23:07:42.6072441Z   Passed LegalService.Tests.WorkforcePlanningTests.InvalidSettingsRejectedByBackend(min: 4, target: 6, slots: 12, demand: 10, ratio: 0) [4 ms]
+2026-10-05T23:07:42.6074735Z   Passed LegalService.Tests.WorkforcePlanningTests.DefaultsCustomAndResetPreserveUnconfiguredAnalysis [151 ms]
+2026-10-05T23:07:42.8255841Z   Passed LegalService.Tests.FrontDeskMatchingTests.QuickRegistrationUsesNormalClientStoreHashedPasswordAndDuplicateCheck [1 s]
+2026-10-05T23:07:42.8258134Z   Passed LegalService.Tests.FrontDeskMatchingTests.SelectedClientCannotBeSubstitutedAtFinalApproval [3 ms]
+2026-10-05T23:07:42.8261156Z   Passed LegalService.Tests.WorkforcePlanningTests.DemoIsIsolatedRepeatableAndResetPreservesOriginalRecords(scenario: "NO_ACTIVE_LAWYERS", expected: "NO_ACTIVE_LAWYERS") [177 ms]
+2026-10-05T23:07:42.8264181Z   Passed LegalService.Tests.WorkforceDemoHttpTests.DevelopmentRoutesRequireAdminAndValidateScenario(role: null, expected: 401) [4 s]
+2026-10-05T23:07:42.8265906Z   Passed LegalService.Tests.LawyerMobileHttpTests.AppointmentFilters(filter: "cancelled", count: 1) [449 ms]
+2026-10-05T23:07:42.8267610Z   Passed LegalService.Tests.LawyerManagementHttpTests.NonAdminsCannotManageLawyersOrSpecializations(role: "Clerk", status: 403) [56 ms]
+2026-10-05T23:07:43.1773874Z   Passed LegalService.Tests.WorkforceDemoHttpTests.DevelopmentRoutesRequireAdminAndValidateScenario(role: "Customer", expected: 403) [37 ms]
+2026-10-05T23:07:43.1805399Z   Passed LegalService.Tests.WorkforcePlanningTests.DemoIsIsolatedRepeatableAndResetPreservesOriginalRecords(scenario: "HEALTHY_COVERAGE", expected: "HEALTHY") [102 ms]
+2026-10-05T23:07:43.1807812Z   Passed LegalService.Tests.WorkforcePlanningTests.DemoIsIsolatedRepeatableAndResetPreservesOriginalRecords(scenario: "EXISTING_RECRUITMENT", expected: "CAPACITY_CONCERN") [116 ms]
+2026-10-05T23:07:43.1810284Z   Passed LegalService.Tests.WorkforcePlanningTests.DemoIsIsolatedRepeatableAndResetPreservesOriginalRecords(scenario: "RECRUITMENT_NEEDED", expected: "CAPACITY_CONCERN") [53 ms]
+2026-10-05T23:07:43.1812235Z   Passed LegalService.Tests.WorkforcePlanningTests.ResetPreservesHumanApprovedOpeningAndUsedSlots [48 ms]
+2026-10-05T23:07:43.1814253Z   Passed LegalService.Tests.WorkforcePlanningTests.VerifiedRulesSentToAiAndRuleChangesInvalidateApproval [80 ms]
+2026-10-05T23:07:43.1816659Z   Passed LegalService.Tests.WorkforcePlanningTests.RulesExplainStaffingAndCapacityWithoutTreatingTargetsAsShortages(active: 4, demand: 0, slots: 30, status: "HEALTHY", reason: "BELOW_TARGET_LAWYERS") [< 1 ms]
+2026-10-05T23:07:43.1819660Z   Passed LegalService.Tests.WorkforcePlanningTests.RulesExplainStaffingAndCapacityWithoutTreatingTargetsAsShortages(active: 4, demand: 10, slots: 8, status: "CAPACITY_CONCERN", reason: "LOW_FUTURE_CAPACITY") [< 1 ms]
+2026-10-05T23:07:43.1866036Z   Passed LegalService.Tests.WorkforcePlanningTests.RulesExplainStaffingAndCapacityWithoutTreatingTargetsAsShortages(active: 0, demand: 0, slots: 30, status: "NO_ACTIVE_LAWYERS", reason: "NO_ACTIVE_LAWYERS") [< 1 ms]
+2026-10-05T23:07:43.1871272Z   Passed LegalService.Tests.WorkforcePlanningTests.RulesExplainStaffingAndCapacityWithoutTreatingTargetsAsShortages(active: 3, demand: 0, slots: 30, status: "CAPACITY_CONCERN", reason: "BELOW_MINIMUM_LAWYERS") [< 1 ms]
+2026-10-05T23:07:43.1875036Z   Passed LegalService.Tests.WorkforcePlanningTests.RulesExplainStaffingAndCapacityWithoutTreatingTargetsAsShortages(active: 4, demand: 0, slots: 8, status: "WATCH", reason: "LOW_FUTURE_CAPACITY") [< 1 ms]
+2026-10-05T23:07:43.1878779Z   Passed LegalService.Tests.WorkforcePlanningTests.RulesExplainStaffingAndCapacityWithoutTreatingTargetsAsShortages(active: 6, demand: 10, slots: 13, status: "WATCH", reason: "DEMAND_APPROACHING_CAPACITY") [< 1 ms]
+2026-10-05T23:07:43.1881370Z   Passed LegalService.Tests.WorkforcePlanningTests.DemoRejectsUnknownScenariosBeforeMutation [6 ms]
+2026-10-05T23:07:43.1884322Z   Passed LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 0, requests: 0, appointments: 0, slots: 0, expected: "NO_ACTIVE_LAWYERS") [< 1 ms]
+2026-10-05T23:07:43.1887265Z   Passed LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 1, requests: 0, appointments: 0, slots: 0, expected: "WATCH") [< 1 ms]
+2026-10-05T23:07:43.1890273Z   Passed LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 1, requests: 3, appointments: 3, slots: 4, expected: "HEALTHY") [< 1 ms]
+2026-10-05T23:07:43.1893207Z   Passed LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 1, requests: 0, appointments: 7, slots: 2, expected: "CAPACITY_CONCERN") [< 1 ms]
+2026-10-05T23:07:43.2676285Z   Passed LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 1, requests: 4, appointments: 0, slots: 20, expected: "HEALTHY") [< 1 ms]
+2026-10-05T23:07:43.2680702Z   Passed LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 1, requests: 5, appointments: 0, slots: 4, expected: "CAPACITY_CONCERN") [< 1 ms]
+2026-10-05T23:07:43.2683897Z   Passed LegalService.Tests.WorkforceHiringTests.ThresholdsAreDeterministicAndDoNotDoubleCountDemand(active: 1, requests: 6, appointments: 0, slots: 8, expected: "WATCH") [< 1 ms]
+2026-10-05T23:07:43.2719076Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: "unmapped", expected: 400) [20 ms]
+2026-10-05T23:07:43.2724800Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: "stale", expected: 409) [10 ms]
+2026-10-05T23:07:43.2727174Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: "recruitment", expected: 409) [10 ms]
+2026-10-05T23:07:43.2729728Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: "owner", expected: 404) [23 ms]
+2026-10-05T23:07:43.2732016Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: "dismissed", expected: 409) [9 ms]
+2026-10-05T23:07:43.2734541Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: "invalid", expected: 400) [7 ms]
+2026-10-05T23:07:43.4101282Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: "changed", expected: 409) [17 ms]
+2026-10-05T23:07:43.4103711Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalRevalidatesAndRejectsUnsafeSelections(scenario: "deleted", expected: 409) [19 ms]
+2026-10-05T23:07:43.4107012Z   Passed LegalService.Tests.WorkforceHiringTests.GenerationPersistsRestoresAndNeverCallsCareersBeforeApproval [13 ms]
+2026-10-05T23:07:43.4108843Z   Passed LegalService.Tests.WorkforceHiringTests.InvalidAiDraftIsNeverPersisted(scenario: "prose") [11 ms]
+2026-10-05T23:07:43.4110363Z   Passed LegalService.Tests.WorkforceHiringTests.InvalidAiDraftIsNeverPersisted(scenario: "blank") [6 ms]
+2026-10-05T23:07:43.4111859Z   Passed LegalService.Tests.WorkforceHiringTests.InvalidAiDraftIsNeverPersisted(scenario: "extra") [8 ms]
+2026-10-05T23:07:43.4113349Z   Passed LegalService.Tests.WorkforceHiringTests.InvalidAiDraftIsNeverPersisted(scenario: "focus") [6 ms]
+2026-10-05T23:07:43.4115345Z   Passed LegalService.Tests.WorkforceHiringTests.ApprovalUsesExistingCareerServiceExactlyOnceAndRestoresCompletion [37 ms]
+2026-10-05T23:07:43.4117697Z   Passed LegalService.Tests.WorkforceHiringTests.AppointmentDemandUsesPersistedCreationWindowAndExcludesCancelledRejectedAndAmbiguousMembership [20 ms]
+2026-10-05T23:07:43.4250421Z [xUnit.net 00:00:06.16]     LegalService.Tests.RecommendationLiveTransportTests.ActualAspNetRecommendationClientPasses8002AuthenticationAndPersistsOnlyIsolatedWorkflow [SKIP]
+2026-10-05T23:07:43.4255682Z [xUnit.net 00:00:06.16]       Opt-in live 8002 test: supply its unchanged internal key in the test process environment.
+2026-10-05T23:07:43.5379266Z   Passed LegalService.Tests.WorkforceHiringTests.AnalysisUsesRealAreasSingleMembershipAndValidBoundedCapacityNotLegacyLinks [7 ms]
+2026-10-05T23:07:43.5381876Z   Passed LegalService.Tests.WorkforceHiringTests.ExistingLinkedRecruitmentBlocksGenerationAndReportsOpening [9 ms]
+2026-10-05T23:07:43.5385717Z   Skipped LegalService.Tests.RecommendationLiveTransportTests.ActualAspNetRecommendationClientPasses8002AuthenticationAndPersistsOnlyIsolatedWorkflow [1 ms]
+2026-10-05T23:07:43.5388508Z   Passed LegalService.Tests.DocumentationRequestServiceTests.AssignClerkAsync_WithValidClerk_AssignsAndChangesStatusToAssigned [78 ms]
+2026-10-05T23:07:43.5390804Z   Passed LegalService.Tests.DocumentationRequestServiceTests.CreateRequestAsync_WithValidData_CreatesDocumentationRequest [4 ms]
+2026-10-05T23:07:43.5393075Z   Passed LegalService.Tests.DocumentationRequestServiceTests.UpdateRequestStatusAsync_WithValidStatus_UpdatesRequestStatus [3 ms]
+2026-10-05T23:07:43.5395462Z   Passed LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_SlotNotFound_ThrowsKeyNotFoundException [3 ms]
+2026-10-05T23:07:43.5397650Z   Passed LegalService.Tests.AppointmentServiceTests.GetAvailableSlotsAsync_DoesNotInventHoursOrPersistSlotsWhenNoScheduleExists [3 ms]
+2026-10-05T23:07:43.5399943Z   Passed LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_PersistsDescriptionAndConsultationType [16 ms]
+2026-10-05T23:07:43.6383939Z   Passed LegalService.Tests.AppointmentServiceTests.RejectAppointmentAsync_ReleasesAssociatedSlot [26 ms]
+2026-10-05T23:07:43.6385720Z   Passed LegalService.Tests.AppointmentServiceTests.CompleteAppointmentAsync_ConfirmedStatus_TransitionsToCompleted [7 ms]
+2026-10-05T23:07:43.6387608Z   Passed LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_OverlappingConflict_ThrowsInvalidOperationException [4 ms]
+2026-10-05T23:07:43.6389658Z   Passed LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_SlotBelongsToDifferentLawyer_ThrowsInvalidOperationException [2 ms]
+2026-10-05T23:07:43.6391613Z   Passed LegalService.Tests.AppointmentServiceTests.ConfirmAppointmentAsync_RequestedStatus_TransitionsToConfirmed [10 ms]
+2026-10-05T23:07:43.6393275Z   Passed LegalService.Tests.AppointmentServiceTests.CancelAppointmentAsync_ReleasesAssociatedSlot [6 ms]
+2026-10-05T23:07:43.6395199Z   Passed LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_ValidSlot_CreatesAppointmentAndMarksSlotBooked [11 ms]
+2026-10-05T23:07:43.6396812Z   Passed LegalService.Tests.AppointmentServiceTests.CheckConflictAsync_DetectsOverlapCorrectly [25 ms]
+2026-10-05T23:07:43.6398473Z   Passed LegalService.Tests.AppointmentServiceTests.BookAppointmentAsync_SlotAlreadyBooked_ThrowsInvalidOperationException [4 ms]
+2026-10-05T23:07:43.6950135Z   Passed LegalService.Tests.AppointmentServiceTests.CompleteAppointmentAsync_FromRequested_ThrowsInvalidOperationException [14 ms]
+2026-10-05T23:07:43.6951959Z   Passed LegalService.Tests.AppointmentServiceTests.GetAvailableSlotsAsync_ReturnsOnlyUnbookedSlotsForLawyer [11 ms]
+2026-10-05T23:07:43.6954015Z   Passed LegalService.Tests.AppointmentServiceTests.RescheduleAppointmentAsync_ReleasesOldSlotAndBooksNewSlot [16 ms]
+2026-10-05T23:07:43.6955680Z   Passed LegalService.Tests.RecurringSchedulingTests.LeaveSubtractsFullOrPartialIntervals(full: True, expected: 0) [3 ms]
+2026-10-05T23:07:43.6957446Z   Passed LegalService.Tests.RecurringSchedulingTests.LeaveSubtractsFullOrPartialIntervals(full: False, expected: 4) [2 ms]
+2026-10-05T23:07:43.6959105Z   Passed LegalService.Tests.RecurringSchedulingTests.DurationControlsGeneration(duration: 45, count: 4) [2 ms]
+2026-10-05T23:07:43.6960645Z   Passed LegalService.Tests.RecurringSchedulingTests.DurationControlsGeneration(duration: 15, count: 12) [1 ms]
+2026-10-05T23:07:43.6962223Z   Passed LegalService.Tests.RecurringSchedulingTests.DurationControlsGeneration(duration: 240, count: 0) [1 ms]
+2026-10-05T23:07:43.6964960Z   Passed LegalService.Tests.RecurringSchedulingTests.DurationControlsGeneration(duration: 60, count: 3) [1 ms]
+2026-10-05T23:07:43.7175501Z   Passed LegalService.Tests.RecurringSchedulingTests.BookingRevalidatesAllSelectionFacts(reason: "customer") [3 ms]
+2026-10-05T23:07:43.7177737Z   Passed LegalService.Tests.RecurringSchedulingTests.BookingRevalidatesAllSelectionFacts(reason: "grid") [2 ms]
+2026-10-05T23:07:43.7180111Z   Passed LegalService.Tests.RecurringSchedulingTests.BookingRevalidatesAllSelectionFacts(reason: "booked") [2 ms]
+2026-10-05T23:07:43.7182023Z   Passed LegalService.Tests.RecurringSchedulingTests.BookingRevalidatesAllSelectionFacts(reason: "outside") [1 ms]
+2026-10-05T23:07:43.7184126Z   Passed LegalService.Tests.RecurringSchedulingTests.BookingRevalidatesAllSelectionFacts(reason: "leave") [2 ms]
+2026-10-05T23:07:43.7186122Z   Passed LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: "Requested", count: 5) [2 ms]
+2026-10-05T23:07:43.7188140Z   Passed LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: "Confirmed", count: 5) [2 ms]
+2026-10-05T23:07:43.7190136Z   Passed LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: "Completed", count: 5) [1 ms]
+2026-10-05T23:07:43.7192149Z   Passed LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: "Rescheduled", count: 5) [1 ms]
+2026-10-05T23:07:43.7580280Z   Passed LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: "Rejected", count: 6) [2 ms]
+2026-10-05T23:07:43.7583670Z   Passed LegalService.Tests.RecurringSchedulingTests.ActualStatusesDetermineOccupancy(status: "Cancelled", count: 6) [2 ms]
+2026-10-05T23:07:43.7585560Z   Passed LegalService.Tests.RecurringSchedulingTests.AdjacentLeaveCanBeCreatedEditedAndDeleted [16 ms]
+2026-10-05T23:07:43.7587450Z   Passed LegalService.Tests.RecurringSchedulingTests.WorkingDayGeneratesSlotsWithoutPersistingFutureRecords [3 ms]
+2026-10-05T23:07:43.7589206Z   Passed LegalService.Tests.RecurringSchedulingTests.UnknownLawyerReturns404 [1 ms]
+2026-10-05T23:07:43.7591124Z   Passed LegalService.Tests.RecurringSchedulingTests.WorkforceCapacityUsesScheduleAndSubtractsOccupancy(scenario: "appointment", expected: 5) [4 ms]
+2026-10-05T23:07:43.7593698Z   Passed LegalService.Tests.RecurringSchedulingTests.WorkforceCapacityUsesScheduleAndSubtractsOccupancy(scenario: "none", expected: 6) [3 ms]
+2026-10-05T23:07:43.7596161Z   Passed LegalService.Tests.RecurringSchedulingTests.WorkforceCapacityUsesScheduleAndSubtractsOccupancy(scenario: "leave", expected: 4) [3 ms]
+2026-10-05T23:07:43.7598206Z   Passed LegalService.Tests.RecurringSchedulingTests.InvalidSchedulesAreRejected(kind: "duration") [2 ms]
+2026-10-05T23:07:43.7906733Z   Passed LegalService.Tests.RecurringSchedulingTests.InvalidSchedulesAreRejected(kind: "overlap") [1 ms]
+2026-10-05T23:07:43.7914728Z   Passed LegalService.Tests.RecurringSchedulingTests.InvalidSchedulesAreRejected(kind: "duplicate") [1 ms]
+2026-10-05T23:07:43.7917006Z   Passed LegalService.Tests.RecurringSchedulingTests.PartialOverlapBlocksBothSlotsButAdjacentIntervalsRemain [3 ms]
+2026-10-05T23:07:43.7919345Z   Passed LegalService.Tests.RecurringSchedulingTests.InactiveLawyerCannotBeBooked [3 ms]
+2026-10-05T23:07:43.7920897Z   Passed LegalService.Tests.RecurringSchedulingTests.NonWorkingDayReturnsReason [2 ms]
+2026-10-05T23:07:43.7944719Z   Passed LegalService.Tests.RecurringSchedulingTests.ValidBookingCreatesOneSnapshotAndStaleSelectionFails [4 ms]
+2026-10-05T23:07:43.7945795Z   Passed LegalService.Tests.RecurringSchedulingTests.ScheduleSaveIsUniqueAndProtectsExistingAppointments [5 ms]
+2026-10-05T23:07:43.7946781Z   Passed LegalService.Tests.RecurringSchedulingTests.ConflictingLeaveReturnsAppointmentDataAndNeverCancels [3 ms]
+2026-10-05T23:07:43.7948480Z   Passed LegalService.Tests.RecurringSchedulingTests.TodayUsesOfficeTimeAndExcludesPastStarts [2 ms]
+2026-10-05T23:07:43.7965756Z   Passed LegalService.Tests.WorkforceDemoHttpTests.DevelopmentRoutesRequireAdminAndValidateScenario(role: "Lawyer", expected: 403) [958 ms]
+2026-10-05T23:07:44.2446593Z   Passed LegalService.Tests.LawyerManagementHttpTests.NonAdminsCannotManageLawyersOrSpecializations(role: null, status: 401) [908 ms]
+2026-10-05T23:07:44.2455356Z   Passed LegalService.Tests.WorkforceDemoHttpTests.DevelopmentRoutesRequireAdminAndValidateScenario(role: "Admin", expected: 200) [93 ms]
+2026-10-05T23:07:44.2473928Z   Passed LegalService.Tests.LawyerManagementHttpTests.NonAdminsCannotManageLawyersOrSpecializations(role: "Lawyer", status: 403) [14 ms]
+2026-10-05T23:07:44.2475384Z   Passed LegalService.Tests.LawyerManagementHttpTests.NonAdminsCannotManageLawyersOrSpecializations(role: "Customer", status: 403) [17 ms]
+2026-10-05T23:07:44.2476435Z   Passed LegalService.Tests.LawyerMobileHttpTests.AppointmentFilters(filter: "today", count: 1) [44 ms]
+2026-10-05T23:07:44.2477356Z   Passed LegalService.Tests.LawyerManagementHttpTests.InvalidFieldsReturn400(experience: 2, name: "Name", license: " ") [24 ms]
+2026-10-05T23:07:44.2478395Z   Passed LegalService.Tests.LawyerManagementHttpTests.InvalidFieldsReturn400(experience: -1, name: "Name", license: "BAR") [17 ms]
+2026-10-05T23:07:44.2479371Z   Passed LegalService.Tests.LawyerManagementHttpTests.InvalidFieldsReturn400(experience: 2, name: " ", license: "BAR") [15 ms]
+2026-10-05T23:07:45.5725953Z   Passed LegalService.Tests.LawyerManagementHttpTests.InvalidFieldsReturn400(experience: 71, name: "Name", license: "BAR") [11 ms]
+2026-10-05T23:07:45.5728224Z   Passed LegalService.Tests.LawyerManagementHttpTests.OperationalSummaryUsesCatalogActiveLawyersAndOnlyFutureUnbookedSlots [41 ms]
+2026-10-05T23:07:45.5730356Z   Passed LegalService.Tests.LawyerManagementHttpTests.AdminCanDeleteLawyer [79 ms]
+2026-10-05T23:07:45.5732160Z   Passed LegalService.Tests.LawyerManagementHttpTests.WorkforceSettingsHttpValidatesPersistsAndRestoresDefaults [51 ms]
+2026-10-05T23:07:45.5734321Z   Passed LegalService.Tests.LawyerMobileHttpTests.AppointmentFilters(filter: "completed", count: 1) [27 ms]
+2026-10-05T23:07:45.5736551Z   Passed LegalService.Tests.LawyerManagementHttpTests.AdminQuickRegistrationIsSearchableThroughNormalClientsAndRejectsDuplicates [605 ms]
+2026-10-05T23:07:45.5738775Z   Passed LegalService.Tests.LawyerManagementHttpTests.LawyerWithAppointmentHistoryCannotBeDeleted [21 ms]
+2026-10-05T23:07:45.5740962Z   Passed LegalService.Tests.LawyerManagementHttpTests.AvailabilityReturnsOnlyRecordedUnbookedSlotsWithoutCreatingDefaults [88 ms]
+2026-10-05T23:07:46.3472562Z   Passed LegalService.Tests.LawyerManagementHttpTests.AdminManagesLegalServicesButCannotDeleteAssignedRecords [130 ms]
+2026-10-05T23:07:46.3474737Z   Passed LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: "Customer", status: 403) [21 ms]
+2026-10-05T23:07:46.3476586Z   Passed LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: "Lawyer", status: 403) [19 ms]
+2026-10-05T23:07:46.3478352Z   Passed LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: "Clerk", status: 403) [15 ms]
+2026-10-05T23:07:46.3479961Z   Passed LegalService.Tests.LawyerManagementHttpTests.WorkforceAndCareerWritesRequireAdmin(role: null, status: 401) [14 ms]
+2026-10-05T23:07:46.3481696Z   Passed LegalService.Tests.LawyerManagementHttpTests.DedicatedRecommendationsRemainAdminAssisted(role: null, status: 401) [11 ms]
+2026-10-05T23:07:46.3483801Z   Passed LegalService.Tests.LawyerManagementHttpTests.DedicatedRecommendationsRemainAdminAssisted(role: "Clerk", status: 403) [13 ms]
+2026-10-05T23:07:46.3485840Z   Passed LegalService.Tests.LawyerManagementHttpTests.DedicatedRecommendationsRemainAdminAssisted(role: "Customer", status: 403) [13 ms]
+2026-10-05T23:07:46.3487788Z   Passed LegalService.Tests.LawyerManagementHttpTests.DedicatedRecommendationsRemainAdminAssisted(role: "Lawyer", status: 403) [12 ms]
+2026-10-05T23:07:47.4999080Z   Passed LegalService.Tests.LawyerManagementHttpTests.EligibleLawyersDoNotBlockLegalServiceDeletion [66 ms]
+2026-10-05T23:07:47.5000837Z   Passed LegalService.Tests.LawyerMobileHttpTests.AppointmentFilters(filter: "upcoming", count: 2) [31 ms]
+2026-10-05T23:07:47.5002715Z   Passed LegalService.Tests.LawyerManagementHttpTests.ProfileServicesFollowPracticeAreaAndIgnoreUnrelatedLegacyLinks [52 ms]
+2026-10-05T23:07:47.5004902Z   Passed LegalService.Tests.LawyerManagementHttpTests.AdminCanCreateLawyerAndLawyerAccount [568 ms]
+2026-10-05T23:07:47.5025567Z   Passed LegalService.Tests.LawyerManagementHttpTests.AdminManagesSpecializationsButCannotDeleteReferencedRecords [70 ms]
+2026-10-05T23:07:47.5030467Z   Passed LegalService.Tests.LawyerManagementHttpTests.OperationalSummaryRequiresAdmin(role: "Lawyer", status: 403) [7 ms]
+2026-10-05T23:07:47.5032788Z   Passed LegalService.Tests.LawyerManagementHttpTests.OperationalSummaryRequiresAdmin(role: "Customer", status: 403) [7 ms]
+2026-10-05T23:07:47.5035343Z   Passed LegalService.Tests.LawyerManagementHttpTests.OperationalSummaryRequiresAdmin(role: null, status: 401) [4 ms]
+2026-10-05T23:07:48.4663749Z   Passed LegalService.Tests.LawyerMobileHttpTests.AppointmentFilters(filter: "pending", count: 1) [17 ms]
+2026-10-05T23:07:48.4665772Z   Passed LegalService.Tests.LawyerManagementHttpTests.FreshEfCatalogBootstrapHasOnlyFiveSupportedAreasAndPreservesLaterAdminChanges [182 ms]
+2026-10-05T23:07:48.4667746Z   Passed LegalService.Tests.LawyerManagementHttpTests.AdminCanUpdateAndPreserveAccountSecurity [54 ms]
+2026-10-05T23:07:48.4669707Z   Passed LegalService.Tests.LawyerManagementHttpTests.ScheduleAndLeaveHttpCrudDerivesSlotsAndReturnsStructuredAppointmentConflict [107 ms]
+2026-10-05T23:07:48.4672026Z   Passed LegalService.Tests.LawyerManagementHttpTests.HttpWorkflowRestoresByIdCompletesAndRejectsDuplicateApproval(preferredDate: True) [87 ms]
+2026-10-05T23:07:48.4674548Z   Passed LegalService.Tests.LawyerManagementHttpTests.HttpWorkflowRestoresByIdCompletesAndRejectsDuplicateApproval(preferredDate: False) [63 ms]
+2026-10-05T23:07:48.4676847Z   Passed LegalService.Tests.LawyerManagementHttpTests.WeeklyScheduleAndLeaveEndpointsEnforceAdminAuthorization(role: "Customer", status: 403) [16 ms]
+2026-10-05T23:07:48.4679090Z   Passed LegalService.Tests.LawyerManagementHttpTests.WeeklyScheduleAndLeaveEndpointsEnforceAdminAuthorization(role: null, status: 401) [12 ms]
+2026-10-05T23:07:49.0270462Z   Passed LegalService.Tests.LawyerManagementHttpTests.WeeklyScheduleAndLeaveEndpointsEnforceAdminAuthorization(role: "Clerk", status: 403) [12 ms]
+2026-10-05T23:07:49.0274756Z   Passed LegalService.Tests.LawyerManagementHttpTests.WeeklyScheduleAndLeaveEndpointsEnforceAdminAuthorization(role: "Lawyer", status: 403) [13 ms]
+2026-10-05T23:07:49.0276903Z   Passed LegalService.Tests.LawyerManagementHttpTests.ProductionHostHasNoDemoRoutes [13 ms]
+2026-10-05T23:07:49.0278615Z   Passed LegalService.Tests.LawyerManagementHttpTests.StatusFilterIsValidatedAndInvalidEmailCannotBeSaved [53 ms]
+2026-10-05T23:07:49.0280788Z   Passed LegalService.Tests.LawyerManagementHttpTests.PracticeAreaDetailsShowRecordedRelationshipsAndEnforceAdminAccess [48 ms]
+2026-10-05T23:07:49.0282801Z   Passed LegalService.Tests.LawyerMobileHttpTests.AppointmentFilters(filter: "all", count: 4) [17 ms]
+2026-10-05T23:07:49.0285004Z   Passed LegalService.Tests.LawyerManagementHttpTests.FrontDeskClientAndReviewEndpointsRequireAdmin(role: null, status: 401) [13 ms]
+2026-10-05T23:07:49.0287297Z   Passed LegalService.Tests.LawyerManagementHttpTests.FrontDeskClientAndReviewEndpointsRequireAdmin(role: "Clerk", status: 403) [11 ms]
+2026-10-05T23:07:50.1647543Z   Passed LegalService.Tests.LawyerManagementHttpTests.FrontDeskClientAndReviewEndpointsRequireAdmin(role: "Lawyer", status: 403) [11 ms]
+2026-10-05T23:07:50.1655158Z   Passed LegalService.Tests.LawyerManagementHttpTests.FrontDeskClientAndReviewEndpointsRequireAdmin(role: "Customer", status: 403) [11 ms]
+2026-10-05T23:07:50.1661707Z   Passed LegalService.Tests.LawyerManagementHttpTests.PracticeAreaUsageMatchesCaseInsensitiveServiceCategoryAndBlocksDeletion [56 ms]
+2026-10-05T23:07:50.1664879Z   Passed LegalService.Tests.LawyerManagementHttpTests.PagedDirectoryCombinesSearchSpecializationAndRecordedAvailability [226 ms]
+2026-10-05T23:07:50.1667206Z   Passed LegalService.Tests.LawyerManagementHttpTests.PublicRoutesSearchAndAliasesReturnRecordedData [97 ms]
+2026-10-05T23:07:50.1670027Z   Passed LegalService.Tests.LawyerManagementHttpTests.WorkforceHttpApprovalCreatesNormalCareerAndRejectsDuplicateAndInjectedMetrics [100 ms]
+2026-10-05T23:07:50.1672566Z   Passed LegalService.Tests.LawyerManagementHttpTests.LegacyCategoryPayloadAndSlotsRouteRemainCompatible [48 ms]
+2026-10-05T23:07:50.1674693Z   Passed LegalService.Tests.LawyerManagementHttpTests.InvalidSpecializationAndMissingLawyerAreRejected [24 ms]
+2026-10-05T23:07:50.1676823Z   Passed LegalService.Tests.LawyerManagementHttpTests.AmbiguousPracticeAreaRecordsCannotBecomeEligibleThroughLegacyLinks [34 ms]
+2026-10-05T23:07:51.6659964Z   Passed LegalService.Tests.LawyerMobileHttpTests.LeaveCrudConflictsAndDerivedCapacity [84 ms]
+2026-10-05T23:07:51.6662389Z   Passed LegalService.Tests.LawyerManagementHttpTests.CannotCreateOverExistingAccountOrUseDuplicateEmailOrLicense [46 ms]
+2026-10-05T23:07:51.6665096Z   Passed LegalService.Tests.LawyerManagementHttpTests.UpdatingDirectoryOnlyLawyerDoesNotCreateAnAccount [22 ms]
+2026-10-05T23:07:51.6667379Z   Passed LegalService.Tests.LawyerManagementHttpTests.AdminLegalServiceEligibilityFollowsActivePracticeAreaWithoutAssignments [101 ms]
+2026-10-05T23:07:51.6669563Z   Passed LegalService.Tests.LawyerMobileHttpTests.OtherRolesDenied(role: "Admin") [7 ms]
+2026-10-05T23:07:53.1664369Z   Passed LegalService.Tests.LawyerMobileHttpTests.OtherRolesDenied(role: "Customer") [6 ms]
+2026-10-05T23:07:54.6670655Z   Passed LegalService.Tests.LawyerMobileHttpTests.OtherRolesDenied(role: "Clerk") [5 ms]
+2026-10-05T23:07:54.7540872Z [xUnit.net 00:00:17.49]     LegalService.Tests.LawyerMobileHttpTests.PasswordMigrationIsAdditiveAndRequiresExistingLawyersToChange [SKIP]
+2026-10-05T23:07:54.7546143Z [xUnit.net 00:00:17.49]       Set LAWYER_MOBILE_TEST_POSTGRES to a local PostgreSQL maintenance database; each test creates and drops an isolated database.
+2026-10-05T23:07:56.1682858Z   Passed LegalService.Tests.LawyerMobileHttpTests.EmptyDashboard [78 ms]
+2026-10-05T23:07:56.1684686Z   Skipped LegalService.Tests.LawyerMobileHttpTests.PasswordMigrationIsAdditiveAndRequiresExistingLawyersToChange [1 ms]
+2026-10-05T23:07:57.6704430Z   Passed LegalService.Tests.LawyerMobileHttpTests.InitialPasswordGateAndSecurePasswordChange [863 ms]
+2026-10-05T23:07:57.6705684Z   Passed LegalService.Tests.LawyerMobileHttpTests.DetailsHideUnnecessaryClientData [13 ms]
+2026-10-05T23:07:57.6706920Z   Passed LegalService.Tests.LawyerMobileHttpTests.LegacyApiCannotBypassOwnershipOrForbiddenActions [24 ms]
+2026-10-05T23:07:57.6708158Z   Passed LegalService.Tests.LawyerMobileHttpTests.ActionsUseCentralLifecycleAndHistory [43 ms]
+2026-10-05T23:07:59.1705356Z   Passed LegalService.Tests.LawyerMobileHttpTests.ProfileWhitelistProtectsVerifiedFields [16 ms]
+2026-10-05T23:07:59.1707135Z   Passed LegalService.Tests.LawyerMobileHttpTests.UnauthenticatedAndExpiredDenied [11 ms]
+2026-10-05T23:07:59.1709040Z   Passed LegalService.Tests.LawyerMobileHttpTests.DisabledStatusBlocksLoginAndExistingToken(status: "Pending") [166 ms]
+2026-10-05T23:08:00.6713991Z   Passed LegalService.Tests.LawyerMobileHttpTests.DisabledStatusBlocksLoginAndExistingToken(status: "Inactive") [165 ms]
+2026-10-05T23:08:00.6735226Z   Passed LegalService.Tests.LawyerMobileHttpTests.DashboardCountsNextAndClientAreScoped [13 ms]
+2026-10-05T23:08:00.6754282Z   Passed LegalService.Tests.LawyerMobileHttpTests.AdminCreationRequiresPasswordChangeAndCreatesSchedule [173 ms]
+2026-10-05T23:08:00.6775209Z   Passed LegalService.Tests.LawyerMobileHttpTests.CentralAiSourceAppointmentAppearsAndBlocksBooking [13 ms]
+2026-10-05T23:08:01.6030712Z [xUnit.net 00:00:24.34]   Finished:    LegalService.Tests
+2026-10-05T23:08:01.6869630Z   Passed LegalService.Tests.LawyerMobileHttpTests.ForeignAppointmentAndLeaveDenied [34 ms]
+2026-10-05T23:08:01.6871990Z   Passed LegalService.Tests.LawyerMobileHttpTests.ScheduleOwnershipValidationAndConflict [42 ms]
+2026-10-05T23:08:01.6873870Z   Passed LegalService.Tests.LawyerMobileHttpTests.MissingProfileDenied [166 ms]
+2026-10-05T23:08:01.6964639Z 
+2026-10-05T23:08:01.7002373Z Test Run Successful.
+2026-10-05T23:08:01.7002858Z Total tests: 282
+2026-10-05T23:08:01.7003219Z      Passed: 273
+2026-10-05T23:08:01.7003786Z     Skipped: 9
+2026-10-05T23:08:01.7004659Z  Total time: 27.1703 Seconds
+2026-10-05T23:08:01.7297676Z      1>Done Building Project "/home/runner/work/Intelligent-legal-service/Intelligent-legal-service/LegalService.sln" (VSTest target(s)).
+2026-10-05T23:08:01.7414619Z 
+2026-10-05T23:08:01.7423370Z Build succeeded.
+2026-10-05T23:08:01.7424120Z     0 Warning(s)
+2026-10-05T23:08:01.7424470Z     0 Error(s)
+2026-10-05T23:08:01.7424697Z 
+2026-10-05T23:08:01.7424913Z Time Elapsed 00:00:28.74
+2026-10-05T23:08:01.7721059Z Post job cleanup.
+2026-10-05T23:08:01.9066696Z (node:3320) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+2026-10-05T23:08:01.9068980Z (Use `node --trace-deprecation ...` to show where the warning was created)
+2026-10-05T23:08:01.9220042Z Post job cleanup.
+2026-10-05T23:08:02.0180530Z [command]/usr/bin/git version
+2026-10-05T23:08:02.0224137Z git version 2.55.0
+2026-10-05T23:08:02.0263932Z Temporarily overriding HOME='/home/runner/work/_temp/92b2e07f-621f-4767-9672-19a1f97deb72' before making global git config changes
+2026-10-05T23:08:02.0265407Z Adding repository directory to the temporary git global config as a safe directory
+2026-10-05T23:08:02.0271008Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/Intelligent-legal-service/Intelligent-legal-service
+2026-10-05T23:08:02.0315476Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-10-05T23:08:02.0357466Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-10-05T23:08:02.0615308Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-10-05T23:08:02.0648515Z http.https://github.com/.extraheader
+2026-10-05T23:08:02.0695588Z [command]/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+2026-10-05T23:08:02.0735860Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-10-05T23:08:02.1099992Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-10-05T23:08:02.1145711Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-10-05T23:08:02.1612373Z Cleaning up orphan processes
+2026-10-05T23:08:02.2065913Z Terminate orphan process: pid (2469) (dotnet)
+2026-10-05T23:08:02.2088915Z Terminate orphan process: pid (2552) (VBCSCompiler)
+2026-10-05T23:08:02.2109952Z ##[warning]Node.js 20 is deprecated. The following actions target Node.js 20 but are being forced to run on Node.js 24: actions/checkout@v4, actions/setup-dotnet@v4. For more information see: https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/

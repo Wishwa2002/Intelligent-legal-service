@@ -1,0 +1,18 @@
+{
+  "name": "completion-20261008-playwright",
+  "command": [
+    "npm",
+    "test",
+    "--",
+    "--reporter=json,html",
+    "--output=../qmse-output/completion-20261008/evidence/playwright-results"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T04:56:24.407637+00:00",
+  "ended_utc": "2026-10-08T04:57:18.077612+00:00",
+  "duration_seconds": 53.669,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/completion-20261008-playwright.log"
+}

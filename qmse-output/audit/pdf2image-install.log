@@ -1,0 +1,9 @@
+Collecting pdf2image
+  Downloading pdf2image-1.17.0-py3-none-any.whl.metadata (6.2 kB)
+Requirement already satisfied: pillow in /private/tmp/qmse-tools/lib/python3.14/site-packages (from pdf2image) (12.3.0)
+Downloading pdf2image-1.17.0-py3-none-any.whl (11 kB)
+Installing collected packages: pdf2image
+Successfully installed pdf2image-1.17.0
+
+[notice] A new release of pip is available: 26.1 -> 26.2.1
+[notice] To update, run: /private/tmp/qmse-tools/bin/python3.14 -m pip install --upgrade pip

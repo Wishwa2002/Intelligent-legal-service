@@ -1,0 +1,113 @@
+{
+  "total_count": 1,
+  "jobs": [
+    {
+      "id": 113112948814,
+      "run_id": 37716153231,
+      "workflow_name": "Frontend CI",
+      "head_branch": "feature/appointment-scheduling-enhancements",
+      "run_url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/runs/37716153231",
+      "run_attempt": 1,
+      "node_id": "CR_kwDOT8Emv88AAAAaVg6gTg",
+      "head_sha": "fb471202376f4684dafa5fdcda7f20f046b2e606",
+      "url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/actions/jobs/113112948814",
+      "html_url": "https://github.com/Wishwa2002/Intelligent-legal-service/actions/runs/37716153231/job/113112948814",
+      "status": "completed",
+      "conclusion": "failure",
+      "created_at": "2026-10-08T02:05:27Z",
+      "started_at": "2026-10-08T02:05:29Z",
+      "completed_at": "2026-10-08T02:05:47Z",
+      "name": "build-and-test",
+      "steps": [
+        {
+          "name": "Set up job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 1,
+          "started_at": "2026-10-08T02:05:30Z",
+          "completed_at": "2026-10-08T02:05:30Z"
+        },
+        {
+          "name": "Checkout repository",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 2,
+          "started_at": "2026-10-08T02:05:30Z",
+          "completed_at": "2026-10-08T02:05:34Z"
+        },
+        {
+          "name": "Setup Node.js",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 3,
+          "started_at": "2026-10-08T02:05:34Z",
+          "completed_at": "2026-10-08T02:05:37Z"
+        },
+        {
+          "name": "Install dependencies",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 4,
+          "started_at": "2026-10-08T02:05:37Z",
+          "completed_at": "2026-10-08T02:05:41Z"
+        },
+        {
+          "name": "Build frontend",
+          "status": "completed",
+          "conclusion": "failure",
+          "number": 5,
+          "started_at": "2026-10-08T02:05:41Z",
+          "completed_at": "2026-10-08T02:05:45Z"
+        },
+        {
+          "name": "Install Playwright Chromium",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 6,
+          "started_at": "2026-10-08T02:05:46Z",
+          "completed_at": "2026-10-08T02:05:46Z"
+        },
+        {
+          "name": "Run Playwright tests",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 7,
+          "started_at": "2026-10-08T02:05:46Z",
+          "completed_at": "2026-10-08T02:05:46Z"
+        },
+        {
+          "name": "Post Setup Node.js",
+          "status": "completed",
+          "conclusion": "skipped",
+          "number": 13,
+          "started_at": "2026-10-08T02:05:46Z",
+          "completed_at": "2026-10-08T02:05:46Z"
+        },
+        {
+          "name": "Post Checkout repository",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 14,
+          "started_at": "2026-10-08T02:05:46Z",
+          "completed_at": "2026-10-08T02:05:46Z"
+        },
+        {
+          "name": "Complete job",
+          "status": "completed",
+          "conclusion": "success",
+          "number": 15,
+          "started_at": "2026-10-08T02:05:46Z",
+          "completed_at": "2026-10-08T02:05:46Z"
+        }
+      ],
+      "check_run_url": "https://api.github.com/repos/Wishwa2002/Intelligent-legal-service/check-runs/113112948814",
+      "labels": [
+        "ubuntu-latest"
+      ],
+      "runner_id": 1000000083,
+      "runner_name": "GitHub Actions 1000000083",
+      "runner_group_id": 0,
+      "runner_group_name": "GitHub Actions"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+INPUTS 2 [
+  { type: 'text', aria: 'Email / Username' },
+  { type: 'password', aria: 'Password' }
+]
+e2e-01-flutter-login LegalEase Platform 4-Member Integrated System
+Server Settings
+Synthetic
+INTEGRATED LEGAL HUB
+CUSTOMER
+Welcome, Synthetic
+Select any module below to access counsel, documentation, consultations, or customer support services.
+Project Modules & Services
+4 Core Parts
+MEMBER 1 • COUNSEL Lawyer Services Advocate profiles, bar qualifications & practice areas
+MEMBER 3 • DOCUMENT SERVICES Document & Clerk Services 12 legal document services, clerk reviews & filings
+MEMBER 2 • SLOTS Booking & Consultation Afternoon slots, conflict validation & appointments
+MEMBER 4 • SUPPORT Customer Support Case tracking, hotline helpdesk & client support
+My Requests Track clerk reviews
+Careers Legal & tech roles
+locator.click: Timeout 30000ms exceeded.
+Call log:
+[2m  - waiting for getByText('Document &\nClerk Services', { exact: true })[22m
+
+    at /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/completion-20261008/audit/integrated_workflow.cjs:14:68

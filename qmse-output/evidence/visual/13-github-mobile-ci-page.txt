@@ -1,0 +1,53 @@
+Skip to content
+Navigation Menu
+Platform
+Solutions
+Resources
+Open Source
+Enterprise
+Pricing
+Sign in
+Sign up
+Jeyamdev
+legalease-ai
+Repository navigation
+Code
+Issues
+Pull requests
+Actions
+Security and quality
+Insights
+Mobile CI
+fix(mobile): satisfy Flutter analyzer lint rules #1
+Sign in to view logs
+Summary
+All jobs
+test
+Run details
+Usage
+Workflow file
+Triggered via push 
+Jeyamdev
+pushed
+ 8a9b8a2
+main
+Status
+Success
+Total duration
+2m 18s
+Artifacts
+–
+mobile-ci.yml
+on: push
+test
+2m 14s
+
+Oh hello! Nice to see you.
+
+Made with ❤️ by humans.txt
+
+Annotations
+1 notice
+test
+"The ubuntu-latest label will migrate to Ubuntu 26 beginning October 19, 2026. For more information, see https://github.com/actions/runner-images/issues/14748"
+Show more

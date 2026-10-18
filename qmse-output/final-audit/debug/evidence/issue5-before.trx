@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="c7d38d9f-23bd-4886-b093-8a9a7f51f1ec" name="@Jegatheeswarans-MacBook-Air 2026-10-08 18:22:50" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-08T18:22:50.6708150+05:30" queuing="2026-10-08T18:22:50.6708150+05:30" start="2026-10-08T18:22:49.1886440+05:30" finish="2026-10-08T18:22:50.6730860+05:30" />
+  <TestSettings name="default" id="f57238f4-4016-4a13-a5cc-8749098fe4e5">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-08_18_22_50" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="f8ab64df-1225-48ce-b213-8e2886d83d45" testId="b23ec90f-5d4a-3b40-789f-4b4b31d43b44" testName="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 1000, expected: True)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0001328" startTime="2026-10-08T18:22:49.4989240+05:30" endTime="2026-10-08T18:22:49.4989620+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f8ab64df-1225-48ce-b213-8e2886d83d45" />
+    <UnitTestResult executionId="f7cfd549-87eb-4947-8558-e803b37922f1" testId="4df19864-0234-3f19-2c4a-6925b2c2361e" testName="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 4000, expected: True)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0000046" startTime="2026-10-08T18:22:49.4991970+05:30" endTime="2026-10-08T18:22:49.4992140+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f7cfd549-87eb-4947-8558-e803b37922f1" />
+    <UnitTestResult executionId="7ff70cb7-7f9d-4bb5-9c07-438f37f6f9b4" testId="93916df8-6076-dcfb-6b68-d6c97888479a" testName="LegalService.Tests.RequirementsDecisionTests.FailedDevelopmentUploadDoesNotLeaveAnOrphanFile(isolated: True)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:01.1238146" startTime="2026-10-08T18:22:49.4997090+05:30" endTime="2026-10-08T18:22:50.6234560+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Failed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="7ff70cb7-7f9d-4bb5-9c07-438f37f6f9b4">
+      <Output>
+        <ErrorInfo>
+          <Message>Assert.Empty() Failure: Collection was not empty
+Collection: ["/var/folders/jk/bvq6bx9n4jx9nsswfwvhmbnm0000gn/T/q"···]</Message>
+          <StackTrace>   at LegalService.Tests.RequirementsDecisionTests.&lt;&gt;c.&lt;&lt;FailedDevelopmentUploadDoesNotLeaveAnOrphanFile&gt;b__1_0&gt;d.MoveNext() in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs:line 36
+--- End of stack trace from previous location ---
+   at LegalService.Tests.RequirementsDecisionTests.WithDatabase(Func`2 execute) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs:line 47
+   at LegalService.Tests.RequirementsDecisionTests.WithDatabase(Func`2 execute) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs:line 47
+   at LegalService.Tests.RequirementsDecisionTests.WithDatabase(Func`2 execute) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs:line 48
+   at LegalService.Tests.RequirementsDecisionTests.WithDatabase(Func`2 execute) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs:line 48
+   at LegalService.Tests.RequirementsDecisionTests.FailedDevelopmentUploadDoesNotLeaveAnOrphanFile(Boolean isolated) in /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs:line 28
+--- End of stack trace from previous location ---</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult executionId="0bdbef1e-d675-463f-b64f-cb2c32e0466c" testId="24a3b5aa-bbb5-34e5-d734-074d24f91024" testName="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 10, expected: True)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0000036" startTime="2026-10-08T18:22:49.4993920+05:30" endTime="2026-10-08T18:22:49.4994120+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0bdbef1e-d675-463f-b64f-cb2c32e0466c" />
+    <UnitTestResult executionId="e9faa77d-80c4-43aa-aae8-b56dc848d900" testId="e184ee95-0d40-7034-0f71-0e9caa3d067f" testName="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 1001, expected: True)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0041790" startTime="2026-10-08T18:22:49.4892810+05:30" endTime="2026-10-08T18:22:49.4955330+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="e9faa77d-80c4-43aa-aae8-b56dc848d900" />
+    <UnitTestResult executionId="302f1ed9-6dfb-4cf8-a21c-ddde1c33e775" testId="814d10b5-e9de-b1c3-1d7d-4f73358a7480" testName="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 2, expected: False)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0000070" startTime="2026-10-08T18:22:49.4993470+05:30" endTime="2026-10-08T18:22:49.4993640+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="302f1ed9-6dfb-4cf8-a21c-ddde1c33e775" />
+    <UnitTestResult executionId="99a63f14-2242-4813-a050-359457d08baf" testId="6307fdb7-61c8-5fbe-50be-b1b8fc38469c" testName="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 9, expected: True)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0000056" startTime="2026-10-08T18:22:49.4991440+05:30" endTime="2026-10-08T18:22:49.4991630+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="99a63f14-2242-4813-a050-359457d08baf" />
+    <UnitTestResult executionId="4e32175e-1729-4ca0-9cec-cdb010f54c01" testId="1ef2bf59-20de-d98b-4262-87d34103ea2e" testName="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 3, expected: True)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0000033" startTime="2026-10-08T18:22:49.4994410+05:30" endTime="2026-10-08T18:22:49.4994570+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="4e32175e-1729-4ca0-9cec-cdb010f54c01" />
+    <UnitTestResult executionId="c4e3cd29-f8ff-4f5b-93f2-a195a4d4d675" testId="40469702-85ee-8d35-7625-47cdf2f7323f" testName="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 4001, expected: False)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0000788" startTime="2026-10-08T18:22:49.4992500+05:30" endTime="2026-10-08T18:22:49.4993150+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="c4e3cd29-f8ff-4f5b-93f2-a195a4d4d675" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 9, expected: True)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="6307fdb7-61c8-5fbe-50be-b1b8fc38469c">
+      <Execution id="99a63f14-2242-4813-a050-359457d08baf" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="ExistingRecommendationLengthContract" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 4000, expected: True)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="4df19864-0234-3f19-2c4a-6925b2c2361e">
+      <Execution id="f7cfd549-87eb-4947-8558-e803b37922f1" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="ExistingRecommendationLengthContract" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 2, expected: False)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="814d10b5-e9de-b1c3-1d7d-4f73358a7480">
+      <Execution id="302f1ed9-6dfb-4cf8-a21c-ddde1c33e775" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="ExistingRecommendationLengthContract" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 1001, expected: True)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="e184ee95-0d40-7034-0f71-0e9caa3d067f">
+      <Execution id="e9faa77d-80c4-43aa-aae8-b56dc848d900" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="ExistingRecommendationLengthContract" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 3, expected: True)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="1ef2bf59-20de-d98b-4262-87d34103ea2e">
+      <Execution id="4e32175e-1729-4ca0-9cec-cdb010f54c01" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="ExistingRecommendationLengthContract" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.FailedDevelopmentUploadDoesNotLeaveAnOrphanFile(isolated: True)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="93916df8-6076-dcfb-6b68-d6c97888479a">
+      <Execution id="7ff70cb7-7f9d-4bb5-9c07-438f37f6f9b4" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="FailedDevelopmentUploadDoesNotLeaveAnOrphanFile" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 4001, expected: False)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="40469702-85ee-8d35-7625-47cdf2f7323f">
+      <Execution id="c4e3cd29-f8ff-4f5b-93f2-a195a4d4d675" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="ExistingRecommendationLengthContract" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 1000, expected: True)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="b23ec90f-5d4a-3b40-789f-4b4b31d43b44">
+      <Execution id="f8ab64df-1225-48ce-b213-8e2886d83d45" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="ExistingRecommendationLengthContract" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.RequirementsDecisionTests.ExistingRecommendationLengthContract(length: 10, expected: True)" storage="/users/jeyam/downloads/intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="24a3b5aa-bbb5-34e5-d734-074d24f91024">
+      <Execution id="0bdbef1e-d675-463f-b64f-cb2c32e0466c" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.RequirementsDecisionTests" name="ExistingRecommendationLengthContract" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="b23ec90f-5d4a-3b40-789f-4b4b31d43b44" executionId="f8ab64df-1225-48ce-b213-8e2886d83d45" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="4df19864-0234-3f19-2c4a-6925b2c2361e" executionId="f7cfd549-87eb-4947-8558-e803b37922f1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="93916df8-6076-dcfb-6b68-d6c97888479a" executionId="7ff70cb7-7f9d-4bb5-9c07-438f37f6f9b4" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="24a3b5aa-bbb5-34e5-d734-074d24f91024" executionId="0bdbef1e-d675-463f-b64f-cb2c32e0466c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="e184ee95-0d40-7034-0f71-0e9caa3d067f" executionId="e9faa77d-80c4-43aa-aae8-b56dc848d900" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="814d10b5-e9de-b1c3-1d7d-4f73358a7480" executionId="302f1ed9-6dfb-4cf8-a21c-ddde1c33e775" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="6307fdb7-61c8-5fbe-50be-b1b8fc38469c" executionId="99a63f14-2242-4813-a050-359457d08baf" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="1ef2bf59-20de-d98b-4262-87d34103ea2e" executionId="4e32175e-1729-4ca0-9cec-cdb010f54c01" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="40469702-85ee-8d35-7625-47cdf2f7323f" executionId="c4e3cd29-f8ff-4f5b-93f2-a195a4d4d675" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Failed">
+    <Counters total="9" executed="9" passed="8" failed="1" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.29)
+[xUnit.net 00:00:00.04]   Discovering: LegalService.Tests
+[xUnit.net 00:00:00.07]   Discovered:  LegalService.Tests
+[xUnit.net 00:00:00.08]   Starting:    LegalService.Tests
+[xUnit.net 00:00:01.23]       Assert.Empty() Failure: Collection was not empty
+[xUnit.net 00:00:01.23]       Collection: ["/var/folders/jk/bvq6bx9n4jx9nsswfwvhmbnm0000gn/T/q"···]
+[xUnit.net 00:00:01.23]       Stack Trace:
+[xUnit.net 00:00:01.23]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs(36,0): at LegalService.Tests.RequirementsDecisionTests.&lt;&gt;c.&lt;&lt;FailedDevelopmentUploadDoesNotLeaveAnOrphanFile&gt;b__1_0&gt;d.MoveNext()
+[xUnit.net 00:00:01.23]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.23]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs(47,0): at LegalService.Tests.RequirementsDecisionTests.WithDatabase(Func`2 execute)
+[xUnit.net 00:00:01.23]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs(47,0): at LegalService.Tests.RequirementsDecisionTests.WithDatabase(Func`2 execute)
+[xUnit.net 00:00:01.23]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs(48,0): at LegalService.Tests.RequirementsDecisionTests.WithDatabase(Func`2 execute)
+[xUnit.net 00:00:01.23]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs(48,0): at LegalService.Tests.RequirementsDecisionTests.WithDatabase(Func`2 execute)
+[xUnit.net 00:00:01.23]         /Users/jeyam/Downloads/Intelligent-legal-service/backend/LegalService.Tests/RequirementsDecisionTests.cs(28,0): at LegalService.Tests.RequirementsDecisionTests.FailedDevelopmentUploadDoesNotLeaveAnOrphanFile(Boolean isolated)
+[xUnit.net 00:00:01.23]         --- End of stack trace from previous location ---
+[xUnit.net 00:00:01.23]   Finished:    LegalService.Tests
+</StdOut>
+    </Output>
+    <RunInfos>
+      <RunInfo computerName="Jegatheeswarans-MacBook-Air" outcome="Error" timestamp="2026-10-08T18:22:50.6246340+05:30">
+        <Text>[xUnit.net 00:00:01.23]     LegalService.Tests.RequirementsDecisionTests.FailedDevelopmentUploadDoesNotLeaveAnOrphanFile(isolated: True) [FAIL]</Text>
+      </RunInfo>
+    </RunInfos>
+  </ResultSummary>
+</TestRun>

@@ -1,0 +1,17 @@
+{
+  "command": [
+    "npx",
+    "playwright",
+    "test",
+    "historical-acceptance.spec.ts",
+    "--workers=1",
+    "--reporter=json"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T10:58:35.773893+00:00",
+  "ended_utc": "2026-10-08T11:00:14.033170+00:00",
+  "duration_seconds": 98.26,
+  "exit_code": 1,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/historical-resolution/evidence/playwright-historical-final.log"
+}

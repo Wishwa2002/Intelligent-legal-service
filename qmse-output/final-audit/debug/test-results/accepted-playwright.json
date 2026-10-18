@@ -1,0 +1,17 @@
+{
+  "command": [
+    "npx",
+    "playwright",
+    "test",
+    "--config",
+    "final-audit-contract.playwright.config.ts",
+    "--reporter=json"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/frontend",
+  "started_utc": "2026-10-08T12:23:57.828942+00:00",
+  "ended_utc": "2026-10-08T12:24:16.795761+00:00",
+  "duration_seconds": 18.966,
+  "exit_code": 0,
+  "environment": "macOS ARM64; provider credentials disabled; synthetic fixtures",
+  "log": "qmse-output/final-audit/debug/evidence/accepted-playwright.log"
+}

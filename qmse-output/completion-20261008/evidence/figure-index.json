@@ -1,0 +1,58 @@
+[
+  {
+    "figure": "6.14",
+    "title": "Upload validation: original assertion and regression retest",
+    "execution_date": "2026-10-08 05:02:41 UTC",
+    "source": "test-results/completion-20261008-upload-retest.log; completion-20261008/evidence/upload-retest.trx",
+    "image": "completion-20261008/evidence/visual/14-upload-retest.png",
+    "interpretation": "The unchanged original spoof-rejection assertion now passes. This focused execution contains 18 passing tests; genuine PDF/image uploads and the size boundary are also verified. Earlier failure remains Figure 6.2."
+  },
+  {
+    "figure": "6.15",
+    "title": "Real Flutter web submits a genuine bundled PDF",
+    "execution_date": "2026-10-08 04:58:52 UTC",
+    "source": "completion-20261008/evidence/integrated-final-http.json; completion-20261008/evidence/e2e-10-flutter-uploaded.png",
+    "image": "completion-20261008/evidence/e2e-10-flutter-uploaded.png",
+    "interpretation": "The real Flutter UI completed its multipart upload after the web-platform fix. The actual API returned 201 and stored the bytes in PostgreSQL; two remaining genuine attachments were supplied through the API."
+  },
+  {
+    "figure": "6.16",
+    "title": "Real React clerk performs human review",
+    "execution_date": "2026-10-08 05:01:55 UTC",
+    "source": "completion-20261008/evidence/integrated-completion-http.json; completion-20261008/evidence/e2e-13-react-completed.png",
+    "image": "completion-20261008/evidence/e2e-13-react-completed.png",
+    "interpretation": "React uses ClerkId rather than UserId to display the assigned case. The actual human-review status action returned 200 and changed request 12 to COMPLETED."
+  },
+  {
+    "figure": "6.17",
+    "title": "Flutter reads the completed result from the API",
+    "execution_date": "2026-10-08 05:02:00 UTC (workflow completed)",
+    "source": "completion-20261008/evidence/integrated-result.json; completion-20261008/evidence/integrated-final-database.log",
+    "image": "completion-20261008/evidence/e2e-14-flutter-completed.png",
+    "interpretation": "Flutter displays COMPLETED after fetching the real API. Independent SQL confirms request 12, clerk 1 and three binary attachments totalling 7,667 bytes. Actual FastAPI clerk ranking preceded explicit human assignment; Gemini was not used."
+  },
+  {
+    "figure": "6.18",
+    "title": "k6 retest against actual PostgreSQL-backed endpoints",
+    "execution_date": "2026-10-08 04:51:00 UTC",
+    "source": "completion-20261008/evidence/k6-postgres-summary.json; test-results/completion-20261008-k6-retest.log",
+    "image": "completion-20261008/evidence/visual/18-k6-postgres.png",
+    "interpretation": "Two virtual users over 15 seconds produced 120 requests and zero HTTP errors. Four measured p95 values are below 200 ms in this local synthetic scope. The pre-fix failing run and raw samples remain in the package."
+  },
+  {
+    "figure": "6.19",
+    "title": "Native expanded ZAP report after schema repair",
+    "execution_date": "2026-10-08 05:04:49 UTC",
+    "source": "completion-20261008/evidence/zap-postgres.html; completion-20261008/evidence/zap-postgres-metadata.json",
+    "image": "completion-20261008/evidence/visual/19-zap-postgres.png",
+    "interpretation": "Actual Staging API/PostgreSQL target; passive scanning plus finite manual probes. Nine Low missing-nosniff instances and one Informational alert remain. Scan completion is not proof of absence of vulnerabilities."
+  },
+  {
+    "figure": "6.20",
+    "title": "Final xUnit execution on the tested source",
+    "execution_date": "2026-10-08 05:10:33 UTC",
+    "source": "test-results/completion-20261008-backend-final-verified.log; completion-20261008/evidence/backend-final-verified.trx",
+    "image": "completion-20261008/evidence/visual/20-backend-final.png",
+    "interpretation": "328 total: 326 passed, zero failed, two skipped. Real PostgreSQL migration/rollback tests are included. Coverlet raw line coverage is 81.11%, affected by generated migrations; non-migration distinct source lines are 57.82%."
+  }
+]

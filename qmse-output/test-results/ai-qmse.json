@@ -1,0 +1,19 @@
+{
+  "name": "ai-qmse",
+  "command": [
+    ".venv/bin/python",
+    "-m",
+    "pytest",
+    "tests/test_qmse_boundaries.py",
+    "-q",
+    "--junitxml=../qmse-output/evidence/ai/qmse-boundaries.xml"
+  ],
+  "cwd": "/Users/jeyam/Downloads/Intelligent-legal-service/ai-service",
+  "started_utc": "2026-10-08T02:45:50.410693+00:00",
+  "ended_utc": "2026-10-08T02:45:51.432995+00:00",
+  "duration_seconds": 1.022,
+  "exit_code": 0,
+  "timed_out": false,
+  "environment": "macOS ARM64; isolated fixtures; external AI keys disabled",
+  "log": "qmse-output/test-results/ai-qmse.log"
+}

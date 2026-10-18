@@ -1,0 +1,1677 @@
+[
+  {
+    "execution_date": "2026-10-08T10:46:21.801660+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "inputs": {
+      "email": "qmse-history-admin@example.test",
+      "password": "[REDACTED]"
+    },
+    "files": null,
+    "status": 200,
+    "latency_ms": 368.484,
+    "observed": {
+      "token": "[REDACTED]",
+      "userId": 1,
+      "lawyerId": null,
+      "clerkId": null,
+      "name": "System Administrator",
+      "email": "qmse-history-admin@example.test",
+      "role": "Admin",
+      "department": null,
+      "contact": null,
+      "mustChangePassword": "[REDACTED]",
+      "message": "Login successful"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:22.170768+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/auth/signup",
+    "inputs": {
+      "fullName": "Synthetic History Customer",
+      "email": "qmse-history-customer@example.test",
+      "password": "[REDACTED]",
+      "role": "Customer"
+    },
+    "files": null,
+    "status": 200,
+    "latency_ms": 267.266,
+    "observed": {
+      "message": "Customer registered successfully",
+      "userId": 3,
+      "name": "Synthetic History Customer",
+      "email": "qmse-history-customer@example.test",
+      "role": "Customer",
+      "lawyerId": null
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:22.438243+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "inputs": {
+      "email": "qmse-history-customer@example.test",
+      "password": "[REDACTED]"
+    },
+    "files": null,
+    "status": 200,
+    "latency_ms": 187.395,
+    "observed": {
+      "token": "[REDACTED]",
+      "userId": 3,
+      "lawyerId": null,
+      "clerkId": null,
+      "name": "Synthetic History Customer",
+      "email": "qmse-history-customer@example.test",
+      "role": "Customer",
+      "department": null,
+      "contact": null,
+      "mustChangePassword": "[REDACTED]",
+      "message": "Login successful"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:22.626069+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/clerks",
+    "inputs": null,
+    "files": null,
+    "status": 403,
+    "latency_ms": 22.374,
+    "observed": ""
+  },
+  {
+    "execution_date": "2026-10-08T10:46:22.648790+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/specializations",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 25.815,
+    "observed": [
+      {
+        "specializationId": 1,
+        "name": "Criminal Law",
+        "description": "Defense and prosecutorial assistance in criminal litigation.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 1
+      },
+      {
+        "specializationId": 3,
+        "name": "Corporate & Commercial Law",
+        "description": "Business registration, corporate governance, commercial contracts, and compliance.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 1
+      },
+      {
+        "specializationId": 4,
+        "name": "Real Estate & Property Law",
+        "description": "Land registry, real estate transactions, leases, partition actions, and title disputes.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      },
+      {
+        "specializationId": 5,
+        "name": "Labour & Employment Law",
+        "description": "Employment contracts, workplace disputes, labour tribunal advocacy, and severance.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      },
+      {
+        "specializationId": 6,
+        "name": "Tax Law",
+        "description": "Direct and indirect taxation, corporate tax planning, revenue appeals, and audits.",
+        "lawyerCount": 0,
+        "activeLawyerCount": 0,
+        "legalServiceCount": 0
+      }
+    ]
+  },
+  {
+    "execution_date": "2026-10-08T10:46:22.674867+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic History Lawyer 1",
+      "email": "qmse-history-lawyer0@example.test",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-0",
+      "qualification": "Synthetic Attorney",
+      "specializationId": 3,
+      "defaultAppointmentDurationMinutes": 60
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 251.636,
+    "observed": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "name": "Synthetic History Lawyer 1",
+      "email": "qmse-history-lawyer0@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-0",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 3,
+          "name": "Corporate & Commercial Law",
+          "description": "Business registration, corporate governance, commercial contracts, and compliance."
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:22.926814+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic History Lawyer 2",
+      "email": "qmse-history-lawyer1@example.test",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-1",
+      "qualification": "Synthetic Attorney",
+      "specializationId": 3,
+      "defaultAppointmentDurationMinutes": 60
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 194.434,
+    "observed": {
+      "lawyerId": "2ecc9be9-3c7f-4ab3-be61-9f2da38f54a0",
+      "name": "Synthetic History Lawyer 2",
+      "email": "qmse-history-lawyer1@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-1",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 3,
+          "name": "Corporate & Commercial Law",
+          "description": "Business registration, corporate governance, commercial contracts, and compliance."
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:23.121667+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic History Lawyer 3",
+      "email": "qmse-history-lawyer2@example.test",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-2",
+      "qualification": "Synthetic Attorney",
+      "specializationId": 3,
+      "defaultAppointmentDurationMinutes": 60
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 191.745,
+    "observed": {
+      "lawyerId": "ffa550ba-5a7f-4ca6-ab9c-1ba70874472f",
+      "name": "Synthetic History Lawyer 3",
+      "email": "qmse-history-lawyer2@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-2",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 3,
+          "name": "Corporate & Commercial Law",
+          "description": "Business registration, corporate governance, commercial contracts, and compliance."
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:23.313785+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic History Lawyer 4",
+      "email": "qmse-history-lawyer3@example.test",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-3",
+      "qualification": "Synthetic Attorney",
+      "specializationId": 4,
+      "defaultAppointmentDurationMinutes": 60
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 241.324,
+    "observed": {
+      "lawyerId": "1f01c96d-f1aa-4956-9213-e6831ec429d8",
+      "name": "Synthetic History Lawyer 4",
+      "email": "qmse-history-lawyer3@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-3",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 4,
+          "name": "Real Estate & Property Law",
+          "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:23.555427+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic History Lawyer 5",
+      "email": "qmse-history-lawyer4@example.test",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-4",
+      "qualification": "Synthetic Attorney",
+      "specializationId": 4,
+      "defaultAppointmentDurationMinutes": 60
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 189.671,
+    "observed": {
+      "lawyerId": "4a2c6345-1192-4879-afc9-e1b2c19be8b0",
+      "name": "Synthetic History Lawyer 5",
+      "email": "qmse-history-lawyer4@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic Attorney",
+      "experience": 10,
+      "licenseNumber": "QMSE-HISTORY-4",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 4,
+          "name": "Real Estate & Property Law",
+          "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:23.745429+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/lawyers?specializationId=3",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 23.77,
+    "observed": [
+      {
+        "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+        "name": "Synthetic History Lawyer 1",
+        "email": "qmse-history-lawyer0@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-0",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "2ecc9be9-3c7f-4ab3-be61-9f2da38f54a0",
+        "name": "Synthetic History Lawyer 2",
+        "email": "qmse-history-lawyer1@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-1",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "ffa550ba-5a7f-4ca6-ab9c-1ba70874472f",
+        "name": "Synthetic History Lawyer 3",
+        "email": "qmse-history-lawyer2@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-2",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "1f01c96d-f1aa-4956-9213-e6831ec429d8",
+        "name": "Synthetic History Lawyer 4",
+        "email": "qmse-history-lawyer3@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-3",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 4,
+            "name": "Real Estate & Property Law",
+            "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+          }
+        ]
+      },
+      {
+        "lawyerId": "4a2c6345-1192-4879-afc9-e1b2c19be8b0",
+        "name": "Synthetic History Lawyer 5",
+        "email": "qmse-history-lawyer4@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-4",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 4,
+            "name": "Real Estate & Property Law",
+            "description": "Land registry, real estate transactions, leases, partition actions, and title disputes."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "execution_date": "2026-10-08T10:46:23.769746+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/lawyers?specialization=3",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 7.719,
+    "observed": [
+      {
+        "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+        "name": "Synthetic History Lawyer 1",
+        "email": "qmse-history-lawyer0@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-0",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "2ecc9be9-3c7f-4ab3-be61-9f2da38f54a0",
+        "name": "Synthetic History Lawyer 2",
+        "email": "qmse-history-lawyer1@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-1",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      },
+      {
+        "lawyerId": "ffa550ba-5a7f-4ca6-ab9c-1ba70874472f",
+        "name": "Synthetic History Lawyer 3",
+        "email": "qmse-history-lawyer2@example.test",
+        "phoneNumber": "",
+        "qualification": "Synthetic Attorney",
+        "experience": 10,
+        "licenseNumber": "QMSE-HISTORY-2",
+        "profileDescription": "",
+        "status": "Active",
+        "specializations": [
+          {
+            "specializationId": 3,
+            "name": "Corporate & Commercial Law",
+            "description": "Business registration, corporate governance, commercial contracts, and compliance."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "execution_date": "2026-10-08T10:46:23.777812+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Synthetic Empty Bar",
+      "email": "qmse-history-empty-bar@example.test",
+      "experience": 5,
+      "licenseNumber": "QMSE-BAR-CONTROL",
+      "barNumber": "",
+      "qualification": "Synthetic",
+      "specializationId": 3
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 189.861,
+    "observed": {
+      "lawyerId": "69356139-46a9-4719-b438-4ef11c73f32e",
+      "name": "Synthetic Empty Bar",
+      "email": "qmse-history-empty-bar@example.test",
+      "phoneNumber": "",
+      "qualification": "Synthetic",
+      "experience": 5,
+      "licenseNumber": "QMSE-BAR-CONTROL",
+      "profileDescription": "",
+      "status": "Active",
+      "specializations": [
+        {
+          "specializationId": 3,
+          "name": "Corporate & Commercial Law",
+          "description": "Business registration, corporate governance, commercial contracts, and compliance."
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:23.968241+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/lawyers",
+    "inputs": {
+      "name": "Control",
+      "licenseNumber": "",
+      "specializationId": 3
+    },
+    "files": null,
+    "status": 400,
+    "latency_ms": 8.08,
+    "observed": {
+      "type": "https://tools.ietf.org/html/rfc9110#section-15.5.1",
+      "title": "One or more validation errors occurred.",
+      "status": 400,
+      "errors": {
+        "Email": [
+          "The Email field is required.",
+          "The Email field is not a valid e-mail address."
+        ],
+        "LicenseNumber": [
+          "The LicenseNumber field is required."
+        ]
+      },
+      "traceId": "00-f92b699cba96d4a765054ad97cd318eb-0eeeb742a11b92ad-00"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:23.976693+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "PUT",
+    "path": "/api/lawyers/228799cd-345b-4db8-9841-dcc076bc74e5/working-schedule",
+    "inputs": {
+      "appointmentDurationMinutes": 60,
+      "days": [
+        {
+          "dayOfWeek": 0,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 1,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 2,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 3,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 4,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 5,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 6,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        }
+      ]
+    },
+    "files": null,
+    "status": 200,
+    "latency_ms": 31.092,
+    "observed": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "appointmentDurationMinutes": 60,
+      "days": [
+        {
+          "dayOfWeek": 0,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 1,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 2,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 3,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 4,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 5,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        },
+        {
+          "dayOfWeek": 6,
+          "isWorkingDay": true,
+          "startTime": "09:00:00",
+          "endTime": "17:00:00"
+        }
+      ],
+      "timeZone": "Asia/Colombo",
+      "hasConfiguredSchedule": true
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.008366+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/lawyers/228799cd-345b-4db8-9841-dcc076bc74e5/available-slots?date=2026-10-10",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 43.611,
+    "observed": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "date": "2026-10-10",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b009402d002",
+          "start": "11:00:00",
+          "end": "12:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b00d0020c03",
+          "start": "12:00:00",
+          "end": "13:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b000c034803",
+          "start": "13:00:00",
+          "end": "14:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b0048038403",
+          "start": "14:00:00",
+          "end": "15:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b008403c003",
+          "start": "15:00:00",
+          "end": "16:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3a4a-0b00c003fc03",
+          "start": "16:00:00",
+          "end": "17:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.052765+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/appointments",
+    "inputs": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "slotId": "6869b135-818c-c292-3a4a-0b0058029402",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "consultationType": "Online"
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 65.045,
+    "observed": {
+      "appointmentId": "908dd6bd-4e2e-46ae-b460-6b7128d4de4d",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "customerName": "Synthetic History Customer",
+      "customerEmail": "",
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "lawyerName": "Lawyer Counsel",
+      "lawyerLicense": "",
+      "slotId": "3e5524a1-c3be-4d17-82be-83e1f3527ca8",
+      "date": "2026-10-10",
+      "startTime": "10:00:00",
+      "endTime": "11:00:00",
+      "status": "Requested",
+      "description": null,
+      "appointmentSource": null,
+      "consultationType": "Online",
+      "legalServiceCategory": null,
+      "createdAt": "2026-10-08T10:46:24.076504Z",
+      "updatedAt": "2026-10-08T10:46:24.076513Z",
+      "canConfirm": true,
+      "canCancel": true,
+      "canReschedule": true,
+      "canComplete": false,
+      "history": [
+        {
+          "historyId": "d105f79f-a4cd-4f96-a54d-f441fb1d17b7",
+          "appointmentId": "908dd6bd-4e2e-46ae-b460-6b7128d4de4d",
+          "previousStatus": "None",
+          "newStatus": "Requested",
+          "changedDate": "2026-10-08T10:46:24.076589Z"
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.119447+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/lawyers/228799cd-345b-4db8-9841-dcc076bc74e5/slots?date=2026-10-10",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 8.476,
+    "observed": [
+      {
+        "slotId": "6869b135-818c-c292-3a4a-0b001c025802",
+        "availabilityId": "00000000-0000-0000-0000-000000000000",
+        "date": "2026-10-10",
+        "startTime": "09:00:00",
+        "endTime": "10:00:00",
+        "isBooked": false
+      },
+      {
+        "slotId": "6869b135-818c-c292-3a4a-0b009402d002",
+        "availabilityId": "00000000-0000-0000-0000-000000000000",
+        "date": "2026-10-10",
+        "startTime": "11:00:00",
+        "endTime": "12:00:00",
+        "isBooked": false
+      },
+      {
+        "slotId": "6869b135-818c-c292-3a4a-0b00d0020c03",
+        "availabilityId": "00000000-0000-0000-0000-000000000000",
+        "date": "2026-10-10",
+        "startTime": "12:00:00",
+        "endTime": "13:00:00",
+        "isBooked": false
+      },
+      {
+        "slotId": "6869b135-818c-c292-3a4a-0b000c034803",
+        "availabilityId": "00000000-0000-0000-0000-000000000000",
+        "date": "2026-10-10",
+        "startTime": "13:00:00",
+        "endTime": "14:00:00",
+        "isBooked": false
+      },
+      {
+        "slotId": "6869b135-818c-c292-3a4a-0b0048038403",
+        "availabilityId": "00000000-0000-0000-0000-000000000000",
+        "date": "2026-10-10",
+        "startTime": "14:00:00",
+        "endTime": "15:00:00",
+        "isBooked": false
+      },
+      {
+        "slotId": "6869b135-818c-c292-3a4a-0b008403c003",
+        "availabilityId": "00000000-0000-0000-0000-000000000000",
+        "date": "2026-10-10",
+        "startTime": "15:00:00",
+        "endTime": "16:00:00",
+        "isBooked": false
+      },
+      {
+        "slotId": "6869b135-818c-c292-3a4a-0b00c003fc03",
+        "availabilityId": "00000000-0000-0000-0000-000000000000",
+        "date": "2026-10-10",
+        "startTime": "16:00:00",
+        "endTime": "17:00:00",
+        "isBooked": false
+      }
+    ]
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.128575+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/lawyers/228799cd-345b-4db8-9841-dcc076bc74e5/available-slots?date=2026-10-12",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 6.68,
+    "observed": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "date": "2026-10-12",
+      "workingDay": true,
+      "appointmentDurationMinutes": 60,
+      "availableSlots": [
+        {
+          "slotId": "6869b135-818c-c292-3c4a-0b001c025802",
+          "start": "09:00:00",
+          "end": "10:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3c4a-0b0058029402",
+          "start": "10:00:00",
+          "end": "11:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3c4a-0b009402d002",
+          "start": "11:00:00",
+          "end": "12:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3c4a-0b00d0020c03",
+          "start": "12:00:00",
+          "end": "13:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3c4a-0b000c034803",
+          "start": "13:00:00",
+          "end": "14:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3c4a-0b0048038403",
+          "start": "14:00:00",
+          "end": "15:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3c4a-0b008403c003",
+          "start": "15:00:00",
+          "end": "16:00:00"
+        },
+        {
+          "slotId": "6869b135-818c-c292-3c4a-0b00c003fc03",
+          "start": "16:00:00",
+          "end": "17:00:00"
+        }
+      ],
+      "reason": null,
+      "timeZone": "Asia/Colombo"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.135882+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/appointments",
+    "inputs": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "slotId": "6869b135-818c-c292-3c4a-0b009402d002",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "consultationType": "Online"
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 12.89,
+    "observed": {
+      "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "customerName": "Synthetic History Customer",
+      "customerEmail": "",
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "lawyerName": "Lawyer Counsel",
+      "lawyerLicense": "",
+      "slotId": "e9bdafe3-0e85-48df-a7b5-3d6eaf3bd3c1",
+      "date": "2026-10-12",
+      "startTime": "11:00:00",
+      "endTime": "12:00:00",
+      "status": "Requested",
+      "description": null,
+      "appointmentSource": null,
+      "consultationType": "Online",
+      "legalServiceCategory": null,
+      "createdAt": "2026-10-08T10:46:24.145194Z",
+      "updatedAt": "2026-10-08T10:46:24.145194Z",
+      "canConfirm": true,
+      "canCancel": true,
+      "canReschedule": true,
+      "canComplete": false,
+      "history": [
+        {
+          "historyId": "c3b85a41-b4bf-4115-96a1-2add212955e3",
+          "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+          "previousStatus": "None",
+          "newStatus": "Requested",
+          "changedDate": "2026-10-08T10:46:24.145194Z"
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.149901+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/appointments",
+    "inputs": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "slotId": "6869b135-818c-c292-3c4a-0b009402d002",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "consultationType": "Online"
+    },
+    "files": null,
+    "status": 409,
+    "latency_ms": 17.392,
+    "observed": {
+      "title": "Selected slot is no longer available.",
+      "status": 409,
+      "traceId": "0HNP555I6FSEB:00000001",
+      "conflicts": null
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.168242+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/appointments/735f7f6c-4375-4b1a-8356-4442ab4159ab/confirm",
+    "inputs": {},
+    "files": null,
+    "status": 200,
+    "latency_ms": 16.428,
+    "observed": {
+      "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "customerName": "Synthetic History Customer",
+      "customerEmail": "",
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "lawyerName": "Lawyer Counsel",
+      "lawyerLicense": "",
+      "slotId": "e9bdafe3-0e85-48df-a7b5-3d6eaf3bd3c1",
+      "date": "2026-10-12",
+      "startTime": "11:00:00",
+      "endTime": "12:00:00",
+      "status": "Confirmed",
+      "description": null,
+      "appointmentSource": null,
+      "consultationType": "Online",
+      "legalServiceCategory": null,
+      "createdAt": "2026-10-08T10:46:24.145194Z",
+      "updatedAt": "2026-10-08T10:46:24.182201Z",
+      "canConfirm": false,
+      "canCancel": true,
+      "canReschedule": true,
+      "canComplete": true,
+      "history": [
+        {
+          "historyId": "b6c10f81-2f19-4045-88da-5c4e513e476a",
+          "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+          "previousStatus": "Requested",
+          "newStatus": "Confirmed",
+          "changedDate": "2026-10-08T10:46:24.182205Z"
+        },
+        {
+          "historyId": "c3b85a41-b4bf-4115-96a1-2add212955e3",
+          "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+          "previousStatus": "None",
+          "newStatus": "Requested",
+          "changedDate": "2026-10-08T10:46:24.145194Z"
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.185270+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "PUT",
+    "path": "/api/appointments/735f7f6c-4375-4b1a-8356-4442ab4159ab/cancel",
+    "inputs": {},
+    "files": null,
+    "status": 405,
+    "latency_ms": 5.077,
+    "observed": ""
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.191198+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/appointments/735f7f6c-4375-4b1a-8356-4442ab4159ab/cancel",
+    "inputs": {},
+    "files": null,
+    "status": 200,
+    "latency_ms": 12.694,
+    "observed": {
+      "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+      "customerId": "00000000-0000-0000-0000-000000000003",
+      "customerName": "Synthetic History Customer",
+      "customerEmail": "",
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "lawyerName": "Lawyer Counsel",
+      "lawyerLicense": "",
+      "slotId": "e9bdafe3-0e85-48df-a7b5-3d6eaf3bd3c1",
+      "date": "2026-10-12",
+      "startTime": "11:00:00",
+      "endTime": "12:00:00",
+      "status": "Cancelled",
+      "description": null,
+      "appointmentSource": null,
+      "consultationType": "Online",
+      "legalServiceCategory": null,
+      "createdAt": "2026-10-08T10:46:24.145194Z",
+      "updatedAt": "2026-10-08T10:46:24.201946Z",
+      "canConfirm": false,
+      "canCancel": false,
+      "canReschedule": false,
+      "canComplete": false,
+      "history": [
+        {
+          "historyId": "6fa133cf-0b5a-4a23-9775-c4573a94ce6a",
+          "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+          "previousStatus": "Confirmed",
+          "newStatus": "Cancelled",
+          "changedDate": "2026-10-08T10:46:24.201948Z"
+        },
+        {
+          "historyId": "b6c10f81-2f19-4045-88da-5c4e513e476a",
+          "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+          "previousStatus": "Requested",
+          "newStatus": "Confirmed",
+          "changedDate": "2026-10-08T10:46:24.182205Z"
+        },
+        {
+          "historyId": "c3b85a41-b4bf-4115-96a1-2add212955e3",
+          "appointmentId": "735f7f6c-4375-4b1a-8356-4442ab4159ab",
+          "previousStatus": "None",
+          "newStatus": "Requested",
+          "changedDate": "2026-10-08T10:46:24.145194Z"
+        }
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.204808+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/appointments/check-conflict",
+    "inputs": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "date": "2026-10-10",
+      "startTime": "10:00:00",
+      "endTime": "11:00:00"
+    },
+    "files": null,
+    "status": 405,
+    "latency_ms": 5.557,
+    "observed": ""
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.210996+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/appointments/check-conflict",
+    "inputs": {
+      "lawyerId": "228799cd-345b-4db8-9841-dcc076bc74e5",
+      "date": "2026-10-10",
+      "startTime": "10:00:00",
+      "endTime": "11:00:00"
+    },
+    "files": null,
+    "status": 405,
+    "latency_ms": 4.946,
+    "observed": ""
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.216822+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/careers",
+    "inputs": {
+      "jobTitle": "Senior Counsel",
+      "description": "Synthetic isolated historical vacancy",
+      "practiceAreaId": 3
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 20.033,
+    "observed": {
+      "practiceAreaId": 3,
+      "careerId": 1,
+      "jobTitle": "Senior Counsel",
+      "description": "Synthetic isolated historical vacancy",
+      "applicationsCount": 0,
+      "createdAt": "2026-10-08T10:46:24.227256Z"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.237509+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/careers",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 11.649,
+    "observed": [
+      {
+        "practiceAreaId": 3,
+        "careerId": 1,
+        "jobTitle": "Senior Counsel",
+        "description": "Synthetic isolated historical vacancy",
+        "applicationsCount": 0,
+        "createdAt": "2026-10-08T10:46:24.227256Z"
+      }
+    ]
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.275294+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "PUT",
+    "path": "/api/legal-services/2",
+    "inputs": {
+      "serviceName": "Synthetic History Fee Service",
+      "description": "Synthetic",
+      "category": "Corporate & Commercial Law",
+      "price": 25000
+    },
+    "files": null,
+    "status": 200,
+    "latency_ms": 21.67,
+    "observed": {
+      "legalServiceId": 2,
+      "serviceName": "Synthetic History Fee Service",
+      "description": "Synthetic",
+      "category": "Corporate & Commercial Law",
+      "lawyerCount": 4
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.319332+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/workforce-analysis",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 37.823,
+    "observed": {
+      "generatedAt": "2026-10-08T10:46:24.32796Z",
+      "recentWindowDays": 30,
+      "futureWindowDays": 30,
+      "practiceAreas": [
+        {
+          "practiceAreaId": 3,
+          "practiceAreaName": "Corporate & Commercial Law",
+          "activeLawyerCount": 4,
+          "legalServiceCount": 2,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 1,
+          "futureAvailableSlotCount": 231,
+          "openCareerOpeningCount": 1,
+          "status": "HEALTHY",
+          "reasons": [
+            "CAPACITY_WITHIN_CONFIGURED_RULES",
+            "RECRUITMENT_ALREADY_ACTIVE"
+          ],
+          "openings": [
+            {
+              "careerId": 1,
+              "jobTitle": "Senior Counsel"
+            }
+          ],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 1,
+          "practiceAreaName": "Criminal Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 1,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 5,
+          "practiceAreaName": "Labour & Employment Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 4,
+          "practiceAreaName": "Real Estate & Property Law",
+          "activeLawyerCount": 2,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "WATCH",
+          "reasons": [
+            "LOW_FUTURE_CAPACITY"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        },
+        {
+          "practiceAreaId": 6,
+          "practiceAreaName": "Tax Law",
+          "activeLawyerCount": 0,
+          "legalServiceCount": 0,
+          "recentDemandCount": 0,
+          "recentAppointmentCount": 0,
+          "futureAvailableSlotCount": 0,
+          "openCareerOpeningCount": 0,
+          "status": "NO_ACTIVE_LAWYERS",
+          "reasons": [
+            "NO_ACTIVE_LAWYERS"
+          ],
+          "openings": [],
+          "planningRules": {
+            "minimumActiveLawyers": 0,
+            "targetActiveLawyers": 0,
+            "minimumFutureSlots": 0,
+            "highDemandThreshold": 5,
+            "watchCapacityRatio": 0.75,
+            "source": "DEFAULT"
+          }
+        }
+      ],
+      "unmappedCareerOpeningCount": 0,
+      "limitations": [
+        "Requests are Admin recommendation workflows, not unique customer cases. Appointments are counted by creation date; current single-area membership maps them to an area.",
+        "Requests and appointments may overlap; assessment uses their maximum, not their sum. This is a capacity signal, not a forecast or proof that hiring is required.",
+        "Service-specific demand cannot be reliably identified in the existing persisted data.",
+        "Careers has no open/closed field: every existing Career record is treated as open. Unlinked postings require human review."
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.358252+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "GET",
+    "path": "/api/documentation-services/1",
+    "inputs": null,
+    "files": null,
+    "status": 200,
+    "latency_ms": 13.587,
+    "observed": {
+      "serviceId": 1,
+      "name": "Contract Review & Amendment",
+      "description": "Reviewing lease/sales agreements and drafting amendments.",
+      "isActive": true,
+      "requiredDocuments": [
+        "Original Contract",
+        "Amendment Request Letter",
+        "NIC Copy"
+      ]
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.372511+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/documentation-requests?customerId=3",
+    "inputs": {
+      "serviceId": 1,
+      "documentType": "Deed of Transfer"
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 54.868,
+    "observed": {
+      "requestId": 1,
+      "customerId": 3,
+      "customerName": "Synthetic History Customer",
+      "customerEmail": "qmse-history-customer@example.test",
+      "serviceId": 1,
+      "serviceName": "Contract Review & Amendment",
+      "documentType": "Deed of Transfer",
+      "status": "PENDING",
+      "assignedClerkId": null,
+      "assignedClerkName": null,
+      "createdAt": "2026-10-08T10:46:24.379627Z",
+      "updatedAt": "2026-10-08T10:46:24.379637Z",
+      "documentFiles": [],
+      "requiredDocuments": [
+        "Original Contract",
+        "Amendment Request Letter",
+        "NIC Copy"
+      ],
+      "missingDocuments": [
+        "Original Contract",
+        "Amendment Request Letter",
+        "NIC Copy"
+      ],
+      "reuploadNote": null
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.444632+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/document-files",
+    "inputs": null,
+    "files": {
+      "file": {
+        "name": "synthetic.pdf",
+        "bytes": 2097152,
+        "sha256": "901e1f09ec2037a16bb7fc2527ecad96dcd4fe3198a6d739f3f7577ad6f3a344",
+        "mime": "application/pdf"
+      }
+    },
+    "status": 404,
+    "latency_ms": 5.928,
+    "observed": ""
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.451567+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/documentation-requests/1/files",
+    "inputs": null,
+    "files": {
+      "file": {
+        "name": "synthetic.pdf",
+        "bytes": 2097152,
+        "sha256": "901e1f09ec2037a16bb7fc2527ecad96dcd4fe3198a6d739f3f7577ad6f3a344",
+        "mime": "application/pdf"
+      }
+    },
+    "status": 201,
+    "latency_ms": 180.632,
+    "observed": {
+      "fileId": 1,
+      "requestId": 1,
+      "fileName": "synthetic.pdf",
+      "contentType": "application/pdf",
+      "fileSize": 2097152,
+      "documentStatus": "Received",
+      "rejectReason": null,
+      "uploadDate": "2026-10-08T10:46:24.613967Z"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.636667+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/document-files",
+    "inputs": null,
+    "files": {
+      "file": {
+        "name": "synthetic-large.pdf",
+        "bytes": 14680064,
+        "sha256": "a51aac7582fddacb88cf76575e572d586362670397907d65e9d12dc1385f45d4",
+        "mime": "application/pdf"
+      }
+    },
+    "status": 404,
+    "latency_ms": 17.847,
+    "observed": ""
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.655240+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/documentation-requests/1/files",
+    "inputs": null,
+    "files": {
+      "file": {
+        "name": "synthetic-large.pdf",
+        "bytes": 14680064,
+        "sha256": "a51aac7582fddacb88cf76575e572d586362670397907d65e9d12dc1385f45d4",
+        "mime": "application/pdf"
+      }
+    },
+    "status": 400,
+    "latency_ms": 36.767,
+    "observed": {
+      "statusCode": 400,
+      "message": "File size (14MB) exceeds the maximum allowed limit of 10MB.",
+      "timestamp": "2026-10-08T10:46:24.686435Z"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.693247+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/clerks",
+    "inputs": {
+      "name": "Synthetic History Clerk 0",
+      "email": "qmse-history-clerk-created0@example.test",
+      "password": "[REDACTED]",
+      "contact": "Synthetic",
+      "department": "Corporate"
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 205.664,
+    "observed": {
+      "clerkId": 2,
+      "fullName": "Synthetic History Clerk 0",
+      "email": "qmse-history-clerk-created0@example.test",
+      "contact": "Synthetic",
+      "department": "Corporate",
+      "isActive": true,
+      "activeAssignmentsCount": 0,
+      "createdAt": "2026-10-08T10:46:24.889602Z",
+      "updatedAt": "2026-10-08T10:46:24.889614Z"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:24.899859+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/clerks",
+    "inputs": {
+      "name": "Synthetic History Clerk 1",
+      "email": "qmse-history-clerk-created1@example.test",
+      "password": "[REDACTED]",
+      "contact": "Synthetic",
+      "department": "Corporate"
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 195.346,
+    "observed": {
+      "clerkId": 3,
+      "fullName": "Synthetic History Clerk 1",
+      "email": "qmse-history-clerk-created1@example.test",
+      "contact": "Synthetic",
+      "department": "Corporate",
+      "isActive": true,
+      "activeAssignmentsCount": 0,
+      "createdAt": "2026-10-08T10:46:25.093779Z",
+      "updatedAt": "2026-10-08T10:46:25.093779Z"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:25.096229+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/clerks",
+    "inputs": {
+      "name": "Synthetic History Clerk 2",
+      "email": "qmse-history-clerk-created2@example.test",
+      "password": "[REDACTED]",
+      "contact": "Synthetic",
+      "department": "Corporate"
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 140.933,
+    "observed": {
+      "clerkId": 4,
+      "fullName": "Synthetic History Clerk 2",
+      "email": "qmse-history-clerk-created2@example.test",
+      "contact": "Synthetic",
+      "department": "Corporate",
+      "isActive": true,
+      "activeAssignmentsCount": 0,
+      "createdAt": "2026-10-08T10:46:25.235697Z",
+      "updatedAt": "2026-10-08T10:46:25.235697Z"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:25.238072+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "PUT",
+    "path": "/api/clerks/3/department",
+    "inputs": {
+      "department": "Property"
+    },
+    "files": null,
+    "status": 404,
+    "latency_ms": 4.052,
+    "observed": ""
+  },
+  {
+    "execution_date": "2026-10-08T10:46:25.243194+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "PUT",
+    "path": "/api/clerks/3",
+    "inputs": {
+      "department": "Property",
+      "contact": "Synthetic"
+    },
+    "files": null,
+    "status": 200,
+    "latency_ms": 13.879,
+    "observed": {
+      "clerkId": 3,
+      "fullName": "Synthetic History Clerk 1",
+      "email": "qmse-history-clerk-created1@example.test",
+      "contact": "Synthetic",
+      "department": "Property",
+      "isActive": true,
+      "activeAssignmentsCount": 0,
+      "createdAt": "2026-10-08T10:46:25.093779Z",
+      "updatedAt": "2026-10-08T10:46:25.256005Z"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:25.258129+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/auth/login",
+    "inputs": {
+      "email": "qmse-history-clerk@example.test",
+      "password": "[REDACTED]"
+    },
+    "files": null,
+    "status": 200,
+    "latency_ms": 117.036,
+    "observed": {
+      "token": "[REDACTED]",
+      "userId": 2,
+      "lawyerId": null,
+      "clerkId": 1,
+      "name": "Senior Legal Clerk",
+      "email": "qmse-history-clerk@example.test",
+      "role": "Clerk",
+      "department": "Legal Documentation & Conveyancing",
+      "contact": "+94 11 234 5678",
+      "mustChangePassword": "[REDACTED]",
+      "message": "Login successful"
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:25.376663+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "PUT",
+    "path": "/api/clerks/requests/1/approve",
+    "inputs": {},
+    "files": null,
+    "status": 404,
+    "latency_ms": 25.222,
+    "observed": ""
+  },
+  {
+    "execution_date": "2026-10-08T10:46:25.402863+00:00",
+    "target": "http://127.0.0.1:55543",
+    "method": "POST",
+    "path": "/api/documentation-requests?customerId=3",
+    "inputs": {
+      "serviceId": 1,
+      "documentType": "Deed of Transfer"
+    },
+    "files": null,
+    "status": 201,
+    "latency_ms": 7.452,
+    "observed": {
+      "requestId": 2,
+      "customerId": 3,
+      "customerName": "Synthetic History Customer",
+      "customerEmail": "qmse-history-customer@example.test",
+      "serviceId": 1,
+      "serviceName": "Contract Review & Amendment",
+      "documentType": "Deed of Transfer",
+      "status": "PENDING",
+      "assignedClerkId": null,
+      "assignedClerkName": null,
+      "createdAt": "2026-10-08T10:46:25.407193Z",
+      "updatedAt": "2026-10-08T10:46:25.407193Z",
+      "documentFiles": [],
+      "requiredDocuments": [
+        "Original Contract",
+        "Amendment Request Letter",
+        "NIC Copy"
+      ],
+      "missingDocuments": [
+        "Original Contract",
+        "Amendment Request Letter",
+        "NIC Copy"
+      ],
+      "reuploadNote": null
+    }
+  },
+  {
+    "execution_date": "2026-10-08T10:46:25.431433+00:00",
+    "target": "http://127.0.0.1:55544",
+    "method": "POST",
+    "path": "/api/ai/document/audit-checklist",
+    "inputs": {
+      "request_id": 2
+    },
+    "files": null,
+    "status": 404,
+    "latency_ms": 3.87,
+    "observed": {
+      "detail": "Not Found"
+    }
+  }
+]

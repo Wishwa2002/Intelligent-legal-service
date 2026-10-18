@@ -1,0 +1,139 @@
+START UTC 2026-10-08T02:42:15.627173+00:00
+COMMAND ['.venv/bin/python', '-m', 'pytest', 'tests', '-q', '--junitxml=../qmse-output/evidence/ai/pytest.xml']
+CWD /Users/jeyam/Downloads/Intelligent-legal-service/ai-service
+..................................F.F................................... [ 81%]
+................                                                         [100%]
+=================================== FAILURES ===================================
+________ test_validation_node_provides_missing_document_upload_buttons _________
+
+    @pytest.mark.asyncio
+    async def test_validation_node_provides_missing_document_upload_buttons():
+        """When documents remain, action_options contains upload buttons for missing documents."""
+        from app.agents.document_validation import document_validation_node
+    
+        state = _make_state_with_analysis(
+            doc_type="NIC", confidence=0.95, readable=True, issues=[]
+        )
+        state["required_documents"] = ["NIC", "Salary Slip"]
+        state["document_statuses"]["Salary Slip"] = {
+            "doc_type": "Salary Slip", "file_id": None, "status": "pending", "retry_count": 0
+        }
+    
+        with patch("app.agents.document_validation.get_backend_client") as mock_backend_fn:
+            mock_backend = AsyncMock()
+            mock_backend.update_file_status = AsyncMock()
+            mock_backend_fn.return_value = mock_backend
+    
+>           result = await document_validation_node(state)
+
+tests/test_documents.py:218: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/agents/document_validation.py:44: in document_validation_node
+    gemini = get_gemini_service()
+app/services/gemini_service.py:603: in get_gemini_service
+    return GeminiService()
+app/services/gemini_service.py:49: in __init__
+    self._llm = _get_llm()
+app/services/gemini_service.py:33: in _get_llm
+    return ChatGoogleGenerativeAI(
+.venv/lib/python3.12/site-packages/langchain_google_genai/chat_models.py:3119: in __init__
+    super().__init__(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ChatGoogleGenerativeAI(metadata={'lc_versions': {'langchain-core': '1.6.6', 'langchain': '1.4.3', 'langchain-google-ge...3.8-flash', temperature=0.1, max_retries=2, default_metadata=(), model_kwargs={}, convert_system_message_to_human=True)
+args = ()
+kwargs = {'convert_system_message_to_human': True, 'google_api_key': '', 'max_retries': 2, 'model': 'gemini-3.8-flash', ...}
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        """"""  # noqa: D419  # Intentional blank docstring
+>       super().__init__(*args, **kwargs)
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for ChatGoogleGenerativeAI
+E         Value error, API key required for Gemini Developer API. Provide api_key parameter or set GOOGLE_API_KEY/GEMINI_API_KEY environment variable. [type=value_error, input_value={'model': 'gemini-3.8-fla...e, 'google_api_key': ''}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+.venv/lib/python3.12/site-packages/langchain_core/load/serializable.py:136: ValidationError
+____ test_accepted_document_explicitly_confirms_and_shows_balance_documents ____
+
+    @pytest.mark.asyncio
+    async def test_accepted_document_explicitly_confirms_and_shows_balance_documents():
+        """Agent must state 'You uploaded ..., and it has been Accepted' and list balance documents with buttons."""
+        from app.agents.document_validation import document_validation_node
+    
+        state = _make_state_with_analysis(
+            doc_type="Tenancy Agreement", confidence=0.96, readable=True, issues=[]
+        )
+        state["required_documents"] = ["Tenancy Agreement", "Property Deed", "Utility Bill"]
+        state["document_statuses"]["Property Deed"] = {
+            "doc_type": "Property Deed", "file_id": None, "status": "pending", "retry_count": 0
+        }
+        state["document_statuses"]["Utility Bill"] = {
+            "doc_type": "Utility Bill", "file_id": None, "status": "pending", "retry_count": 0
+        }
+    
+        with patch("app.agents.document_validation.get_backend_client") as mock_backend_fn:
+            mock_backend = AsyncMock()
+            mock_backend.update_file_status = AsyncMock()
+            mock_backend_fn.return_value = mock_backend
+    
+>           result = await document_validation_node(state)
+
+tests/test_documents.py:304: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+app/agents/document_validation.py:44: in document_validation_node
+    gemini = get_gemini_service()
+app/services/gemini_service.py:603: in get_gemini_service
+    return GeminiService()
+app/services/gemini_service.py:49: in __init__
+    self._llm = _get_llm()
+app/services/gemini_service.py:33: in _get_llm
+    return ChatGoogleGenerativeAI(
+.venv/lib/python3.12/site-packages/langchain_google_genai/chat_models.py:3119: in __init__
+    super().__init__(**kwargs)
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = ChatGoogleGenerativeAI(metadata={'lc_versions': {'langchain-core': '1.6.6', 'langchain': '1.4.3', 'langchain-google-ge...3.8-flash', temperature=0.1, max_retries=2, default_metadata=(), model_kwargs={}, convert_system_message_to_human=True)
+args = ()
+kwargs = {'convert_system_message_to_human': True, 'google_api_key': '', 'max_retries': 2, 'model': 'gemini-3.8-flash', ...}
+
+    def __init__(self, *args: Any, **kwargs: Any) -> None:
+        """"""  # noqa: D419  # Intentional blank docstring
+>       super().__init__(*args, **kwargs)
+E       pydantic_core._pydantic_core.ValidationError: 1 validation error for ChatGoogleGenerativeAI
+E         Value error, API key required for Gemini Developer API. Provide api_key parameter or set GOOGLE_API_KEY/GEMINI_API_KEY environment variable. [type=value_error, input_value={'model': 'gemini-3.8-fla...e, 'google_api_key': ''}, input_type=dict]
+E           For further information visit https://errors.pydantic.dev/2.13/v/value_error
+
+.venv/lib/python3.12/site-packages/langchain_core/load/serializable.py:136: ValidationError
+=============================== warnings summary ===============================
+.venv/lib/python3.12/site-packages/starlette/testclient.py:41
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/starlette/testclient.py:41: DeprecationWarning: The anyio.abc.BlockingPortal alias is deprecated, use anyio.from_thread.BlockingPortal instead.
+    [], typing.ContextManager[anyio.abc.BlockingPortal]
+
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyPacked has no __module__ attribute
+
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type SwigPyObject has no __module__ attribute
+
+tests/test_agent_comprehensive.py::test_02_pdf_text_extraction
+  <frozen importlib._bootstrap>:488: DeprecationWarning: builtin type swigvarlink has no __module__ attribute
+
+tests/test_agent_comprehensive.py::test_03_image_ocr_processing
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/pytesseract/pytesseract.py:32: DeprecationWarning: 'pkgutil.find_loader' is deprecated and slated for removal in Python 3.14; use importlib.util.find_spec() instead
+    numpy_installed = find_loader('numpy') is not None
+
+tests/test_agent_comprehensive.py::test_03_image_ocr_processing
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/pytesseract/pytesseract.py:36: DeprecationWarning: 'pkgutil.find_loader' is deprecated and slated for removal in Python 3.14; use importlib.util.find_spec() instead
+    pandas_installed = find_loader('pandas') is not None
+
+tests/test_agent_comprehensive.py::test_08_chroma_retrieval
+  /Users/jeyam/Downloads/Intelligent-legal-service/ai-service/.venv/lib/python3.12/site-packages/chromadb/api/types.py:945: DeprecationWarning: The class FastDeterministicEmbeddingFunction does not implement get_config(). This will be required in a future version.
+    or self.get_config() is NotImplemented
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+- generated xml file: /Users/jeyam/Downloads/Intelligent-legal-service/qmse-output/evidence/ai/pytest.xml -
+=========================== short test summary info ============================
+FAILED tests/test_documents.py::test_validation_node_provides_missing_document_upload_buttons
+FAILED tests/test_documents.py::test_accepted_document_explicitly_confirms_and_shows_balance_documents
+2 failed, 86 passed, 9 warnings in 2.98s

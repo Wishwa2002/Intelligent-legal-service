@@ -1,0 +1,10 @@
+--- a/.github/workflows/frontend-ci.yml
++++ b/.github/workflows/frontend-ci.yml
+@@ -13,6 +13,7 @@
+     branches:
+       - develop
+       - main
++      - se3110-qmse-testing
+     paths:
+       - "frontend/**"
+       - ".github/workflows/frontend-ci.yml"

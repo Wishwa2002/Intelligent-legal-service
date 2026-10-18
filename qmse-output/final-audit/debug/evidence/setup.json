@@ -1,0 +1,80 @@
+[
+  {
+    "command": [
+      "/opt/homebrew/opt/postgresql@18/bin/initdb",
+      "-D",
+      "/private/tmp/qmse-final-debug-pg",
+      "-U",
+      "qmse_history",
+      "-A",
+      "trust",
+      "--no-locale"
+    ],
+    "exit_code": 0,
+    "stdout": "The files belonging to this database system will be owned by user \"jeyam\".\nThis user must also own the server process.\n\nThe database cluster will be initialized with locale \"C\".\nThe default database encoding has accordingly been set to \"SQL_ASCII\".\nThe default text search configuration will be set to \"english\".\n\nData page checksums are enabled.\n\ncreating directory /private/tmp/qmse-final-debug-pg ... ok\ncreating subdirectories ... ok\nselecting dynamic shared memory implementation ... posix\nselecting default \"max_connections\" ... 100\nselecting default \"shared_buffers\" ... 128MB\nselecting default time zone ... Asia/Colombo\ncreating configuration files ... ok\nrunning bootstrap script ... ok\nperforming post-bootstrap initialization ... ok\nsyncing data to disk ... ok\n\nSuccess. You can now start the database server using:\n\n    '/opt/homebrew/opt/postgresql@18/bin/pg_ctl' -D /private/tmp/qmse-final-debug-pg -l logfile start\n\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/usr/bin/openssl",
+      "req",
+      "-new",
+      "-x509",
+      "-days",
+      "2",
+      "-nodes",
+      "-subj",
+      "/CN=localhost",
+      "-keyout",
+      "/private/tmp/qmse-final-debug-pg/server.key",
+      "-out",
+      "/private/tmp/qmse-final-debug-pg/server.crt"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": "Generating a 2048 bit RSA private key\n...........................................+++++\n.......+++++\nwriting new private key to '/private/tmp/qmse-final-debug-pg/server.key'\n-----\n"
+  },
+  {
+    "command": [
+      "/opt/homebrew/opt/postgresql@18/bin/pg_ctl",
+      "-D",
+      "/private/tmp/qmse-final-debug-pg",
+      "-l",
+      "/private/tmp/qmse-final-debug-control/postgres-server.log",
+      "start",
+      "-w"
+    ],
+    "exit_code": 0,
+    "stdout": "waiting for server to start.... done\nserver started\n",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/opt/homebrew/opt/postgresql@18/bin/createdb",
+      "-h",
+      "127.0.0.1",
+      "-p",
+      "55546",
+      "-U",
+      "qmse_history",
+      "qmse_history"
+    ],
+    "exit_code": 0,
+    "stdout": "",
+    "stderr": ""
+  },
+  {
+    "command": [
+      "/opt/homebrew/opt/postgresql@18/bin/pg_ctl",
+      "-D",
+      "/private/tmp/qmse-final-debug-pg",
+      "stop",
+      "-m",
+      "fast",
+      "-w"
+    ],
+    "exit_code": 0,
+    "stdout": "waiting for server to shut down.... done\nserver stopped\n",
+    "stderr": ""
+  }
+]

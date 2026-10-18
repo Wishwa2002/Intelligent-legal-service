@@ -1,0 +1,10 @@
+{
+  "checked_utc": "2026-10-08T04:15:50.946327+00:00",
+  "archive": "qmse-output/SE3110_GR42_Visual_Evidence_Package.zip",
+  "files": 565,
+  "bytes": 33073015,
+  "sha256": "e58e65d514b579ce9bb1547d9bcd7fd6cc7d8a6df1244a3061e4300d97586193",
+  "zip_integrity": "PASS",
+  "original_archive_preserved_sha256": "e3b8ea14740a53674cd4c30c3a02ba9ec682b58f2c9c1c2eb74b4bf131530002",
+  "exclusions": "Other ZIPs, render QA intermediates, local SDK caches, __pycache__, .DS_Store. All original portable execution artifacts retained."
+}

@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-08T13:32:00.469968+00:00",
+  "operations": [
+    {
+      "service": "ownedZAP55549",
+      "shutdown_http": 200
+    },
+    {
+      "service": "ownedFlutterstatic55548",
+      "pid": 16500,
+      "terminated": true
+    }
+  ],
+  "owned_ports_closed": {
+    "55543": true,
+    "55544": true,
+    "55545": true,
+    "55546": true,
+    "55547": true,
+    "55548": true,
+    "55549": true
+  },
+  "scope": "Only phase-owned loopback services/database; no production data touched"
+}

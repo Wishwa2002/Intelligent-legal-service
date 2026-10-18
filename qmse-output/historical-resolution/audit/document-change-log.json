@@ -1,0 +1,1118 @@
+[
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): Generated $2a$12$ hash; verified true; wrong password returned false",
+    "after": "Hash length 60, valid password true, wrong password false. Actual BCrypt cost is 11; explicit historical cost-12 precondition assertion fails. Cost-12 product approval has not been established. Earlier functional-only pass is preserved. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/password.trx; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): 7 slots returned; 10:00 excluded",
+    "after": "Actual seven one-hour slots start at 09:00, 11:00, 12:00, 13:00, 14:00, 15:00 and 16:00. The reserved 10:00 slot is excluded; synthetic lawyer 1 maps to a GUID. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 400; \"The BarNumber field is required.\"",
+    "after": "Historical BarNumber is not the validated field. Empty BarNumber plus valid current license yields 201; empty current license control yields 400. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200; valid HMAC-SHA256 token, 24 h expiry",
+    "after": "Login HTTP 200. JWT uses nameidentifier/emailaddress/role URI claim names; historical sub/plain email claims absent. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 403; request aborted; denial logged",
+    "after": "{\"http\": 403, \"body\": \"\"} Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200; 3 matching DTOs",
+    "after": "Historical specializationId query returns all five seeded lawyers. Current specialization parameter returns the three Corporate lawyers. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200 in 142 ms; JSON parsed",
+    "after": "Historical POST /api/ai/scheduling/classify returns 404 on both actual ASP.NET API and FastAPI. No normalized timestamp returned. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/additional-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): Connected in 89 ms; pool active",
+    "after": "Actual EF CanConnectAsync true with SSL Mode=Require; first connection 349.529 ms exceeds historical <200 ms target. One cold connection, not API p95/load performance. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/postgres-setup.trx; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): Exception caught; 23505 unique violation verified",
+    "after": "2026-10-15 14:00 synthetic lawyer 2 mapped to UUID. Duplicate actual EF SaveChanges throws DbUpdateException with Npgsql PostgresException SqlState 23505. Remaining slot rows=1. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/ef-duplicate.trx; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): 11 tables verified in information_schema",
+    "after": "All 15 actual migrations applied. Actual schema has 34 public tables including migration history, not historical 11. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/migrate.log; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): getByText(\"Kavinda Silva\") and button assertions passed",
+    "after": "Actual React catalogue renders Kavinda Silva; no historical fee display/Book control. Explicit UI API fixture, not live catalogue proof. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-FE-01.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): Halted; \"Please select an available slot\" shown",
+    "after": "Actual booking approval remains disabled without a slot; no inline slot/date error alert appears. Instructional hints differ from historical error design. UI fixture only. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-FE-02.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): Redirected to /login; clerk workspace not mounted",
+    "after": "Actual unauthenticated clerk route redirects to /login; historical redirect query parameter is absent. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-FE-03.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): Mock adapter confirmed Bearer token",
+    "after": "Actual Axios module adds the expected Bearer header to intercepted service-request call. Synthetic token; header injection only. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-FE-04.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): Alert rendered; retry button works",
+    "after": "Actual React HTTP-500 fixture displays a usable alert and clickable Retry; no page crash. Backend availability is not evaluated. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-FE-05.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): expect(model.id,1) passed",
+    "after": "Actual Lawyer.fromJson reads synthetic map with string ID 1, name Sunil Fernando and int experience 10. Historical LawyerModel renamed to Lawyer. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/flutter-historical-final.log; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): find.text(\"Sunil Fernando\") found 1 widget",
+    "after": "Name renders; historical star/rating assertion fails because current model/card displays experience and license, with no rating field. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/flutter-historical-final.log; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): Errors shown; 0 network requests",
+    "after": "Password abc yields inline validation and no API request. Submit remains enabled; no Phone field exists for historical 123 input. Historical disabled-button/phone design differs. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/flutter-historical-final.log; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): Details screen mounted; back works",
+    "after": "Actual LawyersScreen card pushes LawyerProfileScreen; back returns to LawyersScreen. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/flutter-historical-final.log; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): Token matched exactly",
+    "after": "Current ApiClient token roundtrip passes under auth_token in SharedPreferences; historical jwt key reads null. Secure-storage mechanism is not the implementation tested. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/flutter-historical-final.log; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): Payload built; 2 attachments (< 10 MB)",
+    "after": "Real Flutter web customer login and catalogue executed. The historical Deed of Transfer/service-1 identity does not match the current seeded catalogue; current intake creates a request then uploads per-request files, rather than the described two-PDF creation multipart. Exact historical intake not completed. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/real-flutter-login.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 201; tracking number #DT-2026-... generated",
+    "after": "Actual documentation creation HTTP 201 with requestId, but no historical tracking-number field. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): Row committed; Id assigned",
+    "after": "Actual isolated PostgreSQL row persisted with PENDING, not historical PendingChecklist. No production Neon access. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200 in 410 ms",
+    "after": "Actual FastAPI historical /api/ai/document/audit-checklist POST returns 404; current agent-session routes are separate contracts. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): 100% with no hallucination",
+    "after": "No live Gemini four-document verification: configured provider returned 503. Current checklists differ from historical NIC/Title Deed/Survey Plan/Tax Receipt bundle; neither mocked outputs nor literal completeness counts prove four live document classifications. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/live-gemini.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200; clerk ID in audit trail",
+    "after": "Actual synthetic request assigned by API, uploaded 2 MiB PDF visible in real clerk review. Current transitions are ASSIGNED, UNDER_REVIEW, IN_PROGRESS, REQUIRES_DOCUMENTS, COMPLETED, REJECTED; no Approve button/Approved transition. Historical approval action could not produce HTTP 200/clerk stamp. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/real-ui-assigned-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): Badge updated in 118 ms",
+    "after": "Upstream original workflow cannot reach historical Approved: current API/request states and real clerk controls use ASSIGNED/COMPLETED. No Approved row was forced to manufacture mobile success. Full dependent mobile status display not executed. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/real-react-clerk-review.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200; Price = 25000",
+    "after": "PUT HTTP 200, but Price is ignored and actual LegalServices row has no fee/Price column; 25000 not persisted. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): 3 ranked attorneys; scores 96, 92, 91",
+    "after": "Current recommendation requires separate lawyer_recommendation service and a successful configured live model; provider availability probe returned 503. Historical top-three >90% scores are not current recorded-experience ranking acceptance. No ranking rule changed. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/live-gemini.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): +2 Property lawyers predicted with rationale",
+    "after": "Actual 30-day workforce snapshot HTTP 200 is preserved, but current hiring generation POST /api/workforce-analysis/suggestions returned 503 because the separate AI drafting service at 55545 was unavailable. A full 30-day influx/hiring forecast with live rationale was not executed. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/workforce-snapshot.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): Badge changed Active to On Leave",
+    "after": "Actual React catalogue renders lawyer but contains no historical card availability switch. Current date filter/Edit/Delete differ. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-C106.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "FAILED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "FAILED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 201; AppointmentId 42 assigned",
+    "after": "Actual booking HTTP 201, status Requested; historical immediate Confirmed expectation differs. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 409; alternatives 12:00 and 14:00 suggested",
+    "after": "Second real PostgreSQL-backed booking for the same lawyer/slot HTTP 409; original row retained. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200; slot freed in calendar",
+    "after": "Historical PUT cancel returns 405. Current POST cancel control returns 200 and Cancelled after confirming the booking. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 201; vacancy visible on public portal",
+    "after": "Actual POST careers HTTP 201; Senior Counsel visible on real React public careers page using PostgreSQL data. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-C2-04.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): Parsed to 2026-10-07T10:00:00Z",
+    "after": "Tomorrow-date helper passes for the exact message, but it does not extract the full 10 AM ISO timestamp. Historical classifier route is absent; current full scheduling service requires a successful configured provider, whose probe returned 503. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/ai-retrieval.xml; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): Confirmed toast shown; appointment in list",
+    "after": "Actual select-lawyer/date/slot/approval UI displays Appointment Created. Current approval label differs; API responses explicitly mocked. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-C2-06.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): Identical results after UTC conversion fix",
+    "after": "Real Chromium UTC and Asia/Colombo contexts normalize 2026-10-15T08:30Z to business-local 14:00. Both actual API requests HTTP 200, hasConflict true and same appointment ID. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/timezone-conflict.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "FAILED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 201; tracking #DT-2026 generated",
+    "after": "Exact current service 1 is Contract Review & Amendment, with three required documents. Request HTTP 201/PENDING; historical four-item Deed mapping differs. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200; file stored and linked",
+    "after": "Historical POST /api/document-files returns 404. Actual per-request upload of genuine 2 MiB PDF returns 201 and is persisted. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 400; \"File exceeds 10MB\"",
+    "after": "Historical route returns 404. Current per-request route rejects genuine 14 MiB PDF with HTTP 400, without an extra file record. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200; status updated",
+    "after": "Historical clerk approval route returns 404. No Approved transition was invented. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): 50.0%; missing [\"Property Title Deed\"]",
+    "after": "Actual completeness function flags missing Prior Title Deed. With the current four-item Property Transfer checklist and the other three supplied, completeness is 75%, not historical 50%. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/ai-retrieval.xml; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "Historical claim (unverified): HTTP 200; DB updated",
+    "after": "Historical /department subroute returns 404. Current PUT /api/clerks/3 control updates Property department with Contact supplied. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/historical-http.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): Fallback applied correctly",
+    "after": "Historical low-OCR <60% heuristic classification has no matching recorded image/confidence fixture. Current extraction feeds Gemini and rejects on safe error; full scanned-image classification/fallback acceptance remains blocked by unavailable live provider and unresolved OCR confidence contract. No mocked verdict is promoted to full PASS. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/live-gemini.json; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): Guardrail triggered; refusal returned",
+    "after": "Document-text injection isolation markers pass a deterministic subcriterion. That sanitizer is not the consultation/chat refusal. Full actual safe chat response is blocked by configured live-provider 503; refusal not inferred from code. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/ai-retrieval.xml; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): Rent Act No. 7 of 1972 cited with disclaimer",
+    "after": "Actual hybrid retrieval for the exact tenant query ran and raw corpus text lacked a disclaimer. The diagnostic disclaimer assertion failed, but retrieved text is not the final consultation output. Full Sri Lankan legal relevance and generated disclaimer acceptance are blocked by provider 503 and absent expert-approved relevance labels. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/ai-retrieval.xml; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Historical claim (unverified): Token removed; redirected",
+    "after": "Actual React login with isolated API stores token; Logout clears it and returns to /login. Credentials/JWT excluded. Execution: 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/TC-C4-06.png; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "HISTORICAL/UNVERIFIED",
+    "after": "BLOCKED"
+  },
+  {
+    "before": "Historical claim (unverified): Accuracy evaluated; k=40 adopted",
+    "after": "Synthetic RRF k=40 and k=60 comparison ran with identical ranking; current default is 60. Higher legal-query precision needs an approved relevance dataset and ground truth, which are absent. This helper comparison is not the full precision evaluation. Investigation (full case not executed): 2026-10-08 (UTC)."
+  },
+  {
+    "before": "audit/original-report-text.txt | Original execution date unverified",
+    "after": "historical-resolution/evidence/ai-retrieval.xml; historical-resolution/test-results/case-verification.json. AI-assisted replay; full scope/inputs recorded."
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "Publication revision: 8 October 2026 (Asia/Colombo). Approved tested source 05359214df52, including fixes f360e4ac21f1, is published on Wishwa2002/Intelligent-legal-service, branch se3110-qmse-testing. Original development history is preserved; no deployment or submission occurred. GitHub CI did not trigger for this branch. Available SE3090 Version 3.0 reference reviewed; formal approval unconfirmed. Original, 51-page and pre-publication 60-page reports are preserved.",
+    "after": "Historical verification revision: 8 October 2026. The published application baseline remains 05359214df52fa743b234e1d77e6671f57c14dea on Wishwa2002/Intelligent-legal-service/se3110-qmse-testing. New AI-assisted acceptance replays are a separately delivered, uncommitted local test overlay; no push, deployment, business-rule change or production access occurred. The previous 78-page report and all native evidence remain unchanged."
+  },
+  {
+    "before": "Each case records design, expected outcome, actual observation and evidence. VERIFIED means a scoped fresh result supported by an execution artifact; FAILED means an observed defect or a report expectation conflict (identified explicitly). BLOCKED and NOT EXECUTED mean no valid execution result. H/U means HISTORICAL/UNVERIFIED: the original reported result is retained as history, not a current PASS. Current automation-case names and exact setups are in qmse-output/completion-20261008/test-results/case-verification.json. Fixture dates such as 2030-01-14 are synthetic inputs, not execution dates.",
+    "after": "VERIFIED/PASS means an executed scoped scenario matched its recorded expectation; VERIFIED/FAIL means an observed mismatch, including historical route, precondition or requirement conflicts. A report-expectation failure is not automatically an approved product defect. BLOCKED means full acceptance could not run; any executed subcriteria are explicitly recorded. HISTORICAL/UNVERIFIED remains available for uninvestigated claims. Exact current/historical inputs, dates and evidence are in historical-resolution/test-results/case-verification.json; synthetic fixture dates are not execution dates."
+  },
+  {
+    "before": "Real local API 55443; FastAPI 55444; React 55447; Flutter web 55448; ZAP proxy 55449. Independent unit/HTTP fixtures also used.",
+    "after": "Real local API 55443; FastAPI 55444; React 55447; Flutter web 55448; ZAP proxy 55449. Independent unit/HTTP fixtures also used. New historical replay: API 55543; FastAPI 55544; React 55547; Flutter web 55548; separate isolated PostgreSQL 55546."
+  },
+  {
+    "before": "New dedicated PostgreSQL 18 cluster on 127.0.0.1:55446; database qmse_workflow and unique disposable regression DBs. No production access.",
+    "after": "New dedicated PostgreSQL 18 cluster on 127.0.0.1:55446; database qmse_workflow and unique disposable regression DBs. No production access. Historical replay creates a separate TLS-enabled qmse_history database; 15 actual migrations applied."
+  },
+  {
+    "before": "Published Wishwa2002/Intelligent-legal-service / se3110-qmse-testing at 05359214df52fa743b234e1d77e6671f57c14dea. Local source branch: docs/se3110-qmse-testing. Identical tested code; CI not triggered.",
+    "after": "Published Wishwa2002/Intelligent-legal-service / se3110-qmse-testing at 05359214df52fa743b234e1d77e6671f57c14dea. Local source branch: docs/se3110-qmse-testing. Identical tested code; CI not triggered. New tests are local uncommitted AI-assisted additions and are supplied as hashed source snapshots."
+  },
+  {
+    "before": "Current totals are parsed from original TRX, pytest XML, Playwright JSON/HTML and runner output. Available SE3090 consolidated requirements were reviewed before fixes. Golden Case deterministic subcriteria are distinguished from live Gemini: the single authorised provider attempt returned 504; no live output or successful live response-time measurement exists. See completion-20261008/test-results/summary.json and the execution summary.",
+    "after": "The earlier baseline contains 607 passing machine cases and five skips; its original native logs are preserved. New distinct extensions executed 23 native cases: 12 PASS, 11 FAIL, no skips. They include setup, deterministic subcriteria and diagnostic probes, so native counts are not the 77 report-case acceptance totals. Retry attempts are not double-counted. Live provider history: previous attempt HTTP 504; new single probe HTTP 503 after 7.324 seconds. Two cumulative calls out of eight authorised; no successful live response, token usage or cost measurement."
+  },
+  {
+    "before": "Python",
+    "after": "New xUnit extension"
+  },
+  {
+    "before": "pytest; JUnit XML",
+    "after": "HistoricalCaseVerificationTests + isolated PG facts"
+  },
+  {
+    "before": "102",
+    "after": "4"
+  },
+  {
+    "before": "102",
+    "after": "2"
+  },
+  {
+    "before": "0",
+    "after": "2"
+  },
+  {
+    "before": "1.92 s displayed; nine warnings; mocked/deterministic; no successful live response",
+    "after": "Final cost-12 assertion fails; first TLS 349.529 ms fails; bootstrap/EF duplicate pass. TRX files preserved."
+  },
+  {
+    "before": "New xUnit extension",
+    "after": "New Flutter extension"
+  },
+  {
+    "before": "HistoricalCaseVerificationTests + isolated PG facts",
+    "after": "historical_cases_test.dart --machine"
+  },
+  {
+    "before": "4",
+    "after": "5"
+  },
+  {
+    "before": "2",
+    "after": "3"
+  },
+  {
+    "before": "Final cost-12 assertion fails; first TLS 349.529 ms fails; bootstrap/EF duplicate pass. TRX files preserved.",
+    "after": "JSON model/navigation pass; rating, disabled-submit and jwt storage mechanisms conflict."
+  },
+  {
+    "before": "New Flutter extension",
+    "after": "New Playwright extension"
+  },
+  {
+    "before": "historical_cases_test.dart --machine",
+    "after": "historical.playwright.config.ts"
+  },
+  {
+    "before": "5",
+    "after": "9"
+  },
+  {
+    "before": "2",
+    "after": "5"
+  },
+  {
+    "before": "3",
+    "after": "4"
+  },
+  {
+    "before": "JSON model/navigation pass; rating, disabled-submit and jwt storage mechanisms conflict.",
+    "after": "Final valid setup; real careers/auth plus scoped mocked UI. No-slot semantic retest remains failed."
+  },
+  {
+    "before": "New Playwright extension",
+    "after": "New Python diagnostics"
+  },
+  {
+    "before": "historical.playwright.config.ts",
+    "after": "test_historical_acceptance.py; JUnit"
+  },
+  {
+    "before": "9",
+    "after": "5"
+  },
+  {
+    "before": "5",
+    "after": "3"
+  },
+  {
+    "before": "4",
+    "after": "2"
+  },
+  {
+    "before": "Final valid setup; real careers/auth plus scoped mocked UI. No-slot semantic retest remains failed.",
+    "after": "Helpers pass only subcriteria. Completeness 75% versus 50%; raw retrieval-disclaimer diagnostic fails, not final-chat acceptance."
+  },
+  {
+    "before": "Suite / tool",
+    "after": "Suite / tool (baseline and new extensions)"
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "FAILED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "0",
+    "after": "2"
+  },
+  {
+    "before": "0",
+    "after": "5"
+  },
+  {
+    "before": "7 H/U; 0 BLOCKED",
+    "after": "0 H/U; 0 BLOCKED"
+  },
+  {
+    "before": "1",
+    "after": "2"
+  },
+  {
+    "before": "0",
+    "after": "2"
+  },
+  {
+    "before": "3 H/U; 0 BLOCKED",
+    "after": "0 H/U; 0 BLOCKED"
+  },
+  {
+    "before": "0",
+    "after": "2"
+  },
+  {
+    "before": "0",
+    "after": "3"
+  },
+  {
+    "before": "5 H/U; 0 BLOCKED",
+    "after": "0 H/U; 0 BLOCKED"
+  },
+  {
+    "before": "0",
+    "after": "2"
+  },
+  {
+    "before": "0",
+    "after": "3"
+  },
+  {
+    "before": "5 H/U; 0 BLOCKED",
+    "after": "0 H/U; 0 BLOCKED"
+  },
+  {
+    "before": "0",
+    "after": "4"
+  },
+  {
+    "before": "7 H/U; 0 BLOCKED",
+    "after": "0 H/U; 3 BLOCKED"
+  },
+  {
+    "before": "2",
+    "after": "4"
+  },
+  {
+    "before": "4 H/U; 0 BLOCKED",
+    "after": "0 H/U; 2 BLOCKED"
+  },
+  {
+    "before": "4",
+    "after": "8"
+  },
+  {
+    "before": "1",
+    "after": "3"
+  },
+  {
+    "before": "7 H/U; 0 BLOCKED",
+    "after": "0 H/U; 1 BLOCKED"
+  },
+  {
+    "before": "0",
+    "after": "6"
+  },
+  {
+    "before": "7 H/U; 1 BLOCKED",
+    "after": "0 H/U; 2 BLOCKED"
+  },
+  {
+    "before": "7",
+    "after": "8"
+  },
+  {
+    "before": "4 H/U; 1 BLOCKED",
+    "after": "0 H/U; 4 BLOCKED"
+  },
+  {
+    "before": "23",
+    "after": "35"
+  },
+  {
+    "before": "3",
+    "after": "30"
+  },
+  {
+    "before": "49 H/U; 2 BLOCKED",
+    "after": "0 H/U; 12 BLOCKED"
+  },
+  {
+    "before": "The 77 designed original report cases now comprise 23 scoped VERIFIED results, 3 FAILED report expectations, 2 BLOCKED cases and 49 HISTORICAL/UNVERIFIED cases. The three failures concern unresolved query-length, workforce-threshold and cancellation requirements; current-contract characterisation tests pass but do not approve the historical expectations. All 57 formerly historical cases were reviewed individually: eight now have matching scoped execution; 49 remain unverified. Machine-suite counts and the new complete workflow are reported separately.",
+    "after": "Of the 49 previously historical cases, 39 now have scoped execution evidence: 12 matched and 27 differed from historical expectations. Ten are BLOCKED after investigation. Overall totals: 35 VERIFIED/PASS + 30 VERIFIED/FAIL + 12 BLOCKED = 77; zero HISTORICAL/UNVERIFIED and zero NOT EXECUTED. The earlier three query/headroom/cancellation expectation conflicts are retained. Failure counts include route/status/schema/precondition discrepancies awaiting requirements confirmation; they are not 30 confirmed defects."
+  },
+  {
+    "before": "Latest backend: 326 passed, zero failed, two skipped, 328 total. Node: 19 passed; Flutter: 49 unit/widget tests passed; Playwright: 111 passed and three skipped in 114 cases across 15 spec files; Python: 102 deterministic/mocked tests passed. The original spoof-rejection test now passes after content-validation repair. The real five-component document workflow passes; live Gemini Golden Cases, native-device acceptance and unresolved historical requirements remain incomplete.",
+    "after": "Earlier baseline: xUnit 326 pass/2 skip, Node 19 pass, Flutter 49 pass, Playwright 111 pass/3 skip and Python 102 pass (607 passes). New extension runs: 23 native cases, 12 pass and 11 fail. Thirty-five report cases pass and 30 historical expectations fail; 12 remain blocked. The earlier spoof fix and alternate integrated Affidavit workflow retain their verified results. Original Deed/Approved workflow, full live AI, native-device acceptance and current branch CI remain incomplete."
+  },
+  {
+    "before": "UNVERIFIED",
+    "after": "New two-zone explicit business-time normalization passes; original implicit date-drift defect closure remains unverified. historical-resolution/evidence/timezone-conflict.json"
+  },
+  {
+    "before": "Figures 6.1\u20136.13 remain genuine dated earlier-phase evidence. Figures 6.14\u20136.20 retain the verified fixes and real local workflow; new Figures 6.21\u20136.30 establish original group history, member commit records, publication and CI non-trigger. Historical deployment-repository images are preserved with provenance. Full native sources are included; GitHub screenshots prove repository observations, not successful test execution. Paths are relative to qmse-output.",
+    "after": "Figures 6.1\u20136.13 remain genuine dated earlier-phase evidence. Figures 6.14\u20136.20 retain the verified fixes and real local workflow; new Figures 6.21\u20136.30 establish original group history, member commit records, publication and CI non-trigger. Historical deployment-repository images are preserved with provenance. Full native sources are included; GitHub screenshots prove repository observations, not successful test execution. Paths are relative to qmse-output. Figures 6.31\u20136.36 add genuine historical-resolution output/UI captures. UI fixtures, live API pages and saved-log views are separately identified."
+  },
+  {
+    "before": "Figs 6.27\u20136.30",
+    "after": "Figs 6.31\u20136.36"
+  },
+  {
+    "before": "Published branch, source SHA, ancestry and Actions non-trigger",
+    "after": "New historical acceptance replays"
+  },
+  {
+    "before": "Git remote/API/browser verification",
+    "after": "Native TRX/Flutter/pytest/Playwright; real API/PG/UI"
+  },
+  {
+    "before": "git-publication/evidence/publication-verification.json; ci-verification.json; fresh-clone-verification.json",
+    "after": "historical-resolution/test-results/case-verification.json; evidence-index.json"
+  },
+  {
+    "before": "completion-20261008/evidence/live-gemini.json; ai-completion.xml; dataset ai-service/tests/qmse_golden_cases.json. GC-03/04 deterministic subcriteria only.",
+    "after": "completion-20261008/evidence/live-gemini.json; ai-completion.xml; dataset ai-service/tests/qmse_golden_cases.json. GC-03/04 deterministic subcriteria only. New provider probe: historical-resolution/evidence/live-gemini.json (503); no live acceptance PASS."
+  },
+  {
+    "before": "completion-20261008/evidence/live-gemini.json; ai-completion.xml; dataset ai-service/tests/qmse_golden_cases.json. GC-03/04 deterministic subcriteria only.",
+    "after": "completion-20261008/evidence/live-gemini.json; ai-completion.xml; dataset ai-service/tests/qmse_golden_cases.json. GC-03/04 deterministic subcriteria only. New provider probe: historical-resolution/evidence/live-gemini.json (503); no live acceptance PASS."
+  },
+  {
+    "before": "completion-20261008/evidence/live-gemini.json; ai-completion.xml; dataset ai-service/tests/qmse_golden_cases.json. GC-03/04 deterministic subcriteria only.",
+    "after": "completion-20261008/evidence/live-gemini.json; ai-completion.xml; dataset ai-service/tests/qmse_golden_cases.json. GC-03/04 deterministic subcriteria only. New provider probe: historical-resolution/evidence/live-gemini.json (503); no live acceptance PASS."
+  },
+  {
+    "before": "completion-20261008/evidence/live-gemini.json; ai-completion.xml; dataset ai-service/tests/qmse_golden_cases.json. GC-03/04 deterministic subcriteria only.",
+    "after": "completion-20261008/evidence/live-gemini.json; ai-completion.xml; dataset ai-service/tests/qmse_golden_cases.json. GC-03/04 deterministic subcriteria only. New provider probe: historical-resolution/evidence/live-gemini.json (503); no live acceptance PASS."
+  },
+  {
+    "before": "VERIFIED",
+    "after": "VERIFIED/PASS"
+  },
+  {
+    "before": "FAILED",
+    "after": "VERIFIED/FAIL"
+  },
+  {
+    "before": "2",
+    "after": "4"
+  },
+  {
+    "before": "4 H/U; 0 BLOCKED",
+    "after": "0 H/U; 2 BLOCKED"
+  },
+  {
+    "before": "13 cases documented: 7 scoped VERIFIED, 2 FAILED report expectations, 0 BLOCKED and 4 HISTORICAL/UNVERIFIED. These are component-assigned report cases, not proof of personal authorship.",
+    "after": "13 component-assigned cases: 7 VERIFIED/PASS, 4 VERIFIED/FAIL, 2 BLOCKED, zero H/U. New replay work is AI-assisted; historical component assignments do not prove personal authorship."
+  },
+  {
+    "before": "4",
+    "after": "8"
+  },
+  {
+    "before": "1",
+    "after": "3"
+  },
+  {
+    "before": "7 H/U; 0 BLOCKED",
+    "after": "0 H/U; 1 BLOCKED"
+  },
+  {
+    "before": "12 cases documented: 4 scoped VERIFIED, 1 FAILED report expectations, 0 BLOCKED and 7 HISTORICAL/UNVERIFIED. These are component-assigned report cases, not proof of personal authorship.",
+    "after": "12 component-assigned cases: 8 VERIFIED/PASS, 3 VERIFIED/FAIL, 1 BLOCKED, zero H/U. New replay work is AI-assisted; historical component assignments do not prove personal authorship."
+  },
+  {
+    "before": "0",
+    "after": "6"
+  },
+  {
+    "before": "7 H/U; 1 BLOCKED",
+    "after": "0 H/U; 2 BLOCKED"
+  },
+  {
+    "before": "12 cases documented: 4 scoped VERIFIED, 0 FAILED report expectations, 1 BLOCKED and 7 HISTORICAL/UNVERIFIED. These are component-assigned report cases, not proof of personal authorship.",
+    "after": "12 component-assigned cases: 4 VERIFIED/PASS, 6 VERIFIED/FAIL, 2 BLOCKED, zero H/U. New replay work is AI-assisted; historical component assignments do not prove personal authorship."
+  },
+  {
+    "before": "7",
+    "after": "8"
+  },
+  {
+    "before": "4 H/U; 1 BLOCKED",
+    "after": "0 H/U; 4 BLOCKED"
+  },
+  {
+    "before": "12 cases documented: 7 scoped VERIFIED, 0 FAILED report expectations, 1 BLOCKED and 4 HISTORICAL/UNVERIFIED. These are component-assigned report cases, not proof of personal authorship.",
+    "after": "12 component-assigned cases: 8 VERIFIED/PASS, 0 VERIFIED/FAIL, 4 BLOCKED, zero H/U. New replay work is AI-assisted; historical component assignments do not prove personal authorship."
+  },
+  {
+    "before": "Fresh real PostgreSQL/API evidence verifies lawyer filtering and specialization creation. Duplicate license, Customer authorisation, invalid specialization, score boundaries and mocked timeout tests pass. Query/headroom expectations remain unresolved: the available consolidated specification contains a 20% narrative, while later configurable workforce rules differ. Historical high match scores, fee mutation and availability-toggle scenarios remain unverified. Jeyashankar must confirm responsibilities and intended requirements; new AI-assisted work is not assigned personally.",
+    "after": "C1 new replays: fee is not persisted and historical availability toggle is absent. Live >90% recommendation and hiring rationale remain blocked. Query/headroom expectations are not changed. Jeyashankar must confirm fee/toggle requirements, scoring acceptance and workforce-rule precedence."
+  },
+  {
+    "before": "Current cancellation characterisation passes at 1439/1440/1441 minutes; historical 24-hour prohibition lacks an established product rule. Real PostgreSQL concurrency has one winner, outside-hours bookings are rejected and direct booking works without AI. Non-admin career publishing is denied. A migration repair makes the real appointment API usable. Historical immediate Confirmed status, timezone and live scheduling outputs remain qualified; Buddhika should confirm original scenarios and ownership.",
+    "after": "C2 new replays: duplicate booking, real career visibility, scoped mocked booking UI and two browser timezone contexts pass. Historical immediate Confirmed and PUT cancellation expectations differ. Full live tomorrow-at-10 timestamp remains blocked. Buddhika must confirm status/API contract and original timezone scenario."
+  },
+  {
+    "before": "Spoofed-PDF acceptance is repaired and the unchanged original rejection test passes. Genuine PDFs, images, MIME combinations, repository sample PDFs and exact 10 MiB boundaries pass regressions. PostgreSQL rollback tests and the complete Flutter/API/AI/React document workflow provide new evidence. An atomic three-file HTTP operation is still not established. Historical Approved/50% completeness claims differ from current statuses. Vithusan must confirm intended transaction boundary and ownership.",
+    "after": "C3 new replays expose historical service/checklist, upload/department/approval-route and completeness-ratio discrepancies. Current genuine 2 MiB upload succeeds, 14 MiB rejects; original spoof repair/regressions remain verified. Low-OCR live acceptance and atomic multi-file transaction remain blocked. Vithusan must confirm service mapping, bundle contents and transaction boundary."
+  },
+  {
+    "before": "Actual isolated staff login, wrong-password denial and service submission are verified. Expired/invalid/tampered JWT, duplicate registration and role denials pass their documented fixtures. Live refusal, Sri Lankan-law retrieval accuracy and universal disclaimer behaviour remain unverified after provider failure. Wijayananda should confirm guardrail requirements, member disclosures and future CI results after separately authorised push.",
+    "after": "C4 new real React/API login/logout passes. Chat refusal, legal relevance/disclaimer and higher RRF precision remain blocked; helper results are not full provider acceptance. Wijayananda must confirm guardrail criteria and JWT/storage/redirect expectations with supporting requirements."
+  },
+  {
+    "before": "Group-repository development: 0958d69, b082f54, 0548fd5, 5269539, ac62bb7, e77187a, 097ab39. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted.",
+    "after": "Group-repository development: 0958d69, b082f54, 0548fd5, 5269539, ac62bb7, e77187a, 097ab39. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted. New historical replay outcomes: {'VERIFIED/FAIL': 2, 'BLOCKED': 2}. AI-assisted; assigned member review required."
+  },
+  {
+    "before": "Group-repository development: 2c0c4e5, 07af04e, 4bec10d, 327bebf, 241db17, d461a84. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted.",
+    "after": "Group-repository development: 2c0c4e5, 07af04e, 4bec10d, 327bebf, 241db17, d461a84. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted. New historical replay outcomes: {'VERIFIED/FAIL': 2, 'VERIFIED/PASS': 4, 'BLOCKED': 1}. AI-assisted; assigned member review required."
+  },
+  {
+    "before": "Group-repository development: fb2513c, 44f3f25, 0fa6592, dfc95af, 587e892, a566efa. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted.",
+    "after": "Group-repository development: fb2513c, 44f3f25, 0fa6592, dfc95af, 587e892, a566efa. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted. New historical replay outcomes: {'VERIFIED/FAIL': 6, 'BLOCKED': 1}. AI-assisted; assigned member review required."
+  },
+  {
+    "before": "Group-repository development: ee78a38, 7cdbb89, 9579cee, 3ff0d2a, 4dc9a15, 43f6345, 9309287. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted.",
+    "after": "Group-repository development: ee78a38, 7cdbb89, 9579cee, 3ff0d2a, 4dc9a15, 43f6345, 9309287. Personal testing effort/ownership requires confirmation; published QMSE additions are Codex-assisted. New historical replay outcomes: {'VERIFIED/PASS': 1, 'BLOCKED': 3}. AI-assisted; assigned member review required."
+  },
+  {
+    "before": "The task repaired and retested four concrete defects, completed a real Flutter web \u2192 API \u2192 PostgreSQL/FastAPI \u2192 React \u2192 Flutter document workflow, and expanded PostgreSQL security/performance evidence. Final automated suites contain no failures; five cases are explicitly skipped across xUnit/Playwright. The report still contains three unresolved expectation conflicts, 49 historical/unverified cases and two blocked cases. Live Golden Case acceptance, native-device/accessibility validation, member confirmation and CI execution for the published tested commit remain outstanding; the published branch is verified, but assessment completeness is not claimed.",
+    "after": "Earlier QMSE work repaired and retested four defects and verified an alternate real Flutter/API/PostgreSQL/FastAPI/React Affidavit workflow. Those results remain intact. The historical-resolution phase investigated all 49 remaining cases: 39 scoped executions (12 pass, 27 fail) and ten blocked. Overall 77 cases: 35 VERIFIED/PASS, 30 VERIFIED/FAIL, 12 BLOCKED. The earlier 607 passing machine cases remain a dated baseline; new 23-case extensions have 12 pass and 11 fail. Many failures are historical contract/precondition discrepancies requiring approval, not confirmed product defects. Original Deed/Approved workflow, live AI, native-device acceptance, member confirmation and CI execution remain incomplete."
+  },
+  {
+    "before": "Confirm approval/version precedence for query length, the specification\u2019s 20% workforce narrative versus configurable rules, cancellation notice and document transaction boundaries. Preserve conflicting expectations until resolved.",
+    "after": "Confirm approval/version precedence for query length, the specification\u2019s 20% workforce narrative versus configurable rules, cancellation notice and document transaction boundaries. Preserve conflicting expectations until resolved. Also confirm API routes/statuses, cost-12 precondition, fee/card behaviour, checklist ratios and secure-storage/JWT/redirect claims before changing business rules or declaring product defects."
+  },
+  {
+    "before": "Resolve provider availability/model/budget before further live Golden Cases. Obtain member contribution confirmations and complete native/accessibility/manual demonstrations. CI needs a separately approved configuration revision: current branch filters prevent execution, and no manual dispatch is declared. Publication of the verified SHA is complete; no approval for an additional SHA, deployment or submission is inferred.",
+    "after": "Resolve provider availability/model/budget before further live Golden Cases. Obtain member contribution confirmations and complete native/accessibility/manual demonstrations. CI needs a separately approved configuration revision: current branch filters prevent execution, and no manual dispatch is declared. Publication of the verified SHA is complete; no approval for an additional SHA, deployment or submission is inferred. New provider probe is 503; remaining six calls are not automatically spent. New test overlay has not been published and requires separate publication authorisation."
+  },
+  {
+    "before": "Codex assisted tests, four fixes, isolated local execution, repository audit, approved exact-SHA publication and this report revision. No production data was modified and no deployment or submission occurred. New work is not attributed to students without confirmation. Git author metadata is preserved; it is not proof of personal effort.",
+    "after": "Codex assisted tests, four fixes, isolated local execution, repository audit, approved exact-SHA publication and this report revision. No production data was modified and no deployment or submission occurred. New work is not attributed to students without confirmation. Git author metadata is preserved; it is not proof of personal effort. This revision adds AI-assisted 49-case investigation, native replays and requirement-discrepancy analysis; no new tests are credited to individual students."
+  },
+  {
+    "before": "Original spoof assertion failed before and passes after; machine outputs, real workflow, unresolved expectations and live 504 recorded. Historical evidence and 13 figures preserved; final render QA recorded.",
+    "after": "Original spoof failure/retest, earlier 607-pass baseline, new 23-case native extensions (12 pass/11 fail), 77 report-case totals and provider 504/503 are evidence-linked. All 30 prior figures preserved; six genuine figures added. Manual member assessment remains pending."
+  },
+  {
+    "before": "77 original cases: 23 scoped verified, 3 conflicting expectations, 2 blocked, 49 historical/unverified.",
+    "after": "77 original cases: 35 VERIFIED/PASS, 30 VERIFIED/FAIL, 12 BLOCKED; H/U and NOT EXECUTED zero. All 49 remaining historical cases investigated; blocked cases remain unfinished."
+  },
+  {
+    "before": "102 deterministic/mocked tests; reproducible subcriteria dataset; live Gemini 504, no verified full Golden Cases.",
+    "after": "Earlier 102 deterministic/mocked tests retained. New five diagnostics: three pass/two fail, with subcriteria explicitly scoped. Live provider 504 then 503; no full live Golden Case verified."
+  },
+  {
+    "before": "VERIFIED machine summaries and report-case counts",
+    "after": "VERIFIED native-count reconciliation: baseline 607 passes; new distinct native extensions 23 total, 12 pass, 11 fail. Report acceptance totals separately reconciled."
+  },
+  {
+    "before": "VERIFIED: reusable test source and scripts published at 05359214df52fa743b234e1d77e6671f57c14dea on group se3110-qmse-testing. Native logs/final report supplied separately; no runtime caches published.",
+    "after": "VERIFIED: reusable test source and scripts published at 05359214df52fa743b234e1d77e6671f57c14dea on group se3110-qmse-testing. Native logs/final report supplied separately; no runtime caches published. New AI-assisted tests are supplied in historical-resolution/source-snapshot and remain uncommitted/unpublished."
+  },
+  {
+    "before": "Replay scripts/logs retained; local-service prerequisites and live/provider limitations explicit.",
+    "after": "Replay scripts/logs retained; local-service prerequisites and live/provider limitations explicit. New isolated replay instructions: historical-resolution/audit/reproduction.md; exact environment and blockers recorded."
+  },
+  {
+    "before": "One live Gemini request, retries disabled, returned provider ServerError 504 after 29.326 seconds. No successful output/token usage or verified pricing was returned, so estimated cost is unavailable and the 1.5-second successful-response NFR is BLOCKED. Only one of eight authorised calls was attempted; testing stopped on provider failure. Prior mock-gateway timings remain historical mock measurements.",
+    "after": "Two authorised live Gemini requests, retries disabled: the earlier call returned HTTP 504 after 29.326 seconds; the new availability probe returned HTTP 503 after 7.324 seconds. Neither produced successful output, token usage or verified pricing; estimated cost is unavailable and the 1.5-second successful-response NFR remains BLOCKED. Cumulative calls are two of eight. No additional calls were made after the new provider failure. Prior mock-gateway timings remain historical mock measurements."
+  },
+  {
+    "before": "Flutter SDK recovery enabled a genuine web build and actual browser workflow, including upload and synchronized completion. The 49 existing Flutter unit/widget cases also pass. React integration now uses the correct clerk profile ID; two added browser regressions pass and the real queue/review was executed. Physical Android/iOS-device compatibility, accessibility conformance and complete cross-platform equivalence remain unverified.",
+    "after": "Flutter SDK recovery enabled a genuine web build and actual browser workflow, including upload and synchronized completion. The earlier 49 Flutter unit/widget cases passed. React integration now uses the correct clerk profile ID; two added browser regressions pass and the real queue/review was executed. Physical Android/iOS-device compatibility, accessibility conformance and complete cross-platform equivalence remain unverified."
+  },
+  {
+    "before": "All 102 final Python deterministic/mocked tests pass. A versioned synthetic Golden Case dataset now records fixtures, expected outputs and success criteria. Three GC-03 deterministic checklist subcases produce the expected missing-document/ready statuses; the GC-04 subcase demonstrates sanitizer isolation only, not live refusal or a universal disclaimer. GC-01 live classification returned provider 504; live GC-02\u201304 were not attempted after failure. No historical 98.9% mean or original case accuracy is certified.",
+    "after": "Earlier baseline: 102 Python deterministic/mocked tests passed. A versioned synthetic Golden Case dataset now records fixtures, expected outputs and success criteria. Three GC-03 deterministic checklist subcases produce the expected missing-document/ready statuses; the GC-04 subcase demonstrates sanitizer isolation only, not live refusal or a universal disclaimer. GC-01 live classification returned provider 504; live GC-02\u201304 were not attempted after failure. No historical 98.9% mean or original case accuracy is certified."
+  }
+]
