@@ -416,4 +416,157 @@ public class PlanningCoordinatorServiceTests
             1,
             await context.AgentWorkflows.CountAsync());
     }
+
+        // ---------------------------------------------------------
+    // M4-TC18
+    // Failure recovery:
+    // A failed workflow start must not prevent a later
+    // valid request from creating a workflow successfully.
+    // ---------------------------------------------------------
+
+    [Fact]
+    public async Task StartWorkflow_AfterFailedRequest_ValidRequestStillSucceeds()
+    {
+        // Arrange
+        using var context = CreateInMemoryDb();
+
+        var coordinator = CreateCoordinator(context);
+
+        var invalidId = Guid.NewGuid();
+
+        // Act - first request fails
+        await Assert.ThrowsAsync<KeyNotFoundException>(
+            () => coordinator.StartWorkflowAsync(invalidId));
+
+        // Arrange - create a valid request after the failure
+        var validRequest = await AddServiceRequestAsync(
+            context,
+            "Property legal advice",
+            "I need legal assistance regarding a land dispute.");
+
+        // Act - retry with valid request
+        var workflow =
+            await coordinator.StartWorkflowAsync(
+                validRequest.ServiceRequestId);
+
+        // Assert
+        Assert.NotNull(workflow);
+
+        Assert.Equal(
+            validRequest.ServiceRequestId,
+            workflow.ServiceRequestId);
+
+        Assert.Equal(
+            "Planned",
+            workflow.Status);
+
+        Assert.Equal(
+            1,
+            await context.AgentWorkflows.CountAsync());
+    }
+
+        // ---------------------------------------------------------
+    // M4-TC19
+    // Boundary / input normalization:
+    // Keyword detection must work regardless of letter case.
+    // ---------------------------------------------------------
+
+    [Fact]
+    public async Task StartWorkflow_UppercaseEmploymentKeywords_ClassifiesAsEmployment()
+    {
+        // Arrange
+        using var context = CreateInMemoryDb();
+
+        var request = await AddServiceRequestAsync(
+            context,
+            "EMPLOYMENT DISPUTE",
+            "MY EMPLOYER HAS NOT PAID MY SALARY.");
+
+        var coordinator = CreateCoordinator(context);
+
+        // Act
+        var workflow =
+            await coordinator.StartWorkflowAsync(
+                request.ServiceRequestId);
+
+        // Assert
+        var firstStep =
+            workflow.AgentSteps.First();
+
+        using var payload =
+            JsonDocument.Parse(
+                firstStep.InputPayload);
+
+        var category =
+            payload.RootElement
+                .GetProperty("legalCategory")
+                .GetString();
+
+        Assert.Equal(
+            "Employment",
+            category);
+    }
+
+        // ---------------------------------------------------------
+    // M4-TC20
+    // Multi-agent planning:
+    // A request can require lawyer, scheduling,
+    // and documentation agents together.
+    // ---------------------------------------------------------
+
+    [Fact]
+    public async Task StartWorkflow_RequestNeedingMultipleServices_CreatesAllRequiredAgentSteps()
+    {
+        // Arrange
+        using var context = CreateInMemoryDb();
+
+        var request = await AddServiceRequestAsync(
+            context,
+            "Property consultation and document preparation",
+            "I need a lawyer consultation, an appointment, and help preparing a deed.");
+
+        var coordinator = CreateCoordinator(context);
+
+        // Act
+        var workflow =
+            await coordinator.StartWorkflowAsync(
+                request.ServiceRequestId);
+
+        // Assert
+        Assert.Contains(
+            workflow.AgentSteps,
+            step =>
+                step.AgentName ==
+                "LawyerRecommendationAgent");
+
+        Assert.Contains(
+            workflow.AgentSteps,
+            step =>
+                step.AgentName ==
+                "SchedulingAgent");
+
+        Assert.Contains(
+            workflow.AgentSteps,
+            step =>
+                step.AgentName ==
+                "DocumentationClerkAgent");
+
+        Assert.Contains(
+            workflow.AgentSteps,
+            step =>
+                step.AgentName ==
+                "PlanningCoordinatorAgent" &&
+                step.StepName ==
+                "Validate delegated results");
+
+        Assert.Contains(
+            workflow.AgentSteps,
+            step =>
+                step.AgentName ==
+                "PlanningCoordinatorAgent" &&
+                step.StepName ==
+                "Request human approval");
+    }
+
+
 }
