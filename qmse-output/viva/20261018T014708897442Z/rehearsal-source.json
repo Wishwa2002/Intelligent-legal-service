@@ -1,0 +1,13 @@
+{
+  "head": "05359214df52fa743b234e1d77e6671f57c14dea",
+  "source_sha256": {
+    "scripts/viva-check.py": "9f05be397faa8792da632f523deb0d41d498fb2ff1b493d1ab4f307017164a94",
+    "backend/LegalService.API/Authentication/Services/PasswordService.cs": "4c6f3adc95fc34a7075b20d03067e4fb25752238273968bc7efe5200fb172d88",
+    "backend/LegalService.Tests/PasswordCurrentContractTests.cs": "f3e9672027a362aae63ac548b752419b32fb7fd76054af300a9a8bb573431f5b",
+    "backend/LegalService.Tests/RequirementsDecisionTests.cs": "f72c38ae814af2d2987518922f1975e96ba4ac7410b9f2a0165bf65a5dae6805",
+    "frontend/playwright.config.ts": "ef5f9b60dd9ac6f7337cc4ee7367a35fc97f7acc0adfb976995514e73d38de6c",
+    "frontend/tests/recurring-scheduling.spec.ts": "4cc66872fbe0ec8d50fbbc1928e57eec5f1b4a8bf03de8f90330fe19d9dd2610",
+    "frontend/tests/recommendation-workflow.spec.ts": "11ec2e2327a2579401607f89f19028b175cba669f2814251a0da3ede9a1f02f3"
+  },
+  "note": "Local uncommitted rehearsal fixes; source changed since original report. No secret files hashed."
+}

@@ -1,3 +1,4 @@
+using LegalService.API.Services.Scheduling;
 using LegalService.API.Infrastructure;
 using LegalService.API.Services.Workforce;
 using LegalService.API.Services.Lawyers;
@@ -48,9 +49,11 @@ builder.Services.AddScoped<IDocumentFileService, DocumentFileService>();
 builder.Services.AddScoped<ICareerService, CareerService>();
 builder.Services.AddScoped<LegalService.API.Services.Clients.ClientService>();
 builder.Services.AddSingleton(TimeProvider.System);
+builder.Services.AddOptions<ProposedCancellationOptions>().BindConfiguration("ProposedRules:Cancellation")
+    .Validate(o => o.MinimumNoticeHours is > 0 and <= 720, "Cancellation notice must be between 1 and 720 hours.").ValidateOnStart();
 builder.Services.AddOptions<WorkforceOptions>().BindConfiguration("Workforce")
     .Validate(o => o.RecentWindowDays is > 0 and <= 365 && o.FutureWindowDays is > 0 and <= 365 &&
-        o.MinimumDemand > 0 && o.WatchRatio > 0 && o.ConcernRatio >= o.WatchRatio && o.SnapshotMaxAgeHours > 0,
+        o.ProposedMinimumHeadroom > 0 && o.ProposedMinimumHeadroom < 1 && o.MinimumDemand > 0 && o.WatchRatio > 0 && o.ConcernRatio >= o.WatchRatio && o.SnapshotMaxAgeHours > 0,
         "Workforce windows and thresholds must be positive and concern ratio must exceed watch ratio.").ValidateOnStart();
 builder.Services.AddScoped<WorkforceAnalysisService>();
 builder.Services.AddScoped<WorkforceSettingsService>();
@@ -254,6 +257,7 @@ if (args.Contains("--seed-demo-lawyers") || args.Contains("--seed-demo-schedulin
 // ================================================================
 // HTTP Pipeline Configuration
 // ================================================================
+app.UseMiddleware<LegalService.API.Middleware.SecurityHeadersMiddleware>();
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseWhen(context => (context.Request.Path.StartsWithSegments("/api/lawyer-recommendations") || context.Request.Path.StartsWithSegments("/api/workforce-analysis") || context.Request.Path.StartsWithSegments("/api/careers") || context.Request.Path.StartsWithSegments("/api/workforce-settings") || context.Request.Path.StartsWithSegments("/api/clients") || context.Request.Path.StartsWithSegments("/api/dev/workforce-demo") || context.Request.Path.StartsWithSegments("/api/lawyers") || context.Request.Path.StartsWithSegments("/api/lawyer") || context.Request.Path.StartsWithSegments("/api/auth") || context.Request.Path.StartsWithSegments("/api/appointments")), branch => branch.UseExceptionHandler());
 

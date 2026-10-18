@@ -1,0 +1,202 @@
+2026-10-18 07:17:09.336 +0530 [23850] LOG:  starting PostgreSQL 18.3 (Homebrew) on aarch64-apple-darwin25.2.0, compiled by Apple clang version 17.0.0 (clang-1700.6.3.2), 64-bit
+2026-10-18 07:17:09.336 +0530 [23850] LOG:  listening on IPv4 address "127.0.0.1", port 58211
+2026-10-18 07:17:09.336 +0530 [23850] LOG:  listening on Unix socket "/var/folders/jk/bvq6bx9n4jx9nsswfwvhmbnm0000gn/T/gr42-viva-pg-wid3y2m6/.s.PGSQL.58211"
+2026-10-18 07:17:09.339 +0530 [23856] LOG:  database system was shut down at 2026-10-18 07:17:09 +0530
+2026-10-18 07:17:09.340 +0530 [23850] LOG:  database system is ready to accept connections
+2026-10-18 07:17:14.759 +0530 [23932] ERROR:  Synthetic persistence failure
+2026-10-18 07:17:14.759 +0530 [23932] CONTEXT:  PL/pgSQL function qmse_proposed_fail() line 1 at RAISE
+2026-10-18 07:17:14.759 +0530 [23932] STATEMENT:  INSERT INTO "DocumentFiles" ("ContentType", "CreatedAt", "DocumentStatus", "FileContents", "FileName", "FilePath", "FileSize", "RejectReason", "RequestId", "UpdatedAt", "UploadDate")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+	RETURNING "FileId"
+2026-10-18 07:17:14.786 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:14.903 +0530 [23966] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-18 07:17:14.903 +0530 [23966] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-18 07:17:14.903 +0530 [23966] HINT:  The transaction might succeed if retried.
+2026-10-18 07:17:14.903 +0530 [23966] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-18 07:17:14.941 +0530 [23964] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:14.946 +0530 [23966] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:14.946 +0530 [23965] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:15.043 +0530 [23854] LOG:  checkpoint complete: wrote 5629 buffers (34.4%), wrote 3 SLRU buffers; 0 WAL file(s) added, 0 removed, 2 recycled; write=0.208 s, sync=0.049 s, total=0.258 s; sync files=1943, longest=0.001 s, average=0.001 s; distance=36832 kB, estimate=36832 kB; lsn=0/3E113C0, redo lsn=0/3B83250
+2026-10-18 07:17:15.045 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:15.054 +0530 [23854] LOG:  checkpoint complete: wrote 287 buffers (1.8%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.004 s, total=0.009 s; sync files=133, longest=0.001 s, average=0.001 s; distance=2617 kB, estimate=33411 kB; lsn=0/3E2A778, redo lsn=0/3E11798
+2026-10-18 07:17:15.114 +0530 [23968] ERROR:  Synthetic attachment commit failure
+2026-10-18 07:17:15.114 +0530 [23968] CONTEXT:  PL/pgSQL function qmse_fail_attach() line 2 at RAISE
+2026-10-18 07:17:15.114 +0530 [23968] STATEMENT:  INSERT INTO "DocumentFiles" ("ContentType", "CreatedAt", "DocumentStatus", "FileContents", "FileName", "FilePath", "FileSize", "RejectReason", "RequestId", "UpdatedAt", "UploadDate")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+	RETURNING "FileId"
+2026-10-18 07:17:15.119 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:15.177 +0530 [23854] LOG:  checkpoint complete: wrote 1485 buffers (9.1%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.041 s, sync=0.016 s, total=0.058 s; sync files=609, longest=0.003 s, average=0.001 s; distance=6856 kB, estimate=30755 kB; lsn=0/4794BA0, redo lsn=0/44C39F8
+2026-10-18 07:17:15.178 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:15.194 +0530 [23854] LOG:  checkpoint complete: wrote 490 buffers (3.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.012 s, sync=0.005 s, total=0.017 s; sync files=173, longest=0.001 s, average=0.001 s; distance=2887 kB, estimate=27968 kB; lsn=0/47D9060, redo lsn=0/47959B8
+2026-10-18 07:17:15.562 +0530 [23989] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-18 07:17:15.562 +0530 [23989] DETAIL:  Reason code: Canceled on identification as a pivot, during write.
+2026-10-18 07:17:15.562 +0530 [23989] HINT:  The transaction might succeed if retried.
+2026-10-18 07:17:15.562 +0530 [23989] STATEMENT:  INSERT INTO "LawyerAvailabilities" ("AvailabilityId", "Date", "EndTime", "LawyerId", "StartTime")
+	VALUES ($1, $2, $3, $4, $5)
+2026-10-18 07:17:15.568 +0530 [23980] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:15.568 +0530 [23989] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:15.669 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:15.681 +0530 [23985] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:15.706 +0530 [23854] LOG:  checkpoint complete: wrote 1235 buffers (7.5%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.024 s, sync=0.011 s, total=0.037 s; sync files=706, longest=0.001 s, average=0.001 s; distance=8001 kB, estimate=25972 kB; lsn=0/4FEB4F0, redo lsn=0/4F66138
+2026-10-18 07:17:15.708 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:15.713 +0530 [23854] LOG:  checkpoint complete: wrote 111 buffers (0.7%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.003 s, sync=0.002 s, total=0.005 s; sync files=65, longest=0.001 s, average=0.001 s; distance=632 kB, estimate=23438 kB; lsn=0/5004408, redo lsn=0/5004348
+2026-10-18 07:17:15.799 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:15.834 +0530 [23854] LOG:  checkpoint complete: wrote 1011 buffers (6.2%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.027 s, sync=0.009 s, total=0.036 s; sync files=345, longest=0.001 s, average=0.001 s; distance=5056 kB, estimate=21600 kB; lsn=0/551D4A8, redo lsn=0/54F4508
+2026-10-18 07:17:16.098 +0530 [23996] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:16.123 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:16.200 +0530 [23854] LOG:  checkpoint complete: wrote 2154 buffers (13.1%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.057 s, sync=0.020 s, total=0.078 s; sync files=984, longest=0.001 s, average=0.001 s; distance=11648 kB, estimate=20604 kB; lsn=0/6180600, redo lsn=0/60545D8
+2026-10-18 07:17:16.201 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:16.208 +0530 [23854] LOG:  checkpoint complete: wrote 214 buffers (1.3%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.003 s, sync=0.004 s, total=0.008 s; sync files=136, longest=0.001 s, average=0.001 s; distance=1233 kB, estimate=18667 kB; lsn=0/61B7280, redo lsn=0/6188C78
+2026-10-18 07:17:16.235 +0530 [24005] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:16.338 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:16.417 +0530 [23854] LOG:  checkpoint complete: wrote 2128 buffers (13.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.069 s, sync=0.009 s, total=0.079 s; sync files=850, longest=0.001 s, average=0.001 s; distance=10452 kB, estimate=17846 kB; lsn=0/6C63BD0, redo lsn=0/6BBE048
+2026-10-18 07:17:16.669 +0530 [24006] ERROR:  Synthetic persistence failure
+2026-10-18 07:17:16.669 +0530 [24006] CONTEXT:  PL/pgSQL function qmse_proposed_fail() line 1 at RAISE
+2026-10-18 07:17:16.669 +0530 [24006] STATEMENT:  INSERT INTO "DocumentFiles" ("ContentType", "CreatedAt", "DocumentStatus", "FileContents", "FileName", "FilePath", "FileSize", "RejectReason", "RequestId", "UpdatedAt", "UploadDate")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+	RETURNING "FileId"
+2026-10-18 07:17:16.676 +0530 [24006] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:16.706 +0530 [24017] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-18 07:17:16.706 +0530 [24017] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-18 07:17:16.706 +0530 [24017] HINT:  The transaction might succeed if retried.
+2026-10-18 07:17:16.706 +0530 [24017] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-18 07:17:16.754 +0530 [24020] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:16.754 +0530 [24017] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:16.761 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:16.859 +0530 [23854] LOG:  checkpoint complete: wrote 2297 buffers (14.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.066 s, sync=0.031 s, total=0.098 s; sync files=1178, longest=0.004 s, average=0.001 s; distance=13315 kB, estimate=17393 kB; lsn=0/7A9BC28, redo lsn=0/78BEE70
+2026-10-18 07:17:16.860 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:16.870 +0530 [23854] LOG:  checkpoint complete: wrote 295 buffers (1.8%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.005 s, sync=0.006 s, total=0.011 s; sync files=230, longest=0.001 s, average=0.001 s; distance=1907 kB, estimate=15844 kB; lsn=0/7AE5E98, redo lsn=0/7A9BCA0
+2026-10-18 07:17:16.876 +0530 [24024] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:16.926 +0530 [24023] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:16.969 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:16.998 +0530 [24022] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-18 07:17:16.998 +0530 [24022] DETAIL:  Key ("LawyerId", "DayOfWeek")=(64129f8e-c8b6-4933-ba6d-1118965bc95a, 1) already exists.
+2026-10-18 07:17:16.998 +0530 [24022] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-18 07:17:17.049 +0530 [24022] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:17.049 +0530 [24034] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:17.052 +0530 [23854] LOG:  checkpoint complete: wrote 2038 buffers (12.4%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.061 s, sync=0.021 s, total=0.083 s; sync files=790, longest=0.002 s, average=0.001 s; distance=9957 kB, estimate=15255 kB; lsn=0/858F830, redo lsn=0/8455150
+2026-10-18 07:17:17.053 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:17.062 +0530 [23854] LOG:  checkpoint complete: wrote 149 buffers (0.9%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.004 s, total=0.009 s; sync files=155, longest=0.001 s, average=0.001 s; distance=1258 kB, estimate=13856 kB; lsn=0/85ED110, redo lsn=0/858F998
+2026-10-18 07:17:17.284 +0530 [24040] ERROR:  could not serialize access due to read/write dependencies among transactions
+2026-10-18 07:17:17.284 +0530 [24040] DETAIL:  Reason code: Canceled on identification as a pivot, during conflict in checking.
+2026-10-18 07:17:17.284 +0530 [24040] HINT:  The transaction might succeed if retried.
+2026-10-18 07:17:17.284 +0530 [24040] STATEMENT:  INSERT INTO "Careers" ("CreatedAt", "Description", "JobTitle", "PracticeAreaId", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5)
+	RETURNING "CareerId"
+2026-10-18 07:17:17.291 +0530 [24040] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:17.291 +0530 [24031] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:17.348 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:17.382 +0530 [24039] ERROR:  duplicate key value violates unique constraint "IX_LawyerWorkingSchedules_LawyerId_DayOfWeek"
+2026-10-18 07:17:17.382 +0530 [24039] DETAIL:  Key ("LawyerId", "DayOfWeek")=(f8964f6c-e33d-4df3-9b0e-253db94c350e, 1) already exists.
+2026-10-18 07:17:17.382 +0530 [24039] STATEMENT:  INSERT INTO "LawyerWorkingSchedules" ("Id", "CreatedAt", "DayOfWeek", "EndTime", "IsWorkingDay", "LawyerId", "StartTime", "UpdatedAt")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+2026-10-18 07:17:17.415 +0530 [24037] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:17.418 +0530 [24039] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:17.418 +0530 [24041] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:17.435 +0530 [23854] LOG:  checkpoint complete: wrote 2250 buffers (13.7%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.061 s, sync=0.026 s, total=0.087 s; sync files=1155, longest=0.001 s, average=0.001 s; distance=13153 kB, estimate=13785 kB; lsn=0/935E960, redo lsn=0/9267F28
+2026-10-18 07:17:17.437 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:17.441 +0530 [23854] LOG:  checkpoint complete: wrote 55 buffers (0.3%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.002 s, sync=0.001 s, total=0.004 s; sync files=36, longest=0.001 s, average=0.001 s; distance=1027 kB, estimate=12509 kB; lsn=0/939C588, redo lsn=0/9368BF8
+2026-10-18 07:17:17.441 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:17.443 +0530 [23854] LOG:  checkpoint complete: wrote 31 buffers (0.2%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.003 s; sync files=27, longest=0.001 s, average=0.001 s; distance=210 kB, estimate=11280 kB; lsn=0/93A0F48, redo lsn=0/939D478
+2026-10-18 07:17:17.455 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:17.456 +0530 [23854] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=2, longest=0.001 s, average=0.001 s; distance=175 kB, estimate=10169 kB; lsn=0/93C9280, redo lsn=0/93C9218
+2026-10-18 07:17:17.527 +0530 [24043] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:17.601 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:17.636 +0530 [23854] LOG:  checkpoint complete: wrote 1030 buffers (6.3%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.025 s, sync=0.010 s, total=0.035 s; sync files=444, longest=0.001 s, average=0.001 s; distance=5443 kB, estimate=9696 kB; lsn=0/9919F20, redo lsn=0/9919EC8
+2026-10-18 07:17:17.842 +0530 [24045] ERROR:  Synthetic persistence failure
+2026-10-18 07:17:17.842 +0530 [24045] CONTEXT:  PL/pgSQL function qmse_proposed_fail() line 1 at RAISE
+2026-10-18 07:17:17.842 +0530 [24045] STATEMENT:  INSERT INTO "DocumentFiles" ("ContentType", "CreatedAt", "DocumentStatus", "FileContents", "FileName", "FilePath", "FileSize", "RejectReason", "RequestId", "UpdatedAt", "UploadDate")
+	VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11)
+	RETURNING "FileId"
+2026-10-18 07:17:17.845 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:17.884 +0530 [23854] LOG:  checkpoint complete: wrote 1043 buffers (6.4%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.028 s, sync=0.010 s, total=0.039 s; sync files=478, longest=0.001 s, average=0.001 s; distance=6143 kB, estimate=9341 kB; lsn=0/9F55EE0, redo lsn=0/9F19D78
+2026-10-18 07:17:18.131 +0530 [24058] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:18.232 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:18.268 +0530 [23854] LOG:  checkpoint complete: wrote 1052 buffers (6.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.024 s, sync=0.011 s, total=0.036 s; sync files=500, longest=0.001 s, average=0.001 s; distance=5901 kB, estimate=8997 kB; lsn=0/A5374A8, redo lsn=0/A4DD318
+2026-10-18 07:17:18.274 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:18.275 +0530 [23854] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=2, longest=0.001 s, average=0.001 s; distance=364 kB, estimate=8134 kB; lsn=0/A538580, redo lsn=0/A538520
+2026-10-18 07:17:18.761 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:18.798 +0530 [23854] LOG:  checkpoint complete: wrote 1046 buffers (6.4%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.027 s, sync=0.010 s, total=0.038 s; sync files=478, longest=0.001 s, average=0.001 s; distance=10897 kB, estimate=10897 kB; lsn=0/AFDCCA0, redo lsn=0/AFDCC48
+2026-10-18 07:17:18.831 +0530 [24068] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:18.932 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:18.933 +0530 [23854] LOG:  checkpoint complete: wrote 1 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=2, longest=0.001 s, average=0.001 s; distance=272 kB, estimate=9835 kB; lsn=0/B020DF0, redo lsn=0/B020D98
+2026-10-18 07:17:19.391 +0530 [24071] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:19.492 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:19.493 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5424 kB, estimate=9394 kB; lsn=0/B56CF50, redo lsn=0/B56CEF8
+2026-10-18 07:17:19.942 +0530 [24077] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:20.043 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:20.044 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5424 kB, estimate=8997 kB; lsn=0/BAB91A0, redo lsn=0/BAB9148
+2026-10-18 07:17:20.563 +0530 [24083] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:20.664 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:20.665 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5425 kB, estimate=8640 kB; lsn=0/C0058F0, redo lsn=0/C005898
+2026-10-18 07:17:21.149 +0530 [24085] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:21.251 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:21.252 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5425 kB, estimate=8318 kB; lsn=0/C551D08, redo lsn=0/C551CB0
+2026-10-18 07:17:21.703 +0530 [24087] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:21.804 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:21.805 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5425 kB, estimate=8029 kB; lsn=0/CA9E210, redo lsn=0/CA9E1B8
+2026-10-18 07:17:22.272 +0530 [24089] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:22.373 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:22.374 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5425 kB, estimate=7768 kB; lsn=0/CFEA7F0, redo lsn=0/CFEA798
+2026-10-18 07:17:22.793 +0530 [24091] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:22.894 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:22.895 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5426 kB, estimate=7534 kB; lsn=0/D536FF8, redo lsn=0/D536FA0
+2026-10-18 07:17:24.098 +0530 [24093] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:24.200 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:24.201 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5426 kB, estimate=7323 kB; lsn=0/DA83900, redo lsn=0/DA838A8
+2026-10-18 07:17:24.592 +0530 [24095] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:24.693 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:24.694 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5426 kB, estimate=7133 kB; lsn=0/DFD0208, redo lsn=0/DFD01B0
+2026-10-18 07:17:25.084 +0530 [24099] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:25.186 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:25.187 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5426 kB, estimate=6963 kB; lsn=0/E51CB88, redo lsn=0/E51CB30
+2026-10-18 07:17:25.604 +0530 [24101] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:25.706 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:25.707 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5428 kB, estimate=6809 kB; lsn=0/EA69EC8, redo lsn=0/EA69E70
+2026-10-18 07:17:26.102 +0530 [24103] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:26.204 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:26.205 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5426 kB, estimate=6671 kB; lsn=0/EFB6AB8, redo lsn=0/EFB6A60
+2026-10-18 07:17:26.587 +0530 [24106] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:26.689 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:26.690 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5427 kB, estimate=6547 kB; lsn=0/F5036F8, redo lsn=0/F5036A0
+2026-10-18 07:17:27.185 +0530 [24108] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:27.287 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:27.288 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5427 kB, estimate=6435 kB; lsn=0/FA50558, redo lsn=0/FA50500
+2026-10-18 07:17:27.783 +0530 [24110] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:27.884 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:27.885 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5427 kB, estimate=6334 kB; lsn=0/FF9D480, redo lsn=0/FF9D428
+2026-10-18 07:17:28.261 +0530 [24112] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:28.363 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:28.364 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=6244 kB; lsn=0/104EB128, redo lsn=0/104EB0D0
+2026-10-18 07:17:28.743 +0530 [24114] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:28.844 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:28.845 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5427 kB, estimate=6162 kB; lsn=0/10A380E0, redo lsn=0/10A38088
+2026-10-18 07:17:29.223 +0530 [24116] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:29.324 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:29.325 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5428 kB, estimate=6089 kB; lsn=0/10F851A8, redo lsn=0/10F85150
+2026-10-18 07:17:29.931 +0530 [24118] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:30.032 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:30.033 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5431 kB, estimate=6023 kB; lsn=0/114D2F90, redo lsn=0/114D2F38
+2026-10-18 07:17:30.433 +0530 [24120] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:30.535 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:30.536 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 2 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5430 kB, estimate=5963 kB; lsn=0/11A20978, redo lsn=0/11A20920
+2026-10-18 07:17:30.927 +0530 [24122] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:31.028 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:31.029 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5429 kB, estimate=5910 kB; lsn=0/11F6DE28, redo lsn=0/11F6DDD0
+2026-10-18 07:17:31.417 +0530 [24124] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:31.519 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:31.520 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 4 SLRU buffers; 0 WAL file(s) added, 0 removed, 1 recycled; write=0.001 s, sync=0.001 s, total=0.002 s; sync files=6, longest=0.001 s, average=0.001 s; distance=5429 kB, estimate=5862 kB; lsn=0/124BB608, redo lsn=0/124BB5B0
+2026-10-18 07:17:32.005 +0530 [24126] FATAL:  terminating connection due to administrator command
+2026-10-18 07:17:32.107 +0530 [23854] LOG:  checkpoint starting: immediate force wait
+2026-10-18 07:17:32.108 +0530 [23854] LOG:  checkpoint complete: wrote 3 buffers (0.0%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.001 s, sync=0.001 s, total=0.001 s; sync files=4, longest=0.001 s, average=0.001 s; distance=5429 kB, estimate=5819 kB; lsn=0/12A08C58, redo lsn=0/12A08C00
+2026-10-18 07:19:10.687 +0530 [23850] LOG:  received fast shutdown request
+2026-10-18 07:19:10.687 +0530 [23850] LOG:  aborting any active transactions
+2026-10-18 07:19:10.687 +0530 [23850] LOG:  background worker "logical replication launcher" (PID 23859) exited with exit code 1
+2026-10-18 07:19:10.688 +0530 [23854] LOG:  shutting down
+2026-10-18 07:19:10.688 +0530 [23854] LOG:  checkpoint starting: shutdown immediate
+2026-10-18 07:19:10.692 +0530 [23854] LOG:  checkpoint complete: wrote 61 buffers (0.4%), wrote 1 SLRU buffers; 0 WAL file(s) added, 0 removed, 0 recycled; write=0.004 s, sync=0.001 s, total=0.005 s; sync files=20, longest=0.001 s, average=0.001 s; distance=431 kB, estimate=5280 kB; lsn=0/12A74888, redo lsn=0/12A74888
+2026-10-18 07:19:10.695 +0530 [23850] LOG:  database system is shut down

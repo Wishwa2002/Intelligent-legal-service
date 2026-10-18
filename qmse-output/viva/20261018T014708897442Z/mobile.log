@@ -1,0 +1,81 @@
+00:00 +0: loading /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/historical_cases_test.dart
+00:00 +0: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/models_test.dart: Model Serialization Tests DocumentationService parses from valid JSON
+00:00 +1: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/appointment_test.dart: Member 2: Appointment & Lawyer Model Tests Lawyer parses correctly with specializations
+00:00 +2: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/models_test.dart: Model Serialization Tests DocumentFile correctly formats file sizes and statuses
+00:00 +3: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/appointment_test.dart: Member 2: Appointment & Lawyer Model Tests AvailabilitySlot formats afternoon times correctly
+00:00 +4: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/models_test.dart: Model Serialization Tests DocumentationRequest parses nested DocumentFiles and missing documents
+00:00 +5: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/appointment_test.dart: Member 2: Appointment & Lawyer Model Tests Appointment parses status and attributes
+00:00 +6: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/models_test.dart: Model Serialization Tests ChatMessage factories produce valid model structures
+00:00 +7: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/appointment_test.dart: Member 2: Appointment & Lawyer Model Tests AppointmentService formats integer customerId to UUID
+00:00 +8: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/widget_test.dart: App loads smoke test
+00:00 +8: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/final_audit_contract_test.dart: TC-MOB-01 current Lawyer JSON types/values
+TC-MOB-01: current Lawyer replaces historical LawyerModel; exact synthetic map preserved; string ID and int experience verified.
+00:00 +9: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/widget_test.dart: App loads smoke test
+00:00 +9: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/historical_cases_test.dart: TC-MOB-01 current Lawyer JSON types/values
+TC-MOB-01: current Lawyer replaces historical LawyerModel; exact synthetic map preserved; string ID and int experience verified.
+00:00 +10: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/widget_test.dart: App loads smoke test
+00:00 +11: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/widget_test.dart: App loads smoke test
+00:00 +12: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/widget_test.dart: App loads smoke test
+00:00 +13: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/widget_test.dart: App loads smoke test
+00:00 +14: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/widget_test.dart: App loads smoke test
+00:00 +15: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/final_audit_contract_test.dart: TC-MOB-02 accepted card name experience and license
+TC-MOB-02 name visible; current lawyer model/card has no rating field.
+00:00 +15: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/historical_cases_test.dart: TC-MOB-02 accepted card name experience and license
+TC-MOB-02 name visible; current lawyer model/card has no rating field.
+00:00 +16: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/historical_cases_test.dart: TC-MOB-02 accepted card name experience and license
+00:00 +17: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: Home leads with Today and includes completed consultations
+00:01 +18: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Lawyer routes into four-tab dashboard with empty server state
+00:01 +18: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/final_audit_contract_test.dart: TC-MOB-03 accepted inline password rejection and no API call
+TC-MOB-03 invalid abc rejected with no network request; screen has no Phone field for historical 123; submit remains enabled.
+00:01 +19: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Lawyer routes into four-tab dashboard with empty server state
+00:01 +19: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/historical_cases_test.dart: TC-MOB-03 accepted inline password rejection and no API call
+TC-MOB-03 invalid abc rejected with no network request; screen has no Phone field for historical 123; submit remains enabled.
+00:01 +20: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Lawyer routes into four-tab dashboard with empty server state
+00:01 +21: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Lawyer routes into four-tab dashboard with empty server state
+00:01 +22: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Lawyer routes into four-tab dashboard with empty server state
+00:01 +23: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +24: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +24: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/final_audit_contract_test.dart: TC-MOB-04 actual lawyer-card navigation and back
+TC-MOB-04: actual list/card → profile → back verified with explicit HTTP widget fixtures.
+00:01 +25: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +25: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/historical_cases_test.dart: TC-MOB-04 actual lawyer-card navigation and back
+TC-MOB-04: actual list/card → profile → back verified with explicit HTTP widget fixtures.
+00:01 +26: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +26: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/historical_cases_test.dart: TC-MOB-05 token storage mechanism and roundtrip
+TC-MOB-05 current ApiClient uses SharedPreferences auth_token; roundtrip passes, historical secure-storage channel is absent.
+00:01 +27: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +28: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +29: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +30: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +31: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +32: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +33: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +33: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_mobile_test.dart: Expired token clears stored mobile session
+LOGOUT DONE - currentUser: null
+00:01 +34: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +35: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=true controls actual cancellation button
+00:01 +36: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Requested
+00:01 +37: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Requested
+00:01 +38: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/proposed_cancellation_test.dart: API canCancel=false controls actual cancellation button
+00:01 +39: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Rescheduled
+00:01 +40: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Confirmed
+00:01 +41: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: appointment actions respect backend permissions for Confirmed
+00:01 +42: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+00:01 +43: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+00:01 +44: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+00:01 +45: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+00:01 +46: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+00:01 +47: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+00:01 +48: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+00:01 +49: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: specialization screen displays recorded descriptions
+00:01 +50: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: partial leave form shows separate date and time fields
+00:01 +51: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_details_test.dart: missing description is stated without invented content
+00:01 +52: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: full-day save keeps the exclusive backend end and internal legacy marker
+00:02 +53: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: profile shows identity initials status and professional information
+00:02 +54: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: profile editor exposes only phone and description and preserves payload
+00:02 +55: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: empty completed list and leave use meaningful shared empty states
+00:02 +56: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: native loading remains visible until real request completion
+00:02 +57: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: schedule editing hides nonworking times and supports existing duration
+00:02 +58: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: four-tab navigation remains consistent and no extra tabs are introduced
+00:02 +59: /Users/jeyam/Downloads/QMSE /Intelligent-legal-service/mobile/test/lawyer_ui_refinement_test.dart: all screens avoid overflow at narrow large-text phone and tablet widths
+00:04 +60: All tests passed!

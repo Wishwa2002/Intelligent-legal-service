@@ -9,7 +9,7 @@ namespace LegalService.API.Services.Workforce;
 public sealed class WorkforceSettingsService(ApplicationDbContext db, IOptions<WorkforceOptions> options, TimeProvider clock)
 {
     public static WorkforcePlanningRules Resolve(PracticeAreaWorkforceSetting? setting, WorkforceOptions defaults) => setting is null
-        ? new(0, 0, 0, defaults.MinimumDemand, defaults.WatchRatio, "DEFAULT")
+        ? new(0, 0, 0, defaults.MinimumDemand, defaults.ProposedHeadroomEnabled ? 1 - defaults.ProposedMinimumHeadroom : defaults.WatchRatio, "DEFAULT")
         : new(setting.MinimumActiveLawyers, setting.TargetActiveLawyers, setting.MinimumFutureSlots,
             setting.HighDemandThreshold, setting.WatchCapacityRatio, "CUSTOM");
     public async Task<WorkforceSettingResponse[]> ListAsync(CancellationToken ct = default)

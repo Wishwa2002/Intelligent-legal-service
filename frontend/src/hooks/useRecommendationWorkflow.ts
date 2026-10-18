@@ -125,6 +125,7 @@ export function useRecommendationWorkflow() {
     event.preventDefault();
     if (pending.current || approvalPending.current || result) return;
     if (!selectedClient) { setError("Select or register a client before analysing the requirement."); return; }
+    if (requirement.length > 4000) { setError("Legal requirements cannot exceed 4,000 characters."); return; }
     if (requirement.trim().length < 3) { setError("Describe your legal requirement using at least three characters."); return; }
     const controller = new AbortController(); pending.current = controller;
     const started = performance.now();

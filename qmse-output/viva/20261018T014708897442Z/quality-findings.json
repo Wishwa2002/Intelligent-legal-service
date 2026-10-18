@@ -1,0 +1,22 @@
+{
+  "frontend_lint": {
+    "command": "npm run lint",
+    "exit_code": 1,
+    "errors": 96,
+    "warnings": 2,
+    "evidence": "frontend-lint.json"
+  },
+  "flutter_analysis": {
+    "command": "flutter analyze --no-pub",
+    "exit_code": 1,
+    "informational_findings": 9,
+    "evidence": "mobile-analysis.log"
+  },
+  "screenshot_retest": {
+    "passed": 4,
+    "failed": 0,
+    "scope": "Changed screenshot output paths only",
+    "evidence": "screenshot-retest/.last-run.json"
+  },
+  "member_runner_final_retest": "../20261018T015025941347Z/results.json"
+}

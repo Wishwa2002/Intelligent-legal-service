@@ -14,6 +14,9 @@ public sealed class WorkforceOptions
     public double WatchRatio { get; set; } = 0.75;
     public double ConcernRatio { get; set; } = 1.0;
     public int SnapshotMaxAgeHours { get; set; } = 24;
+    // PROPOSED: opt-in 20% unconsumed capacity signal, not a hiring decision.
+    public bool ProposedHeadroomEnabled { get; set; }
+    public double ProposedMinimumHeadroom { get; set; } = 0.20;
 }
 
 public sealed class WorkforceAnalysisService(ApplicationDbContext db, IOptions<WorkforceOptions> options, TimeProvider clock, AvailabilityService? scheduling = null)

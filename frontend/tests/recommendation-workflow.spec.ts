@@ -87,7 +87,7 @@ for (const requirement of ["I need help with divorce and child custody.", "banan
   });
 }
 
-test('submitted bank scam unsupported result finishes progress and preserves confirmed interpretation', async ({ page }) => {
+test('submitted bank scam unsupported result finishes progress and preserves confirmed interpretation', async ({ page }, info) => {
   const requirement = 'I need assistance with a bank transaction scam issue.';
   await setup(page, { result: { ...result, status: 'UNSUPPORTED', userRequirement: requirement, recommendations: [],
     parsedRequirement: { ...result.parsedRequirement, categoryId: 0, categoryName: '', legalServiceId: null, legalServiceName: null,
@@ -102,7 +102,7 @@ test('submitted bank scam unsupported result finishes progress and preserves con
   await page.reload();
   await expect(page.getByRole('region', { name: 'Recommendation workflow progress' }).getByText('UNSUPPORTED', { exact: true })).toBeVisible();
   await expect(page.getByText('2 of 9 stages complete', { exact: true })).toBeVisible();
-  await page.screenshot({ path: '../docs/evidence/recurring-scheduling/unsupported-progress.png', fullPage: true });
+  await page.screenshot({ path: info.outputPath('unsupported-progress.png'), fullPage: true });
 });
 
 test("selection enters review, refresh preserves selection, and change selection works", async ({ page }) => {

@@ -1,0 +1,138 @@
+[WebServer] (node:24247) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 122 tests using 2 workers
+
+(node:24251) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:24250) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/122] tests/admin-workflow-navigation.spec.ts:20:1 › sidebar order, independent active state and focused matching page
+[2/122] tests/auth.spec.ts:3:1 › sign up validates before requests and displays backend duplicate errors
+[3/122] tests/admin-workflow-navigation.spec.ts:45:3 › /admin/lawyer-services/recommendations preserves query and hash and restores matching
+[4/122] tests/auth.spec.ts:102:1 › login reports invalid credentials and network failures cleanly
+[5/122] tests/admin-workflow-navigation.spec.ts:45:3 › /admin/lawyer-services/ai-recommendation preserves query and hash and restores matching
+[6/122] tests/derived-booking.spec.ts:18:196 › booking explains NOT_WORKING_DAY
+[7/122] tests/derived-booking.spec.ts:18:196 › booking explains ON_LEAVE
+[8/122] tests/admin-workflow-navigation.spec.ts:45:3 › /admin/lawyer-management/recommendation-test preserves query and hash and restores matching
+[9/122] tests/derived-booking.spec.ts:18:196 › booking explains FULLY_BOOKED
+[10/122] tests/admin-workflow-navigation.spec.ts:55:1 › legacy workforce URL preserves hiring ID and restores Careers completion
+[11/122] tests/derived-booking.spec.ts:19:1 › date fetch updates derived times and clears stale selection
+[12/122] tests/admin-workflow-navigation.spec.ts:65:3 › mobile matching navigation closes and keeps active state at 320px
+[13/122] tests/derived-booking.spec.ts:20:1 › preferred-date recommendation reports system verification
+[14/122] tests/admin-workflow-navigation.spec.ts:65:3 › mobile matching navigation closes and keeps active state at 390px
+[15/122] tests/derived-rescheduling.spec.ts:2:1 › rescheduling clears old times and rejects delayed response from a previous date
+[16/122] tests/frontdesk-matching.spec.ts:38:1 › AI Lawyer Matching starts with client identification and requires a selected client
+[17/122] tests/admin-workflow-navigation.spec.ts:82:1 › canonical and legacy workflow routes require Admin
+[18/122] tests/frontdesk-matching.spec.ts:47:1 › quick registration creates and automatically selects a normal client
+[19/122] tests/lawyer-management.spec.ts:19:1 › Member 1 routes require Admin sign-in
+[20/122] tests/lawyer-management.spec.ts:24:1 › Admin keeps one module with Lawyers, Practice Areas and Legal Services
+[21/122] tests/frontdesk-matching.spec.ts:55:1 › duplicate email offers existing client without creating another account
+[22/122] tests/lawyer-management.spec.ts:75:1 › old admin lawyer URL redirects into the current module
+[23/122] tests/frontdesk-matching.spec.ts:61:1 › registration failure stays actionable and cannot start matching
+[24/122] tests/lawyer-password.spec.ts:3:1 › lawyer password setup gates dashboard and clears flag after server success
+[25/122] tests/frontdesk-matching.spec.ts:66:1 › client, lawyer, date and slot restore from server without browser storage
+[26/122] tests/lawyer-password.spec.ts:25:1 › customers cannot access lawyer password setup
+[27/122] tests/member1-guardrails.spec.ts:19:1 › stale slot rejection refreshes recorded slots and allows another valid slot
+[28/122] tests/frontdesk-matching.spec.ts:74:1 › changing client after appointment review requires confirmation and a new slot review
+[29/122] tests/member1-guardrails.spec.ts:52:1 › no-date result makes no availability claim and selects a real future slot
+[30/122] tests/frontdesk-matching.spec.ts:83:1 › human approval creates standard appointment, exposes normal route and resets intake
+[31/122] tests/member1-guardrails.spec.ts:73:1 › preferred-date workflow locks the date and requires a new recommendation to change it
+[32/122] tests/frontdesk-matching.spec.ts:91:50 › client intake and registration fit 1440px
+[33/122] tests/member1-guardrails.spec.ts:91:3 › UNSUPPORTED shows an honest empty state without approval
+[34/122] tests/member1-guardrails.spec.ts:91:3 › NO_MATCH shows an honest empty state without approval
+[35/122] tests/member1-guardrails.spec.ts:101:1 › missing workflow shows a retry state and cannot create a replacement on refresh
+[36/122] tests/frontdesk-matching.spec.ts:91:50 › client intake and registration fit 1024px
+[37/122] tests/member1-guardrails.spec.ts:113:1 › lawyer form validates fields, submits one catalog ID, and displays backend errors
+[38/122] tests/frontdesk-matching.spec.ts:91:50 › client intake and registration fit 768px
+[39/122] tests/member1-guardrails.spec.ts:147:1 › catalog request shows loading, error with retry, and meaningful empty states
+[40/122] tests/frontdesk-matching.spec.ts:91:50 › client intake and registration fit 375px
+[41/122] tests/member1-guardrails.spec.ts:170:1 › all four Admin screens remain usable at desktop and mobile widths
+[42/122] tests/frontdesk-matching.spec.ts:91:50 › client intake and registration fit 320px
+[43/122] tests/qmse-clerk-identity.spec.ts:2:1 › clerk queue uses profile ID when authentication account ID differs
+[44/122] tests/qmse-clerk-identity.spec.ts:10:1 › old clerk session without profile ID requires fresh login
+[45/122] tests/recommendation-workflow.spec.ts:39:1 › ready input and real request progress do not invent intermediate completions
+[46/122] tests/recommendation-workflow.spec.ts:54:1 › interpretation, verified service, candidate hierarchy and ranking boundaries render
+[47/122] tests/recommendation-workflow.spec.ts:70:1 › uncertain service remains null without claiming service verification
+[48/122] tests/recommendation-workflow.spec.ts:77:3 › I need help with divorce and child custody. restores a controlled unsupported result
+[49/122] tests/recommendation-workflow.spec.ts:77:3 › banana rocket purple chair restores a controlled unsupported result
+[50/122] tests/recommendation-workflow.spec.ts:90:1 › submitted bank scam unsupported result finishes progress and preserves confirmed interpretation
+[51/122] tests/recommendation-workflow.spec.ts:108:1 › selection enters review, refresh preserves selection, and change selection works
+[52/122] tests/recommendation-workflow.spec.ts:122:1 › appointment details use searched customers and real slots, with real approval progress
+[53/122] tests/recommendation-workflow.spec.ts:139:1 › workflow details expose public events and collapse without exposing model output
+[54/122] tests/recommendation-workflow.spec.ts:147:3 › guided workflow fits 1440px with keyboard access and reduced motion
+[55/122] tests/member1-guardrails.spec.ts:227:1 › coverage handles loading, unavailable retry and empty results without hiding tab content
+[56/122] tests/recommendation-workflow.spec.ts:147:3 › guided workflow fits 1024px with keyboard access and reduced motion
+[57/122] tests/recommendation.spec.ts:16:1 › recommendation is visible, waits for human approval, and restores by workflow URL
+[58/122] tests/recommendation-workflow.spec.ts:147:3 › guided workflow fits 768px with keyboard access and reduced motion
+[59/122] tests/recommendation.spec.ts:86:1 › true AI unavailability shows a safe error without recommendations or approval
+[60/122] tests/recurring-live.spec.ts:4:34 › real scheduling API and lawyer edit at 390px
+[61/122] tests/recommendation-workflow.spec.ts:147:3 › guided workflow fits 375px with keyboard access and reduced motion
+[62/122] tests/recurring-live.spec.ts:4:34 › real scheduling API and lawyer edit at 1280px
+[63/122] tests/recurring-live.spec.ts:20:1 › existing lawyer Save Schedule button persists through the real API
+[64/122] tests/recurring-scheduling.spec.ts:42:1 › schedule API failure ends loading, shows backend message and retries
+[65/122] tests/recurring-scheduling.spec.ts:50:1 › hung schedule request times out and can recover
+[66/122] tests/recommendation-workflow.spec.ts:147:3 › guided workflow fits 320px with keyboard access and reduced motion
+[67/122] tests/recommendation-workflow.spec.ts:165:1 › slow restoration hides the ready form until the workflow resolves
+[68/122] tests/recommendation-workflow.spec.ts:174:3 › analysis 422 gives an actionable retry without ranking or booking
+[69/122] tests/recommendation-workflow.spec.ts:174:3 › analysis 503 gives an actionable retry without ranking or booking
+[70/122] tests/recommendation-workflow.spec.ts:184:1 › View Appointment opens the actual appointment details on the Admin route
+[71/122] tests/recommendation-workflow.spec.ts:191:1 › client lookup failure can retry before analysis
+[72/122] tests/recommendation-workflow.spec.ts:200:1 › booking failure retries the actual approval mutation without another analysis
+[73/122] tests/recommendation-workflow.spec.ts:209:1 › appointment details failure retains success and retries its read request
+[74/122] tests/requirements-boundaries.spec.ts:5:2 › existing recommendation length 2
+[75/122] tests/requirements-boundaries.spec.ts:5:2 › existing recommendation length 3
+[76/122] tests/requirements-boundaries.spec.ts:5:2 › existing recommendation length 9
+[77/122] tests/requirements-boundaries.spec.ts:5:2 › existing recommendation length 10
+[78/122] tests/requirements-boundaries.spec.ts:5:2 › existing recommendation length 1000
+[79/122] tests/requirements-boundaries.spec.ts:5:2 › existing recommendation length 1001
+[80/122] tests/requirements-boundaries.spec.ts:5:2 › existing recommendation length 4000
+[81/122] tests/requirements-boundaries.spec.ts:5:2 › existing recommendation length 4001
+[82/122] tests/workforce-hiring.spec.ts:39:1 › ready is calm and analysis progression waits for the actual API response
+[83/122] tests/recurring-scheduling.spec.ts:57:1 › leave failure does not block schedule save or discard schedule edits on retry
+[84/122] tests/workforce-hiring.spec.ts:47:1 › healthy result uses real totals and offers no hiring action
+[85/122] tests/recurring-scheduling.spec.ts:66:1 › missing schedule shows editable defaults and saves for existing lawyer
+[86/122] tests/recurring-scheduling.spec.ts:76:1 › schedule save shows controlled backend message and retains edits
+[87/122] tests/workforce-hiring.spec.ts:54:1 › proposal edit save regenerate review approval completion and Careers integration
+[88/122] tests/recurring-scheduling.spec.ts:82:1 › weekly schedule renders seven days, duration and office timezone
+[89/122] tests/recurring-scheduling.spec.ts:83:1 › off days disable times and can be enabled
+[90/122] tests/recurring-scheduling.spec.ts:84:1 › invalid hours reject save without API mutation
+[91/122] tests/workforce-hiring.spec.ts:69:1 › attention selection excludes healthy areas and existing recruitment is an operational state
+[92/122] tests/recurring-scheduling.spec.ts:85:1 › duration validates limits and saves edited values
+[93/122] tests/workforce-hiring.spec.ts:75:1 › analysis failure retry empty catalog and missing workflow
+[94/122] tests/recurring-scheduling.spec.ts:86:1 › new lawyer has editable UI defaults
+[95/122] tests/workforce-hiring.spec.ts:81:1 › provider failure is safe and retry uses the existing endpoint
+[96/122] tests/recurring-scheduling.spec.ts:87:1 › leave list and full-day save use exclusive midnight boundary
+[97/122] tests/workforce-hiring.spec.ts:90:1 › stale approval requires refresh and regeneration; conflict never claims success
+[98/122] tests/recurring-scheduling.spec.ts:88:1 › leave edit and delete update list
+[99/122] tests/recurring-scheduling.spec.ts:89:1 › leave conflict displays appointment and keeps form
+[100/122] tests/workforce-hiring.spec.ts:96:84 › URL restoration renders AWAITING_APPROVAL without a ready screen or AI request
+[101/122] tests/workforce-hiring.spec.ts:96:84 › URL restoration renders CAREER_OPENING_CREATED without a ready screen or AI request
+[102/122] tests/recurring-scheduling.spec.ts:90:34 › schedule fits viewport at 390px
+[103/122] tests/workforce-hiring.spec.ts:96:84 › URL restoration renders DISMISSED without a ready screen or AI request
+[104/122] tests/workforce-hiring.spec.ts:100:1 › dismissal and Done preserve no-opening outcome
+[105/122] tests/recurring-scheduling.spec.ts:90:34 › schedule fits viewport at 1280px
+[106/122] tests/workforce-settings.spec.ts:25:1 › settings load real defaults save custom rules reset and refetch analysis
+[107/122] tests/workforce-hiring.spec.ts:103:1 › unlinked recruitment requires human acknowledgement
+[108/122] tests/workforce-settings.spec.ts:34:1 › local and backend validation errors do not claim a save
+[109/122] tests/workforce-hiring.spec.ts:106:1 › responsive ready result proposal and approval remain readable with reduced motion and keyboard access
+[110/122] tests/workforce-settings.spec.ts:39:1 › standard Admin page never exposes or invokes development scenario controls
+[111/122] tests/workforce-settings.spec.ts:45:1 › a nondevelopment backend never exposes demo controls
+[112/122] tests/workforce-settings.spec.ts:48:1 › settings dialog fits supported widths with keyboard access
+[113/122] tests/workforce-hiring.spec.ts:115:1 › non-Admin route guard
+[114/122] tests/workforce-hiring.spec.ts:117:1 › secondary rules are keyboard expandable without hiding primary coverage
+[115/122] tests/workforce-hiring.spec.ts:130:1 › completed summary collapses circle and exposes actual freshness and workflow on demand
+[116/122] tests/workforce-hiring.spec.ts:139:1 › healthy coverage with recruitment is stable context and healthy status remains intact
+[117/122] tests/workforce-hiring.spec.ts:145:1 › visual refinement matrix covers all result and workflow states at five viewport widths
+[118/122] tests/workforce-hiring.spec.ts:167:1 › workflow circle uses confirmed states with no completion replay or artificial delay
+[119/122] tests/workforce-hiring.spec.ts:182:1 › demand cards use max signals, attention ordering and real totals in concern states
+[120/122] tests/workforce-hiring.spec.ts:191:1 › structured final review sends the existing Careers description format with admin edits
+[121/122] tests/workforce-hiring.spec.ts:199:1 › restored proposal distinguishes its saved decision facts from current analysis
+[122/122] tests/workforce-hiring.spec.ts:208:1 › restored proposal cannot continue when current recruitment already covers the area
+  3 skipped
+  119 passed (1.2m)

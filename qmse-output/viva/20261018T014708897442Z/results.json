@@ -1,0 +1,210 @@
+{
+  "created_utc": "20261018T014708897442Z",
+  "ai_assistance": "Codex-assisted; personal execution must be demonstrated by each member",
+  "scope": "Fresh rehearsal evidence; does not overwrite historical acceptance ledger",
+  "excluded_historical_cases": [
+    "HistoricalPostgresSetupTests",
+    "HistoricalSlotConstraintTests"
+  ],
+  "results": [
+    {
+      "name": "postgres-init",
+      "exit_code": 0,
+      "seconds": 0.41,
+      "command": [
+        "/opt/homebrew/bin/initdb",
+        "-D",
+        "/var/folders/jk/bvq6bx9n4jx9nsswfwvhmbnm0000gn/T/gr42-viva-pg-wid3y2m6",
+        "-U",
+        "viva",
+        "-A",
+        "trust",
+        "--no-locale"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/postgres-init.log"
+    },
+    {
+      "name": "postgres-start",
+      "exit_code": 0,
+      "seconds": 0.123,
+      "command": [
+        "/opt/homebrew/Cellar/postgresql@18/18.3/bin/pg_ctl",
+        "-D",
+        "/var/folders/jk/bvq6bx9n4jx9nsswfwvhmbnm0000gn/T/gr42-viva-pg-wid3y2m6",
+        "-l",
+        "/var/folders/jk/bvq6bx9n4jx9nsswfwvhmbnm0000gn/T/gr42-viva-pg-wid3y2m6/server.log",
+        "start",
+        "-w"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/postgres-start.log"
+    },
+    {
+      "name": "backend",
+      "exit_code": 0,
+      "seconds": 22.763,
+      "command": [
+        "dotnet",
+        "test",
+        "backend/LegalService.Tests/LegalService.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName!~HistoricalPostgresSetupTests&FullyQualifiedName!~HistoricalSlotConstraintTests",
+        "--logger",
+        "trx;LogFileName=backend.trx",
+        "--results-directory",
+        "/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/qmse-output/viva/20261018T014708897442Z"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/backend.log"
+    },
+    {
+      "name": "c1",
+      "exit_code": 0,
+      "seconds": 7.099,
+      "command": [
+        "dotnet",
+        "test",
+        "backend/LegalService.Tests/LegalService.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~LawyerManagementHttpTests&FullyQualifiedName!~Qmse_LocalEvidenceHost",
+        "--logger",
+        "trx;LogFileName=c1.trx",
+        "--results-directory",
+        "/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/qmse-output/viva/20261018T014708897442Z"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/c1.log"
+    },
+    {
+      "name": "c2",
+      "exit_code": 0,
+      "seconds": 1.352,
+      "command": [
+        "dotnet",
+        "test",
+        "backend/LegalService.Tests/LegalService.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~QmseAppointmentTests",
+        "--logger",
+        "trx;LogFileName=c2.trx",
+        "--results-directory",
+        "/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/qmse-output/viva/20261018T014708897442Z"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/c2.log"
+    },
+    {
+      "name": "c3",
+      "exit_code": 0,
+      "seconds": 1.457,
+      "command": [
+        "dotnet",
+        "test",
+        "backend/LegalService.Tests/LegalService.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~QmseUploadRegressionTests",
+        "--logger",
+        "trx;LogFileName=c3.trx",
+        "--results-directory",
+        "/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/qmse-output/viva/20261018T014708897442Z"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/c3.log"
+    },
+    {
+      "name": "c4",
+      "exit_code": 0,
+      "seconds": 3.167,
+      "command": [
+        "dotnet",
+        "test",
+        "backend/LegalService.Tests/LegalService.Tests.csproj",
+        "--no-restore",
+        "--filter",
+        "FullyQualifiedName~Qmse_TC_C4_09|FullyQualifiedName~PasswordCurrentContractTests|FullyQualifiedName~SecurityHeaderTests",
+        "--logger",
+        "trx;LogFileName=c4.trx",
+        "--results-directory",
+        "/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/qmse-output/viva/20261018T014708897442Z"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/c4.log"
+    },
+    {
+      "name": "ai",
+      "exit_code": 0,
+      "seconds": 2.246,
+      "command": [
+        "/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/ai-service/.venv/bin/python",
+        "-m",
+        "pytest",
+        "ai-service/tests",
+        "-q",
+        "--junitxml=/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/qmse-output/viva/20261018T014708897442Z/ai.xml"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/ai.log"
+    },
+    {
+      "name": "web-build",
+      "exit_code": 0,
+      "seconds": 2.752,
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/web-build.log"
+    },
+    {
+      "name": "web-node",
+      "exit_code": 0,
+      "seconds": 0.636,
+      "command": [
+        "npm",
+        "run",
+        "test:member1"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/web-node.log"
+    },
+    {
+      "name": "web-ui",
+      "exit_code": 0,
+      "seconds": 73.749,
+      "command": [
+        "npx",
+        "playwright",
+        "test",
+        "--reporter=line",
+        "--output",
+        "/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/qmse-output/viva/20261018T014708897442Z/playwright"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/web-ui.log"
+    },
+    {
+      "name": "mobile",
+      "exit_code": 0,
+      "seconds": 6.028,
+      "command": [
+        "flutter",
+        "test",
+        "--no-pub",
+        "--reporter",
+        "expanded"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/mobile.log"
+    },
+    {
+      "name": "postgres-stop",
+      "exit_code": 0,
+      "seconds": 0.11,
+      "command": [
+        "/opt/homebrew/Cellar/postgresql@18/18.3/bin/pg_ctl",
+        "-D",
+        "/var/folders/jk/bvq6bx9n4jx9nsswfwvhmbnm0000gn/T/gr42-viva-pg-wid3y2m6",
+        "stop",
+        "-m",
+        "fast",
+        "-w"
+      ],
+      "log": "qmse-output/viva/20261018T014708897442Z/postgres-stop.log"
+    }
+  ]
+}

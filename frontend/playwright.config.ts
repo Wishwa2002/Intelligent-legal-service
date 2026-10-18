@@ -9,6 +9,10 @@ for (const name of ["E2E_ADMIN_EMAIL", "E2E_ADMIN_PASSWORD"])
 export default defineConfig({
   testDir: "./tests",
   testMatch: "**/*.spec.ts",
+  // Archived acceptance replays require their own private PostgreSQL/API fixture.
+  // Keep them available through their explicit configs rather than running against a demo DB.
+  testIgnore: ["**/historical-acceptance.spec.ts", "**/final-audit-replay.spec.ts", "**/final-audit-contract.spec.ts"],
+  workers: 2,
   use: { baseURL: "http://127.0.0.1:5175", headless: true },
   webServer: {
     command: "npm run dev -- --host 127.0.0.1 --port 5175 --strictPort --mode test",

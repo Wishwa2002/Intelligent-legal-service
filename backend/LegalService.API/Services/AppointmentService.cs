@@ -18,14 +18,17 @@ public class AppointmentService : IAppointmentService
     private readonly ApplicationDbContext _context;
     private readonly ILogger<AppointmentService> _logger;
     private readonly AvailabilityService availability;
+    private readonly Scheduling.ProposedCancellationOptions cancellationRules;
 
     public AppointmentService(
         ApplicationDbContext context,
-        ILogger<AppointmentService> logger, AvailabilityService? scheduling = null)
+        ILogger<AppointmentService> logger, AvailabilityService? scheduling = null,
+        Microsoft.Extensions.Options.IOptions<Scheduling.ProposedCancellationOptions>? cancellationOptions = null)
     {
         _context = context;
         _logger = logger;
         availability = scheduling ?? new AvailabilityService(context);
+        cancellationRules = cancellationOptions?.Value ?? new();
     }
 
     public async Task<AppointmentDetailsResponse> BookAppointmentAsync(BookAppointmentRequest request)
@@ -243,6 +246,9 @@ public class AppointmentService : IAppointmentService
 
         if (appointment.Status == "Completed" || appointment.Status == "Cancelled")
             throw new InvalidOperationException($"Cannot cancel an appointment that is already '{appointment.Status}'.");
+
+        if (!CanCancelByNotice(appointment))
+            throw new ApiException(409, $"The proposed cancellation policy requires {cancellationRules.MinimumNoticeHours} hours notice.");
 
         // Release slot back to available pool
         if (appointment.AvailabilitySlot != null)
@@ -463,7 +469,7 @@ public class AppointmentService : IAppointmentService
             CreatedAt = a.CreatedAt,
             UpdatedAt = a.UpdatedAt,
             CanConfirm = a.Status == "Requested" || a.Status == "Rescheduled",
-            CanCancel = a.Status != "Completed" && a.Status != "Cancelled",
+            CanCancel = a.Status != "Completed" && a.Status != "Cancelled" && CanCancelByNotice(a),
             CanReschedule = a.Status == "Requested" || a.Status == "Confirmed",
             CanComplete = a.Status == "Confirmed",
             History = histories.Select(h => new AppointmentHistoryResponse
@@ -475,6 +481,14 @@ public class AppointmentService : IAppointmentService
                 ChangedDate = h.ChangedDate
             }).ToList()
         };
+    }
+
+    private bool CanCancelByNotice(Appointment appointment)
+    {
+        if (!cancellationRules.Enabled) return true;
+        var window = appointment.AvailabilitySlot?.LawyerAvailability;
+        if (window == null) return false; // Fail closed when an enabled policy cannot determine start.
+        return ProposedCancellationPolicy.Allows(window.Date.ToDateTime(appointment.AvailabilitySlot!.StartTime), availability.LocalNow, cancellationRules);
     }
 
     private async Task<string> ResolveCustomerNameAsync(Guid customerId)

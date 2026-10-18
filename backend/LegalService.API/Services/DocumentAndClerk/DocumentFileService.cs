@@ -17,6 +17,8 @@ public class DocumentFileService : IDocumentFileService
 {
     private readonly ApplicationDbContext _context;
     private readonly IWebHostEnvironment _environment;
+    private readonly IConfiguration? _configuration;
+    private bool _ownsBatch;
 
     private static readonly HashSet<string> AllowedExtensions = new(StringComparer.OrdinalIgnoreCase)
     {
@@ -36,10 +38,11 @@ public class DocumentFileService : IDocumentFileService
 
     private const long MaxFileSizeBytes = 10 * 1024 * 1024; // 10 MB
 
-    public DocumentFileService(ApplicationDbContext context, IWebHostEnvironment environment)
+    public DocumentFileService(ApplicationDbContext context, IWebHostEnvironment environment, IConfiguration? configuration = null)
     {
         _context = context;
         _environment = environment;
+        _configuration = configuration;
     }
 
     public async Task<DocumentFileResponse> UploadFileAsync(int requestId, IFormFile file)
@@ -104,6 +107,10 @@ public class DocumentFileService : IDocumentFileService
         var storedFileName = $"{tempFileId}{extension}";
         string physicalPath = string.Empty;
         byte[]? contents = null;
+        if (_environment.IsDevelopment() && _context.Database.IsRelational() && _context.Database.CurrentTransaction != null && !_ownsBatch)
+            throw new InvalidOperationException("Filesystem uploads need an owned commit boundary; use the proposed atomic batch after approval.");
+        try
+        {
         if (_environment.IsDevelopment())
         {
             var uploadsFolder = Path.Combine(_environment.ContentRootPath, "Storage", "Uploads", "Documentation", requestId.ToString());
@@ -143,6 +150,52 @@ public class DocumentFileService : IDocumentFileService
         await _context.SaveChangesAsync();
 
         return MapToResponse(documentFile);
+        }
+        catch
+        {
+            // A failed metadata save must not leave bytes without a committed owner.
+            if (!string.IsNullOrEmpty(physicalPath) && File.Exists(physicalPath)) File.Delete(physicalPath);
+            // This service is scoped to one request; discard failed pending mutations.
+            _context.ChangeTracker.Clear();
+            throw;
+        }
+    }
+
+    /// <summary>
+    /// PROPOSED batch contract, disabled by default and not exposed by an HTTP route.
+    /// Existing single-file requests remain independent. Requires an owned relational transaction.
+    /// </summary>
+    public async Task<IReadOnlyList<DocumentFileResponse>> UploadFilesAtomicallyAsync(int requestId, IReadOnlyList<IFormFile> files)
+    {
+        if (_configuration?.GetValue<bool>("ProposedRules:AtomicDocumentBatch") != true)
+            throw new NotSupportedException("Atomic document batches are pending group approval.");
+        if (files.Count is < 1 or > 5) throw new ArgumentException("A proposed batch contains one to five files.");
+        if (!_context.Database.IsRelational() || _context.Database.CurrentTransaction != null)
+            throw new InvalidOperationException("An atomic batch requires its own relational transaction.");
+        var physicalPaths = new List<string>();
+        await using var transaction = await _context.Database.BeginTransactionAsync();
+        _ownsBatch = true;
+        try
+        {
+            var results = new List<DocumentFileResponse>();
+            foreach (var file in files)
+            {
+                var result = await UploadFileAsync(requestId, file);
+                results.Add(result);
+                var stored = await _context.DocumentFiles.FindAsync(result.FileId);
+                if (!string.IsNullOrEmpty(stored!.FilePath)) physicalPaths.Add(stored.FilePath);
+            }
+            await transaction.CommitAsync();
+            return results;
+        }
+        catch
+        {
+            await transaction.RollbackAsync();
+            foreach (var path in physicalPaths) if (File.Exists(path)) File.Delete(path);
+            _context.ChangeTracker.Clear();
+            throw;
+        }
+        finally { _ownsBatch = false; }
     }
 
     public async Task<IEnumerable<DocumentFileResponse>> GetFilesByRequestIdAsync(int requestId)
@@ -261,6 +314,10 @@ public class DocumentFileService : IDocumentFileService
         var storedFileName = $"{tempFileId}{extension}";
         string physicalPath = string.Empty;
         byte[]? contents = null;
+        if (_environment.IsDevelopment() && _context.Database.IsRelational() && _context.Database.CurrentTransaction != null && !_ownsBatch)
+            throw new InvalidOperationException("Filesystem uploads need an owned commit boundary; use the proposed atomic batch after approval.");
+        try
+        {
         if (_environment.IsDevelopment())
         {
             var uploadsFolder = Path.Combine(_environment.ContentRootPath, "Storage", "Uploads", "Documentation", requestId.ToString());
@@ -288,6 +345,13 @@ public class DocumentFileService : IDocumentFileService
         await _context.SaveChangesAsync();
 
         return MapToResponse(documentFile);
+        }
+        catch
+        {
+            if (!string.IsNullOrEmpty(physicalPath) && File.Exists(physicalPath)) File.Delete(physicalPath);
+            _context.ChangeTracker.Clear();
+            throw;
+        }
     }
 
     public static DocumentFileResponse MapToResponse(DocumentFile file)

@@ -32,6 +32,7 @@ public class RecommendationTransportTests
         }
     }
     [Theory] [InlineData(401, 503, "internal_authentication")] [InlineData(404, 503, "route")]
+    [InlineData(504, 503, "service_unavailable")]
     [InlineData(422, 422, "validation")] [InlineData(503, 503, "classification_unavailable")]
     public async Task DedicatedClientSendsTrustedSnapshotAndMapsFailuresWithSafeDistinctDiagnostics(int upstream, int expected, string stage)
     {

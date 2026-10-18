@@ -384,7 +384,7 @@ class _MyAppointmentsScreenState extends State<MyAppointmentsScreen> {
                                   separatorBuilder: (context, index) => const SizedBox(height: 14),
                                   itemBuilder: (context, idx) {
                                     final appt = _appointments[idx];
-                                    final canCancel = appt.status == 'Requested' || appt.status == 'Confirmed' || appt.status == 'Rescheduled';
+                                    final canCancel = appt.canCancel && (appt.status == 'Requested' || appt.status == 'Confirmed' || appt.status == 'Rescheduled');
 
                                     return Container(
                                       decoration: BoxDecoration(

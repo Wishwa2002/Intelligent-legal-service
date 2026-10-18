@@ -1,0 +1,13 @@
+Analyzing mobile...                                             
+
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/final_audit_contract_test.dart:18:202 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/final_audit_contract_test.dart:19:216 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/final_audit_contract_test.dart:20:609 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/final_audit_contract_test.dart:21:426 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/historical_cases_test.dart:18:202 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/historical_cases_test.dart:19:216 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/historical_cases_test.dart:20:609 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/historical_cases_test.dart:21:426 • avoid_print
+   info • Don't invoke 'print' in production code. Try using a logging framework • test/historical_cases_test.dart:22:225 • avoid_print
+
+9 issues found. (ran in 2.2s)

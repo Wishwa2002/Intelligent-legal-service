@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TestRun id="d8a2f039-bc60-490e-87a2-d9090b90cba9" name="@Jegatheeswarans-MacBook-Air 2026-10-18 07:17:40" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <Times creation="2026-10-18T07:17:40.6238320+05:30" queuing="2026-10-18T07:17:40.6238320+05:30" start="2026-10-18T07:17:39.8932280+05:30" finish="2026-10-18T07:17:40.6258470+05:30" />
+  <TestSettings name="default" id="54414767-c6b0-4125-b2f9-2eaefacc0cf7">
+    <Deployment runDeploymentRoot="_Jegatheeswarans-MacBook-Air_2026-10-18_07_17_40" />
+  </TestSettings>
+  <Results>
+    <UnitTestResult executionId="a0d55173-91e1-481b-97fb-3d3d4b1b9f4c" testId="e3beff3c-9924-6355-13ed-710ed1022b04" testName="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_11_BookingOutsideWorkingHoursRejected(hour: 20)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0006514" startTime="2026-10-18T07:17:40.5797260+05:30" endTime="2026-10-18T07:17:40.5803640+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="a0d55173-91e1-481b-97fb-3d3d4b1b9f4c" />
+    <UnitTestResult executionId="ba8fde03-462f-499b-bb31-ee6b244328b3" testId="d0f09dee-0361-2bce-03ed-b658ea308a43" testName="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours(minutesBefore: 1441)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0085415" startTime="2026-10-18T07:17:40.5409610+05:30" endTime="2026-10-18T07:17:40.5493250+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="ba8fde03-462f-499b-bb31-ee6b244328b3" />
+    <UnitTestResult executionId="cf6d387c-0b75-43e1-b67b-ef61899d9ff6" testId="26575b52-6cbe-f028-0fdd-e76b952e058a" testName="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_12_DirectBookingWorksWithoutAiDependency" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0271126" startTime="2026-10-18T07:17:40.5496470+05:30" endTime="2026-10-18T07:17:40.5765530+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="cf6d387c-0b75-43e1-b67b-ef61899d9ff6" />
+    <UnitTestResult executionId="f167b5d3-dbeb-4108-be2d-4d90736eb3ea" testId="efa094ec-78f3-36aa-2d90-b61c0aef56cc" testName="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_11_BookingOutsideWorkingHoursRejected(hour: 8)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0031132" startTime="2026-10-18T07:17:40.5766330+05:30" endTime="2026-10-18T07:17:40.5796910+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="f167b5d3-dbeb-4108-be2d-4d90736eb3ea" />
+    <UnitTestResult executionId="1eb7c05b-8fbb-4257-a535-0a95726a79e5" testId="5eba2fd7-fd91-0a06-9c71-3ae58cf76f77" testName="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours(minutesBefore: 1439)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.3790409" startTime="2026-10-18T07:17:40.1543630+05:30" endTime="2026-10-18T07:17:40.5358880+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1eb7c05b-8fbb-4257-a535-0a95726a79e5" />
+    <UnitTestResult executionId="defaefcd-538c-45e7-b279-9ff2b3c3fc23" testId="98a19c17-49ac-ad9b-7f14-4ae154c15e83" testName="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours(minutesBefore: 1440)" computerName="Jegatheeswarans-MacBook-Air" duration="00:00:00.0048719" startTime="2026-10-18T07:17:40.5394100+05:30" endTime="2026-10-18T07:17:40.5407750+05:30" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="defaefcd-538c-45e7-b279-9ff2b3c3fc23" />
+  </Results>
+  <TestDefinitions>
+    <UnitTest name="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_11_BookingOutsideWorkingHoursRejected(hour: 20)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="e3beff3c-9924-6355-13ed-710ed1022b04">
+      <Execution id="a0d55173-91e1-481b-97fb-3d3d4b1b9f4c" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseAppointmentTests" name="Qmse_TC_C2_11_BookingOutsideWorkingHoursRejected" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_12_DirectBookingWorksWithoutAiDependency" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="26575b52-6cbe-f028-0fdd-e76b952e058a">
+      <Execution id="cf6d387c-0b75-43e1-b67b-ef61899d9ff6" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseAppointmentTests" name="Qmse_TC_C2_12_DirectBookingWorksWithoutAiDependency" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours(minutesBefore: 1441)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="d0f09dee-0361-2bce-03ed-b658ea308a43">
+      <Execution id="ba8fde03-462f-499b-bb31-ee6b244328b3" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseAppointmentTests" name="Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours(minutesBefore: 1440)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="98a19c17-49ac-ad9b-7f14-4ae154c15e83">
+      <Execution id="defaefcd-538c-45e7-b279-9ff2b3c3fc23" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseAppointmentTests" name="Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours(minutesBefore: 1439)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="5eba2fd7-fd91-0a06-9c71-3ae58cf76f77">
+      <Execution id="1eb7c05b-8fbb-4257-a535-0a95726a79e5" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseAppointmentTests" name="Qmse_TC_C2_09_CancellationOnBothSidesOf24Hours" />
+    </UnitTest>
+    <UnitTest name="LegalService.Tests.QmseAppointmentTests.Qmse_TC_C2_11_BookingOutsideWorkingHoursRejected(hour: 8)" storage="/users/jeyam/downloads/qmse /intelligent-legal-service/backend/legalservice.tests/bin/debug/net8.0/legalservice.tests.dll" id="efa094ec-78f3-36aa-2d90-b61c0aef56cc">
+      <Execution id="f167b5d3-dbeb-4108-be2d-4d90736eb3ea" />
+      <TestMethod codeBase="/Users/jeyam/Downloads/QMSE /Intelligent-legal-service/backend/LegalService.Tests/bin/Debug/net8.0/LegalService.Tests.dll" adapterTypeName="executor://xunit/VsTestRunner3/netcore/" className="LegalService.Tests.QmseAppointmentTests" name="Qmse_TC_C2_11_BookingOutsideWorkingHoursRejected" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestEntries>
+    <TestEntry testId="e3beff3c-9924-6355-13ed-710ed1022b04" executionId="a0d55173-91e1-481b-97fb-3d3d4b1b9f4c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="d0f09dee-0361-2bce-03ed-b658ea308a43" executionId="ba8fde03-462f-499b-bb31-ee6b244328b3" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="26575b52-6cbe-f028-0fdd-e76b952e058a" executionId="cf6d387c-0b75-43e1-b67b-ef61899d9ff6" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="efa094ec-78f3-36aa-2d90-b61c0aef56cc" executionId="f167b5d3-dbeb-4108-be2d-4d90736eb3ea" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="5eba2fd7-fd91-0a06-9c71-3ae58cf76f77" executionId="1eb7c05b-8fbb-4257-a535-0a95726a79e5" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="98a19c17-49ac-ad9b-7f14-4ae154c15e83" executionId="defaefcd-538c-45e7-b279-9ff2b3c3fc23" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" failed="0" error="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+    <Output>
+      <StdOut>[xUnit.net 00:00:00.00] xUnit.net VSTest Adapter v3.1.4+50e68bbb8b (64-bit .NET 8.0.29)
+[xUnit.net 00:00:00.03]   Discovering: LegalService.Tests
+[xUnit.net 00:00:00.07]   Discovered:  LegalService.Tests
+[xUnit.net 00:00:00.08]   Starting:    LegalService.Tests
+[xUnit.net 00:00:00.51]   Finished:    LegalService.Tests
+</StdOut>
+    </Output>
+  </ResultSummary>
+</TestRun>
