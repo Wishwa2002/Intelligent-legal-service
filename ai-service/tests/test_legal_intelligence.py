@@ -2,6 +2,7 @@ import pytest
 
 from fastapi.testclient import TestClient
 from pydantic import ValidationError
+from app.api.routes import legal_intelligence_routes as legal_routes
 
 from app.main import create_app
 from app.agents.legal_intelligence import agent as legal_agent
@@ -337,3 +338,123 @@ def test_legal_intelligence_api_integration_returns_valid_response(
     assert data["confidence"] == 0.80
     assert data["requires_human_review"] is False
     assert data["validation_errors"] == []
+
+
+
+# ---------------------------------------------------------
+# M4-TC32
+# Security:
+# Invalid admin key must not allow Parliament ingestion.
+# ---------------------------------------------------------
+
+def test_parliament_ingestion_invalid_admin_key_returns_403(
+    monkeypatch,
+):
+    # Arrange
+    monkeypatch.setenv(
+        "LEGAL_INGESTION_ADMIN_KEY",
+        "correct-test-key",
+    )
+
+    ingestion_calls = 0
+
+    async def fake_ingest_parliament_acts():
+        nonlocal ingestion_calls
+        ingestion_calls += 1
+
+        return {
+            "discovered": 1,
+            "saved": 1,
+            "rejected": 0,
+            "output_file": "test.json",
+            "rejected_documents": [],
+            "database_saved": 1,
+            "database_failed": 0,
+            "database_errors": [],
+        }
+
+    monkeypatch.setattr(
+        legal_routes,
+        "ingest_parliament_acts",
+        fake_ingest_parliament_acts,
+    )
+
+    app = create_app()
+
+    # Act
+    with TestClient(app) as client:
+        response = client.post(
+            "/api/legal-intelligence/ingest/parliament-acts",
+            headers={
+                "x-internal-admin-key":
+                    "wrong-test-key",
+            },
+        )
+
+    # Assert
+    assert response.status_code == 403
+
+    assert response.json()["detail"] == (
+        "Admin access required."
+    )
+
+    # Unauthorized request must never reach ingestion logic.
+    assert ingestion_calls == 0
+
+
+# ---------------------------------------------------------
+# M4-TC33
+# Security / configuration failure:
+# Ingestion must be unavailable when the security key
+# is not configured on the server.
+# ---------------------------------------------------------
+
+def test_parliament_ingestion_without_configured_key_returns_503(
+    monkeypatch,
+):
+    # Arrange
+    monkeypatch.delenv(
+        "LEGAL_INGESTION_ADMIN_KEY",
+        raising=False,
+    )
+
+    ingestion_calls = 0
+
+    async def fake_ingest_parliament_acts():
+        nonlocal ingestion_calls
+        ingestion_calls += 1
+
+        return {
+            "discovered": 1,
+            "saved": 1,
+            "rejected": 0,
+            "output_file": "test.json",
+            "rejected_documents": [],
+            "database_saved": 1,
+            "database_failed": 0,
+            "database_errors": [],
+        }
+
+    monkeypatch.setattr(
+        legal_routes,
+        "ingest_parliament_acts",
+        fake_ingest_parliament_acts,
+    )
+
+    app = create_app()
+
+    # Act
+    with TestClient(app) as client:
+        response = client.post(
+            "/api/legal-intelligence/ingest/parliament-acts",
+        )
+
+    # Assert
+    assert response.status_code == 503
+
+    assert response.json()["detail"] == (
+        "Legal ingestion security key is not configured."
+    )
+
+    # Ingestion must not run without security configuration.
+    assert ingestion_calls == 0
